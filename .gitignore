@@ -1,0 +1,56 @@
+# PHP
+*.log
+*.tmp
+*.temp
+vendor/
+composer.lock
+
+# Database
+*.sql
+*.db
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Sensitive files
+.env
+config.php
+*.key
+*.pem
+
+# Cache
+cache/
+tmp/
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Dreamweaver
+_notes/
+dwsync.xml
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+
+# Taskmaster
+.taskmaster/
+
+# Cursor IDE
+.cursor/

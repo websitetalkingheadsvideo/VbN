@@ -1,0 +1,5 @@
+I want to create a computer RPG based in Laws of the Night Revised.  This is based in the World of Darkness Universe. I want a faithful reproduction of the game.
+I have experience with HTML, Java Script, PHP and MySQL. So lets build with those.  If you think a library will help tell me what it is and why it would be a good idea to do this.
+First we will work on creating a character sheet. Think about Laws of the Night Revised and everything that should be on a character sheet.
+Include a true/false field for the field PC.
+give me a summary before writing code.

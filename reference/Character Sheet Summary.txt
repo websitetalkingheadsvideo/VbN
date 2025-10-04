@@ -1,0 +1,61 @@
+Laws of the Night Revised - Character Sheet Summary (CORRECTED)
+Core Character Information
+
+Character Name
+Player Name
+Chronicle
+Nature & Demeanor
+Concept
+Clan
+Generation
+Sire
+PC (Player Character - True/False field)
+
+Traits System (Cards/Bidding - NOT dots)
+Physical Traits (Brawny, Quick, Tough, Graceful, Steady, Rugged, etc.)
+Social Traits (Charismatic, Commanding, Empathetic, Intimidating, Witty, Dignified, etc.)
+Mental Traits (Alert, Creative, Cunning, Disciplined, Knowledgeable, Observant, etc.)
+Each trait listed by NAME - used for challenge comparisons
+Abilities
+Listed as text with specializations:
+
+Academics, Athletics, Brawl, Computer, Crafts, Drive, Firearms, Investigation, Leadership, Melee, Occult, Performance, Security, Stealth, Streetwise, Subterfuge, Survival, etc.
+
+Disciplines (Vampire Powers)
+Listed with levels (Basic, Intermediate, Advanced):
+
+Animalism, Auspex, Celerity, Dominate, Fortitude, Obfuscate, Potence, Presence, Protean, etc.
+
+Backgrounds
+
+Allies, Contacts, Fame, Generation, Herd, Influence, Mentor, Resources, Retainers, Status
+Each with levels (1-5)
+
+Morality (Virtues Combined)
+
+Morality Path (defaults to "Humanity" for all PCs)
+Conscience/Conviction (number)
+Self-Control/Instinct (number)
+Courage (number)
+Path Rating (1-10, default Humanity)
+
+Separate Stats
+
+Willpower (permanent rating 1-10, and temporary current value)
+Blood Pool (current/maximum - varies by generation)
+
+Health & Status
+
+Health Levels (Healthy, Bruised, Wounded, Incapacitated, Torpor)
+Negative Traits (damage, conditions, derangements)
+
+Other Sections
+
+Merits & Flaws (with point values)
+Derangements
+Influences (types and levels)
+Status (sect/clan/city)
+Equipment/Possessions
+Rituals (Thaumaturgy/Necromancy)
+Experience Points (total earned/unspent)
+Biography/Description

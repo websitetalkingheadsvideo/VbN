@@ -1,0 +1,64 @@
+# LOTN Character Creator - Project Summary
+
+## **Project Overview**
+**Name:** LOTN Character Creator  
+**Version:** 0.2.0  
+**Type:** Web-based character creation system for Vampire: The Masquerade - Laws of the Night Revised (LOTN) tabletop RPG  
+**Tech Stack:** PHP, MySQL, HTML, CSS, JavaScript  
+
+## **Current Status**
+✅ **Completed:**
+- Basic authentication system (login/logout/sessions)
+- Database structure with comprehensive character tables
+- Character creation form UI (8 tabs, responsive design)
+- External CSS organization (`css/style.css`)
+- External JavaScript organization (`js/script.js`)
+- Task Master project management system initialized
+- Database credentials fixed and centralized
+
+## **Database Structure**
+- **Main Tables:** `users`, `characters`
+- **Character Detail Tables:** `character_traits`, `character_abilities`, `character_disciplines`, `character_backgrounds`, `character_merits_flaws`, `character_derangements`, `character_equipment`, `character_influences`, `character_rituals`, `character_status`
+
+## **File Structure**
+```
+C:\Users\paris\VbN\
+├── css/style.css (external styles)
+├── js/script.js (external JavaScript)
+├── includes/connect.php (centralized DB connection)
+├── lotn_char_create.php (main character creation form)
+├── login.php, login_process.php, logout.php (auth system)
+├── dashboard.php (user dashboard)
+├── .taskmaster/ (project management)
+└── reference/ (LOTN rules and setting docs)
+```
+
+## **Current Tasks (Task Master)**
+1. **Complete Character Creation Form** (High Priority) - 8 tabs need full implementation
+2. **Implement Character Loading/Editing** (High Priority) - Database integration
+3. **Add Character List to Dashboard** (Medium Priority) - Character management
+4. **Complete JavaScript Functionality** (High Priority) - Trait selection, XP tracking
+5. **Improve CSS Styling and Responsive Design** (Medium Priority)
+6. **Add Error Handling and User Feedback** (Medium Priority)
+
+## **Key Features Needed**
+- **Character Creation:** 8-tab form (Basic Info, Traits, Abilities, Disciplines, Backgrounds, Morality, Merits & Flaws, Final Details)
+- **XP System:** 30 starting XP, 7 free traits, 4 XP for traits 8-10
+- **Trait System:** Physical/Social/Mental traits with card-based selection
+- **Database Integration:** Save/load/edit characters
+- **Validation:** LOTN rules compliance and form validation
+
+## **LOTN Rules Context**
+- **Setting:** Phoenix by Night (1994) - Prince dies on character's first night
+- **System:** Card-based traits (not dots), 13 vampire clans + Caitiff
+- **Character Types:** All vampire clans supported, PC/NPC designation
+- **Morality:** Humanity path with Conscience, Self-Control, Courage virtues
+
+## **Development Rules**
+- **CSS:** External `css/style.css` files only
+- **JavaScript:** External `js/script.js` files only  
+- **Database:** Centralized `includes/connect.php` connection
+- **Code Organization:** Clean separation of concerns
+
+## **Next Priority**
+Complete the character creation form implementation - currently only Basic Info and partial Traits tabs are functional. Need to implement all 8 tabs with proper content, JavaScript functionality, and database integration.
