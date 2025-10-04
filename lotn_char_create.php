@@ -8,7 +8,7 @@
 <body>
 	<?php
 // LOTN Character Creator - Version 0.2.0
-define('LOTN_VERSION', '0.2.0');
+define('LOTN_VERSION', '0.3.0');
 
 session_start();
 
@@ -335,7 +335,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" disabled>← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(1)">Next →</button>
                 </div>
             </div>
@@ -601,7 +601,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(0)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(2)">Next →</button>
                 </div>
             </div>
@@ -613,7 +613,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(1)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(3)">Next →</button>
                 </div>
             </div>
@@ -625,7 +625,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(2)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(4)">Next →</button>
                 </div>
             </div>
@@ -637,7 +637,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(3)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(5)">Next →</button>
                 </div>
             </div>
@@ -649,7 +649,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(4)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(6)">Next →</button>
                 </div>
             </div>
@@ -661,7 +661,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(5)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(7)">Next →</button>
                 </div>
             </div>
@@ -673,7 +673,7 @@ include 'includes/connect.php';
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(6)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()" disabled>💾 Save Character</button>
+                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" disabled>Next →</button>
                 </div>
             </div>

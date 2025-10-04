@@ -1,6 +1,42 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.0 (Current)
+## Version 0.3.0 (Current)
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **XAMPP Integration** - Complete local development environment setup
+- ✅ **Python API Backend** - Flask API server for character management
+- ✅ **Database Integration** - Full MySQL database with all character tables
+- ✅ **User Authentication** - Login system with role-based access control
+- ✅ **Character Ownership** - Users own their characters, admin sees all
+- ✅ **Admin Panel** - Complete admin interface for character management
+- ✅ **Database Setup Scripts** - Automated database creation and user setup
+
+### Technical Infrastructure:
+- **XAMPP Configuration** - Apache serving from project directory
+- **Python Flask API** - RESTful endpoints for character CRUD operations
+- **MySQL Database** - Complete schema with 12 character-related tables
+- **User Management** - Admin and regular user roles with proper access control
+- **Development Tools** - Automated setup scripts and configuration files
+
+### Database Schema:
+- **users** - User accounts with role-based access
+- **characters** - Main character records with user ownership
+- **character_traits** - Character trait assignments
+- **character_abilities** - Character ability records
+- **character_disciplines** - Vampire discipline tracking
+- **character_backgrounds** - Character background points
+- **character_merits_flaws** - Merits and flaws system
+- **character_morality** - Humanity and virtue tracking
+- **character_derangements** - Mental derangement records
+- **character_equipment** - Equipment and items
+- **character_influences** - Social influence tracking
+- **character_rituals** - Thaumaturgy/ritual knowledge
+- **character_status** - Current game status
+
+---
+
+## Version 0.2.0
 **Date:** January 4, 2025
 
 ### Major Features Added:

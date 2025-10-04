@@ -1,4 +1,8 @@
 // Laws of the Night Character Creation - JavaScript Functions
+// Version 0.2.0
+
+// API Configuration
+const API_BASE_URL = 'http://localhost:5000/api';
 
 // Tab functionality
 function showTab(tabIndex) {
@@ -23,9 +27,130 @@ function showTab(tabIndex) {
     }
 }
 
-// Character saving function (placeholder)
+// Character saving function
 function saveCharacter() {
-    alert('Save functionality will be implemented soon!');
+    // Collect all form data
+    const formData = collectFormData();
+    
+    // Validate required fields
+    if (!validateFormData(formData)) {
+        return;
+    }
+    
+    // Show loading state
+    const saveButtons = document.querySelectorAll('.save-btn');
+    saveButtons.forEach(btn => {
+        btn.disabled = true;
+        btn.innerHTML = '💾 Saving...';
+    });
+    
+    // Send data to server via Python API
+    fetch(`${API_BASE_URL}/characters`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Character saved successfully!');
+            // Reset form or redirect
+            console.log('Character ID:', data.character_id);
+        } else {
+            alert('Error saving character: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error saving character. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
+        saveButtons.forEach(btn => {
+            btn.disabled = false;
+            btn.innerHTML = '💾 Save Character';
+        });
+    });
+}
+
+// Collect all form data
+function collectFormData() {
+    const form = document.getElementById('characterForm');
+    const formData = new FormData(form);
+    
+    // Basic character info
+    const data = {
+        character_name: formData.get('characterName'),
+        player_name: formData.get('playerName'),
+        chronicle: formData.get('chronicle'),
+        nature: formData.get('nature'),
+        demeanor: formData.get('demeanor'),
+        concept: formData.get('concept'),
+        clan: formData.get('clan'),
+        generation: parseInt(formData.get('generation')),
+        sire: formData.get('sire'),
+        pc: formData.get('pc') === 'on',
+        biography: formData.get('biography') || '',
+        equipment: formData.get('equipment') || '',
+        total_xp: 30,
+        spent_xp: characterData.xpSpent,
+        traits: characterData.traits,
+        negativeTraits: characterData.negativeTraits,
+        abilities: [], // Will be populated when abilities tab is implemented
+        disciplines: [], // Will be populated when disciplines tab is implemented
+        backgrounds: [], // Will be populated when backgrounds tab is implemented
+        merits_flaws: [], // Will be populated when merits & flaws tab is implemented
+        morality: {
+            path_name: 'Humanity',
+            path_rating: 7,
+            conscience: 1,
+            self_control: 1,
+            courage: 1,
+            willpower_permanent: 5,
+            willpower_current: 5,
+            humanity: 7
+        },
+        status: {
+            sect_status: '',
+            clan_status: '',
+            city_status: '',
+            health_levels: 'Healthy',
+            blood_pool_current: 10,
+            blood_pool_maximum: 10
+        }
+    };
+    
+    return data;
+}
+
+// Validate form data
+function validateFormData(data) {
+    const required = ['character_name', 'player_name', 'nature', 'demeanor', 'concept', 'clan', 'generation'];
+    
+    for (let field of required) {
+        if (!data[field] || data[field].toString().trim() === '') {
+            alert(`Please fill in the ${field.replace('_', ' ')} field.`);
+            return false;
+        }
+    }
+    
+    // Check trait requirements (7 per category)
+    const traitCounts = {
+        Physical: characterData.traits.Physical.length,
+        Social: characterData.traits.Social.length,
+        Mental: characterData.traits.Mental.length
+    };
+    
+    for (let category in traitCounts) {
+        if (traitCounts[category] < 7) {
+            alert(`Please select at least 7 ${category} traits.`);
+            return false;
+        }
+    }
+    
+    return true;
 }
 
 // Character data storage
