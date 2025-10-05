@@ -42,11 +42,34 @@ try {
     
     $character_id = mysqli_insert_id($conn);
     
+    // Save backgrounds if provided
+    if (isset($data['backgrounds']) && is_array($data['backgrounds'])) {
+        $backgrounds_saved = 0;
+        $background_details = $data['backgroundDetails'] ?? [];
+        
+        foreach ($data['backgrounds'] as $background_name => $level) {
+            if ($level > 0) {
+                $details = $background_details[$background_name] ?? '';
+                $background_sql = "INSERT INTO character_backgrounds (character_id, background_name, level, details) VALUES (?, ?, ?, ?)";
+                $background_stmt = mysqli_prepare($conn, $background_sql);
+                
+                if ($background_stmt) {
+                    mysqli_stmt_bind_param($background_stmt, 'isss', $character_id, $background_name, $level, $details);
+                    if (mysqli_stmt_execute($background_stmt)) {
+                        $backgrounds_saved++;
+                    }
+                    mysqli_stmt_close($background_stmt);
+                }
+            }
+        }
+    }
+    
     echo json_encode([
         'success' => true, 
         'message' => 'Character saved successfully!',
         'character_id' => $character_id,
-        'character_name' => $character_name
+        'character_name' => $character_name,
+        'backgrounds_saved' => $backgrounds_saved ?? 0
     ]);
     
 } catch (Exception $e) {

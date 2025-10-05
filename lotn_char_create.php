@@ -8,7 +8,7 @@
 <body>
 	<?php
 // LOTN Character Creator - Version 0.2.9
-define('LOTN_VERSION', '0.3.0');
+define('LOTN_VERSION', '0.4.0');
 
 session_start();
 
@@ -166,8 +166,8 @@ include 'includes/connect.php';
                     <span class="user-label">Logged in as:</span>
                     <span class="user-name"><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest User'; ?></span>
                 </div>
-                <div class="version-info">
-                    <span class="version">v<?php echo LOTN_VERSION; ?></span>
+            <div class="version-info">
+                <span class="version">v<?php echo LOTN_VERSION; ?></span>
                 </div>
             </div>
             <div class="xp-tracker">
@@ -915,7 +915,315 @@ include 'includes/connect.php';
             <!-- Tab 5: Backgrounds -->
             <div class="tab-content" id="tab4">
                 <h2 style="color: #8b0000; margin-bottom: 25px;">Backgrounds</h2>
-                <p>Backgrounds section - Coming soon!</p>
+                <p style="color: #666; margin-bottom: 20px;">Select your character's resources, connections, and social standing. Each background represents different types of influence and support available to your character.</p>
+                
+                <!-- Backgrounds Progress Summary -->
+                <div class="backgrounds-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Background Points:</span>
+                        <span class="summary-value" id="totalBackgroundsDisplay">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Free Points:</span>
+                        <span class="summary-value" id="freeBackgroundsDisplay">5</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">XP Cost:</span>
+                        <span class="summary-value" id="backgroundsXpDisplay">0</span>
+                    </div>
+                </div>
+                
+                <!-- Auto-calculated Generation Background -->
+                <div class="background-section auto-calculated">
+                    <div class="background-header">
+                        <h3>🧬 Generation (Auto-calculated)</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="generationCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="generationProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Your vampire generation background is automatically calculated from your Basic Info generation selection. Lower generation numbers (closer to Caine) provide more influence and status.</p>
+                    <div class="background-list" id="generationList">
+                        <div class="background-empty">Generation will be calculated from Basic Info</div>
+                    </div>
+                </div>
+                
+                <!-- Allies -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>🤝 Allies</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="alliesCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="alliesProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Friends, contacts, and people who will help you. Each point represents a significant ally or group of allies.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="1" onclick="selectBackground('Allies', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="2" onclick="selectBackground('Allies', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="3" onclick="selectBackground('Allies', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="4" onclick="selectBackground('Allies', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="5" onclick="selectBackground('Allies', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="alliesList"></div>
+                    <div class="background-details">
+                        <label for="alliesDetails">Additional Information:</label>
+                        <textarea id="alliesDetails" class="background-textarea" placeholder="Describe your allies (e.g., 'A D&D group that meets every Wednesday night', 'My old college friends who work in law enforcement')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Contacts -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>📞 Contacts</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="contactsCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="contactsProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Information networks, informants, and people who provide you with knowledge and intelligence.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="1" onclick="selectBackground('Contacts', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="2" onclick="selectBackground('Contacts', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="3" onclick="selectBackground('Contacts', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="4" onclick="selectBackground('Contacts', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="5" onclick="selectBackground('Contacts', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="contactsList"></div>
+                    <div class="background-details">
+                        <label for="contactsDetails">Additional Information:</label>
+                        <textarea id="contactsDetails" class="background-textarea" placeholder="Describe your contacts (e.g., 'Police informant in downtown precinct', 'Journalist at the local newspaper')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Fame -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>⭐ Fame</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="fameCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="fameProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Public recognition, reputation, and celebrity status in mortal or Kindred society.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="1" onclick="selectBackground('Fame', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="2" onclick="selectBackground('Fame', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="3" onclick="selectBackground('Fame', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="4" onclick="selectBackground('Fame', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="5" onclick="selectBackground('Fame', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="fameList"></div>
+                    <div class="background-details">
+                        <label for="fameDetails">Additional Information:</label>
+                        <textarea id="fameDetails" class="background-textarea" placeholder="Describe your fame (e.g., 'Local TV news anchor', 'Famous musician in the underground scene')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                
+                <!-- Herd -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>🩸 Herd</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="herdCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="herdProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Regular sources of blood - people who willingly or unknowingly provide sustenance.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="1" onclick="selectBackground('Herd', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="2" onclick="selectBackground('Herd', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="3" onclick="selectBackground('Herd', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="4" onclick="selectBackground('Herd', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="5" onclick="selectBackground('Herd', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="herdList"></div>
+                    <div class="background-details">
+                        <label for="herdDetails">Additional Information:</label>
+                        <textarea id="herdDetails" class="background-textarea" placeholder="Describe your herd (e.g., 'A D&D group that meets every Wednesday night', 'Regulars at the local coffee shop')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Influence -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>🏛️ Influence</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="influenceCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="influenceProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Political power, social influence, and ability to affect change in mortal or Kindred society.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="1" onclick="selectBackground('Influence', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="2" onclick="selectBackground('Influence', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="3" onclick="selectBackground('Influence', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="4" onclick="selectBackground('Influence', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="5" onclick="selectBackground('Influence', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="influenceList"></div>
+                    <div class="background-details">
+                        <label for="influenceDetails">Additional Information:</label>
+                        <textarea id="influenceDetails" class="background-textarea" placeholder="Describe your influence (e.g., 'City council member', 'Union representative')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Mentor -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>👨‍🏫 Mentor</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="mentorCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="mentorProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">A teacher, guide, or patron who provides knowledge, protection, and guidance.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="1" onclick="selectBackground('Mentor', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="2" onclick="selectBackground('Mentor', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="3" onclick="selectBackground('Mentor', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="4" onclick="selectBackground('Mentor', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="5" onclick="selectBackground('Mentor', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="mentorList"></div>
+                    <div class="background-details">
+                        <label for="mentorDetails">Additional Information:</label>
+                        <textarea id="mentorDetails" class="background-textarea" placeholder="Describe your mentor (e.g., 'Elder Ventrue who taught me politics', 'Former military officer')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Resources -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>💰 Resources</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="resourcesCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="resourcesProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Money, property, equipment, and material wealth available to your character.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="1" onclick="selectBackground('Resources', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="2" onclick="selectBackground('Resources', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="3" onclick="selectBackground('Resources', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="4" onclick="selectBackground('Resources', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="5" onclick="selectBackground('Resources', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="resourcesList"></div>
+                    <div class="background-details">
+                        <label for="resourcesDetails">Additional Information:</label>
+                        <textarea id="resourcesDetails" class="background-textarea" placeholder="Describe your resources (e.g., 'Inherited family business', 'Tech startup shares')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Retainers -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>👥 Retainers</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="retainersCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="retainersProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Servants, assistants, and loyal followers who serve your character.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="1" onclick="selectBackground('Retainers', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="2" onclick="selectBackground('Retainers', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="3" onclick="selectBackground('Retainers', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="4" onclick="selectBackground('Retainers', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="5" onclick="selectBackground('Retainers', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="retainersList"></div>
+                    <div class="background-details">
+                        <label for="retainersDetails">Additional Information:</label>
+                        <textarea id="retainersDetails" class="background-textarea" placeholder="Describe your retainers (e.g., 'Personal assistant and bodyguard', 'Housekeeper and cook')" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Status -->
+                <div class="background-section">
+                    <div class="background-header">
+                        <h3>👑 Status</h3>
+                        <div class="background-progress">
+                            <div class="background-progress-label">
+                                <span><span id="statusCountDisplay">0</span> points</span>
+                            </div>
+                            <div class="background-progress-bar">
+                                <div class="background-progress-fill" id="statusProgressFill" style="width: 0%;">
+                                    <div class="background-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="background-description">Social standing, rank, and position within Kindred society or mortal organizations.</p>
+                    <div class="background-options">
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="1" onclick="selectBackground('Status', 1)">1</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="2" onclick="selectBackground('Status', 2)">2</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="3" onclick="selectBackground('Status', 3)">3</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="4" onclick="selectBackground('Status', 4)">4</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="5" onclick="selectBackground('Status', 5)">5</button>
+                    </div>
+                    <div class="background-list" id="statusList"></div>
+                    <div class="background-details">
+                        <label for="statusDetails">Additional Information:</label>
+                        <textarea id="statusDetails" class="background-textarea" placeholder="Describe your status (e.g., 'Prince of the city', 'Police lieutenant')" rows="2"></textarea>
+                    </div>
+                </div>
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(3)">← Previous</button>
@@ -961,9 +1269,9 @@ include 'includes/connect.php';
                     <div class="finalization-options">
                         <h3>Finalize Your Character</h3>
                         <p>When you're ready to complete your character, click "Finalize Character" to save it permanently and generate your character sheet.</p>
-                        
-                        <div class="button-group">
-                            <button type="button" onclick="showTab(6)">← Previous</button>
+                
+                <div class="button-group">
+                    <button type="button" onclick="showTab(6)">← Previous</button>
                             <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Draft</button>
                             <button type="button" class="finalize-btn" onclick="showFinalizePopup()">🎯 Finalize Character</button>
                         </div>

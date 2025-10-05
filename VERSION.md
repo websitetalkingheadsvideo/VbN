@@ -1,6 +1,56 @@
 # LOTN Character Creator - Version History
 
-## Version 0.3.0 (Current)
+## Version 0.4.0 (Current)
+**Date:** January 5, 2025
+
+### Major Features Added:
+- ✅ **Complete Backgrounds System** - All 10 background categories with full functionality
+- ✅ **Background Selection Interface** - Interactive buttons with level selection (1-5)
+- ✅ **Background Progress Tracking** - Real-time progress bars and count displays
+- ✅ **Background XP Calculation** - First 5 background points free, additional points cost 2 XP each
+- ✅ **Background Details System** - Text areas for players to describe their specific backgrounds
+- ✅ **Auto-calculated Generation Background** - Generation background automatically calculated from Basic Info
+- ✅ **Background Database Integration** - Backgrounds saved to database with detailed descriptions
+- ✅ **Character Summary Integration** - Backgrounds included in character summary and sheet
+
+### Background Categories:
+- **Allies** - Friends, contacts, and people who will help you
+- **Contacts** - Information networks, informants, and intelligence sources
+- **Fame** - Public recognition, reputation, and celebrity status
+- **Generation** - Auto-calculated from Basic Info generation selection
+- **Herd** - Regular sources of blood and sustenance
+- **Influence** - Political power and social influence
+- **Mentor** - Teacher, guide, or patron providing knowledge and protection
+- **Resources** - Money, property, equipment, and material wealth
+- **Retainers** - Servants, assistants, and loyal followers
+- **Status** - Social standing and position within Kindred or mortal society
+
+### Technical Improvements:
+- Added comprehensive backgrounds HTML structure with progress bars
+- Implemented JavaScript functions for background selection and display updates
+- Added CSS styling for backgrounds system with professional appearance
+- Integrated backgrounds XP calculation into the main XP system
+- Added background details textareas with event listeners
+- Updated database schema to include background details column
+- Enhanced character summary and sheet generation to include background details
+- Fixed duplicate generation field by auto-calculating from Basic Info
+
+### User Experience Improvements:
+- Clear visual feedback for background selection with progress bars
+- Helpful placeholder text with examples for each background type
+- Real-time XP calculation updates as backgrounds are selected
+- Professional styling consistent with the rest of the application
+- Background details appear in character summary and sheet
+
+### Next Development Priority:
+- **Site Look & Design** - Improve overall visual appearance and user interface
+- **Enhanced Character Saving** - Add remaining fields to save functionality
+- **Character Loading/Editing** - Allow users to load and edit existing characters
+- **PDF Generation** - Implement character sheet PDF download
+
+---
+
+## Version 0.3.0
 **Date:** January 5, 2025
 
 ### Major Features Added:
@@ -29,12 +79,6 @@
 - ✅ User authentication and display working
 - ✅ All UI components functional
 - 🔄 Complex field saving needs debugging (technical issue with SQL statements)
-
-### Next Development Priority:
-- **Backgrounds System** - Implement backgrounds tab with resource tracking
-- **Enhanced Character Saving** - Add remaining fields to save functionality
-- **Character Loading/Editing** - Allow users to load and edit existing characters
-- **PDF Generation** - Implement character sheet PDF download
 
 ---
 

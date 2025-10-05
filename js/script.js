@@ -154,7 +154,8 @@ function collectFormData() {
         negativeTraits: characterData.negativeTraits,
         abilities: characterData.abilities,
         disciplines: characterData.disciplines,
-        backgrounds: [], // Will be populated when backgrounds tab is implemented
+        backgrounds: characterData.backgrounds,
+        backgroundDetails: characterData.backgroundDetails,
         merits_flaws: [], // Will be populated when merits & flaws tab is implemented
         morality: {
             path_name: 'Humanity',
@@ -777,6 +778,30 @@ let characterData = {
         appearance: ['Athletic', 'Well-built'],
         legacy: ['Fast', 'Muscular']
     },
+    backgrounds: {
+        Allies: 0,
+        Contacts: 0,
+        Fame: 0,
+        Generation: 0,
+        Herd: 0,
+        Influence: 0,
+        Mentor: 0,
+        Resources: 0,
+        Retainers: 0,
+        Status: 0
+    },
+    backgroundDetails: {
+        Allies: '',
+        Contacts: '',
+        Fame: '',
+        Generation: '',
+        Herd: '',
+        Influence: '',
+        Mentor: '',
+        Resources: '',
+        Retainers: '',
+        Status: ''
+    },
     xpSpent: 0,
     xpRemaining: 30,
     isCharacterComplete: false // Track if character creation is finished
@@ -1391,7 +1416,11 @@ function updateXPDisplay() {
         negativeTraitsXP += negativeCount * 4;
     });
     
-    totalXP = traitsXP + abilitiesXP + disciplinesXP - negativeTraitsXP; // Negative traits reduce XP cost
+    // Calculate XP spent on backgrounds (first 5 points are free, additional points cost 2 XP each)
+    const totalBackgroundPoints = Object.values(characterData.backgrounds).reduce((sum, level) => sum + level, 0);
+    const backgroundsXP = Math.max(0, totalBackgroundPoints - 5) * 2;
+    
+    totalXP = traitsXP + abilitiesXP + disciplinesXP + backgroundsXP - negativeTraitsXP; // Negative traits reduce XP cost
     
     // Update character data
     characterData.xpSpent = totalXP;
@@ -1404,6 +1433,7 @@ function updateXPDisplay() {
     document.getElementById('xpTraits').textContent = traitsXP;
     document.getElementById('xpAbilities').textContent = abilitiesXP;
     document.getElementById('xpDisciplines').textContent = disciplinesXP;
+    document.getElementById('xpBackgrounds').textContent = backgroundsXP;
     document.getElementById('xpFlaws').textContent = negativeTraitsXP;
     
     // Update XP remaining color
@@ -1688,6 +1718,16 @@ function generateCharacterSummary() {
     const totalDisciplines = Object.keys(characterData.disciplines).length;
     const totalDisciplineLevels = Object.values(characterData.disciplines).reduce((sum, levels) => sum + levels.length, 0);
     
+    // Count backgrounds
+    const totalBackgroundPoints = Object.values(characterData.backgrounds).reduce((sum, level) => sum + level, 0);
+    const selectedBackgrounds = Object.entries(characterData.backgrounds)
+        .filter(([name, level]) => level > 0)
+        .map(([name, level]) => {
+            const details = characterData.backgroundDetails[name] ? ` (${characterData.backgroundDetails[name]})` : '';
+            return `${name} ${level}${details}`;
+        })
+        .join(', ');
+    
     // XP summary
     const totalXP = characterData.xpRemaining + characterData.xpSpent;
     const spentXP = characterData.xpSpent;
@@ -1722,6 +1762,11 @@ function generateCharacterSummary() {
                     <h5>Disciplines</h5>
                     <p><strong>Total Disciplines:</strong> ${totalDisciplines}</p>
                     <p><strong>Total Levels:</strong> ${totalDisciplineLevels}</p>
+                </div>
+                <div class="summary-section">
+                    <h5>Backgrounds</h5>
+                    <p><strong>Total Points:</strong> ${totalBackgroundPoints}/5</p>
+                    <p><strong>Selected:</strong> ${selectedBackgrounds || 'None'}</p>
                 </div>
                 <div class="summary-section">
                     <h5>Experience</h5>
@@ -1864,6 +1909,22 @@ function generateCharacterSheet() {
             </div>
             
             <div class="sheet-section">
+                <h3>Backgrounds</h3>
+                <div class="backgrounds-list">
+                    ${Object.entries(characterData.backgrounds)
+                        .filter(([name, level]) => level > 0)
+                        .map(([name, level]) => {
+                            const details = characterData.backgroundDetails[name] ? ` - ${characterData.backgroundDetails[name]}` : '';
+                            return `<div class="background-item">
+                                <strong>${name}:</strong> ${level}${details}
+                            </div>`;
+                        }).join('')}
+                    ${Object.values(characterData.backgrounds).every(level => level === 0) ? 
+                        '<div class="background-item">No backgrounds selected</div>' : ''}
+                </div>
+            </div>
+            
+            <div class="sheet-section">
                 <h3>Experience</h3>
                 <div class="xp-info">
                     <p><strong>Total XP:</strong> ${characterData.xpRemaining + characterData.xpSpent}</p>
@@ -1884,6 +1945,171 @@ function downloadCharacterSheet() {
 }
 
 // Initialize the character creation form
+// Backgrounds System Functions
+function calculateGenerationBackground() {
+    const generationSelect = document.getElementById('generation');
+    if (!generationSelect) return 0;
+    
+    const generationValue = parseInt(generationSelect.value);
+    if (!generationValue) return 0;
+    
+    // Convert generation to background points (lower generation = higher background)
+    // 13th generation = 1 point, 12th = 2 points, 11th = 3 points, 10th = 4 points, 9th = 5 points
+    // Higher generations (14th, 15th) = 0 points
+    if (generationValue >= 9 && generationValue <= 13) {
+        return 14 - generationValue; // 13th=1, 12th=2, 11th=3, 10th=4, 9th=5
+    }
+    return 0; // 14th generation and higher get 0 background points
+}
+
+function updateGenerationBackground() {
+    const generationLevel = calculateGenerationBackground();
+    characterData.backgrounds.Generation = generationLevel;
+    updateBackgroundDisplay('Generation');
+    updateBackgroundsSummary();
+    updateXPDisplay();
+}
+
+function selectBackground(backgroundName, level) {
+    // Check if this level is already selected
+    if (characterData.backgrounds[backgroundName] === level) {
+        // Deselect if already selected
+        characterData.backgrounds[backgroundName] = 0;
+    } else {
+        // Select new level
+        characterData.backgrounds[backgroundName] = level;
+    }
+    
+    // Update display
+    updateBackgroundDisplay(backgroundName);
+    updateBackgroundsSummary();
+    updateXPDisplay();
+}
+
+function updateBackgroundDisplay(backgroundName) {
+    const level = characterData.backgrounds[backgroundName];
+    const countDisplay = document.getElementById(backgroundName.toLowerCase() + 'CountDisplay');
+    const progressFill = document.getElementById(backgroundName.toLowerCase() + 'ProgressFill');
+    const backgroundList = document.getElementById(backgroundName.toLowerCase() + 'List');
+    
+    // Update count display
+    if (countDisplay) {
+        countDisplay.textContent = level;
+    }
+    
+    // Update progress bar
+    if (progressFill) {
+        const percentage = (level / 5) * 100;
+        progressFill.style.width = percentage + '%';
+        
+        // Update progress bar class
+        if (level > 0) {
+            progressFill.classList.add('complete');
+        } else {
+            progressFill.classList.remove('complete');
+        }
+    }
+    
+    // Update background list
+    if (backgroundList) {
+        backgroundList.innerHTML = '';
+        
+        if (level > 0) {
+            const backgroundItem = document.createElement('div');
+            backgroundItem.className = 'background-item';
+            if (backgroundName === 'Generation') {
+                // Auto-calculated background - no remove button
+                backgroundItem.innerHTML = `<span>${backgroundName} ${level} (Auto-calculated)</span>`;
+            } else {
+                // Manual background - with remove button
+                backgroundItem.innerHTML = `
+                    <span>${backgroundName} ${level}</span>
+                    <button type="button" class="remove-btn" onclick="selectBackground('${backgroundName}', ${level})" title="Remove">×</button>
+                `;
+            }
+            backgroundList.appendChild(backgroundItem);
+        } else {
+            const emptyMessage = document.createElement('div');
+            emptyMessage.className = 'background-empty';
+            if (backgroundName === 'Generation') {
+                emptyMessage.textContent = 'Generation will be calculated from Basic Info';
+            } else {
+                emptyMessage.textContent = 'No background selected';
+            }
+            backgroundList.appendChild(emptyMessage);
+        }
+    }
+    
+    // Update button states (skip for auto-calculated Generation)
+    if (backgroundName !== 'Generation') {
+        updateBackgroundButtons(backgroundName);
+    }
+}
+
+function updateBackgroundButtons(backgroundName) {
+    const level = characterData.backgrounds[backgroundName];
+    const buttons = document.querySelectorAll(`[data-background="${backgroundName}"]`);
+    
+    buttons.forEach(button => {
+        const buttonLevel = parseInt(button.dataset.level);
+        if (buttonLevel === level) {
+            button.classList.add('selected');
+        } else {
+            button.classList.remove('selected');
+        }
+    });
+}
+
+function updateBackgroundsSummary() {
+    const totalPoints = Object.values(characterData.backgrounds).reduce((sum, level) => sum + level, 0);
+    const freePoints = 5; // Characters get 5 free background points
+    const usedFreePoints = Math.min(totalPoints, freePoints);
+    const xpCost = Math.max(0, totalPoints - freePoints) * 2; // Each point over 5 costs 2 XP
+    
+    // Update displays
+    const totalDisplay = document.getElementById('totalBackgroundsDisplay');
+    const freeDisplay = document.getElementById('freeBackgroundsDisplay');
+    const xpDisplay = document.getElementById('backgroundsXpDisplay');
+    
+    if (totalDisplay) totalDisplay.textContent = totalPoints;
+    if (freeDisplay) freeDisplay.textContent = `${usedFreePoints}/${freePoints}`;
+    if (xpDisplay) xpDisplay.textContent = xpCost;
+    
+    // Update XP tracker
+    updateXPDisplay();
+}
+
+function initializeBackgrounds() {
+    // Initialize manual background displays (excluding Generation which is auto-calculated)
+    const manualBackgroundNames = ['Allies', 'Contacts', 'Fame', 'Herd', 'Influence', 'Mentor', 'Resources', 'Retainers', 'Status'];
+    
+    manualBackgroundNames.forEach(backgroundName => {
+        updateBackgroundDisplay(backgroundName);
+    });
+    
+    // Initialize auto-calculated generation background
+    updateGenerationBackground();
+    
+    // Add event listener to generation dropdown
+    const generationSelect = document.getElementById('generation');
+    if (generationSelect) {
+        generationSelect.addEventListener('change', updateGenerationBackground);
+    }
+    
+    // Add event listeners to background detail textareas
+    const backgroundNames = ['Allies', 'Contacts', 'Fame', 'Herd', 'Influence', 'Mentor', 'Resources', 'Retainers', 'Status'];
+    backgroundNames.forEach(backgroundName => {
+        const textarea = document.getElementById(backgroundName.toLowerCase() + 'Details');
+        if (textarea) {
+            textarea.addEventListener('input', function() {
+                characterData.backgroundDetails[backgroundName] = this.value;
+            });
+        }
+    });
+    
+    updateBackgroundsSummary();
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     // Initialize any required functionality when page loads
     console.log('LOTN Character Creation form loaded');
@@ -1893,6 +2119,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Initialize discipline section visibility
     initializeDisciplineSections();
+    
+    // Initialize backgrounds system
+    initializeBackgrounds();
     
     // Generate character summary when Final Details tab is shown
     const finalDetailsTab = document.querySelector('[onclick="showTab(7)"]');
