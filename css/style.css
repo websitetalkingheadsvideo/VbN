@@ -108,7 +108,7 @@ h4, .subsection-title {
 }
 
 .stat-value.negative {
-    color: #ff6b6b;
+    color: #ff4444;
 }
 
 .stat-value.positive {
@@ -642,31 +642,31 @@ button:disabled {
 }
 
 .negative-traits-section h4 {
-    color: #ff6b6b;
+    color: #ff4444;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
 .trait-option-btn.negative {
     background: #4a1a1a;
-    border-color: #ff6b6b;
+    border-color: #ff4444;
     color: #ff9999;
 }
 
 .trait-option-btn.negative:hover {
-    background: #ff6b6b;
-    border-color: #ff6b6b;
+    background: #ff4444;
+    border-color: #ff4444;
     color: #fff;
 }
 
 .trait-option-btn.negative.selected {
-    background: #ff6b6b;
-    border-color: #ff6b6b;
+    background: #ff4444;
+    border-color: #ff4444;
     color: #fff;
 }
 
 .selected-trait.negative {
-    background: #ff6b6b;
+    background: #ff4444;
     color: #fff;
 }
 
@@ -1351,7 +1351,7 @@ button:disabled {
 }
 
 .clan-table td:nth-child(3) {
-    color: #ff6b6b;
+    color: #ff4444;
 }
 
 .clan-table td:nth-child(4) {
@@ -1367,7 +1367,7 @@ button:disabled {
 }
 
 .clan-table .admin-approval {
-    color: #ff6b6b; /* Red for Admin Approval */
+    color: #ff4444; /* Red for Admin Approval */
 }
 
 /* Finalize Character Styles */
