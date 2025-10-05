@@ -8,7 +8,7 @@
 <body>
 	<?php
 // LOTN Character Creator - Version 0.2.0
-define('LOTN_VERSION', '0.3.0');
+define('LOTN_VERSION', '0.2.3');
 
 session_start();
 
@@ -609,7 +609,153 @@ include 'includes/connect.php';
             <!-- Tab 3: Abilities -->
             <div class="tab-content" id="tab2">
                 <h2 style="color: #8b0000; margin-bottom: 25px;">Abilities</h2>
-                <p>Abilities section - Coming soon!</p>
+                
+                <div class="info-box">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1;">
+                            <strong>Ability Selection:</strong> Choose your abilities from the lists below.
+                            <ul>
+                                <li><strong>First 3 ability dots</strong> in each category are <strong>FREE</strong></li>
+                                <li>Ability dots 4-5 cost <strong>2 XP each</strong></li>
+                                <li><strong>Maximum 5 dots per individual ability</strong> (e.g., Athletics 5, Brawl 3, etc.)</li>
+                                <li><strong>You can select the same ability multiple times</strong> - click the same ability button repeatedly to add dots</li>
+                                <li><strong>Remove ability dots anytime</strong> - click the × button on any selected ability to remove dots</li>
+                                <li>Each click adds 1 dot to that ability and counts toward your XP cost</li>
+                            </ul>
+                        </div>
+                        <button type="button" class="help-btn" onclick="showDisciplineGuide()" title="View Discipline-Ability Guide">
+                            <span>?</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Physical Abilities -->
+                <div class="ability-section">
+                    <div class="ability-header">
+                        <h3>⚔️ Physical Abilities</h3>
+                        <div class="ability-progress">
+                            <div class="ability-progress-label">
+                                <span><span id="physicalAbilitiesCountDisplay">0</span> dots</span>
+                                <span>3 required | 5 max per ability</span>
+                            </div>
+                            <div class="ability-progress-bar">
+                                <div class="ability-progress-fill incomplete" id="physicalAbilitiesProgressFill" style="width: 0%;">
+                                    <div class="ability-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ability-options" id="physicalAbilitiesOptions">
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Athletics')">Athletics</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Brawl')">Brawl</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Dodge')">Dodge</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Firearms')">Firearms</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Melee')">Melee</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Security')">Security</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Stealth')">Stealth</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Survival')">Survival</button>
+                    </div>
+                    
+                    <div class="ability-list" id="physicalAbilitiesList">
+                    </div>
+                </div>
+                
+                <!-- Social Abilities -->
+                <div class="ability-section">
+                    <div class="ability-header">
+                        <h3>💬 Social Abilities</h3>
+                        <div class="ability-progress">
+                            <div class="ability-progress-label">
+                                <span><span id="socialAbilitiesCountDisplay">0</span> dots</span>
+                                <span>3 required | 5 max per ability</span>
+                            </div>
+                            <div class="ability-progress-bar">
+                                <div class="ability-progress-fill incomplete" id="socialAbilitiesProgressFill" style="width: 0%;">
+                                    <div class="ability-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ability-options" id="socialAbilitiesOptions">
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Animal Ken')">Animal Ken</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Empathy')">Empathy</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Expression')">Expression</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Intimidation')">Intimidation</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Leadership')">Leadership</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Subterfuge')">Subterfuge</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Streetwise')">Streetwise</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Etiquette')">Etiquette</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Performance')">Performance</button>
+                    </div>
+                    
+                    <div class="ability-list" id="socialAbilitiesList">
+                    </div>
+                </div>
+                
+                <!-- Mental Abilities -->
+                <div class="ability-section">
+                    <div class="ability-header">
+                        <h3>🧠 Mental Abilities</h3>
+                        <div class="ability-progress">
+                            <div class="ability-progress-label">
+                                <span><span id="mentalAbilitiesCountDisplay">0</span> dots</span>
+                                <span>3 required | 5 max per ability</span>
+                            </div>
+                            <div class="ability-progress-bar">
+                                <div class="ability-progress-fill incomplete" id="mentalAbilitiesProgressFill" style="width: 0%;">
+                                    <div class="ability-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ability-options" id="mentalAbilitiesOptions">
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Academics')">Academics</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Computer')">Computer</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Finance')">Finance</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Investigation')">Investigation</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Law')">Law</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Linguistics')">Linguistics</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Medicine')">Medicine</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Occult')">Occult</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Politics')">Politics</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Science')">Science</button>
+                    </div>
+                    
+                    <div class="ability-list" id="mentalAbilitiesList">
+                    </div>
+                </div>
+                
+                <!-- Optional Abilities -->
+                <div class="ability-section">
+                    <div class="ability-header">
+                        <h3>🧩 Optional Abilities</h3>
+                        <div class="ability-progress">
+                            <div class="ability-progress-label">
+                                <span><span id="optionalAbilitiesCountDisplay">0</span> dots</span>
+                                <span>0 required | 5 max per ability</span>
+                            </div>
+                            <div class="ability-progress-bar">
+                                <div class="ability-progress-fill incomplete" id="optionalAbilitiesProgressFill" style="width: 0%;">
+                                    <div class="ability-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ability-options" id="optionalAbilitiesOptions">
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Alertness')">Alertness</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Awareness')">Awareness</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Drive')">Drive</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Crafts')">Crafts</button>
+                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Firecraft')">Firecraft</button>
+                    </div>
+                    
+                    <div class="ability-list" id="optionalAbilitiesList">
+                    </div>
+                </div>
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(1)">← Previous</button>
@@ -678,6 +824,58 @@ include 'includes/connect.php';
                 </div>
             </div>
         </form>
+    </div>
+
+    <!-- Discipline Guide Modal -->
+    <div id="disciplineGuideModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Discipline-Ability Guide</h2>
+                <button type="button" class="modal-close" onclick="closeDisciplineGuide()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Recommended abilities for each Discipline:</strong></p>
+                <div class="discipline-table-container">
+                    <table class="discipline-table">
+                        <thead>
+                            <tr>
+                                <th>Discipline</th>
+                                <th>Recommended Abilities</th>
+                                <th>Backgrounds That Fit</th>
+                                <th>Notes / Role Synergy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Animalism</strong></td><td>Animal Ken, Empathy, Survival</td><td>Allies (animals), Herd</td><td>Animal handler, Beast whisperer, Gangrel archetype</td></tr>
+                            <tr><td><strong>Auspex</strong></td><td>Awareness, Investigation, Occult, Empathy</td><td>Contacts, Mentor</td><td>Seer, investigator, Tremere or Malkavian vision user</td></tr>
+                            <tr><td><strong>Celerity</strong></td><td>Athletics, Dodge, Melee, Firearms</td><td>Resources (gear), Retainers</td><td>Speed fighter, assassin, duelist</td></tr>
+                            <tr><td><strong>Dominate</strong></td><td>Leadership, Intimidation, Subterfuge, Law</td><td>Status, Influence, Retainers</td><td>Commander, manipulator, Ventrue archetype</td></tr>
+                            <tr><td><strong>Fortitude</strong></td><td>Survival, Medicine</td><td>Mentor, Herd</td><td>Stoic survivor, soldier, protector</td></tr>
+                            <tr><td><strong>Obfuscate</strong></td><td>Stealth, Subterfuge, Security</td><td>Contacts, Allies</td><td>Spy, infiltrator, Nosferatu archetype</td></tr>
+                            <tr><td><strong>Potence</strong></td><td>Athletics, Brawl, Melee</td><td>Allies, Retainers</td><td>Enforcer, bruiser, physical powerhouse</td></tr>
+                            <tr><td><strong>Presence</strong></td><td>Leadership, Expression, Empathy, Subterfuge, Performance</td><td>Fame, Status, Herd</td><td>Social manipulator, performer, leader</td></tr>
+                            <tr><td><strong>Protean</strong></td><td>Survival, Animal Ken, Brawl</td><td>Allies, Herd</td><td>Shapeshifter, feral predator, Gangrel</td></tr>
+                            <tr><td><strong>Thaumaturgy</strong></td><td>Occult, Academics, Linguistics, Science</td><td>Mentor, Library (ST-ruled), Resources</td><td>Ritualist, scholar, Tremere archetype</td></tr>
+                            <tr><td><strong>Necromancy</strong></td><td>Occult, Investigation, Intimidation</td><td>Mentor, Contacts</td><td>Death mage, Giovanni archetype</td></tr>
+                            <tr><td><strong>Obtenebration</strong></td><td>Occult, Intimidation</td><td>Influence, Allies</td><td>Shadow wielder, Lasombra archetype</td></tr>
+                            <tr><td><strong>Chimerstry</strong></td><td>Expression, Subterfuge, Occult</td><td>Fame, Resources</td><td>Illusionist, artist, trickster</td></tr>
+                            <tr><td><strong>Dementation</strong></td><td>Empathy, Occult, Subterfuge</td><td>Mentor, Contacts</td><td>Manipulative seer, mind-breaker, Malkavian</td></tr>
+                            <tr><td><strong>Quietus</strong></td><td>Stealth, Medicine, Subterfuge</td><td>Retainers, Allies</td><td>Assassin, poisoner, infiltrator</td></tr>
+                            <tr><td><strong>Vicissitude</strong></td><td>Medicine, Crafts, Occult</td><td>Resources, Retainers</td><td>Flesh shaper, artisan, Tzimisce archetype</td></tr>
+                            <tr><td><strong>Serpentis</strong></td><td>Subterfuge, Expression, Empathy</td><td>Herd, Status</td><td>Seductive manipulator, Setite archetype</td></tr>
+                            <tr><td><strong>Koldunic Sorcery</strong></td><td>Occult, Survival, Science</td><td>Mentor, Resources</td><td>Elemental shaman or geomancer</td></tr>
+                            <tr><td><strong>Daimoinon</strong></td><td>Occult, Intimidation, Expression</td><td>Influence, Status</td><td>Infernalist, fearmonger</td></tr>
+                            <tr><td><strong>Melpominee</strong></td><td>Performance, Expression, Empathy</td><td>Fame, Herd</td><td>Toreador bard, social seducer</td></tr>
+                            <tr><td><strong>Valeren / Obeah</strong></td><td>Medicine, Empathy, Occult</td><td>Mentor, Status</td><td>Salubri healer or judge</td></tr>
+                            <tr><td><strong>Mortis</strong></td><td>Occult, Medicine, Investigation</td><td>Mentor, Contacts</td><td>Death-touched necromancer (Cappadocian lineage)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-btn" onclick="closeDisciplineGuide()">Close</button>
+            </div>
+        </div>
     </div>
 
     <script src="js/script.js"></script>

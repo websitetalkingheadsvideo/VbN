@@ -1,6 +1,58 @@
 # LOTN Character Creator - Version History
 
-## Version 0.3.0 (Current)
+## Version 0.2.3 (Current)
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Help Button System** - Optional discipline-ability guide in Abilities tab
+- ✅ **Discipline Guide Modal** - Complete chart with all 22 disciplines and recommendations
+- ✅ **Enhanced User Experience** - Optional reference without cluttering interface
+- ✅ **Professional Modal Design** - Color-coded table with responsive design
+
+### Help System Features:
+- **Help Button** - Small "?" button in Abilities tab info box
+- **Modal Window** - Full-screen overlay with discipline-ability chart
+- **Color-Coded Table** - Easy-to-read recommendations for each discipline
+- **Responsive Design** - Works on all screen sizes with scrollable content
+- **Multiple Close Options** - X button, Close button, or click outside
+
+### Technical Improvements:
+- Modal CSS with professional styling
+- JavaScript modal management functions
+- Responsive table design with sticky headers
+- Hover effects and smooth animations
+- Integration with existing ability selection system
+
+---
+
+## Version 0.2.2
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Complete Abilities System** - All 3 categories (Physical, Social, Mental) with full functionality, plus Optional abilities
+- ✅ **Ability Selection Interface** - Interactive buttons with multiple selection support
+- ✅ **Ability Progress Tracking** - Real-time progress bars and count displays
+- ✅ **Ability XP Calculation** - First 3 ability dots free, 4-5 cost 2 XP each
+- ✅ **Ability Management** - Add/remove ability dots with visual feedback
+- ✅ **Updated XP System** - Integrated abilities into total XP tracking
+- ✅ **5-Dot Maximum Per Ability** - Enforced maximum of 5 dots for any single ability
+
+### Ability Categories:
+- **Physical Abilities:** 8 abilities (Athletics, Brawl, Dodge, Firearms, Melee, Security, Stealth, Survival)
+- **Social Abilities:** 9 abilities (Animal Ken, Empathy, Expression, Intimidation, Leadership, Subterfuge, Streetwise, Etiquette, Performance)
+- **Mental Abilities:** 10 abilities (Academics, Computer, Finance, Investigation, Law, Linguistics, Medicine, Occult, Politics, Science)
+- **Optional Abilities:** 5 abilities (Alertness, Awareness, Drive, Crafts, Firecraft)
+
+### Technical Improvements:
+- Extended JavaScript functionality for abilities
+- New CSS styles for ability interface
+- Updated form validation to include abilities
+- Enhanced XP tracking system
+- Consistent UI/UX with trait system
+
+---
+
+## Version 0.2.1
 **Date:** January 4, 2025
 
 ### Major Features Added:

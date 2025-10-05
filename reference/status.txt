@@ -59,6 +59,76 @@ C:\Users\paris\VbN\
 - **JavaScript:** External `js/script.js` files only  
 - **Database:** Centralized `includes/connect.php` connection
 - **Code Organization:** Clean separation of concerns
+# LOTN Character Creator - Project Summary for Next Chat
+
+## 🎯 **Current Status: v0.2.1 - XAMPP + Python Integration Complete**
+
+### **What's Working:**
+- ✅ **XAMPP Development Environment** - Apache serving from `C:\Users\paris\VbN\`
+- ✅ **MySQL Database** - Complete schema with 12 character tables
+- ✅ **User Authentication** - Login system with role-based access (admin/user)
+- ✅ **Character Ownership** - Users own their characters, admin sees all
+- ✅ **Python Flask API** - RESTful endpoints for character management
+- ✅ **Admin Panel** - Full character management interface
+
+### **Access URLs:**
+- **Main App:** http://localhost/
+- **Character Creator:** http://localhost/lotn_char_create.php
+- **Admin Panel:** http://localhost/admin_panel.php
+- **Login:** http://localhost/login.php
+- **Python API:** http://localhost:5000/api/health
+
+### **Login Credentials:**
+- **Admin:** `admin` / `password`
+- **Test User:** `testuser` / `password`
+
+### **Current Features (Working):**
+- **Tab 1:** Basic Info (Character name, clan, generation, etc.)
+- **Tab 2:** Traits System (Physical/Social/Mental with negative traits)
+- **Tabs 3-8:** Placeholder (Abilities, Disciplines, Backgrounds, Morality, Merits & Flaws, Final Details)
+
+### **Database Structure:**
+- **12 Tables:** users, characters, character_traits, character_abilities, character_disciplines, character_backgrounds, character_merits_flaws, character_morality, character_derangements, character_equipment, character_influences, character_rituals, character_status
+- **User Ownership:** Each character linked to user_id
+- **Admin Access:** Can see/edit all characters
+
+### **Development Environment:**
+- **XAMPP:** Apache + MySQL running
+- **Python:** Flask API server (optional)
+- **Database:** `lotn_characters` in MySQL
+- **Setup Scripts:** `setup_database.php`, `check_users.php`, `start_development.bat`
+
+### **Next Development Priorities:**
+1. **Complete Tab 3:** Abilities system
+2. **Complete Tab 4:** Disciplines system  
+3. **Complete Tab 5:** Backgrounds system
+4. **Complete Tab 6:** Morality & Stats system
+5. **Complete Tab 7:** Merits & Flaws system
+6. **Complete Tab 8:** Final Details system
+7. **Character Loading/Editing:** Load existing characters for editing
+
+### **Technical Stack:**
+- **Frontend:** HTML5, CSS3, JavaScript (vanilla)
+- **Backend:** PHP 8.2.12, MySQL 8.0
+- **API:** Python Flask (optional)
+- **Server:** XAMPP Apache 2.4.58
+- **Version Control:** Git (pushed to GitHub)
+
+### **Key Files:**
+- `lotn_char_create.php` - Main character creation form
+- `save_character.php` - Character saving handler
+- `admin_panel.php` - Admin character management
+- `python_api.py` - Flask API server
+- `setup_xampp.sql` - Database schema
+- `js/script.js` - Frontend JavaScript
+- `includes/connect.php` - Database connection
+
+### **Project Location:**
+- **Local:** `C:\Users\paris\VbN\`
+- **XAMPP:** Served from same directory
+- **Git:** Pushed to GitHub repository
+
+**Ready for next development phase!** 🚀
 
 ## **Next Priority**
 Complete the character creation form implementation - currently only Basic Info and partial Traits tabs are functional. Need to implement all 8 tabs with proper content, JavaScript functionality, and database integration.

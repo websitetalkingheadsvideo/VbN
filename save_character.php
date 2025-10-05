@@ -1,6 +1,6 @@
 <?php
 // LOTN Character Save Handler - Version 0.2.0
-define('LOTN_VERSION', '0.3.0');
+define('LOTN_VERSION', '0.2.1');
 
 session_start();
 

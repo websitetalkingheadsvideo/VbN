@@ -98,7 +98,7 @@ function collectFormData() {
         spent_xp: characterData.xpSpent,
         traits: characterData.traits,
         negativeTraits: characterData.negativeTraits,
-        abilities: [], // Will be populated when abilities tab is implemented
+        abilities: characterData.abilities,
         disciplines: [], // Will be populated when disciplines tab is implemented
         backgrounds: [], // Will be populated when backgrounds tab is implemented
         merits_flaws: [], // Will be populated when merits & flaws tab is implemented
@@ -150,6 +150,20 @@ function validateFormData(data) {
         }
     }
     
+    // Check ability requirements (3 per category, Optional not required)
+    const abilityCounts = {
+        Physical: characterData.abilities.Physical.length,
+        Social: characterData.abilities.Social.length,
+        Mental: characterData.abilities.Mental.length
+    };
+    
+    for (let category in abilityCounts) {
+        if (abilityCounts[category] < 3) {
+            alert(`Please select at least 3 ${category} abilities.`);
+            return false;
+        }
+    }
+    
     return true;
 }
 
@@ -164,6 +178,12 @@ let characterData = {
         Physical: [],
         Social: [],
         Mental: []
+    },
+    abilities: {
+        Physical: [],
+        Social: [],
+        Mental: [],
+        Optional: []
     },
     physicalTraitCategories: {
         agility: ['Agile', 'Lithe', 'Nimble', 'Quick', 'Spry', 'Graceful', 'Slender'],
@@ -393,10 +413,143 @@ function updatePhysicalTraitCategories() {
     });
 }
 
+// Ability selection function
+function selectAbility(category, abilityName) {
+    const abilityList = characterData.abilities[category];
+    const abilityListElement = document.getElementById(category.toLowerCase() + 'AbilitiesList');
+    
+    // Check if this ability is already at maximum (5 dots)
+    const currentCount = abilityList.filter(a => a === abilityName).length;
+    if (currentCount >= 5) {
+        alert(`${abilityName} is already at maximum level (5 dots).`);
+        return;
+    }
+    
+    // Add ability to character data
+    abilityList.push(abilityName);
+    
+    // Refresh the ability display
+    refreshAbilityDisplay(category);
+    
+    // Update count and progress
+    updateAbilityCount(category);
+    updateXPDisplay();
+    
+    // Update ability button appearance (but don't disable - allow multiple selections)
+    const abilityButton = Array.from(document.querySelectorAll('.ability-option-btn')).find(btn => 
+        btn.onclick.toString().includes(category) && btn.textContent.includes(abilityName.split(' (')[0])
+    );
+    if (abilityButton) {
+        abilityButton.classList.add('selected');
+        // Update button text to show count
+        const count = characterData.abilities[category].filter(a => a === abilityName).length;
+        if (count > 1) {
+            abilityButton.textContent = `${abilityName} (${count})`;
+        }
+        
+        // Disable button if at maximum
+        if (count >= 5) {
+            abilityButton.disabled = true;
+            abilityButton.style.opacity = '0.6';
+            abilityButton.title = `${abilityName} is at maximum level (5 dots)`;
+        }
+    }
+}
+
+// Remove ability function
+function removeAbility(category, abilityName, element) {
+    const abilityList = characterData.abilities[category];
+    const index = abilityList.lastIndexOf(abilityName); // Remove the last instance
+    if (index > -1) {
+        abilityList.splice(index, 1);
+    }
+    
+    // Refresh the ability display
+    refreshAbilityDisplay(category);
+    
+    // Update count and progress
+    updateAbilityCount(category);
+    updateXPDisplay();
+    
+    // Update ability button appearance
+    const abilityButton = Array.from(document.querySelectorAll('.ability-option-btn')).find(btn => 
+        btn.onclick.toString().includes(category) && btn.textContent.includes(abilityName.split(' (')[0])
+    );
+    if (abilityButton) {
+        const remainingCount = characterData.abilities[category].filter(a => a === abilityName).length;
+        if (remainingCount === 0) {
+            abilityButton.classList.remove('selected');
+            abilityButton.textContent = abilityName;
+            abilityButton.disabled = false;
+            abilityButton.style.opacity = '1';
+            abilityButton.title = '';
+        } else if (remainingCount === 1) {
+            abilityButton.textContent = abilityName;
+            abilityButton.disabled = false;
+            abilityButton.style.opacity = '1';
+            abilityButton.title = '';
+        } else {
+            abilityButton.textContent = `${abilityName} (${remainingCount})`;
+            abilityButton.disabled = false;
+            abilityButton.style.opacity = '1';
+            abilityButton.title = '';
+        }
+    }
+}
+
+// Refresh ability display for a category
+function refreshAbilityDisplay(category) {
+    const abilityListElement = document.getElementById(category.toLowerCase() + 'AbilitiesList');
+    abilityListElement.innerHTML = '';
+    
+    // Group abilities by name and count them
+    const abilityCounts = {};
+    characterData.abilities[category].forEach(ability => {
+        abilityCounts[ability] = (abilityCounts[ability] || 0) + 1;
+    });
+    
+    // Create display elements for each unique ability
+    Object.keys(abilityCounts).forEach(abilityName => {
+        const count = abilityCounts[abilityName];
+        const abilityElement = document.createElement('div');
+        abilityElement.className = 'selected-ability';
+        const displayName = count > 1 ? `${abilityName} (${count})` : abilityName;
+        abilityElement.innerHTML = `
+            <span class="ability-name">${displayName}</span>
+            <button type="button" class="remove-ability-btn" onclick="removeAbility('${category}', '${abilityName}', this)">×</button>
+        `;
+        abilityListElement.appendChild(abilityElement);
+    });
+}
+
+// Update ability count and progress bar
+function updateAbilityCount(category) {
+    const count = characterData.abilities[category].length;
+    const countDisplay = document.getElementById(category.toLowerCase() + 'AbilitiesCountDisplay');
+    const progressFill = document.getElementById(category.toLowerCase() + 'AbilitiesProgressFill');
+    
+    // Update displays
+    countDisplay.textContent = count;
+    
+    // Update progress bar
+    const percentage = Math.min((count / 5) * 100, 100);
+    progressFill.style.width = percentage + '%';
+    
+    // Update progress bar class
+    if (count >= 3) {
+        progressFill.classList.remove('incomplete');
+        progressFill.classList.add('complete');
+    } else {
+        progressFill.classList.remove('complete');
+        progressFill.classList.add('incomplete');
+    }
+}
+
 // XP tracking and validation functions
 function updateXPDisplay() {
     let totalXP = 0;
     let traitsXP = 0;
+    let abilitiesXP = 0;
     let negativeTraitsXP = 0;
     
     // Calculate XP spent on traits (first 7 are free, 8-10 cost 4 XP each)
@@ -408,13 +561,22 @@ function updateXPDisplay() {
         }
     });
     
+    // Calculate XP spent on abilities (first 3 are free, 4-5 cost 2 XP each)
+    ['Physical', 'Social', 'Mental', 'Optional'].forEach(category => {
+        const count = characterData.abilities[category].length;
+        if (count > 3) {
+            const paidAbilities = count - 3;
+            abilitiesXP += paidAbilities * 2;
+        }
+    });
+    
     // Calculate XP gained from negative traits (+4 XP each)
     ['Physical', 'Social', 'Mental'].forEach(category => {
         const negativeCount = characterData.negativeTraits[category].length;
         negativeTraitsXP += negativeCount * 4;
     });
     
-    totalXP = traitsXP - negativeTraitsXP; // Negative traits reduce XP cost
+    totalXP = traitsXP + abilitiesXP - negativeTraitsXP; // Negative traits reduce XP cost
     
     // Update character data
     characterData.xpSpent = totalXP;
@@ -425,6 +587,7 @@ function updateXPDisplay() {
     document.getElementById('xpRemaining').textContent = characterData.xpRemaining;
     document.getElementById('xpDisplay').textContent = characterData.xpRemaining;
     document.getElementById('xpTraits').textContent = traitsXP;
+    document.getElementById('xpAbilities').textContent = abilitiesXP;
     document.getElementById('xpFlaws').textContent = negativeTraitsXP;
     
     // Update XP remaining color
@@ -454,6 +617,23 @@ function loadCharacter(characterId) {
 
 function saveCharacterData() {
     // Collect all form data and save to database
+}
+
+// Discipline Guide Modal Functions
+function showDisciplineGuide() {
+    document.getElementById('disciplineGuideModal').style.display = 'block';
+}
+
+function closeDisciplineGuide() {
+    document.getElementById('disciplineGuideModal').style.display = 'none';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('disciplineGuideModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 }
 
 // Initialize the character creation form

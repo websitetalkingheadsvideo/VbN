@@ -567,3 +567,339 @@ button:disabled {
     margin-top: 5px;
     font-style: italic;
 }
+
+/* Ability Styles */
+.ability-section {
+    margin-bottom: 30px;
+}
+
+.ability-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ability-header h3 {
+    color: #8b0000;
+    font-size: 20px;
+}
+
+.ability-progress {
+    width: 250px;
+}
+
+.ability-progress-label {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ability-progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #1a1a1a;
+    border: 1px solid #555;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ability-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b0000, #c00000);
+    transition: width 0.3s;
+    position: relative;
+}
+
+.ability-progress-fill.incomplete {
+    background: linear-gradient(90deg, #666, #888);
+}
+
+.ability-progress-fill.complete {
+    background: linear-gradient(90deg, #8b0000, #c00000);
+}
+
+.ability-progress-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #fff;
+    left: 60%;
+}
+
+.ability-progress-marker::after {
+    content: '3';
+    position: absolute;
+    top: -18px;
+    left: -6px;
+    font-size: 10px;
+    color: #fff;
+}
+
+.ability-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    min-height: 40px;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 6px;
+    border: 1px solid #555;
+}
+
+.ability-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ability-option-btn {
+    background: #333;
+    border: 2px solid #555;
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.ability-option-btn:hover {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #fff;
+}
+
+.ability-option-btn:disabled {
+    background: #555;
+    border-color: #777;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.ability-option-btn.selected {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #fff;
+}
+
+.selected-ability {
+    background: #8b0000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.selected-ability .ability-name {
+    flex: 1;
+}
+
+.remove-ability-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    transition: background 0.3s;
+}
+
+.remove-ability-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Help Button Styles */
+.help-btn {
+    background: #8b0000;
+    border: 2px solid #8b0000;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.help-btn:hover {
+    background: #a00000;
+    border-color: #a00000;
+    transform: scale(1.1);
+}
+
+.help-btn span {
+    line-height: 1;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    margin: 2% auto;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background: #8b0000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.modal-close:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-footer {
+    background: #1a1a1a;
+    padding: 15px 20px;
+    border-top: 1px solid #555;
+    text-align: right;
+}
+
+.modal-btn {
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.modal-btn:hover {
+    background: #a00000;
+}
+
+/* Discipline Table Styles */
+.discipline-table-container {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.discipline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #1a1a1a;
+}
+
+.discipline-table th {
+    background: #8b0000;
+    color: #fff;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #555;
+    position: sticky;
+    top: 0;
+}
+
+.discipline-table td {
+    padding: 10px 8px;
+    border: 1px solid #555;
+    vertical-align: top;
+    color: #e0e0e0;
+}
+
+.discipline-table tr:nth-child(even) {
+    background: #333;
+}
+
+.discipline-table tr:hover {
+    background: #444;
+}
+
+.discipline-table td:first-child {
+    font-weight: bold;
+    color: #8b0000;
+    white-space: nowrap;
+}
+
+.discipline-table td:nth-child(2) {
+    color: #51cf66;
+}
+
+.discipline-table td:nth-child(3) {
+    color: #ffd43b;
+}
+
+.discipline-table td:nth-child(4) {
+    color: #74c0fc;
+    font-style: italic;
+}
