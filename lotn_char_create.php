@@ -7,8 +7,8 @@
 
 <body>
 	<?php
-// LOTN Character Creator - Version 0.2.7
-define('LOTN_VERSION', '0.2.7');
+// LOTN Character Creator - Version 0.2.8
+define('LOTN_VERSION', '0.2.8');
 
 session_start();
 

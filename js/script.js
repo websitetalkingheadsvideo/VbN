@@ -831,6 +831,24 @@ function handleClanChange() {
     const bloodSorceryClans = ['Giovanni', 'Tremere', 'Caitiff'];
     const advancedClans = ['Assamite', 'Followers of Set', 'Lasombra', 'Malkavian', 'Ravnos', 'Tremere', 'Tzimisce', 'Caitiff'];
     
+    // Define clan-specific discipline access
+    const clanDisciplineAccess = {
+        'Assamite': ['Animalism', 'Celerity', 'Obfuscate', 'Quietus'],
+        'Brujah': ['Celerity', 'Potence', 'Presence'],
+        'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
+        'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+        'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
+        'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
+        'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
+        'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
+        'Nosferatu': ['Animalism', 'Fortitude', 'Obfuscate'],
+        'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
+        'Toreador': ['Auspex', 'Celerity', 'Presence'],
+        'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy', 'Obtenebration', 'Daimoinon', 'Melpominee', 'Valeren'],
+        'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
+        'Ventrue': ['Dominate', 'Fortitude', 'Presence']
+    };
+    
     // Get discipline sections
     const bloodSorcerySection = document.querySelector('[data-category="BloodSorcery"]');
     const advancedSection = document.querySelector('[data-category="Advanced"]');
@@ -856,6 +874,10 @@ function handleClanChange() {
             clearDisciplinesByCategory('Advanced');
         }
     }
+    
+    // Clear any invalid disciplines and update button states
+    clearInvalidDisciplines(selectedClan, clanDisciplineAccess);
+    updateDisciplineButtonStates(selectedClan, clanDisciplineAccess);
 }
 
 function clearDisciplinesByCategory(category) {
@@ -865,6 +887,51 @@ function clearDisciplinesByCategory(category) {
         refreshDisciplineDisplay();
         updateXPDisplay();
     }
+}
+
+function clearInvalidDisciplines(selectedClan, clanDisciplineAccess) {
+    // Clear any selected disciplines that the clan can't access
+    const allowedDisciplines = clanDisciplineAccess[selectedClan] || [];
+    
+    if (characterData.disciplines) {
+        Object.keys(characterData.disciplines).forEach(category => {
+            if (characterData.disciplines[category]) {
+                characterData.disciplines[category] = characterData.disciplines[category].filter(discipline => 
+                    allowedDisciplines.includes(discipline.name)
+                );
+            }
+        });
+        refreshDisciplineDisplay();
+        updateXPDisplay();
+    }
+}
+
+function updateDisciplineButtonStates(selectedClan, clanDisciplineAccess) {
+    // Get all discipline option buttons
+    const allDisciplineButtons = document.querySelectorAll('.discipline-option-btn');
+    
+    // Get allowed disciplines for the selected clan
+    const allowedDisciplines = clanDisciplineAccess[selectedClan] || [];
+    
+    // Update each discipline button
+    allDisciplineButtons.forEach(button => {
+        const disciplineName = button.textContent.trim();
+        const isAllowed = allowedDisciplines.includes(disciplineName);
+        
+        if (isAllowed) {
+            // Enable the button
+            button.disabled = false;
+            button.style.opacity = '1';
+            button.style.cursor = 'pointer';
+            button.title = ''; // Clear any tooltip
+        } else {
+            // Disable the button
+            button.disabled = true;
+            button.style.opacity = '0.4';
+            button.style.cursor = 'not-allowed';
+            button.title = `${disciplineName} is not available to ${selectedClan}`;
+        }
+    });
 }
 
 function initializeDisciplineSections() {

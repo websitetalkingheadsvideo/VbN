@@ -1,6 +1,44 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.7 (Current)
+## Version 0.2.8 (Current)
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Individual Discipline Access Control** - Each discipline button is now enabled/disabled based on clan-specific access
+- ✅ **Comprehensive Clan-Discipline Mapping** - Complete mapping of which disciplines each clan can access
+- ✅ **Visual Feedback for Disabled Disciplines** - Disabled discipline buttons are grayed out with tooltips explaining why they're unavailable
+- ✅ **Automatic Invalid Discipline Clearing** - When switching clans, any selected disciplines the new clan can't access are automatically removed
+
+### Clan-Specific Discipline Access:
+- **Assamite:** Animalism, Celerity, Obfuscate, Quietus
+- **Brujah:** Celerity, Potence, Presence
+- **Caitiff:** All disciplines (can access any discipline)
+- **Followers of Set:** Animalism, Obfuscate, Presence, Serpentis
+- **Gangrel:** Animalism, Fortitude, Protean
+- **Giovanni:** Dominate, Fortitude, Necromancy, Mortis
+- **Lasombra:** Dominate, Obfuscate, Obtenebration
+- **Malkavian:** Auspex, Dementation, Obfuscate
+- **Nosferatu:** Animalism, Fortitude, Obfuscate
+- **Ravnos:** Animalism, Chimerstry, Fortitude
+- **Toreador:** Auspex, Celerity, Presence
+- **Tremere:** Auspex, Dominate, Thaumaturgy, Obtenebration, Daimoinon, Melpominee, Valeren
+- **Tzimisce:** Animalism, Auspex, Dominate, Vicissitude
+- **Ventrue:** Dominate, Fortitude, Presence
+
+### Technical Improvements:
+- Added `updateDisciplineButtonStates()` function to enable/disable individual discipline buttons
+- Added `clearInvalidDisciplines()` function to remove disciplines the clan can't access
+- Enhanced `handleClanChange()` function with comprehensive clan-discipline mapping
+- Added visual feedback with opacity changes and tooltips for disabled disciplines
+- Integrated discipline button state management into clan selection workflow
+
+### User Experience Improvements:
+- Clear visual indication of which disciplines are available to each clan
+- Helpful tooltips explaining why certain disciplines are unavailable
+- Automatic cleanup of invalid selections when switching clans
+- Consistent behavior across all discipline categories
+
+## Version 0.2.7
 **Date:** January 4, 2025
 
 ### Major Features Added:
