@@ -27,6 +27,7 @@ include 'includes/connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Character - Laws of the Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -160,7 +161,7 @@ include 'includes/connect.php';
     
     <div class="container">
         <div class="header">
-            <h1>⚜ Laws of the Night: Character Creation ⚜</h1>
+            <h1 class="brand">⚜ Laws of the Night: Character Creation ⚜</h1>
             <div class="header-right">
                 <div class="user-info">
                     <span class="user-label">Logged in as:</span>
