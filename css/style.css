@@ -8,7 +8,7 @@ body {
     font-family: 'Georgia', serif;
     background: #1a1a1a;
     color: #e0e0e0;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     gap: 20px;
 }
@@ -18,7 +18,7 @@ body {
     background: #2a2a2a;
     border: 2px solid #8b0000;
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px;
     height: fit-content;
     position: sticky;
     top: 20px;
@@ -94,7 +94,7 @@ body {
 
 .header {
     background: #8b0000;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -144,7 +144,7 @@ body {
     background: #1a1a1a;
     border: 2px solid #fff;
     border-radius: 6px;
-    padding: 15px 20px;
+    padding: 11px 20px;
     min-width: 200px;
     text-align: center;
 }
@@ -177,7 +177,7 @@ body {
 }
 
 .tab {
-    padding: 15px 20px;
+    padding: 11px 20px;
     cursor: pointer;
     border: none;
     background: #333;
@@ -265,7 +265,7 @@ input[type="checkbox"] {
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
-    padding-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid #555;
 }
 
@@ -288,6 +288,22 @@ input[type="checkbox"] {
 .button-group .save-btn:disabled {
     background: #555;
     cursor: not-allowed;
+}
+
+.button-group .complete-btn {
+    background: #006600;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+    padding: 12px 30px;
+}
+
+.button-group .complete-btn:hover {
+    background: #008800;
 }
 
 button {
@@ -511,7 +527,7 @@ button:disabled {
 
 .negative-traits-section {
     margin-top: 20px;
-    padding-top: 20px;
+    padding-top: 15px;
     border-top: 2px solid #555;
 }
 
@@ -785,7 +801,7 @@ button:disabled {
 .modal-header {
     background: #8b0000;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -818,14 +834,14 @@ button:disabled {
 }
 
 .modal-body {
-    padding: 20px;
+    padding: 15px;
     overflow-y: auto;
     flex: 1;
 }
 
 .modal-footer {
     background: #1a1a1a;
-    padding: 15px 20px;
+    padding: 11px 20px;
     border-top: 1px solid #555;
     text-align: right;
 }
@@ -834,7 +850,7 @@ button:disabled {
     background: #8b0000;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
@@ -1086,6 +1102,93 @@ button:disabled {
 
 .remove-discipline-btn:hover {
     background: rgba(255,255,255,0.2);
+}
+
+/* Discipline Power Popover */
+.discipline-popover {
+    position: absolute;
+    background: #2a2a2a;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.discipline-popover h4 {
+    color: #8b0000;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #8b0000;
+    padding-bottom: 5px;
+}
+
+.power-option {
+    background: #333;
+    border: 1px solid #555;
+    color: #e0e0e0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.power-option:hover {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #fff;
+}
+
+.power-option.disabled {
+    background: #555;
+    border-color: #777;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.power-level {
+    font-weight: bold;
+    color: #ff8c00;
+    margin-right: 8px;
+}
+
+.power-name {
+    font-weight: bold;
+}
+
+.power-cost {
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.power-cost.free {
+    color: #00ff00;
+}
+
+.power-cost.paid {
+    color: #ff8c00;
+}
+
+.power-cost.insufficient {
+    color: #ff4444;
+}
+
+.power-description {
+    font-size: 12px;
+    color: #c0c0c0;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.discipline-option-btn {
+    position: relative;
 }
 
 /* Clan Table Styles */

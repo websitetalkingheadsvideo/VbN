@@ -47,6 +47,10 @@ include 'includes/connect.php';
                 <span class="stat-label">Remaining:</span>
                 <span class="total" id="xpRemaining">30</span>
             </div>
+            <div class="stat-line" id="characterModeDisplay" style="display: none; border-top: 2px solid #ff8c00; margin-top: 10px; padding-top: 10px;">
+                <span class="stat-label">Mode:</span>
+                <span class="stat-value" style="color: #ff8c00;">Advancement</span>
+            </div>
         </div>
         
         <div class="stat-group">
@@ -799,8 +803,8 @@ include 'includes/connect.php';
                         <h3>🏛️ Clan Disciplines</h3>
                         <div class="discipline-progress">
                             <div class="discipline-progress-label">
-                                <span><span id="clanDisciplinesCountDisplay">0</span> dots</span>
-                                <span>3 required | 5 max per discipline</span>
+                                <span><span id="clanDisciplinesCountDisplay">0</span> levels</span>
+                                <span>3 free levels at creation</span>
                             </div>
                             <div class="discipline-progress-bar">
                                 <div class="discipline-progress-fill incomplete" id="clanDisciplinesProgressFill" style="width: 0%;">
@@ -811,15 +815,15 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="clanDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Animalism')">Animalism</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Auspex')">Auspex</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Celerity')">Celerity</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Dominate')">Dominate</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Fortitude')">Fortitude</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Obfuscate')">Obfuscate</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Potence')">Potence</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Presence')">Presence</button>
-                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Protean')">Protean</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism" onmouseenter="showDisciplinePopover(event, 'Animalism')" onmouseleave="hideDisciplinePopover()">Animalism</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex" onmouseenter="showDisciplinePopover(event, 'Auspex')" onmouseleave="hideDisciplinePopover()">Auspex</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity" onmouseenter="showDisciplinePopover(event, 'Celerity')" onmouseleave="hideDisciplinePopover()">Celerity</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate" onmouseenter="showDisciplinePopover(event, 'Dominate')" onmouseleave="hideDisciplinePopover()">Dominate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude" onmouseenter="showDisciplinePopover(event, 'Fortitude')" onmouseleave="hideDisciplinePopover()">Fortitude</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate" onmouseenter="showDisciplinePopover(event, 'Obfuscate')" onmouseleave="hideDisciplinePopover()">Obfuscate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence" onmouseenter="showDisciplinePopover(event, 'Potence')" onmouseleave="hideDisciplinePopover()">Potence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence" onmouseenter="showDisciplinePopover(event, 'Presence')" onmouseleave="hideDisciplinePopover()">Presence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean" onmouseenter="showDisciplinePopover(event, 'Protean')" onmouseleave="hideDisciplinePopover()">Protean</button>
                     </div>
                     
                     <div class="discipline-list" id="clanDisciplinesList">
@@ -832,8 +836,8 @@ include 'includes/connect.php';
                         <h3>🩸 Blood Sorcery</h3>
                         <div class="discipline-progress">
                             <div class="discipline-progress-label">
-                                <span><span id="bloodSorceryCountDisplay">0</span> dots</span>
-                                <span>0 required | 5 max per discipline</span>
+                                <span><span id="bloodSorceryCountDisplay">0</span> levels</span>
+                                <span>3 free levels at creation</span>
                             </div>
                             <div class="discipline-progress-bar">
                                 <div class="discipline-progress-fill incomplete" id="bloodSorceryProgressFill" style="width: 0%;">
@@ -844,9 +848,9 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="bloodSorceryOptions">
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('BloodSorcery', 'Thaumaturgy')">Thaumaturgy</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('BloodSorcery', 'Necromancy')">Necromancy</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('BloodSorcery', 'Koldunic Sorcery')">Koldunic Sorcery</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Thaumaturgy" onmouseenter="showDisciplinePopover(event, 'Thaumaturgy')" onmouseleave="hideDisciplinePopover()">Thaumaturgy</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Necromancy" onmouseenter="showDisciplinePopover(event, 'Necromancy')" onmouseleave="hideDisciplinePopover()">Necromancy</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Koldunic Sorcery" onmouseenter="showDisciplinePopover(event, 'Koldunic Sorcery')" onmouseleave="hideDisciplinePopover()">Koldunic Sorcery</button>
                     </div>
                     
                     <div class="discipline-list" id="bloodSorceryList">
@@ -859,8 +863,8 @@ include 'includes/connect.php';
                         <h3>⚡ Advanced Disciplines</h3>
                         <div class="discipline-progress">
                             <div class="discipline-progress-label">
-                                <span><span id="advancedDisciplinesCountDisplay">0</span> dots</span>
-                                <span>0 required | 5 max per discipline</span>
+                                <span><span id="advancedDisciplinesCountDisplay">0</span> levels</span>
+                                <span>3 free levels at creation</span>
                             </div>
                             <div class="discipline-progress-bar">
                                 <div class="discipline-progress-fill incomplete" id="advancedDisciplinesProgressFill" style="width: 0%;">
@@ -871,19 +875,27 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="advancedDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Obtenebration')">Obtenebration</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Chimerstry')">Chimerstry</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Dementation')">Dementation</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Quietus')">Quietus</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Vicissitude')">Vicissitude</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Serpentis')">Serpentis</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Daimoinon')">Daimoinon</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Melpominee')">Melpominee</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Valeren')">Valeren</button>
-                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Mortis')">Mortis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration" onmouseenter="showDisciplinePopover(event, 'Obtenebration')" onmouseleave="hideDisciplinePopover()">Obtenebration</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry" onmouseenter="showDisciplinePopover(event, 'Chimerstry')" onmouseleave="hideDisciplinePopover()">Chimerstry</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Dementation" onmouseenter="showDisciplinePopover(event, 'Dementation')" onmouseleave="hideDisciplinePopover()">Dementation</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Quietus" onmouseenter="showDisciplinePopover(event, 'Quietus')" onmouseleave="hideDisciplinePopover()">Quietus</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude" onmouseenter="showDisciplinePopover(event, 'Vicissitude')" onmouseleave="hideDisciplinePopover()">Vicissitude</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis" onmouseenter="showDisciplinePopover(event, 'Serpentis')" onmouseleave="hideDisciplinePopover()">Serpentis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon" onmouseenter="showDisciplinePopover(event, 'Daimoinon')" onmouseleave="hideDisciplinePopover()">Daimoinon</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee" onmouseenter="showDisciplinePopover(event, 'Melpominee')" onmouseleave="hideDisciplinePopover()">Melpominee</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Valeren" onmouseenter="showDisciplinePopover(event, 'Valeren')" onmouseleave="hideDisciplinePopover()">Valeren</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Mortis" onmouseenter="showDisciplinePopover(event, 'Mortis')" onmouseleave="hideDisciplinePopover()">Mortis</button>
                     </div>
                     
                     <div class="discipline-list" id="advancedDisciplinesList">
+                    </div>
+                </div>
+                
+                <!-- Discipline Power Popover -->
+                <div id="disciplinePopover" class="discipline-popover" onmouseenter="clearPopoverTimeout()" onmouseleave="hideDisciplinePopover()">
+                    <h4 id="popoverTitle">Discipline Powers</h4>
+                    <div id="popoverPowers">
+                        <!-- Power options will be dynamically generated here -->
                     </div>
                 </div>
                 
@@ -938,7 +950,7 @@ include 'includes/connect.php';
                 <div class="button-group">
                     <button type="button" onclick="showTab(6)">← Previous</button>
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
-                    <button type="button" disabled>Next →</button>
+                    <button type="button" class="complete-btn" onclick="markCharacterComplete()">✅ Complete Character Creation</button>
                 </div>
             </div>
         </form>

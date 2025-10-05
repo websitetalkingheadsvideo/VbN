@@ -174,6 +174,509 @@ function validateFormData(data) {
     return true;
 }
 
+// Discipline powers data structure
+const disciplinePowers = {
+    'Animalism': [
+        { level: 1, name: 'Sense the Beast', description: 'The vampire can sense the presence of animals within a certain radius and understand their basic emotional state.' },
+        { level: 2, name: 'Feral Whispers', description: 'The vampire can communicate directly with animals, understanding their thoughts and conveying complex messages.' },
+        { level: 3, name: 'Quell the Beast', description: 'The vampire can calm and control the Beast within themselves or other vampires, reducing frenzy.' },
+        { level: 4, name: 'Beckoning', description: 'The vampire can call animals to their location from a considerable distance.' },
+        { level: 5, name: 'Animal Control', description: 'The vampire gains complete control over animals, able to command them to perform any action.' }
+    ],
+    'Auspex': [
+        { level: 1, name: 'Aura Perception', description: 'The vampire can see the emotional and spiritual auras surrounding living beings.' },
+        { level: 2, name: 'Telepathy', description: 'The vampire can read surface thoughts and emotions from other beings.' },
+        { level: 3, name: 'Psychometry', description: 'The vampire can read the history and emotional resonance of objects by touching them.' },
+        { level: 4, name: 'Premonition', description: 'The vampire gains glimpses of future events through dreams, visions, or sudden insights.' },
+        { level: 5, name: 'Sense the Unseen', description: 'The vampire can perceive supernatural phenomena, spirits, and otherworldly entities.' }
+    ],
+    'Celerity': [
+        { level: 1, name: 'Quickness', description: 'The vampire can move and react at superhuman speeds, allowing them to perform actions much faster than normal.' },
+        { level: 2, name: 'Sprint', description: 'The vampire can achieve incredible bursts of speed over short distances.' },
+        { level: 3, name: 'Enhanced Reflexes', description: 'The vampire\'s reaction time becomes so fast they can dodge bullets and catch arrows in flight.' },
+        { level: 4, name: 'Blur', description: 'The vampire moves so fast they become a blur, making them nearly impossible to target.' },
+        { level: 5, name: 'Accelerated Movement', description: 'The vampire can maintain superhuman speed for extended periods.' }
+    ],
+    'Dominate': [
+        { level: 1, name: 'Command', description: 'The vampire can issue simple, direct commands that mortals and weaker vampires must obey.' },
+        { level: 2, name: 'Mesmerize', description: 'The vampire can place a target in a trance-like state, making them highly suggestible.' },
+        { level: 3, name: 'Memory Alteration', description: 'The vampire can modify, erase, or implant false memories in a target\'s mind.' },
+        { level: 4, name: 'Suggestion', description: 'The vampire can plant subtle suggestions in a target\'s mind that they will act upon later.' },
+        { level: 5, name: 'Mental Domination', description: 'The vampire gains complete control over a target\'s mind, able to command them to perform any action.' }
+    ],
+    'Fortitude': [
+        { level: 1, name: 'Resistance', description: 'The vampire can resist physical damage and environmental hazards better than normal.' },
+        { level: 2, name: 'Endurance', description: 'The vampire can maintain physical activity and resist fatigue for extended periods.' },
+        { level: 3, name: 'Pain Tolerance', description: 'The vampire can ignore pain and continue functioning normally even when severely injured.' },
+        { level: 4, name: 'Damage Reduction', description: 'The vampire can reduce the damage taken from physical attacks.' },
+        { level: 5, name: 'Supernatural Stamina', description: 'The vampire gains almost supernatural levels of physical resilience.' }
+    ],
+    'Obfuscate': [
+        { level: 1, name: 'Cloak of Shadows', description: 'The vampire can blend into shadows and darkness, becoming difficult to see and track.' },
+        { level: 2, name: 'Vanish', description: 'The vampire can become completely invisible for short periods.' },
+        { level: 3, name: 'Mask of a Thousand Faces', description: 'The vampire can change their appearance to look like anyone they have seen.' },
+        { level: 4, name: 'Silent Movement', description: 'The vampire can move without making any sound, becoming completely silent.' },
+        { level: 5, name: 'Unseen Presence', description: 'The vampire can make others forget they ever saw them.' }
+    ],
+    'Potence': [
+        { level: 1, name: 'Prowess', description: 'The vampire gains superhuman physical strength, allowing them to perform feats far beyond mortal capabilities.' },
+        { level: 2, name: 'Shove', description: 'The vampire can deliver powerful shoves and pushes that can knock down or throw opponents great distances.' },
+        { level: 3, name: 'Knockdown', description: 'The vampire can deliver devastating blows that can knock down even the strongest opponents.' },
+        { level: 4, name: 'Crushing Blow', description: 'The vampire can deliver attacks so powerful they can crush through armor and break weapons.' },
+        { level: 5, name: 'Leap', description: 'The vampire can jump incredible distances and heights, covering great distances with a single bound.' }
+    ],
+    'Presence': [
+        { level: 1, name: 'Awe', description: 'The vampire can project an aura of majesty and power that makes others feel small and insignificant.' },
+        { level: 2, name: 'Dread Gaze', description: 'The vampire can project an aura of fear and intimidation that can cause others to flee or submit.' },
+        { level: 3, name: 'Entrancement', description: 'The vampire can charm and captivate others, making them highly susceptible to influence.' },
+        { level: 4, name: 'Majesty', description: 'The vampire can project an aura of divine authority that makes others feel compelled to worship them.' },
+        { level: 5, name: 'Inspire', description: 'The vampire can use their presence to inspire others to greatness, enhancing their abilities.' }
+    ],
+    'Protean': [
+        { level: 1, name: 'Shape of the Beast', description: 'The vampire can transform into a wolf or bat, gaining the abilities and instincts of the chosen animal form.' },
+        { level: 2, name: 'Claws', description: 'The vampire can extend razor-sharp claws from their fingers, making their hands into deadly weapons.' },
+        { level: 3, name: 'Feral Leap', description: 'The vampire can leap incredible distances and heights, covering great distances with a single bound.' },
+        { level: 4, name: 'Flight (Bat Form)', description: 'The vampire can transform into a bat and gain the ability to fly.' },
+        { level: 5, name: 'Natural Armor', description: 'The vampire can harden their skin to create natural armor that provides protection against physical attacks.' }
+    ],
+    'Thaumaturgy': [
+        { level: 1, name: 'Lure of Flames', description: 'The vampire can create and control fire, using their blood magic to summon flames.' },
+        { level: 2, name: 'Shield of Thorns', description: 'The vampire can create protective barriers using their blood magic.' },
+        { level: 3, name: 'Rite of Blood', description: 'The vampire can use their blood to power magical rituals and create mystical effects.' },
+        { level: 4, name: 'Circle of Protection', description: 'The vampire can create magical circles that provide protection against supernatural threats.' },
+        { level: 5, name: 'Blood Bond', description: 'The vampire can create mystical bonds between themselves and others using their blood.' }
+    ],
+    'Necromancy': [
+        { level: 1, name: 'Sense Death', description: 'The vampire can sense the presence of death, decay, and the recently deceased.' },
+        { level: 2, name: 'Command Dead', description: 'The vampire can command and control undead creatures, forcing them to obey their will.' },
+        { level: 3, name: 'Drain Life', description: 'The vampire can drain the life force from living beings, using their necromantic powers.' },
+        { level: 4, name: 'Haunt', description: 'The vampire can create ghostly manifestations and supernatural phenomena.' },
+        { level: 5, name: 'Animate Corpse', description: 'The vampire can raise the dead as undead servants.' }
+    ],
+    'Obtenebration': [
+        { level: 1, name: 'Shadow Cloak', description: 'The vampire can wrap themselves in shadows, becoming difficult to see.' },
+        { level: 2, name: 'Dark Tendrils', description: 'The vampire can create shadowy tendrils that can grab, constrict, and harm opponents.' },
+        { level: 3, name: 'Shroud of Night', description: 'The vampire can create areas of supernatural darkness that can block light.' },
+        { level: 4, name: 'Shadow Walk', description: 'The vampire can merge with shadows, becoming one with darkness.' },
+        { level: 5, name: 'Nightmarish Strike', description: 'The vampire can use their control over darkness to create attacks that cause both physical and psychological damage.' }
+    ],
+    'Chimerstry': [
+        { level: 1, name: 'Minor Illusion', description: 'The vampire can create small, simple illusions that can fool the senses.' },
+        { level: 2, name: 'Disguise', description: 'The vampire can create complex illusions that can change their appearance or the appearance of others.' },
+        { level: 3, name: 'Confusion', description: 'The vampire can create illusions that can confuse and disorient opponents.' },
+        { level: 4, name: 'Hallucinatory Image', description: 'The vampire can create complex, detailed illusions that can fool multiple senses.' },
+        { level: 5, name: 'Invisibility Illusion', description: 'The vampire can create illusions that can make themselves or others completely invisible.' }
+    ],
+    'Dementation': [
+        { level: 1, name: 'Awe of Madness', description: 'The vampire can project an aura of madness that can cause others to become confused and disoriented.' },
+        { level: 2, name: 'Fear Projection', description: 'The vampire can project intense fear into the minds of others.' },
+        { level: 3, name: 'Confusion', description: 'The vampire can create mental confusion in others, making them unable to distinguish between reality and illusion.' },
+        { level: 4, name: 'Irrational Fear', description: 'The vampire can create specific, irrational fears in others.' },
+        { level: 5, name: 'Frenzy Inducement', description: 'The vampire can cause others to enter a state of frenzy, making them lose control.' }
+    ],
+    'Quietus': [
+        { level: 1, name: 'Poison Glands', description: 'The vampire can produce and secrete various poisons from their body.' },
+        { level: 2, name: 'Silent Kill', description: 'The vampire can kill others silently and without leaving obvious signs of violence.' },
+        { level: 3, name: 'Respiratory Poison', description: 'The vampire can create poisons that can be delivered through the air.' },
+        { level: 4, name: 'Hemorrhage', description: 'The vampire can cause internal bleeding in others, creating wounds that can be fatal.' },
+        { level: 5, name: 'Lethal Strike', description: 'The vampire can deliver attacks that can cause instant death.' }
+    ],
+    'Vicissitude': [
+        { level: 1, name: 'Fleshcraft', description: 'The vampire can reshape and modify living flesh, changing the appearance and structure of themselves and others.' },
+        { level: 2, name: 'Alter Form', description: 'The vampire can make more dramatic changes to their own body, altering their shape and structure.' },
+        { level: 3, name: 'Skin Hardening', description: 'The vampire can harden their skin to create natural armor that provides protection against physical attacks.' },
+        { level: 4, name: 'Stretch Limb', description: 'The vampire can extend and stretch their limbs to reach distant objects or attack from unexpected angles.' },
+        { level: 5, name: 'Weaponize Flesh', description: 'The vampire can transform parts of their body into weapons.' }
+    ],
+    'Serpentis': [
+        { level: 1, name: 'Hypnotic Gaze', description: 'The vampire can use their eyes to hypnotize others, making them highly suggestible.' },
+        { level: 2, name: 'Venomous Bite', description: 'The vampire can produce and deliver venom through their bite.' },
+        { level: 3, name: 'Serpent\'s Strike', description: 'The vampire can attack with incredible speed and precision, striking like a snake.' },
+        { level: 4, name: 'Mesmerize', description: 'The vampire can create powerful hypnotic effects that can control the behavior of others.' },
+        { level: 5, name: 'Shape Serpent', description: 'The vampire can transform into a large serpent, gaining the abilities and instincts of a snake.' }
+    ],
+    'Koldunic Sorcery': [
+        { level: 1, name: 'Elemental Bolt', description: 'The vampire can create and project bolts of elemental energy.' },
+        { level: 2, name: 'Minor Ward', description: 'The vampire can create small protective barriers using elemental energy.' },
+        { level: 3, name: 'Fire Blast', description: 'The vampire can create powerful blasts of fire that can burn opponents and cause massive damage.' },
+        { level: 4, name: 'Ice Shard', description: 'The vampire can create and project shards of ice that can pierce through armor.' },
+        { level: 5, name: 'Earth Spike', description: 'The vampire can cause spikes of earth to erupt from the ground.' }
+    ],
+    'Daimoinon': [
+        { level: 1, name: 'Fear Aura', description: 'The vampire can project an aura of fear that can cause others to become terrified and potentially flee.' },
+        { level: 2, name: 'Infernal Grasp', description: 'The vampire can create shadowy hands that can grab, constrict, and harm opponents from a distance.' },
+        { level: 3, name: 'Summon Demon', description: 'The vampire can call upon infernal entities to aid them.' },
+        { level: 4, name: 'Curse', description: 'The vampire can place curses on others that can cause various negative effects over time.' },
+        { level: 5, name: 'Dark Inspiration', description: 'The vampire can use their connection to the infernal to inspire others to commit acts of evil or violence.' }
+    ],
+    'Melpominee': [
+        { level: 1, name: 'Captivating Song', description: 'The vampire can use their voice to create musical effects that can charm and captivate others.' },
+        { level: 2, name: 'Charm', description: 'The vampire can use their voice to create effects that can make others more susceptible to their influence.' },
+        { level: 3, name: 'Enthrall Audience', description: 'The vampire can use their voice to create effects that can captivate large groups of people.' },
+        { level: 4, name: 'Inspire Emotion', description: 'The vampire can use their voice to create specific emotional effects in others.' },
+        { level: 5, name: 'Hypnotic Performance', description: 'The vampire can use their voice to create powerful hypnotic effects that can control the behavior of others.' }
+    ],
+    'Valeren': [
+        { level: 1, name: 'Healing Touch', description: 'The vampire can use their supernatural abilities to heal wounds and injuries in others.' },
+        { level: 2, name: 'Restore Vitality', description: 'The vampire can use their supernatural abilities to restore energy and vitality to others.' },
+        { level: 3, name: 'Detox', description: 'The vampire can use their supernatural abilities to remove poisons and toxins from others.' },
+        { level: 4, name: 'Protective Ward', description: 'The vampire can use their supernatural abilities to create protective effects that can shield others from harm.' },
+        { level: 5, name: 'Ritual Aid', description: 'The vampire can use their supernatural abilities to enhance the effectiveness of rituals and ceremonies.' }
+    ],
+    'Mortis': [
+        { level: 1, name: 'Sense Death', description: 'The vampire can sense the presence of death, decay, and the recently deceased.' },
+        { level: 2, name: 'Drain Life', description: 'The vampire can drain the life force from living beings, using their connection to death.' },
+        { level: 3, name: 'Haunting Presence', description: 'The vampire can create ghostly manifestations and supernatural phenomena.' },
+        { level: 4, name: 'Wither', description: 'The vampire can cause living things to wither and decay, using their connection to death.' },
+        { level: 5, name: 'Deathly Chill', description: 'The vampire can create effects that can cause extreme cold and death-like conditions.' }
+    ]
+};
+
+// Popover management
+let currentPopoverTimeout = null;
+let currentPopoverButton = null;
+
+// Update popover position on scroll
+function updatePopoverPosition() {
+    const popover = document.getElementById('disciplinePopover');
+    if (popover.style.display === 'block' && currentPopoverButton) {
+        const rect = currentPopoverButton.getBoundingClientRect();
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Position to the right and up using page coordinates
+        popover.style.left = (rect.right + scrollX + 10) + 'px';
+        popover.style.top = (rect.top + scrollY - 10) + 'px';
+        
+        // Ensure popover stays within viewport
+        const popoverRect = popover.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        
+        // Adjust if popover goes off the right edge
+        if (rect.right + 10 + popoverRect.width > viewportWidth) {
+            popover.style.left = (rect.left + scrollX - popoverRect.width - 10) + 'px';
+        }
+        
+        // Adjust if popover goes off the top edge
+        if (rect.top + scrollY - 10 < scrollY) {
+            popover.style.top = (rect.bottom + scrollY + 10) + 'px';
+        }
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', updatePopoverPosition);
+
+// Show discipline power popover
+function showDisciplinePopover(event, disciplineName) {
+    // Don't show popover if the discipline button is disabled
+    if (event.target.disabled) {
+        return;
+    }
+    
+    // Clear any existing timeout
+    if (currentPopoverTimeout) {
+        clearTimeout(currentPopoverTimeout);
+        currentPopoverTimeout = null;
+    }
+    
+    const popover = document.getElementById('disciplinePopover');
+    const popoverTitle = document.getElementById('popoverTitle');
+    const popoverPowers = document.getElementById('popoverPowers');
+    
+    // Set title
+    popoverTitle.textContent = `${disciplineName} Powers`;
+    
+    // Get available powers for this discipline
+    const availablePowers = getAvailablePowers(disciplineName);
+    
+    // Clear existing content
+    popoverPowers.innerHTML = '';
+    
+    // Generate power options
+    availablePowers.forEach(power => {
+        const powerOption = document.createElement('div');
+        powerOption.className = 'power-option';
+        powerOption.onclick = () => selectPower(disciplineName, power);
+        
+        // Calculate XP cost for this power first
+        const selectedClan = document.getElementById('clan').value;
+        const clanDisciplineAccess = getClanDisciplineAccess();
+        const isInClan = clanDisciplineAccess[selectedClan] && 
+                        clanDisciplineAccess[selectedClan].includes(disciplineName);
+        
+        // Count current total discipline levels (highest level per discipline)
+        let currentTotalLevels = 0;
+        const disciplineLevels = {}; // Track highest level per discipline
+        
+        ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
+            if (characterData.disciplines[category]) {
+                characterData.disciplines[category].forEach(existingPower => {
+                    const disciplineName = existingPower.name;
+                    if (!disciplineLevels[disciplineName] || existingPower.level > disciplineLevels[disciplineName]) {
+                        disciplineLevels[disciplineName] = existingPower.level;
+                    }
+                });
+            }
+        });
+        
+        // Sum up the highest level of each discipline
+        Object.values(disciplineLevels).forEach(level => {
+            currentTotalLevels += level;
+        });
+        
+        // Calculate cost based on mode
+        let costText;
+        let costClass;
+        
+        if (isAdvancementMode()) {
+            // In advancement mode: all powers cost XP
+            const xpCost = isInClan ? power.level * 3 : power.level * 4;
+            costText = isInClan ? `${xpCost} XP (in-clan)` : `${xpCost} XP (out-of-clan)`;
+            costClass = "paid";
+        } else {
+            // In character creation mode: first 3 discipline levels are free
+            // Calculate what the new total would be if we add this power
+            const newDisciplineLevels = { ...disciplineLevels };
+            if (!newDisciplineLevels[disciplineName] || power.level > newDisciplineLevels[disciplineName]) {
+                newDisciplineLevels[disciplineName] = power.level;
+            }
+            
+            const newTotalLevels = Object.values(newDisciplineLevels).reduce((sum, level) => sum + level, 0);
+            
+            if (newTotalLevels <= 3) {
+                costText = "Free (character creation)";
+                costClass = "free";
+            } else {
+                const paidLevels = newTotalLevels - 3;
+                const xpCost = paidLevels * 3;
+                
+                // Check if player has enough XP
+                if (characterData.xpRemaining < xpCost) {
+                    costText = `${xpCost} XP (insufficient XP)`;
+                    costClass = "insufficient";
+                } else {
+                    costText = `${xpCost} XP (spend XP)`;
+                    costClass = "paid";
+                }
+            }
+        }
+        
+        // Check if power is available (prerequisites met)
+        const isAvailable = isPowerAvailable(disciplineName, power.level);
+        if (!isAvailable) {
+            powerOption.classList.add('disabled');
+        }
+        
+        // Check if insufficient XP (only in character creation mode)
+        if (!isAdvancementMode() && costClass === 'insufficient') {
+            powerOption.classList.add('disabled');
+        }
+        
+        powerOption.innerHTML = `
+            <span class="power-level">${power.level}.</span>
+            <span class="power-name">${power.name}</span>
+            <div class="power-cost ${costClass}">${costText}</div>
+            <div class="power-description">${power.description}</div>
+        `;
+        
+        popoverPowers.appendChild(powerOption);
+    });
+    
+    // Store current button reference for scroll updates
+    currentPopoverButton = event.target;
+    
+    // Position popover
+    const button = event.target;
+    const rect = button.getBoundingClientRect();
+    const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Position to the right and up using page coordinates
+    popover.style.left = (rect.right + scrollX + 10) + 'px';
+    popover.style.top = (rect.top + scrollY - 10) + 'px';
+    
+    // Ensure popover stays within viewport
+    const popoverRect = popover.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Adjust if popover goes off the right edge
+    if (rect.right + 10 + popoverRect.width > viewportWidth) {
+        popover.style.left = (rect.left + scrollX - popoverRect.width - 10) + 'px';
+    }
+    
+    // Adjust if popover goes off the top edge
+    if (rect.top + scrollY - 10 < scrollY) {
+        popover.style.top = (rect.bottom + scrollY + 10) + 'px';
+    }
+    
+    // Add hover events to popover to keep it open
+    popover.onmouseenter = () => {
+        if (currentPopoverTimeout) {
+            clearTimeout(currentPopoverTimeout);
+            currentPopoverTimeout = null;
+        }
+    };
+    
+    popover.onmouseleave = () => {
+        hideDisciplinePopover();
+    };
+    
+    // Show popover
+    popover.style.display = 'block';
+}
+
+// Clear popover timeout (called when hovering over popover)
+function clearPopoverTimeout() {
+    if (currentPopoverTimeout) {
+        clearTimeout(currentPopoverTimeout);
+        currentPopoverTimeout = null;
+    }
+}
+
+// Hide discipline power popover
+function hideDisciplinePopover() {
+    currentPopoverTimeout = setTimeout(() => {
+        const popover = document.getElementById('disciplinePopover');
+        popover.style.display = 'none';
+        currentPopoverButton = null; // Clear button reference
+    }, 500); // Longer delay to allow moving to popover
+}
+
+// Get available powers for a discipline (not yet selected)
+function getAvailablePowers(disciplineName) {
+    const allPowers = disciplinePowers[disciplineName] || [];
+    const selectedPowers = getSelectedPowers(disciplineName);
+    
+    return allPowers.filter(power => 
+        !selectedPowers.some(selected => selected.level === power.level)
+    );
+}
+
+// Get selected powers for a discipline
+function getSelectedPowers(disciplineName) {
+    const selectedPowers = [];
+    
+    // Check all categories for this discipline
+    ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
+        if (characterData.disciplines[category]) {
+            characterData.disciplines[category].forEach(discipline => {
+                if (discipline.name === disciplineName) {
+                    selectedPowers.push(discipline);
+                }
+            });
+        }
+    });
+    
+    return selectedPowers;
+}
+
+// Check if a power is available (prerequisites met)
+function isPowerAvailable(disciplineName, powerLevel) {
+    const selectedPowers = getSelectedPowers(disciplineName);
+    
+    // Check if all lower level powers are selected
+    for (let i = 1; i < powerLevel; i++) {
+        const hasLowerPower = selectedPowers.some(power => power.level === i);
+        if (!hasLowerPower) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+// Select a power
+function selectPower(disciplineName, power) {
+    // Check if power is available
+    if (!isPowerAvailable(disciplineName, power.level)) {
+        return;
+    }
+    
+    // Count current total discipline levels (highest level per discipline)
+    let currentTotalLevels = 0;
+    const disciplineLevels = {}; // Track highest level per discipline
+    
+    ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
+        if (characterData.disciplines[category]) {
+            characterData.disciplines[category].forEach(existingPower => {
+                const disciplineName = existingPower.name;
+                if (!disciplineLevels[disciplineName] || existingPower.level > disciplineLevels[disciplineName]) {
+                    disciplineLevels[disciplineName] = existingPower.level;
+                }
+            });
+        }
+    });
+    
+    // Sum up the highest level of each discipline
+    Object.values(disciplineLevels).forEach(level => {
+        currentTotalLevels += level;
+    });
+    
+    // Check if adding this power would exceed the 3-level limit (only in character creation mode)
+    if (!isAdvancementMode()) {
+        const newDisciplineLevels = { ...disciplineLevels };
+        if (!newDisciplineLevels[disciplineName] || power.level > newDisciplineLevels[disciplineName]) {
+            newDisciplineLevels[disciplineName] = power.level;
+        }
+        
+        const newTotalLevels = Object.values(newDisciplineLevels).reduce((sum, level) => sum + level, 0);
+        
+        if (newTotalLevels > 3) {
+            // Check if player has enough XP to spend
+            const additionalLevels = newTotalLevels - 3;
+            const xpCost = additionalLevels * 3;
+            
+            if (characterData.xpRemaining < xpCost) {
+                alert(`Not enough XP! You need ${xpCost} XP but only have ${characterData.xpRemaining} remaining.\n\nThis would make ${disciplineName} level ${power.level}\nNew total would be: ${newTotalLevels} levels`);
+                return;
+            }
+            
+            // Ask if player wants to spend XP
+            const confirmed = confirm(
+                `You've used your 3 free discipline levels!\n\n` +
+                `This power would cost ${xpCost} XP (${additionalLevels} additional level(s)).\n\n` +
+                `Do you want to spend XP to continue?`
+            );
+            
+            if (!confirmed) {
+                return;
+            }
+        }
+    }
+    
+    // Determine category based on discipline
+    let category = 'Clan';
+    if (['Thaumaturgy', 'Necromancy', 'Koldunic Sorcery'].includes(disciplineName)) {
+        category = 'BloodSorcery';
+    } else if (['Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'].includes(disciplineName)) {
+        category = 'Advanced';
+    }
+    
+    // Add power to character data
+    if (!characterData.disciplines[category]) {
+        characterData.disciplines[category] = [];
+    }
+    
+    characterData.disciplines[category].push({
+        name: disciplineName,
+        level: power.level,
+        powerName: power.name,
+        description: power.description
+    });
+    
+    // Update display
+    refreshDisciplineDisplay(category);
+    
+    // Hide popover
+    hideDisciplinePopover();
+    
+    // Update XP
+    updateXPDisplay();
+}
+
 // Character data storage
 let characterData = {
     traits: {
@@ -206,7 +709,8 @@ let characterData = {
         legacy: ['Fast', 'Muscular']
     },
     xpSpent: 0,
-    xpRemaining: 30
+    xpRemaining: 30,
+    isCharacterComplete: false // Track if character creation is finished
 };
 
 // Trait selection function
@@ -601,44 +1105,21 @@ function selectDiscipline(category, disciplineName) {
 }
 
 // Remove discipline function
-function removeDiscipline(category, disciplineName, element) {
-    const disciplineList = characterData.disciplines[category];
-    const index = disciplineList.lastIndexOf(disciplineName); // Remove the last instance
-    if (index > -1) {
-        disciplineList.splice(index, 1);
+// Remove power from character
+function removePower(category, powerIndex, buttonElement) {
+    // Remove from character data
+    if (characterData.disciplines[category] && characterData.disciplines[category][powerIndex]) {
+        characterData.disciplines[category].splice(powerIndex, 1);
     }
     
-    // Refresh the discipline display
+    // Refresh the entire display to update indices
     refreshDisciplineDisplay(category);
     
-    // Update count and progress
+    // Update count and progress bar
     updateDisciplineCount(category);
-    updateXPDisplay();
     
-    // Update discipline button appearance
-    const disciplineButton = Array.from(document.querySelectorAll('.discipline-option-btn')).find(btn => 
-        btn.onclick.toString().includes(category) && btn.textContent.includes(disciplineName.split(' (')[0])
-    );
-    if (disciplineButton) {
-        const remainingCount = characterData.disciplines[category].filter(d => d === disciplineName).length;
-        if (remainingCount === 0) {
-            disciplineButton.classList.remove('selected');
-            disciplineButton.textContent = disciplineName;
-            disciplineButton.disabled = false;
-            disciplineButton.style.opacity = '1';
-            disciplineButton.title = '';
-        } else if (remainingCount === 1) {
-            disciplineButton.textContent = disciplineName;
-            disciplineButton.disabled = false;
-            disciplineButton.style.opacity = '1';
-            disciplineButton.title = '';
-        } else {
-            disciplineButton.textContent = `${disciplineName} (${remainingCount})`;
-            disciplineButton.disabled = false;
-            disciplineButton.style.opacity = '1';
-            disciplineButton.title = '';
-        }
-    }
+    // Update XP
+    updateXPDisplay();
 }
 
 // Refresh discipline display for a category
@@ -657,58 +1138,78 @@ function refreshDisciplineDisplay(category) {
     }
     disciplineListElement.innerHTML = '';
     
-    // Group disciplines by name and count them
-    const disciplineCounts = {};
-    characterData.disciplines[category].forEach(discipline => {
-        disciplineCounts[discipline] = (disciplineCounts[discipline] || 0) + 1;
-    });
-    
-    // Create display elements for each unique discipline
-    Object.keys(disciplineCounts).forEach(disciplineName => {
-        const count = disciplineCounts[disciplineName];
-        const disciplineElement = document.createElement('div');
-        disciplineElement.className = 'selected-discipline';
-        
-        // Add clan class for clan disciplines
-        if (category === 'Clan') {
-            disciplineElement.classList.add('clan');
-        }
-        
-        const displayName = count > 1 ? `${disciplineName} (${count})` : disciplineName;
-        disciplineElement.innerHTML = `
-            <span class="discipline-name">${displayName}</span>
-            <button type="button" class="remove-discipline-btn" onclick="removeDiscipline('${category}', '${disciplineName}', this)">×</button>
-        `;
-        disciplineListElement.appendChild(disciplineElement);
-    });
+    // Display each selected power individually
+    if (characterData.disciplines[category]) {
+        characterData.disciplines[category].forEach((power, index) => {
+            const disciplineElement = document.createElement('div');
+            disciplineElement.className = 'selected-discipline';
+            
+            // Add clan class for clan disciplines
+            if (category === 'Clan') {
+                disciplineElement.classList.add('clan');
+            }
+            
+            // Format: "Discipline: Power Name"
+            const displayName = `${power.name}: ${power.powerName}`;
+            disciplineElement.innerHTML = `
+                <span class="discipline-name">${displayName}</span>
+                <button type="button" class="remove-discipline-btn" onclick="removePower('${category}', ${index}, this)">×</button>
+            `;
+            disciplineListElement.appendChild(disciplineElement);
+        });
+    }
 }
 
 // Update discipline count and progress bar
 function updateDisciplineCount(category) {
-    const count = characterData.disciplines[category].length;
-    const countDisplay = document.getElementById(category.toLowerCase() + 'DisciplinesCountDisplay');
-    const progressFill = document.getElementById(category.toLowerCase() + 'DisciplinesProgressFill');
+    // Count total discipline levels in this category (highest level per discipline)
+    const disciplineLevels = {}; // Track highest level per discipline
     
-    // Update displays
-    countDisplay.textContent = count;
+    if (characterData.disciplines[category]) {
+        characterData.disciplines[category].forEach(power => {
+            const disciplineName = power.name;
+            if (!disciplineLevels[disciplineName] || power.level > disciplineLevels[disciplineName]) {
+                disciplineLevels[disciplineName] = power.level;
+            }
+        });
+    }
     
-    // Update progress bar
-    const percentage = Math.min((count / 5) * 100, 100);
-    progressFill.style.width = percentage + '%';
+    // Sum up the highest level of each discipline
+    const totalLevels = Object.values(disciplineLevels).reduce((sum, level) => sum + level, 0);
     
-    // Update progress bar class
-    if (category === 'Clan') {
-        // Clan disciplines require 3 dots minimum
-        if (count >= 3) {
-            progressFill.classList.remove('incomplete');
-            progressFill.classList.add('complete');
-        } else {
-            progressFill.classList.remove('complete');
-            progressFill.classList.add('incomplete');
-        }
-    } else {
-        // Blood Sorcery and Advanced disciplines are optional
-        if (count >= 1) {
+    // Get the correct display element ID based on category
+    let countDisplayId;
+    let progressFillId;
+    
+    switch(category) {
+        case 'Clan':
+            countDisplayId = 'clanDisciplinesCountDisplay';
+            progressFillId = 'clanDisciplinesProgressFill';
+            break;
+        case 'BloodSorcery':
+            countDisplayId = 'bloodSorceryCountDisplay';
+            progressFillId = 'bloodSorceryProgressFill';
+            break;
+        case 'Advanced':
+            countDisplayId = 'advancedDisciplinesCountDisplay';
+            progressFillId = 'advancedDisciplinesProgressFill';
+            break;
+    }
+    
+    const countDisplay = document.getElementById(countDisplayId);
+    const progressFill = document.getElementById(progressFillId);
+    
+    if (countDisplay) {
+        countDisplay.textContent = totalLevels;
+    }
+    
+    if (progressFill) {
+        // Update progress bar (3 levels max for character creation)
+        const percentage = Math.min((totalLevels / 3) * 100, 100);
+        progressFill.style.width = percentage + '%';
+        
+        // Update progress bar class
+        if (totalLevels >= 3) {
             progressFill.classList.remove('incomplete');
             progressFill.classList.add('complete');
         } else {
@@ -716,6 +1217,51 @@ function updateDisciplineCount(category) {
             progressFill.classList.add('incomplete');
         }
     }
+}
+
+// Mark character as complete (called when character creation is finished)
+function markCharacterComplete() {
+    characterData.isCharacterComplete = true;
+    
+    // Show advancement mode indicator
+    const modeDisplay = document.getElementById('characterModeDisplay');
+    if (modeDisplay) {
+        modeDisplay.style.display = 'block';
+    }
+    
+    // Update all displays
+    updateXPDisplay(); // Recalculate XP with advancement rules
+    updateDisciplineCount('Clan');
+    updateDisciplineCount('BloodSorcery');
+    updateDisciplineCount('Advanced');
+    
+    // Show confirmation
+    alert('Character creation completed! You are now in advancement mode.\n\nYou can now:\n- Remove any discipline powers\n- Add new powers (all cost XP)\n- No 3-level limit restrictions');
+}
+
+// Check if character is in advancement mode
+function isAdvancementMode() {
+    return characterData.isCharacterComplete;
+}
+
+// Get clan discipline access mapping
+function getClanDisciplineAccess() {
+    return {
+        'Assamite': ['Animalism', 'Celerity', 'Obfuscate', 'Quietus'],
+        'Brujah': ['Celerity', 'Potence', 'Presence'],
+        'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
+        'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+        'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
+        'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
+        'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
+        'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
+        'Nosferatu': ['Animalism', 'Fortitude', 'Obfuscate'],
+        'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
+        'Toreador': ['Auspex', 'Celerity', 'Presence'],
+        'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy'],
+        'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
+        'Ventrue': ['Dominate', 'Fortitude', 'Presence']
+    };
 }
 
 // XP tracking and validation functions
@@ -744,14 +1290,46 @@ function updateXPDisplay() {
         }
     });
     
-    // Calculate XP spent on disciplines (first 3 are free, 4-5 cost 3 XP each)
-    ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
-        const count = characterData.disciplines[category].length;
-        if (count > 3) {
-            const paidDisciplines = count - 3;
-            disciplinesXP += paidDisciplines * 3;
+    // Calculate XP spent on discipline powers
+    const selectedClan = document.getElementById('clan').value;
+    const clanDisciplineAccess = getClanDisciplineAccess();
+    
+    if (isAdvancementMode()) {
+        // In advancement mode: all powers cost XP based on in-clan/out-of-clan
+        ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
+            if (characterData.disciplines[category]) {
+                characterData.disciplines[category].forEach(power => {
+                    const isInClan = clanDisciplineAccess[selectedClan] && 
+                                    clanDisciplineAccess[selectedClan].includes(power.name);
+                    const xpCost = isInClan ? power.level * 3 : power.level * 4;
+                    disciplinesXP += xpCost;
+                });
+            }
+        });
+    } else {
+        // In character creation mode: first 3 discipline levels are free
+        const disciplineLevels = {}; // Track highest level per discipline
+        
+        ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
+            if (characterData.disciplines[category]) {
+                characterData.disciplines[category].forEach(power => {
+                    const disciplineName = power.name;
+                    if (!disciplineLevels[disciplineName] || power.level > disciplineLevels[disciplineName]) {
+                        disciplineLevels[disciplineName] = power.level;
+                    }
+                });
+            }
+        });
+        
+        // Sum up the highest level of each discipline
+        const totalDisciplineLevels = Object.values(disciplineLevels).reduce((sum, level) => sum + level, 0);
+        
+        // First 3 discipline levels are free at character creation
+        if (totalDisciplineLevels > 3) {
+            const paidLevels = totalDisciplineLevels - 3;
+            disciplinesXP += paidLevels * 3; // Each additional level costs 3 XP
         }
-    });
+    }
     
     // Calculate XP gained from negative traits (+4 XP each)
     ['Physical', 'Social', 'Mental'].forEach(category => {
@@ -838,27 +1416,35 @@ function handleClanChange() {
     const clanSelect = document.getElementById('clan');
     const selectedClan = clanSelect.value;
     
+    // Check if player has selected disciplines and warn about potential loss
+    const hasSelectedDisciplines = Object.values(characterData.disciplines).some(category => 
+        category && category.length > 0
+    );
+    
+    if (hasSelectedDisciplines) {
+        const confirmed = confirm(
+            `⚠️ Warning: Changing your clan may remove some of your selected disciplines.\n\n` +
+            `Are you sure you want to switch to ${selectedClan}?\n\n` +
+            `Any disciplines not available to ${selectedClan} will be automatically removed.`
+        );
+        
+        if (!confirmed) {
+            // Revert the clan selection
+            const previousClan = clanSelect.dataset.previousValue || 'Brujah';
+            clanSelect.value = previousClan;
+            return;
+        }
+    }
+    
+    // Store current selection as previous value
+    clanSelect.dataset.previousValue = selectedClan;
+    
     // Define which clans have access to which discipline categories
     const bloodSorceryClans = ['Giovanni', 'Tremere', 'Caitiff'];
-    const advancedClans = ['Assamite', 'Followers of Set', 'Lasombra', 'Malkavian', 'Ravnos', 'Tremere', 'Tzimisce', 'Caitiff'];
+    const advancedClans = ['Assamite', 'Followers of Set', 'Lasombra', 'Malkavian', 'Ravnos', 'Tzimisce', 'Caitiff'];
     
-    // Define clan-specific discipline access
-    const clanDisciplineAccess = {
-        'Assamite': ['Animalism', 'Celerity', 'Obfuscate', 'Quietus'],
-        'Brujah': ['Celerity', 'Potence', 'Presence'],
-        'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
-        'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
-        'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
-        'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
-        'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
-        'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
-        'Nosferatu': ['Animalism', 'Fortitude', 'Obfuscate'],
-        'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
-        'Toreador': ['Auspex', 'Celerity', 'Presence'],
-        'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy', 'Obtenebration', 'Daimoinon', 'Melpominee', 'Valeren'],
-        'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
-        'Ventrue': ['Dominate', 'Fortitude', 'Presence']
-    };
+    // Get clan-specific discipline access
+    const clanDisciplineAccess = getClanDisciplineAccess();
     
     // Get discipline sections
     const bloodSorcerySection = document.querySelector('[data-category="BloodSorcery"]');
@@ -903,18 +1489,77 @@ function clearDisciplinesByCategory(category) {
 function clearInvalidDisciplines(selectedClan, clanDisciplineAccess) {
     // Clear any selected disciplines that the clan can't access
     const allowedDisciplines = clanDisciplineAccess[selectedClan] || [];
+    let removedPowers = [];
     
     if (characterData.disciplines) {
         Object.keys(characterData.disciplines).forEach(category => {
             if (characterData.disciplines[category]) {
-                characterData.disciplines[category] = characterData.disciplines[category].filter(discipline => 
-                    allowedDisciplines.includes(discipline.name)
-                );
+                const originalCount = characterData.disciplines[category].length;
+                
+                // Filter out powers from disciplines the clan can't access
+                characterData.disciplines[category] = characterData.disciplines[category].filter(power => {
+                    const isValid = allowedDisciplines.includes(power.name);
+                    if (!isValid) {
+                        removedPowers.push(`${power.name}: ${power.powerName}`);
+                    }
+                    return isValid;
+                });
+                
                 refreshDisciplineDisplay(category);
             }
         });
         updateXPDisplay();
+        
+        // Show notification if any powers were removed
+        if (removedPowers.length > 0) {
+            showClanChangeNotification(removedPowers, selectedClan);
+        }
     }
+}
+
+// Show notification when disciplines are removed due to clan change
+function showClanChangeNotification(removedPowers, newClan) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #8b0000;
+        color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        z-index: 10000;
+        max-width: 300px;
+        font-size: 14px;
+        border-left: 4px solid #ff8c00;
+    `;
+    
+    const powerList = removedPowers.slice(0, 3).join('<br>');
+    const moreText = removedPowers.length > 3 ? `<br>...and ${removedPowers.length - 3} more` : '';
+    
+    notification.innerHTML = `
+        <strong>⚠️ Clan Change Notice</strong><br>
+        <small>Switched to ${newClan}</small><br><br>
+        <strong>Removed powers:</strong><br>
+        ${powerList}${moreText}
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 5000);
+    
+    // Allow manual close
+    notification.onclick = () => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    };
 }
 
 function updateDisciplineButtonStates(selectedClan, clanDisciplineAccess) {
