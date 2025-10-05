@@ -210,7 +210,7 @@ h4, .subsection-title {
 }
 
 .xp-tracker {
-    background: url('images/Granite-logo.jpg');
+    background: url('../images/Granite-logo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
