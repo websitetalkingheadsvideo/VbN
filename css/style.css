@@ -16,7 +16,7 @@ body {
 .sidebar {
     width: 280px;
     background: #2a2a2a;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 8px;
     padding: 15px;
     height: fit-content;
@@ -25,10 +25,10 @@ body {
 }
 
 .sidebar h3 {
-    color: #8b0000;
+    color: #4B0101;
     margin-bottom: 15px;
     font-size: 18px;
-    border-bottom: 2px solid #8b0000;
+    border-bottom: 2px solid #4B0101;
     padding-bottom: 10px;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .xp-summary {
     background: #1a1a1a;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 6px;
     padding: 15px;
     margin-bottom: 20px;
@@ -78,7 +78,7 @@ body {
 
 .xp-summary .total {
     font-size: 24px;
-    color: #8b0000;
+    color: #4B0101;
     text-align: center;
     font-weight: bold;
 }
@@ -87,13 +87,13 @@ body {
     flex: 1;
     max-width: 900px;
     background: #2a2a2a;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
 }
 
 .header {
-    background: #8b0000;
+    background: #4B0101;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -135,7 +135,7 @@ body {
 
 .version {
     background: #fff;
-    color: #8b0000;
+    color: #4B0101;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -195,7 +195,7 @@ body {
 .tabs {
     display: flex;
     background: #333;
-    border-bottom: 2px solid #8b0000;
+    border-bottom: 2px solid #4B0101;
     overflow-x: auto;
 }
 
@@ -217,8 +217,8 @@ body {
 
 .tab.active {
     background: #2a2a2a;
-    color: #8b0000;
-    border-bottom: 3px solid #8b0000;
+    color: #4B0101;
+    border-bottom: 3px solid #4B0101;
 }
 
 .tab-content {
@@ -267,7 +267,7 @@ input[type="number"]:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #8b0000;
+    border-color: #4B0101;
     box-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
 }
 
@@ -331,7 +331,7 @@ input[type="checkbox"] {
 
 button {
     padding: 12px 30px;
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -362,7 +362,7 @@ button:disabled {
 }
 
 .trait-header h3 {
-    color: #8b0000;
+    color: #4B0101;
     font-size: 20px;
 }
 
@@ -390,7 +390,7 @@ button:disabled {
 
 .trait-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #8b0000, #c00000);
+    background: linear-gradient(90deg, #4B0101, #c00000);
     transition: width 0.3s;
     position: relative;
 }
@@ -400,7 +400,7 @@ button:disabled {
 }
 
 .trait-progress-fill.complete {
-    background: linear-gradient(90deg, #8b0000, #c00000);
+    background: linear-gradient(90deg, #4B0101, #c00000);
 }
 
 .trait-progress-marker {
@@ -434,7 +434,7 @@ button:disabled {
 }
 
 .trait-tag {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -493,8 +493,8 @@ button:disabled {
 }
 
 .trait-option-btn:hover {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
@@ -506,13 +506,13 @@ button:disabled {
 }
 
 .trait-option-btn.selected {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
 .selected-trait {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -585,7 +585,7 @@ button:disabled {
 
 .info-box {
     background: #1a1a1a;
-    border-left: 4px solid #8b0000;
+    border-left: 4px solid #4B0101;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 4px;
@@ -620,7 +620,7 @@ button:disabled {
 }
 
 .ability-header h3 {
-    color: #8b0000;
+    color: #4B0101;
     font-size: 20px;
 }
 
@@ -648,7 +648,7 @@ button:disabled {
 
 .ability-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #8b0000, #c00000);
+    background: linear-gradient(90deg, #4B0101, #c00000);
     transition: width 0.3s;
     position: relative;
 }
@@ -658,7 +658,7 @@ button:disabled {
 }
 
 .ability-progress-fill.complete {
-    background: linear-gradient(90deg, #8b0000, #c00000);
+    background: linear-gradient(90deg, #4B0101, #c00000);
 }
 
 .ability-progress-marker {
@@ -711,8 +711,8 @@ button:disabled {
 }
 
 .ability-option-btn:hover {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
@@ -724,13 +724,13 @@ button:disabled {
 }
 
 .ability-option-btn.selected {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
 .selected-ability {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -768,8 +768,8 @@ button:disabled {
 
 /* Help Button Styles */
 .help-btn {
-    background: #8b0000;
-    border: 2px solid #8b0000;
+    background: #4B0101;
+    border: 2px solid #4B0101;
     color: #fff;
     width: 32px;
     height: 32px;
@@ -811,7 +811,7 @@ button:disabled {
 .modal-content {
     background-color: #2a2a2a;
     margin: 2% auto;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 8px;
     width: 90%;
     max-width: 1200px;
@@ -822,7 +822,7 @@ button:disabled {
 }
 
 .modal-header {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 15px;
     display: flex;
@@ -870,7 +870,7 @@ button:disabled {
 }
 
 .modal-btn {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     border: none;
     padding: 8px 20px;
@@ -899,7 +899,7 @@ button:disabled {
 }
 
 .discipline-table th {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 12px 8px;
     text-align: left;
@@ -926,7 +926,7 @@ button:disabled {
 
 .discipline-table td:first-child {
     font-weight: bold;
-    color: #8b0000;
+    color: #4B0101;
     white-space: nowrap;
 }
 
@@ -956,7 +956,7 @@ button:disabled {
 }
 
 .discipline-header h3 {
-    color: #8b0000;
+    color: #4B0101;
     font-size: 20px;
 }
 
@@ -984,7 +984,7 @@ button:disabled {
 
 .discipline-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #8b0000, #c00000);
+    background: linear-gradient(90deg, #4B0101, #c00000);
     transition: width 0.3s;
     position: relative;
 }
@@ -994,7 +994,7 @@ button:disabled {
 }
 
 .discipline-progress-fill.complete {
-    background: linear-gradient(90deg, #8b0000, #c00000);
+    background: linear-gradient(90deg, #4B0101, #c00000);
 }
 
 .discipline-progress-marker {
@@ -1048,8 +1048,8 @@ button:disabled {
 }
 
 .discipline-option-btn:hover {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
@@ -1061,8 +1061,8 @@ button:disabled {
 }
 
 .discipline-option-btn.selected {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
@@ -1085,7 +1085,7 @@ button:disabled {
 }
 
 .selected-discipline {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -1131,7 +1131,7 @@ button:disabled {
 .discipline-popover {
     position: absolute;
     background: #2a2a2a;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 8px;
     padding: 15px;
     z-index: 1000;
@@ -1142,10 +1142,10 @@ button:disabled {
 }
 
 .discipline-popover h4 {
-    color: #8b0000;
+    color: #4B0101;
     margin: 0 0 10px 0;
     font-size: 16px;
-    border-bottom: 1px solid #8b0000;
+    border-bottom: 1px solid #4B0101;
     padding-bottom: 5px;
 }
 
@@ -1162,8 +1162,8 @@ button:disabled {
 }
 
 .power-option:hover {
-    background: #8b0000;
-    border-color: #8b0000;
+    background: #4B0101;
+    border-color: #4B0101;
     color: #fff;
 }
 
@@ -1228,7 +1228,7 @@ button:disabled {
 }
 
 .clan-table th {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 12px 8px;
     text-align: left;
@@ -1255,7 +1255,7 @@ button:disabled {
 
 .clan-table td:first-child {
     font-weight: bold;
-    color: #8b0000;
+    color: #4B0101;
     white-space: nowrap;
 }
 
@@ -1299,14 +1299,14 @@ button:disabled {
 
 .finalization-options {
     background: #fff;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 8px;
     padding: 25px;
     text-align: center;
 }
 
 .finalize-btn {
-    background: linear-gradient(135deg, #8b0000, #a00000);
+    background: linear-gradient(135deg, #4B0101, #a00000);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -1370,7 +1370,7 @@ button:disabled {
 }
 
 .btn-finalize {
-    background: #8b0000;
+    background: #4B0101;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -1410,7 +1410,7 @@ button:disabled {
 /* Backgrounds System Styles */
 .backgrounds-summary {
     background: #2a2a2a;
-    border: 2px solid #8b0000;
+    border: 2px solid #4B0101;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 25px;
@@ -1437,7 +1437,7 @@ button:disabled {
 .summary-value {
     font-size: 18px;
     font-weight: bold;
-    color: #8b0000;
+    color: #4B0101;
 }
 
 .background-section {
@@ -1461,7 +1461,7 @@ button:disabled {
 }
 
 .background-header h3 {
-    color: #8b0000;
+    color: #4B0101;
     font-size: 18px;
     margin: 0;
 }
@@ -1493,7 +1493,7 @@ button:disabled {
 
 .background-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #8b0000, #ff4444);
+    background: linear-gradient(90deg, #4B0101, #ff4444);
     transition: width 0.3s ease;
     position: relative;
 }
@@ -1547,7 +1547,7 @@ button:disabled {
 }
 
 .background-option-btn.selected {
-    background: #8b0000;
+    background: #4B0101;
     border-color: #ff4444;
     color: #fff;
     box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
@@ -1571,7 +1571,7 @@ button:disabled {
 }
 
 .background-item {
-    background: #8b0000;
+    background: #4B0101;
     color: #fff;
     padding: 6px 12px;
     border-radius: 4px;
@@ -1608,7 +1608,7 @@ button:disabled {
 }
 
 .background-section.auto-calculated {
-    border-color: #8b0000;
+    border-color: #4B0101;
     background: linear-gradient(135deg, #2a2a2a 0%, #3a2a2a 100%);
 }
 
@@ -1650,7 +1650,7 @@ button:disabled {
 
 .background-textarea:focus {
     outline: none;
-    border-color: #8b0000;
+    border-color: #4B0101;
     box-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
 }
 
