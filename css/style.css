@@ -210,7 +210,7 @@ h4, .subsection-title {
 }
 
 .xp-tracker {
-    background: linear-gradient(135deg, #000713, #2E5740, #17212D, #1D2523);
+    background: radial-gradient(circle, #1D2523, #17212D, #2E5740, #000713);
     border: 2px solid #780606;
     border-radius: 6px;
     padding: 11px 20px;
