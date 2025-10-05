@@ -438,7 +438,7 @@ button:disabled {
 .trait-header h3 {
     color: #4B0101;
     font-size: 32px;
-    text-shadow: 0 0 8px rgba(75, 1, 1, 0.6), 0 0 16px rgba(75, 1, 1, 0.3);
+    text-shadow: 0 0 5px rgba(75, 1, 1, 0.6);
 }
 
 .trait-progress {
