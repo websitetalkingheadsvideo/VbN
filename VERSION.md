@@ -1,6 +1,33 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.6 (Current)
+## Version 0.2.7 (Current)
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Dynamic Discipline Section Visibility** - Blood Sorcery and Advanced Disciplines sections now hide/show based on clan selection
+- ✅ **Clan-Specific Discipline Access** - Only clans with access to specific discipline categories can see those sections
+- ✅ **Automatic Discipline Clearing** - When switching clans, disciplines from hidden sections are automatically cleared
+- ✅ **Real-time UI Updates** - Discipline sections update immediately when clan selection changes
+
+### Discipline Access Logic:
+- **Blood Sorcery:** Only Giovanni, Tremere, Caitiff can access
+- **Advanced Disciplines:** Assamite, Followers of Set, Lasombra, Malkavian, Ravnos, Tremere, Tzimisce, Caitiff can access
+- **Clan Disciplines:** All clans can access (always visible)
+
+### Technical Improvements:
+- Added `handleClanChange()` function to manage discipline section visibility
+- Added `clearDisciplinesByCategory()` function to clear disciplines when sections are hidden
+- Added `initializeDisciplineSections()` function for proper initialization
+- Updated HTML with `onchange="handleClanChange()"` on clan dropdown
+- Added `data-category` attributes to discipline sections for JavaScript targeting
+- Integrated discipline visibility into DOMContentLoaded event
+
+### Bug Fixes:
+- Fixed Ravnos incorrectly seeing Blood Sorcery disciplines
+- Fixed Giovanni incorrectly seeing Advanced Disciplines
+- Ensured proper discipline clearing when switching between incompatible clans
+
+## Version 0.2.6
 **Date:** January 4, 2025
 
 ### Major Features Added:

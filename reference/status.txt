@@ -1,134 +1,72 @@
-# LOTN Character Creator - Project Summary
+I'll help you stage, push, and summarize the current work for the next chat session.
 
-## **Project Overview**
-**Name:** LOTN Character Creator  
-**Version:** 0.2.0  
-**Type:** Web-based character creation system for Vampire: The Masquerade - Laws of the Night Revised (LOTN) tabletop RPG  
-**Tech Stack:** PHP, MySQL, HTML, CSS, JavaScript  
 
-## **Current Status**
-✅ **Completed:**
-- Basic authentication system (login/logout/sessions)
-- Database structure with comprehensive character tables
-- Character creation form UI (8 tabs, responsive design)
-- External CSS organization (`css/style.css`)
-- External JavaScript organization (`js/script.js`)
-- Task Master project management system initialized
-- Database credentials fixed and centralized
+[1 tool called]
 
-## **Database Structure**
-- **Main Tables:** `users`, `characters`
-- **Character Detail Tables:** `character_traits`, `character_abilities`, `character_disciplines`, `character_backgrounds`, `character_merits_flaws`, `character_derangements`, `character_equipment`, `character_influences`, `character_rituals`, `character_status`
+Let me fix the PowerShell syntax issue:
 
-## **File Structure**
-```
-C:\Users\paris\VbN\
-├── css/style.css (external styles)
-├── js/script.js (external JavaScript)
-├── includes/connect.php (centralized DB connection)
-├── lotn_char_create.php (main character creation form)
-├── login.php, login_process.php, logout.php (auth system)
-├── dashboard.php (user dashboard)
-├── .taskmaster/ (project management)
-└── reference/ (LOTN rules and setting docs)
-```
 
-## **Current Tasks (Task Master)**
-1. **Complete Character Creation Form** (High Priority) - 8 tabs need full implementation
-2. **Implement Character Loading/Editing** (High Priority) - Database integration
-3. **Add Character List to Dashboard** (Medium Priority) - Character management
-4. **Complete JavaScript Functionality** (High Priority) - Trait selection, XP tracking
-5. **Improve CSS Styling and Responsive Design** (Medium Priority)
-6. **Add Error Handling and User Feedback** (Medium Priority)
+[5 tools called]
 
-## **Key Features Needed**
-- **Character Creation:** 8-tab form (Basic Info, Traits, Abilities, Disciplines, Backgrounds, Morality, Merits & Flaws, Final Details)
-- **XP System:** 30 starting XP, 7 free traits, 4 XP for traits 8-10
-- **Trait System:** Physical/Social/Mental traits with card-based selection
-- **Database Integration:** Save/load/edit characters
-- **Validation:** LOTN rules compliance and form validation
+Perfect! The changes have been successfully staged, committed, and pushed. Here's a summary for the next chat session:
 
-## **LOTN Rules Context**
-- **Setting:** Phoenix by Night (1994) - Prince dies on character's first night
-- **System:** Card-based traits (not dots), 13 vampire clans + Caitiff
-- **Character Types:** All vampire clans supported, PC/NPC designation
-- **Morality:** Humanity path with Conscience, Self-Control, Courage virtues
+## **📋 Summary for Next Chat Session**
 
-## **Development Rules**
-- **CSS:** External `css/style.css` files only
-- **JavaScript:** External `js/script.js` files only  
-- **Database:** Centralized `includes/connect.php` connection
-- **Code Organization:** Clean separation of concerns
-# LOTN Character Creator - Project Summary for Next Chat
+### **✅ Completed Work:**
 
-## 🎯 **Current Status: v0.2.1 - XAMPP + Python Integration Complete**
+#### **1. Clan Availability System (Version 0.2.6)**
+- **Updated clan guide** to reflect PC vs Admin Approval requirements
+- **Moved Caitiff** from Admin Approval to PC Available (Camarilla)
+- **Added color-coded indicators**: Green for PC Available, Red for Admin Approval
+- **Updated character creation tips** to reflect new availability system
 
-### **What's Working:**
-- ✅ **XAMPP Development Environment** - Apache serving from `C:\Users\paris\VbN\`
-- ✅ **MySQL Database** - Complete schema with 12 character tables
-- ✅ **User Authentication** - Login system with role-based access (admin/user)
-- ✅ **Character Ownership** - Users own their characters, admin sees all
-- ✅ **Python Flask API** - RESTful endpoints for character management
-- ✅ **Admin Panel** - Full character management interface
+#### **2. Clan Reference Files Created:**
+- `reference/Clan_Complete_Guide.MD` - Comprehensive clan information
+- `reference/Clan_Disciplines.MD` - Clan to discipline mapping
+- `reference/Clan_Quick_Reference.MD` - Quick lookup table
+- `reference/Caitiff_Description.MD` - Detailed Caitiff information
 
-### **Access URLs:**
-- **Main App:** http://localhost/
-- **Character Creator:** http://localhost/lotn_char_create.php
-- **Admin Panel:** http://localhost/admin_panel.php
-- **Login:** http://localhost/login.php
-- **Python API:** http://localhost:5000/api/health
+#### **3. Discipline Visibility Logic (Partially Implemented)**
+- **Blood Sorcery**: Only Giovanni, Tremere, Caitiff
+- **Advanced Disciplines**: Assamite, Followers of Set, Lasombra, Malkavian, Ravnos, Tremere, Tzimisce, Caitiff
+- **Clan Disciplines**: All clans
 
-### **Login Credentials:**
-- **Admin:** `admin` / `password`
-- **Test User:** `testuser` / `password`
+### **🚧 Pending Work:**
 
-### **Current Features (Working):**
-- **Tab 1:** Basic Info (Character name, clan, generation, etc.)
-- **Tab 2:** Traits System (Physical/Social/Mental with negative traits)
-- **Tabs 3-8:** Placeholder (Abilities, Disciplines, Backgrounds, Morality, Merits & Flaws, Final Details)
+#### **1. Discipline Section Visibility (Not Yet Applied)**
+- **HTML Changes Needed:**
+  - Add `onchange="handleClanChange()"` to clan dropdown (line 292)
+  - Add `data-category="BloodSorcery"` to Blood Sorcery section (line 830)
+  - Add `data-category="Advanced"` to Advanced Disciplines section (line 857)
 
-### **Database Structure:**
-- **12 Tables:** users, characters, character_traits, character_abilities, character_disciplines, character_backgrounds, character_merits_flaws, character_morality, character_derangements, character_equipment, character_influences, character_rituals, character_status
-- **User Ownership:** Each character linked to user_id
-- **Admin Access:** Can see/edit all characters
+- **JavaScript Changes Needed:**
+  - Add `handleClanChange()` function to `js/script.js`
+  - Add `initializeDisciplineSections()` function
+  - Update DOMContentLoaded event
 
-### **Development Environment:**
-- **XAMPP:** Apache + MySQL running
-- **Python:** Flask API server (optional)
-- **Database:** `lotn_characters` in MySQL
-- **Setup Scripts:** `setup_database.php`, `check_users.php`, `start_development.bat`
+#### **2. Admin Panel Database Integration**
+- Create clan tables in database
+- Update admin panel to manage clan information
+- Replace hardcoded HTML with database queries
 
-### **Next Development Priorities:**
-1. **Complete Tab 3:** Abilities system
-2. **Complete Tab 4:** Disciplines system  
-3. **Complete Tab 5:** Backgrounds system
-4. **Complete Tab 6:** Morality & Stats system
-5. **Complete Tab 7:** Merits & Flaws system
-6. **Complete Tab 8:** Final Details system
-7. **Character Loading/Editing:** Load existing characters for editing
+### **🎯 Next Session Priorities:**
 
-### **Technical Stack:**
-- **Frontend:** HTML5, CSS3, JavaScript (vanilla)
-- **Backend:** PHP 8.2.12, MySQL 8.0
-- **API:** Python Flask (optional)
-- **Server:** XAMPP Apache 2.4.58
-- **Version Control:** Git (pushed to GitHub)
+1. **Apply discipline visibility changes** to fix Ravnos/Giovanni seeing wrong sections
+2. **Test discipline section hiding/showing** based on clan selection
+3. **Implement database-driven clan management** in admin panel
+4. **Create 7-column compact clan table** in modal
 
-### **Key Files:**
-- `lotn_char_create.php` - Main character creation form
-- `save_character.php` - Character saving handler
-- `admin_panel.php` - Admin character management
-- `python_api.py` - Flask API server
-- `setup_xampp.sql` - Database schema
-- `js/script.js` - Frontend JavaScript
-- `includes/connect.php` - Database connection
+### **🔧 Technical Notes:**
+- **Current Version**: 0.2.6
+- **Git Status**: All changes committed and pushed
+- **Server Access**: `http://localhost/lotn_char_create.php` (files in root of htdocs)
+- **Admin Panel**: `http://localhost/admin_panel.php` (login: admin/password)
 
-### **Project Location:**
-- **Local:** `C:\Users\paris\VbN\`
-- **XAMPP:** Served from same directory
-- **Git:** Pushed to GitHub repository
+### **📁 Key Files Modified:**
+- `lotn_char_create.php` - Clan guide modal and availability system
+- `css/style.css` - Color-coded availability indicators
+- `js/script.js` - Discipline visibility logic (needs completion)
+- `VERSION.md` - Updated to 0.2.6
+- `reference/` - New clan reference files
 
-**Ready for next development phase!** 🚀
-
-## **Next Priority**
-Complete the character creation form implementation - currently only Basic Info and partial Traits tabs are functional. Need to implement all 8 tabs with proper content, JavaScript functionality, and database integration.
+The discipline visibility logic is designed but not yet applied to the actual files. This should be the first priority in the next session!

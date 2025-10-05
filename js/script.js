@@ -822,8 +822,61 @@ window.onclick = function(event) {
     }
 }
 
+// Discipline Section Visibility Functions
+function handleClanChange() {
+    const clanSelect = document.getElementById('clan');
+    const selectedClan = clanSelect.value;
+    
+    // Define which clans have access to which discipline categories
+    const bloodSorceryClans = ['Giovanni', 'Tremere', 'Caitiff'];
+    const advancedClans = ['Assamite', 'Followers of Set', 'Lasombra', 'Malkavian', 'Ravnos', 'Tremere', 'Tzimisce', 'Caitiff'];
+    
+    // Get discipline sections
+    const bloodSorcerySection = document.querySelector('[data-category="BloodSorcery"]');
+    const advancedSection = document.querySelector('[data-category="Advanced"]');
+    
+    // Show/hide Blood Sorcery section
+    if (bloodSorcerySection) {
+        if (bloodSorceryClans.includes(selectedClan)) {
+            bloodSorcerySection.style.display = 'block';
+        } else {
+            bloodSorcerySection.style.display = 'none';
+            // Clear any selected Blood Sorcery disciplines
+            clearDisciplinesByCategory('BloodSorcery');
+        }
+    }
+    
+    // Show/hide Advanced Disciplines section
+    if (advancedSection) {
+        if (advancedClans.includes(selectedClan)) {
+            advancedSection.style.display = 'block';
+        } else {
+            advancedSection.style.display = 'none';
+            // Clear any selected Advanced disciplines
+            clearDisciplinesByCategory('Advanced');
+        }
+    }
+}
+
+function clearDisciplinesByCategory(category) {
+    // Remove disciplines from the specified category from characterData
+    if (characterData.disciplines && characterData.disciplines[category]) {
+        characterData.disciplines[category] = [];
+        refreshDisciplineDisplay();
+        updateXPDisplay();
+    }
+}
+
+function initializeDisciplineSections() {
+    // Set initial visibility based on current clan selection
+    handleClanChange();
+}
+
 // Initialize the character creation form
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize any required functionality when page loads
     console.log('LOTN Character Creation form loaded');
+    
+    // Initialize discipline section visibility
+    initializeDisciplineSections();
 });

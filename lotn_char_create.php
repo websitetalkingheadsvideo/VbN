@@ -7,8 +7,8 @@
 
 <body>
 	<?php
-// LOTN Character Creator - Version 0.2.0
-define('LOTN_VERSION', '0.2.6');
+// LOTN Character Creator - Version 0.2.7
+define('LOTN_VERSION', '0.2.7');
 
 session_start();
 
@@ -289,7 +289,7 @@ include 'includes/connect.php';
                                 <span>?</span>
                             </button>
                         </div>
-                        <select id="clan" name="clan" required>
+                        <select id="clan" name="clan" required onchange="handleClanChange()">
                             <option value="">Select Clan...</option>
                             <option value="Assamite">⚔️ Assamite</option>
                             <option value="Brujah">✊ Brujah</option>
@@ -827,7 +827,7 @@ include 'includes/connect.php';
                 </div>
                 
                 <!-- Blood Sorcery -->
-                <div class="discipline-section">
+                <div class="discipline-section" data-category="BloodSorcery">
                     <div class="discipline-header">
                         <h3>🩸 Blood Sorcery</h3>
                         <div class="discipline-progress">
@@ -854,7 +854,7 @@ include 'includes/connect.php';
                 </div>
                 
                 <!-- Advanced Disciplines -->
-                <div class="discipline-section">
+                <div class="discipline-section" data-category="Advanced">
                     <div class="discipline-header">
                         <h3>⚡ Advanced Disciplines</h3>
                         <div class="discipline-progress">
