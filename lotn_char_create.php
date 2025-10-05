@@ -7,8 +7,8 @@
 
 <body>
 	<?php
-// LOTN Character Creator - Version 0.2.8
-define('LOTN_VERSION', '0.2.8');
+// LOTN Character Creator - Version 0.2.9
+define('LOTN_VERSION', '0.3.0');
 
 session_start();
 
@@ -161,8 +161,14 @@ include 'includes/connect.php';
     <div class="container">
         <div class="header">
             <h1>⚜ Laws of the Night: Character Creation ⚜</h1>
-            <div class="version-info">
-                <span class="version">v<?php echo LOTN_VERSION; ?></span>
+            <div class="header-right">
+                <div class="user-info">
+                    <span class="user-label">Logged in as:</span>
+                    <span class="user-name"><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest User'; ?></span>
+                </div>
+                <div class="version-info">
+                    <span class="version">v<?php echo LOTN_VERSION; ?></span>
+                </div>
             </div>
             <div class="xp-tracker">
                 <div class="label">Available XP</div>
@@ -945,12 +951,23 @@ include 'includes/connect.php';
             <!-- Tab 8: Final Details -->
             <div class="tab-content" id="tab7">
                 <h2 style="color: #8b0000; margin-bottom: 25px;">Final Details</h2>
-                <p>Final Details section - Coming soon!</p>
                 
-                <div class="button-group">
-                    <button type="button" onclick="showTab(6)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
-                    <button type="button" class="complete-btn" onclick="markCharacterComplete()">✅ Complete Character Creation</button>
+                <div class="final-details-section">
+                    <h3>Character Summary</h3>
+                    <div id="characterSummary" class="character-summary">
+                        <!-- Character summary will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="finalization-options">
+                        <h3>Finalize Your Character</h3>
+                        <p>When you're ready to complete your character, click "Finalize Character" to save it permanently and generate your character sheet.</p>
+                        
+                        <div class="button-group">
+                            <button type="button" onclick="showTab(6)">← Previous</button>
+                            <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Draft</button>
+                            <button type="button" class="finalize-btn" onclick="showFinalizePopup()">🎯 Finalize Character</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
@@ -1073,6 +1090,59 @@ include 'includes/connect.php';
             </div>
             <div class="modal-footer">
                 <button type="button" class="modal-btn" onclick="closeDisciplineGuide()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Finalize Character Modal -->
+    <div id="finalizeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎯 Finalize Character</h2>
+                <button type="button" class="modal-close" onclick="closeFinalizeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="finalize-warning">
+                    <h3>⚠️ Important Notice</h3>
+                    <p>Finalizing your character will:</p>
+                    <ul>
+                        <li>✅ Save your character permanently to the database</li>
+                        <li>✅ Mark the character as complete</li>
+                        <li>✅ Enable advancement mode for future XP spending</li>
+                        <li>❌ Lock certain character creation options</li>
+                    </ul>
+                    <p><strong>Are you sure you want to finalize this character?</strong></p>
+                </div>
+                
+                <div class="character-preview">
+                    <h4>Character Preview:</h4>
+                    <div id="finalizePreview" class="preview-content">
+                        <!-- Character preview will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="closeFinalizeModal()">Cancel</button>
+                <button type="button" class="btn-finalize" onclick="finalizeCharacter()">🎯 Finalize Character</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Character Sheet Modal -->
+    <div id="characterSheetModal" class="modal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2>📄 Character Sheet</h2>
+                <button type="button" class="modal-close" onclick="closeCharacterSheetModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="characterSheetContent" class="character-sheet">
+                    <!-- Character sheet will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="closeCharacterSheetModal()">Close</button>
+                <button type="button" class="btn-download" onclick="downloadCharacterSheet()">📥 Download PDF</button>
             </div>
         </div>
     </div>

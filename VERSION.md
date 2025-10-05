@@ -1,6 +1,79 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.8 (Current)
+## Version 0.3.0 (Current)
+**Date:** January 5, 2025
+
+### Major Features Added:
+- ✅ **Working Character Saving System** - Basic character saving functionality with database integration
+- ✅ **Character Name Saving** - Characters can be saved with names and basic information
+- ✅ **Database Integration** - Characters are saved to MySQL database with proper error handling
+- ✅ **User Feedback System** - Success/error notifications for save operations
+- ✅ **Simplified Validation** - Only character name required for saving, all other fields optional
+- ✅ **User Display** - Shows logged-in username in header
+- ✅ **Finalize Character System** - "Finalize Character" button with confirmation popup
+- ✅ **Character Sheet Modal** - Modal for displaying and downloading character sheets
+
+### Technical Improvements:
+- Created working save script (`test_simple_insert.php`) for character saving
+- Added comprehensive error handling and debugging for save operations
+- Implemented notification system for user feedback
+- Added user display in header with proper styling
+- Created finalization modal system with character preview
+- Enhanced JavaScript with robust error handling for API calls
+- Simplified form validation to only require character name
+
+### Current Status:
+- ✅ Character creation form fully functional
+- ✅ Database connection working
+- ✅ Basic character saving working (name only)
+- ✅ User authentication and display working
+- ✅ All UI components functional
+- 🔄 Complex field saving needs debugging (technical issue with SQL statements)
+
+### Next Development Priority:
+- **Backgrounds System** - Implement backgrounds tab with resource tracking
+- **Enhanced Character Saving** - Add remaining fields to save functionality
+- **Character Loading/Editing** - Allow users to load and edit existing characters
+- **PDF Generation** - Implement character sheet PDF download
+
+---
+
+## Version 0.2.9
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Database Integration for Discipline Powers** - Moved all discipline data from hardcoded JavaScript to MySQL database
+- ✅ **Dynamic Data Loading** - Discipline powers, clans, and clan-discipline access now loaded from database via API
+- ✅ **Fallback System** - Automatic fallback to hardcoded data if database is unavailable
+- ✅ **Comprehensive Database Schema** - New tables for disciplines, discipline_powers, clans, and clan_disciplines
+- ✅ **API Endpoints** - RESTful API for accessing discipline data with multiple query options
+- ✅ **Data Population Scripts** - Automated scripts to populate database with all discipline data
+- ✅ **Testing and Documentation** - Complete setup guide and test scripts for database integration
+
+### Database Structure:
+- **disciplines** - Master list of all 22 disciplines with categories
+- **discipline_powers** - All 110 individual powers (5 per discipline) with descriptions
+- **clans** - All 14 clans with descriptions, weaknesses, themes, and availability
+- **clan_disciplines** - Complete mapping of which disciplines each clan can access
+- **character_discipline_powers** - New table for storing character's selected discipline powers
+
+### Technical Improvements:
+- Added `loadDisciplineData()` function to fetch data from database
+- Added `loadFallbackData()` function for offline operation
+- Created `api_disciplines.php` with multiple endpoint options
+- Created `populate_discipline_data.php` for database setup
+- Created `test_database_integration.php` for verification
+- Updated JavaScript to use async/await for data loading
+- Enhanced error handling and logging
+
+### Benefits:
+- **Maintainability** - Discipline data can be updated without modifying JavaScript
+- **Scalability** - Easy to add new disciplines, powers, or clans
+- **Consistency** - Single source of truth for all discipline data
+- **Admin Control** - Admins can modify discipline data through database
+- **Performance** - Data is loaded once and cached in JavaScript
+
+## Version 0.2.8
 **Date:** January 4, 2025
 
 ### Major Features Added:

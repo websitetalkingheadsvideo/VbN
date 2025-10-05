@@ -3,6 +3,7 @@
 
 // API Configuration
 const API_BASE_URL = 'http://localhost:5000/api';
+const PHP_BASE_URL = ''; // Relative path for PHP scripts
 
 // Tab functionality
 function showTab(tabIndex) {
@@ -27,8 +28,42 @@ function showTab(tabIndex) {
     }
 }
 
+// Notification system
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = message;
+    
+    // Style the notification
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#17a2b8'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 10000;
+        font-weight: bold;
+        max-width: 300px;
+        word-wrap: break-word;
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 5000);
+}
+
 // Character saving function
-function saveCharacter() {
+function saveCharacter(isFinalization = false) {
     // Collect all form data
     const formData = collectFormData();
     
@@ -41,36 +76,55 @@ function saveCharacter() {
     const saveButtons = document.querySelectorAll('.save-btn');
     saveButtons.forEach(btn => {
         btn.disabled = true;
-        btn.innerHTML = '💾 Saving...';
+        btn.innerHTML = isFinalization ? '🎯 Finalizing...' : '💾 Saving...';
     });
     
-    // Send data to server via Python API
-    fetch(`${API_BASE_URL}/characters`, {
+    // Send data to PHP save script
+    console.log('Sending data:', formData);
+    fetch('test_simple_insert.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text().then(text => {
+            console.log('Raw response:', text);
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('Invalid JSON response:', text);
+                console.error('JSON parse error:', e);
+                throw new Error('Invalid response from server: ' + text.substring(0, 200));
+            }
+        });
+    })
     .then(data => {
         if (data.success) {
-            alert('Character saved successfully!');
-            // Reset form or redirect
+            if (isFinalization) {
+                showNotification('🎉 Character finalized successfully!', 'success');
+            } else {
+                showNotification('✅ Character saved successfully!', 'success');
+            }
+            console.log('Full response data:', data);
             console.log('Character ID:', data.character_id);
         } else {
-            alert('Error saving character: ' + data.message);
+            showNotification('❌ Error saving character: ' + data.message, 'error');
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Error saving character. Please try again.');
+        showNotification('❌ Error saving character: ' + error.message, 'error');
     })
     .finally(() => {
         // Reset button state
         saveButtons.forEach(btn => {
             btn.disabled = false;
-            btn.innerHTML = '💾 Save Character';
+            btn.innerHTML = isFinalization ? '🎯 Finalize Character' : '💾 Save Draft';
         });
     });
 }
@@ -125,57 +179,54 @@ function collectFormData() {
     return data;
 }
 
-// Validate form data
+// Validate form data - Only require character name
 function validateFormData(data) {
-    const required = ['character_name', 'player_name', 'nature', 'demeanor', 'concept', 'clan', 'generation'];
-    
-    for (let field of required) {
-        if (!data[field] || data[field].toString().trim() === '') {
-            alert(`Please fill in the ${field.replace('_', ' ')} field.`);
-            return false;
-        }
-    }
-    
-    // Check trait requirements (7 per category)
-    const traitCounts = {
-        Physical: characterData.traits.Physical.length,
-        Social: characterData.traits.Social.length,
-        Mental: characterData.traits.Mental.length
-    };
-    
-    for (let category in traitCounts) {
-        if (traitCounts[category] < 7) {
-            alert(`Please select at least 7 ${category} traits.`);
-            return false;
-        }
-    }
-    
-    // Check ability requirements (3 per category, Optional not required)
-    const abilityCounts = {
-        Physical: characterData.abilities.Physical.length,
-        Social: characterData.abilities.Social.length,
-        Mental: characterData.abilities.Mental.length
-    };
-    
-    for (let category in abilityCounts) {
-        if (abilityCounts[category] < 3) {
-            alert(`Please select at least 3 ${category} abilities.`);
-            return false;
-        }
-    }
-    
-    // Check discipline requirements (3 clan disciplines required)
-    const clanDisciplineCount = characterData.disciplines.Clan.length;
-    if (clanDisciplineCount < 3) {
-        alert('Please select at least 3 Clan disciplines.');
+    // Only require character name
+    if (!data.character_name || data.character_name.toString().trim() === '') {
+        alert('Please enter a character name.');
         return false;
     }
     
     return true;
 }
 
-// Discipline powers data structure
-const disciplinePowers = {
+// Discipline powers data structure (loaded from database)
+let disciplinePowers = {};
+let clanDisciplineAccess = {};
+
+// Load discipline data from database
+async function loadDisciplineData() {
+    try {
+        const response = await fetch('api_disciplines.php?action=all');
+        const result = await response.json();
+        
+        if (result.success) {
+            // Set discipline powers
+            disciplinePowers = result.data.disciplinePowers;
+            
+            // Set clan discipline access
+            clanDisciplineAccess = result.data.clanDisciplineAccess;
+            
+            console.log('✅ Discipline data loaded from database');
+            console.log('Loaded disciplines:', Object.keys(disciplinePowers).length);
+            console.log('Loaded clans:', Object.keys(clanDisciplineAccess).length);
+        } else {
+            console.error('❌ Failed to load discipline data:', result.error);
+            // Fallback to hardcoded data if database fails
+            loadFallbackData();
+        }
+    } catch (error) {
+        console.error('❌ Error loading discipline data:', error);
+        // Fallback to hardcoded data if database fails
+        loadFallbackData();
+    }
+}
+
+// Fallback hardcoded data (in case database is unavailable)
+function loadFallbackData() {
+    console.log('⚠️ Using fallback hardcoded discipline data');
+    
+    disciplinePowers = {
     'Animalism': [
         { level: 1, name: 'Sense the Beast', description: 'The vampire can sense the presence of animals within a certain radius and understand their basic emotional state.' },
         { level: 2, name: 'Feral Whispers', description: 'The vampire can communicate directly with animals, understanding their thoughts and conveying complex messages.' },
@@ -330,7 +381,25 @@ const disciplinePowers = {
         { level: 4, name: 'Wither', description: 'The vampire can cause living things to wither and decay, using their connection to death.' },
         { level: 5, name: 'Deathly Chill', description: 'The vampire can create effects that can cause extreme cold and death-like conditions.' }
     ]
-};
+    };
+    
+    clanDisciplineAccess = {
+        'Assamite': ['Animalism', 'Celerity', 'Obfuscate', 'Quietus'],
+        'Brujah': ['Celerity', 'Potence', 'Presence'],
+        'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
+        'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+        'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
+        'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
+        'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
+        'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
+        'Nosferatu': ['Animalism', 'Fortitude', 'Obfuscate'],
+        'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
+        'Toreador': ['Auspex', 'Celerity', 'Presence'],
+        'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy'],
+        'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
+        'Ventrue': ['Dominate', 'Fortitude', 'Presence']
+    };
+}
 
 // Popover management
 let currentPopoverTimeout = null;
@@ -1244,24 +1313,9 @@ function isAdvancementMode() {
     return characterData.isCharacterComplete;
 }
 
-// Get clan discipline access mapping
+// Get clan discipline access mapping (now loaded from database)
 function getClanDisciplineAccess() {
-    return {
-        'Assamite': ['Animalism', 'Celerity', 'Obfuscate', 'Quietus'],
-        'Brujah': ['Celerity', 'Potence', 'Presence'],
-        'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
-        'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
-        'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
-        'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
-        'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
-        'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
-        'Nosferatu': ['Animalism', 'Fortitude', 'Obfuscate'],
-        'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
-        'Toreador': ['Auspex', 'Celerity', 'Presence'],
-        'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy'],
-        'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
-        'Ventrue': ['Dominate', 'Fortitude', 'Presence']
-    };
+    return clanDisciplineAccess;
 }
 
 // XP tracking and validation functions
@@ -1595,11 +1649,256 @@ function initializeDisciplineSections() {
     handleClanChange();
 }
 
+// Finalize Character Functions
+function showFinalizePopup() {
+    // Generate character summary
+    generateCharacterSummary();
+    
+    // Show the finalize modal
+    document.getElementById('finalizeModal').style.display = 'block';
+}
+
+function closeFinalizeModal() {
+    document.getElementById('finalizeModal').style.display = 'none';
+}
+
+function generateCharacterSummary() {
+    const summaryDiv = document.getElementById('characterSummary');
+    const previewDiv = document.getElementById('finalizePreview');
+    
+    // Get character data
+    const characterName = document.getElementById('characterName').value || 'Unnamed Character';
+    const playerName = document.getElementById('playerName').value || 'Unknown Player';
+    const clan = document.getElementById('clan').value || 'No Clan Selected';
+    const concept = document.getElementById('concept').value || 'No Concept';
+    const nature = document.getElementById('nature').value || 'No Nature';
+    const demeanor = document.getElementById('demeanor').value || 'No Demeanor';
+    
+    // Count traits
+    const physicalTraits = characterData.traits.Physical.length;
+    const socialTraits = characterData.traits.Social.length;
+    const mentalTraits = characterData.traits.Mental.length;
+    
+    // Count abilities
+    const physical = characterData.abilities.Physical ? characterData.abilities.Physical.length : 0;
+    const social = characterData.abilities.Social ? characterData.abilities.Social.length : 0;
+    const mental = characterData.abilities.Mental ? characterData.abilities.Mental.length : 0;
+    
+    // Count disciplines
+    const totalDisciplines = Object.keys(characterData.disciplines).length;
+    const totalDisciplineLevels = Object.values(characterData.disciplines).reduce((sum, levels) => sum + levels.length, 0);
+    
+    // XP summary
+    const totalXP = characterData.xpRemaining + characterData.xpSpent;
+    const spentXP = characterData.xpSpent;
+    const remainingXP = characterData.xpRemaining;
+    
+    const summaryHTML = `
+        <div class="character-summary-content">
+            <h4>📋 Character Summary</h4>
+            <div class="summary-grid">
+                <div class="summary-section">
+                    <h5>Basic Info</h5>
+                    <p><strong>Name:</strong> ${characterName}</p>
+                    <p><strong>Player:</strong> ${playerName}</p>
+                    <p><strong>Clan:</strong> ${clan}</p>
+                    <p><strong>Concept:</strong> ${concept}</p>
+                    <p><strong>Nature:</strong> ${nature}</p>
+                    <p><strong>Demeanor:</strong> ${demeanor}</p>
+                </div>
+                <div class="summary-section">
+                    <h5>Traits</h5>
+                    <p><strong>Physical:</strong> ${physicalTraits}/7</p>
+                    <p><strong>Social:</strong> ${socialTraits}/5</p>
+                    <p><strong>Mental:</strong> ${mentalTraits}/3</p>
+                </div>
+                <div class="summary-section">
+                    <h5>Abilities</h5>
+                    <p><strong>Physical:</strong> ${physical}/3</p>
+                    <p><strong>Social:</strong> ${social}/3</p>
+                    <p><strong>Mental:</strong> ${mental}/3</p>
+                </div>
+                <div class="summary-section">
+                    <h5>Disciplines</h5>
+                    <p><strong>Total Disciplines:</strong> ${totalDisciplines}</p>
+                    <p><strong>Total Levels:</strong> ${totalDisciplineLevels}</p>
+                </div>
+                <div class="summary-section">
+                    <h5>Experience</h5>
+                    <p><strong>Total XP:</strong> ${totalXP}</p>
+                    <p><strong>Spent XP:</strong> ${spentXP}</p>
+                    <p><strong>Remaining XP:</strong> ${remainingXP}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    summaryDiv.innerHTML = summaryHTML;
+    previewDiv.innerHTML = summaryHTML;
+}
+
+function finalizeCharacter() {
+    // Mark character as complete
+    characterData.isCharacterComplete = true;
+    
+    // Save character to database
+    saveCharacter(true); // true indicates finalization
+    
+    // Close the modal
+    closeFinalizeModal();
+    
+    // Show success message
+    showNotification('🎉 Character finalized successfully!', 'success');
+    
+    // Show character sheet
+    setTimeout(() => {
+        showCharacterSheet();
+    }, 1000);
+}
+
+function showCharacterSheet() {
+    // Generate character sheet content
+    generateCharacterSheet();
+    
+    // Show the character sheet modal
+    document.getElementById('characterSheetModal').style.display = 'block';
+}
+
+function closeCharacterSheetModal() {
+    document.getElementById('characterSheetModal').style.display = 'none';
+}
+
+function generateCharacterSheet() {
+    const sheetDiv = document.getElementById('characterSheetContent');
+    
+    // Get character data
+    const characterName = document.getElementById('characterName').value || 'Unnamed Character';
+    const playerName = document.getElementById('playerName').value || 'Unknown Player';
+    const clan = document.getElementById('clan').value || 'No Clan Selected';
+    const concept = document.getElementById('concept').value || 'No Concept';
+    const nature = document.getElementById('nature').value || 'No Nature';
+    const demeanor = document.getElementById('demeanor').value || 'No Demeanor';
+    const chronicle = document.getElementById('chronicle').value || 'Valley by Night';
+    const generation = document.getElementById('generation').value || '13th';
+    const sire = document.getElementById('sire').value || 'Unknown';
+    
+    const sheetHTML = `
+        <div class="character-sheet-content">
+            <div class="sheet-header">
+                <h1>Laws of the Night - Character Sheet</h1>
+                <div class="character-info">
+                    <h2>${characterName}</h2>
+                    <p><strong>Player:</strong> ${playerName} | <strong>Chronicle:</strong> ${chronicle}</p>
+                </div>
+            </div>
+            
+            <div class="sheet-section">
+                <h3>Basic Information</h3>
+                <div class="info-grid">
+                    <p><strong>Clan:</strong> ${clan}</p>
+                    <p><strong>Concept:</strong> ${concept}</p>
+                    <p><strong>Nature:</strong> ${nature}</p>
+                    <p><strong>Demeanor:</strong> ${demeanor}</p>
+                    <p><strong>Generation:</strong> ${generation}</p>
+                    <p><strong>Sire:</strong> ${sire}</p>
+                </div>
+            </div>
+            
+            <div class="sheet-section">
+                <h3>Attributes</h3>
+                <div class="attributes-grid">
+                    <div class="attribute-category">
+                        <h4>Physical</h4>
+                        <div class="attribute-list">
+                            ${characterData.traits.Physical.map(trait => `<div class="attribute-item">${trait}</div>`).join('')}
+                        </div>
+                    </div>
+                    <div class="attribute-category">
+                        <h4>Social</h4>
+                        <div class="attribute-list">
+                            ${characterData.traits.Social.map(trait => `<div class="attribute-item">${trait}</div>`).join('')}
+                        </div>
+                    </div>
+                    <div class="attribute-category">
+                        <h4>Mental</h4>
+                        <div class="attribute-list">
+                            ${characterData.traits.Mental.map(trait => `<div class="attribute-item">${trait}</div>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sheet-section">
+                <h3>Abilities</h3>
+                <div class="abilities-grid">
+                    <div class="ability-category">
+                        <h4>Physical</h4>
+                        <div class="ability-list">
+                            ${characterData.abilities.Physical ? characterData.abilities.Physical.map(ability => `<div class="ability-item">${ability}</div>`).join('') : ''}
+                        </div>
+                    </div>
+                    <div class="ability-category">
+                        <h4>Social</h4>
+                        <div class="ability-list">
+                            ${characterData.abilities.Social ? characterData.abilities.Social.map(ability => `<div class="ability-item">${ability}</div>`).join('') : ''}
+                        </div>
+                    </div>
+                    <div class="ability-category">
+                        <h4>Mental</h4>
+                        <div class="ability-list">
+                            ${characterData.abilities.Mental ? characterData.abilities.Mental.map(ability => `<div class="ability-item">${ability}</div>`).join('') : ''}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sheet-section">
+                <h3>Disciplines</h3>
+                <div class="disciplines-list">
+                    ${Object.entries(characterData.disciplines).map(([discipline, levels]) => 
+                        `<div class="discipline-item">
+                            <strong>${discipline}:</strong> ${levels.map(level => level.name).join(', ')}
+                        </div>`
+                    ).join('')}
+                </div>
+            </div>
+            
+            <div class="sheet-section">
+                <h3>Experience</h3>
+                <div class="xp-info">
+                    <p><strong>Total XP:</strong> ${characterData.xpRemaining + characterData.xpSpent}</p>
+                    <p><strong>Spent XP:</strong> ${characterData.xpSpent}</p>
+                    <p><strong>Remaining XP:</strong> ${characterData.xpRemaining}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    sheetDiv.innerHTML = sheetHTML;
+}
+
+function downloadCharacterSheet() {
+    // This would implement PDF generation
+    // For now, we'll show a placeholder message
+    showNotification('📥 PDF download feature coming soon!', 'info');
+}
+
 // Initialize the character creation form
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Initialize any required functionality when page loads
     console.log('LOTN Character Creation form loaded');
     
+    // Load discipline data from database
+    await loadDisciplineData();
+    
     // Initialize discipline section visibility
     initializeDisciplineSections();
+    
+    // Generate character summary when Final Details tab is shown
+    const finalDetailsTab = document.querySelector('[onclick="showTab(7)"]');
+    if (finalDetailsTab) {
+        finalDetailsTab.addEventListener('click', function() {
+            setTimeout(generateCharacterSummary, 100);
+        });
+    }
 });

@@ -104,10 +104,33 @@ body {
     position: relative;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+}
+
+.user-label {
+    font-size: 12px;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
 .version-info {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    /* No longer absolute positioned since it's in header-right */
 }
 
 .version {
@@ -1258,4 +1281,128 @@ button:disabled {
 
 .clan-table .admin-approval {
     color: #ff6b6b; /* Red for Admin Approval */
+}
+
+/* Finalize Character Styles */
+.final-details-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.character-summary {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.finalization-options {
+    background: #fff;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+}
+
+.finalize-btn {
+    background: linear-gradient(135deg, #8b0000, #a00000);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.finalize-btn:hover {
+    background: linear-gradient(135deg, #a00000, #c00000);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+}
+
+.finalize-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.finalize-warning h3 {
+    color: #856404;
+    margin-top: 0;
+}
+
+.finalize-warning ul {
+    text-align: left;
+    margin: 15px 0;
+}
+
+.character-preview {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.preview-content {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.btn-cancel {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-cancel:hover {
+    background: #5a6268;
+}
+
+.btn-finalize {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-finalize:hover {
+    background: #a00000;
+}
+
+.btn-download {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-download:hover {
+    background: #218838;
+}
+
+.large-modal {
+    max-width: 90%;
+    width: 1000px;
+}
+
+.character-sheet {
+    font-family: 'Times New Roman', serif;
+    line-height: 1.4;
 }
