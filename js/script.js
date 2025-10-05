@@ -643,7 +643,18 @@ function removeDiscipline(category, disciplineName, element) {
 
 // Refresh discipline display for a category
 function refreshDisciplineDisplay(category) {
-    const disciplineListElement = document.getElementById(category.toLowerCase() + 'DisciplinesList');
+    // Map category names to their corresponding element IDs
+    const elementIdMap = {
+        'Clan': 'clanDisciplinesList',
+        'BloodSorcery': 'bloodSorceryList',
+        'Advanced': 'advancedDisciplinesList'
+    };
+    
+    const disciplineListElement = document.getElementById(elementIdMap[category]);
+    if (!disciplineListElement) {
+        console.warn(`Discipline list element not found for category: ${category}`);
+        return;
+    }
     disciplineListElement.innerHTML = '';
     
     // Group disciplines by name and count them
