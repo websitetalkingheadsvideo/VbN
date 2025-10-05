@@ -10,7 +10,9 @@ body {
     color: #e0e0e0;
     padding: 15px;
     display: flex;
+    justify-content: center;
     gap: 20px;
+    min-height: 100vh;
 }
 
 /* Typography Hierarchy */
@@ -129,11 +131,11 @@ h4, .subsection-title {
 
 .container {
     flex: 1;
-    max-width: 900px;
+    max-width: 1200px;
     background: #2a2a2a;
-    border: 2px solid #4B0101;
+    border: 2px solid #780606;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(120, 6, 6, 0.3);
 }
 
 .header {

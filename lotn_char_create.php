@@ -1,12 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>lotn_char_create</title>
-</head>
-
-<body>
-	<?php
+<?php
 // LOTN Character Creator - Version 0.2.1
 define('LOTN_VERSION', '0.2.1');
 
@@ -159,7 +151,7 @@ include 'includes/connect.php';
         </div>
     </div>
     
-    <div class="container">
+    <div class="container" id="sheet">
         <div class="header">
             <h1 class="brand">⚜ Laws of the Night: Character Creation ⚜</h1>
             <div class="header-right">
