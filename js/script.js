@@ -884,7 +884,7 @@ function clearDisciplinesByCategory(category) {
     // Remove disciplines from the specified category from characterData
     if (characterData.disciplines && characterData.disciplines[category]) {
         characterData.disciplines[category] = [];
-        refreshDisciplineDisplay();
+        refreshDisciplineDisplay(category);
         updateXPDisplay();
     }
 }
@@ -899,9 +899,9 @@ function clearInvalidDisciplines(selectedClan, clanDisciplineAccess) {
                 characterData.disciplines[category] = characterData.disciplines[category].filter(discipline => 
                     allowedDisciplines.includes(discipline.name)
                 );
+                refreshDisciplineDisplay(category);
             }
         });
-        refreshDisciplineDisplay();
         updateXPDisplay();
     }
 }
