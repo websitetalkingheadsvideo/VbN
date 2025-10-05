@@ -903,3 +903,256 @@ button:disabled {
     color: #74c0fc;
     font-style: italic;
 }
+
+/* Discipline Styles */
+.discipline-section {
+    margin-bottom: 30px;
+}
+
+.discipline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.discipline-header h3 {
+    color: #8b0000;
+    font-size: 20px;
+}
+
+.discipline-progress {
+    width: 250px;
+}
+
+.discipline-progress-label {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.discipline-progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #1a1a1a;
+    border: 1px solid #555;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.discipline-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b0000, #c00000);
+    transition: width 0.3s;
+    position: relative;
+}
+
+.discipline-progress-fill.incomplete {
+    background: linear-gradient(90deg, #666, #888);
+}
+
+.discipline-progress-fill.complete {
+    background: linear-gradient(90deg, #8b0000, #c00000);
+}
+
+.discipline-progress-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #fff;
+    left: 60%;
+}
+
+.discipline-progress-marker::after {
+    content: '3';
+    position: absolute;
+    top: -18px;
+    left: -6px;
+    font-size: 10px;
+    color: #fff;
+}
+
+.discipline-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    min-height: 40px;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 6px;
+    border: 1px solid #555;
+}
+
+.discipline-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.discipline-option-btn {
+    background: #333;
+    border: 2px solid #555;
+    color: #e0e0e0;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.discipline-option-btn:hover {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #fff;
+}
+
+.discipline-option-btn:disabled {
+    background: #555;
+    border-color: #777;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.discipline-option-btn.selected {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #fff;
+}
+
+.discipline-option-btn.clan {
+    background: #2a1a00;
+    border-color: #ff8c00;
+    color: #ffb366;
+}
+
+.discipline-option-btn.clan:hover {
+    background: #ff8c00;
+    border-color: #ff8c00;
+    color: #fff;
+}
+
+.discipline-option-btn.clan.selected {
+    background: #ff8c00;
+    border-color: #ff8c00;
+    color: #fff;
+}
+
+.selected-discipline {
+    background: #8b0000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.selected-discipline.clan {
+    background: #ff8c00;
+    color: #fff;
+}
+
+.selected-discipline .discipline-name {
+    flex: 1;
+}
+
+.remove-discipline-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    transition: background 0.3s;
+}
+
+.remove-discipline-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Clan Table Styles */
+.clan-table-container {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.clan-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #1a1a1a;
+}
+
+.clan-table th {
+    background: #8b0000;
+    color: #fff;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #555;
+    position: sticky;
+    top: 0;
+}
+
+.clan-table td {
+    padding: 10px 8px;
+    border: 1px solid #555;
+    vertical-align: top;
+    color: #e0e0e0;
+}
+
+.clan-table tr:nth-child(even) {
+    background: #333;
+}
+
+.clan-table tr:hover {
+    background: #444;
+}
+
+.clan-table td:first-child {
+    font-weight: bold;
+    color: #8b0000;
+    white-space: nowrap;
+}
+
+.clan-table td:nth-child(2) {
+    color: #51cf66;
+}
+
+.clan-table td:nth-child(3) {
+    color: #ff6b6b;
+}
+
+.clan-table td:nth-child(4) {
+    color: #ffd43b;
+}
+
+.clan-table td:nth-child(5) {
+    font-weight: bold;
+}
+
+.clan-table .pc-available {
+    color: #51cf66; /* Green for PC Available */
+}
+
+.clan-table .admin-approval {
+    color: #ff6b6b; /* Red for Admin Approval */
+}

@@ -99,7 +99,7 @@ function collectFormData() {
         traits: characterData.traits,
         negativeTraits: characterData.negativeTraits,
         abilities: characterData.abilities,
-        disciplines: [], // Will be populated when disciplines tab is implemented
+        disciplines: characterData.disciplines,
         backgrounds: [], // Will be populated when backgrounds tab is implemented
         merits_flaws: [], // Will be populated when merits & flaws tab is implemented
         morality: {
@@ -164,6 +164,13 @@ function validateFormData(data) {
         }
     }
     
+    // Check discipline requirements (3 clan disciplines required)
+    const clanDisciplineCount = characterData.disciplines.Clan.length;
+    if (clanDisciplineCount < 3) {
+        alert('Please select at least 3 Clan disciplines.');
+        return false;
+    }
+    
     return true;
 }
 
@@ -184,6 +191,11 @@ let characterData = {
         Social: [],
         Mental: [],
         Optional: []
+    },
+    disciplines: {
+        Clan: [],
+        BloodSorcery: [],
+        Advanced: []
     },
     physicalTraitCategories: {
         agility: ['Agile', 'Lithe', 'Nimble', 'Quick', 'Spry', 'Graceful', 'Slender'],
@@ -545,11 +557,162 @@ function updateAbilityCount(category) {
     }
 }
 
+// Discipline selection function
+function selectDiscipline(category, disciplineName) {
+    const disciplineList = characterData.disciplines[category];
+    const disciplineListElement = document.getElementById(category.toLowerCase() + 'DisciplinesList');
+    
+    // Check if this discipline is already at maximum (5 dots)
+    const currentCount = disciplineList.filter(d => d === disciplineName).length;
+    if (currentCount >= 5) {
+        alert(`${disciplineName} is already at maximum level (5 dots).`);
+        return;
+    }
+    
+    // Add discipline to character data
+    disciplineList.push(disciplineName);
+    
+    // Refresh the discipline display
+    refreshDisciplineDisplay(category);
+    
+    // Update count and progress
+    updateDisciplineCount(category);
+    updateXPDisplay();
+    
+    // Update discipline button appearance (but don't disable - allow multiple selections)
+    const disciplineButton = Array.from(document.querySelectorAll('.discipline-option-btn')).find(btn => 
+        btn.onclick.toString().includes(category) && btn.textContent.includes(disciplineName.split(' (')[0])
+    );
+    if (disciplineButton) {
+        disciplineButton.classList.add('selected');
+        // Update button text to show count
+        const count = characterData.disciplines[category].filter(d => d === disciplineName).length;
+        if (count > 1) {
+            disciplineButton.textContent = `${disciplineName} (${count})`;
+        }
+        
+        // Disable button if at maximum
+        if (count >= 5) {
+            disciplineButton.disabled = true;
+            disciplineButton.style.opacity = '0.6';
+            disciplineButton.title = `${disciplineName} is at maximum level (5 dots)`;
+        }
+    }
+}
+
+// Remove discipline function
+function removeDiscipline(category, disciplineName, element) {
+    const disciplineList = characterData.disciplines[category];
+    const index = disciplineList.lastIndexOf(disciplineName); // Remove the last instance
+    if (index > -1) {
+        disciplineList.splice(index, 1);
+    }
+    
+    // Refresh the discipline display
+    refreshDisciplineDisplay(category);
+    
+    // Update count and progress
+    updateDisciplineCount(category);
+    updateXPDisplay();
+    
+    // Update discipline button appearance
+    const disciplineButton = Array.from(document.querySelectorAll('.discipline-option-btn')).find(btn => 
+        btn.onclick.toString().includes(category) && btn.textContent.includes(disciplineName.split(' (')[0])
+    );
+    if (disciplineButton) {
+        const remainingCount = characterData.disciplines[category].filter(d => d === disciplineName).length;
+        if (remainingCount === 0) {
+            disciplineButton.classList.remove('selected');
+            disciplineButton.textContent = disciplineName;
+            disciplineButton.disabled = false;
+            disciplineButton.style.opacity = '1';
+            disciplineButton.title = '';
+        } else if (remainingCount === 1) {
+            disciplineButton.textContent = disciplineName;
+            disciplineButton.disabled = false;
+            disciplineButton.style.opacity = '1';
+            disciplineButton.title = '';
+        } else {
+            disciplineButton.textContent = `${disciplineName} (${remainingCount})`;
+            disciplineButton.disabled = false;
+            disciplineButton.style.opacity = '1';
+            disciplineButton.title = '';
+        }
+    }
+}
+
+// Refresh discipline display for a category
+function refreshDisciplineDisplay(category) {
+    const disciplineListElement = document.getElementById(category.toLowerCase() + 'DisciplinesList');
+    disciplineListElement.innerHTML = '';
+    
+    // Group disciplines by name and count them
+    const disciplineCounts = {};
+    characterData.disciplines[category].forEach(discipline => {
+        disciplineCounts[discipline] = (disciplineCounts[discipline] || 0) + 1;
+    });
+    
+    // Create display elements for each unique discipline
+    Object.keys(disciplineCounts).forEach(disciplineName => {
+        const count = disciplineCounts[disciplineName];
+        const disciplineElement = document.createElement('div');
+        disciplineElement.className = 'selected-discipline';
+        
+        // Add clan class for clan disciplines
+        if (category === 'Clan') {
+            disciplineElement.classList.add('clan');
+        }
+        
+        const displayName = count > 1 ? `${disciplineName} (${count})` : disciplineName;
+        disciplineElement.innerHTML = `
+            <span class="discipline-name">${displayName}</span>
+            <button type="button" class="remove-discipline-btn" onclick="removeDiscipline('${category}', '${disciplineName}', this)">×</button>
+        `;
+        disciplineListElement.appendChild(disciplineElement);
+    });
+}
+
+// Update discipline count and progress bar
+function updateDisciplineCount(category) {
+    const count = characterData.disciplines[category].length;
+    const countDisplay = document.getElementById(category.toLowerCase() + 'DisciplinesCountDisplay');
+    const progressFill = document.getElementById(category.toLowerCase() + 'DisciplinesProgressFill');
+    
+    // Update displays
+    countDisplay.textContent = count;
+    
+    // Update progress bar
+    const percentage = Math.min((count / 5) * 100, 100);
+    progressFill.style.width = percentage + '%';
+    
+    // Update progress bar class
+    if (category === 'Clan') {
+        // Clan disciplines require 3 dots minimum
+        if (count >= 3) {
+            progressFill.classList.remove('incomplete');
+            progressFill.classList.add('complete');
+        } else {
+            progressFill.classList.remove('complete');
+            progressFill.classList.add('incomplete');
+        }
+    } else {
+        // Blood Sorcery and Advanced disciplines are optional
+        if (count >= 1) {
+            progressFill.classList.remove('incomplete');
+            progressFill.classList.add('complete');
+        } else {
+            progressFill.classList.remove('complete');
+            progressFill.classList.add('incomplete');
+        }
+    }
+}
+
 // XP tracking and validation functions
 function updateXPDisplay() {
     let totalXP = 0;
     let traitsXP = 0;
     let abilitiesXP = 0;
+    let disciplinesXP = 0;
     let negativeTraitsXP = 0;
     
     // Calculate XP spent on traits (first 7 are free, 8-10 cost 4 XP each)
@@ -570,13 +733,22 @@ function updateXPDisplay() {
         }
     });
     
+    // Calculate XP spent on disciplines (first 3 are free, 4-5 cost 3 XP each)
+    ['Clan', 'BloodSorcery', 'Advanced'].forEach(category => {
+        const count = characterData.disciplines[category].length;
+        if (count > 3) {
+            const paidDisciplines = count - 3;
+            disciplinesXP += paidDisciplines * 3;
+        }
+    });
+    
     // Calculate XP gained from negative traits (+4 XP each)
     ['Physical', 'Social', 'Mental'].forEach(category => {
         const negativeCount = characterData.negativeTraits[category].length;
         negativeTraitsXP += negativeCount * 4;
     });
     
-    totalXP = traitsXP + abilitiesXP - negativeTraitsXP; // Negative traits reduce XP cost
+    totalXP = traitsXP + abilitiesXP + disciplinesXP - negativeTraitsXP; // Negative traits reduce XP cost
     
     // Update character data
     characterData.xpSpent = totalXP;
@@ -588,6 +760,7 @@ function updateXPDisplay() {
     document.getElementById('xpDisplay').textContent = characterData.xpRemaining;
     document.getElementById('xpTraits').textContent = traitsXP;
     document.getElementById('xpAbilities').textContent = abilitiesXP;
+    document.getElementById('xpDisciplines').textContent = disciplinesXP;
     document.getElementById('xpFlaws').textContent = negativeTraitsXP;
     
     // Update XP remaining color
@@ -619,6 +792,15 @@ function saveCharacterData() {
     // Collect all form data and save to database
 }
 
+// Clan Guide Modal Functions
+function showClanGuide() {
+    document.getElementById('clanGuideModal').style.display = 'block';
+}
+
+function closeClanGuide() {
+    document.getElementById('clanGuideModal').style.display = 'none';
+}
+
 // Discipline Guide Modal Functions
 function showDisciplineGuide() {
     document.getElementById('disciplineGuideModal').style.display = 'block';
@@ -630,9 +812,13 @@ function closeDisciplineGuide() {
 
 // Close modal when clicking outside of it
 window.onclick = function(event) {
-    const modal = document.getElementById('disciplineGuideModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
+    const clanModal = document.getElementById('clanGuideModal');
+    const disciplineModal = document.getElementById('disciplineGuideModal');
+    if (event.target === clanModal) {
+        clanModal.style.display = 'none';
+    }
+    if (event.target === disciplineModal) {
+        disciplineModal.style.display = 'none';
     }
 }
 

@@ -8,7 +8,7 @@
 <body>
 	<?php
 // LOTN Character Creator - Version 0.2.0
-define('LOTN_VERSION', '0.2.3');
+define('LOTN_VERSION', '0.2.6');
 
 session_start();
 
@@ -283,23 +283,28 @@ include 'includes/connect.php';
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="clan">Clan *</label>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <label for="clan" style="margin: 0;">Clan *</label>
+                            <button type="button" class="help-btn" onclick="showClanGuide()" title="View Clan Guide">
+                                <span>?</span>
+                            </button>
+                        </div>
                         <select id="clan" name="clan" required>
                             <option value="">Select Clan...</option>
-                            <option value="Assamite">Assamite</option>
-                            <option value="Brujah">Brujah</option>
-                            <option value="Followers of Set">Followers of Set</option>
-                            <option value="Gangrel">Gangrel</option>
-                            <option value="Giovanni">Giovanni</option>
-                            <option value="Lasombra">Lasombra</option>
-                            <option value="Malkavian">Malkavian</option>
-                            <option value="Nosferatu">Nosferatu</option>
-                            <option value="Ravnos">Ravnos</option>
-                            <option value="Toreador">Toreador</option>
-                            <option value="Tremere">Tremere</option>
-                            <option value="Tzimisce">Tzimisce</option>
-                            <option value="Ventrue">Ventrue</option>
-                            <option value="Caitiff">Caitiff</option>
+                            <option value="Assamite">⚔️ Assamite</option>
+                            <option value="Brujah">✊ Brujah</option>
+                            <option value="Followers of Set">🐍 Followers of Set</option>
+                            <option value="Gangrel">🐺 Gangrel</option>
+                            <option value="Giovanni">💀 Giovanni</option>
+                            <option value="Lasombra">🌑 Lasombra</option>
+                            <option value="Malkavian">🎭 Malkavian</option>
+                            <option value="Nosferatu">🦇 Nosferatu</option>
+                            <option value="Ravnos">🎪 Ravnos</option>
+                            <option value="Toreador">🌹 Toreador</option>
+                            <option value="Tremere">⭐ Tremere</option>
+                            <option value="Tzimisce">🧬 Tzimisce</option>
+                            <option value="Ventrue">👑 Ventrue</option>
+                            <option value="Caitiff">❓ Caitiff</option>
                         </select>
                     </div>
                     
@@ -767,7 +772,120 @@ include 'includes/connect.php';
             <!-- Tab 4: Disciplines -->
             <div class="tab-content" id="tab3">
                 <h2 style="color: #8b0000; margin-bottom: 25px;">Disciplines</h2>
-                <p>Disciplines section - Coming soon!</p>
+                
+                <div class="info-box">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1;">
+                            <strong>Discipline Selection:</strong> Choose your disciplines from the lists below.
+                            <ul>
+                                <li><strong>First 3 discipline dots</strong> are <strong>FREE</strong></li>
+                                <li>Discipline dots 4-5 cost <strong>3 XP each</strong></li>
+                                <li><strong>Maximum 5 dots per individual discipline</strong> (e.g., Potence 5, Presence 3, etc.)</li>
+                                <li><strong>You can select the same discipline multiple times</strong> - click the same discipline button repeatedly to add dots</li>
+                                <li><strong>Remove discipline dots anytime</strong> - click the × button on any selected discipline to remove dots</li>
+                                <li>Each click adds 1 dot to that discipline and counts toward your XP cost</li>
+                                <li><strong>Clan disciplines</strong> are marked with a special indicator</li>
+                            </ul>
+                        </div>
+                        <button type="button" class="help-btn" onclick="showDisciplineGuide()" title="View Discipline-Ability Guide">
+                            <span>?</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Clan Disciplines -->
+                <div class="discipline-section">
+                    <div class="discipline-header">
+                        <h3>🏛️ Clan Disciplines</h3>
+                        <div class="discipline-progress">
+                            <div class="discipline-progress-label">
+                                <span><span id="clanDisciplinesCountDisplay">0</span> dots</span>
+                                <span>3 required | 5 max per discipline</span>
+                            </div>
+                            <div class="discipline-progress-bar">
+                                <div class="discipline-progress-fill incomplete" id="clanDisciplinesProgressFill" style="width: 0%;">
+                                    <div class="discipline-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discipline-options" id="clanDisciplinesOptions">
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Animalism')">Animalism</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Auspex')">Auspex</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Celerity')">Celerity</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Dominate')">Dominate</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Fortitude')">Fortitude</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Obfuscate')">Obfuscate</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Potence')">Potence</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Presence')">Presence</button>
+                        <button type="button" class="discipline-option-btn clan" onclick="selectDiscipline('Clan', 'Protean')">Protean</button>
+                    </div>
+                    
+                    <div class="discipline-list" id="clanDisciplinesList">
+                    </div>
+                </div>
+                
+                <!-- Blood Sorcery -->
+                <div class="discipline-section">
+                    <div class="discipline-header">
+                        <h3>🩸 Blood Sorcery</h3>
+                        <div class="discipline-progress">
+                            <div class="discipline-progress-label">
+                                <span><span id="bloodSorceryCountDisplay">0</span> dots</span>
+                                <span>0 required | 5 max per discipline</span>
+                            </div>
+                            <div class="discipline-progress-bar">
+                                <div class="discipline-progress-fill incomplete" id="bloodSorceryProgressFill" style="width: 0%;">
+                                    <div class="discipline-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discipline-options" id="bloodSorceryOptions">
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('BloodSorcery', 'Thaumaturgy')">Thaumaturgy</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('BloodSorcery', 'Necromancy')">Necromancy</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('BloodSorcery', 'Koldunic Sorcery')">Koldunic Sorcery</button>
+                    </div>
+                    
+                    <div class="discipline-list" id="bloodSorceryList">
+                    </div>
+                </div>
+                
+                <!-- Advanced Disciplines -->
+                <div class="discipline-section">
+                    <div class="discipline-header">
+                        <h3>⚡ Advanced Disciplines</h3>
+                        <div class="discipline-progress">
+                            <div class="discipline-progress-label">
+                                <span><span id="advancedDisciplinesCountDisplay">0</span> dots</span>
+                                <span>0 required | 5 max per discipline</span>
+                            </div>
+                            <div class="discipline-progress-bar">
+                                <div class="discipline-progress-fill incomplete" id="advancedDisciplinesProgressFill" style="width: 0%;">
+                                    <div class="discipline-progress-marker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discipline-options" id="advancedDisciplinesOptions">
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Obtenebration')">Obtenebration</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Chimerstry')">Chimerstry</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Dementation')">Dementation</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Quietus')">Quietus</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Vicissitude')">Vicissitude</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Serpentis')">Serpentis</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Daimoinon')">Daimoinon</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Melpominee')">Melpominee</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Valeren')">Valeren</button>
+                        <button type="button" class="discipline-option-btn" onclick="selectDiscipline('Advanced', 'Mortis')">Mortis</button>
+                    </div>
+                    
+                    <div class="discipline-list" id="advancedDisciplinesList">
+                    </div>
+                </div>
                 
                 <div class="button-group">
                     <button type="button" onclick="showTab(2)">← Previous</button>
@@ -824,6 +942,75 @@ include 'includes/connect.php';
                 </div>
             </div>
         </form>
+    </div>
+
+    <!-- Clan Guide Modal -->
+    <div id="clanGuideModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Clan Guide</h2>
+                <button type="button" class="modal-close" onclick="closeClanGuide()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Complete guide to all vampire clans:</strong></p>
+                <div class="clan-table-container">
+                    <table class="clan-table">
+                        <thead>
+                            <tr>
+                                <th>Clan</th>
+                                <th>Disciplines</th>
+                                <th>Weakness</th>
+                                <th>Theme</th>
+                                <th>Availability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>⚔️ Assamite</strong></td><td>Celerity, Obfuscate, Quietus</td><td>Blood addiction to other vampires</td><td>Middle Eastern assassins</td><td class="admin-approval">Admin Approval</td></tr>
+                            <tr><td><strong>✊ Brujah</strong></td><td>Celerity, Potence, Presence</td><td>Prone to frenzy when insulted</td><td>Rebels and warriors</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>🐍 Followers of Set</strong></td><td>Obfuscate, Presence, Serpentis</td><td>Cannot enter holy ground</td><td>Egyptian cultists</td><td class="admin-approval">Admin Approval</td></tr>
+                            <tr><td><strong>🐺 Gangrel</strong></td><td>Animalism, Fortitude, Protean</td><td>Prone to bestial traits over time</td><td>Shapeshifters and survivors</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>💀 Giovanni</strong></td><td>Dominate, Potence, Necromancy</td><td>Cannot create blood bonds</td><td>Necromancers and businessmen</td><td class="admin-approval">Admin Approval</td></tr>
+                            <tr><td><strong>🌑 Lasombra</strong></td><td>Dominate, Obtenebration, Potence</td><td>No reflection in mirrors</td><td>Shadow manipulators</td><td class="admin-approval">Admin Approval</td></tr>
+                            <tr><td><strong>🎭 Malkavian</strong></td><td>Auspex, Dementation, Obfuscate</td><td>All have some form of derangement</td><td>Seers and madmen</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>🦇 Nosferatu</strong></td><td>Animalism, Obfuscate, Potence</td><td>Hideously deformed</td><td>Information brokers</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>🎪 Ravnos</strong></td><td>Animalism, Chimerstry, Fortitude</td><td>Cannot resist challenges to honor</td><td>Illusionists and tricksters</td><td class="admin-approval">Admin Approval</td></tr>
+                            <tr><td><strong>🌹 Toreador</strong></td><td>Auspex, Celerity, Presence</td><td>Prone to distraction by beauty</td><td>Artists and socialites</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>⭐ Tremere</strong></td><td>Auspex, Dominate, Thaumaturgy</td><td>Cannot create childer without permission</td><td>Blood sorcerers and scholars</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>🧬 Tzimisce</strong></td><td>Animalism, Auspex, Vicissitude</td><td>Must sleep in native soil</td><td>Flesh shapers</td><td class="admin-approval">Admin Approval</td></tr>
+                            <tr><td><strong>👑 Ventrue</strong></td><td>Dominate, Fortitude, Presence</td><td>Cannot feed from animals or the poor</td><td>Leaders and rulers</td><td class="pc-available">PC Available</td></tr>
+                            <tr><td><strong>❓ Caitiff</strong></td><td>Choose any 3 disciplines</td><td>No clan weakness (but no clan support)</td><td>Clanless vampires who can appear in any sect</td><td class="pc-available">PC Available</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h3>Character Creation Tips</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                        <div>
+                            <h4>For New Players:</h4>
+                            <ul>
+                                <li><strong>PC Available clans:</strong> Brujah, Caitiff, Gangrel, Malkavian, Nosferatu, Toreador, Tremere, Ventrue</li>
+                                <li>Focus on your character concept</li>
+                                <li>Read the weakness carefully</li>
+                                <li>Use the discipline guide for abilities</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>For Experienced Players:</h4>
+                            <ul>
+                                <li><strong>Admin Approval clans:</strong> Assamite, Setites, Giovanni, Lasombra, Ravnos, Tzimisce</li>
+                                <li>Plan your discipline build</li>
+                                <li>Embrace the clan weakness as roleplay</li>
+                                <li>Consider cross-training disciplines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-btn" onclick="closeClanGuide()">Close</button>
+            </div>
+        </div>
     </div>
 
     <!-- Discipline Guide Modal -->

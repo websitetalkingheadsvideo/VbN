@@ -1,6 +1,81 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.3 (Current)
+## Version 0.2.6 (Current)
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Clan Availability System** - Updated clan guide to reflect PC vs Admin Approval requirements
+- ✅ **PC Available Clans** - Brujah, Caitiff, Gangrel, Malkavian, Nosferatu, Toreador, Tremere, Ventrue
+- ✅ **Admin Approval Clans** - Assamite, Followers of Set, Giovanni, Lasombra, Ravnos, Tzimisce
+- ✅ **Visual Availability Indicators** - Color-coded availability status (green for PC Available, red for Admin Approval)
+- ✅ **Updated Character Creation Tips** - Reflects new availability system for new vs experienced players
+
+### Technical Improvements:
+- Updated clan table header from "Difficulty" to "Availability"
+- Added CSS classes for visual distinction between availability types
+- Updated character creation tips to reflect Camarilla vs non-Camarilla clan availability
+- Maintained all existing clan information while clarifying access requirements
+
+### Game Balance:
+- Clear distinction between PC-available Camarilla clans and admin-approval required clans
+- Helps new players understand which clans are appropriate for their first characters
+- Provides guidance for experienced players on advanced clan options
+
+## Version 0.2.5
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Complete Clan Guide System** - Comprehensive clan information with help modal
+- ✅ **Clan Help Button** - "?" button next to clan dropdown in Basic Info tab
+- ✅ **Clan Information Modal** - Complete clan table with disciplines, weaknesses, themes, and difficulty
+- ✅ **Clan Icons in Dropdown** - Visual clan icons in the clan selection dropdown
+- ✅ **Character Creation Tips** - Beginner and advanced player guidance in modal
+- ✅ **Reusable Modal System** - Both clan and discipline guides use the same modal framework
+
+### Clan Guide Features:
+- **All 14 Clans:** Complete information for all core clans plus Caitiff
+- **Comprehensive Table:** Disciplines, weaknesses, themes, and difficulty levels
+- **Visual Icons:** Text-based clan symbols (⚔️ Assamite, ✊ Brujah, etc.)
+- **Color-Coded Information:** Different colors for disciplines, weaknesses, themes, and difficulty
+- **Character Creation Tips:** Separate guidance for new and experienced players
+- **Responsive Design:** Works on all screen sizes with scrollable content
+
+### Technical Improvements:
+- Extended modal system to support multiple guides
+- New CSS styles for clan table with color coding
+- Updated JavaScript to handle both clan and discipline modals
+- Enhanced user experience with visual clan identification
+- Consistent design language across all help systems
+
+---
+
+## Version 0.2.4
+**Date:** January 4, 2025
+
+### Major Features Added:
+- ✅ **Complete Disciplines System** - All 3 categories (Clan, Blood Sorcery, Advanced) with full functionality
+- ✅ **Discipline Selection Interface** - Interactive buttons with multiple selection support
+- ✅ **Discipline Progress Tracking** - Real-time progress bars and count displays
+- ✅ **Discipline XP Calculation** - First 3 discipline dots free, 4-5 cost 3 XP each
+- ✅ **Discipline Management** - Add/remove discipline dots with visual feedback
+- ✅ **Clan Discipline Highlighting** - Special orange styling for clan disciplines
+- ✅ **5-Dot Maximum Per Discipline** - Enforced maximum of 5 dots for any single discipline
+
+### Discipline Categories:
+- **Clan Disciplines:** 9 disciplines (Animalism, Auspex, Celerity, Dominate, Fortitude, Obfuscate, Potence, Presence, Protean)
+- **Blood Sorcery:** 3 disciplines (Thaumaturgy, Necromancy, Koldunic Sorcery)
+- **Advanced Disciplines:** 10 disciplines (Obtenebration, Chimerstry, Dementation, Quietus, Vicissitude, Serpentis, Daimoinon, Melpominee, Valeren, Mortis)
+
+### Technical Improvements:
+- Extended JavaScript functionality for disciplines
+- New CSS styles for discipline interface with clan highlighting
+- Updated form validation to include discipline requirements
+- Enhanced XP tracking system with discipline costs
+- Consistent UI/UX with existing trait and ability systems
+
+---
+
+## Version 0.2.3
 **Date:** January 4, 2025
 
 ### Major Features Added:
