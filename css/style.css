@@ -108,7 +108,7 @@ h4, .subsection-title {
 }
 
 .stat-value.negative {
-    color: #ff4444;
+    color: #aa2222;
 }
 
 .stat-value.positive {
@@ -642,31 +642,31 @@ button:disabled {
 }
 
 .negative-traits-section h4 {
-    color: #ff4444;
+    color: #aa2222;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
 .trait-option-btn.negative {
     background: #4a1a1a;
-    border-color: #ff4444;
+    border-color: #aa2222;
     color: #ff9999;
 }
 
 .trait-option-btn.negative:hover {
-    background: #ff4444;
-    border-color: #ff4444;
+    background: #aa2222;
+    border-color: #aa2222;
     color: #fff;
 }
 
 .trait-option-btn.negative.selected {
-    background: #ff4444;
-    border-color: #ff4444;
+    background: #aa2222;
+    border-color: #aa2222;
     color: #fff;
 }
 
 .selected-trait.negative {
-    background: #ff4444;
+    background: #aa2222;
     color: #fff;
 }
 
@@ -1287,7 +1287,7 @@ button:disabled {
 }
 
 .power-cost.insufficient {
-    color: #ff4444;
+    color: #aa2222;
 }
 
 .power-description {
@@ -1351,7 +1351,7 @@ button:disabled {
 }
 
 .clan-table td:nth-child(3) {
-    color: #ff4444;
+    color: #aa2222;
 }
 
 .clan-table td:nth-child(4) {
@@ -1367,7 +1367,7 @@ button:disabled {
 }
 
 .clan-table .admin-approval {
-    color: #ff4444; /* Red for Admin Approval */
+    color: #aa2222; /* Red for Admin Approval */
 }
 
 /* Finalize Character Styles */
@@ -1580,7 +1580,7 @@ button:disabled {
 
 .background-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #4B0101, #ff4444);
+    background: linear-gradient(90deg, #4B0101, #aa2222);
     transition: width 0.3s ease;
     position: relative;
 }
@@ -1635,7 +1635,7 @@ button:disabled {
 
 .background-option-btn.selected {
     background: #4B0101;
-    border-color: #ff4444;
+    border-color: #aa2222;
     color: #fff;
     box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
 }
@@ -1666,11 +1666,11 @@ button:disabled {
     display: flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid #ff4444;
+    border: 1px solid #aa2222;
 }
 
 .background-item .remove-btn {
-    background: #ff4444;
+    background: #aa2222;
     color: #fff;
     border: none;
     border-radius: 50%;
