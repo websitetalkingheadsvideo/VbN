@@ -138,11 +138,11 @@ include 'includes/connect.php';
             </div>
             <div class="stat-line">
                 <span class="stat-label">Conscience:</span>
-                <span class="stat-value" id="conscienceValue">1</span>
+                <span class="stat-value" id="conscienceValueOld">1</span>
             </div>
             <div class="stat-line">
                 <span class="stat-label">Self-Control:</span>
-                <span class="stat-value" id="selfControlValue">1</span>
+                <span class="stat-value" id="selfControlValueOld">1</span>
             </div>
             <div class="stat-line">
                 <span class="stat-label">Courage:</span>
@@ -1317,16 +1317,141 @@ include 'includes/connect.php';
             <div class="tab-content" id="tab5">
                 <div class="tab-card">
                     <div class="card-header">
-                        <h2 class="card-title">Morality</h2>
-                        <p class="card-subtitle">Virtues, willpower, and humanity</p>
+                        <h2 class="card-title">Path of Humanity</h2>
+                        <p class="card-subtitle">Virtues, willpower, and moral compass</p>
                     </div>
-                <p>Morality & Stats section - Coming soon!</p>
+                    
+                    <div class="morality-section">
+                        <!-- Humanity Display -->
+                        <div class="morality-stat">
+                            <div class="stat-header">
+                                <h3>Humanity</h3>
+                                <span class="moral-state" id="moralStateDisplay">Conflicted</span>
+                            </div>
+                            <div class="humanity-bar">
+                                <div class="humanity-track">
+                                    <div class="humanity-fill" id="humanityFill" style="width: 80%;"></div>
+                                </div>
+                                <div class="humanity-value">
+                                    <span id="humanityValue">8</span>/10
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Virtues Section -->
+                        <div class="virtues-section">
+                            <h3>Virtues</h3>
+                            <p class="virtue-instructions">Distribute 7 points between your two Virtues (minimum 1 each)</p>
+                            <div class="virtue-allocation">
+                                <div class="virtue-points-remaining">
+                                    <span class="points-label">Points Remaining:</span>
+                                    <span class="points-value" id="virtuePointsRemaining">7</span>
+                                </div>
+                            </div>
+                            <div class="virtue-grid">
+                                <div class="virtue-stat">
+                                    <label for="conscience">Conscience</label>
+                                    <div class="virtue-display">
+                                        <span class="virtue-label">Resists degeneration</span>
+                                        <div class="virtue-controls">
+                                            <button type="button" class="virtue-btn" onclick="adjustVirtue('conscience', -1)" id="conscienceMinus">-</button>
+                                            <div class="virtue-bars">
+                                                <div class="virtue-progress-container">
+                                                    <div class="virtue-progress-fill" id="conscienceProgress"></div>
+                                                    <div class="virtue-level-markers" id="conscienceMarkers"></div>
+                                                </div>
+                                                <span class="virtue-value" id="conscienceValue">1</span>/5
+                                            </div>
+                                            <button type="button" class="virtue-btn" onclick="adjustVirtue('conscience', 1)" id="consciencePlus">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="virtue-stat">
+                                    <label for="selfControl">Self-Control</label>
+                                    <div class="virtue-display">
+                                        <span class="virtue-label">Resists frenzy</span>
+                                        <div class="virtue-controls">
+                                            <button type="button" class="virtue-btn" onclick="adjustVirtue('selfControl', -1)" id="selfControlMinus">-</button>
+                                            <div class="virtue-bars">
+                                                <div class="virtue-progress-container">
+                                                    <div class="virtue-progress-fill" id="selfControlProgress"></div>
+                                                    <div class="virtue-level-markers" id="selfControlMarkers"></div>
+                                                </div>
+                                                <span class="virtue-value" id="selfControlValue">1</span>/5
+                                            </div>
+                                            <button type="button" class="virtue-btn" onclick="adjustVirtue('selfControl', 1)" id="selfControlPlus">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Humanity Display -->
+                        <div class="humanity-info">
+                            <h3>Starting Humanity</h3>
+                            <p class="help-text">Your starting Humanity equals Conscience + Self-Control. You can raise it with Freebie Points (2 points per dot).</p>
+                            <div class="humanity-calculation">
+                                <div class="calculation-display">
+                                    <span class="calculation-text">Conscience + Self-Control = Humanity</span>
+                                    <span class="calculation-formula" id="humanityCalculation">1 + 1 = 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hierarchy of Sins Reference -->
+                        <div class="sins-reference">
+                            <h3>Hierarchy of Sins</h3>
+                            <div class="sins-list">
+                                <div class="sin-level" data-level="10">
+                                    <span class="sin-number">10</span>
+                                    <span class="sin-description">Selfish thoughts</span>
+                                </div>
+                                <div class="sin-level" data-level="9">
+                                    <span class="sin-number">9</span>
+                                    <span class="sin-description">Minor selfish acts</span>
+                                </div>
+                                <div class="sin-level" data-level="8">
+                                    <span class="sin-number">8</span>
+                                    <span class="sin-description">Injury to another</span>
+                                </div>
+                                <div class="sin-level" data-level="7">
+                                    <span class="sin-number">7</span>
+                                    <span class="sin-description">Theft, petty crime</span>
+                                </div>
+                                <div class="sin-level" data-level="6">
+                                    <span class="sin-number">6</span>
+                                    <span class="sin-description">Destruction of property</span>
+                                </div>
+                                <div class="sin-level" data-level="5">
+                                    <span class="sin-number">5</span>
+                                    <span class="sin-description">Intentional injury</span>
+                                </div>
+                                <div class="sin-level" data-level="4">
+                                    <span class="sin-number">4</span>
+                                    <span class="sin-description">Impassioned killing</span>
+                                </div>
+                                <div class="sin-level" data-level="3">
+                                    <span class="sin-number">3</span>
+                                    <span class="sin-description">Planned killing, torture</span>
+                                </div>
+                                <div class="sin-level" data-level="2">
+                                    <span class="sin-number">2</span>
+                                    <span class="sin-description">Casual killing</span>
+                                </div>
+                                <div class="sin-level" data-level="1">
+                                    <span class="sin-number">1</span>
+                                    <span class="sin-description">Utterly depraved acts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 
-                <div class="button-group">
-                    <button type="button" onclick="showTab(4)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
-                    <button type="button" onclick="showTab(6)">Next →</button>
-                </div>
+                    <div class="button-group">
+                        <button type="button" onclick="showTab(4)">← Previous</button>
+                        <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
+                        <button type="button" onclick="showTab(6)">Next →</button>
+                    </div>
                 </div>
             </div>
             

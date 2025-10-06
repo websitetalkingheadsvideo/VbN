@@ -311,13 +311,14 @@ function collectFormData() {
         merits_flaws: [], // Will be populated when merits & flaws tab is implemented
         morality: {
             path_name: 'Humanity',
-            path_rating: 7,
-            conscience: 1,
-            self_control: 1,
-            courage: 1,
-            willpower_permanent: 5,
-            willpower_current: 5,
-            humanity: 7
+            path_rating: getHumanityValue(),
+            conscience: getConscienceValue(),
+            self_control: getSelfControlValue(),
+            courage: 1, // Not used in Humanity path
+            willpower_permanent: 5, // Default value
+            willpower_current: 5, // Default value
+            humanity: getHumanityValue(),
+            current_moral_state: getMoralState(getHumanityValue())
         },
         status: {
             sect_status: '',
@@ -1578,7 +1579,11 @@ function updateXPDisplay() {
     const totalBackgroundPoints = Object.values(characterData.backgrounds).reduce((sum, level) => sum + level, 0);
     const backgroundsXP = Math.max(0, totalBackgroundPoints - 5) * 2;
     
-    totalXP = traitsXP + abilitiesXP + disciplinesXP + backgroundsXP - negativeTraitsXP; // Negative traits reduce XP cost
+    // Calculate XP spent on virtues (first 7 points are free, additional points cost 2 XP each)
+    const totalVirtuePoints = conscience + selfControl;
+    const virtuesXP = Math.max(0, totalVirtuePoints - 7) * 2;
+    
+    totalXP = traitsXP + abilitiesXP + disciplinesXP + backgroundsXP + virtuesXP - negativeTraitsXP; // Negative traits reduce XP cost
     
     // Update character data
     characterData.xpSpent = totalXP;
@@ -1592,6 +1597,7 @@ function updateXPDisplay() {
     document.getElementById('xpAbilities').textContent = abilitiesXP;
     document.getElementById('xpDisciplines').textContent = disciplinesXP;
     document.getElementById('xpBackgrounds').textContent = backgroundsXP;
+    document.getElementById('xpVirtues').textContent = virtuesXP;
     document.getElementById('xpFlaws').textContent = negativeTraitsXP;
     
     // Update XP remaining color
@@ -2417,3 +2423,208 @@ function setupTouchImprovements() {
         });
     }
 }
+
+// Morality System Functions
+const moralStates = {
+    // High Humanity (8-10)
+    10: 'Compassionate',
+    9: 'Empathetic',
+    8: 'Principled',
+    
+    // Medium Humanity (5-7)
+    7: 'Conflicted',
+    6: 'Troubled',
+    5: 'Detached',
+    
+    // Low Humanity (1-4)
+    4: 'Hardened',
+    3: 'Callous',
+    2: 'Ruthless',
+    1: 'Depraved'
+};
+
+// Virtue allocation system
+let conscience = 1;
+let selfControl = 1;
+
+function adjustVirtue(virtue, change) {
+    const newValue = virtue === 'conscience' ? conscience + change : selfControl + change;
+
+    // Check bounds (1-5)
+    if (newValue < 1 || newValue > 5) return;
+    
+    // Calculate current and new virtue totals
+    const currentTotal = conscience + selfControl;
+    const newTotal = virtue === 'conscience' ? newValue + selfControl : conscience + newValue;
+    
+    // Check if we have enough XP for the change
+    const currentVirtueXP = Math.max(0, currentTotal - 7) * 2;
+    const newVirtueXP = Math.max(0, newTotal - 7) * 2;
+    const xpCost = newVirtueXP - currentVirtueXP;
+    
+    if (xpCost > 0 && characterData.xpRemaining < xpCost) {
+        alert(`Not enough XP! You need ${xpCost} XP but only have ${characterData.xpRemaining} remaining.`);
+        return;
+    }
+    
+    // Update values
+    if (virtue === 'conscience') {
+        conscience = newValue;
+    } else {
+        selfControl = newValue;
+    }
+
+    // Update display
+    updateVirtueDisplay();
+    updateHumanityDisplay();
+    updateVirtueButtons();
+    updateXPDisplay(); // Update XP display to reflect virtue costs
+}
+
+function updateVirtueDisplay() {
+    const conscienceValue = document.getElementById('conscienceValue');
+    const selfControlValue = document.getElementById('selfControlValue');
+    const conscienceProgress = document.getElementById('conscienceProgress');
+    const selfControlProgress = document.getElementById('selfControlProgress');
+    const conscienceMarkers = document.getElementById('conscienceMarkers');
+    const selfControlMarkers = document.getElementById('selfControlMarkers');
+    const pointsRemaining = document.getElementById('virtuePointsRemaining');
+    
+    if (!conscienceValue || !selfControlValue || !conscienceProgress || !selfControlProgress || !pointsRemaining) return;
+    
+    // Update values with visual emphasis
+    conscienceValue.textContent = conscience;
+    selfControlValue.textContent = selfControl;
+    
+    // Update virtue points remaining (7 free points)
+    const totalVirtuePoints = conscience + selfControl;
+    const remainingPoints = Math.max(0, 7 - totalVirtuePoints);
+    pointsRemaining.textContent = remainingPoints;
+    
+    // Add visual feedback for current level
+    conscienceValue.style.transform = 'scale(1.1)';
+    selfControlValue.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+        conscienceValue.style.transform = 'scale(1)';
+        selfControlValue.style.transform = 'scale(1)';
+    }, 200);
+    
+    // Update progress bars
+    updateVirtueProgress(conscienceProgress, conscience);
+    updateVirtueProgress(selfControlProgress, selfControl);
+    
+    // Update level markers
+    updateVirtueMarkers(conscienceMarkers, conscience);
+    updateVirtueMarkers(selfControlMarkers, selfControl);
+}
+
+function updateVirtueProgress(progressBar, value) {
+    if (!progressBar) return;
+    
+    // Calculate percentage (value out of 5)
+    const percentage = (value / 5) * 100;
+    progressBar.style.width = percentage + '%';
+}
+
+function updateVirtueMarkers(container, value) {
+    if (!container) return;
+    
+    // Clear existing markers
+    container.innerHTML = '';
+    
+    // Create 5 level markers
+    for (let i = 1; i <= 5; i++) {
+        const marker = document.createElement('div');
+        marker.className = 'virtue-marker';
+        
+        if (i <= value) {
+            marker.classList.add('active');
+        }
+        
+        container.appendChild(marker);
+    }
+}
+
+function updateVirtueButtons() {
+    // Update Conscience buttons
+    const conscienceMinus = document.getElementById('conscienceMinus');
+    const consciencePlus = document.getElementById('consciencePlus');
+    const selfControlMinus = document.getElementById('selfControlMinus');
+    const selfControlPlus = document.getElementById('selfControlPlus');
+    
+    if (conscienceMinus) conscienceMinus.disabled = conscience <= 1;
+    if (selfControlMinus) selfControlMinus.disabled = selfControl <= 1;
+    
+    // Check if we can afford to increase Conscience
+    if (consciencePlus) {
+        const currentTotal = conscience + selfControl;
+        const newTotal = conscience + 1 + selfControl;
+        const currentVirtueXP = Math.max(0, currentTotal - 7) * 2;
+        const newVirtueXP = Math.max(0, newTotal - 7) * 2;
+        const xpCost = newVirtueXP - currentVirtueXP;
+        
+        consciencePlus.disabled = conscience >= 5 || (xpCost > 0 && characterData.xpRemaining < xpCost);
+    }
+    
+    // Check if we can afford to increase Self-Control
+    if (selfControlPlus) {
+        const currentTotal = conscience + selfControl;
+        const newTotal = conscience + selfControl + 1;
+        const currentVirtueXP = Math.max(0, currentTotal - 7) * 2;
+        const newVirtueXP = Math.max(0, newTotal - 7) * 2;
+        const xpCost = newVirtueXP - currentVirtueXP;
+        
+        selfControlPlus.disabled = selfControl >= 5 || (xpCost > 0 && characterData.xpRemaining < xpCost);
+    }
+}
+
+function updateHumanityDisplay() {
+    const humanityValue = document.getElementById('humanityValue');
+    const humanityFill = document.getElementById('humanityFill');
+    const moralStateDisplay = document.getElementById('moralStateDisplay');
+    const humanityCalculation = document.getElementById('humanityCalculation');
+    
+    if (!humanityValue || !humanityFill || !moralStateDisplay || !humanityCalculation) return;
+    
+    const humanity = conscience + selfControl;
+    const percentage = (humanity / 10) * 100;
+    
+    // Update display values
+    humanityValue.textContent = humanity;
+    humanityFill.style.width = percentage + '%';
+    
+    // Update moral state
+    const moralState = moralStates[humanity] || 'Conflicted';
+    moralStateDisplay.textContent = moralState;
+    
+    // Update calculation display
+    humanityCalculation.textContent = `${conscience} + ${selfControl} = ${humanity}`;
+}
+
+function getMoralState(humanity) {
+    return moralStates[humanity] || 'Conflicted';
+}
+
+function getHumanityValue() {
+    return conscience + selfControl;
+}
+
+function getConscienceValue() {
+    return conscience;
+}
+
+function getSelfControlValue() {
+    return selfControl;
+}
+
+function initializeMorality() {
+    // Initialize the morality display when the page loads
+    updateVirtueDisplay();
+    updateHumanityDisplay();
+    updateVirtueButtons();
+}
+
+// Initialize morality system when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeMorality();
+});
