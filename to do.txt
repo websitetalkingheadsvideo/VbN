@@ -1,0 +1,2 @@
+We are going to have to test if new character has the same name as an existing character.
+

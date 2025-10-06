@@ -9,7 +9,9 @@ const PHP_BASE_URL = ''; // Relative path for PHP scripts
 function showTab(tabIndex) {
     // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
-    tabContents.forEach(content => content.classList.remove('active'));
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
     
     // Remove active class from all tabs
     const tabs = document.querySelectorAll('.tab');
@@ -26,6 +28,156 @@ function showTab(tabIndex) {
     if (selectedTabButton) {
         selectedTabButton.classList.add('active');
     }
+    
+    // Update progress bar
+    updateTabProgress(tabIndex);
+}
+
+function updateTabProgress(tabIndex) {
+    const progressBar = document.getElementById('tabProgressBar');
+    if (progressBar) {
+        // Calculate progress percentage (tabIndex + 1) / total tabs * 100
+        const totalTabs = 8;
+        const progress = ((tabIndex + 1) / totalTabs) * 100;
+        progressBar.style.width = progress + '%';
+    }
+}
+
+// Sheet Mode Toggle
+function setSheetMode(mode) {
+    const previewCard = document.getElementById('previewCard');
+    if (previewCard) {
+        if (mode === 'compact') {
+            previewCard.classList.add('compact');
+        } else {
+            previewCard.classList.remove('compact');
+        }
+    }
+}
+
+// Live Character Preview System
+function updateCharacterPreview() {
+    updatePreviewBasicInfo();
+    updatePreviewTraits();
+    updatePreviewAbilities();
+    updatePreviewDisciplines();
+}
+
+function updatePreviewBasicInfo() {
+    const name = document.getElementById('characterName')?.value || '';
+    const clan = document.getElementById('clan')?.value || '';
+    
+    const previewName = document.getElementById('previewName');
+    const previewClan = document.getElementById('previewClan');
+    
+    if (previewName) {
+        previewName.textContent = name || 'Unknown Character';
+        previewName.className = name ? 'preview-name' : 'preview-name empty';
+    }
+    
+    if (previewClan) {
+        previewClan.textContent = clan || 'No Clan Selected';
+        previewClan.className = clan ? 'preview-clan' : 'preview-clan empty';
+    }
+}
+
+function updatePreviewTraits() {
+    updatePreviewTraitCategory('physical', 'previewPhysical');
+    updatePreviewTraitCategory('social', 'previewSocial');
+    updatePreviewTraitCategory('mental', 'previewMental');
+}
+
+function updatePreviewTraitCategory(category, previewId) {
+    const previewElement = document.getElementById(previewId);
+    if (!previewElement) return;
+    
+    const selectedTraits = getSelectedTraits(category);
+    
+    if (selectedTraits.length === 0) {
+        previewElement.innerHTML = '<span class="preview-trait empty">None selected</span>';
+        return;
+    }
+    
+    previewElement.innerHTML = selectedTraits.map(trait => 
+        `<span class="preview-trait">${trait}</span>`
+    ).join('');
+}
+
+function updatePreviewAbilities() {
+    const previewElement = document.getElementById('previewAbilities');
+    if (!previewElement) return;
+    
+    const selectedAbilities = getSelectedAbilities();
+    
+    if (selectedAbilities.length === 0) {
+        previewElement.innerHTML = '<span class="preview-trait empty">None selected</span>';
+        return;
+    }
+    
+    previewElement.innerHTML = selectedAbilities.map(ability => 
+        `<span class="preview-trait">${ability}</span>`
+    ).join('');
+}
+
+function updatePreviewDisciplines() {
+    const previewElement = document.getElementById('previewDisciplines');
+    if (!previewElement) return;
+    
+    const selectedDisciplines = getSelectedDisciplines();
+    
+    if (selectedDisciplines.length === 0) {
+        previewElement.innerHTML = '<span class="preview-trait empty">None selected</span>';
+        return;
+    }
+    
+    previewElement.innerHTML = selectedDisciplines.map(discipline => 
+        `<span class="preview-trait">${discipline}</span>`
+    ).join('');
+}
+
+function getSelectedTraits(category) {
+    const traits = [];
+    const categoryElement = document.querySelector(`.trait-category[data-category="${category}"]`);
+    if (!categoryElement) return traits;
+    
+    const selectedButtons = categoryElement.querySelectorAll('.trait-btn.selected');
+    selectedButtons.forEach(button => {
+        const traitName = button.textContent.trim();
+        const count = parseInt(button.dataset.count) || 1;
+        for (let i = 0; i < count; i++) {
+            traits.push(traitName);
+        }
+    });
+    
+    return traits;
+}
+
+function getSelectedAbilities() {
+    const abilities = [];
+    const abilityButtons = document.querySelectorAll('.ability-btn.selected');
+    abilityButtons.forEach(button => {
+        const abilityName = button.textContent.trim();
+        const count = parseInt(button.dataset.count) || 1;
+        for (let i = 0; i < count; i++) {
+            abilities.push(abilityName);
+        }
+    });
+    
+    return abilities;
+}
+
+function getSelectedDisciplines() {
+    const disciplines = [];
+    const disciplineButtons = document.querySelectorAll('.discipline-btn.selected');
+    disciplineButtons.forEach(button => {
+        const disciplineName = button.textContent.trim();
+        const count = parseInt(button.dataset.count) || 1;
+        for (let i = 0; i < count; i++) {
+            disciplines.push(disciplineName);
+        }
+    });
+    
+    return disciplines;
 }
 
 // Notification system
@@ -834,6 +986,9 @@ function selectTrait(category, traitName) {
             traitButton.textContent = `${traitName} (${count})`;
         }
     }
+    
+    // Update character preview
+    updateCharacterPreview();
 }
 
 // Negative trait selection function
@@ -977,6 +1132,9 @@ function removeTrait(category, traitName, element) {
             traitButton.textContent = `${traitName} (${remainingCount})`;
         }
     }
+    
+    // Update character preview
+    updateCharacterPreview();
 }
 
 // Update trait count and progress bar
@@ -2130,4 +2288,132 @@ document.addEventListener('DOMContentLoaded', async function() {
             setTimeout(generateCharacterSummary, 100);
         });
     }
+    
+    // Setup live character preview
+    setupPreviewEventListeners();
+    
+    // Setup mobile responsiveness
+    setupMobileResponsiveness();
+    
+    // Initial preview update
+    updateCharacterPreview();
 });
+
+// Setup event listeners for live character preview
+function setupPreviewEventListeners() {
+    // Basic info inputs
+    const basicInfoInputs = ['characterName', 'clan', 'nature', 'demeanor', 'concept'];
+    basicInfoInputs.forEach(inputId => {
+        const input = document.getElementById(inputId);
+        if (input) {
+            input.addEventListener('input', updateCharacterPreview);
+            input.addEventListener('change', updateCharacterPreview);
+        }
+    });
+    
+    // Trait buttons
+    const traitButtons = document.querySelectorAll('.trait-option-btn');
+    traitButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setTimeout(updateCharacterPreview, 100); // Small delay to ensure data is updated
+        });
+    });
+    
+    // Ability buttons
+    const abilityButtons = document.querySelectorAll('.ability-btn');
+    abilityButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setTimeout(updateCharacterPreview, 100);
+        });
+    });
+    
+    // Discipline buttons
+    const disciplineButtons = document.querySelectorAll('.discipline-btn');
+    disciplineButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setTimeout(updateCharacterPreview, 100);
+        });
+    });
+}
+
+// Mobile Responsiveness Setup
+function setupMobileResponsiveness() {
+    // Add collapsible functionality to trait categories on mobile
+    if (window.innerWidth <= 768) {
+        setupCollapsibleSections();
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768) {
+            setupCollapsibleSections();
+        } else {
+            removeCollapsibleSections();
+        }
+    });
+    
+    // Improve touch interactions
+    setupTouchImprovements();
+}
+
+function setupCollapsibleSections() {
+    const categories = document.querySelectorAll('.trait-category, .ability-category, .discipline-category');
+    
+    categories.forEach(category => {
+        const header = category.querySelector('h3');
+        if (header && !header.classList.contains('collapsible-header')) {
+            header.classList.add('collapsible-header');
+            header.addEventListener('click', function() {
+                const content = category.querySelector('.trait-options, .ability-options, .discipline-options');
+                if (content) {
+                    content.classList.toggle('collapsible-content');
+                    header.classList.toggle('collapsed');
+                }
+            });
+        }
+    });
+}
+
+function removeCollapsibleSections() {
+    const headers = document.querySelectorAll('.collapsible-header');
+    headers.forEach(header => {
+        header.classList.remove('collapsible-header', 'collapsed');
+        const content = header.parentElement.querySelector('.collapsible-content');
+        if (content) {
+            content.classList.remove('collapsible-content', 'collapsed');
+        }
+    });
+}
+
+function setupTouchImprovements() {
+    // Add touch feedback to buttons
+    const buttons = document.querySelectorAll('button, .trait-btn, .ability-btn, .discipline-btn');
+    buttons.forEach(button => {
+        button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        button.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Prevent double-tap zoom on buttons
+    buttons.forEach(button => {
+        button.addEventListener('touchend', function(e) {
+            e.preventDefault();
+        });
+    });
+    
+    // Improve scroll behavior for tabs
+    const tabsContainer = document.querySelector('.tabs');
+    if (tabsContainer) {
+        tabsContainer.addEventListener('touchstart', function(e) {
+            this.style.scrollBehavior = 'auto';
+        });
+        
+        tabsContainer.addEventListener('touchend', function(e) {
+            this.style.scrollBehavior = 'smooth';
+        });
+    }
+}

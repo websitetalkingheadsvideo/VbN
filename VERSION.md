@@ -1,6 +1,119 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.1 (Current)
+## Version 0.2.7 (Current)
+**Date:** January 5, 2025
+
+### Character Sheet Mode Toggle:
+- ✅ **Full/Compact Toggle** - Users can switch between detailed and condensed character preview
+- ✅ **Radio Button Interface** - Clean toggle controls in the character preview header
+- ✅ **Compact Mode Styling** - Reduced font sizes, spacing, and padding for condensed view
+- ✅ **Mobile Responsive Toggle** - Toggle controls work perfectly on mobile devices
+- ✅ **Smooth Transitions** - Animated transitions between full and compact modes
+
+### Sheet Mode Features:
+- **Full Mode** - Complete character details with full spacing and typography
+- **Compact Mode** - Condensed view with smaller fonts and tighter spacing
+- **Real-time Switching** - Instant toggle between modes without page reload
+- **Consistent Styling** - Maintains gothic theme in both modes
+- **Mobile Optimized** - Toggle controls adapt to mobile screen sizes
+
+## Version 0.2.6
+**Date:** January 5, 2025
+
+### Mobile Responsiveness System - COMPLETE:
+- ✅ **Mobile-First Design** - Responsive layout that works on all device sizes
+- ✅ **Touch-Friendly Interface** - Optimized buttons and interactions for mobile devices
+- ✅ **Collapsible Sections** - Trait/ability categories can be collapsed on mobile for better navigation
+- ✅ **Responsive Tabs** - Horizontal scrolling tabs with custom scrollbars for mobile
+- ✅ **Touch Feedback** - Visual feedback on touch interactions with scale animations
+- ✅ **Mobile Typography** - Optimized font sizes and spacing for mobile readability
+- ✅ **Fixed Tab Functionality** - Resolved JavaScript execution issues on mobile devices
+- ✅ **Working Navigation** - Previous/Next buttons and tab switching work perfectly on mobile
+
+### Mobile Features:
+- **Responsive Layout** - Single column layout on mobile with sidebar below main content
+- **Touch Interactions** - 44px minimum touch targets and visual feedback
+- **Collapsible Categories** - Click headers to expand/collapse trait and ability sections
+- **Smooth Scrolling** - Custom scrollbars and smooth tab navigation
+- **iOS Optimization** - Prevents zoom on form inputs and improves touch handling
+- **Tablet Support** - Intermediate responsive design for tablet devices
+- **Full Functionality** - All features work identically on mobile and desktop
+
+## Version 0.2.5
+**Date:** January 5, 2025
+
+### Mobile Responsiveness System (Initial Implementation):
+- ✅ **Mobile-First Design** - Responsive layout that works on all device sizes
+- ✅ **Touch-Friendly Interface** - Optimized buttons and interactions for mobile devices
+- ✅ **Collapsible Sections** - Trait/ability categories can be collapsed on mobile for better navigation
+- ✅ **Responsive Tabs** - Horizontal scrolling tabs with custom scrollbars for mobile
+- ✅ **Touch Feedback** - Visual feedback on touch interactions with scale animations
+- ✅ **Mobile Typography** - Optimized font sizes and spacing for mobile readability
+
+### Mobile Features:
+- **Responsive Layout** - Single column layout on mobile with sidebar below main content
+- **Touch Interactions** - 44px minimum touch targets and visual feedback
+- **Collapsible Categories** - Click headers to expand/collapse trait and ability sections
+- **Smooth Scrolling** - Custom scrollbars and smooth tab navigation
+- **iOS Optimization** - Prevents zoom on form inputs and improves touch handling
+- **Tablet Support** - Intermediate responsive design for tablet devices
+
+## Version 0.2.4
+**Date:** January 5, 2025
+
+### Live Character Preview System:
+- ✅ **Real-time Character Preview** - Live character sheet updates as users build their characters
+- ✅ **Preview Card Design** - Gothic-themed preview card with animated glow effects
+- ✅ **Dynamic Content Updates** - Real-time updates for traits, abilities, disciplines, and basic info
+- ✅ **Event-driven Updates** - Automatic preview updates on all character changes
+- ✅ **Visual Feedback** - Enhanced preview styling with hover effects and animations
+- ✅ **Comprehensive Coverage** - Preview covers all major character creation aspects
+
+### Preview Features:
+- **Live Updates** - Character preview updates instantly as selections are made
+- **Gothic Styling** - Preview card matches the overall gothic theme
+- **Animated Effects** - Subtle glow animation and hover effects
+- **Comprehensive Display** - Shows traits, abilities, disciplines, and basic character info
+- **Visual Hierarchy** - Clear organization with proper typography and spacing
+- **Responsive Design** - Preview adapts to different content amounts
+
+## Version 0.2.3
+**Date:** January 5, 2025
+
+### Visual Hierarchy & Progress System:
+- ✅ **Progress Indicator Bar** - Animated progress bar showing character creation completion
+- ✅ **Enhanced Tab Styling** - Improved active tab indicators with shimmer effects
+- ✅ **Better Spacing & Contrast** - Enhanced visual hierarchy throughout the interface
+- ✅ **Enhanced Button Styling** - Improved button interactions with hover effects
+- ✅ **Enhanced Input Styling** - Better form element styling with focus states
+- ✅ **Enhanced Sidebar** - Improved sidebar styling with better visual hierarchy
+
+### Visual Improvements:
+- **Progress Bar** - Animated progress indicator with shimmer effects
+- **Enhanced Typography** - Improved text shadows and contrast for better readability
+- **Button Interactions** - Smooth hover effects and visual feedback
+- **Form Elements** - Enhanced input styling with focus states and better contrast
+- **Visual Separators** - Better section organization with decorative dividers
+- **Consistent Styling** - Unified design language across all interface elements
+
+## Version 0.2.2
+**Date:** January 5, 2025
+
+### Card-Based Layout Implementation:
+- ✅ **Card Structure** - Each tab now displays as a styled card with shadows and borders
+- ✅ **Enhanced Visual Hierarchy** - Card headers with titles, subtitles, and decorative elements
+- ✅ **Improved Tab Styling** - Active tab indicators with arrows and enhanced visual feedback
+- ✅ **Section Organization** - Better content organization within cards with dividers and icons
+- ✅ **Form Integration** - Enhanced form styling within card context
+
+### Visual Improvements:
+- **Card Design** - Gradient backgrounds, shadows, and border styling for each tab
+- **Tab Indicators** - Active tab arrows and enhanced visual feedback
+- **Section Dividers** - Decorative elements and better content separation
+- **Icon Integration** - Visual hierarchy with symbols and indicators
+- **Enhanced Spacing** - Better padding, margins, and content organization
+
+## Version 0.2.1
 **Date:** January 5, 2025
 
 ### Styling Improvements:

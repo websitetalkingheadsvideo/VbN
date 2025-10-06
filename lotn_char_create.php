@@ -1,6 +1,6 @@
 <?php
-// LOTN Character Creator - Version 0.2.1
-define('LOTN_VERSION', '0.2.1');
+// LOTN Character Creator - Version 0.2.7
+define('LOTN_VERSION', '0.2.7');
 
 session_start();
 
@@ -149,6 +149,64 @@ include 'includes/connect.php';
                 <span class="stat-value" id="courageValue">1</span>
             </div>
         </div>
+        
+        <!-- Live Character Preview -->
+        <div class="character-preview">
+            <div class="preview-header">
+                <h4>Character Preview</h4>
+                <div class="sheet-mode-toggle">
+                    <label class="toggle-label">
+                        <input type="radio" name="sheetMode" value="full" checked onchange="setSheetMode('full')">
+                        <span class="toggle-text">Full</span>
+                    </label>
+                    <label class="toggle-label">
+                        <input type="radio" name="sheetMode" value="compact" onchange="setSheetMode('compact')">
+                        <span class="toggle-text">Compact</span>
+                    </label>
+                </div>
+            </div>
+            <div class="preview-card" id="previewCard">
+                <div class="preview-character-header">
+                    <div class="preview-name" id="previewName">Unknown Character</div>
+                    <div class="preview-clan" id="previewClan">No Clan Selected</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Physical Traits</div>
+                    <div class="preview-traits" id="previewPhysical">
+                        <span class="preview-trait">None selected</span>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Social Traits</div>
+                    <div class="preview-traits" id="previewSocial">
+                        <span class="preview-trait">None selected</span>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Mental Traits</div>
+                    <div class="preview-traits" id="previewMental">
+                        <span class="preview-trait">None selected</span>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Abilities</div>
+                    <div class="preview-traits" id="previewAbilities">
+                        <span class="preview-trait">None selected</span>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Disciplines</div>
+                    <div class="preview-traits" id="previewDisciplines">
+                        <span class="preview-trait">None selected</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="container" id="sheet">
@@ -181,10 +239,19 @@ include 'includes/connect.php';
             <button class="tab" onclick="showTab(7)">Final Details</button>
         </div>
         
+        <!-- Progress Indicator -->
+        <div class="tab-progress">
+            <div class="tab-progress-bar" id="tabProgressBar" style="width: 12.5%;"></div>
+        </div>
+        
         <form id="characterForm">
             <!-- Tab 1: Basic Info -->
             <div class="tab-content active" id="tab0">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Basic Information</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Basic Information</h2>
+                        <p class="card-subtitle">Essential character details and background</p>
+                    </div>
                 
                 <div class="form-row">
                     <div class="form-group">
@@ -346,11 +413,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(1)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 2: Traits -->
             <div class="tab-content" id="tab1">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Traits</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Traits</h2>
+                        <p class="card-subtitle">Distribute points across Physical, Social, and Mental attributes</p>
+                    </div>
                 
                 <div class="info-box">
                     <strong>Trait Selection:</strong> Choose your traits from the lists below.
@@ -612,11 +684,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(2)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 3: Abilities -->
             <div class="tab-content" id="tab2">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Abilities</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Abilities</h2>
+                        <p class="card-subtitle">Choose your character's skills and talents</p>
+                    </div>
                 
                 <div class="info-box">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -770,11 +847,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(3)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 4: Disciplines -->
             <div class="tab-content" id="tab3">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Disciplines</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Disciplines</h2>
+                        <p class="card-subtitle">Supernatural powers unique to your clan</p>
+                    </div>
                 
                 <div class="info-box">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -903,11 +985,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(4)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 5: Backgrounds -->
             <div class="tab-content" id="tab4">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Backgrounds</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Backgrounds</h2>
+                        <p class="card-subtitle">Resources, allies, and connections</p>
+                    </div>
                 <p style="color: #666; margin-bottom: 20px;">Select your character's resources, connections, and social standing. Each background represents different types of influence and support available to your character.</p>
                 
                 <!-- Backgrounds Progress Summary -->
@@ -1223,11 +1310,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(5)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 6: Morality -->
             <div class="tab-content" id="tab5">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Morality</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Morality</h2>
+                        <p class="card-subtitle">Virtues, willpower, and humanity</p>
+                    </div>
                 <p>Morality & Stats section - Coming soon!</p>
                 
                 <div class="button-group">
@@ -1235,11 +1327,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(6)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 7: Merits & Flaws -->
             <div class="tab-content" id="tab6">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Merits & Flaws</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Merits & Flaws</h2>
+                        <p class="card-subtitle">Special advantages and disadvantages</p>
+                    </div>
                 <p>Merits & Flaws section - Coming soon!</p>
                 
                 <div class="button-group">
@@ -1247,11 +1344,16 @@ include 'includes/connect.php';
                     <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
                     <button type="button" onclick="showTab(7)">Next →</button>
                 </div>
+                </div>
             </div>
             
             <!-- Tab 8: Final Details -->
             <div class="tab-content" id="tab7">
-                <h2 style="color: #8b0000; margin-bottom: 25px;">Final Details</h2>
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Final Details</h2>
+                        <p class="card-subtitle">Complete your character and review</p>
+                    </div>
                 
                 <div class="final-details-section">
                     <h3>Character Summary</h3>
@@ -1269,6 +1371,7 @@ include 'includes/connect.php';
                             <button type="button" class="finalize-btn" onclick="showFinalizePopup()">🎯 Finalize Character</button>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </form>
