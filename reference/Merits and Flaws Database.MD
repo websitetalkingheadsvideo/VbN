@@ -1,6 +1,4 @@
-Here’s a more polished & fleshed-out version of the JSON, with improved descriptions (and some “effects hints”) based on Vampire / World of Darkness reference material. You should double-check these against *your* “Laws of the Night Revised” rules and adjust as needed.
 
-```json
 {
   "merits": {
     "physical": [

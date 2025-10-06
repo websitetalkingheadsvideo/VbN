@@ -166,17 +166,23 @@ try {
     }
     
     // Save merits & flaws
-    if (isset($data['merits_flaws'])) {
+    if (isset($data['merits_flaws']) && !empty($data['merits_flaws'])) {
         foreach ($data['merits_flaws'] as $item) {
-            $merit_sql = "INSERT INTO character_merits_flaws (character_id, name, type, point_value, description, xp_bonus) VALUES (?, ?, ?, ?, ?, ?)";
+            $merit_sql = "INSERT INTO character_merits_flaws (character_id, name, type, category, cost, description, effects) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $merit_stmt = mysqli_prepare($conn, $merit_sql);
-            mysqli_stmt_bind_param($merit_stmt, 'issisi', 
+            
+            // Prepare effects as JSON
+            $effects_json = json_encode($item['effects'] ?? []);
+            $custom_description = $item['customDescription'] ?? '';
+            
+            mysqli_stmt_bind_param($merit_stmt, 'isssiss', 
                 $character_id, 
                 $item['name'], 
                 $item['type'],
-                $item['point_value'],
-                $item['description'] ?? null,
-                $item['xp_bonus'] ?? 0
+                $item['category'],
+                $item['selectedCost'] ?? $item['cost'],
+                $custom_description,
+                $effects_json
             );
             mysqli_stmt_execute($merit_stmt);
             mysqli_stmt_close($merit_stmt);

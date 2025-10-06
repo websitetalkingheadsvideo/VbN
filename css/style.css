@@ -1713,6 +1713,9 @@ button:disabled {
 .modal-header h2 {
     margin: 0;
     font-size: 24px;
+    -webkit-text-stroke: 1px #8a0202;
+    text-stroke: 1px #8a0202;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .modal-close {
@@ -3331,4 +3334,516 @@ button:disabled {
         text-align: center;
         gap: 10px;
     }
+}
+
+/* ===== MERITS & FLAWS SYSTEM ===== */
+
+.merits-flaws-summary {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.summary-item .label {
+    font-size: 0.9em;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.summary-item .value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #5a0202;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-size: 0.9em;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    font-size: 0.9em;
+}
+
+.filter-group input {
+    min-width: 200px;
+}
+
+.reset-filters-btn {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #8a0202, #5a0202);
+    color: #e0e0e0;
+    border: 1px solid #8a0202;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reset-filters-btn:hover {
+    background: linear-gradient(135deg, #a00202, #6a0202);
+    border-color: #a00202;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.reset-filters-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.merits-flaws-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.available-section,
+.selected-section {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.available-section h3,
+.selected-section h3 {
+    color: #5a0202;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+}
+
+.merits-flaws-list {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.merit-flaw-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.merit-flaw-item:hover {
+    background: rgba(90, 2, 2, 0.2);
+    border-color: #5a0202;
+}
+
+.merit-flaw-item.selected {
+    background: rgba(90, 2, 2, 0.3);
+    border-color: #5a0202;
+}
+
+.merit-flaw-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.merit-flaw-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.merit-flaw-info:hover {
+    background-color: rgba(138, 2, 2, 0.1);
+}
+
+.merit-flaw-name {
+    font-weight: bold;
+    color: #e0e0e0;
+    font-size: 0.95em;
+}
+
+.merit-flaw-category {
+    font-size: 0.8em;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.category-icon {
+    font-size: 1.1em;
+    filter: grayscale(0.3);
+    opacity: 0.8;
+}
+
+.category-text {
+    font-size: 0.9em;
+}
+
+.merit-flaw-cost {
+    font-weight: bold;
+    color: #e0e0e0;
+    font-size: 0.9em;
+    min-width: 50px;
+    text-align: center;
+    background: linear-gradient(135deg, #8a0202, #5a0202);
+    border: 1px solid #8a0202;
+    border-radius: 12px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.merit-flaw-cost::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+}
+
+/* Cost color coding */
+.merit-flaw-cost.cost-low {
+    background: linear-gradient(135deg, #2d5a2d, #1a3d1a);
+    border-color: #4a7c4a;
+    color: #90ee90;
+}
+
+.merit-flaw-cost.cost-low::before {
+    background: linear-gradient(180deg, rgba(144, 238, 144, 0.3), transparent);
+}
+
+.merit-flaw-cost.cost-medium {
+    background: linear-gradient(135deg, #7a5a00, #4d3800);
+    border-color: #b8860b;
+    color: #ffd700;
+}
+
+.merit-flaw-cost.cost-medium::before {
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.3), transparent);
+}
+
+.merit-flaw-cost.cost-high {
+    background: linear-gradient(135deg, #7a0000, #4d0000);
+    border-color: #b80000;
+    color: #ff6b6b;
+}
+
+.merit-flaw-cost.cost-high::before {
+    background: linear-gradient(180deg, rgba(255, 107, 107, 0.3), transparent);
+}
+
+.merit-flaw-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.merit-flaw-btn {
+    padding: 4px 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.3s ease;
+}
+
+.merit-flaw-btn:hover {
+    background: rgba(90, 2, 2, 0.5);
+    border-color: #5a0202;
+}
+
+.merit-flaw-btn.remove {
+    background: rgba(150, 0, 0, 0.3);
+    border-color: #aa0000;
+}
+
+.merit-flaw-btn.remove:hover {
+    background: rgba(150, 0, 0, 0.5);
+}
+
+.cost-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.cost-slider input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    outline: none;
+}
+
+.cost-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #5a0202;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cost-slider input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #5a0202;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.cost-slider .slider-value {
+    font-weight: bold;
+    color: #5a0202;
+    min-width: 20px;
+    text-align: center;
+}
+
+.conflict-warning {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(150, 0, 0, 0.2);
+    border: 1px solid #aa0000;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    color: #ffaaaa;
+}
+
+.warning-icon {
+    font-size: 1.2em;
+}
+
+.warning-text {
+    flex: 1;
+    font-size: 0.9em;
+}
+
+.merit-flaw-description {
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.merit-flaw-description input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+
+/* Mobile Responsive for Merits & Flaws */
+@media (max-width: 768px) {
+    .merits-flaws-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    .filter-group input {
+        min-width: 100%;
+    }
+    
+    .merits-flaws-summary {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .merit-flaw-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .merit-flaw-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .cost-slider {
+        width: 100%;
+    }
+    
+    .detail-columns {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* ===== MERIT/FLAW DESCRIPTION MODAL ===== */
+
+.merit-flaw-detail {
+    padding: 20px 0;
+}
+
+.detail-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.detail-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #8a0202;
+    min-width: 80px;
+    text-shadow: 2px 2px 4px rgba(138, 2, 2, 0.8);
+}
+
+.detail-value {
+    color: #e0e0e0;
+    text-align: right;
+}
+
+.detail-description {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border-left: 4px solid #5a0202;
+}
+
+.detail-description h4 {
+    color: #8a0202;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.detail-description p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.detail-effects {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border-left: 4px solid #2E5740;
+}
+
+.detail-effects h4 {
+    color: #2E5740;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.detail-effects ul {
+    color: #e0e0e0;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.detail-effects li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* Merit/Flaw item hover effects */
+.merit-flaw-item:hover .merit-flaw-name {
+    color: #5a0202;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.merit-flaw-item .merit-flaw-name {
+    transition: all 0.3s ease;
 }

@@ -69,6 +69,10 @@ include 'includes/connect.php';
                 <span class="stat-value" id="xpVirtues">0</span>
             </div>
             <div class="stat-line">
+                <span class="stat-label">Merits & Flaws:</span>
+                <span class="stat-value" id="xpMeritsFlaws">0</span>
+            </div>
+            <div class="stat-line">
                 <span class="stat-label">Willpower:</span>
                 <span class="stat-value" id="xpWillpower">0</span>
             </div>
@@ -1462,14 +1466,94 @@ include 'includes/connect.php';
                         <h2 class="card-title">Merits & Flaws</h2>
                         <p class="card-subtitle">Special advantages and disadvantages</p>
                     </div>
-                <p>Merits & Flaws section - Coming soon!</p>
-                
-                <div class="button-group">
-                    <button type="button" onclick="showTab(5)">← Previous</button>
-                    <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
-                    <button type="button" onclick="showTab(7)">Next →</button>
+                    
+                    <!-- Merits & Flaws Summary -->
+                    <div class="merits-flaws-summary">
+                        <div class="summary-item">
+                            <span class="label">Merits Cost:</span>
+                            <span class="value" id="meritsCost">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Flaws Points:</span>
+                            <span class="value" id="flawsPoints">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Net Cost:</span>
+                            <span class="value" id="netCost">0</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter and Search Controls -->
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label>Filter by Category:</label>
+                            <select id="categoryFilter" onchange="filterMeritsFlaws()">
+                                <option value="all">All Categories</option>
+                                <option value="Physical">💪 Physical</option>
+                                <option value="Mental">🧠 Mental</option>
+                                <option value="Social">👥 Social</option>
+                                <option value="Supernatural">✨ Supernatural</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Show:</label>
+                            <select id="typeFilter" onchange="filterMeritsFlaws()">
+                                <option value="both">Merits & Flaws</option>
+                                <option value="merits">Merits Only</option>
+                                <option value="flaws">Flaws Only</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort by:</label>
+                            <select id="sortFilter" onchange="filterMeritsFlaws()">
+                                <option value="cost">Cost (Low to High)</option>
+                                <option value="cost-desc">Cost (High to Low)</option>
+                                <option value="name">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="category">Category</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Search:</label>
+                            <input type="text" id="searchFilter" placeholder="Search merits and flaws..." onkeyup="filterMeritsFlaws()">
+                        </div>
+                        <div class="filter-group">
+                            <button type="button" class="reset-filters-btn" onclick="resetMeritsFlawsFilters()" title="Reset all filters">
+                                🔄 Reset
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Available Merits & Flaws -->
+                    <div class="merits-flaws-container">
+                        <div class="available-section">
+                            <h3>Available</h3>
+                            <div class="merits-flaws-list" id="availableList">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="selected-section">
+                            <h3>Selected</h3>
+                            <div class="merits-flaws-list" id="selectedList">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conflict Warning -->
+                    <div class="conflict-warning" id="conflictWarning" style="display: none;">
+                        <span class="warning-icon">⚠️</span>
+                        <span class="warning-text" id="conflictText"></span>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" onclick="showTab(5)">← Previous</button>
+                        <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Character</button>
+                        <button type="button" onclick="showTab(7)">Next →</button>
+                    </div>
                 </div>
-                </div>
+            </div>
             </div>
             
             <!-- Tab 8: Final Details -->
@@ -1672,6 +1756,45 @@ include 'includes/connect.php';
             <div class="modal-footer">
                 <button type="button" class="btn-cancel" onclick="closeCharacterSheetModal()">Close</button>
                 <button type="button" class="btn-download" onclick="downloadCharacterSheet()">📥 Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Merit/Flaw Description Modal -->
+    <div id="meritFlawDescriptionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="meritFlawModalTitle">Merit/Flaw Description</h2>
+                <button type="button" class="modal-close" onclick="closeMeritFlawDescription()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="merit-flaw-detail">
+                    <div class="detail-columns">
+                        <div class="detail-column">
+                            <span class="detail-label">Type:</span>
+                            <span class="detail-value" id="meritFlawType"></span>
+                        </div>
+                        <div class="detail-column">
+                            <span class="detail-label">Category:</span>
+                            <span class="detail-value" id="meritFlawCategory"></span>
+                        </div>
+                        <div class="detail-column">
+                            <span class="detail-label">Cost:</span>
+                            <span class="detail-value" id="meritFlawCost"></span>
+                        </div>
+                    </div>
+                    <div class="detail-description">
+                        <h4>Description:</h4>
+                        <p id="meritFlawDescription"></p>
+                    </div>
+                    <div class="detail-effects" id="meritFlawEffects" style="display: none;">
+                        <h4>Effects:</h4>
+                        <ul id="meritFlawEffectsList"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-btn" onclick="closeMeritFlawDescription()">Close</button>
             </div>
         </div>
     </div>

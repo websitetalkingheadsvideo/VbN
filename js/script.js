@@ -308,7 +308,7 @@ function collectFormData() {
         disciplines: characterData.disciplines,
         backgrounds: characterData.backgrounds,
         backgroundDetails: characterData.backgroundDetails,
-        merits_flaws: [], // Will be populated when merits & flaws tab is implemented
+        merits_flaws: [...selectedMerits, ...selectedFlaws],
         morality: {
             path_name: 'Humanity',
             path_rating: getHumanityValue(),
@@ -1583,7 +1583,12 @@ function updateXPDisplay() {
     const totalVirtuePoints = conscience + selfControl;
     const virtuesXP = Math.max(0, totalVirtuePoints - 7) * 2;
     
-    totalXP = traitsXP + abilitiesXP + disciplinesXP + backgroundsXP + virtuesXP - negativeTraitsXP; // Negative traits reduce XP cost
+    // Calculate XP spent on merits and flaws
+    const meritsCost = selectedMerits.reduce((sum, merit) => sum + (merit.selectedCost || merit.cost), 0);
+    const flawsPoints = selectedFlaws.reduce((sum, flaw) => sum + (flaw.selectedCost || flaw.cost), 0);
+    const meritsFlawsXP = meritsCost - flawsPoints; // Flaws give XP back
+    
+    totalXP = traitsXP + abilitiesXP + disciplinesXP + backgroundsXP + virtuesXP + meritsFlawsXP - negativeTraitsXP; // Negative traits reduce XP cost
     
     // Update character data
     characterData.xpSpent = totalXP;
@@ -1598,6 +1603,7 @@ function updateXPDisplay() {
     document.getElementById('xpDisciplines').textContent = disciplinesXP;
     document.getElementById('xpBackgrounds').textContent = backgroundsXP;
     document.getElementById('xpVirtues').textContent = virtuesXP;
+    document.getElementById('xpMeritsFlaws').textContent = meritsFlawsXP;
     document.getElementById('xpFlaws').textContent = negativeTraitsXP;
     
     // Update XP remaining color
@@ -1651,11 +1657,16 @@ function closeDisciplineGuide() {
 window.onclick = function(event) {
     const clanModal = document.getElementById('clanGuideModal');
     const disciplineModal = document.getElementById('disciplineGuideModal');
+    const meritFlawModal = document.getElementById('meritFlawDescriptionModal');
+    
     if (event.target === clanModal) {
         clanModal.style.display = 'none';
     }
     if (event.target === disciplineModal) {
         disciplineModal.style.display = 'none';
+    }
+    if (event.target === meritFlawModal) {
+        meritFlawModal.style.display = 'none';
     }
 }
 
@@ -2627,4 +2638,814 @@ function initializeMorality() {
 // Initialize morality system when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeMorality();
+    initializeMeritsFlaws();
 });
+
+// ===== MERITS & FLAWS SYSTEM =====
+
+// Merits and Flaws data from the JSON database
+const meritsFlawsData = {
+    "merits": {
+        "Physical": [
+            {
+                "name": "Acute Senses",
+                "cost": 1,
+                "category": "Physical",
+                "description": "One of your senses (sight, hearing, smell, touch, or taste) is unusually sharp. You reduce the difficulty of rolls involving that sense by 2.",
+                "effects": {"sense_bonus": 2}
+            },
+            {
+                "name": "Ambidextrous",
+                "cost": 1,
+                "category": "Physical",
+                "description": "You can use either hand with equal facility; off-hand penalties vanish.",
+                "effects": {"remove_offhand_penalty": true}
+            },
+            {
+                "name": "Catlike Balance",
+                "cost": 1,
+                "category": "Physical",
+                "description": "You have superior balance and agility. Tasks involving movement on narrow surfaces or recovering from stumbles are easier.",
+                "effects": {"balance_bonus": true}
+            },
+            {
+                "name": "Bruiser",
+                "cost": 1,
+                "category": "Physical",
+                "description": "Your intimidating physical presence gives you an edge. Intimidation rolls versus those who haven't shown dominance over you get –1 to difficulty (i.e. one extra die).",
+                "effects": {"intimidation_bonus_against_unproven": 1}
+            },
+            {
+                "name": "Daredevil",
+                "cost": 3,
+                "category": "Physical",
+                "description": "You excel at high-risk stunts, acrobatics or recklessness. In daring maneuvers, you reduce difficulty or gain bonus dice.",
+                "effects": {"stunt_bonus": true}
+            },
+            {
+                "name": "Efficient Digestion",
+                "cost": 3,
+                "category": "Physical",
+                "description": "You derive more nourishment from blood than is typical. When feeding, you gain extra Blood points (without exceeding your pool).",
+                "effects": {"extra_blood_per_feed": 1}
+            },
+            {
+                "name": "Eat Food",
+                "cost": 1,
+                "category": "Physical",
+                "description": "Though you do not truly depend on it, you can eat mortal food without suffering the usual penalties or complications.",
+                "effects": {"normal_food_tolerance": true}
+            }
+        ],
+        "Mental": [
+            {
+                "name": "Common Sense",
+                "cost": 1,
+                "category": "Mental",
+                "description": "You tend to avoid obvious mistakes and pitfalls; you get a bonus or reduced difficulty on practical reasoning or everyday judgments.",
+                "effects": {"practical_rolls_bonus": true}
+            },
+            {
+                "name": "Concentration",
+                "cost": 1,
+                "category": "Mental",
+                "description": "You can maintain focus even under stress or distraction. You take fewer penalties when concentrating on a task under duress.",
+                "effects": {"resist_interference_bonus": true}
+            },
+            {
+                "name": "Eidetic Memory",
+                "cost": 2,
+                "category": "Mental",
+                "description": "You recall details with sharp precision. You can reconstruct conversations, documents, or scenes with high fidelity.",
+                "effects": {"recall_difficulty_reduced": true}
+            },
+            {
+                "name": "Iron Will",
+                "cost": 3,
+                "category": "Mental",
+                "description": "Your mental fortitude is exceptional; you resist fear, influence, or coercion more easily.",
+                "effects": {"willpower_resistance_bonus": true}
+            },
+            {
+                "name": "Light Sleeper",
+                "cost": 2,
+                "category": "Mental",
+                "description": "You awaken easily to threats or disturbances. Surprises or stealth attacks are less likely to catch you off guard.",
+                "effects": {"reduced_surprise_penalty": true}
+            },
+            {
+                "name": "Time Sense",
+                "cost": 1,
+                "category": "Mental",
+                "description": "You have an internal sense of passing time. You can estimate durations accurately, notice when time is being manipulated, or detect anomalies.",
+                "effects": {"time_estimation_bonus": true}
+            }
+        ],
+        "Social": [
+            {
+                "name": "Natural Leader",
+                "cost": 1,
+                "category": "Social",
+                "description": "You inspire others, take command, or rally loyalty. Leadership or persuasion rolls in group settings are easier.",
+                "effects": {"group_influence_bonus": true}
+            },
+            {
+                "name": "Reputation",
+                "cost": 2,
+                "category": "Social",
+                "description": "You have standing or renown in your community or among other Kindred. Add 3 dice to social interactions with those who recognize you.",
+                "effects": {"bonus_dice_social_recognizers": 3}
+            },
+            {
+                "name": "Prestigious Sire",
+                "cost": 1,
+                "category": "Social",
+                "description": "Your sire's reputation benefits you; in certain social contexts with your sire's allies, you gain advantage or easier access.",
+                "effects": {"sire_association_bonus": true}
+            }
+        ],
+        "Supernatural": [
+            {
+                "name": "Oracular Ability",
+                "cost": 3,
+                "category": "Supernatural",
+                "description": "You sometimes receive prophetic insight, visions, or omens that guide your actions or warn of danger.",
+                "effects": {"vision_trigger": true}
+            },
+            {
+                "name": "Medium",
+                "cost": 2,
+                "category": "Supernatural",
+                "description": "You are especially attuned to spirits. You may see or converse with ghosts more easily than others.",
+                "effects": {"spirit_sense_bonus": true}
+            },
+            {
+                "name": "Magic Resistance",
+                "cost": 2,
+                "category": "Supernatural",
+                "description": "You resist magical or supernatural effects more strongly. The difficulty or potency of such effects against you is reduced.",
+                "effects": {"resist_supernatural_effects": true}
+            },
+            {
+                "name": "Lucky",
+                "cost": 3,
+                "category": "Supernatural",
+                "description": "Fortune occasionally favors you. In critical situations, you may reroll a die or reduce difficulty.",
+                "effects": {"bonus_die_once": true}
+            },
+            {
+                "name": "Danger Sense",
+                "cost": 2,
+                "category": "Supernatural",
+                "description": "You have a sense of impending danger more reliable than mere awareness. When threatened, your Storyteller secretly rolls vs. your Perception + Alertness and may warn you in advance.",
+                "effects": {"foreshadow_warning": true}
+            }
+        ]
+    },
+    "flaws": {
+        "Physical": [
+            {
+                "name": "Bad Sight",
+                "cost": 1,
+                "category": "Physical",
+                "description": "Your vision is impaired. Rolls relying on sight have +2 difficulty (i.e. fewer dice).",
+                "effects": {"vision_penalty": 2}
+            },
+            {
+                "name": "Hard of Hearing",
+                "cost": 1,
+                "category": "Physical",
+                "description": "Your hearing is deficient. Rolls based on hearing have +2 difficulty.",
+                "effects": {"hearing_penalty": 2}
+            },
+            {
+                "name": "One Eye",
+                "cost": 2,
+                "category": "Physical",
+                "description": "You have lost or never had one eye. You suffer penalties on depth perception, peripheral checks, and ranged tasks when that side is obscured.",
+                "effects": {"depth_perception_penalty": 2}
+            },
+            {
+                "name": "Fourteenth Generation",
+                "cost": 2,
+                "category": "Physical",
+                "description": "Your vampiric lineage is weak. You are more vulnerable, perhaps with fewer innate advantages or lower resistance thresholds.",
+                "effects": {"lineage_weakness": true}
+            },
+            {
+                "name": "Monstrous",
+                "cost": 3,
+                "category": "Physical",
+                "description": "Your appearance is grotesque or disturbing, reducing your Appearance to 0 and causing penalties in social interactions.",
+                "effects": {"appearance_override": 0, "social_penalty": true}
+            },
+            {
+                "name": "Slow Healing",
+                "cost": 3,
+                "category": "Physical",
+                "description": "Your body is slow to recover. Healing takes doubled time or more, and aggravated damage may not heal.",
+                "effects": {"healing_rate_multiplier": 2}
+            }
+        ],
+        "Mental": [
+            {
+                "name": "Nightmares",
+                "cost": 1,
+                "category": "Mental",
+                "description": "You are plagued by disturbing dreams that disturb rest, impose fatigue or stress penalties upon waking.",
+                "effects": {"rest_penalty": true}
+            },
+            {
+                "name": "Phobia",
+                "cost": "1-3",
+                "category": "Mental",
+                "description": "You suffer an irrational fear of a specific object, creature or situation. When confronted, you incur significant penalties or may be forced to flee.",
+                "effects": {"phobia_trigger_penalty": true},
+                "variableCost": true,
+                "minCost": 1,
+                "maxCost": 3
+            },
+            {
+                "name": "Short Fuse",
+                "cost": 2,
+                "category": "Mental",
+                "description": "You have little patience or impulse control. Under provocation or stress, you may snap, suffer penalties, or lose control.",
+                "effects": {"impulse_penalty": true}
+            },
+            {
+                "name": "Soft-Hearted",
+                "cost": 1,
+                "category": "Mental",
+                "description": "You are emotionally susceptible. Manipulation, appeals to empathy or emotional strife are more effective against you.",
+                "effects": {"emotional_susceptibility": true}
+            },
+            {
+                "name": "Weak-Willed",
+                "cost": 2,
+                "category": "Mental",
+                "description": "Your willpower is fragile. You suffer extra difficulty resisting mental pressure, charms or coercion.",
+                "effects": {"willpower_resist_penalty": 1}
+            }
+        ],
+        "Social": [
+            {
+                "name": "Dark Secret",
+                "cost": 1,
+                "category": "Social",
+                "description": "You hold a secret that, if revealed, could ruin or shame you. Discovery inflicts social penalties or dramatic consequences.",
+                "effects": {"social_penalty_if_revealed": true}
+            },
+            {
+                "name": "Prey Exclusion",
+                "cost": 1,
+                "category": "Social",
+                "description": "You refuse to feed on a specified class (e.g. children, animals, etc.). Violating this leads to negative consequences (frenzy, Humanity loss).",
+                "effects": {"feeding_restriction": true}
+            },
+            {
+                "name": "Sire's Resentment",
+                "cost": 1,
+                "category": "Social",
+                "description": "Your sire harbors ill will toward you. You incur penalties in social dealings involving your sire's allies or in family politics.",
+                "effects": {"social_penalty_related_to_sire": true}
+            },
+            {
+                "name": "Clan Enmity",
+                "cost": 2,
+                "category": "Social",
+                "description": "One clan holds a grudge against you. You suffer a –2 dice (or +2 difficulty) on social rolls involving that clan.",
+                "effects": {"penalty_against_clan": 2}
+            }
+        ],
+        "Supernatural": [
+            {
+                "name": "Cursed",
+                "cost": "1-5",
+                "category": "Supernatural",
+                "description": "You bear a supernatural curse. Depending on severity, you endure sporadic hindrances, vulnerabilities, or stigma.",
+                "effects": {"curse_effect": true},
+                "variableCost": true,
+                "minCost": 1,
+                "maxCost": 5
+            },
+            {
+                "name": "Haunted",
+                "cost": 3,
+                "category": "Supernatural",
+                "description": "Spirits or supernatural forces cling to you. You suffer interference, disturbances, or heightened sensitivity to ghostly presence.",
+                "effects": {"spiritual_interference": true}
+            },
+            {
+                "name": "Hunted",
+                "cost": 4,
+                "category": "Supernatural",
+                "description": "You are actively pursued by someone or something (vampire hunters, enemies, spirits). You are at constant risk of ambush, betrayal, or exposure.",
+                "effects": {"persistent_threat": true}
+            },
+            {
+                "name": "Grip of the Damned",
+                "cost": 4,
+                "category": "Supernatural",
+                "description": "A supernatural compulsion or curse has hold over you. At times you lose control, are compelled, or the 'grip' imposes hardship or interference.",
+                "effects": {"compulsion_interference": true}
+            }
+        ]
+    }
+};
+
+// Conflict rules for merits and flaws
+const conflictRules = {
+    "Ambidextrous": ["One Eye", "One Arm"],
+    "Eat Food": ["Efficient Digestion"],
+    "Efficient Digestion": ["Eat Food"],
+    "One Eye": ["Ambidextrous"],
+    "One Arm": ["Ambidextrous"],
+    "Monstrous": ["Blush of Health"]
+};
+
+// Global variables for merits and flaws
+let selectedMerits = [];
+let selectedFlaws = [];
+let filteredMeritsFlaws = [];
+
+// Initialize the merits and flaws system
+function initializeMeritsFlaws() {
+    // Load any existing merits/flaws from character data
+    if (characterData.merits_flaws) {
+        selectedMerits = characterData.merits_flaws.filter(item => item.type === 'merit');
+        selectedFlaws = characterData.merits_flaws.filter(item => item.type === 'flaw');
+    }
+    
+    // Populate the available list
+    populateAvailableList();
+    updateSelectedList();
+    updateSummary();
+}
+
+// Populate the available merits and flaws list
+function populateAvailableList() {
+    const availableList = document.getElementById('availableList');
+    if (!availableList) return;
+    
+    // Clear existing content
+    availableList.innerHTML = '';
+    
+    // Get all merits and flaws
+    const allItems = [];
+    
+    // Add merits
+    Object.keys(meritsFlawsData.merits).forEach(category => {
+        meritsFlawsData.merits[category].forEach(merit => {
+            allItems.push({...merit, type: 'merit'});
+        });
+    });
+    
+    // Add flaws
+    Object.keys(meritsFlawsData.flaws).forEach(category => {
+        meritsFlawsData.flaws[category].forEach(flaw => {
+            allItems.push({...flaw, type: 'flaw'});
+        });
+    });
+    
+    // Sort by cost, then alphabetically
+    allItems.sort((a, b) => {
+        const costA = typeof a.cost === 'string' ? parseInt(a.cost.split('-')[0]) : a.cost;
+        const costB = typeof b.cost === 'string' ? parseInt(b.cost.split('-')[0]) : b.cost;
+        if (costA !== costB) return costA - costB;
+        return a.name.localeCompare(b.name);
+    });
+    
+    // Store filtered items
+    filteredMeritsFlaws = allItems;
+    
+    // Render items
+    allItems.forEach(item => {
+        const itemElement = createMeritFlawItem(item, false);
+        availableList.appendChild(itemElement);
+    });
+}
+
+// Create a merit/flaw item element
+function createMeritFlawItem(item, isSelected = false) {
+    const div = document.createElement('div');
+    div.className = `merit-flaw-item ${isSelected ? 'selected' : ''}`;
+    div.dataset.name = item.name;
+    div.dataset.type = item.type;
+    div.dataset.category = item.category;
+    
+    const cost = typeof item.cost === 'string' ? item.cost : item.cost.toString();
+    const isVariableCost = item.variableCost || false;
+    
+    // Get category icon
+    const categoryIcons = {
+        'Physical': '💪',
+        'Mental': '🧠',
+        'Social': '👥',
+        'Supernatural': '✨'
+    };
+    const categoryIcon = categoryIcons[item.category] || '📋';
+
+    // Get cost color class
+    const costValue = parseCost(cost);
+    let costColorClass = '';
+    if (costValue === 1) {
+        costColorClass = 'cost-low'; // Green
+    } else if (costValue >= 2 && costValue <= 3) {
+        costColorClass = 'cost-medium'; // Yellow
+    } else if (costValue >= 4) {
+        costColorClass = 'cost-high'; // Red
+    }
+
+    div.innerHTML = `
+        <div class="merit-flaw-info" onclick="showMeritFlawDescription('${item.name}', '${item.type}')" title="Click for details">
+            <div class="merit-flaw-name">${item.name}</div>
+            <div class="merit-flaw-category">
+                <span class="category-icon">${categoryIcon}</span>
+                <span class="category-text">${item.category}</span>
+            </div>
+            ${isSelected ? `<div class="merit-flaw-description">
+                <input type="text" placeholder="Enter description..." value="${item.customDescription || ''}" 
+                       onchange="updateMeritFlawDescription('${item.name}', '${item.type}', this.value)" 
+                       onclick="event.stopPropagation()">
+            </div>` : ''}
+        </div>
+        <div class="merit-flaw-cost ${costColorClass}">${cost}pt${cost !== '1' ? 's' : ''}</div>
+        <div class="merit-flaw-actions">
+            ${isSelected ? 
+                `<button class="merit-flaw-btn remove" onclick="removeMeritFlaw('${item.name}', '${item.type}')">Remove</button>` :
+                `<button class="merit-flaw-btn" onclick="addMeritFlaw('${item.name}', '${item.type}')">Add</button>`
+            }
+        </div>
+        ${isVariableCost && isSelected ? `
+            <div class="cost-slider">
+                <input type="range" min="${item.minCost}" max="${item.maxCost}" 
+                       value="${item.selectedCost || item.minCost}" 
+                       onchange="updateVariableCost('${item.name}', '${item.type}', this.value)">
+                <span class="slider-value">${item.selectedCost || item.minCost}</span>
+            </div>
+        ` : ''}
+    `;
+    
+    return div;
+}
+
+// Add a merit or flaw
+function addMeritFlaw(name, type) {
+    // Check for conflicts
+    const conflict = checkConflicts(name, type);
+    if (conflict) {
+        showConflictWarning(conflict);
+        return;
+    }
+    
+    // Check if already selected
+    const existing = type === 'merit' ? 
+        selectedMerits.find(m => m.name === name) : 
+        selectedFlaws.find(f => f.name === name);
+    
+    if (existing) return;
+    
+    // Find the item data
+    const itemData = findMeritFlawData(name, type);
+    if (!itemData) return;
+    
+    // Create the selected item
+    const selectedItem = {
+        ...itemData,
+        customDescription: '',
+        selectedCost: itemData.variableCost ? itemData.minCost : itemData.cost
+    };
+    
+    // Add to appropriate array
+    if (type === 'merit') {
+        selectedMerits.push(selectedItem);
+    } else {
+        selectedFlaws.push(selectedItem);
+    }
+    
+    // Update displays
+    updateSelectedList();
+    updateSummary();
+    updateAvailableList();
+    updateXPDisplay();
+}
+
+// Remove a merit or flaw
+function removeMeritFlaw(name, type) {
+    if (type === 'merit') {
+        selectedMerits = selectedMerits.filter(m => m.name !== name);
+    } else {
+        selectedFlaws = selectedFlaws.filter(f => f.name !== name);
+    }
+    
+    // Update displays
+    updateSelectedList();
+    updateSummary();
+    updateAvailableList();
+    updateXPDisplay();
+}
+
+// Update variable cost for items like Phobia or Cursed
+function updateVariableCost(name, type, newCost) {
+    const array = type === 'merit' ? selectedMerits : selectedFlaws;
+    const item = array.find(i => i.name === name);
+    if (item) {
+        item.selectedCost = parseInt(newCost);
+        updateSummary();
+        updateXPDisplay();
+    }
+}
+
+// Update custom description for a merit/flaw
+function updateMeritFlawDescription(name, type, description) {
+    const array = type === 'merit' ? selectedMerits : selectedFlaws;
+    const item = array.find(i => i.name === name);
+    if (item) {
+        item.customDescription = description;
+    }
+}
+
+// Check for conflicts
+function checkConflicts(name, type) {
+    const conflicts = conflictRules[name] || [];
+    const selectedNames = [...selectedMerits, ...selectedFlaws].map(item => item.name);
+    
+    for (const conflictName of conflicts) {
+        if (selectedNames.includes(conflictName)) {
+            return `${name} conflicts with ${conflictName}. You cannot have both.`;
+        }
+    }
+    
+    // Check clan-specific requirements
+    const clan = document.getElementById('clan').value;
+    const clanRequirements = checkClanRequirements(name, type, clan);
+    if (clanRequirements) {
+        return clanRequirements;
+    }
+    
+    return null;
+}
+
+// Check clan-specific requirements
+function checkClanRequirements(name, type, clan) {
+    // Clan-specific restrictions
+    const clanRestrictions = {
+        'Tremere': {
+            'merits': ['Prestigious Sire'], // Tremere-specific merits
+            'flaws': ['Clan Enmity'] // Some flaws may not make sense for certain clans
+        },
+        'Brujah': {
+            'merits': ['Natural Leader'],
+            'flaws': ['Weak-Willed'] // Brujah are known for strong will
+        },
+        'Ventrue': {
+            'merits': ['Reputation', 'Prestigious Sire'],
+            'flaws': ['Monstrous'] // Ventrue value appearance
+        }
+    };
+    
+    // Check if this merit/flaw is restricted for this clan
+    const restrictions = clanRestrictions[clan];
+    if (restrictions && restrictions[type] && restrictions[type].includes(name)) {
+        return `${name} is not appropriate for ${clan} characters.`;
+    }
+    
+    return null;
+}
+
+// Show conflict warning
+function showConflictWarning(message) {
+    const warning = document.getElementById('conflictWarning');
+    const text = document.getElementById('conflictText');
+    
+    if (warning && text) {
+        text.textContent = message;
+        warning.style.display = 'flex';
+        
+        // Hide after 5 seconds
+        setTimeout(() => {
+            warning.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// Update the selected list display
+function updateSelectedList() {
+    const selectedList = document.getElementById('selectedList');
+    if (!selectedList) return;
+    
+    selectedList.innerHTML = '';
+    
+    // Add selected merits
+    selectedMerits.forEach(merit => {
+        const itemElement = createMeritFlawItem(merit, true);
+        selectedList.appendChild(itemElement);
+    });
+    
+    // Add selected flaws
+    selectedFlaws.forEach(flaw => {
+        const itemElement = createMeritFlawItem(flaw, true);
+        selectedList.appendChild(itemElement);
+    });
+}
+
+// Update the available list (disable conflicting items)
+function updateAvailableList() {
+    const availableList = document.getElementById('availableList');
+    if (!availableList) return;
+    
+    const items = availableList.querySelectorAll('.merit-flaw-item');
+    const selectedNames = [...selectedMerits, ...selectedFlaws].map(item => item.name);
+    
+    items.forEach(item => {
+        const name = item.dataset.name;
+        const type = item.dataset.type;
+        
+        // Check if already selected
+        if (selectedNames.includes(name)) {
+            item.style.display = 'none';
+            return;
+        }
+        
+        // Check for conflicts
+        const conflict = checkConflicts(name, type);
+        if (conflict) {
+            item.classList.add('disabled');
+            item.title = conflict;
+        } else {
+            item.classList.remove('disabled');
+            item.title = '';
+        }
+    });
+}
+
+// Update the summary display
+function updateSummary() {
+    const meritsCost = selectedMerits.reduce((sum, merit) => sum + (merit.selectedCost || merit.cost), 0);
+    const flawsPoints = selectedFlaws.reduce((sum, flaw) => sum + (flaw.selectedCost || flaw.cost), 0);
+    const netCost = meritsCost - flawsPoints;
+    
+    document.getElementById('meritsCost').textContent = meritsCost;
+    document.getElementById('flawsPoints').textContent = flawsPoints;
+    document.getElementById('netCost').textContent = netCost;
+    
+    // Update character data
+    characterData.merits_flaws = [...selectedMerits, ...selectedFlaws];
+}
+
+// Filter merits and flaws based on search and category
+function filterMeritsFlaws() {
+    const categoryFilter = document.getElementById('categoryFilter').value;
+    const typeFilter = document.getElementById('typeFilter').value;
+    const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+    const sortFilter = document.getElementById('sortFilter').value;
+    
+    const availableList = document.getElementById('availableList');
+    if (!availableList) return;
+    
+    const items = Array.from(availableList.querySelectorAll('.merit-flaw-item'));
+    
+    // Filter items
+    const filteredItems = items.filter(item => {
+        const category = item.dataset.category;
+        const type = item.dataset.type;
+        const name = item.querySelector('.merit-flaw-name').textContent.toLowerCase();
+        
+        let show = true;
+        
+        // Category filter
+        if (categoryFilter !== 'all' && category !== categoryFilter) {
+            show = false;
+        }
+        
+        // Type filter
+        if (typeFilter === 'merits' && type !== 'merit') {
+            show = false;
+        }
+        if (typeFilter === 'flaws' && type !== 'flaw') {
+            show = false;
+        }
+        
+        // Search filter
+        if (searchFilter && !name.includes(searchFilter)) {
+            show = false;
+        }
+        
+        return show;
+    });
+    
+    // Sort filtered items
+    const sortFunction = getSortFunction(sortFilter);
+    filteredItems.sort(sortFunction);
+    
+    // Hide all items first
+    items.forEach(item => item.style.display = 'none');
+    
+    // Reorder and show filtered and sorted items
+    filteredItems.forEach(item => {
+        availableList.appendChild(item);
+        item.style.display = 'flex';
+    });
+}
+
+// Get sort function based on sort filter
+function getSortFunction(sortFilter) {
+    return (a, b) => {
+        const aName = a.querySelector('.merit-flaw-name').textContent;
+        const bName = b.querySelector('.merit-flaw-name').textContent;
+        const aCategory = a.dataset.category;
+        const bCategory = b.dataset.category;
+        
+        // Get cost values
+        const aCostText = a.querySelector('.merit-flaw-cost').textContent;
+        const bCostText = b.querySelector('.merit-flaw-cost').textContent;
+        const aCost = parseCost(aCostText);
+        const bCost = parseCost(bCostText);
+        
+        switch (sortFilter) {
+            case 'cost':
+                if (aCost !== bCost) return aCost - bCost;
+                return aName.localeCompare(bName);
+            case 'cost-desc':
+                if (aCost !== bCost) return bCost - aCost;
+                return aName.localeCompare(bName);
+            case 'name':
+                return aName.localeCompare(bName);
+            case 'name-desc':
+                return bName.localeCompare(aName);
+            case 'category':
+                if (aCategory !== bCategory) return aCategory.localeCompare(bCategory);
+                return aName.localeCompare(bName);
+            default:
+                return 0;
+        }
+    };
+}
+
+// Parse cost from text (handles "1pt", "2pts", "1-3pts", etc.)
+function parseCost(costText) {
+    const match = costText.match(/(\d+)/);
+    return match ? parseInt(match[1]) : 0;
+}
+
+// Reset all filters to default values
+function resetMeritsFlawsFilters() {
+    // Reset all filter controls to default values
+    document.getElementById('categoryFilter').value = 'all';
+    document.getElementById('typeFilter').value = 'both';
+    document.getElementById('sortFilter').value = 'cost';
+    document.getElementById('searchFilter').value = '';
+    
+    // Reapply filters with default values
+    filterMeritsFlaws();
+}
+
+// Find merit/flaw data by name and type
+function findMeritFlawData(name, type) {
+    const data = type === 'merit' ? meritsFlawsData.merits : meritsFlawsData.flaws;
+    
+    for (const category in data) {
+        const item = data[category].find(item => item.name === name);
+        if (item) return item;
+    }
+    
+    return null;
+}
+
+// Show merit/flaw description modal
+function showMeritFlawDescription(name, type) {
+    const item = findMeritFlawData(name, type);
+    if (!item) return;
+    
+    // Update modal content
+    document.getElementById('meritFlawModalTitle').textContent = item.name;
+    document.getElementById('meritFlawType').textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    document.getElementById('meritFlawCategory').textContent = item.category;
+    document.getElementById('meritFlawCost').textContent = typeof item.cost === 'string' ? item.cost : item.cost + ' point' + (item.cost !== 1 ? 's' : '');
+    document.getElementById('meritFlawDescription').textContent = item.description;
+    
+    // Handle effects
+    const effectsDiv = document.getElementById('meritFlawEffects');
+    const effectsList = document.getElementById('meritFlawEffectsList');
+    
+    if (item.effects && Object.keys(item.effects).length > 0) {
+        effectsDiv.style.display = 'block';
+        effectsList.innerHTML = '';
+        
+        Object.entries(item.effects).forEach(([key, value]) => {
+            const li = document.createElement('li');
+            li.textContent = `${key}: ${value}`;
+            effectsList.appendChild(li);
+        });
+    } else {
+        effectsDiv.style.display = 'none';
+    }
+    
+    // Show modal
+    document.getElementById('meritFlawDescriptionModal').style.display = 'block';
+}
+
+// Close merit/flaw description modal
+function closeMeritFlawDescription() {
+    document.getElementById('meritFlawDescriptionModal').style.display = 'none';
+}
