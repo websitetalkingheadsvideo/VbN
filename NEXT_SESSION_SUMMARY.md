@@ -1,70 +1,104 @@
-# LOTN Character Creator - Next Session Summary
+# Next Session Summary - Merits & Flaws Implementation
 
-## 🎯 **Current Status: UI Enhancements Complete - Ready for Morality Tab**
+## 🎯 **Next Focus: Merits & Flaws System**
 
-### ✅ **Completed Tasks:**
-1. **Typography System** - Applied 4-font hierarchy (IM Fell English, Libre Baskerville, Source Serif Pro, Nosifer)
-2. **Gothic Theme** - Implemented dark backgrounds, red accents, shadows, and gradients
-3. **Interactive Elements** - Enhanced buttons, form inputs, trait/ability buttons with gothic styling
-4. **Card-based Layout** - Each tab now displays as a styled card with shadows, borders, and enhanced visual hierarchy
-5. **Visual Hierarchy** - Progress indicators, enhanced spacing, and improved contrast throughout
-6. **Live Character Preview** - Real-time character sheet updates as users build their characters
-7. **Mobile Responsiveness** - Full responsive design for mobile and tablet devices
-8. **Character Sheet Mode Toggle** - Full/Compact preview modes with radio button controls
-9. **Final Details Readability** - Fixed text contrast and applied gothic theme consistency
+### **Current Project Status**
+- ✅ **Character Creation Core**: Complete (traits, abilities, disciplines, backgrounds)
+- ✅ **Humanity/Virtue System**: Complete with XP integration
+- ✅ **Database Integration**: Ready for character saving
+- ✅ **UI/UX**: Modern, responsive design with animations
 
-### 🎨 **Recent UI Improvements:**
-- **Character Sheet Toggle** - Users can switch between detailed and condensed character preview
-- **Mobile Tab Functionality** - Fixed JavaScript execution issues on mobile devices
-- **Final Details Styling** - Applied gothic theme with proper text contrast
-- **XP Tracker Background** - Updated to new Dark marble-6.jpg image
-- **Button Consistency** - All buttons now follow gothic theme with proper hover effects
-- **Typography Refinements** - Enhanced text shadows and readability throughout
+### **What We Just Completed**
+**Humanity/Virtue System (v0.2.1)**
+- Full virtue allocation system (Conscience + Self-Control)
+- XP-based costs (7 free points, 2 XP per additional point)
+- Visual progress bars with level markers and animations
+- Real-time validation and button state management
+- Integrated with existing XP tracking system
+- Database-ready morality data collection
 
-### 📋 **Next Session Focus: Morality Tab Implementation**
+---
 
-#### **Current Morality Tab Status:**
-- **Tab Structure** - Basic tab exists but needs content implementation
-- **Reference Materials** - Available in `reference/Humanity Reference` and `reference/Morality.txt`
-- **Styling** - Needs gothic theme integration and interactive elements
+## 🎯 **Next Session Goals: Merits & Flaws System**
 
-#### **Morality Tab Requirements:**
-1. **Humanity System** - Implement the 10-point Humanity scale (1-10)
-2. **Virtue Selection** - Allow users to choose primary Virtue (Conscience, Self-Control, Courage)
-3. **Vice Selection** - Allow users to choose primary Vice (Callous, Heartless, Reckless)
-4. **Humanity Display** - Visual representation of current Humanity level
-5. **Virtue/Vice Tracking** - Show selected Virtue and Vice with descriptions
-6. **Interactive Elements** - Buttons for Virtue/Vice selection with gothic styling
-7. **Character Integration** - Connect to live character preview system
+### **Reference Documents Available**
+- `reference/Merits and Flaws.MD` - Core rules and categories
+- `reference/Merits and Flaws Database.MD` - Database structure and data
 
-#### **Technical Implementation Needed:**
-- **HTML Structure** - Create morality form elements within tab7
-- **CSS Styling** - Apply gothic theme to all morality elements
-- **JavaScript Logic** - Handle Virtue/Vice selection and Humanity tracking
-- **Preview Integration** - Update character preview with morality selections
-- **Mobile Responsiveness** - Ensure morality tab works on mobile devices
+### **Key Implementation Areas**
 
-#### **Reference Materials Available:**
-- `reference/Humanity Reference` - Complete Humanity system documentation
-- `reference/Morality.txt` - Morality rules and guidelines
-- `reference/Humanity Display.MD` - Display formatting suggestions
+#### **1. Database Setup**
+- Create `merits_flaws` table structure
+- Populate with merit/flaw data from reference documents
+- Link to character data for tracking selections
 
-### 🎯 **Session Goals:**
-1. **Implement Humanity Scale** - 10-point scale with visual representation
-2. **Create Virtue/Vice Selection** - Interactive buttons for character choices
-3. **Apply Gothic Styling** - Consistent theme throughout morality tab
-4. **Add Character Integration** - Connect to live preview system
-5. **Ensure Mobile Compatibility** - Test and optimize for mobile devices
+#### **2. UI Implementation**
+- **New Tab**: Add "Merits & Flaws" tab to character creation
+- **Category System**: Physical, Social, Mental, Supernatural, Flaws
+- **Point Tracking**: Merit points (positive) vs Flaw points (negative)
+- **Selection Interface**: Click-to-select with visual feedback
+- **Cost Display**: Show point costs and remaining points
 
-### 📁 **Key Files to Modify:**
-- `lotn_char_create.php` - Add morality tab content structure
-- `css/style.css` - Add morality-specific styling
-- `js/script.js` - Add morality selection logic and preview updates
+#### **3. Integration Points**
+- **XP System**: Merits cost XP, Flaws give XP
+- **Character Data**: Add merits/flaws to form collection
+- **Validation**: Ensure point limits and prerequisites
+- **Display**: Show selected merits/flaws in character summary
 
-### 🧛‍♂️ **Current Version: 0.2.7**
-- Character Sheet Mode Toggle
-- Final Details Readability Fix
-- XP Tracker Background Update
-- Mobile Tab Functionality Complete
+### **Technical Considerations**
 
-**Ready to implement a comprehensive Morality system with full gothic theming!** 🩸✨
+#### **Merit Categories**
+- **Physical Merits** (1-4 pts): Enhanced physical abilities
+- **Social Merits** (1-4 pts): Social advantages and connections
+- **Mental Merits** (1-4 pts): Mental abilities and knowledge
+- **Supernatural Merits** (1-5 pts): Vampire-specific abilities
+- **Flaws** (1-5 pts): Disadvantages that give merit points
+
+#### **Point System**
+- **Merit Points**: Characters get 7 free merit points
+- **Flaw Points**: Flaws give additional merit points (1:1 ratio)
+- **XP Costs**: Merits beyond free points cost XP
+- **Limits**: Maximum 7 merit points from flaws
+
+#### **Database Structure**
+```sql
+merits_flaws:
+- id, name, category, cost, description, prerequisites
+character_merits_flaws:
+- character_id, merit_flaw_id, selected, cost_paid
+```
+
+### **Implementation Priority**
+1. **Database setup** and data population
+2. **UI tab creation** with category navigation
+3. **Selection system** with point tracking
+4. **XP integration** for merit costs
+5. **Character data** collection and display
+6. **Validation** and error handling
+
+### **Expected Features**
+- **Category Navigation**: Tabs for each merit category
+- **Search/Filter**: Find specific merits by name or cost
+- **Point Tracker**: Real-time merit/flaw point calculation
+- **Selection Interface**: Click to add/remove merits
+- **Cost Display**: Show XP costs and remaining points
+- **Character Summary**: Display selected merits in final summary
+
+### **Files to Focus On**
+- `lotn_char_create.php` - Add Merits & Flaws tab
+- `css/style.css` - Styling for merit selection interface
+- `js/script.js` - Merit selection logic and XP integration
+- Database files - Merit/flaw data and character linking
+
+### **Success Criteria**
+- [ ] Merits & Flaws tab fully functional
+- [ ] Point tracking system working
+- [ ] XP integration complete
+- [ ] Character data collection ready
+- [ ] UI/UX polished and responsive
+
+---
+
+## 🚀 **Ready to Begin Merits & Flaws Implementation!**
+
+The foundation is solid - we can now build a comprehensive merits and flaws system that integrates seamlessly with the existing character creation process.
