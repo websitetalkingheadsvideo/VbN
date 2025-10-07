@@ -39,13 +39,88 @@
                 "description": "The Discipline of Animalism allows vampires to communicate with and control animals.",
                 "powers": {
                     "1": {
+                        "name": "Sense the Beast",
+                        "description": "Detect the presence of animals and sense their emotional state.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
                         "name": "Feral Whispers",
                         "description": "Communicate with animals in their own language.",
                         "cost": "1 Willpower"
                     },
+                    "3": {
+                        "name": "Quell the Beast",
+                        "description": "Calm and control animals, making them docile.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Beckoning",
+                        "description": "Call animals to your location from great distances.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Animal Control",
+                        "description": "Take direct control of an animal's actions.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Auspex": {
+                "description": "The Discipline of Auspex enhances the vampire's senses and mental abilities.",
+                "powers": {
+                    "1": {
+                        "name": "Aura Perception",
+                        "description": "See the emotional auras of living beings.",
+                        "cost": "1 Willpower"
+                    },
                     "2": {
-                        "name": "Beckoning", 
-                        "description": "Call animals to your location.",
+                        "name": "Telepathy",
+                        "description": "Read the surface thoughts of others.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Psychometry",
+                        "description": "Read the psychic impressions left on objects.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Premonition",
+                        "description": "Receive glimpses of future events.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Sense the Unseen",
+                        "description": "Detect supernatural beings and phenomena.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Celerity": {
+                "description": "The Discipline of Celerity allows vampires to move at superhuman speeds.",
+                "powers": {
+                    "1": {
+                        "name": "Quickness",
+                        "description": "Move with supernatural speed and agility.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Sprint",
+                        "description": "Run at incredible speeds for short distances.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Enhanced Reflexes",
+                        "description": "React with lightning-fast reflexes.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Blur",
+                        "description": "Move so fast you become a blur to observers.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Accelerated Movement",
+                        "description": "Move at speeds that defy physics.",
                         "cost": "1 Willpower"
                     }
                 }
@@ -56,15 +131,19 @@
         
         // Add mouse event listeners
         document.addEventListener('mouseenter', function(e) {
-            if (e.target.classList.contains('discipline-option-btn')) {
-                console.log('Test: Mouse enter on', e.target.dataset.discipline);
-                showPopover(e.target);
+            // Find the button element (in case target is a text node)
+            const button = e.target.closest ? e.target.closest('.discipline-option-btn') : e.target;
+            if (button && button.classList && button.classList.contains('discipline-option-btn')) {
+                console.log('Test: Mouse enter on', button.dataset.discipline);
+                showPopover(button);
             }
         }, true);
         
         document.addEventListener('mouseleave', function(e) {
-            if (e.target.classList.contains('discipline-option-btn')) {
-                console.log('Test: Mouse leave on', e.target.dataset.discipline);
+            // Find the button element (in case target is a text node)
+            const button = e.target.closest ? e.target.closest('.discipline-option-btn') : e.target;
+            if (button && button.classList && button.classList.contains('discipline-option-btn')) {
+                console.log('Test: Mouse leave on', button.dataset.discipline);
                 hidePopover();
             }
         }, true);
