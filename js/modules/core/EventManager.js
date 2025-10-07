@@ -227,8 +227,17 @@ class EventManager {
     wrapDelegatedHandler(selector, handler, listenerId) {
         return (event) => {
             try {
-                // Check if target matches selector
-                if (!event.target.matches(selector)) return;
+                // Find the actual element that matches the selector
+                let target = event.target;
+                
+                // If target is not an Element (e.g., Text node), find the closest Element
+                if (!target.matches || typeof target.matches !== 'function') {
+                    target = target.closest ? target.closest(selector) : null;
+                    if (!target) return;
+                } else {
+                    // Check if target matches selector
+                    if (!target.matches(selector)) return;
+                }
                 
                 // Add listener ID to event
                 event.listenerId = listenerId;

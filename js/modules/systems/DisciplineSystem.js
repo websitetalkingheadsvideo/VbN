@@ -151,6 +151,7 @@ class DisciplineSystem {
         
         // Discipline selection buttons - use document delegation since we have multiple containers
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'click', (e) => {
+            console.log('DisciplineSystem: Discipline button clicked');
             this.handleDisciplineClick(e);
         });
         
