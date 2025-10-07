@@ -979,15 +979,15 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="clanDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism" onmouseenter="showDisciplinePopover(event, 'Animalism')" onmouseleave="hideDisciplinePopover()">Animalism</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex" onmouseenter="showDisciplinePopover(event, 'Auspex')" onmouseleave="hideDisciplinePopover()">Auspex</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity" onmouseenter="showDisciplinePopover(event, 'Celerity')" onmouseleave="hideDisciplinePopover()">Celerity</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate" onmouseenter="showDisciplinePopover(event, 'Dominate')" onmouseleave="hideDisciplinePopover()">Dominate</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude" onmouseenter="showDisciplinePopover(event, 'Fortitude')" onmouseleave="hideDisciplinePopover()">Fortitude</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate" onmouseenter="showDisciplinePopover(event, 'Obfuscate')" onmouseleave="hideDisciplinePopover()">Obfuscate</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence" onmouseenter="showDisciplinePopover(event, 'Potence')" onmouseleave="hideDisciplinePopover()">Potence</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence" onmouseenter="showDisciplinePopover(event, 'Presence')" onmouseleave="hideDisciplinePopover()">Presence</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean" onmouseenter="showDisciplinePopover(event, 'Protean')" onmouseleave="hideDisciplinePopover()">Protean</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism">Animalism</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex">Auspex</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity">Celerity</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate">Dominate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude">Fortitude</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate">Obfuscate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence">Potence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence">Presence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean">Protean</button>
                     </div>
                     
                     <div class="discipline-list" id="clanDisciplinesList">
@@ -1012,9 +1012,9 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="bloodSorceryOptions">
-                        <button type="button" class="discipline-option-btn" data-discipline="Thaumaturgy" onmouseenter="showDisciplinePopover(event, 'Thaumaturgy')" onmouseleave="hideDisciplinePopover()">Thaumaturgy</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Necromancy" onmouseenter="showDisciplinePopover(event, 'Necromancy')" onmouseleave="hideDisciplinePopover()">Necromancy</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Koldunic Sorcery" onmouseenter="showDisciplinePopover(event, 'Koldunic Sorcery')" onmouseleave="hideDisciplinePopover()">Koldunic Sorcery</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Thaumaturgy">Thaumaturgy</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Necromancy">Necromancy</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Koldunic Sorcery">Koldunic Sorcery</button>
                     </div>
                     
                     <div class="discipline-list" id="bloodSorceryList">
@@ -1039,16 +1039,16 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="advancedDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration" onmouseenter="showDisciplinePopover(event, 'Obtenebration')" onmouseleave="hideDisciplinePopover()">Obtenebration</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry" onmouseenter="showDisciplinePopover(event, 'Chimerstry')" onmouseleave="hideDisciplinePopover()">Chimerstry</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Dementation" onmouseenter="showDisciplinePopover(event, 'Dementation')" onmouseleave="hideDisciplinePopover()">Dementation</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Quietus" onmouseenter="showDisciplinePopover(event, 'Quietus')" onmouseleave="hideDisciplinePopover()">Quietus</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude" onmouseenter="showDisciplinePopover(event, 'Vicissitude')" onmouseleave="hideDisciplinePopover()">Vicissitude</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis" onmouseenter="showDisciplinePopover(event, 'Serpentis')" onmouseleave="hideDisciplinePopover()">Serpentis</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon" onmouseenter="showDisciplinePopover(event, 'Daimoinon')" onmouseleave="hideDisciplinePopover()">Daimoinon</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee" onmouseenter="showDisciplinePopover(event, 'Melpominee')" onmouseleave="hideDisciplinePopover()">Melpominee</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Valeren" onmouseenter="showDisciplinePopover(event, 'Valeren')" onmouseleave="hideDisciplinePopover()">Valeren</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Mortis" onmouseenter="showDisciplinePopover(event, 'Mortis')" onmouseleave="hideDisciplinePopover()">Mortis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration">Obtenebration</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry">Chimerstry</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Dementation">Dementation</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Quietus">Quietus</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude">Vicissitude</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis">Serpentis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon">Daimoinon</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee">Melpominee</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Valeren">Valeren</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Mortis">Mortis</button>
                     </div>
                     
                     <div class="discipline-list" id="advancedDisciplinesList">
@@ -1734,7 +1734,7 @@ include 'includes/connect.php';
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Discipline-Ability Guide</h2>
-                <button type="button" class="modal-close" onclick="closeDisciplineGuide()">&times;</button>
+                <button type="button" class="modal-close" data-action="close-discipline-guide">&times;</button>
             </div>
             <div class="modal-body">
                 <p><strong>Recommended abilities for each Discipline:</strong></p>
@@ -1776,7 +1776,7 @@ include 'includes/connect.php';
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="modal-btn" onclick="closeDisciplineGuide()">Close</button>
+                <button type="button" class="modal-btn" data-action="close-discipline-guide">Close</button>
             </div>
         </div>
     </div>

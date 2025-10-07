@@ -120,13 +120,10 @@ class DisciplineSystem {
     setupEventListeners() {
         const { eventManager } = this;
         
-        // Discipline selection buttons
-        const disciplineContainer = this.uiManager.getElement('.discipline-selection');
-        if (disciplineContainer) {
-            eventManager.addDelegatedListener(disciplineContainer, '.discipline-option-btn', 'click', (e) => {
-                this.handleDisciplineClick(e);
-            });
-        }
+        // Discipline selection buttons - use document delegation since we have multiple containers
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'click', (e) => {
+            this.handleDisciplineClick(e);
+        });
         
         // Remove discipline buttons
         eventManager.addDelegatedListener(document, '.remove-discipline-btn', 'click', (e) => {
@@ -141,6 +138,20 @@ class DisciplineSystem {
         // Remove power buttons
         eventManager.addDelegatedListener(document, '.remove-power-btn', 'click', (e) => {
             this.handleRemovePower(e);
+        });
+        
+        // Discipline popover events
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
+            this.handleDisciplineMouseEnter(e);
+        });
+        
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
+            this.handleDisciplineMouseLeave(e);
+        });
+        
+        // Modal close events
+        eventManager.addDelegatedListener(document, '[data-action="close-discipline-guide"]', 'click', (e) => {
+            this.closeDisciplineGuide();
         });
         
         // Popover close button
@@ -204,6 +215,35 @@ class DisciplineSystem {
         if (!disciplineName || !powerLevel) return;
         
         this.removePower(disciplineName, powerLevel);
+    }
+    
+    /**
+     * Handle discipline mouse enter (show popover)
+     */
+    handleDisciplineMouseEnter(event) {
+        const button = event.target;
+        const disciplineName = button.dataset.discipline;
+        
+        if (!disciplineName) return;
+        
+        this.showPopover(disciplineName, button);
+    }
+    
+    /**
+     * Handle discipline mouse leave (hide popover)
+     */
+    handleDisciplineMouseLeave(event) {
+        this.hidePopover();
+    }
+    
+    /**
+     * Close discipline guide modal
+     */
+    closeDisciplineGuide() {
+        const modal = this.uiManager.getElement('#disciplineGuideModal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
     }
     
     /**
