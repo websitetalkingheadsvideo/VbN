@@ -20,6 +20,24 @@ class DisciplineSystem {
         this.popoverElement = null;
         this.currentDiscipline = null;
         
+        // Clan discipline access mapping
+        this.clanDisciplineAccess = {
+            'Assamite': ['Animalism', 'Celerity', 'Obfuscate', 'Quietus'],
+            'Brujah': ['Celerity', 'Potence', 'Presence'],
+            'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
+            'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+            'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
+            'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
+            'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
+            'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
+            'Nosferatu': ['Animalism', 'Fortitude', 'Obfuscate'],
+            'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
+            'Toreador': ['Auspex', 'Celerity', 'Presence'],
+            'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy'],
+            'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
+            'Ventrue': ['Dominate', 'Fortitude', 'Presence']
+        };
+        
         this.init();
     }
     
@@ -29,7 +47,14 @@ class DisciplineSystem {
     async init() {
         await this.loadDisciplineData();
         this.setupEventListeners();
+        this.setupStateListeners();
         this.updateAllDisplays();
+        
+        // Initialize discipline availability based on current clan
+        const state = this.stateManager.getState();
+        if (state.clan) {
+            this.updateClanDisciplines(state.clan);
+        }
     }
     
     /**
@@ -168,6 +193,18 @@ class DisciplineSystem {
     }
     
     /**
+     * Setup state change listeners
+     */
+    setupStateListeners() {
+        // Listen for clan changes to update discipline availability
+        this.stateManager.subscribe('clan', (newClan, oldClan) => {
+            if (newClan !== oldClan) {
+                this.updateClanDisciplines(newClan);
+            }
+        });
+    }
+    
+    /**
      * Handle discipline selection click
      */
     handleDisciplineClick(event) {
@@ -175,6 +212,17 @@ class DisciplineSystem {
         const disciplineName = button.dataset.discipline;
         
         if (!disciplineName) return;
+        
+        // Check if discipline is available to current clan
+        const state = this.stateManager.getState();
+        const currentClan = state.clan;
+        if (currentClan) {
+            const allowedDisciplines = this.clanDisciplineAccess[currentClan] || [];
+            if (!allowedDisciplines.includes(disciplineName)) {
+                this.notificationManager.warning(`${disciplineName} is not available to ${currentClan}`);
+                return;
+            }
+        }
         
         this.selectDiscipline(disciplineName);
     }
@@ -680,6 +728,80 @@ class DisciplineSystem {
         });
         
         this.updateAllDisplays();
+    }
+    
+    /**
+     * Update discipline availability based on selected clan
+     */
+    updateClanDisciplines(selectedClan) {
+        if (!selectedClan) return;
+        
+        // Get allowed disciplines for the selected clan
+        const allowedDisciplines = this.clanDisciplineAccess[selectedClan] || [];
+        
+        // Get all discipline option buttons
+        const allDisciplineButtons = document.querySelectorAll('.discipline-option-btn');
+        
+        // Update each discipline button
+        allDisciplineButtons.forEach(button => {
+            const disciplineName = button.dataset.discipline;
+            const isAllowed = allowedDisciplines.includes(disciplineName);
+            
+            if (isAllowed) {
+                // Enable the button
+                button.disabled = false;
+                button.style.opacity = '1';
+                button.style.cursor = 'pointer';
+                button.title = ''; // Clear any tooltip
+            } else {
+                // Disable the button
+                button.disabled = true;
+                button.style.opacity = '0.4';
+                button.style.cursor = 'not-allowed';
+                button.title = `${disciplineName} is not available to ${selectedClan}`;
+            }
+        });
+        
+        // Clear any selected disciplines that the clan can't access
+        this.clearInvalidDisciplines(selectedClan, allowedDisciplines);
+    }
+    
+    /**
+     * Clear disciplines that are not available to the selected clan
+     */
+    clearInvalidDisciplines(selectedClan, allowedDisciplines) {
+        const state = this.stateManager.getState();
+        const disciplines = [...state.disciplines];
+        const disciplinePowers = { ...state.disciplinePowers };
+        
+        let removedDisciplines = [];
+        
+        // Remove disciplines not available to the clan
+        const validDisciplines = disciplines.filter(discipline => {
+            if (allowedDisciplines.includes(discipline)) {
+                return true;
+            } else {
+                removedDisciplines.push(discipline);
+                // Also remove any powers for this discipline
+                delete disciplinePowers[discipline];
+                return false;
+            }
+        });
+        
+        // Update state if disciplines were removed
+        if (removedDisciplines.length > 0) {
+            this.stateManager.setState({
+                disciplines: validDisciplines,
+                disciplinePowers: disciplinePowers
+            });
+            
+            // Show notification about removed disciplines
+            this.notificationManager.warning(
+                `Removed ${removedDisciplines.length} discipline(s) not available to ${selectedClan}: ${removedDisciplines.join(', ')}`
+            );
+            
+            this.updateAllDisplays();
+        }
     }
 }
 
