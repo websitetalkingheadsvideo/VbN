@@ -463,9 +463,13 @@ class DisciplineSystem {
             '#advancedDisciplinesList'
         ];
         
-        // Create display elements for each discipline
+        // Create display elements for each discipline with powers
         const disciplineHTML = disciplines.map(disciplineName => {
             const powers = disciplinePowers[disciplineName] || [];
+            
+            // Only show discipline if it has powers selected
+            if (powers.length === 0) return '';
+            
             const powersHTML = powers.map(level => {
                 const power = this.getPowerInfo(disciplineName, level);
                 return `
@@ -490,7 +494,7 @@ class DisciplineSystem {
                     </div>
                 </div>
             `;
-        }).join('');
+        }).filter(html => html !== '').join('');
         
         // Update all discipline list elements
         listElements.forEach(selector => {
@@ -636,6 +640,7 @@ class DisciplineSystem {
         
         // Add to DOM
         document.body.appendChild(this.popoverElement);
+        console.log('DisciplineSystem: Popover added to DOM:', this.popoverElement);
         
         // Add event listeners
         this.setupPopoverEventListeners();
@@ -648,11 +653,20 @@ class DisciplineSystem {
         const rect = button.getBoundingClientRect();
         const popover = this.popoverElement;
         
+        console.log('DisciplineSystem: Positioning popover at:', rect);
+        
         // Position popover below button
         popover.style.position = 'absolute';
         popover.style.top = (rect.bottom + 10) + 'px';
         popover.style.left = rect.left + 'px';
         popover.style.zIndex = '1000';
+        popover.style.backgroundColor = 'white';
+        popover.style.border = '1px solid #ccc';
+        popover.style.padding = '10px';
+        popover.style.borderRadius = '5px';
+        popover.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        
+        console.log('DisciplineSystem: Popover positioned at:', popover.style.top, popover.style.left);
     }
     
     /**
