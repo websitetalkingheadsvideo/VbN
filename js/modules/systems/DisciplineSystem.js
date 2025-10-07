@@ -172,6 +172,20 @@ class DisciplineSystem {
         
         // Discipline popover events
         console.log('DisciplineSystem: Setting up mouse event listeners');
+        
+        // Test if discipline buttons exist
+        const disciplineButtons = document.querySelectorAll('.discipline-option-btn');
+        console.log('DisciplineSystem: Found discipline buttons:', disciplineButtons.length);
+        
+        // If no buttons found, try again after a delay
+        if (disciplineButtons.length === 0) {
+            console.log('DisciplineSystem: No buttons found, retrying in 100ms...');
+            setTimeout(() => {
+                const retryButtons = document.querySelectorAll('.discipline-option-btn');
+                console.log('DisciplineSystem: Retry - Found discipline buttons:', retryButtons.length);
+            }, 100);
+        }
+        
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
             console.log('DisciplineSystem: Mouse enter event triggered');
             this.handleDisciplineMouseEnter(e);
@@ -180,6 +194,11 @@ class DisciplineSystem {
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
             console.log('DisciplineSystem: Mouse leave event triggered');
             this.handleDisciplineMouseLeave(e);
+        });
+        
+        // Also add a simple click test
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'click', (e) => {
+            console.log('DisciplineSystem: Discipline button clicked - test');
         });
         
         // Modal close events
