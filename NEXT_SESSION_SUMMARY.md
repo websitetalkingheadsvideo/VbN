@@ -1,183 +1,99 @@
-# Next Session Summary - Morality Tab Implementation
+# 🚀 Next Session Summary - Ready for Task #13!
 
-## 🎯 **Session Focus: Morality Tab Development**
+## **Session Complete - Resources System Implemented!** ✅
 
-### **Current Status: v0.2.7 Complete**
-- ✅ **UI System:** Complete gothic theming and mobile responsiveness
-- ✅ **Character Preview:** Full/Compact mode toggle working
-- ✅ **All Tabs Functional:** Except Morality (next focus)
-- ✅ **Mobile Responsive:** All tabs work perfectly on mobile devices
+**Version:** 0.2.9  
+**Date:** January 5, 2025  
+**Status:** Successfully implemented and committed
 
 ---
 
-## 🧛‍♂️ **Morality Tab Implementation Plan**
+## **🎯 What Was Accomplished This Session:**
 
-### **Core Features to Implement:**
+### **✅ Resources System & Cash Calculation (Task #15) - COMPLETED**
+- **Dynamic Cash Calculation** - Real-time calculation based on character choices
+- **Multi-Factor System** - Resources background, clan, concept, and merits/flaws
+- **Smart Update Timing** - Only recalculates when Final Details tab is clicked
+- **Detailed Console Logging** - Shows exactly why cash values change
+- **Visual Cash Display** - Shown in character preview and Final Details tab
+- **Poverty Flaw Override** - Special handling that overrides other factors
 
-#### **1. Humanity System**
-- **Humanity Tracker:** 0-10 scale with visual indicators
-- **Current Humanity:** Large display with gothic styling
-- **Humanity Loss/Gain:** Interactive buttons with confirmation
-- **Humanity History:** Track changes with timestamps
+### **✅ UI Fixes & Improvements**
+- **Fixed Final Details Tab** - Resolved alignment issue (was appearing outside page)
+- **Improved Select Styling** - Darker backgrounds for dropdown elements
+- **Enhanced Character Preview** - Added cash display at top for easy testing
 
-#### **2. Virtue & Vice Selection**
-- **Virtue Dropdown:** Complete list from reference materials
-- **Vice Dropdown:** Complete list from reference materials
-- **Virtue/Vice Descriptions:** Tooltips or expandable sections
-- **Selection Validation:** Ensure valid combinations
-
-#### **3. Morality Tracking**
-- **Morality State:** Current moral standing display
-- **Degeneration Tracking:** Track moral decline over time
-- **Redemption Paths:** Options for moral recovery
-- **Moral Events:** Log significant moral decisions
-
-#### **4. Gothic Styling**
-- **Dark Theme:** Consistent with existing UI
-- **Gothic Fonts:** Appropriate typography
-- **Mood Indicators:** Visual representation of moral state
-- **Interactive Elements:** Hover effects and animations
+### **✅ Technical Improvements**
+- **Optimized Performance** - Cash only updates when needed, not on every keystroke
+- **Comprehensive Logging** - Detailed breakdown of cash calculation factors
+- **Clean Code Structure** - Well-organized cash calculation system
 
 ---
 
-## 📚 **Reference Materials Available**
+## **🎯 Next Session Priority: Task #13 - Health Levels & Willpower System**
 
-### **Key Files:**
-- `reference/Morality.txt` - Core morality system rules
-- `reference/Humanity Display.MD` - Humanity tracking details
-- `reference/Humanity Reference` - Humanity mechanics
-- `reference/Merits and Flaws.MD` - Virtue/Vice options
-- `reference/Clan_Complete_Guide.MD` - Clan-specific morality
+### **What Task #13 Should Include:**
+Based on the sample character sheet analysis, we need to implement:
 
-### **Database Integration:**
-- `add_moral_state_field.sql` - Database schema ready
-- `run_moral_state_update.php` - Update script available
-- Morality fields already added to character table
+1. **Health Levels System**
+   - Health boxes (7 total for vampires)
+   - Different damage types (Bashing, Lethal, Aggravated)
+   - Visual representation of damage taken
+   - Health level tracking (Bruised, Hurt, Injured, Wounded, Mauled, Crippled, Incapacitated)
 
----
+2. **Willpower System**
+   - Willpower dots (1-10 range)
+   - Current vs. Permanent willpower
+   - Willpower spending mechanics
+   - Willpower recovery rules
 
-## 🛠️ **Technical Implementation**
+3. **Integration Points**
+   - Connect to character data structure
+   - Add to character preview
+   - Include in Final Details tab
+   - Add to character saving/loading
 
-### **JavaScript Functions Needed:**
-```javascript
-// Morality tab functions
-function initializeMoralityTab()
-function updateHumanity(change)
-function selectVirtue(virtue)
-function selectVice(vice)
-function updateMoralityState()
-function trackMoralEvent(event)
-function validateMoralitySelection()
-```
-
-### **CSS Classes to Add:**
-```css
-.morality-tab
-.humanity-tracker
-.virtue-vice-selector
-.morality-state-display
-.moral-event-log
-.gothic-morality-theme
-```
-
-### **Database Fields:**
-- `humanity` (INT, 0-10)
-- `virtue` (VARCHAR)
-- `vice` (VARCHAR)
-- `morality_state` (VARCHAR)
-- `moral_events` (TEXT, JSON)
+### **Expected Implementation Areas:**
+- **New Tab or Section** - Health Levels & Willpower tab
+- **Visual Health Tracker** - Interactive health level boxes
+- **Willpower Display** - Current/Permanent willpower tracking
+- **Character Data Integration** - Add to `characterData` object
+- **Preview Integration** - Show in character preview
+- **Database Storage** - Add to character saving system
 
 ---
 
-## 🎨 **UI Design Elements**
+## **📋 Current Project Status:**
 
-### **Layout Structure:**
-1. **Top Section:** Humanity tracker with large display
-2. **Middle Section:** Virtue/Vice selection dropdowns
-3. **Bottom Section:** Morality state and event log
-4. **Side Panel:** Quick reference and help text
+### **✅ Completed Tasks:**
+- Task #15: Resources System & Cash Calculation
+- Merit vs Flaw visual indicators
+- Final Details tab alignment fixes
+- Select element styling improvements
+- Character preview enhancements
 
-### **Visual Elements:**
-- **Humanity Bar:** Progress bar with gothic styling
-- **Virtue/Vice Cards:** Elegant selection interface
-- **Morality Indicators:** Visual mood representation
-- **Event Timeline:** Chronological moral decisions
+### **⏳ Pending Tasks:**
+- **Task #13: Health Levels & Willpower System** (Next Priority)
+- Task #14: Equipment & Weapons System
+- Concept value analysis and expanded usage
 
----
-
-## 🔄 **Integration Points**
-
-### **Character Creation Flow:**
-- Morality tab integrates with existing character creation
-- Saves to database with other character data
-- Updates character preview in real-time
-- Validates against clan restrictions
-
-### **Mobile Responsiveness:**
-- Touch-friendly interface elements
-- Responsive layout for all screen sizes
-- Swipe gestures for navigation
-- Optimized for mobile character creation
+### **🔧 Technical Debt:**
+- None identified - all systems working smoothly
 
 ---
 
-## 📋 **Session Checklist**
+## **💡 Development Notes for Next Session:**
 
-### **Phase 1: Basic Structure**
-- [ ] Create morality tab HTML structure
-- [ ] Add CSS styling for gothic theme
-- [ ] Implement basic JavaScript functions
-- [ ] Test tab switching functionality
-
-### **Phase 2: Humanity System**
-- [ ] Build humanity tracker interface
-- [ ] Add humanity change functionality
-- [ ] Implement validation and limits
-- [ ] Test humanity updates
-
-### **Phase 3: Virtue/Vice Selection**
-- [ ] Create dropdown interfaces
-- [ ] Add virtue/vice data from references
-- [ ] Implement selection validation
-- [ ] Test selection functionality
-
-### **Phase 4: Database Integration**
-- [ ] Connect to existing database
-- [ ] Implement save/load functionality
-- [ ] Test data persistence
-- [ ] Validate character creation flow
-
-### **Phase 5: Polish & Testing**
-- [ ] Mobile responsiveness testing
-- [ ] Cross-browser compatibility
-- [ ] Performance optimization
-- [ ] Final integration testing
+1. **Health Levels** - Vampires have 7 health levels, need visual representation
+2. **Willpower** - Range 1-10, track current vs permanent
+3. **Damage Types** - Bashing, Lethal, Aggravated with different visual indicators
+4. **Integration** - Should work with existing character data structure
+5. **UI Consistency** - Follow existing gothic theme and card-based layout
 
 ---
 
-## 🚀 **Expected Outcomes**
+## **🚀 Ready to Start Task #13!**
 
-### **End of Session:**
-- ✅ **Complete Morality Tab:** Fully functional with all features
-- ✅ **Database Integration:** Saves and loads morality data
-- ✅ **Mobile Responsive:** Works perfectly on all devices
-- ✅ **Gothic Theming:** Consistent with existing UI
-- ✅ **Character Creation:** Complete end-to-end flow
+The Resources System is complete and working perfectly. The next session can immediately begin implementing the Health Levels & Willpower System, which is a core component of any Vampire: The Masquerade character sheet.
 
-### **Next Session Ready:**
-- Character creator will be feature-complete
-- All major systems implemented
-- Ready for final testing and deployment
-- Version 0.3.0 milestone achieved
-
----
-
-## 💡 **Key Notes for Implementation**
-
-1. **Reference Integration:** Use existing reference materials for accurate data
-2. **Database Ready:** Schema already prepared, just need integration
-3. **UI Consistency:** Follow existing gothic theme patterns
-4. **Mobile First:** Ensure all features work on mobile devices
-5. **Validation:** Implement proper input validation and error handling
-
-**Ready to implement the comprehensive Morality system! 🧛‍♂️✨**
+**Next session will implement the Health Levels & Willpower System to complete another major character sheet component!** 🧛‍♂️✨
