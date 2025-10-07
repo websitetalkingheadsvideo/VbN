@@ -24,7 +24,7 @@ function showTab(tabIndex) {
     }
     
     // Add active class to selected tab button
-    const selectedTabButton = tabs[tabIndex];
+    const selectedTabButton = document.querySelector(`[onclick="showTab(${tabIndex})"]`);
     if (selectedTabButton) {
         selectedTabButton.classList.add('active');
     }
@@ -1868,8 +1868,13 @@ function closeFinalizeModal() {
 }
 
 function generateCharacterSummary() {
+    console.log('generateCharacterSummary called');
+    
     const summaryDiv = document.getElementById('characterSummary');
     const previewDiv = document.getElementById('finalizePreview');
+    
+    console.log('summaryDiv:', summaryDiv);
+    console.log('previewDiv:', previewDiv);
     
     // Get character data
     const characterName = document.getElementById('characterName').value || 'Unnamed Character';
@@ -1944,6 +1949,10 @@ function generateCharacterSummary() {
                     <p><strong>Selected:</strong> ${selectedBackgrounds || 'None'}</p>
                 </div>
                 <div class="summary-section">
+                    <h5>Resources</h5>
+                    <p><strong>Cash:</strong> $${characterData.cash || 0}</p>
+                </div>
+                <div class="summary-section">
                     <h5>Experience</h5>
                     <p><strong>Total XP:</strong> ${totalXP}</p>
                     <p><strong>Spent XP:</strong> ${spentXP}</p>
@@ -1953,8 +1962,17 @@ function generateCharacterSummary() {
         </div>
     `;
     
-    summaryDiv.innerHTML = summaryHTML;
-    previewDiv.innerHTML = summaryHTML;
+    console.log('Generated summaryHTML length:', summaryHTML.length);
+    console.log('Generated summaryHTML preview:', summaryHTML.substring(0, 200) + '...');
+    
+    if (summaryDiv) {
+        console.log('Setting innerHTML on summaryDiv');
+        summaryDiv.innerHTML = summaryHTML;
+    }
+    if (previewDiv) {
+        console.log('Setting innerHTML on previewDiv');
+        previewDiv.innerHTML = summaryHTML;
+    }
 }
 
 function finalizeCharacter() {
@@ -2298,10 +2316,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Initialize backgrounds system
     initializeBackgrounds();
     
-    // Generate character summary when Final Details tab is shown
+    // Generate character summary and calculate cash when Final Details tab is shown
     const finalDetailsTab = document.querySelector('[onclick="showTab(7)"]');
     if (finalDetailsTab) {
         finalDetailsTab.addEventListener('click', function() {
+            calculateCash(); // Calculate cash when Final Details tab is clicked
             setTimeout(generateCharacterSummary, 100);
         });
     }
@@ -3058,7 +3077,12 @@ function createMeritFlawItem(item, isSelected = false) {
 
     div.innerHTML = `
         <div class="merit-flaw-info" onclick="showMeritFlawDescription('${item.name}', '${item.type}')" title="Click for details">
-            <div class="merit-flaw-name">${item.name}</div>
+            <div class="merit-flaw-name">
+                ${item.name}
+                <span class="type-badge ${item.type === 'merit' ? 'merit-badge' : 'flaw-badge'}" title="${item.type === 'merit' ? 'Merit' : 'Flaw'}">
+                    ${item.type === 'merit' ? '⭐M' : '⚠️F'}
+                </span>
+            </div>
             <div class="merit-flaw-category">
                 <span class="category-icon">${categoryIcon}</span>
                 <span class="category-text">${item.category}</span>
@@ -3341,11 +3365,8 @@ function filterMeritsFlaws() {
     // Hide all items first
     items.forEach(item => item.style.display = 'none');
     
-    // Reorder and show filtered and sorted items
-    filteredItems.forEach(item => {
-        availableList.appendChild(item);
-        item.style.display = 'flex';
-    });
+    // Show filtered and sorted items
+    filteredItems.forEach(item => item.style.display = 'flex');
 }
 
 // Get sort function based on sort filter
@@ -3448,4 +3469,102 @@ function showMeritFlawDescription(name, type) {
 // Close merit/flaw description modal
 function closeMeritFlawDescription() {
     document.getElementById('meritFlawDescriptionModal').style.display = 'none';
+}
+
+// Calculate character's starting cash based on various factors
+function calculateCash() {
+    console.log('💰 calculateCash called');
+    let cash = 100; // Base cash - everyone starts with something
+    const factors = ['Base: $100'];
+    
+    // Get character data
+    const clan = document.getElementById('clan')?.value || '';
+    const concept = document.getElementById('concept')?.value || '';
+    const resourcesLevel = characterData.backgrounds.Resources || 0;
+    
+    console.log(`📊 Current values - Clan: "${clan}", Concept: "${concept}", Resources: ${resourcesLevel}`);
+    
+    // Resources Background (primary factor)
+    const resourcesCash = {
+        0: 0,
+        1: Math.floor(Math.random() * 300) + 200, // $200-500
+        2: Math.floor(Math.random() * 1000) + 1000, // $1,000-2,000
+        3: Math.floor(Math.random() * 5000) + 5000, // $5,000-10,000
+        4: Math.floor(Math.random() * 30000) + 20000, // $20,000-50,000
+        5: Math.floor(Math.random() * 100000) + 100000 // $100,000-200,000
+    };
+    const resourcesAmount = resourcesCash[resourcesLevel] || 0;
+    cash += resourcesAmount;
+    if (resourcesAmount > 0) {
+        factors.push(`Resources ${resourcesLevel}: +$${resourcesAmount.toLocaleString()}`);
+    }
+    
+    // Concept/Profession modifier
+    const conceptModifiers = {
+        'Business Executive': Math.floor(Math.random() * 4000) + 1000, // $1,000-5,000
+        'Socialite': Math.floor(Math.random() * 8000) + 2000, // $2,000-10,000
+        'Criminal': Math.floor(Math.random() * 1500) + 500, // $500-2,000
+        'Street Thug': Math.floor(Math.random() * 150) + 50, // $50-200
+        'Academic': Math.floor(Math.random() * 400) + 100, // $100-500
+        'Homeless': Math.floor(Math.random() * 50) + 0, // $0-50
+        'Criminal Mastermind': Math.floor(Math.random() * 15000) + 5000 // $5,000-20,000
+    };
+    const conceptAmount = conceptModifiers[concept] || 0;
+    cash += conceptAmount;
+    if (conceptAmount > 0) {
+        factors.push(`Concept "${concept}": +$${conceptAmount.toLocaleString()}`);
+    }
+    
+    // Clan modifier
+    const clanModifiers = {
+        'Ventrue': Math.floor(Math.random() * 300) + 200, // $200-500
+        'Toreador': Math.floor(Math.random() * 200) + 100, // $100-300
+        'Brujah': Math.floor(Math.random() * 150) + 50, // $50-200
+        'Nosferatu': Math.floor(Math.random() * 300) + 100, // $100-400
+        'Tremere': Math.floor(Math.random() * 100) + 0, // $0-100
+        'Caitiff': -(Math.floor(Math.random() * 100) + 100), // -$100-200
+        'Thin-Blood': -(Math.floor(Math.random() * 100) + 200) // -$200-300
+    };
+    const clanAmount = clanModifiers[clan] || 0;
+    cash += clanAmount;
+    if (clanAmount !== 0) {
+        const sign = clanAmount > 0 ? '+' : '';
+        factors.push(`Clan "${clan}": ${sign}$${clanAmount.toLocaleString()}`);
+    }
+    
+    // Check for Poverty flaw (overrides everything)
+    const hasPoverty = characterData.meritsFlaws && characterData.meritsFlaws.some(item => 
+        item.name.toLowerCase().includes('poverty') && item.type === 'flaw'
+    );
+    
+    if (hasPoverty) {
+        const povertyAmount = Math.floor(Math.random() * 200) + 0; // $0-200
+        cash = povertyAmount;
+        factors.push(`POVERTY FLAW: Override to $${povertyAmount.toLocaleString()}`);
+    }
+    
+    // Ensure cash doesn't go below 0
+    cash = Math.max(0, cash);
+    
+    // Log the calculation breakdown
+    console.log('💵 Cash Calculation:');
+    factors.forEach(factor => console.log(`  ${factor}`));
+    console.log(`  = Total: $${cash.toLocaleString()}`);
+    
+    // Update character data
+    characterData.cash = cash;
+    
+    // Update display
+    updateCashDisplay();
+}
+
+// Update cash display in the character preview
+function updateCashDisplay() {
+    console.log('updateCashDisplay called, cash:', characterData.cash);
+    const cashDisplay = document.getElementById('previewCash');
+    console.log('cashDisplay element:', cashDisplay);
+    if (cashDisplay) {
+        cashDisplay.textContent = `$${characterData.cash || 0}`;
+        console.log('Updated cash display to:', cashDisplay.textContent);
+    }
 }

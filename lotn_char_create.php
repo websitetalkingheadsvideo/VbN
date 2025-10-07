@@ -1,6 +1,6 @@
 <?php
-// LOTN Character Creator - Version 0.2.7
-define('LOTN_VERSION', '0.2.7');
+// LOTN Character Creator - Version 0.2.9
+define('LOTN_VERSION', '0.2.9');
 
 session_start();
 
@@ -171,6 +171,7 @@ include 'includes/connect.php';
             </div>
             <div class="preview-card" id="previewCard">
                 <div class="preview-character-header">
+                    <div class="preview-cash" id="previewCash">$100</div>
                     <div class="preview-name" id="previewName">Unknown Character</div>
                     <div class="preview-clan" id="previewClan">No Clan Selected</div>
                 </div>
@@ -1554,9 +1555,8 @@ include 'includes/connect.php';
                     </div>
                 </div>
             </div>
-            </div>
             
-            <!-- Tab 8: Final Details -->
+            <!-- Tab 7: Final Details -->
             <div class="tab-content" id="tab7">
                 <div class="tab-card">
                     <div class="card-header">
@@ -1564,23 +1564,18 @@ include 'includes/connect.php';
                         <p class="card-subtitle">Complete your character and review</p>
                     </div>
                 
-                <div class="final-details-section">
-                    <h3>Character Summary</h3>
-                    <div id="characterSummary" class="character-summary">
-                        <!-- Character summary will be populated by JavaScript -->
-                    </div>
-                    
-                    <div class="finalization-options">
-                        <h3>Finalize Your Character</h3>
-                        <p>When you're ready to complete your character, click "Finalize Character" to save it permanently and generate your character sheet.</p>
-                
-                <div class="button-group">
-                    <button type="button" onclick="showTab(6)">← Previous</button>
-                            <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Draft</button>
-                            <button type="button" class="finalize-btn" onclick="showFinalizePopup()">🎯 Finalize Character</button>
+                    <div class="form-group">
+                        <label>Character Summary</label>
+                        <div id="characterSummary" class="character-summary">
+                            <!-- Character summary will be generated here -->
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="button-group">
+                        <button type="button" onclick="showTab(6)">← Previous</button>
+                        <button type="button" class="save-btn" onclick="saveCharacter()">💾 Save Draft</button>
+                        <button type="button" class="finalize-btn" onclick="showFinalizePopup()">🎯 Finalize Character</button>
+                    </div>
                 </div>
             </div>
         </form>

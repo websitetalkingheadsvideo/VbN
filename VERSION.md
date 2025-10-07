@@ -1,6 +1,33 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.7 (Current)
+## Version 0.2.9 (Current)
+**Date:** January 5, 2025
+
+### Resources System & Cash Calculation:
+- ✅ **Dynamic Cash Calculation** - Real-time cash calculation based on character choices
+- ✅ **Multi-Factor System** - Resources background, clan, concept, and merits/flaws affect starting cash
+- ✅ **Smart Update Timing** - Cash only recalculates when Final Details tab is clicked
+- ✅ **Detailed Console Logging** - Shows exactly why cash values change with breakdown
+- ✅ **Visual Cash Display** - Cash shown in character preview and Final Details tab
+- ✅ **Poverty Flaw Override** - Special handling for poverty flaw that overrides other factors
+- ✅ **UI Improvements** - Fixed Final Details tab alignment and select element styling
+
+### Cash System Features:
+- **Base Cash** - Everyone starts with $100
+- **Resources Background** - Primary factor (0-5 dots, $0-$200,000 range)
+- **Concept/Profession** - Secondary factor (Business Executive, Street Thug, etc.)
+- **Clan Modifiers** - Small influence (Ventrue +$200-500, Caitiff -$100-200, etc.)
+- **Merits/Flaws** - Poverty flaw overrides everything, other merits provide bonuses
+- **Realistic Ranges** - Cash amounts reflect "pocket money" rather than total net worth
+
+### Technical Improvements:
+- Fixed Final Details tab content alignment issue (was appearing outside page)
+- Improved select element styling with darker backgrounds
+- Added comprehensive cash calculation system with detailed logging
+- Enhanced character preview with cash display
+- Optimized update timing to prevent constant recalculation
+
+## Version 0.2.7
 **Date:** January 5, 2025
 
 ### Character Sheet Mode Toggle:
