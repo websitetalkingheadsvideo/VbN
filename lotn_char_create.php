@@ -815,14 +815,14 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="ability-options" id="physicalAbilitiesOptions">
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Athletics')">Athletics</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Brawl')">Brawl</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Dodge')">Dodge</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Firearms')">Firearms</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Melee')">Melee</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Security')">Security</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Stealth')">Stealth</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Physical', 'Survival')">Survival</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Athletics">Athletics</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Brawl">Brawl</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Dodge">Dodge</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Firearms">Firearms</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Melee">Melee</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Security">Security</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Stealth">Stealth</button>
+                        <button type="button" class="ability-option-btn" data-category="Physical" data-ability="Survival">Survival</button>
                     </div>
                     
                     <div class="ability-list" id="physicalAbilitiesList">
@@ -847,15 +847,15 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="ability-options" id="socialAbilitiesOptions">
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Animal Ken')">Animal Ken</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Empathy')">Empathy</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Expression')">Expression</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Intimidation')">Intimidation</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Leadership')">Leadership</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Subterfuge')">Subterfuge</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Streetwise')">Streetwise</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Etiquette')">Etiquette</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Social', 'Performance')">Performance</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Animal Ken">Animal Ken</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Empathy">Empathy</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Expression">Expression</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Intimidation">Intimidation</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Leadership">Leadership</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Subterfuge">Subterfuge</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Streetwise">Streetwise</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Etiquette">Etiquette</button>
+                        <button type="button" class="ability-option-btn" data-category="Social" data-ability="Performance">Performance</button>
                     </div>
                     
                     <div class="ability-list" id="socialAbilitiesList">
@@ -880,16 +880,16 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="ability-options" id="mentalAbilitiesOptions">
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Academics')">Academics</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Computer')">Computer</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Finance')">Finance</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Investigation')">Investigation</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Law')">Law</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Linguistics')">Linguistics</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Medicine')">Medicine</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Occult')">Occult</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Politics')">Politics</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Mental', 'Science')">Science</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Academics">Academics</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Computer">Computer</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Finance">Finance</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Investigation">Investigation</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Law">Law</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Linguistics">Linguistics</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Medicine">Medicine</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Occult">Occult</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Politics">Politics</button>
+                        <button type="button" class="ability-option-btn" data-category="Mental" data-ability="Science">Science</button>
                     </div>
                     
                     <div class="ability-list" id="mentalAbilitiesList">
@@ -914,11 +914,11 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="ability-options" id="optionalAbilitiesOptions">
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Alertness')">Alertness</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Awareness')">Awareness</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Drive')">Drive</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Crafts')">Crafts</button>
-                        <button type="button" class="ability-option-btn" onclick="selectAbility('Optional', 'Firecraft')">Firecraft</button>
+                        <button type="button" class="ability-option-btn" data-category="Optional" data-ability="Alertness">Alertness</button>
+                        <button type="button" class="ability-option-btn" data-category="Optional" data-ability="Awareness">Awareness</button>
+                        <button type="button" class="ability-option-btn" data-category="Optional" data-ability="Drive">Drive</button>
+                        <button type="button" class="ability-option-btn" data-category="Optional" data-ability="Crafts">Crafts</button>
+                        <button type="button" class="ability-option-btn" data-category="Optional" data-ability="Firecraft">Firecraft</button>
                     </div>
                     
                     <div class="ability-list" id="optionalAbilitiesList">

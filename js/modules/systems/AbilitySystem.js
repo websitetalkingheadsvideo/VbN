@@ -34,13 +34,10 @@ class AbilitySystem {
     setupEventListeners() {
         const { eventManager } = this;
         
-        // Ability selection buttons
-        const abilityContainer = this.uiManager.getElement('.ability-selection');
-        if (abilityContainer) {
-            eventManager.addDelegatedListener(abilityContainer, '.ability-option-btn', 'click', (e) => {
-                this.handleAbilityClick(e);
-            });
-        }
+        // Ability selection buttons - use document delegation since we have multiple containers
+        eventManager.addDelegatedListener(document, '.ability-option-btn', 'click', (e) => {
+            this.handleAbilityClick(e);
+        });
         
         // Remove ability buttons
         eventManager.addDelegatedListener(document, '.remove-ability-btn', 'click', (e) => {
