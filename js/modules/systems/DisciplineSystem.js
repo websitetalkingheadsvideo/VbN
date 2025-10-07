@@ -169,6 +169,186 @@ class DisciplineSystem {
                         "cost": "1 Willpower"
                     }
                 }
+            },
+            "Presence": {
+                "description": "The Discipline of Presence allows vampires to influence and control others through sheer charisma.",
+                "powers": {
+                    "1": {
+                        "name": "Awe",
+                        "description": "Inspire admiration and respect in others.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Dread Gaze",
+                        "description": "Strike fear into the hearts of enemies.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Entrancement",
+                        "description": "Hypnotize others with your presence.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Majesty",
+                        "description": "Command absolute respect and obedience.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Inspire",
+                        "description": "Motivate others to achieve greatness.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Dominate": {
+                "description": "The Discipline of Dominate allows vampires to control the minds of others.",
+                "powers": {
+                    "1": {
+                        "name": "Command",
+                        "description": "Issue simple commands that must be obeyed.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Mesmerize",
+                        "description": "Put others into a trance-like state.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Memory Alteration",
+                        "description": "Modify or erase memories of others.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Suggestion",
+                        "description": "Plant subtle suggestions in others' minds.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Mental Domination",
+                        "description": "Take complete control of another's mind.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Fortitude": {
+                "description": "The Discipline of Fortitude allows vampires to resist damage and supernatural effects.",
+                "powers": {
+                    "1": {
+                        "name": "Resistance",
+                        "description": "Resist physical damage and pain.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Endurance",
+                        "description": "Ignore fatigue and continue fighting.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Pain Tolerance",
+                        "description": "Ignore pain and continue functioning.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Damage Reduction",
+                        "description": "Reduce incoming damage significantly.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Supernatural Stamina",
+                        "description": "Achieve near-invulnerability to harm.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Obfuscate": {
+                "description": "The Discipline of Obfuscate allows vampires to hide from sight and move unseen.",
+                "powers": {
+                    "1": {
+                        "name": "Cloak of Shadows",
+                        "description": "Blend into shadows and darkness.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Vanish",
+                        "description": "Become completely invisible to others.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Mask of a Thousand Faces",
+                        "description": "Change your appearance at will.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Silent Movement",
+                        "description": "Move without making any sound.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Unseen Presence",
+                        "description": "Become completely undetectable.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Potence": {
+                "description": "The Discipline of Potence grants vampires superhuman strength.",
+                "powers": {
+                    "1": {
+                        "name": "Prowess",
+                        "description": "Gain superhuman physical strength.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Shove",
+                        "description": "Knock down opponents with sheer force.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Knockdown",
+                        "description": "Send enemies flying with powerful blows.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Crushing Blow",
+                        "description": "Deliver devastating attacks that can break bones.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Leap",
+                        "description": "Jump incredible distances with supernatural strength.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            },
+            "Protean": {
+                "description": "The Discipline of Protean allows vampires to transform their bodies and shapeshift.",
+                "powers": {
+                    "1": {
+                        "name": "Shape of the Beast",
+                        "description": "Transform into a wolf or bat.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Claws",
+                        "description": "Grow deadly claws for combat.",
+                        "cost": "1 Willpower"
+                    },
+                    "3": {
+                        "name": "Feral Leap",
+                        "description": "Jump great distances in animal form.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Flight (Bat Form)",
+                        "description": "Fly as a bat with enhanced speed.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Natural Armor",
+                        "description": "Grow thick hide that provides protection.",
+                        "cost": "1 Willpower"
+                    }
+                }
             }
         };
     }
