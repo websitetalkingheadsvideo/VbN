@@ -45,16 +45,20 @@ class DisciplineSystem {
      * Initialize the discipline system
      */
     async init() {
+        console.log('DisciplineSystem: Initializing...');
         await this.loadDisciplineData();
+        console.log('DisciplineSystem: Discipline data loaded:', !!this.disciplineData);
         this.setupEventListeners();
         this.setupStateListeners();
         this.updateAllDisplays();
         
         // Initialize discipline availability based on current clan
         const state = this.stateManager.getState();
+        console.log('DisciplineSystem: Current clan:', state.clan);
         if (state.clan) {
             this.updateClanDisciplines(state.clan);
         }
+        console.log('DisciplineSystem: Initialization complete');
     }
     
     /**
@@ -166,11 +170,14 @@ class DisciplineSystem {
         });
         
         // Discipline popover events
+        console.log('DisciplineSystem: Setting up mouse event listeners');
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
+            console.log('DisciplineSystem: Mouse enter event triggered');
             this.handleDisciplineMouseEnter(e);
         });
         
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
+            console.log('DisciplineSystem: Mouse leave event triggered');
             this.handleDisciplineMouseLeave(e);
         });
         
