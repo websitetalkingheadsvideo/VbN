@@ -315,8 +315,8 @@ function collectFormData() {
             conscience: getConscienceValue(),
             self_control: getSelfControlValue(),
             courage: 1, // Not used in Humanity path
-            willpower_permanent: 5, // Default value
-            willpower_current: 5, // Default value
+            willpower_permanent: characterData.willpower ? characterData.willpower.permanent : 5,
+            willpower_current: characterData.willpower ? characterData.willpower.current : 5,
             humanity: getHumanityValue(),
             current_moral_state: getMoralState(getHumanityValue())
         },
@@ -324,9 +324,19 @@ function collectFormData() {
             sect_status: '',
             clan_status: '',
             city_status: '',
-            health_levels: 'Healthy',
+            health_levels: characterData.health ? characterData.health.levels : 7,
+            health_current: characterData.health ? characterData.health.current : 7,
             blood_pool_current: 10,
             blood_pool_maximum: 10
+        },
+        health: characterData.health || {
+            levels: 7,
+            current: 7,
+            damage: 0
+        },
+        willpower: characterData.willpower || {
+            current: 5,
+            permanent: 5
         }
     };
     
@@ -965,8 +975,22 @@ function selectTrait(category, traitName) {
     const traitList = characterData.traits[category];
     const traitListElement = document.getElementById(category.toLowerCase() + 'TraitList');
     
-    // Add trait to character data
+    // Check if we're at the maximum (capped at free points during character creation)
+    let freePoints = 7; // Default fallback
+    if (window.characterCreationApp && window.characterCreationApp.modules.traitSystem) {
+        freePoints = window.characterCreationApp.modules.traitSystem.getFreePoints(category);
+    }
+    
+    if (traitList.length >= freePoints) {
+        showNotification(`Maximum ${freePoints} traits allowed in ${category} category during character creation.`, 'error');
+        return;
+    }
+    
+    // Add trait to character data (all traits are free during character creation)
     traitList.push(traitName);
+    
+    // Show feedback
+    showNotification(`${traitName} added (FREE)`, 'success');
     
     // Refresh the trait display
     refreshTraitDisplay(category);
@@ -1149,12 +1173,18 @@ function updateTraitCount(category) {
     countDisplay.textContent = count;
     if (sidebarCount) sidebarCount.textContent = count;
     
-    // Update progress bar
-    const percentage = Math.min((count / 10) * 100, 100);
+    // Get free points for this category (default to old system if not set)
+    let freePoints = 7; // Default fallback
+    if (window.characterCreationApp && window.characterCreationApp.modules.traitSystem) {
+        freePoints = window.characterCreationApp.modules.traitSystem.getFreePoints(category);
+    }
+    
+    // Update progress bar based on free points (capped at 100%)
+    const percentage = Math.min((count / freePoints) * 100, 100);
     progressFill.style.width = percentage + '%';
     
-    // Update progress bar class
-    if (count >= 7) {
+    // Update progress bar class based on free points
+    if (count >= freePoints) {
         progressFill.classList.remove('incomplete');
         progressFill.classList.add('complete');
     } else {
@@ -3568,3 +3598,90 @@ function updateCashDisplay() {
         console.log('Updated cash display to:', cashDisplay.textContent);
     }
 }
+
+// Health Levels & Willpower Display (Read-Only)
+// Initialize health and willpower data
+function initializeHealthWillpower() {
+    if (!characterData.health) {
+        characterData.health = {
+            levels: 7, // 13th Generation default
+            current: 7, // Start at full health
+            damage: 0 // No damage taken
+        };
+    }
+    
+    if (!characterData.willpower) {
+        characterData.willpower = {
+            current: 5, // Default starting willpower
+            permanent: 5 // Default permanent willpower
+        };
+    }
+}
+
+// Update health and willpower display (read-only)
+function updateHealthWillpowerDisplay() {
+    // Update health levels display
+    const healthProgress = document.getElementById('healthProgress');
+    const healthValue = document.getElementById('healthValue');
+    const healthMarkers = document.getElementById('healthMarkers');
+    
+    if (healthProgress && healthValue) {
+        // Calculate health percentage (current/levels * 100)
+        const healthPercentage = (characterData.health.current / characterData.health.levels) * 100;
+        healthProgress.style.width = healthPercentage + '%';
+        healthValue.textContent = characterData.health.current;
+        
+        // Create level markers for health (7 levels)
+        if (healthMarkers) {
+            healthMarkers.innerHTML = '';
+            for (let i = 1; i <= characterData.health.levels; i++) {
+                const marker = document.createElement('div');
+                marker.className = 'virtue-level-marker';
+                marker.style.left = ((i - 1) / (characterData.health.levels - 1)) * 100 + '%';
+                healthMarkers.appendChild(marker);
+            }
+        }
+    }
+    
+    // Update willpower display
+    const willpowerProgress = document.getElementById('willpowerProgress');
+    const willpowerValue = document.getElementById('willpowerValue');
+    const willpowerMarkers = document.getElementById('willpowerMarkers');
+    
+    if (willpowerProgress && willpowerValue) {
+        // Calculate willpower percentage (current/permanent * 100)
+        const willpowerPercentage = (characterData.willpower.current / characterData.willpower.permanent) * 100;
+        willpowerProgress.style.width = willpowerPercentage + '%';
+        willpowerValue.textContent = characterData.willpower.current;
+        
+        // Create level markers for willpower (permanent value)
+        if (willpowerMarkers) {
+            willpowerMarkers.innerHTML = '';
+            for (let i = 1; i <= characterData.willpower.permanent; i++) {
+                const marker = document.createElement('div');
+                marker.className = 'virtue-level-marker';
+                marker.style.left = ((i - 1) / (characterData.willpower.permanent - 1)) * 100 + '%';
+                willpowerMarkers.appendChild(marker);
+            }
+        }
+    }
+}
+
+// Initialize health and willpower when Basic Info tab is shown
+function initializeBasicInfoTab() {
+    initializeHealthWillpower();
+    updateHealthWillpowerDisplay();
+}
+
+// Override the showTab function to initialize health/willpower when Basic Info tab is shown
+const originalShowTab = showTab;
+showTab = function(tabIndex) {
+    originalShowTab(tabIndex);
+    
+    // Initialize health and willpower when Basic Info tab (tab 0) is shown
+    if (tabIndex === 0) {
+        setTimeout(() => {
+            initializeBasicInfoTab();
+        }, 100); // Small delay to ensure DOM is ready
+    }
+};

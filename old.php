@@ -217,21 +217,19 @@ include 'includes/connect.php';
     <div class="container" id="sheet">
         <div class="header">
             <h1 class="brand">⚜ Laws of the Night: Character Creation ⚜</h1>
-            <div class="header-center">
+            <div class="header-right">
                 <div class="user-info">
                     <span class="user-label">Logged in as:</span>
                     <span class="user-name"><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest User'; ?></span>
                 </div>
-                <div class="version-info">
-                    <span class="version">v<?php echo LOTN_VERSION; ?></span>
+            <div class="version-info">
+                <span class="version">v<?php echo LOTN_VERSION; ?></span>
                 </div>
             </div>
-            <div class="header-right">
-                <div class="xp-tracker">
-                    <div class="label">Available XP</div>
-                    <div class="xp-display" id="xpDisplay">30</div>
-                    <div class="xp-label">Experience Points</div>
-                </div>
+            <div class="xp-tracker">
+                <div class="label">Available XP</div>
+                <div class="xp-display" id="xpDisplay">30</div>
+                <div class="xp-label">Experience Points</div>
             </div>
         </div>
         
@@ -462,62 +460,16 @@ include 'includes/connect.php';
                     </div>
                 
                 <div class="info-box">
-                    <strong>Trait Point Distribution:</strong> You have 15 free trait points to distribute across three categories.
+                    <strong>Trait Selection:</strong> Choose your traits from the lists below.
                     <ul>
-                        <li><strong>One category gets 7 free points</strong></li>
-                        <li><strong>Another category gets 5 free points</strong></li>
-                        <li><strong>The third category gets 3 free points</strong></li>
-                        <li>You can only select up to your allocated free points per category</li>
-                        <li>No additional traits beyond your free points during character creation</li>
+                        <li><strong>First 7 traits</strong> in each category are <strong>FREE</strong></li>
+                        <li>Traits 8-10 cost <strong>4 XP each</strong></li>
+                        <li>Maximum 10 traits per category at character creation</li>
                         <li><strong>You can select the same trait multiple times</strong> - click the same trait button repeatedly</li>
                         <li><strong>Remove traits anytime</strong> - click the × button on any selected trait to remove it</li>
                         <li><strong>Negative traits give +4 XP each</strong> - select from the red negative trait sections below</li>
+                        <li>Each selection counts toward your trait total and XP cost</li>
                     </ul>
-                </div>
-                
-                <!-- Point Distribution Interface -->
-                <div class="point-distribution">
-                    <h3>Distribute Your 15 Free Trait Points</h3>
-                    <div class="distribution-options">
-                        <div class="quick-select">
-                            <h4>Quick Select:</h4>
-                            <button type="button" class="dist-btn" data-dist="physical-primary">Physical Primary (7/5/3)</button>
-                            <button type="button" class="dist-btn" data-dist="social-primary">Social Primary (7/5/3)</button>
-                            <button type="button" class="dist-btn" data-dist="mental-primary">Mental Primary (7/5/3)</button>
-                        </div>
-                        <div class="manual-distribution">
-                            <h4>Manual Distribution:</h4>
-                            <div class="dist-controls">
-                                <div class="dist-control">
-                                    <label>Physical:</label>
-                                    <select id="physicalPoints" class="point-select">
-                                        <option value="7">7 points</option>
-                                        <option value="5">5 points</option>
-                                        <option value="3">3 points</option>
-                                    </select>
-                                </div>
-                                <div class="dist-control">
-                                    <label>Social:</label>
-                                    <select id="socialPoints" class="point-select">
-                                        <option value="5">5 points</option>
-                                        <option value="7">7 points</option>
-                                        <option value="3">3 points</option>
-                                    </select>
-                                </div>
-                                <div class="dist-control">
-                                    <label>Mental:</label>
-                                    <select id="mentalPoints" class="point-select">
-                                        <option value="3">3 points</option>
-                                        <option value="7">7 points</option>
-                                        <option value="5">5 points</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="distribution-status">
-                        <span id="distributionStatus">Current: Physical(7), Social(5), Mental(3)</span>
-                    </div>
                 </div>
                 
                 <!-- Physical Traits -->
@@ -527,7 +479,7 @@ include 'includes/connect.php';
                         <div class="trait-progress">
                             <div class="trait-progress-label">
                                 <span><span id="physicalCountDisplay">0</span> selected</span>
-                                <span><span id="physicalFreeDisplay">7</span> maximum</span>
+                                <span>7 required | 10 maximum</span>
                             </div>
                             <div class="trait-progress-bar">
                                 <div class="trait-progress-fill incomplete" id="physicalProgressFill" style="width: 0%;">
@@ -604,7 +556,7 @@ include 'includes/connect.php';
                         <div class="trait-progress">
                             <div class="trait-progress-label">
                                 <span><span id="socialCountDisplay">0</span> selected</span>
-                                <span><span id="socialFreeDisplay">5</span> maximum</span>
+                                <span>7 required | 10 maximum</span>
                             </div>
                             <div class="trait-progress-bar">
                                 <div class="trait-progress-fill incomplete" id="socialProgressFill" style="width: 0%;">
@@ -682,7 +634,7 @@ include 'includes/connect.php';
                         <div class="trait-progress">
                             <div class="trait-progress-label">
                                 <span><span id="mentalCountDisplay">0</span> selected</span>
-                                <span><span id="mentalFreeDisplay">3</span> maximum</span>
+                                <span>7 required | 10 maximum</span>
                             </div>
                             <div class="trait-progress-bar">
                                 <div class="trait-progress-fill incomplete" id="mentalProgressFill" style="width: 0%;">
@@ -1898,8 +1850,5 @@ include 'includes/connect.php';
     
     <!-- Main Application -->
     <script src="js/modules/main.js"></script>
-    
-    <!-- Legacy Script (temporary - for compatibility) -->
-    <script src="js/script.js"></script>
 </body>
 </html>
