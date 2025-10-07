@@ -247,6 +247,8 @@ class DisciplineSystem {
         const disciplineName = button.dataset.discipline;
         const powerLevel = button.dataset.powerLevel;
         
+        console.log('DisciplineSystem: Power click - discipline:', disciplineName, 'level:', powerLevel);
+        
         if (!disciplineName || !powerLevel) return;
         
         this.selectPower(disciplineName, powerLevel);
@@ -271,6 +273,8 @@ class DisciplineSystem {
     handleDisciplineMouseEnter(event) {
         const button = event.target;
         const disciplineName = button.dataset.discipline;
+        
+        console.log('DisciplineSystem: Mouse enter on discipline:', disciplineName);
         
         if (!disciplineName) return;
         
@@ -444,8 +448,12 @@ class DisciplineSystem {
         const disciplines = state.disciplines;
         const disciplinePowers = state.disciplinePowers;
         
-        const listElement = this.uiManager.getElement('#disciplinesList');
-        if (!listElement) return;
+        // Update all discipline list elements
+        const listElements = [
+            '#clanDisciplinesList',
+            '#bloodSorceryList', 
+            '#advancedDisciplinesList'
+        ];
         
         // Create display elements for each discipline
         const disciplineHTML = disciplines.map(disciplineName => {
@@ -476,7 +484,13 @@ class DisciplineSystem {
             `;
         }).join('');
         
-        this.uiManager.updateContent(listElement, disciplineHTML);
+        // Update all discipline list elements
+        listElements.forEach(selector => {
+            const listElement = this.uiManager.getElement(selector);
+            if (listElement) {
+                this.uiManager.updateContent(listElement, disciplineHTML);
+            }
+        });
     }
     
     /**
@@ -487,24 +501,40 @@ class DisciplineSystem {
         const count = state.disciplines.length;
         const requirement = this.requirements;
         
-        // Update count displays
-        const countDisplay = this.uiManager.getElement('#disciplinesCountDisplay');
-        if (countDisplay) {
-            this.uiManager.updateContent(countDisplay, count.toString());
-        }
+        // Update count displays for all discipline sections
+        const countDisplays = [
+            '#clanDisciplinesCountDisplay',
+            '#bloodSorceryCountDisplay', 
+            '#advancedDisciplinesCountDisplay'
+        ];
         
-        // Update progress bar
-        const progressFill = this.uiManager.getElement('#disciplinesProgressFill');
-        if (progressFill) {
-            const percentage = Math.min((count / requirement.min) * 100, 100);
-            progressFill.style.width = percentage + '%';
-            
-            // Update progress bar class
-            this.uiManager.updateClasses(progressFill, {
-                'complete': count >= requirement.min,
-                'incomplete': count < requirement.min
-            });
-        }
+        countDisplays.forEach(selector => {
+            const countDisplay = this.uiManager.getElement(selector);
+            if (countDisplay) {
+                this.uiManager.updateContent(countDisplay, count.toString());
+            }
+        });
+        
+        // Update progress bars for all discipline sections
+        const progressFills = [
+            '#clanDisciplinesProgressFill',
+            '#bloodSorceryProgressFill',
+            '#advancedDisciplinesProgressFill'
+        ];
+        
+        progressFills.forEach(selector => {
+            const progressFill = this.uiManager.getElement(selector);
+            if (progressFill) {
+                const percentage = Math.min((count / requirement.min) * 100, 100);
+                progressFill.style.width = percentage + '%';
+                
+                // Update progress bar class
+                this.uiManager.updateClasses(progressFill, {
+                    'complete': count >= requirement.min,
+                    'incomplete': count < requirement.min
+                });
+            }
+        });
         
         // Update XP display
         this.updateXPDisplay();
@@ -530,6 +560,10 @@ class DisciplineSystem {
      * Show discipline popover
      */
     showPopover(disciplineName, button) {
+        console.log('DisciplineSystem: showPopover called for:', disciplineName);
+        console.log('DisciplineSystem: disciplineData available:', !!this.disciplineData);
+        console.log('DisciplineSystem: discipline data for', disciplineName, ':', this.disciplineData?.[disciplineName]);
+        
         if (!this.disciplineData || !this.disciplineData[disciplineName]) {
             this.notificationManager.error(`Discipline data not found for ${disciplineName}`);
             return;
