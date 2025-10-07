@@ -121,14 +121,14 @@ class CharacterCreationApp {
             this.modules.notificationManager
         );
         
-        // DisciplineSystem
-        this.modules.disciplineSystem = new DisciplineSystem(
-            this.modules.stateManager,
-            this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager,
-            this.modules.dataManager
-        );
+        // DisciplineSystem - Using simple script version instead
+        // this.modules.disciplineSystem = new DisciplineSystem(
+        //     this.modules.stateManager,
+        //     this.modules.uiManager,
+        //     this.modules.eventManager,
+        //     this.modules.notificationManager,
+        //     this.modules.dataManager
+        // );
         
         // MeritsFlawsSystem
         this.modules.meritsFlawsSystem = new MeritsFlawsSystem(

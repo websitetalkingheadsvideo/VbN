@@ -45,34 +45,25 @@ class DisciplineSystem {
      * Initialize the discipline system
      */
     async init() {
-        console.log('DisciplineSystem: Initializing...');
         await this.loadDisciplineData();
-        console.log('DisciplineSystem: Discipline data loaded:', !!this.disciplineData);
         this.setupEventListeners();
         this.setupStateListeners();
         this.updateAllDisplays();
         
         // Initialize discipline availability based on current clan
         const state = this.stateManager.getState();
-        console.log('DisciplineSystem: Current clan:', state.clan);
         if (state.clan) {
             this.updateClanDisciplines(state.clan);
         }
-        console.log('DisciplineSystem: Initialization complete');
     }
     
     /**
      * Load discipline data from API
      */
     async loadDisciplineData() {
-        try {
-            this.disciplineData = await this.dataManager.fetchDisciplineData();
-            console.log('DisciplineSystem: Discipline data loaded successfully');
-        } catch (error) {
-            console.error('DisciplineSystem: Failed to load discipline data:', error);
-            this.notificationManager.error('Failed to load discipline data. Using fallback data.');
-            this.loadFallbackData();
-        }
+        // Force fallback data for now
+        console.log('DisciplineSystem: Using fallback data');
+        this.loadFallbackData();
     }
     
     /**
@@ -84,28 +75,18 @@ class DisciplineSystem {
                 "description": "The Discipline of Animalism allows vampires to communicate with and control animals.",
                 "powers": {
                     "1": {
-                        "name": "Sense the Beast",
-                        "description": "Detect the presence of animals and sense their emotional state.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
                         "name": "Feral Whispers",
                         "description": "Communicate with animals in their own language.",
                         "cost": "1 Willpower"
                     },
-                    "3": {
-                        "name": "Quell the Beast",
-                        "description": "Calm and control animals, making them docile.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
+                    "2": {
                         "name": "Beckoning",
-                        "description": "Call animals to your location from great distances.",
+                        "description": "Call animals to your location.",
                         "cost": "1 Willpower"
                     },
-                    "5": {
-                        "name": "Animal Control",
-                        "description": "Take direct control of an animal's actions.",
+                    "3": {
+                        "name": "Animal Succulence",
+                        "description": "Feed from animals without killing them.",
                         "cost": "1 Willpower"
                     }
                 }
@@ -114,28 +95,18 @@ class DisciplineSystem {
                 "description": "The Discipline of Auspex enhances the vampire's senses and mental abilities.",
                 "powers": {
                     "1": {
+                        "name": "Heightened Senses",
+                        "description": "Enhance your senses to superhuman levels.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
                         "name": "Aura Perception",
                         "description": "See the emotional auras of living beings.",
                         "cost": "1 Willpower"
                     },
-                    "2": {
-                        "name": "Telepathy",
-                        "description": "Read the surface thoughts of others.",
-                        "cost": "1 Willpower"
-                    },
                     "3": {
-                        "name": "Psychometry",
+                        "name": "Spirit's Touch",
                         "description": "Read the psychic impressions left on objects.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Premonition",
-                        "description": "Receive glimpses of future events.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Sense the Unseen",
-                        "description": "Detect supernatural beings and phenomena.",
                         "cost": "1 Willpower"
                     }
                 }
@@ -144,208 +115,18 @@ class DisciplineSystem {
                 "description": "The Discipline of Celerity allows vampires to move at superhuman speeds.",
                 "powers": {
                     "1": {
-                        "name": "Quickness",
+                        "name": "Cat's Grace",
                         "description": "Move with supernatural speed and agility.",
                         "cost": "1 Willpower"
                     },
                     "2": {
-                        "name": "Sprint",
-                        "description": "Run at incredible speeds for short distances.",
+                        "name": "Rapid Reflexes",
+                        "description": "React to threats with lightning speed.",
                         "cost": "1 Willpower"
                     },
                     "3": {
-                        "name": "Enhanced Reflexes",
-                        "description": "React with lightning-fast reflexes.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Blur",
-                        "description": "Move so fast you become a blur to observers.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Accelerated Movement",
-                        "description": "Move at speeds that defy physics.",
-                        "cost": "1 Willpower"
-                    }
-                }
-            },
-            "Presence": {
-                "description": "The Discipline of Presence allows vampires to influence and control others through sheer charisma.",
-                "powers": {
-                    "1": {
-                        "name": "Awe",
-                        "description": "Inspire admiration and respect in others.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
-                        "name": "Dread Gaze",
-                        "description": "Strike fear into the hearts of enemies.",
-                        "cost": "1 Willpower"
-                    },
-                    "3": {
-                        "name": "Entrancement",
-                        "description": "Hypnotize others with your presence.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Majesty",
-                        "description": "Command absolute respect and obedience.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Inspire",
-                        "description": "Motivate others to achieve greatness.",
-                        "cost": "1 Willpower"
-                    }
-                }
-            },
-            "Dominate": {
-                "description": "The Discipline of Dominate allows vampires to control the minds of others.",
-                "powers": {
-                    "1": {
-                        "name": "Command",
-                        "description": "Issue simple commands that must be obeyed.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
-                        "name": "Mesmerize",
-                        "description": "Put others into a trance-like state.",
-                        "cost": "1 Willpower"
-                    },
-                    "3": {
-                        "name": "Memory Alteration",
-                        "description": "Modify or erase memories of others.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Suggestion",
-                        "description": "Plant subtle suggestions in others' minds.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Mental Domination",
-                        "description": "Take complete control of another's mind.",
-                        "cost": "1 Willpower"
-                    }
-                }
-            },
-            "Fortitude": {
-                "description": "The Discipline of Fortitude allows vampires to resist damage and supernatural effects.",
-                "powers": {
-                    "1": {
-                        "name": "Resistance",
-                        "description": "Resist physical damage and pain.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
-                        "name": "Endurance",
-                        "description": "Ignore fatigue and continue fighting.",
-                        "cost": "1 Willpower"
-                    },
-                    "3": {
-                        "name": "Pain Tolerance",
-                        "description": "Ignore pain and continue functioning.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Damage Reduction",
-                        "description": "Reduce incoming damage significantly.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Supernatural Stamina",
-                        "description": "Achieve near-invulnerability to harm.",
-                        "cost": "1 Willpower"
-                    }
-                }
-            },
-            "Obfuscate": {
-                "description": "The Discipline of Obfuscate allows vampires to hide from sight and move unseen.",
-                "powers": {
-                    "1": {
-                        "name": "Cloak of Shadows",
-                        "description": "Blend into shadows and darkness.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
-                        "name": "Vanish",
-                        "description": "Become completely invisible to others.",
-                        "cost": "1 Willpower"
-                    },
-                    "3": {
-                        "name": "Mask of a Thousand Faces",
-                        "description": "Change your appearance at will.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Silent Movement",
-                        "description": "Move without making any sound.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Unseen Presence",
-                        "description": "Become completely undetectable.",
-                        "cost": "1 Willpower"
-                    }
-                }
-            },
-            "Potence": {
-                "description": "The Discipline of Potence grants vampires superhuman strength.",
-                "powers": {
-                    "1": {
-                        "name": "Prowess",
-                        "description": "Gain superhuman physical strength.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
-                        "name": "Shove",
-                        "description": "Knock down opponents with sheer force.",
-                        "cost": "1 Willpower"
-                    },
-                    "3": {
-                        "name": "Knockdown",
-                        "description": "Send enemies flying with powerful blows.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Crushing Blow",
-                        "description": "Deliver devastating attacks that can break bones.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Leap",
-                        "description": "Jump incredible distances with supernatural strength.",
-                        "cost": "1 Willpower"
-                    }
-                }
-            },
-            "Protean": {
-                "description": "The Discipline of Protean allows vampires to transform their bodies and shapeshift.",
-                "powers": {
-                    "1": {
-                        "name": "Shape of the Beast",
-                        "description": "Transform into a wolf or bat.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
-                        "name": "Claws",
-                        "description": "Grow deadly claws for combat.",
-                        "cost": "1 Willpower"
-                    },
-                    "3": {
-                        "name": "Feral Leap",
-                        "description": "Jump great distances in animal form.",
-                        "cost": "1 Willpower"
-                    },
-                    "4": {
-                        "name": "Flight (Bat Form)",
-                        "description": "Fly as a bat with enhanced speed.",
-                        "cost": "1 Willpower"
-                    },
-                    "5": {
-                        "name": "Natural Armor",
-                        "description": "Grow thick hide that provides protection.",
+                        "name": "Lightning Strike",
+                        "description": "Attack multiple times in a single turn.",
                         "cost": "1 Willpower"
                     }
                 }
@@ -361,7 +142,6 @@ class DisciplineSystem {
         
         // Discipline selection buttons - use document delegation since we have multiple containers
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'click', (e) => {
-            console.log('DisciplineSystem: Discipline button clicked');
             this.handleDisciplineClick(e);
         });
         
@@ -381,37 +161,12 @@ class DisciplineSystem {
         });
         
         // Discipline popover events
-        console.log('DisciplineSystem: Setting up mouse event listeners');
-        
-        // Test if discipline buttons exist
-        const disciplineButtons = document.querySelectorAll('.discipline-option-btn');
-        console.log('DisciplineSystem: Found discipline buttons:', disciplineButtons.length);
-        
-        // If no buttons found, try again after a delay
-        if (disciplineButtons.length === 0) {
-            console.log('DisciplineSystem: No buttons found, retrying in 100ms...');
-            setTimeout(() => {
-                const retryButtons = document.querySelectorAll('.discipline-option-btn');
-                console.log('DisciplineSystem: Retry - Found discipline buttons:', retryButtons.length);
-            }, 100);
-        }
-        
-        // Add direct event listeners for mouse events (mouse events don't bubble properly)
-        disciplineButtons.forEach(button => {
-            button.addEventListener('mouseenter', (e) => {
-                console.log('DisciplineSystem: Mouse enter event triggered');
-                this.handleDisciplineMouseEnter(e);
-            });
-            
-            button.addEventListener('mouseleave', (e) => {
-                console.log('DisciplineSystem: Mouse leave event triggered');
-                this.handleDisciplineMouseLeave(e);
-            });
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
+            this.handleDisciplineMouseEnter(e);
         });
         
-        // Also add a simple click test
-        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'click', (e) => {
-            console.log('DisciplineSystem: Discipline button clicked - test');
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
+            this.handleDisciplineMouseLeave(e);
         });
         
         // Modal close events
@@ -517,17 +272,6 @@ class DisciplineSystem {
         console.log('DisciplineSystem: Mouse enter on discipline:', disciplineName);
         
         if (!disciplineName) return;
-        
-        // Check if discipline is available to current clan
-        const state = this.stateManager.getState();
-        const currentClan = state.clan;
-        if (currentClan) {
-            const allowedDisciplines = this.clanDisciplineAccess[currentClan] || [];
-            if (!allowedDisciplines.includes(disciplineName)) {
-                console.log('DisciplineSystem: Discipline not available to clan, skipping popover');
-                return;
-            }
-        }
         
         this.showPopover(disciplineName, button);
     }
@@ -706,13 +450,9 @@ class DisciplineSystem {
             '#advancedDisciplinesList'
         ];
         
-        // Create display elements for each discipline with powers
+        // Create display elements for each discipline
         const disciplineHTML = disciplines.map(disciplineName => {
             const powers = disciplinePowers[disciplineName] || [];
-            
-            // Only show discipline if it has powers selected
-            if (powers.length === 0) return '';
-            
             const powersHTML = powers.map(level => {
                 const power = this.getPowerInfo(disciplineName, level);
                 return `
@@ -737,7 +477,7 @@ class DisciplineSystem {
                     </div>
                 </div>
             `;
-        }).filter(html => html !== '').join('');
+        }).join('');
         
         // Update all discipline list elements
         listElements.forEach(selector => {
@@ -883,7 +623,6 @@ class DisciplineSystem {
         
         // Add to DOM
         document.body.appendChild(this.popoverElement);
-        console.log('DisciplineSystem: Popover added to DOM:', this.popoverElement);
         
         // Add event listeners
         this.setupPopoverEventListeners();
@@ -896,20 +635,11 @@ class DisciplineSystem {
         const rect = button.getBoundingClientRect();
         const popover = this.popoverElement;
         
-        console.log('DisciplineSystem: Positioning popover at:', rect);
-        
-        // Position popover below button
+        // Position popover to the right of button, centered vertically
         popover.style.position = 'absolute';
-        popover.style.top = (rect.bottom + 10) + 'px';
-        popover.style.left = rect.left + 'px';
+        popover.style.top = (rect.top + rect.height/2 - 100) + 'px'; // Center vertically, offset up
+        popover.style.left = (rect.right + 10) + 'px';
         popover.style.zIndex = '1000';
-        popover.style.backgroundColor = 'white';
-        popover.style.border = '1px solid #ccc';
-        popover.style.padding = '10px';
-        popover.style.borderRadius = '5px';
-        popover.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        
-        console.log('DisciplineSystem: Popover positioned at:', popover.style.top, popover.style.left);
     }
     
     /**
@@ -920,12 +650,9 @@ class DisciplineSystem {
         
         // Power selection buttons
         const powerButtons = this.popoverElement.querySelectorAll('.power-option-btn');
-        console.log('DisciplineSystem: Found power buttons:', powerButtons.length);
         powerButtons.forEach(button => {
-            console.log('DisciplineSystem: Setting up click listener for power:', button.dataset.discipline, button.dataset.powerLevel);
             button.addEventListener('click', (e) => {
                 e.stopPropagation();
-                console.log('DisciplineSystem: Power button clicked:', button.dataset.discipline, button.dataset.powerLevel);
                 this.handlePowerClick(e);
             });
         });

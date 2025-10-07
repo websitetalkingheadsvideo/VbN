@@ -979,15 +979,15 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="clanDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism">Animalism</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex">Auspex</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity">Celerity</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate">Dominate</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude">Fortitude</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate">Obfuscate</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence">Potence</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence">Presence</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean">Protean</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism" onmouseenter="showDisciplinePopover(event, 'Animalism')" onmouseleave="hideDisciplinePopover()">Animalism</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex" onmouseenter="showDisciplinePopover(event, 'Auspex')" onmouseleave="hideDisciplinePopover()">Auspex</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity" onmouseenter="showDisciplinePopover(event, 'Celerity')" onmouseleave="hideDisciplinePopover()">Celerity</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate" onmouseenter="showDisciplinePopover(event, 'Dominate')" onmouseleave="hideDisciplinePopover()">Dominate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude" onmouseenter="showDisciplinePopover(event, 'Fortitude')" onmouseleave="hideDisciplinePopover()">Fortitude</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate" onmouseenter="showDisciplinePopover(event, 'Obfuscate')" onmouseleave="hideDisciplinePopover()">Obfuscate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence" onmouseenter="showDisciplinePopover(event, 'Potence')" onmouseleave="hideDisciplinePopover()">Potence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence" onmouseenter="showDisciplinePopover(event, 'Presence')" onmouseleave="hideDisciplinePopover()">Presence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean" onmouseenter="showDisciplinePopover(event, 'Protean')" onmouseleave="hideDisciplinePopover()">Protean</button>
                     </div>
                     
                     <div class="discipline-list" id="clanDisciplinesList">
@@ -1039,16 +1039,16 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="advancedDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration">Obtenebration</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry">Chimerstry</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Dementation">Dementation</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Quietus">Quietus</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude">Vicissitude</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis">Serpentis</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon">Daimoinon</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee">Melpominee</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Valeren">Valeren</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Mortis">Mortis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration" onmouseenter="showDisciplinePopover(event, 'Obtenebration')" onmouseleave="hideDisciplinePopover()">Obtenebration</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry" onmouseenter="showDisciplinePopover(event, 'Chimerstry')" onmouseleave="hideDisciplinePopover()">Chimerstry</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Dementation" onmouseenter="showDisciplinePopover(event, 'Dementation')" onmouseleave="hideDisciplinePopover()">Dementation</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Quietus" onmouseenter="showDisciplinePopover(event, 'Quietus')" onmouseleave="hideDisciplinePopover()">Quietus</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude" onmouseenter="showDisciplinePopover(event, 'Vicissitude')" onmouseleave="hideDisciplinePopover()">Vicissitude</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis" onmouseenter="showDisciplinePopover(event, 'Serpentis')" onmouseleave="hideDisciplinePopover()">Serpentis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon" onmouseenter="showDisciplinePopover(event, 'Daimoinon')" onmouseleave="hideDisciplinePopover()">Daimoinon</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee" onmouseenter="showDisciplinePopover(event, 'Melpominee')" onmouseleave="hideDisciplinePopover()">Melpominee</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Valeren" onmouseenter="showDisciplinePopover(event, 'Valeren')" onmouseleave="hideDisciplinePopover()">Valeren</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Mortis" onmouseenter="showDisciplinePopover(event, 'Mortis')" onmouseleave="hideDisciplinePopover()">Mortis</button>
                     </div>
                     
                     <div class="discipline-list" id="advancedDisciplinesList">
@@ -1889,7 +1889,7 @@ include 'includes/connect.php';
     <!-- System Modules -->
     <script src="js/modules/systems/TraitSystem.js"></script>
     <script src="js/modules/systems/AbilitySystem.js"></script>
-    <script src="js/modules/systems/DisciplineSystem.js"></script>
+    <!-- <script src="js/modules/systems/DisciplineSystem.js"></script> -->
     <script src="js/modules/systems/MeritsFlawsSystem.js"></script>
     <script src="js/modules/systems/BackgroundSystem.js"></script>
     <script src="js/modules/systems/MoralitySystem.js"></script>
@@ -1899,6 +1899,370 @@ include 'includes/connect.php';
     <!-- Main Application -->
     <script src="js/modules/main.js"></script>
     
-    <!-- Legacy Script removed - using modular system -->
+    <!-- Working Discipline System from Yesterday -->
+    <script>
+        // Discipline system variables
+        let currentPopoverTimeout = null;
+        let currentPopoverButton = null;
+        
+        // Discipline powers data
+        const disciplinePowers = {
+            'Animalism': [
+                { level: 1, name: 'Feral Whispers', description: 'Communicate with animals' },
+                { level: 2, name: 'Animal Succulence', description: 'Feed from animals' },
+                { level: 3, name: 'Quell the Beast', description: 'Calm frenzied vampires' },
+                { level: 4, name: 'Subsume the Spirit', description: 'Possess animals' },
+                { level: 5, name: 'Animal Dominion', description: 'Command all animals in area' }
+            ],
+            'Auspex': [
+                { level: 1, name: 'Heightened Senses', description: 'Enhanced perception' },
+                { level: 2, name: 'Aura Perception', description: 'See emotional auras' },
+                { level: 3, name: 'The Spirit\'s Touch', description: 'Read objects\' history' },
+                { level: 4, name: 'Telepathy', description: 'Read minds' },
+                { level: 5, name: 'Psychic Projection', description: 'Astral projection' }
+            ],
+            'Celerity': [
+                { level: 1, name: 'Cat\'s Grace', description: 'Enhanced speed and reflexes' },
+                { level: 2, name: 'Rapid Reflexes', description: 'Extra actions in combat' },
+                { level: 3, name: 'Lightning Strike', description: 'Devastating speed attacks' },
+                { level: 4, name: 'Blink', description: 'Teleport short distances' },
+                { level: 5, name: 'Time Stop', description: 'Stop time briefly' }
+            ],
+            'Dominate': [
+                { level: 1, name: 'Cloud Memory', description: 'Erase recent memories' },
+                { level: 2, name: 'Mesmerize', description: 'Compel simple actions' },
+                { level: 3, name: 'The Forgetful Mind', description: 'Implant false memories' },
+                { level: 4, name: 'Mass Manipulation', description: 'Affect multiple targets' },
+                { level: 5, name: 'Possession', description: 'Take control of body' }
+            ],
+            'Fortitude': [
+                { level: 1, name: 'Resilience', description: 'Resist physical damage' },
+                { level: 2, name: 'Unswayable Mind', description: 'Resist mental influence' },
+                { level: 3, name: 'Toughness', description: 'Ignore wound penalties' },
+                { level: 4, name: 'Defy Bane', description: 'Resist supernatural effects' },
+                { level: 5, name: 'Fortify the Inner Facade', description: 'Become immune to damage' }
+            ],
+            'Obfuscate': [
+                { level: 1, name: 'Cloak of Shadows', description: 'Hide in darkness' },
+                { level: 2, name: 'Silence of Death', description: 'Move without sound' },
+                { level: 3, name: 'Mask of a Thousand Faces', description: 'Change appearance' },
+                { level: 4, name: 'Vanish', description: 'Become completely invisible' },
+                { level: 5, name: 'Cloak the Gathering', description: 'Hide groups of people' }
+            ],
+            'Potence': [
+                { level: 1, name: 'Lethal Body', description: 'Enhanced physical strength' },
+                { level: 2, name: 'Prowess', description: 'Devastating physical attacks' },
+                { level: 3, name: 'Brutal Feed', description: 'Feed through violence' },
+                { level: 4, name: 'Spark of Rage', description: 'Cause frenzy in others' },
+                { level: 5, name: 'Earthshock', description: 'Create earthquakes' }
+            ],
+            'Presence': [
+                { level: 1, name: 'Awe', description: 'Inspire admiration' },
+                { level: 2, name: 'Dread Gaze', description: 'Cause fear' },
+                { level: 3, name: 'Entrancement', description: 'Create devoted followers' },
+                { level: 4, name: 'Summon', description: 'Compel others to come' },
+                { level: 5, name: 'Majesty', description: 'Become untouchable' }
+            ],
+            'Protean': [
+                { level: 1, name: 'Eyes of the Beast', description: 'Enhanced night vision' },
+                { level: 2, name: 'Shape of the Beast', description: 'Transform into animal' },
+                { level: 3, name: 'Mist Form', description: 'Become mist' },
+                { level: 4, name: 'Form of the Ancient', description: 'Become giant bat' },
+                { level: 5, name: 'Earth Meld', description: 'Merge with earth' }
+            ],
+            'Vicissitude': [
+                { level: 1, name: 'Malleable Visage', description: 'Change facial features' },
+                { level: 2, name: 'Fleshcraft', description: 'Modify body structure' },
+                { level: 3, name: 'Bonecraft', description: 'Manipulate bones' },
+                { level: 4, name: 'Horrid Form', description: 'Take monstrous shape' },
+                { level: 5, name: 'Metamorphosis', description: 'Complete body transformation' }
+            ],
+            'Dementation': [
+                { level: 1, name: 'Confusion', description: 'Cause mental disorientation' },
+                { level: 2, name: 'The Haunting', description: 'Create hallucinations' },
+                { level: 3, name: 'Nightmare', description: 'Induce terrifying dreams' },
+                { level: 4, name: 'Total Insanity', description: 'Drive target completely mad' },
+                { level: 5, name: 'The Beast Within', description: 'Unleash inner monster' }
+            ],
+            'Thaumaturgy': [
+                { level: 1, name: 'A Taste for Blood', description: 'Sense blood and vitae' },
+                { level: 2, name: 'Blood Rage', description: 'Cause frenzy in others' },
+                { level: 3, name: 'The Blood Bond', description: 'Create blood bonds' },
+                { level: 4, name: 'Blood of Acid', description: 'Corrupt blood' },
+                { level: 5, name: 'Cauldron of Blood', description: 'Mass blood manipulation' }
+            ],
+            'Necromancy': [
+                { level: 1, name: 'Speak with the Dead', description: 'Communicate with spirits' },
+                { level: 2, name: 'Summon Soul', description: 'Call forth spirits' },
+                { level: 3, name: 'Compel Soul', description: 'Force spirit obedience' },
+                { level: 4, name: 'Reanimate Corpse', description: 'Raise the dead' },
+                { level: 5, name: 'Soul Stealing', description: 'Capture souls' }
+            ],
+            'Quietus': [
+                { level: 1, name: 'Silence of Death', description: 'Move without sound' },
+                { level: 2, name: 'Touch of Death', description: 'Poisonous touch' },
+                { level: 3, name: 'Baal\'s Caress', description: 'Lethal blood attack' },
+                { level: 4, name: 'Blood of the Lamb', description: 'Corrupt blood' },
+                { level: 5, name: 'The Killing Word', description: 'Death by command' }
+            ],
+            'Serpentis': [
+                { level: 1, name: 'Eyes of the Serpent', description: 'Hypnotic gaze' },
+                { level: 2, name: 'Tongue of the Asp', description: 'Venomous bite' },
+                { level: 3, name: 'Form of the Cobra', description: 'Transform into snake' },
+                { level: 4, name: 'The Serpent\'s Kiss', description: 'Paralyzing venom' },
+                { level: 5, name: 'The Serpent\'s Embrace', description: 'Complete serpent form' }
+            ],
+            'Obtenebration': [
+                { level: 1, name: 'Shroud of Night', description: 'Create darkness' },
+                { level: 2, name: 'Arms of the Abyss', description: 'Shadow tentacles' },
+                { level: 3, name: 'Shadow Form', description: 'Become living shadow' },
+                { level: 4, name: 'Summon the Abyss', description: 'Call forth darkness' },
+                { level: 5, name: 'Black Metamorphosis', description: 'Become shadow demon' }
+            ],
+            'Chimerstry': [
+                { level: 1, name: 'Ignis Fatuus', description: 'Create false lights' },
+                { level: 2, name: 'Fata Morgana', description: 'Create illusions' },
+                { level: 3, name: 'Permanency', description: 'Make illusions real' },
+                { level: 4, name: 'Horrid Reality', description: 'Create nightmare illusions' },
+                { level: 5, name: 'Reality\'s Curtain', description: 'Alter reality itself' }
+            ],
+            'Daimoinon': [
+                { level: 1, name: 'Summon Demon', description: 'Call forth minor demons' },
+                { level: 2, name: 'Bind Demon', description: 'Control summoned demons' },
+                { level: 3, name: 'Demon\'s Kiss', description: 'Gain demonic powers' },
+                { level: 4, name: 'Hell\'s Gate', description: 'Open portal to Hell' },
+                { level: 5, name: 'Infernal Mastery', description: 'Command all demons' }
+            ],
+            'Melpominee': [
+                { level: 1, name: 'The Tragic Muse', description: 'Inspire artistic genius' },
+                { level: 2, name: 'The Tragic Flaw', description: 'Reveal fatal weaknesses' },
+                { level: 3, name: 'The Tragic Hero', description: 'Create doomed champions' },
+                { level: 4, name: 'The Tragic End', description: 'Ensure dramatic deaths' },
+                { level: 5, name: 'The Tragic Cycle', description: 'Control fate itself' }
+            ],
+            'Valeren': [
+                { level: 1, name: 'The Healing Touch', description: 'Heal others' },
+                { level: 2, name: 'The Warrior\'s Resolve', description: 'Enhance combat abilities' },
+                { level: 3, name: 'The Martyr\'s Blessing', description: 'Absorb others\' pain' },
+                { level: 4, name: 'The Saint\'s Grace', description: 'Become immune to harm' },
+                { level: 5, name: 'The Messiah\'s Return', description: 'Resurrect the dead' }
+            ],
+            'Mortis': [
+                { level: 1, name: 'Speak with the Dead', description: 'Communicate with corpses' },
+                { level: 2, name: 'Animate Corpse', description: 'Raise the dead' },
+                { level: 3, name: 'Bone Craft', description: 'Manipulate bones' },
+                { level: 4, name: 'Soul Stealing', description: 'Capture souls' },
+                { level: 5, name: 'Death\'s Embrace', description: 'Become death itself' }
+            ]
+        };
+        
+        // Show discipline power popover
+        function showDisciplinePopover(event, disciplineName) {
+            // Don't show popover if the discipline button is disabled
+            if (event.target.disabled) {
+                return;
+            }
+            
+            // Clear any existing timeout
+            if (currentPopoverTimeout) {
+                clearTimeout(currentPopoverTimeout);
+                currentPopoverTimeout = null;
+            }
+            
+            const popover = document.getElementById('disciplinePopover');
+            const popoverTitle = document.getElementById('popoverTitle');
+            const popoverPowers = document.getElementById('popoverPowers');
+            
+            // Set title
+            popoverTitle.textContent = `${disciplineName} Powers`;
+            
+            // Get available powers for this discipline
+            const availablePowers = getAvailablePowers(disciplineName);
+            
+            // Clear existing content
+            popoverPowers.innerHTML = '';
+            
+            // Generate power options
+            availablePowers.forEach(power => {
+                const powerOption = document.createElement('div');
+                powerOption.className = 'power-option';
+                powerOption.onclick = () => selectPower(disciplineName, power);
+                powerOption.innerHTML = `
+                    <strong>Level ${power.level}:</strong> ${power.name}
+                    <br><small>${power.description}</small>
+                `;
+                popoverPowers.appendChild(powerOption);
+            });
+            
+            // Position popover
+            const button = event.target;
+            const rect = button.getBoundingClientRect();
+            
+            popover.style.position = 'fixed';
+            popover.style.left = (rect.right + 10) + 'px';
+            popover.style.top = rect.top + 'px';
+            popover.style.display = 'block';
+            popover.style.zIndex = '1000';
+            
+            currentPopoverButton = button;
+        }
+        
+        // Clear popover timeout
+        function clearPopoverTimeout() {
+            if (currentPopoverTimeout) {
+                clearTimeout(currentPopoverTimeout);
+                currentPopoverTimeout = null;
+            }
+        }
+        
+        // Hide discipline power popover
+        function hideDisciplinePopover() {
+            currentPopoverTimeout = setTimeout(() => {
+                const popover = document.getElementById('disciplinePopover');
+                popover.style.display = 'none';
+                currentPopoverButton = null; // Clear button reference
+            }, 500); // Longer delay to allow moving to popover
+        }
+        
+        // Get available powers for a discipline (not yet selected)
+        function getAvailablePowers(disciplineName) {
+            const allPowers = disciplinePowers[disciplineName] || [];
+            const selectedPowers = getSelectedPowers(disciplineName);
+            
+            return allPowers.filter(power => 
+                !selectedPowers.some(selected => selected.level === power.level)
+            );
+        }
+        
+        // Get selected powers for a discipline
+        function getSelectedPowers(disciplineName) {
+            // For now, return empty array since we don't have discipline selection implemented yet
+            // This will show all powers as available
+            return [];
+        }
+        
+        // Select a power and add to discipline list
+        function selectPower(disciplineName, power) {
+            console.log(`Selected ${disciplineName} Level ${power.level}: ${power.name}`);
+            
+            // Check if this power is already selected
+            const disciplineList = document.getElementById('clanDisciplinesList');
+            if (disciplineList) {
+                const existingItems = disciplineList.querySelectorAll('.discipline-item');
+                const powerAlreadySelected = Array.from(existingItems).some(item => {
+                    const nameSpan = item.querySelector('.discipline-name');
+                    const levelSpan = item.querySelector('.discipline-level');
+                    return nameSpan && levelSpan && 
+                           nameSpan.textContent === `${disciplineName}: ${power.name}` &&
+                           levelSpan.textContent === power.level.toString();
+                });
+                
+                if (powerAlreadySelected) {
+                    alert(`${power.name} (Level ${power.level}) is already selected.`);
+                    return;
+                }
+                
+                // Create new discipline item
+                const disciplineItem = document.createElement('div');
+                disciplineItem.className = 'discipline-item';
+                disciplineItem.innerHTML = `
+                    <span class="discipline-name">${disciplineName}: ${power.name}</span>
+                    <span class="discipline-level">${power.level}</span>
+                    <button type="button" class="remove-discipline-btn" onclick="removeDiscipline('${disciplineName}: ${power.name}', ${power.level})">×</button>
+                `;
+                disciplineList.appendChild(disciplineItem);
+                
+                // Update count
+                const countDisplay = document.getElementById('clanDisciplinesCountDisplay');
+                if (countDisplay) {
+                    const items = disciplineList.querySelectorAll('.discipline-item');
+                    countDisplay.textContent = items.length;
+                }
+            }
+        }
+        
+        // Remove discipline from list
+        function removeDiscipline(disciplinePowerName, level) {
+            const disciplineList = document.getElementById('clanDisciplinesList');
+            if (disciplineList) {
+                const items = disciplineList.querySelectorAll('.discipline-item');
+                items.forEach(item => {
+                    const nameSpan = item.querySelector('.discipline-name');
+                    const levelSpan = item.querySelector('.discipline-level');
+                    if (nameSpan && levelSpan && 
+                        nameSpan.textContent === disciplinePowerName && 
+                        levelSpan.textContent === level.toString()) {
+                        item.remove();
+                        
+                        // Update count
+                        const countDisplay = document.getElementById('clanDisciplinesCountDisplay');
+                        if (countDisplay) {
+                            const remainingItems = disciplineList.querySelectorAll('.discipline-item');
+                            countDisplay.textContent = remainingItems.length;
+                        }
+                    }
+                });
+            }
+        }
+        
+        // Update discipline button availability based on clan
+        function updateDisciplineAvailability() {
+            const clan = document.getElementById('clan').value;
+            const clanDisciplines = {
+                'Toreador': ['Auspex', 'Celerity', 'Presence'],
+                'Brujah': ['Celerity', 'Potence', 'Presence'],
+                'Ventrue': ['Dominate', 'Fortitude', 'Presence'],
+                'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
+                'Nosferatu': ['Animalism', 'Obfuscate', 'Potence'],
+                'Malkavian': ['Auspex', 'Dementation', 'Obfuscate'],
+                'Tremere': ['Auspex', 'Dominate', 'Thaumaturgy'],
+                'Assamite': ['Celerity', 'Obfuscate', 'Quietus'],
+                'Followers of Set': ['Obfuscate', 'Presence', 'Serpentis'],
+                'Giovanni': ['Dominate', 'Potence', 'Necromancy'],
+                'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
+                'Ravnos': ['Animalism', 'Chimerstry', 'Fortitude'],
+                'Tzimisce': ['Animalism', 'Auspex', 'Vicissitude'],
+                'Caitiff': [] // Caitiff can learn any discipline
+            };
+            
+            // Get all discipline buttons
+            const disciplineButtons = document.querySelectorAll('.discipline-option-btn');
+            
+            disciplineButtons.forEach(button => {
+                const disciplineName = button.getAttribute('data-discipline');
+                
+                if (!clan) {
+                    // No clan selected - disable all
+                    button.disabled = true;
+                    button.classList.add('disabled');
+                } else if (clan === 'Caitiff') {
+                    // Caitiff can learn any discipline - enable all
+                    button.disabled = false;
+                    button.classList.remove('disabled');
+                    button.classList.add('caitiff-available');
+                } else if (!clanDisciplines[clan] || !clanDisciplines[clan].includes(disciplineName)) {
+                    // Discipline not available to clan - disable
+                    button.disabled = true;
+                    button.classList.add('disabled');
+                    button.classList.remove('caitiff-available');
+                } else {
+                    // Discipline available to clan - enable
+                    button.disabled = false;
+                    button.classList.remove('disabled');
+                    button.classList.remove('caitiff-available');
+                }
+            });
+        }
+        
+        // Call updateDisciplineAvailability when clan changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const clanSelect = document.getElementById('clan');
+            if (clanSelect) {
+                clanSelect.addEventListener('change', updateDisciplineAvailability);
+                // Initial update
+                updateDisciplineAvailability();
+            }
+        });
+    </script>
 </body>
 </html>

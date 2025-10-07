@@ -2087,10 +2087,12 @@ button:disabled {
 }
 
 .discipline-option-btn:disabled {
-    background: #555;
-    border-color: #777;
-    color: #999;
+    background: #333;
+    border-color: #444;
+    color: #666;
     cursor: not-allowed;
+    opacity: 0.4;
+    text-decoration: line-through;
 }
 
 .discipline-option-btn.selected {
@@ -2117,6 +2119,28 @@ button:disabled {
     color: #fff;
 }
 
+.discipline-option-btn.clan:disabled {
+    background: #1a0f00;
+    border-color: #333;
+    color: #444;
+    opacity: 0.3;
+    text-decoration: line-through;
+}
+
+.discipline-option-btn.caitiff-available {
+    background: #2a1a00;
+    border-color: #ff8c00;
+    color: #ffb366;
+    opacity: 0.8;
+}
+
+.discipline-option-btn.caitiff-available:hover {
+    background: #ff8c00;
+    border-color: #ff8c00;
+    color: #fff;
+    opacity: 1;
+}
+
 .selected-discipline {
     background: #4B0101;
     color: #fff;
@@ -2140,17 +2164,26 @@ button:disabled {
 }
 
 .remove-discipline-btn {
-    background: none;
-    border: none;
+    background: #4B0101;
+    border: 1px solid #4B0101;
     color: #fff;
     cursor: pointer;
     padding: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.remove-discipline-btn:hover {
+    background: #8B0000;
+    border-color: #8B0000;
+    transform: scale(1.1);
     font-size: 16px;
     line-height: 1;
     transition: background 0.3s;
@@ -2171,7 +2204,7 @@ button:disabled {
     min-width: 300px;
     max-width: 400px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    display: none;
+    display: block;
 }
 
 .discipline-popover h4 {
