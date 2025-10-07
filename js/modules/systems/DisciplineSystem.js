@@ -84,18 +84,28 @@ class DisciplineSystem {
                 "description": "The Discipline of Animalism allows vampires to communicate with and control animals.",
                 "powers": {
                     "1": {
+                        "name": "Sense the Beast",
+                        "description": "Detect the presence of animals and sense their emotional state.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
                         "name": "Feral Whispers",
                         "description": "Communicate with animals in their own language.",
                         "cost": "1 Willpower"
                     },
-                    "2": {
-                        "name": "Beckoning",
-                        "description": "Call animals to your location.",
+                    "3": {
+                        "name": "Quell the Beast",
+                        "description": "Calm and control animals, making them docile.",
                         "cost": "1 Willpower"
                     },
-                    "3": {
-                        "name": "Animal Succulence",
-                        "description": "Feed from animals without killing them.",
+                    "4": {
+                        "name": "Beckoning",
+                        "description": "Call animals to your location from great distances.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Animal Control",
+                        "description": "Take direct control of an animal's actions.",
                         "cost": "1 Willpower"
                     }
                 }
@@ -104,18 +114,28 @@ class DisciplineSystem {
                 "description": "The Discipline of Auspex enhances the vampire's senses and mental abilities.",
                 "powers": {
                     "1": {
-                        "name": "Heightened Senses",
-                        "description": "Enhance your senses to superhuman levels.",
-                        "cost": "1 Willpower"
-                    },
-                    "2": {
                         "name": "Aura Perception",
                         "description": "See the emotional auras of living beings.",
                         "cost": "1 Willpower"
                     },
+                    "2": {
+                        "name": "Telepathy",
+                        "description": "Read the surface thoughts of others.",
+                        "cost": "1 Willpower"
+                    },
                     "3": {
-                        "name": "Spirit's Touch",
+                        "name": "Psychometry",
                         "description": "Read the psychic impressions left on objects.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Premonition",
+                        "description": "Receive glimpses of future events.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Sense the Unseen",
+                        "description": "Detect supernatural beings and phenomena.",
                         "cost": "1 Willpower"
                     }
                 }
@@ -124,18 +144,28 @@ class DisciplineSystem {
                 "description": "The Discipline of Celerity allows vampires to move at superhuman speeds.",
                 "powers": {
                     "1": {
-                        "name": "Cat's Grace",
+                        "name": "Quickness",
                         "description": "Move with supernatural speed and agility.",
                         "cost": "1 Willpower"
                     },
                     "2": {
-                        "name": "Rapid Reflexes",
-                        "description": "React to threats with lightning speed.",
+                        "name": "Sprint",
+                        "description": "Run at incredible speeds for short distances.",
                         "cost": "1 Willpower"
                     },
                     "3": {
-                        "name": "Lightning Strike",
-                        "description": "Attack multiple times in a single turn.",
+                        "name": "Enhanced Reflexes",
+                        "description": "React with lightning-fast reflexes.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Blur",
+                        "description": "Move so fast you become a blur to observers.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Accelerated Movement",
+                        "description": "Move at speeds that defy physics.",
                         "cost": "1 Willpower"
                     }
                 }
