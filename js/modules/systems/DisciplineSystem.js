@@ -216,26 +216,15 @@ class DisciplineSystem {
             }, 100);
         }
         
-        // Try both delegated and direct event listeners
-        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
-            console.log('DisciplineSystem: Mouse enter event triggered (delegated)');
-            this.handleDisciplineMouseEnter(e);
-        });
-        
-        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
-            console.log('DisciplineSystem: Mouse leave event triggered (delegated)');
-            this.handleDisciplineMouseLeave(e);
-        });
-        
-        // Also add direct event listeners as fallback
+        // Add direct event listeners for mouse events (mouse events don't bubble properly)
         disciplineButtons.forEach(button => {
             button.addEventListener('mouseenter', (e) => {
-                console.log('DisciplineSystem: Mouse enter event triggered (direct)');
+                console.log('DisciplineSystem: Mouse enter event triggered');
                 this.handleDisciplineMouseEnter(e);
             });
             
             button.addEventListener('mouseleave', (e) => {
-                console.log('DisciplineSystem: Mouse leave event triggered (direct)');
+                console.log('DisciplineSystem: Mouse leave event triggered');
                 this.handleDisciplineMouseLeave(e);
             });
         });
@@ -348,6 +337,17 @@ class DisciplineSystem {
         console.log('DisciplineSystem: Mouse enter on discipline:', disciplineName);
         
         if (!disciplineName) return;
+        
+        // Check if discipline is available to current clan
+        const state = this.stateManager.getState();
+        const currentClan = state.clan;
+        if (currentClan) {
+            const allowedDisciplines = this.clanDisciplineAccess[currentClan] || [];
+            if (!allowedDisciplines.includes(disciplineName)) {
+                console.log('DisciplineSystem: Discipline not available to clan, skipping popover');
+                return;
+            }
+        }
         
         this.showPopover(disciplineName, button);
     }
@@ -740,9 +740,12 @@ class DisciplineSystem {
         
         // Power selection buttons
         const powerButtons = this.popoverElement.querySelectorAll('.power-option-btn');
+        console.log('DisciplineSystem: Found power buttons:', powerButtons.length);
         powerButtons.forEach(button => {
+            console.log('DisciplineSystem: Setting up click listener for power:', button.dataset.discipline, button.dataset.powerLevel);
             button.addEventListener('click', (e) => {
                 e.stopPropagation();
+                console.log('DisciplineSystem: Power button clicked:', button.dataset.discipline, button.dataset.powerLevel);
                 this.handlePowerClick(e);
             });
         });

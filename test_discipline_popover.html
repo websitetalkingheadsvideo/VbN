@@ -129,24 +129,19 @@
         
         let currentPopover = null;
         
-        // Add mouse event listeners
-        document.addEventListener('mouseenter', function(e) {
-            // Find the button element (in case target is a text node)
-            const button = e.target.closest ? e.target.closest('.discipline-option-btn') : e.target;
-            if (button && button.classList && button.classList.contains('discipline-option-btn')) {
-                console.log('Test: Mouse enter on', button.dataset.discipline);
-                showPopover(button);
-            }
-        }, true);
-        
-        document.addEventListener('mouseleave', function(e) {
-            // Find the button element (in case target is a text node)
-            const button = e.target.closest ? e.target.closest('.discipline-option-btn') : e.target;
-            if (button && button.classList && button.classList.contains('discipline-option-btn')) {
-                console.log('Test: Mouse leave on', button.dataset.discipline);
+        // Add mouse event listeners directly to buttons
+        const buttons = document.querySelectorAll('.discipline-option-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function(e) {
+                console.log('Test: Mouse enter on', e.target.dataset.discipline);
+                showPopover(e.target);
+            });
+            
+            button.addEventListener('mouseleave', function(e) {
+                console.log('Test: Mouse leave on', e.target.dataset.discipline);
                 hidePopover();
-            }
-        }, true);
+            });
+        });
         
         function showPopover(button) {
             const disciplineName = button.dataset.discipline;
