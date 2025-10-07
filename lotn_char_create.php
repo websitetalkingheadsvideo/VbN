@@ -539,46 +539,46 @@ include 'includes/connect.php';
                     
                     <div class="trait-options" id="physicalOptions">
                         <!-- Agility & Speed -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Agile')">Agile</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Lithe')">Lithe</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Nimble')">Nimble</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Quick')">Quick</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Spry')">Spry</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Graceful')">Graceful</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Slender')">Slender</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Agile">Agile</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Lithe">Lithe</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Nimble">Nimble</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Quick">Quick</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Spry">Spry</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Graceful">Graceful</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Slender">Slender</button>
                         
                         <!-- Strength & Endurance -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Strong')">Strong</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Hardy')">Hardy</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Tough')">Tough</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Resilient')">Resilient</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Sturdy')">Sturdy</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Vigorous')">Vigorous</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Burly')">Burly</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Strong">Strong</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Hardy">Hardy</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Tough">Tough</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Resilient">Resilient</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Sturdy">Sturdy</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Vigorous">Vigorous</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Burly">Burly</button>
                         
                         <!-- Dexterity & Coordination -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Coordinated')">Coordinated</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Precise')">Precise</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Steady-handed')">Steady-handed</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Sleek')">Sleek</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Flexible')">Flexible</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Balanced')">Balanced</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Coordinated">Coordinated</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Precise">Precise</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Steady-handed">Steady-handed</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Sleek">Sleek</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Flexible">Flexible</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Balanced">Balanced</button>
                         
                         <!-- Reflexes & Awareness -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Alert')">Alert</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Sharp-eyed')">Sharp-eyed</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Quick-reflexed')">Quick-reflexed</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Perceptive')">Perceptive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Reactive')">Reactive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Observant')">Observant</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Alert">Alert</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Sharp-eyed">Sharp-eyed</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Quick-reflexed">Quick-reflexed</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Perceptive">Perceptive</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Reactive">Reactive</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Observant">Observant</button>
                         
                         <!-- Appearance / Presence of Body -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Athletic')">Athletic</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Well-built')">Well-built</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Athletic">Athletic</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Well-built">Well-built</button>
                         
                         <!-- Legacy traits -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Fast')">Fast</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Physical', 'Muscular')">Muscular</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Fast">Fast</button>
+                        <button type="button" class="trait-option-btn" data-category="Physical" data-trait="Muscular">Muscular</button>
                     </div>
                     
                     <div class="trait-list" id="physicalTraitList">
@@ -588,9 +588,9 @@ include 'includes/connect.php';
                     <div class="negative-traits-section">
                         <h4>Physical Negative Traits (+4 XP each)</h4>
                         <div class="trait-options" id="physicalNegativeOptions">
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Physical', 'Frail')">Frail</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Physical', 'Slow')">Slow</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Physical', 'Weak')">Weak</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Physical" data-trait="Frail">Frail</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Physical" data-trait="Slow">Slow</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Physical" data-trait="Weak">Weak</button>
                         </div>
                         <div class="trait-list" id="physicalNegativeTraitList">
                         </div>
@@ -616,46 +616,46 @@ include 'includes/connect.php';
                     
                     <div class="trait-options" id="socialOptions">
                         <!-- Charm & Charisma -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Charming')">Charming</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Persuasive')">Persuasive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Charismatic')">Charismatic</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Graceful')">Graceful</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Poised')">Poised</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Attractive')">Attractive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Handsome')">Handsome</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Beautiful')">Beautiful</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Seductive')">Seductive</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Charming">Charming</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Persuasive">Persuasive</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Charismatic">Charismatic</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Graceful">Graceful</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Poised">Poised</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Attractive">Attractive</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Handsome">Handsome</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Beautiful">Beautiful</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Seductive">Seductive</button>
                         
                         <!-- Manipulation & Deception -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Cunning')">Cunning</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Deceptive')">Deceptive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Manipulative')">Manipulative</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Subtle')">Subtle</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Diplomatic')">Diplomatic</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Cunning">Cunning</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Deceptive">Deceptive</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Manipulative">Manipulative</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Subtle">Subtle</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Diplomatic">Diplomatic</button>
                         
                         <!-- Personality / Presence -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Sociable')">Sociable</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Friendly')">Friendly</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Outgoing')">Outgoing</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Bold')">Bold</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Confident')">Confident</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Stubborn')">Stubborn</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Witty')">Witty</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Sociable">Sociable</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Friendly">Friendly</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Outgoing">Outgoing</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Bold">Bold</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Confident">Confident</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Stubborn">Stubborn</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Witty">Witty</button>
                         
                         <!-- Leadership & Influence -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Commanding')">Commanding</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Inspiring')">Inspiring</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Assertive')">Assertive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Authoritative')">Authoritative</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Motivating')">Motivating</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Loyal')">Loyal</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Commanding">Commanding</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Inspiring">Inspiring</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Assertive">Assertive</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Authoritative">Authoritative</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Motivating">Motivating</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Loyal">Loyal</button>
                         
                         <!-- Legacy traits -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Elegant')">Elegant</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Expressive')">Expressive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Striking')">Striking</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Imposing')">Imposing</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Social', 'Intimidating')">Intimidating</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Elegant">Elegant</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Expressive">Expressive</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Striking">Striking</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Imposing">Imposing</button>
+                        <button type="button" class="trait-option-btn" data-category="Social" data-trait="Intimidating">Intimidating</button>
                     </div>
                     
                     <div class="trait-list" id="socialTraitList">
@@ -665,10 +665,10 @@ include 'includes/connect.php';
                     <div class="negative-traits-section">
                         <h4>Social Negative Traits (+4 XP each)</h4>
                         <div class="trait-options" id="socialNegativeOptions">
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Social', 'Ugly')">Ugly</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Social', 'Awkward')">Awkward</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Social', 'Shy')">Shy</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Social', 'Rude')">Rude</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Social" data-trait="Ugly">Ugly</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Social" data-trait="Awkward">Awkward</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Social" data-trait="Shy">Shy</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Social" data-trait="Rude">Rude</button>
                         </div>
                         <div class="trait-list" id="socialNegativeTraitList">
                         </div>
@@ -694,53 +694,53 @@ include 'includes/connect.php';
                     
                     <div class="trait-options" id="mentalOptions">
                         <!-- Intelligence & Knowledge -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Intelligent')">Intelligent</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Clever')">Clever</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Learned')">Learned</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Analytical')">Analytical</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Scholarly')">Scholarly</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Logical')">Logical</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Resourceful')">Resourceful</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Intelligent">Intelligent</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Clever">Clever</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Learned">Learned</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Analytical">Analytical</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Scholarly">Scholarly</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Logical">Logical</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Resourceful">Resourceful</button>
                         
                         <!-- Perception & Awareness -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Observant')">Observant</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Alert')">Alert</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Sharp-eyed')">Sharp-eyed</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Attentive')">Attentive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Quick-minded')">Quick-minded</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Insightful')">Insightful</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Perceptive')">Perceptive</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Observant">Observant</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Alert">Alert</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Sharp-eyed">Sharp-eyed</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Attentive">Attentive</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Quick-minded">Quick-minded</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Insightful">Insightful</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Perceptive">Perceptive</button>
                         
                         <!-- Memory & Recall -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Remembering')">Remembering</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Studious')">Studious</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Focused')">Focused</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Methodical')">Methodical</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Precise')">Precise</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Remembering">Remembering</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Studious">Studious</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Focused">Focused</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Methodical">Methodical</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Precise">Precise</button>
                         
                         <!-- Problem Solving & Planning -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Strategic')">Strategic</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Calculating')">Calculating</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Cunning')">Cunning</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Patient')">Patient</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Determined')">Determined</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Adaptive')">Adaptive</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Strategic">Strategic</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Calculating">Calculating</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Cunning">Cunning</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Patient">Patient</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Determined">Determined</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Adaptive">Adaptive</button>
                         
                         <!-- Personality / Mental Flavor -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Curious')">Curious</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Witty')">Witty</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Shrewd')">Shrewd</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Eccentric')">Eccentric</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Philosophical')">Philosophical</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Persistent')">Persistent</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Curious">Curious</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Witty">Witty</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Shrewd">Shrewd</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Eccentric">Eccentric</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Philosophical">Philosophical</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Persistent">Persistent</button>
                         
                         <!-- Legacy traits -->
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Calm')">Calm</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Creative')">Creative</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Dedicated')">Dedicated</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Intuitive')">Intuitive</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Rational')">Rational</button>
-                        <button type="button" class="trait-option-btn" onclick="selectTrait('Mental', 'Wise')">Wise</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Calm">Calm</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Creative">Creative</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Dedicated">Dedicated</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Intuitive">Intuitive</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Rational">Rational</button>
+                        <button type="button" class="trait-option-btn" data-category="Mental" data-trait="Wise">Wise</button>
                     </div>
                     
                     <div class="trait-list" id="mentalTraitList">
@@ -750,12 +750,12 @@ include 'includes/connect.php';
                     <div class="negative-traits-section">
                         <h4>Mental Negative Traits (+4 XP each)</h4>
                         <div class="trait-options" id="mentalNegativeOptions">
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Mental', 'Dull')">Dull</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Mental', 'Scatterbrained')">Scatterbrained</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Mental', 'Absent-minded')">Absent-minded</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Mental', 'Distracted')">Distracted</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Mental', 'Forgetful')">Forgetful</button>
-                            <button type="button" class="trait-option-btn negative" onclick="selectNegativeTrait('Mental', 'Rash')">Rash</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Mental" data-trait="Dull">Dull</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Mental" data-trait="Scatterbrained">Scatterbrained</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Mental" data-trait="Absent-minded">Absent-minded</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Mental" data-trait="Distracted">Distracted</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Mental" data-trait="Forgetful">Forgetful</button>
+                            <button type="button" class="trait-option-btn negative" data-category="Mental" data-trait="Rash">Rash</button>
                         </div>
                         <div class="trait-list" id="mentalNegativeTraitList">
                         </div>
@@ -1899,7 +1899,6 @@ include 'includes/connect.php';
     <!-- Main Application -->
     <script src="js/modules/main.js"></script>
     
-    <!-- Legacy Script (temporary - for compatibility) -->
-    <script src="js/script.js"></script>
+    <!-- Legacy Script removed - using modular system -->
 </body>
 </html>

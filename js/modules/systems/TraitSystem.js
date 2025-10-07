@@ -50,21 +50,19 @@ class TraitSystem {
     setupEventListeners() {
         const { eventManager } = this;
         
-        // Trait selection buttons
-        const traitContainer = this.uiManager.getElement('.trait-selection');
-        if (traitContainer) {
-            eventManager.addDelegatedListener(traitContainer, '.trait-option-btn', 'click', (e) => {
-                this.handleTraitClick(e);
-            });
-        }
+        // Trait selection buttons - use document delegation since we have multiple containers
+        eventManager.addDelegatedListener(document, '.trait-option-btn', 'click', (e) => {
+            // Check if it's a negative trait button
+            if (e.target.classList.contains('negative')) {
+                return; // Let the negative trait handler deal with it
+            }
+            this.handleTraitClick(e);
+        });
         
         // Negative trait selection buttons
-        const negativeTraitContainer = this.uiManager.getElement('.negative-trait-selection');
-        if (negativeTraitContainer) {
-            eventManager.addDelegatedListener(negativeTraitContainer, '.trait-option-btn.negative', 'click', (e) => {
-                this.handleNegativeTraitClick(e);
-            });
-        }
+        eventManager.addDelegatedListener(document, '.trait-option-btn.negative', 'click', (e) => {
+            this.handleNegativeTraitClick(e);
+        });
         
         // Remove trait buttons
         eventManager.addDelegatedListener(document, '.remove-trait-btn', 'click', (e) => {
@@ -147,7 +145,7 @@ class TraitSystem {
         // Check if we're at the maximum (capped at free points during character creation)
         const freePoints = this.getFreePoints(category);
         if (traits.length >= freePoints) {
-            this.notificationManager.showError(`Maximum ${freePoints} traits allowed in ${category} category during character creation.`);
+            this.notificationManager.error(`Maximum ${freePoints} traits allowed in ${category} category during character creation.`);
             return;
         }
         
@@ -160,7 +158,7 @@ class TraitSystem {
         });
         
         // Show feedback
-        this.notificationManager.showSuccess(`${traitName} added (FREE)`);
+        this.notificationManager.success(`${traitName} added (FREE)`);
         
         // Update displays
         this.updateTraitDisplay(category);
@@ -566,7 +564,7 @@ class TraitSystem {
         // Validate that we have exactly 7, 5, 3
         const values = [physicalPoints, socialPoints, mentalPoints].sort((a, b) => b - a);
         if (values[0] !== 7 || values[1] !== 5 || values[2] !== 3) {
-            this.notificationManager.showError('Point distribution must be 7, 5, and 3 points.');
+            this.notificationManager.error('Point distribution must be 7, 5, and 3 points.');
             // Reset to valid distribution
             this.updatePointDistribution();
             return;
@@ -816,7 +814,7 @@ class TraitSystem {
         // Validate that we have exactly 7, 5, 3
         const values = [physicalPoints, socialPoints, mentalPoints].sort((a, b) => b - a);
         if (values[0] !== 7 || values[1] !== 5 || values[2] !== 3) {
-            this.notificationManager.showError('Point distribution must be 7, 5, and 3 points.');
+            this.notificationManager.error('Point distribution must be 7, 5, and 3 points.');
             // Reset to valid distribution
             this.updatePointDistribution();
             return;
