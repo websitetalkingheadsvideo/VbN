@@ -186,14 +186,28 @@ class DisciplineSystem {
             }, 100);
         }
         
+        // Try both delegated and direct event listeners
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
-            console.log('DisciplineSystem: Mouse enter event triggered');
+            console.log('DisciplineSystem: Mouse enter event triggered (delegated)');
             this.handleDisciplineMouseEnter(e);
         });
         
         eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
-            console.log('DisciplineSystem: Mouse leave event triggered');
+            console.log('DisciplineSystem: Mouse leave event triggered (delegated)');
             this.handleDisciplineMouseLeave(e);
+        });
+        
+        // Also add direct event listeners as fallback
+        disciplineButtons.forEach(button => {
+            button.addEventListener('mouseenter', (e) => {
+                console.log('DisciplineSystem: Mouse enter event triggered (direct)');
+                this.handleDisciplineMouseEnter(e);
+            });
+            
+            button.addEventListener('mouseleave', (e) => {
+                console.log('DisciplineSystem: Mouse leave event triggered (direct)');
+                this.handleDisciplineMouseLeave(e);
+            });
         });
         
         // Also add a simple click test

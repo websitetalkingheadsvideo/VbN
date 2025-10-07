@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discipline Popover Test</title>
+    <style>
+        .discipline-option-btn {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+        .discipline-popover {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discipline Popover Test</h1>
+    
+    <div class="discipline-options">
+        <button type="button" class="discipline-option-btn" data-discipline="Animalism">Animalism</button>
+        <button type="button" class="discipline-option-btn" data-discipline="Auspex">Auspex</button>
+        <button type="button" class="discipline-option-btn" data-discipline="Celerity">Celerity</button>
+    </div>
+
+    <script>
+        // Simple test for discipline popover
+        console.log('Test: Setting up discipline popover test');
+        
+        const disciplineData = {
+            "Animalism": {
+                "description": "The Discipline of Animalism allows vampires to communicate with and control animals.",
+                "powers": {
+                    "1": {
+                        "name": "Feral Whispers",
+                        "description": "Communicate with animals in their own language.",
+                        "cost": "1 Willpower"
+                    },
+                    "2": {
+                        "name": "Beckoning", 
+                        "description": "Call animals to your location.",
+                        "cost": "1 Willpower"
+                    }
+                }
+            }
+        };
+        
+        let currentPopover = null;
+        
+        // Add mouse event listeners
+        document.addEventListener('mouseenter', function(e) {
+            if (e.target.classList.contains('discipline-option-btn')) {
+                console.log('Test: Mouse enter on', e.target.dataset.discipline);
+                showPopover(e.target);
+            }
+        }, true);
+        
+        document.addEventListener('mouseleave', function(e) {
+            if (e.target.classList.contains('discipline-option-btn')) {
+                console.log('Test: Mouse leave on', e.target.dataset.discipline);
+                hidePopover();
+            }
+        }, true);
+        
+        function showPopover(button) {
+            const disciplineName = button.dataset.discipline;
+            console.log('Test: Showing popover for', disciplineName);
+            
+            if (!disciplineData[disciplineName]) {
+                console.log('Test: No data for', disciplineName);
+                return;
+            }
+            
+            hidePopover();
+            
+            const discipline = disciplineData[disciplineName];
+            const rect = button.getBoundingClientRect();
+            
+            const popoverHTML = `
+                <div class="discipline-popover" id="testPopover">
+                    <h3>${disciplineName}</h3>
+                    <p>${discipline.description}</p>
+                    <div class="powers">
+                        <h4>Powers:</h4>
+                        ${Object.keys(discipline.powers).map(level => {
+                            const power = discipline.powers[level];
+                            return `<div><strong>${power.name} (Level ${level})</strong><br>${power.description}</div>`;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+            
+            const popover = document.createElement('div');
+            popover.innerHTML = popoverHTML;
+            currentPopover = popover.firstElementChild;
+            
+            // Position popover
+            currentPopover.style.position = 'absolute';
+            currentPopover.style.top = (rect.bottom + 10) + 'px';
+            currentPopover.style.left = rect.left + 'px';
+            
+            document.body.appendChild(currentPopover);
+            console.log('Test: Popover added to DOM');
+        }
+        
+        function hidePopover() {
+            if (currentPopover) {
+                currentPopover.remove();
+                currentPopover = null;
+                console.log('Test: Popover removed');
+            }
+        }
+        
+        console.log('Test: Setup complete');
+    </script>
+</body>
+</html>
