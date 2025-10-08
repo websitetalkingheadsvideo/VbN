@@ -4,11 +4,10 @@
  */
 
 class AbilitySystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         this.requirements = {
             Physical: { min: 3, max: 5 },
@@ -81,7 +80,7 @@ class AbilitySystem {
         // Check if this ability is already at maximum (5 dots)
         const currentCount = abilities.filter(a => a === abilityName).length;
         if (currentCount >= 5) {
-            this.notificationManager.warning(`${abilityName} is already at maximum level (5 dots).`);
+            console.warn(`AbilitySystem: ${abilityName} is already at maximum level (5 dots).`);
             return;
         }
         
@@ -102,7 +101,7 @@ class AbilitySystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${abilityName} added to ${category} abilities`);
+        console.log(`AbilitySystem: ${abilityName} added to ${category} abilities`);
     }
     
     /**
@@ -132,7 +131,7 @@ class AbilitySystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${abilityName} removed from ${category} abilities`);
+        console.log(`AbilitySystem: ${abilityName} removed from ${category} abilities`);
     }
     
     /**

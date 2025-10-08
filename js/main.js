@@ -109,16 +109,14 @@ class CharacterCreationApp {
         this.modules.traitSystem = new TraitSystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         // AbilitySystem
         this.modules.abilitySystem = new AbilitySystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         // DisciplineSystem
@@ -126,7 +124,6 @@ class CharacterCreationApp {
             this.modules.stateManager,
             this.modules.uiManager,
             this.modules.eventManager,
-            this.modules.notificationManager,
             this.modules.dataManager
         );
         
@@ -134,40 +131,35 @@ class CharacterCreationApp {
         this.modules.meritsFlawsSystem = new MeritsFlawsSystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         // BackgroundSystem
         this.modules.backgroundSystem = new BackgroundSystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         // MoralitySystem
         this.modules.moralitySystem = new MoralitySystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         // CashSystem
         this.modules.cashSystem = new CashSystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         // HealthWillpowerSystem
         this.modules.healthWillpowerSystem = new HealthWillpowerSystem(
             this.modules.stateManager,
             this.modules.uiManager,
-            this.modules.eventManager,
-            this.modules.notificationManager
+            this.modules.eventManager
         );
         
         console.log('System modules initialized');
@@ -427,9 +419,9 @@ class CharacterCreationApp {
         if (validation.isValid) {
             // Update state with form data
             this.modules.stateManager.setState(data);
-            this.modules.notificationManager.success('Form submitted successfully');
+            console.log('CharacterCreationApp: Form submitted successfully');
         } else {
-            this.modules.notificationManager.error(`Form validation failed: ${validation.errors.join(', ')}`);
+            console.error(`CharacterCreationApp: Form validation failed: ${validation.errors.join(', ')}`);
         }
     }
     
@@ -442,7 +434,7 @@ class CharacterCreationApp {
             const response = await this.modules.dataManager.saveCharacter(state);
             
             if (response.success) {
-                this.modules.notificationManager.success('Character saved successfully');
+                console.log('CharacterCreationApp: Character saved successfully');
                 this.modules.stateManager.setStateProperty('isDirty', false);
                 this.modules.stateManager.setStateProperty('lastSaved', Date.now());
             } else {
@@ -450,7 +442,7 @@ class CharacterCreationApp {
             }
         } catch (error) {
             console.error('Error saving character:', error);
-            this.modules.notificationManager.error('Failed to save character: ' + error.message);
+            console.error('CharacterCreationApp: Failed to save character: ' + error.message);
         }
     }
     
@@ -463,13 +455,13 @@ class CharacterCreationApp {
             
             if (characterData) {
                 this.modules.stateManager.setState(characterData);
-                this.modules.notificationManager.success('Character loaded successfully');
+                console.log('CharacterCreationApp: Character loaded successfully');
             } else {
                 throw new Error('Character not found');
             }
         } catch (error) {
             console.error('Error loading character:', error);
-            this.modules.notificationManager.error('Failed to load character: ' + error.message);
+            console.error('CharacterCreationApp: Failed to load character: ' + error.message);
         }
     }
     
@@ -477,15 +469,11 @@ class CharacterCreationApp {
      * Reset character
      */
     async resetCharacter() {
-        const confirmed = await this.modules.notificationManager.showConfirmation(
-            'Reset Character',
-            'Are you sure you want to reset the character? All unsaved changes will be lost.',
-            { showCancel: true }
-        );
+        const confirmed = confirm('Are you sure you want to reset the character? All unsaved changes will be lost.');
         
         if (confirmed) {
             this.modules.stateManager.reset();
-            this.modules.notificationManager.success('Character reset successfully');
+            console.log('CharacterCreationApp: Character reset successfully');
         }
     }
     
@@ -507,10 +495,10 @@ class CharacterCreationApp {
             
             URL.revokeObjectURL(url);
             
-            this.modules.notificationManager.success('Character exported successfully');
+            console.log('CharacterCreationApp: Character exported successfully');
         } catch (error) {
             console.error('Error exporting character:', error);
-            this.modules.notificationManager.error('Failed to export character: ' + error.message);
+            console.error('CharacterCreationApp: Failed to export character: ' + error.message);
         }
     }
     
@@ -522,13 +510,13 @@ class CharacterCreationApp {
             const success = this.modules.stateManager.importState(data);
             
             if (success) {
-                this.modules.notificationManager.success('Character imported successfully');
+                console.log('CharacterCreationApp: Character imported successfully');
             } else {
                 throw new Error('Invalid character data');
             }
         } catch (error) {
             console.error('Error importing character:', error);
-            this.modules.notificationManager.error('Failed to import character: ' + error.message);
+            console.error('CharacterCreationApp: Failed to import character: ' + error.message);
         }
     }
     
@@ -541,13 +529,13 @@ class CharacterCreationApp {
             const validation = this.modules.validationManager.validateCharacter(state);
             
             if (validation.isValid) {
-                this.modules.notificationManager.success('Character is valid');
+                console.log('CharacterCreationApp: Character is valid');
             } else {
-                this.modules.notificationManager.error(`Character validation failed: ${validation.errors.join(', ')}`);
+                console.error(`CharacterCreationApp: Character validation failed: ${validation.errors.join(', ')}`);
             }
         } catch (error) {
             console.error('Error validating character:', error);
-            this.modules.notificationManager.error('Failed to validate character: ' + error.message);
+            console.error('CharacterCreationApp: Failed to validate character: ' + error.message);
         }
     }
     
@@ -558,11 +546,8 @@ class CharacterCreationApp {
         console.error('Initialization error:', error);
         
         // Show error notification
-        if (this.modules.notificationManager) {
-            this.modules.notificationManager.error('Failed to initialize application: ' + error.message);
-        } else {
-            alert('Failed to initialize application: ' + error.message);
-        }
+        console.error('CharacterCreationApp: Failed to initialize application: ' + error.message);
+        alert('Failed to initialize application: ' + error.message);
     }
     
     /**
@@ -585,7 +570,7 @@ class CharacterCreationApp {
      * Handle finalize character button
      */
     handleFinalizeCharacter() {
-        this.modules.notificationManager.info('Finalize character functionality coming soon!');
+        console.info('CharacterCreationApp: Finalize character functionality coming soon!');
     }
     
     /**
@@ -624,14 +609,14 @@ class CharacterCreationApp {
      * Show clan guide
      */
     showClanGuide() {
-        this.modules.notificationManager.info('Clan guide functionality coming soon!');
+        console.info('CharacterCreationApp: Clan guide functionality coming soon!');
     }
     
     /**
      * Show discipline guide
      */
     showDisciplineGuide() {
-        this.modules.notificationManager.info('Discipline guide functionality coming soon!');
+        console.info('CharacterCreationApp: Discipline guide functionality coming soon!');
     }
     
     /**

@@ -4,11 +4,10 @@
  */
 
 class CashSystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         this.cashMultipliers = {
             13: 1,    // Generation 13 = 1x

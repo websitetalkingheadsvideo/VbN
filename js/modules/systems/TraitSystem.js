@@ -4,11 +4,10 @@
  */
 
 class TraitSystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         // Dynamic point distribution - user chooses which category gets 7, 5, or 3
         this.pointDistribution = {
@@ -145,7 +144,7 @@ class TraitSystem {
         // Check if we're at the maximum (capped at free points during character creation)
         const freePoints = this.getFreePoints(category);
         if (traits.length >= freePoints) {
-            this.notificationManager.error(`Maximum ${freePoints} traits allowed in ${category} category during character creation.`);
+            console.error(`TraitSystem: Maximum ${freePoints} traits allowed in ${category} category during character creation.`);
             return;
         }
         
@@ -158,7 +157,7 @@ class TraitSystem {
         });
         
         // Show feedback
-        this.notificationManager.success(`${traitName} added (FREE)`);
+        console.log(`TraitSystem: ${traitName} added (FREE)`);
         
         // Update displays
         this.updateTraitDisplay(category);
@@ -199,7 +198,7 @@ class TraitSystem {
         this.updateXPDisplay();
         
         // Show feedback
-        this.notificationManager.toast(`${traitName} added to ${category} negative traits`);
+        console.log(`TraitSystem: ${traitName} added to ${category} negative traits`);
     }
     
     /**
@@ -232,7 +231,7 @@ class TraitSystem {
         this.updateXPDisplay();
         
         // Show feedback
-        this.notificationManager.toast(`${traitName} removed from ${category} traits`);
+        console.log(`TraitSystem: ${traitName} removed from ${category} traits`);
     }
     
     /**
@@ -265,7 +264,7 @@ class TraitSystem {
         this.updateXPDisplay();
         
         // Show feedback
-        this.notificationManager.toast(`${traitName} removed from ${category} negative traits`);
+        console.log(`TraitSystem: ${traitName} removed from ${category} negative traits`);
     }
     
     /**
@@ -564,7 +563,7 @@ class TraitSystem {
         // Validate that we have exactly 7, 5, 3
         const values = [physicalPoints, socialPoints, mentalPoints].sort((a, b) => b - a);
         if (values[0] !== 7 || values[1] !== 5 || values[2] !== 3) {
-            this.notificationManager.error('Point distribution must be 7, 5, and 3 points.');
+            console.error('TraitSystem: Point distribution must be 7, 5, and 3 points.');
             // Reset to valid distribution
             this.updatePointDistribution();
             return;
@@ -814,7 +813,7 @@ class TraitSystem {
         // Validate that we have exactly 7, 5, 3
         const values = [physicalPoints, socialPoints, mentalPoints].sort((a, b) => b - a);
         if (values[0] !== 7 || values[1] !== 5 || values[2] !== 3) {
-            this.notificationManager.error('Point distribution must be 7, 5, and 3 points.');
+            console.error('TraitSystem: Point distribution must be 7, 5, and 3 points.');
             // Reset to valid distribution
             this.updatePointDistribution();
             return;

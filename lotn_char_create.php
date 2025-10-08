@@ -1134,11 +1134,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Friends, contacts, and people who will help you. Each point represents a significant ally or group of allies.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Allies" data-level="1" onclick="selectBackground('Allies', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Allies" data-level="2" onclick="selectBackground('Allies', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Allies" data-level="3" onclick="selectBackground('Allies', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Allies" data-level="4" onclick="selectBackground('Allies', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Allies" data-level="5" onclick="selectBackground('Allies', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Allies" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="alliesList"></div>
                     <div class="background-details">
@@ -1164,11 +1164,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Information networks, informants, and people who provide you with knowledge and intelligence.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="1" onclick="selectBackground('Contacts', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="2" onclick="selectBackground('Contacts', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="3" onclick="selectBackground('Contacts', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="4" onclick="selectBackground('Contacts', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="5" onclick="selectBackground('Contacts', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Contacts" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="contactsList"></div>
                     <div class="background-details">
@@ -1194,11 +1194,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Public recognition, reputation, and celebrity status in mortal or Kindred society.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Fame" data-level="1" onclick="selectBackground('Fame', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Fame" data-level="2" onclick="selectBackground('Fame', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Fame" data-level="3" onclick="selectBackground('Fame', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Fame" data-level="4" onclick="selectBackground('Fame', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Fame" data-level="5" onclick="selectBackground('Fame', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Fame" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="fameList"></div>
                     <div class="background-details">
@@ -1225,11 +1225,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Regular sources of blood - people who willingly or unknowingly provide sustenance.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Herd" data-level="1" onclick="selectBackground('Herd', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Herd" data-level="2" onclick="selectBackground('Herd', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Herd" data-level="3" onclick="selectBackground('Herd', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Herd" data-level="4" onclick="selectBackground('Herd', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Herd" data-level="5" onclick="selectBackground('Herd', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Herd" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="herdList"></div>
                     <div class="background-details">
@@ -1255,11 +1255,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Political power, social influence, and ability to affect change in mortal or Kindred society.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Influence" data-level="1" onclick="selectBackground('Influence', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Influence" data-level="2" onclick="selectBackground('Influence', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Influence" data-level="3" onclick="selectBackground('Influence', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Influence" data-level="4" onclick="selectBackground('Influence', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Influence" data-level="5" onclick="selectBackground('Influence', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Influence" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="influenceList"></div>
                     <div class="background-details">
@@ -1285,11 +1285,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">A teacher, guide, or patron who provides knowledge, protection, and guidance.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="1" onclick="selectBackground('Mentor', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="2" onclick="selectBackground('Mentor', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="3" onclick="selectBackground('Mentor', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="4" onclick="selectBackground('Mentor', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="5" onclick="selectBackground('Mentor', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Mentor" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="mentorList"></div>
                     <div class="background-details">
@@ -1315,11 +1315,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Money, property, equipment, and material wealth available to your character.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Resources" data-level="1" onclick="selectBackground('Resources', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Resources" data-level="2" onclick="selectBackground('Resources', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Resources" data-level="3" onclick="selectBackground('Resources', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Resources" data-level="4" onclick="selectBackground('Resources', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Resources" data-level="5" onclick="selectBackground('Resources', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Resources" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="resourcesList"></div>
                     <div class="background-details">
@@ -1345,11 +1345,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Servants, assistants, and loyal followers who serve your character.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="1" onclick="selectBackground('Retainers', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="2" onclick="selectBackground('Retainers', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="3" onclick="selectBackground('Retainers', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="4" onclick="selectBackground('Retainers', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="5" onclick="selectBackground('Retainers', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Retainers" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="retainersList"></div>
                     <div class="background-details">
@@ -1375,11 +1375,11 @@ include 'includes/connect.php';
                     </div>
                     <p class="background-description">Social standing, rank, and position within Kindred society or mortal organizations.</p>
                     <div class="background-options">
-                        <button type="button" class="background-option-btn" data-background="Status" data-level="1" onclick="selectBackground('Status', 1)">1</button>
-                        <button type="button" class="background-option-btn" data-background="Status" data-level="2" onclick="selectBackground('Status', 2)">2</button>
-                        <button type="button" class="background-option-btn" data-background="Status" data-level="3" onclick="selectBackground('Status', 3)">3</button>
-                        <button type="button" class="background-option-btn" data-background="Status" data-level="4" onclick="selectBackground('Status', 4)">4</button>
-                        <button type="button" class="background-option-btn" data-background="Status" data-level="5" onclick="selectBackground('Status', 5)">5</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="1">1</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="2">2</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="3">3</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="4">4</button>
+                        <button type="button" class="background-option-btn" data-background="Status" data-level="5">5</button>
                     </div>
                     <div class="background-list" id="statusList"></div>
                     <div class="background-details">

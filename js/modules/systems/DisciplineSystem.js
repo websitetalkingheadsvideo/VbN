@@ -4,11 +4,10 @@
  */
 
 class DisciplineSystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager, dataManager) {
+    constructor(stateManager, uiManager, eventManager, dataManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         this.dataManager = dataManager;
         
         this.requirements = {
@@ -214,7 +213,7 @@ class DisciplineSystem {
         if (currentClan) {
             const allowedDisciplines = this.clanDisciplineAccess[currentClan] || [];
             if (!allowedDisciplines.includes(disciplineName)) {
-                this.notificationManager.warning(`${disciplineName} is not available to ${currentClan}`);
+                console.warn(`DisciplineSystem: ${disciplineName} is not available to ${currentClan}`);
                 return;
             }
         }
@@ -302,13 +301,13 @@ class DisciplineSystem {
         
         // Check if discipline is already selected
         if (disciplines.includes(disciplineName)) {
-            this.notificationManager.warning(`${disciplineName} is already selected.`);
+            console.warn(`DisciplineSystem: ${disciplineName} is already selected.`);
             return;
         }
         
         // Check if maximum disciplines reached
         if (disciplines.length >= this.requirements.max) {
-            this.notificationManager.warning(`Maximum ${this.requirements.max} disciplines allowed.`);
+            console.warn(`DisciplineSystem: Maximum ${this.requirements.max} disciplines allowed.`);
             return;
         }
         
@@ -329,7 +328,7 @@ class DisciplineSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${disciplineName} added to disciplines`);
+        console.log(`DisciplineSystem: ${disciplineName} added to disciplines`);
     }
     
     /**
@@ -364,7 +363,7 @@ class DisciplineSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${disciplineName} removed from disciplines`);
+        console.log(`DisciplineSystem: ${disciplineName} removed from disciplines`);
     }
     
     /**
@@ -381,7 +380,7 @@ class DisciplineSystem {
         
         // Check if power is already selected
         if (disciplinePowers[disciplineName].includes(powerLevel)) {
-            this.notificationManager.warning(`Power level ${powerLevel} is already selected for ${disciplineName}.`);
+            console.warn(`DisciplineSystem: Power level ${powerLevel} is already selected for ${disciplineName}.`);
             return;
         }
         
@@ -401,7 +400,7 @@ class DisciplineSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`Power level ${powerLevel} added to ${disciplineName}`);
+        console.log(`DisciplineSystem: Power level ${powerLevel} added to ${disciplineName}`);
     }
     
     /**
@@ -432,7 +431,7 @@ class DisciplineSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`Power level ${powerLevel} removed from ${disciplineName}`);
+        console.log(`DisciplineSystem: Power level ${powerLevel} removed from ${disciplineName}`);
     }
     
     /**
@@ -560,7 +559,7 @@ class DisciplineSystem {
         console.log('DisciplineSystem: discipline data for', disciplineName, ':', this.disciplineData?.[disciplineName]);
         
         if (!this.disciplineData || !this.disciplineData[disciplineName]) {
-            this.notificationManager.error(`Discipline data not found for ${disciplineName}`);
+            console.error(`DisciplineSystem: Discipline data not found for ${disciplineName}`);
             return;
         }
         
@@ -825,9 +824,7 @@ class DisciplineSystem {
             });
             
             // Show notification about removed disciplines
-            this.notificationManager.warning(
-                `Removed ${removedDisciplines.length} discipline(s) not available to ${selectedClan}: ${removedDisciplines.join(', ')}`
-            );
+            console.warn(`DisciplineSystem: Removed ${removedDisciplines.length} discipline(s) not available to ${selectedClan}: ${removedDisciplines.join(', ')}`);
             
             this.updateAllDisplays();
         }

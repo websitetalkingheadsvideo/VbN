@@ -4,11 +4,10 @@
  */
 
 class MoralitySystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         this.virtueRequirements = {
             Conscience: { min: 1, max: 5 },
@@ -123,7 +122,7 @@ class MoralitySystem {
             this.updateCharacterPreview();
             
             // Show feedback
-            this.notificationManager.toast(`${virtue} ${action === 'increase' ? 'increased' : 'decreased'} to ${newLevel}`);
+            console.log(`MoralitySystem: ${virtue} ${action === 'increase' ? 'increased' : 'decreased'} to ${newLevel}`);
         }
     }
     
@@ -155,7 +154,7 @@ class MoralitySystem {
             this.updateCharacterPreview();
             
             // Show feedback
-            this.notificationManager.toast(`Humanity ${action === 'increase' ? 'increased' : 'decreased'} to ${newHumanity}`);
+            console.log(`MoralitySystem: Humanity ${action === 'increase' ? 'increased' : 'decreased'} to ${newHumanity}`);
         }
     }
     

@@ -4,11 +4,10 @@
  */
 
 class HealthWillpowerSystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         this.init();
     }

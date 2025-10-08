@@ -4,11 +4,10 @@
  */
 
 class BackgroundSystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         this.requirements = {
             min: 1,
@@ -32,6 +31,7 @@ class BackgroundSystem {
      * Initialize the background system
      */
     init() {
+        this.resetAllBackgrounds();
         this.setupEventListeners();
         this.updateAllDisplays();
     }
@@ -43,7 +43,7 @@ class BackgroundSystem {
         const { eventManager } = this;
         
         // Background selection buttons
-        const backgroundContainer = this.uiManager.getElement('.background-selection');
+        const backgroundContainer = this.uiManager.getElement('#backgroundsTab');
         if (backgroundContainer) {
             eventManager.addDelegatedListener(backgroundContainer, '.background-option-btn', 'click', (e) => {
                 this.handleBackgroundClick(e);
@@ -70,10 +70,11 @@ class BackgroundSystem {
     handleBackgroundClick(event) {
         const button = event.target;
         const backgroundName = button.dataset.background;
+        const level = parseInt(button.dataset.level);
         
-        if (!backgroundName) return;
+        if (!backgroundName || !level) return;
         
-        this.selectBackground(backgroundName);
+        this.selectBackgroundLevel(backgroundName, level);
     }
     
     /**
@@ -99,7 +100,42 @@ class BackgroundSystem {
     }
     
     /**
-     * Select a background
+     * Select a specific background level
+     */
+    selectBackgroundLevel(backgroundName, level) {
+        const state = this.stateManager.getState();
+        const backgrounds = { ...state.backgrounds };
+        
+        // Check if level is valid
+        const maxLevel = this.backgroundData[backgroundName]?.max || 5;
+        
+        if (level < 1 || level > maxLevel) {
+            console.warn(`BackgroundSystem: ${backgroundName} level must be between 1 and ${maxLevel}.`);
+            return;
+        }
+        
+        // Set background level
+        backgrounds[backgroundName] = level;
+        
+        // Update state
+        this.stateManager.setState({
+            backgrounds: backgrounds
+        });
+        
+        // Update displays
+        this.updateBackgroundDisplay();
+        this.updateBackgroundButtons();
+        this.updateBackgroundsSummary();
+        
+        // Update character preview
+        this.updateCharacterPreview();
+        
+        // Show feedback
+        console.log(`BackgroundSystem: ${backgroundName} set to level ${level}`);
+    }
+    
+    /**
+     * Select a background (increment by 1)
      */
     selectBackground(backgroundName) {
         const state = this.stateManager.getState();
@@ -110,7 +146,7 @@ class BackgroundSystem {
         const maxLevel = this.backgroundData[backgroundName]?.max || 5;
         
         if (currentLevel >= maxLevel) {
-            this.notificationManager.warning(`${backgroundName} is already at maximum level (${maxLevel}).`);
+            console.warn(`BackgroundSystem: ${backgroundName} is already at maximum level (${maxLevel}).`);
             return;
         }
         
@@ -131,7 +167,7 @@ class BackgroundSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${backgroundName} increased to level ${backgrounds[backgroundName]}`);
+        console.log(`BackgroundSystem: ${backgroundName} increased to level ${backgrounds[backgroundName]}`);
     }
     
     /**
@@ -165,7 +201,7 @@ class BackgroundSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${backgroundName} decreased to level ${backgrounds[backgroundName] || 0}`);
+        console.log(`BackgroundSystem: ${backgroundName} decreased to level ${backgrounds[backgroundName] || 0}`);
     }
     
     /**
@@ -213,29 +249,31 @@ class BackgroundSystem {
         
         if (!listElement) return;
         
-        // Create display elements for each background
-        const backgroundHTML = Object.keys(backgrounds).map(backgroundName => {
-            const level = backgrounds[backgroundName];
-            const maxLevel = this.backgroundData[backgroundName]?.max || 5;
-            const description = this.backgroundData[backgroundName]?.description || '';
-            
-            return `
-                <div class="selected-background">
-                    <div class="background-header">
-                        <span class="background-name">${backgroundName}</span>
-                        <span class="background-level">${level}/${maxLevel}</span>
-                        <button type="button" class="remove-background-btn" 
-                                data-background="${backgroundName}">×</button>
-                    </div>
-                    <div class="background-description">${description}</div>
-                    <div class="background-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${(level / maxLevel) * 100}%"></div>
+        // Create display elements for each background (only show if level > 0)
+        const backgroundHTML = Object.keys(backgrounds)
+            .filter(backgroundName => backgrounds[backgroundName] > 0)
+            .map(backgroundName => {
+                const level = backgrounds[backgroundName];
+                const maxLevel = this.backgroundData[backgroundName]?.max || 5;
+                const description = this.backgroundData[backgroundName]?.description || '';
+                
+                return `
+                    <div class="selected-background">
+                        <div class="background-header">
+                            <span class="background-name">${backgroundName}</span>
+                            <span class="background-level">${level}/${maxLevel}</span>
+                            <button type="button" class="remove-background-btn" 
+                                    data-background="${backgroundName}">×</button>
+                        </div>
+                        <div class="background-description">${description}</div>
+                        <div class="background-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${(level / maxLevel) * 100}%"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-        }).join('');
+                `;
+            }).join('');
         
         this.uiManager.updateContent(listElement, backgroundHTML);
     }
@@ -251,30 +289,27 @@ class BackgroundSystem {
             const currentLevel = backgrounds[backgroundName] || 0;
             const maxLevel = this.backgroundData[backgroundName].max;
             
-            // Find the button
-            const button = this.uiManager.getElement(`.background-option-btn[data-background="${backgroundName}"]`);
-            if (!button) return;
-            
-            // Update button appearance
-            this.uiManager.updateClasses(button, {
-                'selected': currentLevel > 0,
-                'at-max': currentLevel >= maxLevel
-            });
-            
-            // Update button text
-            if (currentLevel > 0) {
-                this.uiManager.updateContent(button, `${backgroundName} (${currentLevel})`);
-            } else {
-                this.uiManager.updateContent(button, backgroundName);
+            // Update all level buttons for this background
+            for (let level = 1; level <= maxLevel; level++) {
+                const button = this.uiManager.getElement(`.background-option-btn[data-background="${backgroundName}"][data-level="${level}"]`);
+                if (!button) continue;
+                
+                // Update button appearance
+                this.uiManager.updateClasses(button, {
+                    'selected': currentLevel >= level,
+                    'at-max': currentLevel >= maxLevel
+                });
+                
+                // Update button text (keep the level number)
+                this.uiManager.updateContent(button, level.toString());
+                
+                // Update button title
+                this.uiManager.updateAttributes(button, {
+                    'title': currentLevel >= level ? 
+                        `${backgroundName} level ${level} (selected)` : 
+                        `Select ${backgroundName} level ${level}`
+                });
             }
-            
-            // Disable button if at maximum
-            button.disabled = currentLevel >= maxLevel;
-            this.uiManager.updateAttributes(button, {
-                'title': currentLevel >= maxLevel ? 
-                    `${backgroundName} is at maximum level (${maxLevel})` : 
-                    `Add ${backgroundName} (${currentLevel}/${maxLevel})`
-            });
         });
     }
     
@@ -399,6 +434,23 @@ class BackgroundSystem {
         });
         
         this.updateAllDisplays();
+    }
+    
+    /**
+     * Reset all backgrounds to 0
+     */
+    resetAllBackgrounds() {
+        const state = this.stateManager.getState();
+        const backgrounds = {};
+        
+        // Initialize all background types to 0
+        Object.keys(this.backgroundData).forEach(backgroundName => {
+            backgrounds[backgroundName] = 0;
+        });
+        
+        this.stateManager.setState({
+            backgrounds: backgrounds
+        });
     }
     
     /**

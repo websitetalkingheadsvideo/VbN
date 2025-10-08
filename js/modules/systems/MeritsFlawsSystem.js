@@ -4,11 +4,10 @@
  */
 
 class MeritsFlawsSystem {
-    constructor(stateManager, uiManager, eventManager, notificationManager) {
+    constructor(stateManager, uiManager, eventManager) {
         this.stateManager = stateManager;
         this.uiManager = uiManager;
         this.eventManager = eventManager;
-        this.notificationManager = notificationManager;
         
         this.meritsFlawsData = null;
         this.currentFilters = {
@@ -224,7 +223,7 @@ class MeritsFlawsSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${name} added to ${type}`);
+        console.log(`MeritsFlawsSystem: ${name} added to ${type}`);
     }
     
     /**
@@ -257,7 +256,7 @@ class MeritsFlawsSystem {
         this.updateCharacterPreview();
         
         // Show feedback
-        this.notificationManager.toast(`${name} removed from ${type}`);
+        console.log(`MeritsFlawsSystem: ${name} removed from ${type}`);
     }
     
     /**
@@ -295,7 +294,7 @@ class MeritsFlawsSystem {
     showDescription(name, type) {
         const item = this.findMeritFlawData(name, type);
         if (item) {
-            this.notificationManager.info(`${name}: ${item.description}`);
+            console.info(`MeritsFlawsSystem: ${name}: ${item.description}`);
         }
     }
     
@@ -517,7 +516,7 @@ class MeritsFlawsSystem {
      */
     showConflictWarning(conflicts) {
         const message = conflicts.join(', ');
-        this.notificationManager.warning(`Cannot add: ${message}`);
+        console.warn(`MeritsFlawsSystem: Cannot add: ${message}`);
     }
     
     /**
