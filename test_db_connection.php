@@ -1,33 +1,29 @@
 <?php
-// Test database connection and table structure
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-header('Content-Type: application/json');
-
-// Test database connection
 include 'includes/connect.php';
 
-if (!$conn) {
-    echo json_encode(['success' => false, 'message' => 'Database connection failed']);
-    exit();
+echo "Testing database connection...\n";
+
+if ($conn) {
+    echo "✅ Database connection: SUCCESS\n";
+    
+    // Test if database exists and has tables
+    $result = mysqli_query($conn, "SHOW TABLES");
+    if ($result) {
+        $table_count = mysqli_num_rows($result);
+        echo "✅ Database tables found: $table_count\n";
+        
+        if ($table_count > 0) {
+            echo "✅ Database is properly set up!\n";
+        } else {
+            echo "⚠️  Database exists but no tables found. Run setup_xampp.sql\n";
+        }
+    } else {
+        echo "❌ Error checking tables: " . mysqli_error($conn) . "\n";
+    }
+} else {
+    echo "❌ Database connection: FAILED\n";
+    echo "Error: " . mysqli_connect_error() . "\n";
 }
 
-// Test if characters table exists and show its structure
-$result = mysqli_query($conn, "DESCRIBE characters");
-if (!$result) {
-    echo json_encode(['success' => false, 'message' => 'Characters table does not exist or error: ' . mysqli_error($conn)]);
-    exit();
-}
-
-$columns = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $columns[] = $row;
-}
-
-echo json_encode([
-    'success' => true, 
-    'message' => 'Database connection successful',
-    'characters_table_columns' => $columns
-]);
+mysqli_close($conn);
 ?>

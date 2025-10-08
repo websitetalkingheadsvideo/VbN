@@ -17,6 +17,9 @@ if ( !isset( $_SESSION[ 'user_id' ] ) ) {
 <div class="dashboard-links">
     <h3>Character Management</h3>
     <a href="lotn_char_create.php" class="dashboard-link">⚜ Create New Character</a>
+    
+    <h3>Communication</h3>
+    <a href="chat.php" class="dashboard-link">💬 Chat</a>
 </div>
 
 <a href="logout.php">Logout</a>

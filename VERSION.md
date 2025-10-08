@@ -1,6 +1,41 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.9 (Current)
+## Version 0.3.0 (Current)
+**Date:** January 8, 2025
+
+### Chat System with Character Selection:
+- ✅ **Character Selection Interface** - Grid layout showing all user's characters as interactive cards
+- ✅ **Character Information Display** - Detailed character info display with Name, Clan, Generation, Concept, Nature, Demeanor
+- ✅ **API Endpoint** - Created `api_get_characters.php` to fetch user characters from database
+- ✅ **Enhanced Chat UI** - Professional styling with responsive design and smooth interactions
+- ✅ **Session Security** - Chat system requires login and validates user sessions
+- ✅ **Character Loading** - Automatically loads all characters for the logged-in user
+- ✅ **Visual Selection** - Click character cards to select for chat with visual feedback
+
+### Chat System Features:
+- **Character Cards** - Grid layout with hover effects and selection highlighting
+- **Character Details** - Comprehensive character information display
+- **API Integration** - Secure database queries with error handling
+- **Responsive Design** - Works on desktop and mobile devices
+- **Smooth UX** - Animated transitions and visual feedback
+- **Security** - Session validation and user authentication
+
+### Technical Improvements:
+- Created `chat.php` with character selection interface
+- Created `api_get_characters.php` for secure character data retrieval
+- Enhanced `dashboard.php` with Chat link in Communication section
+- Added comprehensive CSS styling for character cards and selection
+- Implemented JavaScript for character loading and selection
+- Added error handling for no characters scenario
+
+### User Experience Improvements:
+- Users can now select which character to chat as
+- Visual character selection with detailed information
+- Professional chat interface ready for roleplay
+- Seamless integration with existing character system
+- Mobile-responsive design for all devices
+
+## Version 0.2.9
 **Date:** January 5, 2025
 
 ### Resources System & Cash Calculation:

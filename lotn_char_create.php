@@ -1,6 +1,6 @@
 <?php
 // LOTN Character Creator - Version 0.2.9
-define('LOTN_VERSION', '0.2.9');
+define('LOTN_VERSION', '0.3.0');
 
 session_start();
 
