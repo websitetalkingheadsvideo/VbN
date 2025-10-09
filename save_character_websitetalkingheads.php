@@ -1,12 +1,8 @@
 <?php
-// LOTN Character Save Handler - Version 0.2.1 (FIXED)
+// Save script that matches websitetalkingheads.com table structure
 define('LOTN_VERSION', '0.2.1');
 
-// Start session first
 session_start();
-
-// Set headers
-header('Content-Type: application/json');
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -24,7 +20,8 @@ if (!$conn) {
     exit();
 }
 
-// Check if request is POST
+header('Content-Type: application/json');
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Method not allowed']);
@@ -76,9 +73,9 @@ $cleanData = [
     'path_rating' => cleanInt($data['morality']['path_rating'] ?? 7),
     'willpower_permanent' => cleanInt($data['morality']['willpower_permanent'] ?? 5),
     'willpower_current' => cleanInt($data['morality']['willpower_current'] ?? 5),
-    'blood_pool_max' => cleanInt($data['blood_pool_max'] ?? 10),
-    'blood_pool_current' => cleanInt($data['blood_pool_current'] ?? 10),
-    'health_status' => cleanString($data['health_status'] ?? 'Healthy')
+    'blood_pool_max' => cleanInt($data['status']['blood_pool_maximum'] ?? 10),
+    'blood_pool_current' => cleanInt($data['status']['blood_pool_current'] ?? 10),
+    'health_status' => cleanString($data['status']['health_levels'] ?? 'Healthy')
 ];
 
 try {
@@ -89,8 +86,8 @@ try {
         user_id, character_name, player_name, chronicle, nature, demeanor, 
         concept, clan, generation, sire, pc, biography, appearance, notes,
         experience_total, experience_unspent, morality_path, conscience, 
-        self_control, courage, path_rating, willpower_permanent, willpower_current,
-        blood_pool_max, blood_pool_current, health_status
+        self_control, courage, path_rating, willpower_permanent, 
+        willpower_current, blood_pool_max, blood_pool_current, health_status
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = mysqli_prepare($conn, $character_sql);
@@ -99,7 +96,7 @@ try {
     }
     
     $pc_value = $cleanData['pc'] ? 1 : 0;
-    mysqli_stmt_bind_param($stmt, 'isssssssissssiisiiiiiiiis',
+    mysqli_stmt_bind_param($stmt, 'isssssssisssssiiisssiiiiis', 
         $user_id,
         $cleanData['character_name'],
         $cleanData['player_name'],

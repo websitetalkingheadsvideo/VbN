@@ -1,12 +1,11 @@
-<?php 
-error_reporting(2);
-//session_start();
+<?php
+// Database connection for websitetalkingheads.com
+// Update these values with your actual remote server credentials
 
-// Database configuration - XAMPP local setup
-$servername = "vdb5.pit.pair.com";
-$username = "working_64";
-$password = "pcf577#1";  // XAMPP default is empty password
-$dbname = "working_vbn";
+$servername = "localhost";  // Usually localhost on shared hosting
+$username = "your_db_username";      // Your database username
+$password = "your_db_password";      // Your database password  
+$dbname = "your_db_name";            // Your database name (might be different from lotn_characters)
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -26,4 +25,7 @@ if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 }
+
+// Set charset to UTF-8
+mysqli_set_charset($conn, "utf8mb4");
 ?>

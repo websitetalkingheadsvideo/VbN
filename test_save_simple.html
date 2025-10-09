@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Save Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin: 10px 0; }
+        label { display: block; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 20px; margin: 5px; background: #007cba; color: white; border: none; cursor: pointer; }
+        button:hover { background: #005a87; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>Simple Character Save Test</h1>
+    
+    <form id="testForm">
+        <div class="form-group">
+            <label for="characterName">Character Name *</label>
+            <input type="text" id="characterName" name="characterName" value="Test Character" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="playerName">Player Name *</label>
+            <input type="text" id="playerName" name="playerName" value="Test Player" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="chronicle">Chronicle</label>
+            <input type="text" id="chronicle" name="chronicle" value="Valley by Night">
+        </div>
+        
+        <div class="form-group">
+            <label for="nature">Nature</label>
+            <input type="text" id="nature" name="nature" value="Survivor">
+        </div>
+        
+        <div class="form-group">
+            <label for="demeanor">Demeanor</label>
+            <input type="text" id="demeanor" name="demeanor" value="Rebel">
+        </div>
+        
+        <div class="form-group">
+            <label for="concept">Concept</label>
+            <input type="text" id="concept" name="concept" value="Street Thug">
+        </div>
+        
+        <div class="form-group">
+            <label for="clan">Clan</label>
+            <select id="clan" name="clan">
+                <option value="Brujah">Brujah</option>
+                <option value="Gangrel">Gangrel</option>
+                <option value="Malkavian">Malkavian</option>
+                <option value="Nosferatu">Nosferatu</option>
+                <option value="Toreador">Toreador</option>
+                <option value="Tremere">Tremere</option>
+                <option value="Ventrue">Ventrue</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="generation">Generation</label>
+            <input type="number" id="generation" name="generation" value="13" min="8" max="15">
+        </div>
+        
+        <div class="form-group">
+            <label for="sire">Sire</label>
+            <input type="text" id="sire" name="sire" value="Test Sire">
+        </div>
+        
+        <div class="form-group">
+            <label for="biography">Biography</label>
+            <textarea id="biography" name="biography" rows="3">Test biography for debugging</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="equipment">Equipment</label>
+            <textarea id="equipment" name="equipment" rows="2">Test equipment</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="totalXp">Total XP</label>
+            <input type="number" id="totalXp" name="totalXp" value="30">
+        </div>
+        
+        <div class="form-group">
+            <label for="spentXp">Spent XP</label>
+            <input type="number" id="spentXp" name="spentXp" value="0">
+        </div>
+        
+        <button type="button" onclick="saveCharacter()">💾 Save Character</button>
+    </form>
+    
+    <div id="result" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;"></div>
+
+    <script>
+        function saveCharacter() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p class="info">💾 Saving character...</p>';
+            
+            // Collect form data
+            const formData = {
+                character_name: document.getElementById('characterName').value,
+                player_name: document.getElementById('playerName').value,
+                chronicle: document.getElementById('chronicle').value,
+                nature: document.getElementById('nature').value,
+                demeanor: document.getElementById('demeanor').value,
+                concept: document.getElementById('concept').value,
+                clan: document.getElementById('clan').value,
+                generation: parseInt(document.getElementById('generation').value),
+                sire: document.getElementById('sire').value,
+                pc: 1,
+                biography: document.getElementById('biography').value,
+                equipment: document.getElementById('equipment').value,
+                total_xp: parseInt(document.getElementById('totalXp').value),
+                spent_xp: parseInt(document.getElementById('spentXp').value),
+                traits: {},
+                negativeTraits: {},
+                abilities: [],
+                disciplines: [],
+                backgrounds: {},
+                backgroundDetails: {},
+                merits_flaws: [],
+                morality: {
+                    path_name: 'Humanity',
+                    path_rating: 7,
+                    conscience: 1,
+                    self_control: 1,
+                    courage: 1,
+                    willpower_permanent: 5,
+                    willpower_current: 5,
+                    humanity: 7
+                },
+                status: {}
+            };
+            
+            console.log('Sending data:', formData);
+            
+            fetch('save_character.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.text();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                try {
+                    const jsonData = JSON.parse(data);
+                    if (jsonData.success) {
+                        resultDiv.innerHTML = '<p class="success">✅ Character saved successfully! Character ID: ' + jsonData.character_id + '</p>';
+                    } else {
+                        resultDiv.innerHTML = '<p class="error">❌ Save failed: ' + jsonData.message + '</p>';
+                    }
+                } catch (e) {
+                    resultDiv.innerHTML = '<p class="error">❌ Invalid JSON response: ' + data + '</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultDiv.innerHTML = '<p class="error">❌ Error: ' + error.message + '</p>';
+            });
+        }
+    </script>
+</body>
+</html>

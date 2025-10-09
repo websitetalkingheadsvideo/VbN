@@ -256,8 +256,19 @@ include 'includes/connect.php';
             <div class="tab-content active" id="basicTab">
                 <div class="tab-card">
                     <div class="card-header">
-                        <h2 class="card-title">Basic Information</h2>
-                        <p class="card-subtitle">Essential character details and background</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                            <div>
+                                <h2 class="card-title">Basic Information</h2>
+                                <p class="card-subtitle">Essential character details and background</p>
+                            </div>
+                            <div class="form-group" style="margin: 0; min-width: 200px;">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="pc" name="pc" checked>
+                                    <label for="pc" style="margin: 0;">Player Character (PC)</label>
+                                </div>
+                                <div class="helper-text">Uncheck if this is an NPC</div>
+                            </div>
+                        </div>
                     </div>
                 
                 <div class="form-row">
@@ -407,13 +418,6 @@ include 'includes/connect.php';
                     <div class="helper-text">Name of vampire who embraced this character</div>
                 </div>
                 
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="pc" name="pc" checked>
-                        <label for="pc" style="margin: 0;">Player Character (PC)</label>
-                    </div>
-                    <div class="helper-text">Uncheck if this is an NPC</div>
-                </div>
                 
                 <!-- Health Levels & Willpower Display -->
                 <div class="form-group">
@@ -1898,6 +1902,113 @@ include 'includes/connect.php';
     
     <!-- Main Application -->
     <script src="js/modules/main.js"></script>
+    
+    <!-- Simple Save Button Handler -->
+    <script>
+        // Simple save function for testing
+        function saveCharacter(isFinalization = false) {
+            console.log('saveCharacter called with isFinalization:', isFinalization);
+            
+            // Show loading state
+            const saveButtons = document.querySelectorAll('.save-btn');
+            saveButtons.forEach(btn => {
+                btn.disabled = true;
+                btn.innerHTML = isFinalization ? '🎯 Finalizing...' : '💾 Saving...';
+            });
+            
+            // Collect form data
+            const formData = {
+                character_name: document.getElementById('characterName').value || '',
+                player_name: document.getElementById('playerName').value || '',
+                chronicle: document.getElementById('chronicle').value || 'Valley by Night',
+                nature: document.getElementById('nature').value || '',
+                demeanor: document.getElementById('demeanor').value || '',
+                concept: document.getElementById('concept').value || '',
+                clan: document.getElementById('clan').value || '',
+                generation: parseInt(document.getElementById('generation').value) || 13,
+                sire: document.getElementById('sire').value || '',
+                pc: document.getElementById('pc').checked ? 1 : 0,
+                biography: '', // Field doesn't exist in basic tab
+                equipment: '', // Field doesn't exist in basic tab
+                total_xp: 30, // Default value
+                spent_xp: 0, // Default value
+                traits: {},
+                negativeTraits: {},
+                abilities: [],
+                disciplines: [],
+                backgrounds: {},
+                backgroundDetails: {},
+                merits_flaws: [],
+                morality: {
+                    path_name: 'Humanity',
+                    path_rating: 7,
+                    conscience: 1,
+                    self_control: 1,
+                    courage: 1,
+                    willpower_permanent: 5,
+                    willpower_current: 5,
+                    humanity: 7
+                },
+                status: {}
+            };
+            
+            console.log('Sending data:', formData);
+            
+            fetch('test_remote_file.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.text();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                try {
+                    const jsonData = JSON.parse(data);
+                    if (jsonData.success) {
+                        alert('✅ Character saved successfully! Character ID: ' + jsonData.character_id);
+                    } else {
+                        alert('❌ Save failed: ' + jsonData.message);
+                    }
+                } catch (e) {
+                    console.error('Invalid JSON response:', data);
+                    alert('❌ Invalid response from server: ' + data.substring(0, 200));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('❌ Error: ' + error.message);
+            })
+            .finally(() => {
+                // Reset button state
+                saveButtons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.innerHTML = isFinalization ? '🎯 Finalize Character' : '💾 Save Character';
+                });
+            });
+        }
+        
+        // Add event listeners when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Setting up save button listeners...');
+            
+            // Add click listeners to all save buttons
+            const saveButtons = document.querySelectorAll('.save-btn');
+            console.log('Found save buttons:', saveButtons.length);
+            
+            saveButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Save button clicked!');
+                    saveCharacter();
+                });
+            });
+        });
+    </script>
     
     <!-- Working Discipline System from Yesterday -->
     <script>

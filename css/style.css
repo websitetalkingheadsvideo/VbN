@@ -4113,7 +4113,7 @@ select {
 
 /* Willpower specific styling */
 #willpowerProgress {
-    background: linear-gradient(90deg, #8B0000, #DC143C, #B22222); /* Red for willpower */
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6, #60a5fa); /* Blue for willpower */
 }
 
 /* Mobile Responsive for Health & Willpower Display */

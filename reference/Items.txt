@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "name": "Katana",
+      "type": "Weapon",
+      "category": "Melee",
+      "damage": "2",
+      "range": "Melee",
+      "requirements": {
+        "strength": 2,
+        "dexterity": 3
+      },
+      "description": "A traditional Japanese sword known for its sharpness and cutting ability.",
+      "rarity": "Common",
+      "price": 500,
+      "image": "katana.png"
+    },
+    {
+      "name": "Kevlar Vest",
+      "type": "Armor",
+      "category": "Body",
+      "defense": "3",
+      "requirements": {
+        "strength": 1
+      },
+      "description": "Lightweight armor offering moderate protection against ballistic threats.",
+      "rarity": "Uncommon",
+      "price": 800,
+      "image": "kevlar_vest.png"
+    },
+    {
+      "name": "Black Sedan",
+      "type": "Vehicle",
+      "category": "Land",
+      "speed": "120 km/h",
+      "capacity": "4",
+      "fuel_efficiency": "15 km/l",
+      "description": "A standard four-door sedan suitable for city travel.",
+      "rarity": "Common",
+      "price": 20000,
+      "image": "black_sedan.png"
+    }
+  ]
+}

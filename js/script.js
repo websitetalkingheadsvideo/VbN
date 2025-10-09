@@ -233,7 +233,7 @@ function saveCharacter(isFinalization = false) {
     
     // Send data to PHP save script
     console.log('Sending data:', formData);
-    fetch('test_simple_insert.php', {
+    fetch('save_character.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
