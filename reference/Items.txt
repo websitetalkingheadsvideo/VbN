@@ -42,3 +42,20 @@
     }
   ]
 }
+
+
+{
+  "name": "Ball of Truth",
+  "type": "Magical Artifact",
+  "category": "Detection/Information",
+  "damage": "N/A",
+  "range": "Conversation range (holder must be able to hear speaker)",
+  "requirements": {
+    "Mental": 3
+  },
+  "description": "A polished marble created by a locally famous New York magician in the early 1960s. When held, it detects direct lies spoken by anyone with lower mental attributes than the holder. The ball emits a distinctive metallic ringing sound when a lie is detected. Only usable once every 24 hours. The holder must be actively holding the ball and able to hear the speaker for it to function. Does not detect lies of omission or misdirection, only direct falsehoods. Currently owned by James Whitmore, who often plays with it as an affectation when bored.",
+  "rarity": "rare",
+  "price": 50000,
+  "image": ""
+}
+

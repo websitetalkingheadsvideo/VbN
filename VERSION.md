@@ -1,6 +1,73 @@
 # LOTN Character Creator - Version History
 
-## Version 0.3.0 (Current)
+## Version 0.4.0 (Current)
+**Date:** January 11, 2025
+
+### Character JSON Import System:
+- ✅ **Database Migration System** - Comprehensive SQL migration for character import support
+- ✅ **Blood Magic Path Support** - parent_discipline field enables Thaumaturgy/Necromancy paths as individual disciplines
+- ✅ **Abilities Master Table** - Centralized ability definitions with categories (Physical, Social, Mental, Optional)
+- ✅ **Multiple Specializations** - character_ability_specializations table tracks multiple specs per ability with bonus tracking
+- ✅ **Enhanced Character Schema** - Added notes, custom_data JSON, total_xp, spent_xp fields
+- ✅ **Merit/Flaw Categories** - Added category field (Physical, Social, Mental, Supernatural)
+- ✅ **Ritual System** - Enhanced with is_custom flag and rituals_master validation table
+- ✅ **Character Import Script** - PHP script transforms JSON to database format with all special cases handled
+- ✅ **Import Verification** - Beautiful HTML verification page to review imported character data
+- ✅ **3 Tremere NPCs Imported** - Andrei Radulescu, Dr. Margaret Ashford, James Whitmore
+
+### Import System Features:
+- **JSON to Database** - Complete transformation handling for complex character data
+- **Blood Magic Paths** - Treats Thaumaturgy paths (Path of Blood, Dehydrate Path, etc.) as separate disciplines
+- **Specialization Tracking** - Handles multiple specializations per ability with +1 bonus calculation
+- **Ritual Parsing** - Extracts level from ritual names, flags custom rituals, defaults to "unknown"
+- **Custom Data Storage** - JSON field for research notes, discipline notes, artifacts, and character-specific data
+- **Trait Duplication** - Properly stores duplicate traits (e.g., "Intelligent x2")
+- **Generation Calculations** - Auto-calculates blood pool max and blood per turn from generation
+- **Transaction Safety** - All imports use transactions with rollback on error
+
+### Database Enhancements:
+- disciplines.parent_discipline (Thaumaturgy/Necromancy path system)
+- abilities_master (35+ abilities with categories)
+- character_ability_specializations (multiple specs tracking)
+- characters.notes (ST/gameplay notes separate from biography)
+- characters.custom_data (JSON for flexible character data)
+- characters.total_xp, characters.spent_xp (experience tracking)
+- character_traits.trait_category, trait_type (proper categorization)
+- character_abilities.level (ability dot tracking)
+- character_merits_flaws.category, point_value (categorization and point tracking)
+- character_rituals.is_custom (custom ritual flagging)
+- character_status.health_levels, blood_pool_current, blood_pool_maximum (status tracking)
+- rituals_master (validation table for LoTN rituals)
+
+### Technical Improvements:
+- Created character_import_migration.sql (complete schema updates)
+- Created run_migration.php (safe migration runner with error handling)
+- Created import_andrei.php (test import for single character)
+- Created import_all_tremere.php (batch import for multiple characters)
+- Created verify_andrei.php (HTML verification with gothic styling)
+- Fixed character creation database compatibility issues
+
+### Files Created:
+- data/Tremere.json (3 Tremere NPCs: Andrei, Dr. Ashford, James Whitmore)
+- data/character_import_migration.sql (database migration)
+- data/run_migration.php (migration runner)
+- data/import_andrei.php (single character test import)
+- data/import_all_tremere.php (batch import script)
+- data/verify_andrei.php (beautiful HTML verification page)
+- data/ability specializations.md (specialization rules reference)
+
+### User Experience Improvements:
+- Character import now supports complex JSON data structures
+- Database properly handles Blood Magic path system
+- All character creation fields now have proper database support
+- Character verification with beautiful, readable HTML display
+- Ability display: "Occult x4: Desert-based magic (+1 bonus)" format
+- Rituals nested under Disciplines section
+- Merits and Flaws properly separated and categorized
+
+---
+
+## Version 0.3.0
 **Date:** January 8, 2025
 
 ### Chat System with Character Selection:

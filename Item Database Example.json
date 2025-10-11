@@ -1,0 +1,316 @@
+[
+  {
+    "name": "Victorian Four-Poster Bed",
+    "type": "Furniture",
+    "category": "Bed",
+    "description": "Dark mahogany bed with carved floral motifs. Burgundy velvet bedspread with protective charms sewn into corners.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Oak Writing Desk",
+    "type": "Furniture",
+    "category": "Desk",
+    "description": "Sturdy oak desk facing the window. Holds papers, ledgers, quills, ink bottles, magnifying glass, and brass serpent-shaped letter opener.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Tiffany Desk Lamp",
+    "type": "Lighting",
+    "category": "Lamp",
+    "description": "Amber stained glass lamp providing warm light over the desk. Functional yet slightly anachronistic.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Bookshelves",
+    "type": "Furniture",
+    "category": "Storage",
+    "description": "Floor-to-ceiling shelves with Victorian tomes, grimoires, European warding manuals, and indigenous magical studies.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Armchair",
+    "type": "Furniture",
+    "category": "Seating",
+    "description": "Victorian armchair with firm cushioning, placed near desk for reading.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Wooden Stool",
+    "type": "Furniture",
+    "category": "Seating",
+    "description": "Simple wooden stool for brief meditation or ritual setup.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Mirror with Protective Sigils",
+    "type": "Decor",
+    "category": "Mirror",
+    "description": "Ornate mirror etched with subtle protective sigils.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Passive",
+      "effect": "Detects minor scrying attempts within the room",
+      "duration": "Continuous while mirror is mounted"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Locked Cabinet of Thaumaturgical Reagents",
+    "type": "Storage",
+    "category": "Cabinet",
+    "description": "Contains protective oils, scrolls, and ritual materials. Unlocking sequence known only to Dr. Ashford.",
+    "rarity": "magical",
+    "mechanics": {
+      "security": "Requires knowledge of sequence or lockpicking",
+      "effect": "Contents maintain potency due to sealed wards"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Framed Family Portrait",
+    "type": "Decor",
+    "category": "Art",
+    "description": "Portrait of Margaret's Philadelphia family (1870s). Evokes measured nostalgia.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Persian-Style Rug",
+    "type": "Decor",
+    "category": "Rug",
+    "description": "Faded rug covering polished hardwood floor. Maintained meticulously.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Curtains with Protective Threads",
+    "type": "Decor",
+    "category": "Curtains",
+    "description": "Dark green curtains with subtle wards woven into the fabric.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Passive",
+      "effect": "Reduces magical detection or intrusion attempts through windows",
+      "duration": "Continuous while curtains are drawn"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Brass Bowl with Herbs",
+    "type": "Magical Tool",
+    "category": "Herbs",
+    "description": "Lavender and sage for calming and protective purposes. Subtle magical effect.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Passive",
+      "effect": "Slight protection against minor psychic or fae influence",
+      "duration": "Continuous while herbs are present"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Small Horse Figurine",
+    "type": "Decor",
+    "category": "Figurine",
+    "description": "Carved figurine representing Aonbharr, placed near window sill unconsciously by Dr. Ashford.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Cork Panel for Research Notes",
+    "type": "Tool",
+    "category": "Organization",
+    "description": "Small cork panel on bookshelves to pin maps, notes, and temporary research reminders.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Desk Bell",
+    "type": "Tool",
+    "category": "Communication",
+    "description": "Used to summon Aonbharr’s caretaker. Brass, small, functional.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Protective Chalk Wards",
+    "type": "Magical Tool",
+    "category": "Ward",
+    "description": "Faint wards drawn around corners to protect against intrusion or observation.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Passive",
+      "effect": "Minor anti-scrying and intrusion protection",
+      "duration": "Continuous while room maintained"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Ink Sigils",
+    "type": "Magical Tool",
+    "category": "Ward",
+    "description": "Drawn near desk and bed using ink; subtle but effective protection.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Passive",
+      "effect": "Enhances personal protection spells within room",
+      "duration": "Continuous while ink remains intact"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Seiko QX Series Alarm Clock",
+    "type": "Timekeeping",
+    "category": "Alarm Clock",
+    "description": "Compact Seiko analog alarm clock used to keep track of research schedules and personal appointments.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Sony Quartz Digital Desk Clock",
+    "type": "Timekeeping",
+    "category": "Desk Clock",
+    "description": "Small Sony digital desk clock with LCD display, backlight, and precision quartz movement. Placed on writing desk to monitor work sessions.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Sharp EL-506T Calculator",
+    "type": "Tool",
+    "category": "Calculator",
+    "description": "Mid-90s desktop calculator for arithmetic, formula work, and magical calculations. Practical and efficient for a scholar.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Brass Candlestick with Beeswax Candle",
+    "type": "Magical Tool",
+    "category": "Candle",
+    "description": "Tall brass candlestick holding an unscented beeswax candle. Used in protective rituals and warding exercises.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Manual",
+      "effect": "Focus for minor warding rituals",
+      "duration": "Until candle burns out"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Leather-Bound Grimoire of European Warding",
+    "type": "Book",
+    "category": "Magical Text",
+    "description": "A well-worn grimoire containing centuries-old European protective spells and sigils.",
+    "rarity": "magical",
+    "mechanics": {
+      "use_time": "Varies by ritual",
+      "effect": "Provides +1 to Ward rolls when used as reference"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Loose Parchment Scrolls",
+    "type": "Tool",
+    "category": "Research Material",
+    "description": "Bundles of parchment with marginal notes, diagrams, and incomplete rituals.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Brass Mortar and Pestle",
+    "type": "Tool",
+    "category": "Magical Preparation",
+    "description": "Used to grind herbs, powders, and resins for ritual purposes. Functional and well-maintained.",
+    "rarity": "mundane",
+    "mechanics": {
+      "use_time": "5 minutes per preparation",
+      "roll": "Mental + Dexterity (Difficulty 2) to produce correct consistency"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Glass Vials of Protective Oils",
+    "type": "Magical Tool",
+    "category": "Reagent",
+    "description": "Small glass vials containing oils for wards, anti-scrying, and other protective spells.",
+    "rarity": "magical",
+    "mechanics": {
+      "activation": "Manual",
+      "effect": "Enhances protective spells cast using oil",
+      "duration": "Varies by spell"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Quill Pen Set",
+    "type": "Tool",
+    "category": "Writing",
+    "description": "Set of unused and used quill pens, ink wells, and blotting paper for meticulous research notes and spell diagrams.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Phoenix City Map (1995 Edition)",
+    "type": "Tool",
+    "category": "Map",
+    "description": "Folded street map of Phoenix from 1995, used for research, exploration, and magical geography studies.",
+    "rarity": "mundane",
+    "mechanics": {
+      "roll": "Perception + Mental (Difficulty 1) to identify locations or routes"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Small Wooden Ritual Table",
+    "type": "Furniture",
+    "category": "Table",
+    "description": "Compact table near the desk for laying out ritual components and spell diagrams.",
+    "rarity": "mundane",
+    "mechanics": {},
+    "notes": ""
+  },
+  {
+    "name": "Magnifying Glass on Stand",
+    "type": "Tool",
+    "category": "Observation",
+    "description": "Used to examine fine details in texts, sigils, and ritual diagrams.",
+    "rarity": "mundane",
+    "mechanics": {
+      "roll": "Perception + Mental (Difficulty 1) to detect hidden details"
+    },
+    "notes": ""
+  },
+  {
+    "name": "Small Brass Hourglass",
+    "type": "Timekeeping",
+    "category": "Hourglass",
+    "description": "Decorative yet functional hourglass measuring 30 minutes. Used to time rituals or meditation sessions.",
+    "rarity": "mundane",
+    "mechanics": {
+      "use_time": "30 minutes per turn of sand",
+      "effect": "Provides a visual measure for timed rituals or breaks"
+    },
+    "notes": ""
+  }
+]
