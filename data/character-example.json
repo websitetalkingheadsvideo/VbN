@@ -1,0 +1,128 @@
+{
+  "character_name": "Example Character Name",
+  "player_name": "Player Name or ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Survivor",
+  "demeanor": "Conformist",
+  "concept": "Brief character concept description",
+  "clan": "Tremere",
+  "generation": 12,
+  "sire": "Name of sire or Unknown",
+  "pc": 0,
+  "biography": "Character backstory and history. Include where they're from, how they were Embraced, major life events, current situation, relationships, etc.",
+  "equipment": "List of equipment and notable possessions",
+  
+  "traits": {
+    "Physical": ["Quick", "Nimble", "Alert"],
+    "Social": ["Charismatic", "Diplomatic"],
+    "Mental": ["Intelligent", "Clever", "Observant", "Studious"]
+  },
+  
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Awkward"],
+    "Mental": []
+  },
+  
+  "abilities": [
+    {"name": "Occult", "category": "Mental", "level": 4},
+    {"name": "Academics", "category": "Mental", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Stealth", "category": "Physical", "level": 2},
+    {"name": "Subterfuge", "category": "Social", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 3}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Thaumaturgy",
+      "path": "Path of Blood",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "A Taste for Blood"},
+        {"level": 2, "power": "Blood Rage"}
+      ]
+    },
+    {
+      "name": "Auspex",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"}
+      ]
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 1,
+    "Resources": 2,
+    "Mentor": 2,
+    "Status": 1,
+    "Contacts": 0,
+    "Allies": 0,
+    "Herd": 0,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0
+  },
+  
+  "backgroundDetails": {
+    "Resources": "Description of resource level",
+    "Mentor": "Name and description of mentor",
+    "Status": "Description of status within sect/clan/city"
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Natural Linguist",
+      "type": "merit",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Learns languages easily"
+    },
+    {
+      "name": "Inferiority Complex",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Feels need to constantly prove worth"
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 11,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc."
+  },
+  
+  "rituals": [
+    "Communicate with Sire (Level 1)",
+    "Deflection of Wooden Doom (Level 2)",
+    "Custom Ritual Name (Level 3 - Custom)"
+  ],
+  
+  "specializations": {
+    "Occult": "Specific area of expertise",
+    "Academics": "Specific academic field"
+  },
+  
+  "research_notes": {
+    "custom_field_name": "Any character-specific data that doesn't fit elsewhere. This entire object is optional."
+  }
+}
+
