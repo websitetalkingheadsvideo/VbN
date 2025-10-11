@@ -1,0 +1,372 @@
+[
+  {
+    "name": "Blood-Tinted Amulet",
+    "type": "Magical Artifact",
+    "category": "Protection",
+    "damage": "N/A",
+    "range": "Self",
+    "requirements": { "Occult": 2 },
+    "description": "A small copper amulet filled with dried blood. Grants +1 to defense against minor supernatural attacks once per scene.",
+    "rarity": "uncommon",
+    "price": 300,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "activation": "Instant; worn around neck",
+      "use_limit": "Once per scene",
+      "roll": "Occult roll (Difficulty 2) to focus protective energy",
+      "side_effects": "Mild dizziness if used more than once in 24 hours",
+      "detection": "Emits faint metallic ringing detectable by sensitive supernatural senses"
+    }
+  },
+  {
+    "name": "Cactus Thorn Dagger",
+    "type": "Weapon",
+    "category": "Melee",
+    "damage": "1 lethal",
+    "range": "Close",
+    "requirements": { "Physical": 2 },
+    "description": "A thin dagger tipped with a preserved desert cactus thorn, lightly enchanted to cause extra discomfort. +1 to intimidation checks when used.",
+    "rarity": "common",
+    "price": 80,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "attack_roll": "Brawl + Physical (Difficulty 2)",
+      "side_effects": "Fragile; breaks on heavy strikes",
+      "intimidation_bonus": "+1 Social roll when drawn threateningly",
+      "single_use": "Thorn loses enchantment after one lethal hit"
+    }
+  },
+  {
+    "name": "Desert Sand Pouch",
+    "type": "Magical Tool",
+    "category": "Detection/Tracking",
+    "damage": "N/A",
+    "range": "5 feet",
+    "requirements": { "Mental": 2, "Occult": 1 },
+    "description": "A small cloth pouch of sand from a sacred desert site. When spread, highlights recent foot or hand prints and faint magical traces.",
+    "rarity": "uncommon",
+    "price": 120,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "30 seconds to spread sand",
+      "detection_roll": "Occult + Mental (Difficulty 2) to detect traces",
+      "limited_use": "Twice per scene before needing recharge",
+      "environmental_risk": "Ineffective in rain or humidity",
+      "optional": "Occult roll (Difficulty 3) to track magical signatures"
+    }
+  },
+  {
+    "name": "Silver Mirror Shard",
+    "type": "Magical Artifact",
+    "category": "Detection",
+    "damage": "N/A",
+    "range": "Personal sight",
+    "requirements": { "Occult": 2 },
+    "description": "A broken shard from a ceremonial silver mirror. Can reveal illusions or disguised creatures when held up to the eye.",
+    "rarity": "rare",
+    "price": 450,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "activation": "Hold up to eye, takes 10 seconds",
+      "roll": "Occult + Mental (Difficulty 3) to detect illusions",
+      "use_limit": "One detection per scene",
+      "risk": "Reflects minor harmful spells back to holder on failed roll",
+      "detection": "Emits faint glimmer detectable by other magics"
+    }
+  },
+  {
+    "name": "Vial of Desert Night",
+    "type": "Magical Potion",
+    "category": "Stealth",
+    "damage": "N/A",
+    "range": "Self",
+    "requirements": { "Occult": 1 },
+    "description": "A tiny vial of dark liquid that dims shadows around the user. +1 to Stealth rolls at night.",
+    "rarity": "uncommon",
+    "price": 200,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "5 seconds to apply",
+      "roll": "Occult + Physical (Difficulty 2) to activate",
+      "duration": "1 hour or one scene",
+      "side_effects": "Minor dizziness (Mental roll Difficulty 1 to ignore)",
+      "detection": "Faint dark shimmer; Perception + Mental (Difficulty 3) to notice"
+    }
+  },
+  {
+    "name": "Burned Tarot Card",
+    "type": "Magical Tool",
+    "category": "Divination",
+    "damage": "N/A",
+    "range": "Personal",
+    "requirements": { "Occult": 2 },
+    "description": "A scorched card from an old tarot deck. Provides +1 bonus to mental rolls seeking insight about the future.",
+    "rarity": "rare",
+    "price": 150,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "30 seconds for reading",
+      "roll": "Occult + Mental (Difficulty 2)",
+      "single_use": "Once per scene",
+      "risk": "Card destroyed after reading",
+      "detection": "Burned scent detectable by sensitive NPCs"
+    }
+  },
+  {
+    "name": "Ashes of the Fallen",
+    "type": "Magical Material",
+    "category": "Ritual",
+    "damage": "N/A",
+    "range": "Touch",
+    "requirements": { "Occult": 3 },
+    "description": "A small vial of ashes from a ritual pyre. Enhances Blood Magic or minor rituals, adding +1 to Occult tests.",
+    "rarity": "rare",
+    "price": 350,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "1 minute to incorporate into ritual",
+      "roll": "Occult + Mental (Difficulty 3) for bonus",
+      "risk": "Toxic if inhaled (Physical roll Difficulty 2 to resist injury)",
+      "duration": "Bonus lasts one scene"
+    }
+  },
+  {
+    "name": "Cracked Obsidian Coin",
+    "type": "Magical Token",
+    "category": "Influence",
+    "damage": "N/A",
+    "range": "Personal touch",
+    "requirements": { "Occult": 1 },
+    "description": "A small coin etched with runes. Grants temporary sway in minor negotiations (+1 Social) once per encounter.",
+    "rarity": "uncommon",
+    "price": 100,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "Instant",
+      "roll": "Occult + Social (Difficulty 2)",
+      "limit": "Once per encounter",
+      "detection": "Coin emits faint magical aura detectable by Occult rolls (Difficulty 3)"
+    }
+  },
+  {
+    "name": "Charred Bone Charm",
+    "type": "Magical Artifact",
+    "category": "Protection",
+    "damage": "N/A",
+    "range": "Self",
+    "requirements": { "Occult": 2 },
+    "description": "A small bone burned in a protective ritual. +1 to defense against one supernatural effect per scene.",
+    "rarity": "uncommon",
+    "price": 180,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "activation": "Instant; worn",
+      "use_limit": "One defense per scene",
+      "roll": "Occult + Mental (Difficulty 2) to activate",
+      "recharge": "Weekly fire ritual required"
+    }
+  },
+  {
+    "name": "Vine-Wrapped Staff",
+    "type": "Weapon",
+    "category": "Melee/Occult",
+    "damage": "2 bashing",
+    "range": "Close",
+    "requirements": { "Physical": 2, "Occult": 1 },
+    "description": "Short wooden staff wrapped with thorny vines. Grants +1 to Occult or Brawl challenges when performing a ritual or intimidating enemies.",
+    "rarity": "common",
+    "price": 120,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "attack_roll": "Brawl + Physical (Difficulty 2)",
+      "ritual_roll": "Occult + Mental (Difficulty 2)",
+      "side_effects": "Thorns may injure user if misused",
+      "single_use": "Bonus once per scene"
+    }
+  },
+  {
+    "name": "Moonlit Candle",
+    "type": "Magical Tool",
+    "category": "Ritual",
+    "damage": "N/A",
+    "range": "Personal",
+    "requirements": { "Occult": 1 },
+    "description": "White candle infused with moonlit oil. Enhances meditation and minor spellcasting, granting +1 Mental rolls during rituals.",
+    "rarity": "common",
+    "price": 25,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "10 seconds to light",
+      "roll": "Occult + Mental (Difficulty 1) for bonus",
+      "duration": "1 ritual or scene",
+      "side_effects": "Extinguishes in wind; must be re-lit for reuse"
+    }
+  },
+  {
+    "name": "Chalk Sigil Set",
+    "type": "Magical Tool",
+    "category": "Ritual",
+    "damage": "N/A",
+    "range": "Ground area",
+    "requirements": { "Occult": 2 },
+    "description": "Colored chalks for drawing protective or binding sigils. Provides +1 to Security or Occult checks when properly applied.",
+    "rarity": "common",
+    "price": 40,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "1 minute per sigil",
+      "roll": "Occult + Mental (Difficulty 2) for proper effect",
+      "duration": "Sigils fade after 24 hours",
+      "optional": "Security roll (Difficulty 2) for trap or ward effectiveness"
+    }
+  },
+  {
+    "name": "Rusted Iron Necklace",
+    "type": "Magical Artifact",
+    "category": "Protection/Curse",
+    "damage": "N/A",
+    "range": "Self",
+    "requirements": { "Occult": 2 },
+    "description": "Old iron necklace imbued with warding rituals. Protects wearer from minor curses (+1 Occult defense).",
+    "rarity": "uncommon",
+    "price": 90,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "activation": "Instant; worn",
+      "roll": "Occult + Mental (Difficulty 2)",
+      "limit": "One curse negation per scene",
+      "risk": "Loses effect if wet or exposed to water"
+    }
+  },
+  {
+    "name": "Smoked Glass Vial",
+    "type": "Magical Material",
+    "category": "Alchemy",
+    "damage": "N/A",
+    "range": "Personal",
+    "requirements": { "Occult": 2 },
+    "description": "Contains rare desert herbs and crushed minerals. Can brew potions granting temporary bonuses to Stealth or Investigation.",
+    "rarity": "uncommon",
+    "price": 150,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "2 minutes per potion",
+      "roll": "Occult + Mental (Difficulty 2) to brew successfully",
+      "duration": "Potion effect lasts one scene",
+      "side_effects": "Failed roll may cause mild dizziness or nausea"
+    }
+  },
+  {
+    "name": "Sigil Tattoo Kit",
+    "type": "Magical Tool",
+    "category": "Ritual",
+    "damage": "N/A",
+    "range": "Skin",
+    "requirements": { "Occult": 2 },
+    "description": "Temporary tattoo ink and stencils. Tattoos grant minor bonuses (+1) to a single Attribute or Ability for 24 hours.",
+    "rarity": "rare",
+    "price": 250,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "10 minutes to apply",
+      "roll": "Occult + Physical (Difficulty 3) for proper effect",
+      "duration": "24 hours",
+      "side_effects": "Misapplication may cause skin irritation (-1 Physical)"
+    }
+  },
+  {
+    "name": "Nightshade Oil",
+    "type": "Magical Material",
+    "category": "Poison",
+    "damage": "1 lethal",
+    "range": "Touch",
+    "requirements": { "Occult": 1 },
+    "description": "A dark oil extracted from toxic plants. Can coat a blade or surface; causes 1 lethal damage if successfully applied. The oil is potent but delicate, requiring careful handling to avoid accidental exposure.",
+    "rarity": "rare",
+    "price": 200,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "application_time": "1 minute to coat weapon or surface",
+      "resistance": "Target may roll Physical or Resistance (Difficulty 2) to reduce damage by 1 level",
+      "detection": "Faint bitter odor; Perception roll (Difficulty 3) to notice",
+      "handling": "Occult roll (Difficulty 2) to safely apply; failure causes minor injury (1 bashing)",
+      "single_use": "Oil loses potency after one attack or 1 hour"
+    }
+  },
+  {
+    "name": "Katana",
+    "type": "Weapon",
+    "category": "Melee",
+    "damage": "3 lethal",
+    "range": "Close",
+    "requirements": { "Physical": 3 },
+    "description": "A finely forged Japanese katana. Lightweight and razor-sharp, ideal for skilled combatants.",
+    "rarity": "rare",
+    "price": 1200,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "attack_roll": "Brawl + Physical (Difficulty 3)",
+      "parry_bonus": "+1 to defense if using appropriate martial stance",
+      "use_time": "Instant to draw and strike",
+      "risk": "Requires proper training; unskilled use may cause self-injury (1 bashing)",
+      "durability": "Can withstand 10 combat uses before dulling; requires maintenance to keep sharp"
+    }
+  },
+  {
+    "name": "Moonstone Charm",
+    "type": "Magical Artifact",
+    "category": "Illumination/Detection",
+    "damage": "N/A",
+    "range": "Self/10 feet",
+    "requirements": { "Occult": 1 },
+    "description": "A small moonstone carved into a crescent. Glows faintly in darkness and can reveal hidden magical auras.",
+    "rarity": "uncommon",
+    "price": 250,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "activation": "Hold or wear; glow activates instantly in darkness",
+      "roll": "Occult + Mental (Difficulty 2) to detect magical auras within 10 feet",
+      "duration": "Glows for 1 hour per activation",
+      "side_effects": "Minor eye strain if used repeatedly in dark scenes",
+      "use_limit": "Twice per scene"
+    }
+  },
+  {
+    "name": "Silver Oak Leaf Pendant",
+    "type": "Magical Artifact",
+    "category": "Protection/Influence",
+    "damage": "N/A",
+    "range": "Self/Personal touch",
+    "requirements": { "Occult": 2 },
+    "description": "A pendant shaped like an oak leaf, made of silver. Provides minor protection against supernatural attacks and can slightly influence nature spirits.",
+    "rarity": "rare",
+    "price": 400,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "activation": "Worn around neck; protection is passive",
+      "roll": "Occult + Mental (Difficulty 2) to influence minor nature spirits",
+      "use_limit": "Protection +1 once per scene; spirit influence once per scene",
+      "side_effects": "Wearing in polluted or urban environments reduces effectiveness (-1 to rolls)",
+      "duration": "Effects last one scene per activation"
+    }
+  }
+]

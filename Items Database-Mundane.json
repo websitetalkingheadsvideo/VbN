@@ -1,0 +1,183 @@
+[
+  {
+    "name": "Walther PPK",
+    "type": "Weapon",
+    "category": "Firearm",
+    "damage": "2 lethal",
+    "range": "25 feet",
+    "requirements": { "Firearms": 2 },
+    "description": "Compact semi-automatic pistol popular for concealed carry in the mid-90s.",
+    "rarity": "common",
+    "price": 450,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "attack_roll": "Firearms + Physical (Difficulty 2)",
+      "ammo": "7 rounds per magazine",
+      "reload_time": "25 seconds",
+      "malfunction": "1 in 25 chance per shot"
+    }
+  },
+  {
+    "name": "Remington 870 Police Magnum",
+    "type": "Weapon",
+    "category": "Firearm",
+    "damage": "4 lethal",
+    "range": "20 feet",
+    "requirements": { "Firearms": 2 },
+    "description": "Heavier police-style pump-action shotgun used in 1995, effective for close quarters.",
+    "rarity": "common",
+    "price": 750,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "attack_roll": "Firearms + Physical (Difficulty 3)",
+      "ammo": "6 shells per load",
+      "reload_time": "1 minute",
+      "spread": "Hits all targets in 6-foot cone",
+      "malfunction": "1 in 15 chance per shot"
+    }
+  },
+  {
+    "name": "Aluminum Flashlight (Maglite C Cell)",
+    "type": "Tool",
+    "category": "Lighting",
+    "damage": "N/A",
+    "range": "60 feet",
+    "requirements": { "None": 0 },
+    "description": "Durable C-cell Maglite flashlight from the 90s, used by law enforcement and civilians.",
+    "rarity": "common",
+    "price": 35,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "Instant",
+      "battery": "Lasts 8 hours",
+      "roll": "Perception + Mental (Difficulty 1) to see clearly in dark area"
+    }
+  },
+  {
+    "name": "Motorola Walkie-Talkie (MT1000)",
+    "type": "Communication",
+    "category": "Radio",
+    "damage": "N/A",
+    "range": "1 mile",
+    "requirements": { "Electronics": 1 },
+    "description": "Classic mid-90s portable two-way radio for short-range communication.",
+    "rarity": "common",
+    "price": 120,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "Instant",
+      "range_check": "Electronics + Mental (Difficulty 1) for weak signal areas",
+      "battery": "Lasts 6 hours"
+    }
+  },
+  {
+    "name": "Nylon Handcuffs (Smith & Wesson)",
+    "type": "Tool",
+    "category": "Restraint",
+    "damage": "N/A",
+    "range": "Touch",
+    "requirements": { "Physical": 1 },
+    "description": "Durable nylon handcuffs used by police and security in 1995.",
+    "rarity": "common",
+    "price": 20,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "10 seconds to secure target",
+      "roll": "Strength + Physical (Difficulty 2) to apply to resisting target",
+      "release_time": "Instant if key available"
+    }
+  },
+  {
+    "name": "Pepper Spray (Sabre Red 1995)",
+    "type": "Weapon/Tool",
+    "category": "Chemical",
+    "damage": "1 bashing",
+    "range": "10 feet",
+    "requirements": { "Physical": 1 },
+    "description": "1995-model small pepper spray canister for self-defense. Causes temporary blindness and irritation.",
+    "rarity": "common",
+    "price": 15,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "attack_roll": "Physical + Dexterity (Difficulty 2) to hit target",
+      "duration": "Target blinded for 1 minute unless resists",
+      "resistance_roll": "Physical + Mental (Difficulty 3) to reduce effect"
+    }
+  },
+  {
+    "name": "Canvas Backpack (JanSport 1995)",
+    "type": "Tool",
+    "category": "Container",
+    "damage": "N/A",
+    "range": "Self",
+    "requirements": { "None": 0 },
+    "description": "Durable 1995-era JanSport backpack for carrying personal items or gear.",
+    "rarity": "common",
+    "price": 40,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "capacity": "Can hold 10 small items or weapons",
+      "weight_penalty": "-1 Physical if fully loaded"
+    }
+  },
+  {
+    "name": "Smith & Wesson Speedloader",
+    "type": "Tool",
+    "category": "Firearm Accessory",
+    "damage": "N/A",
+    "range": "N/A",
+    "requirements": { "Firearms": 1 },
+    "description": "Speedloader for revolvers, allowing quick reloading during 1995-era combat.",
+    "rarity": "common",
+    "price": 30,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "reload_time": "10 seconds to fully reload revolver",
+      "roll": "Firearms + Dexterity (Difficulty 2) for smooth operation"
+    }
+  },
+  {
+    "name": "Kodak Advantix Camera",
+    "type": "Tool",
+    "category": "Observation/Documentation",
+    "damage": "N/A",
+    "range": "10-50 feet",
+    "requirements": { "Perception": 1 },
+    "description": "1995 mid-range disposable film camera, suitable for taking photos of scenes or targets.",
+    "rarity": "common",
+    "price": 20,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "Instant to snap photo",
+      "roll": "Perception + Mental (Difficulty 1) for clear photo",
+      "film_limit": "24 exposures per camera"
+    }
+  },
+  {
+    "name": "Extra Ammo (9mm and 12 Gauge)",
+    "type": "Ammunition",
+    "category": "Firearm",
+    "damage": "N/A",
+    "range": "N/A",
+    "requirements": { "Firearms": 1 },
+    "description": "Loose rounds for pistols and shotguns, common in 1995 Phoenix.",
+    "rarity": "common",
+    "price": 50,
+    "image": "",
+    "notes": "",
+    "mechanics": {
+      "use_time": "Instant to reload",
+      "quantity": "Pack contains 20 rounds of 9mm or 5 shells of 12 gauge",
+      "weight_penalty": "-1 Physical if carrying more than 3 packs"
+    }
+  }
+]

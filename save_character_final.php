@@ -124,6 +124,27 @@ try {
     $character_id = mysqli_insert_id($conn);
     mysqli_stmt_close($stmt);
     
+    // Save equipment if provided
+    if (isset($data['equipment']) && is_array($data['equipment'])) {
+        $equipment_sql = "INSERT INTO character_equipment (character_id, item_id, quantity, equipped, custom_notes) 
+                         VALUES (?, ?, ?, ?, ?)";
+        $equip_stmt = mysqli_prepare($conn, $equipment_sql);
+        
+        foreach ($data['equipment'] as $item) {
+            $item_id = (int)($item['item_id'] ?? 0);
+            $quantity = (int)($item['quantity'] ?? 1);
+            $equipped = (int)($item['equipped'] ?? 0);
+            $custom_notes = trim($item['custom_notes'] ?? '');
+            
+            if ($item_id > 0) {
+                mysqli_stmt_bind_param($equip_stmt, 'iiiis', 
+                    $character_id, $item_id, $quantity, $equipped, $custom_notes);
+                mysqli_stmt_execute($equip_stmt);
+            }
+        }
+        mysqli_stmt_close($equip_stmt);
+    }
+    
     echo json_encode([
         'success' => true, 
         'message' => 'Character saved successfully!',
