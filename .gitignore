@@ -24,6 +24,7 @@ desktop.ini
 
 # Sensitive files
 .env
+config.env
 config.php
 *.key
 *.pem
@@ -55,3 +56,4 @@ npm-debug.log*
 
 # Cursor IDE
 .cursor/
+sync_config.jsonc
