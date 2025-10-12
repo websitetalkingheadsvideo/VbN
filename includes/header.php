@@ -27,8 +27,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley by Night - A Vampire Tale</title>
-    <link rel="stylesheet" href="css/style_reorganized_structure.css">
-    <link rel="stylesheet" href="css/header.css">
+    <?php
+    // Determine if we're in a subdirectory
+    $current_dir = dirname($_SERVER['PHP_SELF']);
+    $in_subfolder = ($current_dir !== '/' && $current_dir !== '' && basename($current_dir) !== basename($_SERVER['DOCUMENT_ROOT']));
+    $path_prefix = $in_subfolder ? '../' : '';
+    ?>
+    <link rel="stylesheet" href="<?php echo $path_prefix; ?>css/style_reorganized_structure.css">
+    <link rel="stylesheet" href="<?php echo $path_prefix; ?>css/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nosifer&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -63,7 +69,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
                 <div class="title-section">
                     <h1 class="site-title">
-                        <a href="index.php">Valley by Night</a>
+                        <a href="<?php echo $path_prefix; ?>index.php">Valley by Night</a>
                     </h1>
                     <p class="site-subtitle">A Vampire Tale</p>
                 </div>
@@ -74,6 +80,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="user-info">
                     <span class="user-label">Kindred:</span>
                     <span class="username"><?php echo htmlspecialchars($username); ?></span>
+                    <a href="<?php echo $path_prefix; ?>logout.php" class="logout-btn" title="Logout">Logout</a>
                 </div>
                 <div class="version-info">
                     <span class="version">v<?php echo htmlspecialchars($version); ?></span>

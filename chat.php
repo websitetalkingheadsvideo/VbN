@@ -3,7 +3,7 @@
  * Chat Room - Valley by Night
  * Character selection and chat interface
  */
-define('LOTN_VERSION', '0.5.0');
+define('LOTN_VERSION', '0.6.0');
 session_start();
 
 if (!isset($_SESSION['user_id'])) {

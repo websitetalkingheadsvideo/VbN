@@ -1,6 +1,39 @@
 # LOTN Character Creator - Version History
 
-## Version 0.5.0 (Current)
+## Version 0.6.0 (Current)
+**Date:** October 12, 2025
+
+### Admin Panel - Character Management System:
+- ✅ **Complete Admin Panel Rebuild** - Gothic themed character management interface
+- ✅ **Character List Table** - Displays all 26 characters with sortable columns
+- ✅ **Filter System** - Toggle between All/PCs/NPCs with active state styling
+- ✅ **Real-Time Search** - Instant character name filtering
+- ✅ **Pagination System** - 20/50/100 per page with page navigation
+- ✅ **Character Statistics** - Live counts for Total, PCs, NPCs
+- ✅ **Status Column** - Draft/Finalized/Active/Dead/Missing tracking
+- ✅ **View Modal** - Popup with Compact/Full toggle showing complete character details
+- ✅ **Edit Integration** - Links to character creator for editing
+- ✅ **Delete System** - Confirmation modal with CASCADE delete of all related data
+- ✅ **Universal Paths** - Header/footer links work from any subfolder
+
+### Files Created:
+```
+admin/
+  ├── admin_panel.php (rebuilt with gothic theme)
+  ├── view_character_api.php (loads character data)
+  └── delete_character_api.php (safe deletion with transactions)
+
+database/migrations/
+  └── add_character_status.sql (status ENUM field)
+```
+
+### Database Changes:
+- Added `status` ENUM column: 'draft', 'finalized', 'active', 'dead', 'missing'
+- Default value: 'draft'
+
+---
+
+## Version 0.5.0
 **Date:** October 12, 2025
 
 ### Home Page Rebuild - Gothic Dashboard System:

@@ -4,7 +4,13 @@
         <div class="footer-container">
             <div class="footer-content">
                 <p class="footer-title">
-                    <a href="index.php">Valley by Night</a>
+                    <?php
+                    // Use path prefix determined in header.php
+                    $current_dir = dirname($_SERVER['PHP_SELF']);
+                    $in_subfolder = ($current_dir !== '/' && $current_dir !== '' && basename($current_dir) !== basename($_SERVER['DOCUMENT_ROOT']));
+                    $path_prefix = $in_subfolder ? '../' : '';
+                    ?>
+                    <a href="<?php echo $path_prefix; ?>index.php">Valley by Night</a>
                 </p>
                 <p class="footer-tagline">A Vampire Tale</p>
             </div>

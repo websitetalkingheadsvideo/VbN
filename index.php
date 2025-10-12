@@ -5,7 +5,7 @@
  */
 
 // Define version constant
-define('LOTN_VERSION', '0.5.0');
+define('LOTN_VERSION', '0.6.0');
 
 // Start session
 session_start();
@@ -39,21 +39,6 @@ include 'includes/header.php';
 ?>
 
 <div class="dashboard-container">
-    <!-- Welcome Section -->
-    <div class="dashboard-hero">
-        <div class="chronicle-tagline">
-            <p class="tagline-text"><?php echo htmlspecialchars($tagline); ?></p>
-        </div>
-    </div>
-    
-    <!-- Chronicle Summary -->
-    <div class="chronicle-summary">
-        <div class="gothic-panel">
-            <h2 class="chronicle-title">The Chronicle Begins</h2>
-            <p class="chronicle-text"><?php echo htmlspecialchars($chronicle_summary); ?></p>
-        </div>
-    </div>
-    
     <?php if ($is_admin): ?>
         <!-- ADMIN/STORYTELLER VIEW -->
         <div class="dashboard-admin">
@@ -128,6 +113,21 @@ include 'includes/header.php';
     <?php else: ?>
         <!-- PLAYER VIEW -->
         <div class="dashboard-player">
+            <!-- Chronicle Tagline -->
+            <div class="dashboard-hero">
+                <div class="chronicle-tagline">
+                    <p class="tagline-text"><?php echo htmlspecialchars($tagline); ?></p>
+                </div>
+            </div>
+            
+            <!-- Chronicle Summary -->
+            <div class="chronicle-summary">
+                <div class="gothic-panel">
+                    <h2 class="chronicle-title">The Chronicle Begins</h2>
+                    <p class="chronicle-text"><?php echo htmlspecialchars($chronicle_summary); ?></p>
+                </div>
+            </div>
+            
             <h2 class="section-heading">Your Domain</h2>
             <p class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>. The night is yours to command.</p>
             
@@ -148,7 +148,7 @@ include 'includes/header.php';
                                FROM characters c 
                                LEFT JOIN clans cl ON c.clan_id = cl.id 
                                WHERE c.user_id = ? 
-                               ORDER BY c.finalized DESC, c.character_name ASC";
+                               ORDER BY c.status DESC, c.character_name ASC";
                 $stmt = mysqli_prepare($conn, $char_query);
                 mysqli_stmt_bind_param($stmt, "i", $user_id);
                 mysqli_stmt_execute($stmt);
@@ -161,7 +161,7 @@ include 'includes/header.php';
                         <div class="character-header">
                             <h4 class="character-name">
                                 <?php echo htmlspecialchars($character['character_name']); ?>
-                                <?php if ($character['finalized'] == 0): ?>
+                                <?php if ($character['status'] == 'draft'): ?>
                                     <span class="badge-draft">DRAFT</span>
                                 <?php endif; ?>
                             </h4>
