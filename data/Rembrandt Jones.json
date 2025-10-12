@@ -1,0 +1,134 @@
+{
+  "character_name": "Rembrandt Jones",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Visionary",
+  "demeanor": "Gallant",
+  "concept": "Roadside Americana Artist - Comic Relief Living Masterpiece",
+  "clan": "Toreador",
+  "generation": 12,
+  "sire": "Las Vegas Toreador (gaudy casino strip artist)",
+  "pc": 0,
+  "biography": "Dealer at The Sands casino in late 1950s/early 1960s Las Vegas. Obsessively attended Rat Pack shows 3+ times per week for years, even after his Embrace. Embraced during Rat Pack era (late 50s/early 60s) by a Las Vegas Toreador who created gaudy casino strip art and saw potential in Rembrandt's obsessive dedication to beauty. Has been a vampire for 30-35 years. Sire subtly encouraged him to leave Vegas and move to Phoenix (paid him, made it appealing) because while he saw potential, Rembrandt became something... unexpected. Now lives in small bungalow west of Camelback Mountain. Accidentally stumbled into Roadside Americana/kitschy nostalgia subculture where his work is actually appreciated, but remains oblivious to this success while desperately trying to impress mainstream Toreador scene and the Primogen. His failure at being a 'proper' Toreador is so complete and earnest that it has become its own form of performance art - a living masterpiece he will never understand. Sire sends him short poems about art every few months, trying to guide him; Rembrandt misinterprets them completely and uses them as inspiration for his next terrible piece.",
+  "equipment": "Professional camera equipment, thousands of photographs of mundane objects (technically brilliant, questionable subjects), LED sculpture tools and components, vintage roadside Americana collection, velvet paintings, commemorative plates, lava lamps, neon beer signs, 3D holographic pictures, shag carpeting samples, security system equipment",
+  
+  "traits": {
+    "Physical": ["Coordinated", "Precise", "Steady-handed", "Sleek", "Flexible"],
+    "Social": ["Charismatic", "Persuasive", "Charming", "Diplomatic", "Confident", "Witty", "Expressive", "Elegant", "Striking"],
+    "Mental": ["Intelligent", "Clever", "Analytical", "Observant", "Attentive", "Focused", "Patient"]
+  },
+  
+  "negativeTraits": {
+    "Physical": ["Clumsy", "Clumsy"],
+    "Social": ["Oblivious"],
+    "Mental": []
+  },
+  
+  "abilities": [
+    {"name": "Subterfuge", "category": "Social", "level": 4},
+    {"name": "Etiquette", "category": "Social", "level": 4},
+    {"name": "Security", "category": "Physical", "level": 4},
+    {"name": "Crafts", "category": "Mental", "level": 4},
+    {"name": "Performance", "category": "Social", "level": 3},
+    {"name": "Stealth", "category": "Physical", "level": 3},
+    {"name": "Expression", "category": "Social", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Streetwise", "category": "Social", "level": 2},
+    {"name": "Empathy", "category": "Social", "level": 2},
+    {"name": "Academics", "category": "Mental", "level": 2},
+    {"name": "Awareness", "category": "Optional", "level": 1},
+    {"name": "Alertness", "category": "Optional", "level": 1}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Auspex",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"},
+        {"level": 2, "power": "Aura Perception"},
+        {"level": 3, "power": "The Spirit's Touch"}
+      ]
+    },
+    {
+      "name": "Presence",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Awe"}
+      ]
+    },
+    {
+      "name": "Celerity",
+      "level": 0,
+      "powers": []
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 3,
+    "Resources": 4,
+    "Contacts": 4,
+    "Herd": 2,
+    "Status": 1,
+    "Mentor": 0,
+    "Allies": 0,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0
+  },
+  
+  "backgroundDetails": {
+    "Resources": "Quite wealthy from sire's trust fund/investments plus surprisingly successful sales of his terrible art to roadside Americana collectors. Small bungalow in old neighborhood west of Camelback Mountain filled with his collection.",
+    "Contacts": "Deep connections in Roadside Americana/kitschy nostalgia subculture: Muffler Men collectors, vintage motel sign preservationists, Route 66 nostalgists, Googie architecture enthusiasts, vintage Vegas memorabilia dealers, neon sign restoration communities, photographers of abandoned roadside attractions. He doesn't fully realize this is where he's successful.",
+    "Herd": "2-3 regular people who let him feed. They KNOW what's happening and are into it (possibly from his roadside Americana community). He thinks he's being smooth and mysterious with elaborate 'seduction' techniques. They go along with it because they find him endearing.",
+    "Status": "Marginal within Toreador circles. Comic relief to most. Some pretentious theorists write papers about him. Trying desperately to impress the Toreador Primogen."
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 6,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 4,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 6
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Luck",
+      "type": "merit",
+      "category": "Physical",
+      "cost": 3,
+      "description": "Exceptionally lucky - explains how Clumsy x2 doesn't kill him. Things go wrong but work out somehow. The universe keeps him alive because he's accidentally art."
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 60,
+    "xp_spent": 60,
+    "xp_available": 0,
+    "blood_pool": 11,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "COMIC RELIEF CHARACTER. His complete failure at being a 'proper' Toreador is an art form itself - a living performance piece. Technically skilled enough to be a master art thief (Security 4, Stealth 3, Auspex 3, Dexterity traits) but uses skills to protect/acquire terrible art. Gets entranced by wrong things: fluorescent light buzz, gas station hot dog rollers, inflatable tube men, bad taxidery, 80s airbrushed vans, shopping cart sounds. His photography is technically brilliant but focuses on 'wrong' subjects (drainage grates, rust patterns, parking lot geometry). LED sculptures are technically flawless but aesthetically questionable. Can sell anything due to Subterfuge 4 + Awe + genuine passion. Thinks he's a 'lone wolf' (others find it silly/endearing). On verge of realizing his Roadside Americana community actually appreciates him - potential chronicle hook. Toreador Primogen fascinated but doesn't realize what he truly is (blind spot for non-high-art). If he becomes self-aware, does the art die? High Courage (4) is his defining virtue - keeps trying despite rejection."
+  },
+  
+  "rituals": [],
+  
+  "specializations": {
+    "Crafts": "LED light sculptures (technically perfect, aesthetically questionable)",
+    "Security": "Protecting collections and understanding security systems",
+    "Subterfuge": "Art sales and manipulation"
+  },
+  
+  "research_notes": {
+    "art_philosophy": "Gets entranced by: fluorescent light buzz ('city breathing'), gas station hot dog rollers ('rotation, symmetry, glistening grease'), inflatable tube men ('pure expression of movement'), bad taxidermy ('essence of wildness'), 80s airbrushed vans ('mobile murals of human condition'), shopping cart collection sounds",
+    "photography_subjects": "Technically brilliant photography of: drainage grates at golden hour, macro rust patterns, long exposure shopping cart wheel light trails, parking lot line geometry, shadow studies of fire hydrants, abandoned roadside attractions",
+    "potential_plots": "1) Pretentious elder wants to 'acquire' him as living installation. 2) Malkavian tells him the truth (he doesn't believe). 3) Someone tries to 'fix' him (would destroy the art). 4) PCs babysit him at important event. 5) He witnesses something important while distracted. 6) Accidentally becomes famous in human art world. 7) His collection stolen (worthless but he's devastated). 8) Needs to impress Primogen at gallery (disaster). 9) Recruited for art heist (shockingly competent until Clumsy/Entranced).",
+    "sire_relationship": "Sire embraced him seeing potential in obsessive dedication. Now demoralized watching him fail. But occasionally Rembrandt creates something almost good (striking photo, perfect LED sculpture) and sire's hope rises. Then Rembrandt follows with velvet Elvis. Cycle continues. Sends poems trying to guide him; Rembrandt misinterprets completely. Doesn't need to keep him away - whatever shiny thing catches his eye does that naturally.",
+    "the_tragedy": "Would be happy and successful in Roadside Americana community but tries to impress mainstream Toreadors because he thinks that's what he's 'supposed' to do. His earnest obliviousness is what makes him a masterpiece. Self-awareness would destroy the art."
+  }
+}

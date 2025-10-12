@@ -1,27 +1,17 @@
 <?php
+/**
+ * Dashboard - Legacy page (replaced by index.php)
+ * Redirects to home page
+ */
+define('LOTN_VERSION', '0.5.0');
 session_start();
-if ( !isset( $_SESSION[ 'user_id' ] ) ) {
-  header( "Location: login.php" );
-  exit();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
 }
+
+// Redirect to new home page
+header("Location: index.php");
+exit();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Dashboard</title>
-</head>
-<body>
-<h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
-<p>Role: <?php echo $_SESSION['role']; ?></p>
-
-<div class="dashboard-links">
-    <h3>Character Management</h3>
-    <a href="lotn_char_create.php" class="dashboard-link">⚜ Create New Character</a>
-    
-    <h3>Communication</h3>
-    <a href="chat.php" class="dashboard-link">💬 Chat</a>
-</div>
-
-<a href="logout.php">Logout</a>
-</body>
-</html>

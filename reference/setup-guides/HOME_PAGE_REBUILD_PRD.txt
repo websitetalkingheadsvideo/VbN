@@ -1,0 +1,123 @@
+# Valley by Night - Home Page & Navigation System PRD
+
+## Project Overview
+Rebuild the index.php home page and create reusable header/footer components for a consistent user experience across the Valley by Night chronicle management system.
+
+## Core Requirements
+
+### 1. Header Component (includes/header.php)
+- Display title: "Valley by Night- A Vampire Tale"
+- Include logo placeholder (left side, dimensions: 80x80px)
+- Display logged-in username (right side)
+- Display version number from LOTN_VERSION constant (right side)
+- Use existing CSS from css/ folder
+- Gothic/vampire theme styling
+- Responsive design for mobile/desktop
+
+### 2. Footer Component (includes/footer.php)
+- Display "Valley by Night" title with link back to home page (index.php)
+- Copyright notice with current year
+- Gothic styling consistent with header
+- Sticky footer at bottom of page
+
+### 3. New Home Page (index.php)
+Replace current character sheet page with new home dashboard that:
+- Uses header.php and footer.php includes
+- Displays chronicle tagline: "On your first night among the Kindred, the Prince dies—and the city of Phoenix bleeds intrigue"
+- Shows chronicle summary in gothic card/panel
+- Different content based on user role (player vs admin)
+
+### 4. Player Dashboard View
+For users with role='player':
+- Welcome message with username
+- "Create New Character" button/link → lotn_char_create.php
+- List of player's characters (from characters table where user_id matches)
+  * Show character name, clan, concept
+  * Mark unfinalized characters with badge/indicator (finalized = 0)
+  * Click character to view/edit → Character sheet page
+- "Chat Room" link (placeholder, not functional yet)
+- Display tagline and chronicle summary
+
+### 5. Admin Dashboard View  
+For users with role='admin':
+- Welcome message with username
+- Statistics panel showing:
+  * Total number of characters
+  * Number of PCs (is_npc = 0)
+  * Number of NPCs (is_npc = 1)
+- Admin action links:
+  * Create New Character → lotn_char_create.php
+  * AI Locations Manager → admin/admin_locations.php
+  * Items Database → admin/admin_equipment.php
+  * Character List (Edit/Delete) → admin/admin_panel.php
+  * AI Plots Manager (future feature, greyed out/disabled)
+- Display tagline and chronicle summary
+
+### 6. Rename Current index.php
+- Move current index.php to character_sheet.php
+- This preserves the character sheet interface
+- Update any links that point to index.php for character viewing
+
+### 7. Session & Authentication
+- Check if user is logged in (session check)
+- Redirect to login.php if not authenticated
+- Load user data from users table
+- Determine role (player/admin) for view switching
+
+### 8. Database Query Requirements
+- Query characters table for player's characters (WHERE user_id = ?)
+- Query characters table for statistics (COUNT by is_npc)
+- Join with clans table for clan names
+- Check finalized status for character badges
+
+### 9. Styling Requirements
+- Use existing gothic theme from css/styles.css
+- Dark background (#1a0f0f or similar)
+- Blood red accents (#8B0000)
+- Cream/parchment text (#f5e6d3)
+- Card-based layout for content sections
+- Hover effects on interactive elements
+- Responsive grid layout
+
+### 10. Chronicle Information Display
+Tagline: "On your first night among the Kindred, the Prince dies—and the city of Phoenix bleeds intrigue"
+
+Summary: "Phoenix, 1994. On the very night you're introduced to Kindred society, the Prince is murdered, plunging the Camarilla into chaos. As a neonate with everything to prove, you must navigate shifting alliances, enforce the Masquerade, and survive a city where Anarchs, Sabbat, Giovanni, and darker powers all compete for control. The Prince's death is only the beginning."
+
+Display in attractive gothic-styled panel on home page.
+
+## Technical Stack
+- PHP 7.4+
+- MySQL/MariaDB
+- Existing CSS framework
+- Session-based authentication
+- Responsive HTML5/CSS3
+
+## File Structure
+```
+includes/
+  ├── header.php (NEW)
+  ├── footer.php (NEW)
+  └── db.php (existing)
+
+index.php (NEW - home dashboard)
+character_sheet.php (RENAMED from index.php)
+lotn_char_create.php (existing)
+login.php (existing)
+
+admin/
+  ├── admin_locations.php (existing)
+  ├── admin_equipment.php (existing)
+  └── admin_panel.php (existing)
+```
+
+## Success Criteria
+- Header/footer appear consistently across all pages
+- Players see only their characters and appropriate links
+- Admins see statistics and full administrative links
+- Unfinalized characters are clearly marked
+- Chronicle information displays attractively
+- Mobile responsive
+- No broken links after index.php rename
+- Session authentication works correctly
+

@@ -1,6 +1,55 @@
 # LOTN Character Creator - Version History
 
-## Version 0.4.0 (Current)
+## Version 0.5.0 (Current)
+**Date:** October 12, 2025
+
+### Home Page Rebuild - Gothic Dashboard System:
+- ✅ **Gothic Header/Footer Components** - Reusable includes/header.php and includes/footer.php with Valley by Night branding
+- ✅ **Role-Based Home Dashboard** - New index.php with separate player and admin views
+- ✅ **Admin Statistics Panel** - Live character counts (Total, PCs, NPCs) with gothic styling
+- ✅ **Player Character List** - Shows user's characters with finalized status badges and edit links
+- ✅ **Session Authentication** - Proper role detection (admin/storyteller vs player)
+- ✅ **Chronicle Information Display** - Phoenix 1994 tagline and chronicle summary
+- ✅ **Responsive Gothic Theme** - Dark red backgrounds, cream text, blood red accents, fully mobile-responsive
+- ✅ **Admin Action Links** - Create Character, AI Locations, Items Database, Character List, AI Plots (coming soon)
+- ✅ **Chat Room Integration** - Updated chat.php with gothic theme and header/footer
+- ✅ **Logout Button** - Header includes logout functionality with gothic button styling
+
+### Technical Improvements:
+- **File Reorganization** - 88 root files reduced to 18 (80% reduction)
+  - New folders: admin/, database/, tests/, archive/
+  - Enhanced reference/ with subdirectories for docs
+- **Character Sheet Preserved** - index.php renamed to character_sheet.php
+- **Database Query Fix** - Statistics query now uses player_name='ST/NPC' instead of is_npc column
+- **Session Variable Fix** - Corrected $_SESSION['role'] vs $_SESSION['user_role'] mismatch
+- **Vertical Layout Fix** - Fixed 3-column horizontal layout issue with page-wrapper flexbox structure
+
+### File Structure:
+```
+includes/
+  ├── header.php (NEW - gothic header with logo, username, version, logout)
+  ├── footer.php (NEW - gothic footer with copyright)
+  └── connect.php (existing)
+
+css/
+  └── header.css (NEW - gothic styling for header/footer/page layout)
+
+index.php (NEW - role-based home dashboard)
+character_sheet.php (RENAMED from old index.php)
+chat.php (UPDATED with gothic theme)
+dashboard.php (UPDATED to redirect to index.php)
+login_process.php (UPDATED to redirect to index.php)
+```
+
+### Bug Fixes:
+- Fixed session role variable mismatch preventing admin view
+- Fixed is_npc column reference (doesn't exist, use player_name check)
+- Fixed horizontal 3-column layout (header|content|footer) to proper vertical stack
+- Fixed logout button visibility (changed from emoji to text)
+
+---
+
+## Version 0.4.0
 **Date:** January 11, 2025
 
 ### Character JSON Import System:

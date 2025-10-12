@@ -1,174 +1,157 @@
 <?php
+/**
+ * Chat Room - Valley by Night
+ * Character selection and chat interface
+ */
+define('LOTN_VERSION', '0.5.0');
 session_start();
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+
+// Include header
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat - VbN Character Creator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 1200px;
+
+<style>
+        .chat-container {
+            max-width: 1400px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
+            padding: 30px 20px;
         }
-        .header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .user-info {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-        .content {
+        .chat-content {
             padding: 20px;
             min-height: 400px;
         }
         .chat-placeholder {
             text-align: center;
-            color: #666;
+            color: #b8a090;
             font-size: 18px;
             margin-top: 100px;
+            padding: 40px;
+            background: rgba(26, 15, 15, 0.3);
+            border: 2px dashed rgba(139, 0, 0, 0.3);
+            border-radius: 8px;
         }
-        .navigation {
-            padding: 20px;
-            background: #ecf0f1;
-            text-align: center;
+        .chat-placeholder h2 {
+            color: #f5e6d3;
+            font-family: var(--font-title), 'Libre Baskerville', serif;
         }
-        .nav-link {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 10px 20px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .nav-link:hover {
-            background: #2980b9;
-        }
-        .nav-link.dashboard {
-            background: #27ae60;
-        }
-        .nav-link.dashboard:hover {
-            background: #229954;
+        .chat-placeholder ul {
+            color: #d4c4b0;
         }
         .character-selection {
             margin-bottom: 30px;
         }
+        .character-selection h3 {
+            font-family: var(--font-title), 'Libre Baskerville', serif;
+            color: #f5e6d3;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #8B0000;
+        }
         .character-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
+            gap: 20px;
             margin: 20px 0;
         }
         .character-card {
-            border: 2px solid #ddd;
+            background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+            border: 2px solid #8B0000;
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             cursor: pointer;
             transition: all 0.3s;
-            background: #f9f9f9;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
         }
         .character-card:hover {
-            border-color: #3498db;
-            background: #f0f8ff;
+            border-color: #b30000;
+            box-shadow: 0 6px 25px rgba(139, 0, 0, 0.5);
+            transform: translateY(-2px);
         }
         .character-card.selected {
             border-color: #27ae60;
-            background: #e8f5e8;
+            background: linear-gradient(135deg, #1a3a1a 0%, #0f1a0f 100%);
+            box-shadow: 0 6px 25px rgba(39, 174, 96, 0.5);
         }
         .character-name {
+            font-family: var(--font-title), 'Libre Baskerville', serif;
             font-weight: bold;
-            font-size: 16px;
-            color: #2c3e50;
-            margin-bottom: 5px;
+            font-size: 1.3em;
+            color: #f5e6d3;
+            margin-bottom: 10px;
         }
         .character-details {
-            font-size: 14px;
-            color: #666;
+            font-family: var(--font-body), 'Source Serif Pro', serif;
+            font-size: 0.95em;
+            color: #d4c4b0;
         }
         .character-details span {
             display: block;
-            margin: 2px 0;
+            margin: 5px 0;
+        }
+        .character-details strong {
+            color: #b8a090;
         }
         .selected-character {
-            background: #e8f5e8;
+            background: linear-gradient(135deg, #1a3a1a 0%, #0f1a0f 100%);
             border: 2px solid #27ae60;
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+        .selected-character h4 {
+            font-family: var(--font-title), 'Libre Baskerville', serif;
+            color: #f5e6d3;
+            margin-bottom: 15px;
         }
         .character-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            gap: 15px;
             margin-top: 10px;
         }
         .info-item {
-            background: white;
-            padding: 8px;
-            border-radius: 4px;
+            background: rgba(26, 15, 15, 0.5);
+            padding: 12px;
+            border-radius: 5px;
             font-size: 14px;
+            border: 1px solid rgba(139, 0, 0, 0.3);
         }
         .info-label {
+            font-family: var(--font-body), 'Source Serif Pro', serif;
             font-weight: bold;
-            color: #2c3e50;
+            color: #b8a090;
+        }
+        .info-item div:not(.info-label) {
+            color: #d4c4b0;
+            margin-top: 5px;
         }
         .no-characters {
             text-align: center;
-            color: #666;
+            color: #b8a090;
             font-style: italic;
             padding: 40px;
+            background: rgba(26, 15, 15, 0.3);
+            border: 2px dashed rgba(139, 0, 0, 0.3);
+            border-radius: 8px;
         }
-        .load-characters-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            margin: 10px 0;
+        .no-characters a {
+            color: #8B0000;
+            text-decoration: underline;
         }
-        .load-characters-btn:hover {
-            background: #2980b9;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>💬 Chat</h1>
-            <div class="user-info">
-                Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>! 
-                (<?php echo htmlspecialchars($_SESSION['role']); ?>)
-            </div>
-        </div>
-        
-        <div class="content">
+</style>
+
+<div class="chat-container">
+    <h2 class="section-heading">💬 Chat Room</h2>
+    <p class="welcome-text">Select a character to enter the chat.</p>
+    
+    <div class="chat-content">
             <div class="character-selection">
                 <h3>Select Character for Chat</h3>
                 <div class="character-list" id="characterList">
@@ -195,15 +178,10 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
             </div>
         </div>
-        
-        <div class="navigation">
-            <a href="dashboard.php" class="nav-link dashboard">🏠 Dashboard</a>
-            <a href="lotn_char_create.php" class="nav-link">⚜ Character Creator</a>
-            <a href="logout.php" class="nav-link">🚪 Logout</a>
-        </div>
     </div>
+</div>
 
-    <script>
+<script>
         let selectedCharacter = null;
         let userCharacters = [];
 
@@ -304,5 +282,8 @@ if (!isset($_SESSION['user_id'])) {
             }
         }
     </script>
-</body>
-</html>
+
+<?php
+// Include footer
+include 'includes/footer.php';
+?>
