@@ -1,16 +1,10 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>logout</title>
-</head>
-
-<body>
 <?php
+/**
+ * Logout - Valley by Night
+ * Destroys session and redirects to login page
+ */
 session_start();
 session_destroy();
-header( "Location: login.php" );
+header("Location: login.php");
 exit();
 ?>
-</body>
-</html>

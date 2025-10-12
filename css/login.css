@@ -1,0 +1,158 @@
+/* ========================================
+   LOGIN PAGE STYLES
+   Gothic themed login interface
+   ======================================== */
+
+.login-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-box {
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 3px solid #8B0000;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+}
+
+.login-title {
+    font-family: var(--font-brand), 'IM Fell English', serif;
+    color: #f5e6d3;
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #b8a090;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.login-error {
+    background: rgba(139, 0, 0, 0.3);
+    border-left: 4px solid #8B0000;
+    padding: 15px;
+    margin-bottom: 25px;
+    color: #f5e6d3;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    border-radius: 4px;
+}
+
+.login-success {
+    background: rgba(0, 100, 0, 0.3);
+    border-left: 4px solid #228B22;
+    padding: 15px;
+    margin-bottom: 25px;
+    color: #d4f5d3;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    border-radius: 4px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    color: #b8a090;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    background: rgba(26, 15, 15, 0.6);
+    border: 2px solid rgba(139, 0, 0, 0.4);
+    border-radius: 5px;
+    color: #f5e6d3;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8B0000;
+    background: rgba(26, 15, 15, 0.8);
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+}
+
+.login-btn {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    border: 2px solid #b30000;
+    border-radius: 5px;
+    color: #f5e6d3;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #b30000 0%, #8B0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* Login Links (Register/Sign In) */
+.login-links {
+    margin-top: 25px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.login-links p {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #b8a090;
+    font-size: 0.95em;
+    margin: 0;
+}
+
+.link-primary {
+    color: #8B0000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.link-primary:hover {
+    color: #b30000;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px 20px;
+    }
+    
+    .login-title {
+        font-size: 1.8em;
+    }
+}
+
