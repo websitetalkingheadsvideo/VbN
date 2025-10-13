@@ -1,6 +1,52 @@
 # LOTN Character Creator - Version History
 
-## Version 0.6.0 (Current)
+## Version 0.6.1 (Current)
+**Date:** October 13, 2025
+
+### File Organization & Project Structure:
+- ✅ **Reference Folder Reorganization** - Sorted all reference files into appropriate subfolders
+- ✅ **Created mechanics/clans/** - New subfolder for clan-specific game mechanics
+- ✅ **Moved to Project Root** - session-notes/ and setup-guides/ for easier access
+- ✅ **File Cleanup** - Deleted redundant utility files (some commands I use.txt, status.txt)
+- ✅ **Taskmaster Integration** - Migrated todo.txt content to taskmaster system
+- ✅ **Added Todo** - Character name duplicate validation task
+
+### Files Organized:
+```
+reference/
+├── mechanics/
+│   ├── clans/ (NEW)
+│   │   ├── Caitiff_Description.MD
+│   │   ├── Clan_Complete_Guide.MD
+│   │   ├── Clan_Disciplines.MD
+│   │   ├── Clan_Quick_Reference.MD
+│   │   └── clans.MD
+│   ├── Character Sheet Summary.txt
+│   ├── Humanity Reference
+│   ├── Merits and Flaws Database.MD
+│   ├── Merits and Flaws.MD
+│   ├── Morality.txt
+│   ├── sample character sheet.MD
+│   └── Willpower.MD
+├── game-lore/
+│   ├── Setting.txt
+│   └── Starting statement.txt
+└── Items/
+    └── Items.txt
+
+Root directory:
+├── session-notes/ (MOVED from reference/)
+└── setup-guides/ (MOVED from reference/)
+```
+
+### Files Deleted:
+- some commands I use.txt
+- status.txt
+- to do.txt (migrated to taskmaster)
+
+---
+
+## Version 0.6.0
 **Date:** October 12, 2025
 
 ### Admin Panel - Character Management System:

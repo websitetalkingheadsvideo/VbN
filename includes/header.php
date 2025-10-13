@@ -14,7 +14,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
 
 // Get version - check multiple locations for the constant
 if (!defined('LOTN_VERSION')) {
-    define('LOTN_VERSION', '0.4.0');
+    define('LOTN_VERSION', '0.6.1');
 }
 $version = LOTN_VERSION;
 
