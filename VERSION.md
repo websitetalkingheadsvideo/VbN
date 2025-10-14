@@ -1,6 +1,53 @@
 # LOTN Character Creator - Version History
 
-## Version 0.6.1 (Current)
+## Version 0.2.1 (Current)
+**Date:** January 14, 2025
+
+### NPC Creation Tracker System:
+- ✅ **Database-Driven NPC Tracker** - Web-based system for tracking characters mentioned in backstories that need full sheets
+- ✅ **Admin Interface** - Two-page system: view all NPCs organized by status, add/edit NPCs via form
+- ✅ **Character Relationship Tracking** - Links NPCs to their source characters (PCs/major NPCs)
+- ✅ **Status Management** - Ready for Sheet, Concept Only, Sheet Complete, On Hold categories
+- ✅ **Source Document Links** - Direct links to character files where NPCs were introduced
+- ✅ **Plot Hook Tracking** - Space for story relevance and potential conflicts/alliances
+- ✅ **Collaboration Ready** - Remote collaborator can add NPCs via web form without Git knowledge
+
+### NPC Tracker Features:
+- **Quick Stats Dashboard** - Live counts of NPCs by status category
+- **Expandable Details** - Click character name to view full information
+- **Form Validation** - Required fields and error handling
+- **Edit Functionality** - Update existing NPC entries
+- **Gothic Theme Integration** - Matches existing site styling
+- **Mobile Responsive** - Works on all devices
+
+### Files Created:
+```
+admin/
+  ├── npc_tracker.php (view all NPCs)
+  ├── npc_tracker_submit.php (add/edit form)
+  └── setup_npc_tracker.php (setup page with links)
+
+database/
+  └── create_npc_tracker_table.php (database setup)
+
+reference/Characters/
+  └── NPC-Creation-Tracker.md (markdown reference)
+```
+
+### Database Changes:
+- Created `npc_tracker` table with character tracking fields
+- Links to users table for submission tracking
+- Supports all NPC relationship and plot hook data
+
+### User Experience Improvements:
+- Remote collaborators can contribute without technical knowledge
+- Organized tracking of background NPCs from character backstories
+- Clear workflow: identify NPCs → track them → create sheets when ready
+- Source document links for easy reference
+
+---
+
+## Version 0.6.1
 **Date:** October 13, 2025
 
 ### File Organization & Project Structure:
