@@ -1,129 +1,64 @@
-{
-  "category": "Rules Summary",
-  "type": "Supernatural Template",
-  "name": "Ghoul",
-  "source": "Laws of the Night: Revised",
-  "description": "Mortals empowered by vampire Vitae. Ghouls exist between the mortal and vampiric states—servants, enforcers, and addicts to their masters' blood.",
-  "details": {
-    "creation": {
-      "method": "Mortal drinks one point of vampire Vitae.",
-      "duration": "Effects last one lunar month per feeding.",
-      "maintenance": "Must drink Vitae monthly or lose powers and age rapidly."
-    },
-    "blood_bond": {
-      "automatic": "One-step blood bond upon first drink.",
-      "progression": "Three separate feedings create a complete bond.",
-      "effect": "Emotional dependency and loyalty to domitor."
-    },
-    "physical_effects": {
-      "enhancements": ["Increased strength", "Faster healing", "Extended lifespan"],
-      "healing": "May spend Vitae to heal like a vampire (1 point per level of bashing/lethal).",
-      "limitations": ["No sunlight weakness", "No frenzy at fire", "Cannot enter torpor"]
-    },
-    "disciplines": {
-      "access": "May learn domitor’s Clan Disciplines only.",
-      "limit": "Usually up to 1 or 2 dots total.",
-      "cost": "Experience cost as per vampire rules."
-    },
-    "blood_pool": {
-      "total_capacity": 10,
-      "vampiric_blood_limit": 1,
-      "uses": ["Heal damage", "Fuel Disciplines", "Enhance attributes (if allowed)"]
-    },
-    "aging": {
-      "while_ghoul": "Aging halts with continued Vitae use.",
-      "without_vitae": "Rapid aging resumes; may die if centuries old."
-    },
-    "drawbacks": {
-      "addiction": "Psychological dependence on Vitae.",
-      "status": "Considered property under Camarilla law.",
-      "mortality": "Still vulnerable to mundane harm and death."
-    },
-    "roleplay_notes": {
-      "themes": ["Addiction", "Loyalty", "Power imbalance"],
-      "story_uses": ["Bodyguards", "Spies", "Long-term servants seeking Embrace"]
-    }
-  },
-  "mechanics": {
-    "blood_pool_max": 10,
-    "vitae_storage": 1,
-    "can_learn_disciplines": true,
-    "discipline_max": 2,
-    "requires_vitae_maintenance": true,
-    "bond_steps": 3,
-    "sunlight_vulnerability": false,
-    "torpor": false,
-    "healing_rate": "1 blood point per health level"
-  }
-}
+The shared document is *Liber des Goules* (The Book of Ghouls), an accessory for the *Vampire: The Masquerade* Mind's Eye Theatre game system, referencing rules found in *The Masquerade: Second Edition* and *Laws of the Night*.
 
+Here is a one-page summary of the rules for running ghouls, based on the provided text:
 
-{
-  "character_name": "Example Ghoul Name",
-  "player_name": "NPC or Player Name",
-  "template": "Ghoul",
-  "chronicle": "Example Chronicle",
-  "concept": "Mortal servant addicted to vampire Vitae",
-  "domitor": {
-    "name": "Domitor Name",
-    "clan": "Clan of Domitor",
-    "relationship": "Loyal / Bound / Rebellious / Obsessive"
-  },
-  "attributes": {
-    "physical": {
-      "strength": 3,
-      "dexterity": 2,
-      "stamina": 3
-    },
-    "social": {
-      "charisma": 2,
-      "manipulation": 2,
-      "appearance": 2
-    },
-    "mental": {
-      "perception": 2,
-      "intelligence": 2,
-      "wits": 2
-    }
-  },
-  "abilities": {
-    "talents": ["Alertness", "Athletics", "Brawl"],
-    "skills": ["Drive", "Firearms", "Stealth"],
-    "knowledges": ["Investigation", "Law", "Occult"]
-  },
-  "advantages": {
-    "backgrounds": {
-      "herd": 1,
-      "resources": 1,
-      "retainers": 0
-    },
-    "disciplines": {
-      "potence": 1
-    },
-    "virtues": {
-      "conscience": 2,
-      "self_control": 3,
-      "courage": 3
-    }
-  },
-  "mechanics": {
-    "blood_pool_max": 10,
-    "current_vitae": 1,
-    "human_blood": 9,
-    "vitae_source": "Domitor feedings",
-    "requires_monthly_feeding": true,
-    "blood_bond_steps": 1,
-    "max_discipline_dots": 2,
-    "sunlight_vulnerability": false,
-    "torpor": false,
-    "can_heal_with_vitae": true,
-    "aging_suspended": true
-  },
-  "morality": {
-    "humanity": 6,
-    "path": "Humanity",
-    "derangements": []
-  },
-  "equipment": ["Handgun", "Phone", "Keys", "Street Clothes"],
-  "notes": "Ghouls are loyal retainers and addicts, caught between mortal life and vampiric servitude. Monthly Vitae feeding required to maintain powers and youth."
-}
+***
+
+### Ghoul Rules Summary: Mind's Eye Theatre (*Liber des Goules* referencing *Laws of the Night*)
+
+Ghouls are mortals who have ingested vampire vitae, incorporating the best and worst of both Kindred and kine worlds. They are essential to Kindred society as servants, bodyguards, and a link to the mortal world.
+
+#### Character Creation
+Ghoul creation assumes familiarity with *The Masquerade: Second Edition* or *Laws of the Night*.
+
+1.  **Inspiration:** Choose a Regnant (vampire master), Nature (true self), and Demeanor (public mask).
+2.  **Attributes:** Prioritize **Physical, Mental, and Social** Attributes as Primary (7 Traits), Secondary (5 Traits), and Tertiary (3 Traits).
+3.  **Advantages:**
+    * **Abilities:** Choose 5 Traits from the core list or ghoul-specific ones (see below).
+    * **Discipline:** Choose one initial Discipline from **Celerity, Fortitude, or Potence**. Other Disciplines require the **Merit: Learn Other Disciplines**.
+    * **Influences:** Choose 3 Traits.
+    * **Humanity:** Choose 3 initial Humanity Traits (one is lost immediately upon ghouling).
+4.  **Last Touches:**
+    * **Blood Traits:** Start with 4 (3 human + 1 vampiric). Max is 6 (3 human + 3 vampiric).
+    * **Willpower:** Start with 1 Trait.
+    * **Status:** Start with **Recognized**.
+    * **Negative Traits/Flaws/Merits:** Optional; up to 4 Negative Traits (1-for-1 trade for positives) and 5 Traits each of Merits/Flaws. **Revenants** must take one Derangement.
+
+#### Ghoul-Specific Abilities
+
+* **Animal Affinity:** Relates well to non-ghoul animals; inoffensive to them and grants some control (Mental Challenge to command).
+* **Blood Lore:** Knowledge of the Blood Bond, its coerced nature, and ideas on how to break it.
+* **Haven Scouting:** Capacity to find havens for one's Regnant or sniff out where a quarry is sleeping (Mental Challenges).
+* **Hunter Lore:** Knowledge of Hunters (types, reputations, tactics).
+* **Kindred Lore:** Familiarity with Regnant's lineage and Kindred mysteries; useful for blackmail or gaining favor.
+* **Lupine Lore:** Knowledge of werewolves, their hatred of vampires, and possible locations (Social Challenge to gain info).
+* **Masquerade:** Allows a ghoul to pass for a vampire; grants a single re-test on Aura Perceptions against the ghoul.
+* **Medical Knowledge:** Knowledge of medical procedures; can stabilize an injured ghoul to halt bleeding/decline (Static Mental Challenge against 6 Traits).
+* **Sniping:** Instinctive ability to spot a vampire in a crowd; grants a specific Aura Perception (Social Challenge; winner asks if the target is a vampire, who cannot lie).
+* **Steward:** Deep grasp of Regnant's affairs and haven management; useful for defense or blackmail/defection.
+
+#### Ghoul Physiology
+
+* **Blood Use:** Ghouls can use blood to heal **non-aggravated** wounds. They do not need blood to exist unless they have exceeded their natural lifespan.
+* **Health Levels:** Bruised, Wounded, Incapacitated, **Dying**. There is no Torpor; death occurs when the heart stops. An Incapacitated ghoul cannot participate in challenges.
+* **Bleeding:** Ghouls bleed when wounded. A Wounded ghoul drops to Incapacitated after 10 minutes without medical attention and loses a Blood Trait. Incapacitated and Dying ghouls continue to lose a Blood Trait every 10 minutes until they die. Medical attention (Static Mental Challenge) is required to stop the bleeding.
+* **Aging:** Ghouldom is not permanent. After **30 days** without vitae, a ghoul reverts to human status, losing Disciplines and ghouling-related Traits. Ghouls over 100 years old will begin to age at an accelerated rate (10x normal) if they stop receiving vitae, suffering permanent Trait loss.
+
+#### The Blood Bond
+* The Bond forms after **three ingestions** of a vampire's blood. It is the core of a ghoul's life, creating overwhelming emotional attachment.
+* **Dominate:** A vampire need not make eye contact to Dominate a Bound ghoul. The Regnant wins all ties against their Thrall.
+* **Breaking the Bond:** The Bond fades if the Regnant does not feed the ghoul at least once a year. A ghoul may also attempt to break the Bond through sheer willpower and roleplay, especially if severely mistreated.
+
+#### Frenzy
+* Ghouls can frenzy, typically when facing imminent destruction, under extreme stress, with triggered Derangements, or via the Animalism Discipline.
+* **Mechanics:** Frenzy is a violent, blind attack; the ghoul may ignore damage penalties but cannot use blood to heal and is susceptible to blood loss.
+* **Humanity Loss:** If a ghoul injures someone during a frenzy, they must pass a Static Social Challenge against four Traits to avoid a Derangement and temporary Humanity loss. Killing someone requires two Static Challenges with a Humanity Trait bid; loss/tie results in permanent Humanity loss and a Derangement.
+
+#### Humanity
+* **Starting:** Most Ghouls start with **3** Humanity Traits.
+* **Revenants:** Start with **1** Humanity Trait and may never have more than 4. They can lose their last Humanity Trait.
+* **Uses:**
+    * **Relief from Derangements:** Spend one Humanity Trait (with roleplay) to relieve a fear-related Derangement for the session.
+    * **Threats to Life and Limb:** Spend a Humanity Trait to add one to the Trait put to the test in a life-threatening situation.
+    * **True Love:** Use a Humanity Trait as a bid in a challenge to protect a True Love, lost regardless of the outcome.
+* **Regaining:** Temporarily lost Humanity Traits are regained by the next event. Humanity Traits can be bought back with experience points (if not permanently lost) or a Willpower Trait for urgent need.

@@ -1,6 +1,50 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.1 (Current)
+## Version 0.2.2 (Current)
+**Date:** January 14, 2025
+
+### Character Creation Questionnaire System:
+- ✅ **Complete Questionnaire Interface** - 5-question character creation questionnaire with gothic theme
+- ✅ **Clan Scoring System** - Real-time clan score tracking with SessionStorage persistence
+- ✅ **Multiple Selection Support** - Personality traits allow selecting exactly 3 options
+- ✅ **Admin Debug Panel** - Real-time clan score display for testing (admin-only)
+- ✅ **Clan Logo Integration** - Square clan logos with text overlay in results section
+- ✅ **Session Management** - Quiz session tracking with automatic reset functionality
+- ✅ **Login System Integration** - Questionnaire requires authentication
+- ✅ **Responsive Design** - Mobile-friendly layout with gothic styling
+
+### Questionnaire Features:
+- **Question Navigation** - Previous/Next buttons with progress tracking
+- **Answer Persistence** - SessionStorage maintains answers across page refreshes
+- **Clan Recommendation** - Scoring matrix determines winning clan based on answers
+- **Visual Feedback** - Progress bar, selection counters, and clan result display
+- **Admin Testing** - Debug panel shows real-time clan scores and answers
+- **Quiz Reset** - Retake functionality clears session and starts fresh
+
+### Files Created:
+```
+character_questionnaire.php (main questionnaire page)
+css/questionnaire.css (gothic styling)
+js/questionnaire.js (interactive functionality)
+```
+
+### Technical Implementation:
+- **Clan Scoring Matrix** - Maps answers to clan points for 7 major clans
+- **SessionStorage Management** - Persistent quiz state with session tracking
+- **Admin Access Control** - URL parameter or username-based admin detection
+- **Logo Asset Integration** - Uses existing clan logos from svgs/ folder
+- **Responsive Layout** - Mobile-optimized with touch-friendly interactions
+
+### User Experience:
+- **Gothic Theme** - Matches existing site styling and atmosphere
+- **Intuitive Navigation** - Clear question flow with progress indication
+- **Visual Results** - Clan logo with overlay text for dramatic presentation
+- **Admin Testing** - Real-time score tracking for questionnaire validation
+- **Session Persistence** - Answers maintained during browser session
+
+---
+
+## Version 0.2.1
 **Date:** January 14, 2025
 
 ### NPC Creation Tracker System:

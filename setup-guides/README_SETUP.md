@@ -28,7 +28,8 @@ This guide will help you set up XAMPP and Python integration for the Laws of the
      - Start the Python API server
 
 4. **Access the Application**
-   - **PHP Application**: http://localhost/VbN/
+   - **Production Site**: http://vbn.talkingheads.video/
+   - **Local Development**: http://localhost/VbN/
    - **Python API**: http://localhost:5000/api/health
 
 ## Manual Setup
@@ -125,7 +126,7 @@ The Python API provides these endpoints:
 
 1. **Start XAMPP** (Apache + MySQL)
 2. **Run `start_development.bat`** (starts Python API)
-3. **Open browser** to http://localhost/VbN/
+3. **Open browser** to http://localhost/VbN/ (local) or http://vbn.talkingheads.video/ (production)
 4. **Make changes** to PHP/JavaScript files
 5. **Test API** at http://localhost:5000/api/health
 
@@ -137,7 +138,7 @@ For production deployment:
 2. **Set up proper Python environment** on server
 3. **Configure web server** (Apache/Nginx) to serve PHP
 4. **Set up Python WSGI** for API server
-5. **Update API_BASE_URL** in `script.js` to production URL
+5. **Update API_BASE_URL** in `script.js` to production URL (http://vbn.talkingheads.video/)
 
 ## Support
 

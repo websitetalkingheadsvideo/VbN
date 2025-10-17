@@ -1,0 +1,696 @@
+/* ========================================
+   CHARACTER QUESTIONNAIRE STYLES
+   Gothic themed questionnaire interface
+   ======================================== */
+
+.questionnaire-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+/* ===== HEADER SECTION ===== */
+.questionnaire-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+}
+
+.questionnaire-title {
+    font-family: var(--font-brand), 'IM Fell English', serif;
+    color: #f5e6d3;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(139, 0, 0, 0.3);
+}
+
+.questionnaire-subtitle {
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    color: #b8a090;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.questionnaire-description {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #d4c4b0;
+    font-size: 1em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== PROGRESS SECTION ===== */
+.progress-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(139, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8B0000 0%, #b30000 100%);
+    width: 20%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+}
+
+.progress-text {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #b8a090;
+    font-size: 0.9em;
+}
+
+/* ===== QUESTION FORM ===== */
+.questionnaire-form {
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+}
+
+/* ===== QUESTION SECTIONS ===== */
+.question-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.question-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-title {
+    font-family: var(--font-brand), 'IM Fell English', serif;
+    color: #f5e6d3;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.question-text {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #d4c4b0;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* ===== ANSWER OPTIONS ===== */
+.answer-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.question-subtext {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #b8a090;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.selection-counter {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #b8a090;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(139, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.personality-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.personality-option {
+    margin: 0;
+}
+
+.personality-option:has(input[type="checkbox"]:checked) {
+    background: rgba(139, 0, 0, 0.2);
+    border-color: #8B0000;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+}
+
+.personality-option:has(input[type="checkbox"]:checked) .answer-text {
+    color: #f5e6d3;
+    font-weight: 600;
+}
+
+.answer-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(26, 15, 15, 0.6);
+    border: 2px solid rgba(139, 0, 0, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.answer-option:hover {
+    background: rgba(26, 15, 15, 0.8);
+    border-color: rgba(139, 0, 0, 0.5);
+    transform: translateX(5px);
+}
+
+.answer-option input[type="radio"] {
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    accent-color: #8B0000;
+}
+
+.answer-option input[type="radio"]:checked + .answer-text {
+    color: #f5e6d3;
+    font-weight: 600;
+}
+
+.answer-option:has(input[type="radio"]:checked) {
+    background: rgba(139, 0, 0, 0.2);
+    border-color: #8B0000;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+}
+
+.answer-text {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #b8a090;
+    font-size: 1em;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+/* ===== NAVIGATION BUTTONS ===== */
+.questionnaire-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    border: 2px solid #8B0000;
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.prev-btn {
+    background: rgba(139, 0, 0, 0.2);
+    color: #b8a090;
+    border-color: rgba(139, 0, 0, 0.4);
+}
+
+.prev-btn:hover:not(:disabled) {
+    background: rgba(139, 0, 0, 0.3);
+    color: #f5e6d3;
+    border-color: #8B0000;
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    color: #f5e6d3;
+    border-color: #b30000;
+}
+
+.next-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #b30000 0%, #8B0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    color: #f5e6d3;
+    border-color: #b30000;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #b30000 0%, #8B0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== RESULTS SECTION ===== */
+.results-section {
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.results-title {
+    font-family: var(--font-brand), 'IM Fell English', serif;
+    color: #f5e6d3;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(139, 0, 0, 0.3);
+}
+
+.clan-result {
+    margin-bottom: 40px;
+}
+
+/* ===== CLAN LOGO CONTAINER OPTIONS ===== */
+
+/* Option 1: Logo as Background with Text Overlay (DEFAULT) */
+.clan-logo-container {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+}
+
+.clan-logo {
+    width: calc(100% - 25px);
+    height: calc(100% - 25px);
+    object-fit: contain;
+    object-position: center;
+    filter: brightness(0.7) contrast(1.2);
+}
+
+.clan-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(13, 6, 6, 0.8) 0%,
+        rgba(26, 15, 15, 0.6) 50%,
+        rgba(139, 0, 0, 0.3) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.clan-name {
+    font-family: var(--font-brand), 'IM Fell English', serif;
+    color: #f5e6d3;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.9),
+        0 0 15px rgba(139, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.clan-description {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #d4c4b0;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    max-width: 350px;
+}
+
+/* Option 2: Side-by-Side Layout (Alternative) */
+.clan-logo-container.side-by-side {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 12px;
+}
+
+.clan-logo-container.side-by-side .clan-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.clan-logo-container.side-by-side .clan-text-overlay {
+    position: static;
+    background: none;
+    flex: 1;
+    text-align: left;
+}
+
+.clan-logo-container.side-by-side .clan-name {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.clan-logo-container.side-by-side .clan-description {
+    font-size: 1em;
+    max-width: none;
+}
+
+/* Option 3: Centered Logo with Text Below (Alternative) */
+.clan-logo-container.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 12px;
+}
+
+.clan-logo-container.centered .clan-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.clan-logo-container.centered .clan-text-overlay {
+    position: static;
+    background: none;
+    text-align: center;
+}
+
+.clan-logo-container.centered .clan-name {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.clan-logo-container.centered .clan-description {
+    font-size: 1.1em;
+    max-width: 500px;
+}
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 14px 30px;
+    border: 2px solid #8B0000;
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.action-btn:not(.primary) {
+    background: rgba(139, 0, 0, 0.2);
+    color: #b8a090;
+    border-color: rgba(139, 0, 0, 0.4);
+}
+
+.action-btn:not(.primary):hover {
+    background: rgba(139, 0, 0, 0.3);
+    color: #f5e6d3;
+    border-color: #8B0000;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    color: #f5e6d3;
+    border-color: #b30000;
+}
+
+.action-btn.primary:hover {
+    background: linear-gradient(135deg, #b30000 0%, #8B0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .questionnaire-container {
+        padding: 20px 15px;
+    }
+    
+    .questionnaire-header {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .questionnaire-title {
+        font-size: 2em;
+    }
+    
+    .questionnaire-subtitle {
+        font-size: 1em;
+    }
+    
+    .questionnaire-form {
+        padding: 25px;
+    }
+    
+    .question-title {
+        font-size: 1.5em;
+    }
+    
+    .question-text {
+        font-size: 1em;
+    }
+    
+    .answer-option {
+        padding: 12px 15px;
+    }
+    
+    .questionnaire-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .results-section {
+        padding: 25px;
+    }
+    
+    .results-title {
+        font-size: 1.8em;
+    }
+    
+    .clan-name {
+        font-size: 2em;
+    }
+    
+    .results-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ===== ADMIN DEBUG PANEL ===== */
+.admin-debug-panel {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    width: 300px;
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
+    z-index: 10000;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+}
+
+.debug-header {
+    background: rgba(139, 0, 0, 0.3);
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.debug-header h3 {
+    color: #f5e6d3;
+    font-size: 0.9em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.debug-toggle {
+    background: rgba(139, 0, 0, 0.5);
+    border: 1px solid #8B0000;
+    color: #f5e6d3;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.debug-toggle:hover {
+    background: rgba(139, 0, 0, 0.7);
+}
+
+.debug-content {
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.clan-score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.clan-score-item:last-child {
+    border-bottom: none;
+}
+
+.clan-name-debug {
+    color: #b8a090;
+    font-size: 0.85em;
+    text-transform: capitalize;
+}
+
+.clan-score-value {
+    color: #f5e6d3;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.answers-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.answers-title {
+    color: #b8a090;
+    font-size: 0.8em;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.answer-item {
+    color: #d4c4b0;
+    font-size: 0.75em;
+    margin-bottom: 3px;
+}
+
+.answer-item strong {
+    color: #f5e6d3;
+}
+
+@media (max-width: 480px) {
+    .questionnaire-title {
+        font-size: 1.6em;
+    }
+    
+    .questionnaire-subtitle {
+        font-size: 0.9em;
+    }
+    
+    .questionnaire-description {
+        font-size: 0.9em;
+    }
+    
+    .question-title {
+        font-size: 1.3em;
+    }
+    
+    .question-text {
+        font-size: 0.95em;
+    }
+    
+    .answer-text {
+        font-size: 0.9em;
+    }
+    
+    .results-title {
+        font-size: 1.5em;
+    }
+    
+    .clan-name {
+        font-size: 1.8em;
+    }
+    
+    .clan-description {
+        font-size: 1em;
+    }
+    
+    .admin-debug-panel {
+        width: 250px;
+        top: 100px;
+        right: 10px;
+    }
+}
