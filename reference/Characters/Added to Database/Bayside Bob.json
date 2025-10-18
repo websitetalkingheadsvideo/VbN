@@ -1,0 +1,123 @@
+{
+  "character_name": "Bayside Bob",
+  "player_name": "Player Name or ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Survivor",
+  "demeanor": "Conformist",
+  "concept": "Tiki bar owner who knows a lot about tiki culture",
+  "clan": "Toreador",
+  "generation": 12,
+  "sire": "Unknown",
+  "pc": 0,
+  "biography": "Bayside Bob served in the Coast Guard, where he earned his 'Bayside' nickname. During a patrol in a particular area, the crew affectionately referred to it as 'Bayside.' One of the female crew members playfully remarked that she was 'going Bayside with Bob,' and the joke stuck, earning him the nickname 'Bayside Bob.' His last posting was as a recruiter in the Phoenix office, a landlocked irony that he often jokes about. He was embraced sometime after 1981, adding a layer of mystery to his past. Bob arrived in Phoenix early in 1981 and has been a part of the city's undead scene ever since. By 1994, he has been in Phoenix for 13 years.\n\nThe Bali Hai, a Tiki-style Polynesian restaurant on Camelback Road, serves as a front for Anarch meetings and is the de facto gathering place for Anarchs in Phoenix. Despite the fading Tiki craze, Bob keeps the business running, ensuring it remains a viable gathering place for the faction. His laid-back nature and appreciation for vintage Americana and Tiki culture make him a stabilizing presence within the Anarch faction.",
+  "equipment": "Tiki bar tools and decorations, Coast Guard memorabilia, A collection of vintage Americana and Tiki culture artifacts",
+  "traits": {
+    "Physical": ["Quick", "Nimble", "Alert", "Athletic", "Resilient", "Graceful"],
+    "Social": ["Charismatic", "Diplomatic", "Empathetic", "Witty", "Charming"],
+    "Mental": ["Intelligent", "Clever", "Observant", "Studious", "Creative"]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Awkward"],
+    "Mental": []
+  },
+  "abilities": [
+    {"name": "Occult", "category": "Mental", "level": 4},
+    {"name": "Academics", "category": "Mental", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Stealth", "category": "Physical", "level": 2},
+    {"name": "Subterfuge", "category": "Social", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 3},
+    {"name": "Leadership", "category": "Social", "level": 2},
+    {"name": "Leadership", "category": "Social", "level": 2}
+  ],
+  "disciplines": [
+    {
+      "name": "Auspex",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"},
+        {"level": 2, "power": "The Spirit's Touch"},
+        {"level": 3, "power": "Psychic Projection"}
+      ]
+    },
+    {
+      "name": "Celerity",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Supernatural Speed"},
+        {"level": 2, "power": "Quicken Reflexes"}
+      ]
+    },
+    {
+      "name": "Presence",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Awe"},
+        {"level": 2, "power": "Dread Gaze"},
+        {"level": 3, "power": "Entrancement"}
+      ]
+    }
+  ],
+  "backgrounds": {
+    "Generation": 1,
+    "Resources": 2,
+    "Mentor": 2,
+    "Status": 1,
+    "Contacts": 0,
+    "Allies": 0,
+    "Herd": 2,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0
+  },
+  "backgroundDetails": {
+    "Resources": "Bayside Bob has moderate resources, enough to maintain The Bali Hai and his lifestyle.",
+    "Mentor": "His mentor is an older Toreador who introduced him to the arts and social scene.",
+    "Status": "He has a respectable status within the Anarch faction and the local Kindred society."
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  "merits_flaws": [
+    {
+      "name": "Natural Linguist",
+      "type": "merit",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Learns languages easily"
+    },
+    {
+      "name": "Inferiority Complex",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Feels need to constantly prove worth"
+    }
+  ],
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 11,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc."
+  },
+  "specializations": {
+    "Occult": "Specific area of expertise",
+    "Academics": "Specific academic field"
+  },
+  "research_notes": {
+    "custom_field_name": "Any character-specific data that doesn't fit elsewhere. This entire object is optional."
+  }
+}
+```

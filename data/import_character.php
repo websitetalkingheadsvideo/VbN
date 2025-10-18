@@ -36,7 +36,10 @@ echo "✅ Database connection established\n";
 echo "   Connected to remote database\n\n";
 
 // Read and decode JSON
-$json_file = __DIR__ . '/' . $filename;
+$json_file = '/usr/home/working/public_html/wth/vbn/reference/Characters/' . $filename;
+
+echo "🔍 Looking for file: $json_file\n";
+echo "🔍 __DIR__ is: " . __DIR__ . "\n";
 
 if (!file_exists($json_file)) {
     die("❌ JSON file not found: $json_file\n");

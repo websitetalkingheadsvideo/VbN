@@ -1,0 +1,140 @@
+{
+    "character_name": "Jax 'The Ghost Dealer'",
+    "player_name": "ST / NPC",
+    "chronicle": "Valley by Night",
+    "nature": "Trickster",
+    "demeanor": "Child",
+    "concept": "Ravnos street grifter who sells ghost stories, charms, and talismans; sometimes their own illusions start manifesting.",
+    "clan": "Ravnos",
+    "generation": 11,
+    "sire": "Unknown",
+    "pc": 0,
+    "biography": "Jax was a street hustler before the Embrace, peddling fake charms, talismans, and minor scams. Their Ravnos sire saw the potential to combine illusion and charisma, granting them Chimerstry to enhance their tricks. Now, Jax runs small-time psychic scams across the city, selling ghost removals, haunted trinkets, and protection spells. Some of their illusions have begun acting independently, creating problems Jax cannot fully control. Their personality is chaotic, charming, and unpredictable. They are androgynous in appearance, with bright eyes, shaved sides, colorful scarves, and ash-stained hands. Despite their bravado, a gnawing fear that something they created is now stalking them drives much of their behavior.",
+    "equipment": "Colorful scarves, tarot deck, incense and ash, fake relics and talismans, notebooks with scam scripts, small switchblade, urban disguise kit.",
+    
+    "traits": {
+      "Physical": ["Agile", "Slender", "Quick"],
+      "Social": ["Charismatic", "Persuasive", "Playful"],
+      "Mental": ["Clever", "Observant", "Inventive", "Suspicious"]
+    },
+    
+    "negativeTraits": {
+      "Physical": [],
+      "Social": ["Short Fuse"],
+      "Mental": ["Haunted"]
+    },
+    
+    "abilities": [
+      {"name": "Streetwise", "category": "Social", "level": 2},
+      {"name": "Occult", "category": "Mental", "level": 2},
+      {"name": "Investigation", "category": "Mental", "level": 2},
+      {"name": "Stealth", "category": "Physical", "level": 2},
+      {"name": "Subterfuge", "category": "Social", "level": 3},
+      {"name": "Empathy", "category": "Social", "level": 2},
+      {"name": "Awareness", "category": "Mental", "level": 2},
+      {"name": "Intimidation", "category": "Social", "level": 1}
+    ],
+    
+    "disciplines": [
+      {
+        "name": "Chimerstry",
+        "level": 3,
+        "powers": [
+          {"level": 1, "power": "Distortion of Sound and Sight"},
+          {"level": 2, "power": "Minor Hallucinations"},
+          {"level": 3, "power": "Apparitions"}
+        ]
+      },
+      {
+        "name": "Fortitude",
+        "level": 1,
+        "powers": [
+          {"level": 1, "power": "Stamina Boost"}
+        ]
+      }
+    ],
+    
+    "backgrounds": {
+      "Generation": 1,
+      "Resources": 1,
+      "Mentor": 0,
+      "Status": 0,
+      "Contacts": 2,
+      "Allies": 0,
+      "Herd": 0,
+      "Influence": 2,
+      "Retainers": 0,
+      "Fame": 1
+    },
+    
+    "backgroundDetails": {
+      "Resources": "Lives mostly off small-time cons, charms, and scams; minimal material comforts.",
+      "Contacts": "Street psychics, pawnshop mystics, and superstitious mortals provide intel or customers.",
+      "Allies": "None; mostly works alone.",
+      "Influence": "Street-level recognition among hustlers and urban mystics; feared for illusions that sometimes manifest unexpectedly.",
+      "Status": "Minor reputation as a ‘psychic’ and con artist; preys on credulous mortals and small-time Kindred for profit."
+    },
+    
+    "morality": {
+      "path_name": "Humanity",
+      "path_rating": 5,
+      "conscience": 2,
+      "self_control": 3,
+      "courage": 3,
+      "willpower_permanent": 5,
+      "willpower_current": 5,
+      "humanity": 5
+    },
+    
+    "merits_flaws": [
+      {
+        "name": "Enchanting Voice",
+        "type": "merit",
+        "category": "Social",
+        "cost": 2,
+        "description": "Can easily charm mortals and influence crowds during cons or sales."
+      },
+      {
+        "name": "Haunted",
+        "type": "flaw",
+        "category": "Mental",
+        "cost": 3,
+        "description": "One of their illusions became semi-autonomous and now follows them around unpredictably."
+      },
+      {
+        "name": "Short Fuse",
+        "type": "flaw",
+        "category": "Social",
+        "cost": 2,
+        "description": "Quick to anger when called out for fraud or incompetence."
+      }
+    ],
+    
+    "status": {
+      "created_date": "2025-10-11",
+      "xp_total": 0,
+      "xp_spent": 0,
+      "xp_available": 0,
+      "blood_pool": 11,
+      "blood_per_turn": 1,
+      "health_levels": 7,
+      "notes": "Street-level Ravnos con artist with unpredictable Chimerstry. Useful for chaos, plot hooks, and minor NPC antagonism. Prefers working alone, but will collaborate if profitable."
+    },
+    
+    "rituals": [],
+    
+    "specializations": {
+      "Chimerstry": "Illusions, minor apparitions, sensory distortions",
+      "Subterfuge": "Confidence tricks, scams, and ghost stories"
+    },
+    
+    "research_notes": {
+      "npc_role": "Wildcard street-level NPC; could start as comic relief, escalate into supernatural problem due to illusions manifesting.",
+      "story_hooks": [
+        "A con goes wrong and one of Jax’s hallucinations begins to terrorize the street.",
+        "They try to sell a fake 'haunted charm' that accidentally attracts real supernatural attention.",
+        "Their reputation draws both curious neonates and nosy elders to investigate their activities."
+      ]
+    }
+  }
+  

@@ -1,0 +1,46 @@
+{
+  "name": "Leo",
+  "clan": "Nosferatu",
+  "generation": 12,
+  "concept": "The Invisible Hand / Data/Utility Infiltrator",
+  "nature": "Survivor",
+  "demeanor": "Architect",
+  "affiliation": "Anarch Movement (Phoenix)",
+  "embrace_info": "Early 1990s, former city data analyst",
+  "haven": "Utility tunnels and storm drains beneath the 24th Street corridor",
+  "goal": "To secure a new, permanent haven in a critical part of the city for the Anarchs by creating a large-scale, coordinated distraction.",
+  "traits": {
+    "willpower": 6,
+    "blood_pool": 10,
+    "health_levels": 7,
+    "morality": "Humanity",
+    "abilities": {
+      "mental": 3,
+      "social": 1,
+      "physical": 3
+    }
+  },
+  "disciplines": {
+    "obfuscate": 3,
+    "potence": 1,
+    "animalism": 1
+  },
+  "backgrounds": {
+    "contacts": 3,
+    "influence": 2
+  },
+  "merits_flaws": [
+    {
+      "name": "Data Networker",
+      "type": "merit",
+      "cost": 2,
+      "description": "Can easily access nascent 1994 data and utility networks for information."
+    },
+    {
+      "name": "Hideous",
+      "type": "flaw",
+      "cost": 2,
+      "description": "Extreme Nosferatu appearance, leading to severe penalties in social interactions outside of the sewers."
+    }
+  ]
+}
