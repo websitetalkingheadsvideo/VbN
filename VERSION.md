@@ -1,6 +1,98 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.2 (Current)
+## Version 0.2.4 (Current)
+**Date:** January 14, 2025
+
+### Sire/Childe Relationship Tracker System:
+- ✅ **Enhanced Admin Panel** - New sire/childe relationship tracking system with biography analysis
+- ✅ **Bidirectional Analysis** - Detects both childe relationships (who sired whom) and sire relationships (who embraced whom)
+- ✅ **Pattern Matching System** - Advanced regex patterns to find sire/childe mentions in biographies, equipment, and merits/flaws
+- ✅ **Auto-Population** - Automatically suggests and updates sire fields based on text analysis
+- ✅ **Conflict Detection** - Identifies conflicts between existing sire fields and analysis suggestions
+- ✅ **Interactive Dropdowns** - Editable sire fields with character name dropdowns for easy relationship management
+- ✅ **Boon Tracker Database** - New database table structure for tracking favors and debts between vampires
+- ✅ **Future Development Roadmap** - Comprehensive list of planned features including family tree visualization
+
+### Sire/Childe Features:
+- **Biography Analysis** - Scans character text for sire/childe relationship mentions
+- **Smart Pattern Matching** - Handles various text formats including em dashes and punctuation
+- **Self-Reference Prevention** - Prevents characters from being suggested as their own sire
+- **Real-time Updates** - Immediate database updates with visual feedback
+- **Status Tracking** - Verified, Suggested, Conflict, and No Mention status categories
+- **Character Dropdowns** - Easy sire selection from all available characters
+
+### Database Enhancements:
+- **Boon Tracker Table** - Complete boon tracking system with creditor/debtor relationships
+- **VtM Boon Types** - Trivial, Minor, Major, and Life boon classifications
+- **Relationship Tracking** - Foreign key relationships to characters and users
+- **Sample Data** - Duke Tiki ↔ Bayside Bob boon examples
+
+### Technical Improvements:
+- **Enhanced Pattern Matching** - Improved regex patterns for better relationship detection
+- **Modal System** - Fixed modal closing issues for better user experience
+- **API Integration** - Robust backend API for relationship management
+- **Error Handling** - Comprehensive error handling and user feedback
+- **Future Planning** - Structured development roadmap for upcoming features
+
+### Files Created:
+```
+admin/
+  ├── admin_sire_childe_enhanced.php (enhanced relationship tracker)
+  ├── api_analyze_sire_relationships.php (biography analysis API)
+  └── api_sire_childe.php (relationship management API)
+
+database/
+  └── create_boons_table.php (boon tracker database setup)
+
+css/
+  └── admin_sire_childe.css (dedicated styling)
+```
+
+### User Experience Improvements:
+- **Visual Relationship Display** - Clear indication of sire/childe relationships
+- **Easy Relationship Management** - Dropdown interfaces for quick updates
+- **Analysis Results** - Detailed modal showing analysis findings and confidence levels
+- **Future Feature Planning** - Visible roadmap of planned enhancements
+
+---
+
+## Version 0.2.3
+**Date:** January 14, 2025
+
+### Character Import System:
+- ✅ **Character Import Script** - Fixed import script with correct server paths for vbn.talkingheads.video
+- ✅ **8 Characters Imported** - Successfully imported all character JSON files into database
+- ✅ **File Organization** - Moved imported characters to "Added to Database" folder for organization
+- ✅ **Database Integration** - All characters now visible in admin panel with proper IDs
+- ✅ **Path Resolution** - Fixed server path issues for database connection and JSON file locations
+
+### Imported Characters:
+- **Leo** (Nosferatu) - Character ID: 45
+- **Bayside Bob** (Toreador) - Character ID: 46  
+- **Cordelia Fairchild** (Toreador) - Character ID: 47
+- **Duke Tiki** (Toreador) - Character ID: 48
+- **Pistol Pete** (Brujah) - Character ID: 49
+- **Sabine** (Toreador) - Character ID: 50
+- **Sasha** (Malkavian) - Character ID: 51
+- **Sebastian** (Toreador) - Character ID: 52
+
+### Technical Improvements:
+- Fixed import script server paths to use correct vbn.talkingheads.video structure
+- Updated database connection path to absolute server path
+- Fixed JSON file path resolution for character data
+- Organized character files in reference/Characters/Added to Database/ folder
+- Removed duplicate files from main Characters folder
+
+### Files Modified:
+```
+data/import_character.php (fixed server paths)
+data/Bayside Bob.json (removed markdown syntax)
+reference/Characters/ (organized imported files)
+```
+
+---
+
+## Version 0.2.2
 **Date:** January 14, 2025
 
 ### Character Creation Questionnaire System:

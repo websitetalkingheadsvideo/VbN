@@ -1,0 +1,42 @@
+{
+  "name": "Sasha",
+  "clan": "Malkavian",
+  "generation": 11,
+  "concept": "The Grand Conspiracy Theorist / Anarch Strategist",
+  "nature": "Visionary",
+  "demeanor": "Loner",
+  "affiliation": "Anarch Movement (Phoenix)",
+  "embrace_info": "Early 1990s, unknown location",
+  "haven": "Abandoned desert shack with a cryptic, diagram-filled basement (outside city limits)",
+  "goal": "To acquire a Malkavian artifact to prove the Prince's 'death and return' is political theater orchestrated by the Methuselahs.",
+  "traits": {
+    "willpower": 7,
+    "blood_pool": 11,
+    "health_levels": 7,
+    "morality": "Humanity",
+    "abilities": {
+      "mental": 4,
+      "social": 2,
+      "physical": 2
+    }
+  },
+  "disciplines": {
+    "auspex": 3,
+    "dementation": 3,
+    "dominate": 1
+  },
+  "merits_flaws": [
+    {
+      "name": "Prophetic Visions",
+      "type": "merit",
+      "cost": 3,
+      "description": "Receives cryptic, accurate visions of future events, often related to Kindred politics."
+    },
+    {
+      "name": "Derangement: Paranoia",
+      "type": "flaw",
+      "cost": 2,
+      "description": "Believes all non-Anarchs are part of the grand conspiracy, making cooperation difficult."
+    }
+  ]
+}
