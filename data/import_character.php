@@ -36,7 +36,11 @@ echo "✅ Database connection established\n";
 echo "   Connected to remote database\n\n";
 
 // Read and decode JSON
+<<<<<<< HEAD
 $json_file = '/usr/home/working/public_html/vbn.talkingheads.video/data/' . $filename;
+=======
+$json_file = '/usr/home/working/public_html/wth/vbn/reference/Characters/' . $filename;
+>>>>>>> ef46dd28a2aa7b579958d926f3cb6586712af82f
 
 echo "🔍 Looking for file: $json_file\n";
 echo "🔍 __DIR__ is: " . __DIR__ . "\n";

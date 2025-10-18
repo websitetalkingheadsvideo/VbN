@@ -1,0 +1,141 @@
+{
+  "character_name": "Sebastian",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Conformist",
+  "demeanor": "Perfectionist",
+  "concept": "Twin Talon - Data Specialist",
+  "clan": "Toreador",
+  "generation": 10,
+  "sire": "Toreador Primogen (Phoenix)",
+  "pc": 0,
+  "biography": "Born 1970 in wealthy Ontario family with twin sister Sabine. Parents died when they were 15 (mysterious circumstances, trust fund established). Aunt took custody but let them do what they wanted - they chose art galleries, high society parties, and modeling. Inseparable their entire lives - people who knew them thought 'if one dies, the other will follow.' A female Toreador in Ontario fell in love with them at a party and wanted to Embrace both, but couldn't get permission from her Prince. She contacted old friend (Phoenix Toreador Primogen), introduced the twins at a big party. The Primogen became obsessed - saw them as living works of art, a matched set that cannot be separated. Embraced both in 1992 (age 22). Served as Talons to Harpy Cordelia Prescott since Embrace, learning Kindred social politics. Part of Primogen's long-term plan to eventually take over New York Kindred society. Never seen apart from Sabine - literally no one has a memory of them separated. They are beautiful but deeply unsettling, projecting raw sexual energy that can be frightening.",
+  "equipment": "Identical high-end tailored outfits (male versions), small tracking book of boons and social status (possibly memorized, book may be prop), expensive accessories",
+  
+  "traits": {
+    "Physical": ["Quick", "Graceful", "Athletic"],
+    "Social": ["Charismatic", "Seductive", "Elegant", "Intimidating", "Striking", "Alluring", "Magnetic"],
+    "Mental": ["Clever", "Observant", "Analytical", "Calculating", "Focused"]
+  },
+  
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Callous"],
+    "Mental": []
+  },
+  
+  "abilities": [
+    {"name": "Etiquette", "category": "Social", "level": 3},
+    {"name": "Performance", "category": "Social", "level": 2},
+    {"name": "Subterfuge", "category": "Social", "level": 2},
+    {"name": "Empathy", "category": "Social", "level": 2},
+    {"name": "Expression", "category": "Social", "level": 2},
+    {"name": "Finance", "category": "Mental", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Academics", "category": "Mental", "level": 2},
+    {"name": "Politics", "category": "Mental", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 2},
+    {"name": "Awareness", "category": "Optional", "level": 1}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Presence",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Awe"},
+        {"level": 2, "power": "Dread Gaze"},
+        {"level": 3, "power": "Entrancement"}
+      ]
+    },
+    {
+      "name": "Celerity",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Cat's Grace"},
+        {"level": 2, "power": "Rapid Reflexes"}
+      ]
+    },
+    {
+      "name": "Auspex",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"}
+      ]
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 5,
+    "Resources": 3,
+    "Status": 2,
+    "Contacts": 2,
+    "Allies": 1,
+    "Herd": 0,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0,
+    "Mentor": 3
+  },
+  
+  "backgroundDetails": {
+    "Resources": "Trust fund from parents' death plus modeling income, wealthy Ontario family background",
+    "Status": "Talon to the Harpy Cordelia Prescott, childer of Toreador Primogen",
+    "Contacts": "High society connections from Ontario and Phoenix, art gallery world, modeling industry",
+    "Allies": "Twin sister Sabine (inseparable), Toreador Primogen (sire)",
+    "Mentor": "Being trained by Cordelia Prescott in Kindred social politics, also guided by Toreador Primogen"
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 6,
+    "conscience": 2,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 6
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Special Rapport (Sabine)",
+      "type": "merit",
+      "category": "Supernatural",
+      "cost": 5,
+      "description": "Supernatural bond with twin sister Sabine. Can sense her emotions even at distance, feel her physical pain or peril, know when she's in trouble or lying. She knows the same about him. They are inseparable."
+    },
+    {
+      "name": "Unsettling Presence",
+      "type": "merit",
+      "category": "Social",
+      "cost": 2,
+      "description": "Beautiful but deeply disturbing. Those with lower Social traits must make Willpower check (difficulty 6) or feel compelled to maintain distance. -1 difficulty on Intimidation rolls, +1 difficulty to appear harmless."
+    },
+    {
+      "name": "Eerie",
+      "type": "flaw",
+      "category": "Social",
+      "cost": 2,
+      "description": "Something about the twins is deeply unsettling. The uncanny connection, the identical movements, the raw sexual energy - it makes people uncomfortable even as they're fascinated."
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 10,
+    "xp_spent": 10,
+    "xp_available": 0,
+    "blood_pool": 13,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "One half of inseparable twins. Data/numbers specialist. Keeps tracking book of boons and social status - finds entries impossibly fast (may have it all memorized). Never seen apart from Sabine. They dress identically (male/female versions of same outfits), mirror each other's posture, try NOT to speak in unison but sometimes slip. Project raw sexual energy that can be frightening. Learning Kindred politics quickly. Part of Primogen's long-term plan for NY takeover. First to arrive, last to leave at gatherings. Beautiful but odd."
+  },
+  
+  "rituals": [],
+  
+  "specializations": {
+    "Finance": "Boon tracking and valuation",
+    "Investigation": "Social intelligence gathering"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Pistol Pete",
+  "clan": "Brujah",
+  "generation": 11,
+  "concept": "Rage Against the Machine / Street-Level Enforcer",
+  "nature": "Rebel",
+  "demeanor": "Fanatic",
+  "affiliation": "Anarch Movement (Phoenix)",
+  "embrace_info": "Late 1980s, Phoenix (former street racer/punk)",
+  "haven": "Abandoned skate shop (Mesa/Chandler border)",
+  "goal": "To capture and publicly humiliate a Camarilla elder to prove the establishment's weakness.",
+  "traits": {
+    "willpower": 6,
+    "blood_pool": 12,
+    "health_levels": 7,
+    "morality": "Humanity",
+    "abilities": {
+      "physical": 4,
+      "social": 2,
+      "mental": 2
+    }
+  },
+  "disciplines": {
+    "potence": 3,
+    "celerity": 2,
+    "presence": 1
+  },
+  "merits_flaws": [
+    {
+      "name": "Fighting Style: Brawling",
+      "type": "merit",
+      "cost": 2,
+      "description": "Expert in street fighting; uses brute force and speed effectively."
+    },
+    {
+      "name": "Short Fuse",
+      "type": "flaw",
+      "cost": 3,
+      "description": "Frequent and easy Frenzy checks. Prone to immediate, violent reactions to authority."
+    }
+  ]
+}
