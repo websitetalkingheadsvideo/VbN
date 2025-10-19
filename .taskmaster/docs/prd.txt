@@ -1,0 +1,83 @@
+# Laws of the Night Character Creation System - PRD
+
+## Project Overview
+A web-based character creation system for Vampire: The Masquerade - Laws of the Night Revised (LOTN) tabletop RPG. Built with PHP, MySQL, HTML, CSS, and JavaScript.
+
+## Current Status
+- Basic authentication system implemented
+- Database structure complete with comprehensive character tables
+- Character creation form partially implemented (8 tabs, incomplete)
+- External CSS styling system in place
+
+## Core Features Required
+
+### 1. Character Creation Interface
+- Multi-tab character creation form (8 tabs)
+- Real-time XP tracking and validation
+- Trait selection system (Physical/Social/Mental)
+- Ability selection with specializations
+- Discipline selection (Basic/Intermediate/Advanced)
+- Background selection with levels
+- Morality system (Conscience, Self-Control, Courage)
+- Merits & Flaws selection
+- Final character details and biography
+
+### 2. Character Management
+- Save characters to database
+- Load/edit existing characters
+- Character list view in dashboard
+- Delete characters
+- Character validation and error handling
+
+### 3. Database Integration
+- Complete character saving functionality
+- Character loading and editing
+- Proper error handling and validation
+- Data integrity checks
+
+### 4. User Experience
+- Responsive design for mobile/desktop
+- Real-time form validation
+- Progress tracking and visual feedback
+- Intuitive navigation between tabs
+- Save/load character functionality
+
+### 5. Game System Compliance
+- Faithful reproduction of LOTN Revised rules
+- XP cost calculations (7 free traits, 4 XP for 8-10)
+- Proper trait/ability/discipline relationships
+- Character generation validation
+- All 13 vampire clans + Caitiff support
+
+## Technical Requirements
+- PHP backend with MySQL database
+- External CSS styling (css/style.css)
+- JavaScript for interactive features
+- Session management for user authentication
+- Form validation and error handling
+- Mobile-responsive design
+
+## Success Criteria
+- Complete character creation workflow
+- All character data properly saved to database
+- Users can create, edit, and manage characters
+- System follows LOTN Revised rules accurately
+- Clean, maintainable code structure
+- Responsive and user-friendly interface
+
+## Current Database Tables
+- users (authentication)
+- characters (main character data)
+- character_traits, character_abilities, character_disciplines
+- character_backgrounds, character_merits_flaws
+- character_derangements, character_equipment
+- character_influences, character_rituals, character_status
+
+## Next Priority Tasks
+1. Complete character creation form implementation
+2. Implement character saving functionality
+3. Add character loading/editing
+4. Complete JavaScript functionality
+5. Add character management to dashboard
+6. Implement form validation
+7. Add error handling and user feedback

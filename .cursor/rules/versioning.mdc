@@ -1,0 +1,88 @@
+---
+description: Version incrementing rules for LOTN Character Creator
+globs: lotn_char_create.php, VERSION.md
+alwaysApply: true
+---
+
+# Version Incrementing Rules
+
+## **Version Format: X.Y.Z**
+- **X** (Major): Only increment when explicitly told by user
+- **Y** (Minor): Increment for new WORKING features that are fully functional
+- **Z** (Patch): Increment for general updates, bug fixes, or work-in-progress features
+
+## **Increment Rules:**
+
+### **Patch Version (Z) - Small Updates**
+- **When to increment:** Bug fixes, small improvements, trait additions, UI tweaks, CSS/styling improvements, typography changes, documentation updates, font system changes, work-in-progress features that don't actually work yet
+- **Examples:**
+  - Adding new traits to existing categories
+  - Fixing JavaScript bugs
+  - CSS styling improvements
+  - Small UI enhancements
+  - Documentation updates
+  - Typography system changes
+  - Character saving work that doesn't work yet
+
+### **Minor Version (Y) - New WORKING Features**
+- **When to increment:** New tabs/sections that are FULLY FUNCTIONAL, new functionality that ACTUALLY WORKS, complete systems that are implemented and tested, major UI overhauls that are complete
+- **Examples:**
+  - Completing entire tabs (Abilities, Disciplines, Backgrounds) that work
+  - Adding new systems (negative traits, category tracking) that are complete
+  - Major UI overhauls that are complete
+  - Database integration features that work
+  - New character management features that work
+
+### **Major Version (X) - Only When Told**
+- **When to increment:** Only when user explicitly requests
+- **Examples:**
+  - Complete system rewrites
+  - Major architectural changes
+  - Breaking changes
+  - Platform migrations
+
+**Key principle: If it doesn't work, it's a patch. If it works completely, it's a minor.**
+
+## **Implementation Process:**
+
+1. **Update PHP constant:**
+   ```php
+   define('LOTN_VERSION', '0.2.1'); // Example patch increment
+   ```
+
+2. **Update version display:**
+   ```html
+   <span class="version">v<?php echo LOTN_VERSION; ?></span>
+   ```
+
+3. **Update VERSION.md:**
+   - Add new version entry
+   - List changes made
+   - Update current version reference
+
+4. **Commit with version tag:**
+   ```bash
+   git commit -m "feat: Add new traits - v0.2.1"
+   git tag v0.2.1
+   ```
+
+## **Current Version: 0.2.0**
+- Last updated: January 4, 2025
+- Major features: Complete trait system, negative traits, category tracking
+
+## **Examples:**
+
+### **Patch Increment (0.2.0 → 0.2.1):**
+- Adding 5 new Physical traits
+- Fixing trait selection bug
+- Improving CSS styling
+
+### **Minor Increment (0.2.0 → 0.3.0):**
+- Completing Abilities tab
+- Adding character saving functionality
+- Implementing database integration
+
+### **Major Increment (0.2.0 → 1.0.0):**
+- Only when user explicitly requests
+- Complete system rewrite
+- Major architectural changes

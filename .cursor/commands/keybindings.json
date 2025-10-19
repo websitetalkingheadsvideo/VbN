@@ -1,0 +1,10 @@
+[
+  {
+    "key": "ctrl+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "powershell -ExecutionPolicy Bypass -File .cursor/commands/commit-and-summarize.ps1\r"
+    },
+    "when": "editorTextFocus"
+  }
+]

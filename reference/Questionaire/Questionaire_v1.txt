@@ -2,18 +2,19 @@
 
 MORTAL BACKGROUND:
 
-What was your life like before becoming immortal?
+1. What was your life like before becoming immortal?
 ☐ Professional role/job
 ☐ Personal relationships
 ☐ Key memories or defining moments
 
-How did you transition to vampire? (Choose one)
+2. How did you transition to vampire?
 ☐ Voluntary transformation
 ☐ Ritualistic Embrace
 ☐ Accidental discovery
 ☐ Supernatural encounter
 
 MENTAL PROFILE:
+
 3. What are your top three personality traits?
 ☐ Passionate
 ☐ Calculating
@@ -22,76 +23,67 @@ MENTAL PROFILE:
 ☐ Sardonic
 ☐ Pragmatic
 
-How do you view human society now that you're immortal? ☐ Superior and detached ☐ Curious about change ☐ Determined to protect or control ☐ Conflicted by your newfound perspective
+4. How do you view human society now that you're immortal?
+☐ Superior and detached
+☐ Curious about change
+☐ Determined to protect or control
+☐ Conflicted by your newfound perspective
+
 SUPERNATURAL POTENTIAL:
+
 5. If supernatural powers could represent your essence, what would they be?
 ☐ Strength/Combat ability
 ☐ Social manipulation
 ☐ Mystical knowledge
 ☐ Survival skill
 
-Which of these disciplines intrigues you most? ☐ Potence (commanding presence) ☐ Dominate (mind control) ☐ Auspex (seeing the unseen) ☐ Obfuscate (camouflage)
-
-What is your most significant personal goal or motivation?
+6. What is your most significant personal goal or motivation?
 ☐ Survival
 ☐ Revenge
 ☐ Knowledge
 ☐ Redemption
 
-How do you view other supernatural beings in the world?
+7. How do you view other supernatural beings in the world?
 ☐ They are threats to be eliminated
 ☐ Potential allies or partners
 ☐ Curious subjects of study
 ☐ Annoying complications
 
-Do you have a secret that even close companions don't know about?
+8. Do you have a secret that even close companions don't know about?
 ☐ A hidden talent
 ☐ A past trauma
 ☐ A forbidden desire
 ☐ A supernatural weakness
 
-What is your greatest fear as an immortal being?
+9. What is your greatest fear as an immortal being?
 ☐ Solitude
 ☐ Loss of humanity
 ☐ Exposure of your true nature
 ☐ Becoming too powerful
 
-Scenario Question 1:
-You've just been Embraced by a powerful Ventrue elder in your hometown. What happens when your first attempt to influence local politics goes wrong?
+SCENARIO QUESTIONS:
 
-Responses:
-A) You're publicly humiliated, forced underground and learn the harsh lessons of supernatural power
-B) You realize your true potential as a social manipulator
-C) You discover unexpected allies within the political landscape
+10. You've just been Embraced by a powerful Ventrue elder in your hometown. What happens when your first attempt to influence local politics goes wrong?
+☐ You're publicly humiliated, forced underground and learn the harsh lessons of supernatural power
+☐ You realize your true potential as a social manipulator
+☐ You discover unexpected allies within the political landscape
 
-Scenario Question 2:
-Your first supernatural encounter reveals something terrifying about your new immortal nature. How do you process this revelation?
+11. Your first supernatural encounter reveals something terrifying about your new immortal nature. How do you process this revelation?
+☐ You become withdrawn, seeking isolation and understanding
+☐ You decide to embrace the mystery and explore your newfound abilities
+☐ You seek out other vampires who might explain or validate your experience
 
-Responses:
-A) You become withdrawn, seeking isolation and understanding
-B) You decide to embrace the mystery and explore your newfound abilities
-C) You seek out other vampires who might explain or validate your experience
+12. During your first hunt in the modern world, you realize that surviving as a vampire requires more than just supernatural strength. How do you respond?
+☐ You struggle with the ethical implications of taking human life
+☐ You become ruthless and efficient
+☐ You seek balance between hunger and restraint
 
-Scenario Question 3:
-During your first hunt in the modern world, you realize that surviving as a vampire requires more than just supernatural strength.
+13. Your clan elder reveals an ancient secret about your specific bloodline. What is your reaction?
+☐ You feel deeply connected to a hidden legacy
+☐ You view it as another burden of supernatural existence
+☐ You become protective of the knowledge, sensing its potential power
 
-Responses:
-A) You struggle with the ethical implications of taking human life
-B) You become ruthless and efficient
-C) You seek balance between hunger and restraint
-
-Scenario Question 4:
-Your clan elder reveals an ancient secret about your specific bloodline. What is your reaction?
-
-Responses:
-A) You feel deeply connected to a hidden legacy
-B) You view it as another burden of supernatural existence
-C) You become protective of the knowledge, sensing its potential power
-
-Scenario Question 5:
-When confronted with a supernatural threat that threatens not just humans but other vampires, how do you respond?
-
-Responses:
-A) You seek diplomatic resolution and compromise
-B) You charge directly into combat
-C) You analyze strategically before taking action
+14. When confronted with a supernatural threat that threatens not just humans but other vampires, how do you respond?
+☐ You seek diplomatic resolution and compromise
+☐ You charge directly into combat
+☐ You analyze strategically before taking action

@@ -5,7 +5,7 @@
 
 // Global variables
 let currentQuestion = 1;
-let totalQuestions = 5;
+let totalQuestions = 19;
 let answers = {};
 let clanScores = {
     ventrue: 0,
@@ -23,11 +23,6 @@ let debugPanelVisible = false;
 
 // Clan scoring matrix - maps answers to clan points
 const scoringMatrix = {
-    'mortal_background': {
-        'professional': { ventrue: 3, tremere: 2 },
-        'relationships': { toreador: 3, malkavian: 2 },
-        'memories': { nosferatu: 3, gangrel: 2 }
-    },
     'embrace_type': {
         'voluntary': { ventrue: 3, tremere: 2 },
         'ritualistic': { tremere: 3, nosferatu: 2 },
@@ -53,6 +48,85 @@ const scoringMatrix = {
         'revenge': { brujah: 3, nosferatu: 2 },
         'knowledge': { tremere: 3, malkavian: 2 },
         'redemption': { toreador: 3, malkavian: 1 }
+    },
+    'human_society_view': {
+        'superior_detached': { ventrue: 3, tremere: 2 },
+        'curious_change': { toreador: 3, malkavian: 2 },
+        'protect_control': { ventrue: 2, tremere: 3 },
+        'conflicted': { toreador: 2, malkavian: 3 }
+    },
+    'supernatural_beings_view': {
+        'threats_eliminate': { brujah: 3, gangrel: 2 },
+        'potential_allies': { tremere: 3, toreador: 2 },
+        'curious_subjects': { tremere: 2, malkavian: 3 },
+        'annoying_complications': { nosferatu: 3, gangrel: 2 }
+    },
+    'hidden_secret': {
+        'hidden_talent': { toreador: 3, tremere: 2 },
+        'past_trauma': { nosferatu: 3, malkavian: 2 },
+        'forbidden_desire': { malkavian: 3, toreador: 2 },
+        'supernatural_weakness': { nosferatu: 2, gangrel: 3 }
+    },
+    'greatest_fear': {
+        'solitude': { nosferatu: 3, malkavian: 2 },
+        'loss_humanity': { toreador: 3, tremere: 2 },
+        'exposure_nature': { nosferatu: 2, tremere: 3 },
+        'becoming_powerful': { gangrel: 3, brujah: 2 }
+    },
+    'scenario_politics': {
+        'humiliated_underground': { nosferatu: 3, brujah: 2 },
+        'true_potential': { ventrue: 3, tremere: 2 },
+        'unexpected_allies': { tremere: 2, toreador: 3 }
+    },
+    'scenario_encounter': {
+        'withdrawn_isolation': { nosferatu: 3, gangrel: 2 },
+        'embrace_mystery': { malkavian: 3, tremere: 2 },
+        'seek_others': { toreador: 3, ventrue: 2 }
+    },
+    'scenario_hunt': {
+        'ethical_struggle': { toreador: 3, tremere: 2 },
+        'ruthless_efficient': { brujah: 3, gangrel: 2 },
+        'balance_restraint': { ventrue: 3, tremere: 2 }
+    },
+    'scenario_bloodline': {
+        'connected_legacy': { tremere: 3, ventrue: 2 },
+        'burden_existence': { nosferatu: 3, malkavian: 2 },
+        'protective_knowledge': { tremere: 2, ventrue: 3 }
+    },
+    'scenario_threat': {
+        'diplomatic_resolution': { ventrue: 3, tremere: 2 },
+        'direct_combat': { brujah: 3, gangrel: 2 },
+        'strategic_analysis': { tremere: 3, ventrue: 2 }
+    },
+    'workplace_betrayal': {
+        'document_build_case': { nosferatu: 3, tremere: 2 },
+        'confront_publicly': { brujah: 3, gangrel: 2 },
+        'learn_political_game': { ventrue: 3, tremere: 2 }
+    },
+    'family_crisis': {
+        'take_charge_research': { tremere: 3, ventrue: 2 },
+        'hard_truth_consequences': { brujah: 3, gangrel: 2 },
+        'protect_parents': { toreador: 3, nosferatu: 2 }
+    },
+    'social_dilemma': {
+        'redirect_conversation': { ventrue: 3, toreador: 2 },
+        'call_out_bully': { brujah: 3, gangrel: 2 },
+        'support_victim_later': { tremere: 3, nosferatu: 2 }
+    },
+    'moral_test': {
+        'refuse_deception_ultimatum': { brujah: 3, gangrel: 2 },
+        'distance_avoid_involvement': { nosferatu: 3, gangrel: 2 },
+        'strategic_positioning': { ventrue: 3, tremere: 2 }
+    },
+    'power_opportunity': {
+        'build_relationships_balance': { ventrue: 3, toreador: 2 },
+        'loyalty_uncompromised': { brujah: 3, gangrel: 2 },
+        'excel_advocate_strength': { tremere: 3, nosferatu: 2 }
+    },
+    'life_choice': {
+        'take_job_support_plan': { tremere: 3, ventrue: 2 },
+        'turn_down_family_loyalty': { toreador: 3, gangrel: 2 },
+        'negotiate_delayed_start': { ventrue: 3, tremere: 2 }
     }
 };
 
@@ -411,7 +485,7 @@ function updateNavigationButtons() {
     if (currentSection) {
         let isAnswered = false;
         
-        if (currentQuestion === 3) {
+        if (currentQuestion === 2) {
             // Special handling for personality question (checkboxes)
             const checkboxes = currentSection.querySelectorAll('input[type="checkbox"]');
             const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
