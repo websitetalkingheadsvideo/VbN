@@ -1,6 +1,6 @@
 <?php
-// LOTN Character Creator - Version 0.2.9
-define('LOTN_VERSION', '0.3.0');
+// LOTN Character Creator - Version 0.3.0
+define('LOTN_VERSION', '0.3.1');
 
 session_start();
 
@@ -1954,7 +1954,7 @@ include 'includes/connect.php';
             
             console.log('Sending data:', formData);
             
-            fetch('test_remote_file.php', {
+            fetch('save_character.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

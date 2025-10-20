@@ -1,6 +1,6 @@
 /**
  * AbilitySystem.js - Handles ability selection and management
- * Manages Physical, Social, Mental, and Optional ability selection with validation
+ * Manages Physical, Social, Mental, and Optional ability selection with validation TEST
  */
 
 class AbilitySystem {
@@ -139,10 +139,16 @@ class AbilitySystem {
      */
     updateAbilityDisplay(category) {
         const state = this.stateManager.getState();
-        const abilities = state.abilities[category];
+        const abilities = state.abilities?.[category] || [];
         const listElement = this.uiManager.getElement(`#${category.toLowerCase()}AbilitiesList`);
         
         if (!listElement) return;
+        
+        // Ensure abilities is an array
+        if (!Array.isArray(abilities)) {
+            console.warn(`AbilitySystem: abilities for category ${category} is not an array:`, abilities);
+            return;
+        }
         
         // Group abilities by name and count them
         const abilityCounts = {};
@@ -172,7 +178,8 @@ class AbilitySystem {
      */
     updateAbilityCount(category) {
         const state = this.stateManager.getState();
-        const count = state.abilities[category].length;
+        const abilities = state.abilities[category] || [];
+        const count = abilities.length;
         const requirement = this.requirements[category];
         
         // Update count displays
@@ -203,7 +210,7 @@ class AbilitySystem {
      */
     updateButtonStates(category, abilityName) {
         const state = this.stateManager.getState();
-        const abilities = state.abilities[category];
+        const abilities = state.abilities[category] || [];
         const count = abilities.filter(a => a === abilityName).length;
         
         // Find the button
@@ -324,7 +331,7 @@ class AbilitySystem {
      */
     isAbilityAtMax(category, abilityName) {
         const state = this.stateManager.getState();
-        const abilities = state.abilities[category];
+        const abilities = state.abilities[category] || [];
         const count = abilities.filter(a => a === abilityName).length;
         return count >= 5;
     }

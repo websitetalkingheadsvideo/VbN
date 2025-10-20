@@ -269,10 +269,24 @@ class CharacterCreationApp {
     async initializeApplication() {
         console.log('Initializing application...');
         
-        // Load saved state if available
-        const hasSavedState = this.modules.stateManager.loadState();
-        if (hasSavedState) {
-            console.log('Loaded saved state');
+        // Check for character ID in URL for editing
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get('id');
+        
+        if (characterId) {
+            console.log('Loading character for editing:', characterId);
+            try {
+                await this.loadCharacter(characterId);
+            } catch (error) {
+                console.error('Failed to load character:', error);
+                this.modules.notificationManager.error('Failed to load character: ' + error.message);
+            }
+        } else {
+            // Load saved state if available (for new characters)
+            const hasSavedState = this.modules.stateManager.loadState();
+            if (hasSavedState) {
+                console.log('Loaded saved state');
+            }
         }
         
         // Initialize basic info tab
@@ -427,16 +441,247 @@ class CharacterCreationApp {
         try {
             const characterData = await this.modules.dataManager.loadCharacter(characterId);
             
-            if (characterData) {
+            if (characterData && characterData.success) {
+                console.log('Character data loaded successfully:', characterData);
+                console.log('Disciplines in loaded data:', characterData.disciplines);
+                
+                // Set state with the loaded data
                 this.modules.stateManager.setState(characterData);
+                
+                // Populate form fields with loaded data (with a small delay to ensure DOM is ready)
+                setTimeout(() => {
+                    this.populateFormFromCharacterData(characterData);
+                }, 500); // Increased delay to ensure all modules are initialized
+                
                 this.modules.notificationManager.success('Character loaded successfully');
             } else {
-                throw new Error('Character not found');
+                throw new Error(characterData?.message || 'Character not found');
             }
         } catch (error) {
             console.error('Error loading character:', error);
             this.modules.notificationManager.error('Failed to load character: ' + error.message);
         }
+    }
+    
+    /**
+     * Populate form fields with character data
+     */
+    populateFormFromCharacterData(data) {
+        const character = data.character;
+        
+        console.log('Populating form with character data:', character);
+        
+        // Populate basic info fields
+        this.setFormValue('#characterName', character.character_name);
+        this.setFormValue('#playerName', character.player_name);
+        this.setFormValue('#clan', character.clan);
+        this.setFormValue('#nature', character.nature);
+        this.setFormValue('#demeanor', character.demeanor);
+        this.setFormValue('#concept', character.concept);
+        this.setFormValue('#chronicle', character.chronicle);
+        this.setFormValue('#generation', character.generation);
+        this.setFormValue('#sire', character.sire);
+        
+        // Set PC checkbox based on is_pc field or player_name
+        const isPC = character.is_pc !== undefined ? character.is_pc : (character.player_name !== 'NPC');
+        const pcCheckbox = document.querySelector('#pc');
+        if (pcCheckbox) {
+            pcCheckbox.checked = isPC;
+            pcCheckbox.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        
+        // Trigger form validation after populating data
+        setTimeout(() => {
+            // Trigger validation by dispatching events on required fields
+            const requiredFields = ['#characterName', '#playerName', '#nature', '#demeanor', '#concept', '#clan', '#generation'];
+            requiredFields.forEach(selector => {
+                const field = document.querySelector(selector);
+                if (field && field.value) {
+                    field.dispatchEvent(new Event('input', { bubbles: true }));
+                    field.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        }, 100);
+        
+        // Populate traits
+        if (data.traits) {
+            this.populateTraitsFromData(data.traits);
+        }
+        
+        // Populate negative traits
+        if (data.negative_traits) {
+            this.populateNegativeTraitsFromData(data.negative_traits);
+        }
+        
+        // Populate abilities
+        if (data.abilities) {
+            this.populateAbilitiesFromData(data.abilities);
+        }
+        
+        // Populate disciplines
+        if (data.disciplines) {
+            this.populateDisciplinesFromData(data.disciplines);
+        }
+        
+        // Populate backgrounds
+        if (data.backgrounds) {
+            this.populateBackgroundsFromData(data.backgrounds);
+        }
+        
+        // Populate morality
+        if (data.morality) {
+            this.populateMoralityFromData(data.morality);
+        }
+        
+        // Populate merits/flaws
+        if (data.merits_flaws) {
+            this.populateMeritsFlawsFromData(data.merits_flaws);
+        }
+    }
+    
+    /**
+     * Set form value helper
+     */
+    setFormValue(selector, value) {
+        const element = document.querySelector(selector);
+        console.log(`Setting form value for ${selector}:`, value, 'Element found:', !!element);
+        if (element && value !== null && value !== undefined) {
+            element.value = value;
+            // Trigger change event to update any dependent fields
+            element.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    }
+    
+    /**
+     * Populate traits from loaded data
+     */
+    populateTraitsFromData(traits) {
+        // Clear existing selections
+        document.querySelectorAll('.trait-select').forEach(select => {
+            select.value = '';
+        });
+        
+        // Set selected traits
+        Object.entries(traits).forEach(([category, traitNames]) => {
+            traitNames.forEach(traitName => {
+                const select = document.querySelector(`select[data-category="${category}"] option[value="${traitName}"]`);
+                if (select) {
+                    select.selected = true;
+                    select.parentElement.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        });
+    }
+    
+    /**
+     * Populate negative traits from loaded data
+     */
+    populateNegativeTraitsFromData(negativeTraits) {
+        // Similar to populateTraitsFromData but for negative traits
+        Object.entries(negativeTraits).forEach(([category, traitNames]) => {
+            traitNames.forEach(traitName => {
+                const checkbox = document.querySelector(`input[type="checkbox"][data-category="${category}"][value="${traitName}"]`);
+                if (checkbox) {
+                    checkbox.checked = true;
+                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        });
+    }
+    
+    /**
+     * Populate abilities from loaded data
+     */
+    populateAbilitiesFromData(abilities) {
+        console.log('Populating abilities from data:', abilities);
+        
+        // Handle both array and object formats
+        if (Array.isArray(abilities)) {
+            // Old format - array of ability objects
+            abilities.forEach(ability => {
+                const input = document.querySelector(`input[name="ability_${ability.ability_name}"]`);
+                if (input) {
+                    input.value = ability.level;
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        } else if (typeof abilities === 'object' && abilities !== null) {
+            // New format - object with categories as keys
+            Object.entries(abilities).forEach(([category, abilityNames]) => {
+                abilityNames.forEach(abilityName => {
+                    const input = document.querySelector(`input[name="ability_${abilityName}"]`);
+                    if (input) {
+                        input.value = 1; // Default level for loaded abilities
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                });
+            });
+        }
+    }
+    
+    /**
+     * Populate disciplines from loaded data
+     */
+    populateDisciplinesFromData(disciplines) {
+        console.log('Populating disciplines from data:', disciplines);
+        
+        Object.entries(disciplines).forEach(([disciplineName, levels]) => {
+            console.log(`Processing discipline: ${disciplineName}, levels:`, levels);
+            
+            if (Array.isArray(levels)) {
+                levels.forEach(levelData => {
+                    const level = typeof levelData === 'object' ? levelData.level : levelData;
+                    console.log(`Looking for button: discipline="${disciplineName}", level="${level}"`);
+                    
+                    const button = document.querySelector(`button[data-discipline="${disciplineName}"][data-level="${level}"]`);
+                    if (button) {
+                        console.log('Found button, selecting:', button);
+                        button.classList.add('selected');
+                        button.dispatchEvent(new Event('click', { bubbles: true }));
+                    } else {
+                        console.log('Button not found for discipline:', disciplineName, 'level:', level);
+                    }
+                });
+            }
+        });
+    }
+    
+    /**
+     * Populate backgrounds from loaded data
+     */
+    populateBackgroundsFromData(backgrounds) {
+        backgrounds.forEach(background => {
+            const input = document.querySelector(`input[name="background_${background.background_name}"]`);
+            if (input) {
+                input.value = background.level;
+                input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
+    }
+    
+    /**
+     * Populate morality from loaded data
+     */
+    populateMoralityFromData(morality) {
+        this.setFormValue('#humanity', morality.humanity);
+        this.setFormValue('#willpower_current', morality.willpower_current);
+        this.setFormValue('#willpower_permanent', morality.willpower_permanent);
+        this.setFormValue('#conscience', morality.conscience);
+        this.setFormValue('#self_control', morality.self_control);
+        this.setFormValue('#courage', morality.courage);
+    }
+    
+    /**
+     * Populate merits/flaws from loaded data
+     */
+    populateMeritsFlawsFromData(meritsFlaws) {
+        meritsFlaws.forEach(item => {
+            const checkbox = document.querySelector(`input[type="checkbox"][data-type="${item.type}"][value="${item.name}"]`);
+            if (checkbox) {
+                checkbox.checked = true;
+                checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
     }
     
     /**

@@ -1,6 +1,7 @@
 /**
  * DisciplineSystem.js - Handles discipline selection and power management
  * Manages discipline selection, power selection, and popover display
+ * Test
  */
 
 class DisciplineSystem {
@@ -439,7 +440,7 @@ class DisciplineSystem {
      */
     updateDisciplineDisplay() {
         const state = this.stateManager.getState();
-        const disciplines = state.disciplines;
+        const disciplines = state.disciplines || {};
         const disciplinePowers = state.disciplinePowers;
         
         // Update all discipline list elements
@@ -449,8 +450,11 @@ class DisciplineSystem {
             '#advancedDisciplinesList'
         ];
         
+        // Convert disciplines object to array for mapping
+        const disciplinesArray = Object.keys(disciplines);
+        
         // Create display elements for each discipline
-        const disciplineHTML = disciplines.map(disciplineName => {
+        const disciplineHTML = disciplinesArray.map(disciplineName => {
             const powers = disciplinePowers[disciplineName] || [];
             const powersHTML = powers.map(level => {
                 const power = this.getPowerInfo(disciplineName, level);

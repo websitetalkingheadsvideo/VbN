@@ -1,6 +1,37 @@
 # LOTN Character Creator - Version History
 
-## Version 0.2.2 (Current)
+## Version 0.3.1 (Current)
+**Date:** January 4, 2025
+
+### Character Loading/Saving System Fixes:
+- ✅ **Fixed Character Loading System** - Resolved disciplines.map error and data structure issues
+- ✅ **Fixed Character Saving System** - Resolved 500 errors and database field mapping issues
+- ✅ **Fixed PC Checkbox Validation** - Properly shows PC/NPC status when loading characters
+- ✅ **Fixed Form Validation** - Next button now enables correctly when loading character data
+- ✅ **Fixed Sync Issues** - Resolved Dreamweaver/Cursor conflicts and file locking problems
+- ✅ **Improved Error Handling** - Added comprehensive error logging and debugging
+- ✅ **Simplified Save System** - Streamlined character saving to basic fields for stability
+
+### Technical Improvements:
+- Fixed JavaScript disciplines.map error by converting objects to arrays
+- Fixed AbilitySystem initialization with safety checks for undefined data
+- Fixed save_character.php 500 errors with simplified database operations
+- Fixed PC checkbox selector from #isPC to #pc
+- Added form validation triggers after character data loading
+- Removed Dreamweaver sync conflicts by excluding .cursor directory
+- Added comprehensive error logging and debugging throughout
+
+### Files Modified:
+- `js/modules/main.js` - Fixed PC checkbox selector and added form validation triggers
+- `js/modules/systems/DisciplineSystem.js` - Fixed disciplines.map error
+- `js/modules/systems/AbilitySystem.js` - Added safety checks for undefined data
+- `save_character.php` - Simplified to working basic character creation
+- `load_character.php` - Added is_pc field for proper PC/NPC detection
+- `sync_config.jsonc` - Excluded .cursor directory from sync
+
+---
+
+## Version 0.2.2
 **Date:** January 14, 2025
 
 ### Character Creation Questionnaire System:

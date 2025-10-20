@@ -298,25 +298,58 @@ class PreviewManager {
      * Update disciplines section
      */
     updateDisciplines() {
-        const state = this.stateManager.getState();
-        const disciplines = state.disciplines || [];
-        const disciplinePowers = state.disciplinePowers || {};
-        
-        const listElement = this.uiManager.getElement('#previewDisciplines');
-        if (listElement) {
-            const disciplinesHTML = disciplines.map(discipline => {
-                const powers = disciplinePowers[discipline] || [];
-                const powersHTML = powers.map(level => `<span class="power-level">${level}</span>`).join('');
-                
-                return `
-                    <li class="discipline-item">
-                        <span class="discipline-name">${discipline}</span>
-                        <div class="discipline-powers">${powersHTML}</div>
-                    </li>
-                `;
-            }).join('');
+        try {
+            const state = this.stateManager.getState();
+            let disciplines = state.disciplines || [];
+            const disciplinePowers = state.disciplinePowers || {};
             
-            this.uiManager.updateContent(listElement, disciplinesHTML);
+            console.log('PreviewManager updateDisciplines - raw disciplines:', disciplines);
+            
+            // Ensure disciplines is always an array
+            if (!Array.isArray(disciplines)) {
+                console.log('Converting disciplines from object to array format');
+                if (typeof disciplines === 'object' && disciplines !== null) {
+                    // Convert object format to array format
+                    disciplines = Object.keys(disciplines).map(disciplineName => {
+                        const levels = disciplines[disciplineName];
+                        return {
+                            name: disciplineName,
+                            levels: Array.isArray(levels) ? levels.map(l => l.level || l) : []
+                        };
+                    });
+                } else {
+                    disciplines = [];
+                }
+            }
+            
+            console.log('PreviewManager updateDisciplines - processed disciplines:', disciplines);
+            
+            const listElement = this.uiManager.getElement('#previewDisciplines');
+            if (listElement) {
+                const disciplinesHTML = disciplines.map(discipline => {
+                    // Handle both string and object formats
+                    const disciplineName = typeof discipline === 'string' ? discipline : discipline.name;
+                    const powers = typeof discipline === 'object' && discipline.levels ? 
+                        discipline.levels : 
+                        (disciplinePowers[disciplineName] || []);
+                    
+                    const powersHTML = Array.isArray(powers) ? 
+                        powers.map(level => `<span class="power-level">${level}</span>`).join('') : '';
+                    
+                    return `
+                        <li class="discipline-item">
+                            <span class="discipline-name">${disciplineName}</span>
+                            <div class="discipline-powers">${powersHTML}</div>
+                        </li>
+                    `;
+                }).join('');
+                
+                this.uiManager.updateContent(listElement, disciplinesHTML);
+            }
+        } catch (error) {
+            console.error('Error in PreviewManager.updateDisciplines:', error);
+            const state = this.stateManager.getState();
+            console.error('Disciplines data:', state?.disciplines);
         }
     }
     

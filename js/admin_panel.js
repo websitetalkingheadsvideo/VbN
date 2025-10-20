@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSearch();
     initializeSorting();
     initializeDeleteButtons();
+    initializeViewButtons();
     initializePagination();
 });
 
@@ -152,9 +153,9 @@ function sortTable(column, direction) {
                 aVal = parseInt(aCells[4].textContent);
                 bVal = parseInt(bCells[4].textContent);
                 break;
-            case 'finalized':
-                aVal = aCells[5].textContent.includes('Final') ? 1 : 0;
-                bVal = bCells[5].textContent.includes('Final') ? 1 : 0;
+            case 'status':
+                aVal = aCells[5].textContent.trim().toLowerCase();
+                bVal = bCells[5].textContent.trim().toLowerCase();
                 break;
             case 'created_at':
                 aVal = new Date(aCells[6].textContent);
@@ -174,6 +175,17 @@ function sortTable(column, direction) {
     
     // Re-append rows in sorted order
     rows.forEach(row => tbody.appendChild(row));
+}
+
+// View functionality
+function initializeViewButtons() {
+    const viewButtons = document.querySelectorAll('.view-btn');
+    
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            viewCharacter(this.dataset.id);
+        });
+    });
 }
 
 // Delete functionality
@@ -241,6 +253,16 @@ function confirmDelete() {
 
 // Pagination functionality
 function initializePagination() {
+    // Page size change handler
+    const pageSizeSelect = document.getElementById('pageSize');
+    if (pageSizeSelect) {
+        pageSizeSelect.addEventListener('change', function() {
+            pageSize = parseInt(this.value);
+            currentPage = 1;
+            updatePagination();
+        });
+    }
+    
     updatePagination();
 }
 
