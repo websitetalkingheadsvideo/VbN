@@ -1,59 +1,28 @@
-# PHP
-*.log
+# Large reference files that shouldn't be in git
+reference/Books/
+reference/Scenes/
+*.pdf
+*.PDF
+
+# Character images
+reference/Characters/Images/
+*.webp
+*.jpg
+*.jpeg
+*.png
+
+# Temporary files
 *.tmp
 *.temp
-vendor/
-composer.lock
+*~
 
-# Database
-*.sql
-*.db
-*.sqlite
-
-# IDE
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# Sensitive files
-.env
-config.env
-config.php
-*.key
-*.pem
-
-# Cache
-cache/
-tmp/
-
-# Logs
-logs/
-*.log
-
-# Backup files
-*.bak
-*.backup
-*~
-
-# Dreamweaver
-_notes/
-**/_notes/
-dwsync.xml
-
-# Node modules (if any)
-node_modules/
-npm-debug.log*
-
-# Taskmaster
-.taskmaster/
-
-# Cursor IDE
-.cursor/
 sync_config.jsonc

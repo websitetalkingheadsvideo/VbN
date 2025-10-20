@@ -21,6 +21,14 @@ include __DIR__ . '/../includes/header.php';
     <h1 class="panel-title">🔧 Character Management</h1>
     <p class="panel-subtitle">Manage all characters across the chronicle</p>
     
+    <!-- Admin Navigation -->
+    <div class="admin-nav">
+        <a href="admin_panel.php" class="nav-btn active">👥 Characters</a>
+        <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
+        <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
+        <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
+    </div>
+    
     <!-- Character Statistics -->
     <div class="character-stats">
     <?php
@@ -199,6 +207,11 @@ include __DIR__ . '/../includes/header.php';
 .admin-panel-container { max-width: 1600px; margin: 0 auto; padding: 30px 20px; }
 .panel-title { font-family: var(--font-brand), 'IM Fell English', serif; color: #f5e6d3; font-size: 2.5em; margin-bottom: 10px; }
 .panel-subtitle { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; font-size: 1.1em; font-style: italic; margin-bottom: 30px; }
+
+.admin-nav { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.nav-btn { padding: 12px 20px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+.nav-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
+.nav-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
 
 .filter-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 20px; flex-wrap: wrap; }
 .filter-buttons { display: flex; gap: 10px; }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="create user table.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134040890804118856" remote="134047854600000000" Dst="2" />
+<file name="create_locations_table.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046466849518314" remote="134047854600000000" Dst="2" />
+<file name="create_missing_tables.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044344110100501" remote="134047854600000000" Dst="2" />
+<file name="import_items.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046417304970788" remote="134047854600000000" Dst="2" />
+<file name="populate_discipline_data.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041282925702815" remote="134047854600000000" Dst="2" />
+<file name="run_moral_state_update.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134042045955624575" remote="134047854600000000" Dst="2" />
+<file name="setup_database.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134040904268418110" remote="134047854600000000" Dst="2" />
+<file name="setup_disciplines_simple.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041199232354288" remote="134047854600000000" Dst="2" />
+<file name="setup_discipline_powers.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041199232344239" remote="134047854600000000" Dst="2" />
+<file name="setup_items_database.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046419402410505" remote="134047854600000000" Dst="2" />
+<file name="add_email_verification_columns.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047773388843601" remote="134048814000000000" Dst="2" />
+<file name="check_users_table.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047772337621889" remote="134048814000000000" Dst="2" />
+<file name="run_email_verification_migration.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047769788843358" remote="134048814000000000" Dst="2" />
+</dwsync>

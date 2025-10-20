@@ -196,7 +196,7 @@ database/migrations/
 ```
 
 ### Database Changes:
-- Added `status` ENUM column: 'draft', 'finalized', 'active', 'dead', 'missing'
+- Added `status` ENUM column: 'draft', 'finalized', 'active', 'dead', 'baseline'
 - Default value: 'draft'
 
 ---

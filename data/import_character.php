@@ -20,7 +20,7 @@ echo "=================================================================\n\n";
 
 // Include database connection
 echo "📡 Loading database connection...\n";
-$connect_file = __DIR__ . '/../includes/connect.php';
+$connect_file = '/usr/home/working/public_html/vbn.talkingheads.video/includes/connect.php';
 if (!file_exists($connect_file)) {
     die("❌ Connection file not found: $connect_file\n");
 }
@@ -36,7 +36,11 @@ echo "✅ Database connection established\n";
 echo "   Connected to remote database\n\n";
 
 // Read and decode JSON
+<<<<<<< HEAD
+$json_file = '/usr/home/working/public_html/vbn.talkingheads.video/data/' . $filename;
+=======
 $json_file = '/usr/home/working/public_html/wth/vbn/reference/Characters/' . $filename;
+>>>>>>> ef46dd28a2aa7b579958d926f3cb6586712af82f
 
 echo "🔍 Looking for file: $json_file\n";
 echo "🔍 __DIR__ is: " . __DIR__ . "\n";
@@ -55,7 +59,8 @@ if (!$character) {
 }
 
 echo "✅ JSON parsed successfully\n";
-echo "   Character: {$character['character_name']}\n";
+$char_name = $character['character_name'] ?? $character['name'] ?? 'Unknown';
+echo "   Character: $char_name\n";
 echo "   Clan: {$character['clan']}\n\n";
 
 // Start transaction
@@ -83,7 +88,7 @@ try {
     
     $stmt->bind_param("isssssssisissiiis",
         $user_id,
-        $character['character_name'],
+        $char_name,
         $character['player_name'],
         $character['chronicle'],
         $character['nature'],

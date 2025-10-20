@@ -1,0 +1,63 @@
+---
+description: Guidelines for organizing JavaScript code using external files instead of embedded script blocks
+globs: **/*.php, **/*.html, **/*.js
+alwaysApply: true
+---
+
+# JavaScript Organization Rule - External Scripts
+
+- **Main Rule**: Always use external JavaScript files (`js/script.js`) for all JavaScript code instead of embedded `<script>` blocks in HTML/PHP files.
+
+- **Benefits:**
+  - **Maintainability** - All JavaScript in one place
+  - **Reusability** - Multiple pages can use the same scripts
+  - **Performance** - JavaScript can be cached by browsers
+  - **Clean code** - Separates behavior from structure
+  - **Easier debugging** - Scripts are easier to find and modify
+  - **Better IDE support** - Full syntax highlighting and IntelliSense
+
+- **Implementation:**
+  1. Create `js/` folder in project root
+  2. Create `js/script.js` file (or specific files like `js/character.js`, `js/validation.js`)
+  3. Link with: `<script src="js/script.js"></script>`
+  4. Remove all embedded `<script>` blocks
+
+- **File Organization:**
+  - **Single file approach**: `js/script.js` for smaller projects
+  - **Modular approach**: `js/character.js`, `js/validation.js`, `js/api.js` for larger projects
+  - **Page-specific**: `js/dashboard.js`, `js/login.js` for page-specific functionality
+
+- **Code Examples:**
+  ```html
+  <!-- ✅ DO: Use external JavaScript -->
+  <script src="js/script.js"></script>
+  
+  <!-- ❌ DON'T: Embed JavaScript -->
+  <script>
+  function myFunction() {
+      // code here
+  }
+  </script>
+  ```
+
+- **JavaScript Structure:**
+  - Use `document.addEventListener('DOMContentLoaded', function() {})` for initialization
+  - Group related functions together
+  - Use descriptive function names
+  - Add comments for complex logic
+  - Follow consistent naming conventions
+
+- **Integration with PHP:**
+  - Pass data from PHP to JavaScript using `data-*` attributes or JSON
+  - Use AJAX for dynamic content updates
+  - Keep PHP for server-side logic, JavaScript for client-side interaction
+
+- **Error Handling:**
+  - Include proper error handling in JavaScript functions
+  - Use console.log() for debugging (remove in production)
+  - Validate user input before processing
+
+- **Performance Considerations:**
+  - Minify JavaScript files for production
+  - Use async/defer attributes when appropriate
+  - Consider code splitting for large applications

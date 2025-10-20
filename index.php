@@ -5,7 +5,7 @@
  */
 
 // Define version constant
-define('LOTN_VERSION', '0.6.0');
+define('LOTN_VERSION', '0.2.5');
 
 // Start session
 session_start();
@@ -101,6 +101,13 @@ include 'includes/header.php';
                     <a href="admin/admin_panel.php" class="gothic-button">View Characters</a>
                 </div>
                 
+                <div class="action-card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Clan Discovery Quiz</h3>
+                    <p>Test the character creation questionnaire</p>
+                    <a href="character_questionnaire.php" class="gothic-button">Take Quiz</a>
+                </div>
+                
                 <div class="action-card disabled">
                     <div class="card-icon">📖</div>
                     <h3>AI Plots Manager</h3>
@@ -136,6 +143,11 @@ include 'includes/header.php';
                 <a href="lotn_char_create.php" class="create-character-btn">
                     <span class="btn-icon">✏️</span>
                     <span class="btn-text">Create New Character</span>
+                </a>
+                
+                <a href="character_questionnaire.php" class="quiz-character-btn">
+                    <span class="btn-icon">🌟</span>
+                    <span class="btn-text">Discover Your Clan</span>
                 </a>
             </div>
             

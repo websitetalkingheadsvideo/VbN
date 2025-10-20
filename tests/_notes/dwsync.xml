@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="check_db_locks.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044399292180019" remote="134047855200000000" Dst="2" />
+<file name="check_tables.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041199232344239" remote="134047855200000000" Dst="2" />
+<file name="check_users.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134040904877012902" remote="134047855200000000" Dst="2" />
+<file name="count_parameters.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046471496564153" remote="134047855200000000" Dst="2" />
+<file name="debug_params.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044660527490437" remote="134047855200000000" Dst="2" />
+<file name="debug_save.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041312147009510" remote="134047855200000000" Dst="2" />
+<file name="debug_save_simple.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044473263288232" remote="134047855200000000" Dst="2" />
+<file name="debug_simple.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041313699256191" remote="134047855200000000" Dst="2" />
+<file name="debug_update_count.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044668666224403" remote="134047855200000000" Dst="2" />
+<file name="debug_update_params.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044667126406891" remote="134047855200000000" Dst="2" />
+<file name="simple_db_check.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041200962606237" remote="134047855200000000" Dst="2" />
+<file name="simple_save_test.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041309252438174" remote="134047855200000000" Dst="2" />
+<file name="test_api_clean.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044312391025076" remote="134047855200000000" Dst="2" />
+<file name="test_api_direct.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044311368839631" remote="134047855200000000" Dst="2" />
+<file name="test_basic.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044343770183471" remote="134047855200000000" Dst="2" />
+<file name="test_basic_debug.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044475288128821" remote="134047855200000000" Dst="2" />
+<file name="test_complete_system.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044309081163314" remote="134047855200000000" Dst="2" />
+<file name="test_create_location.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046474648103408" remote="134047855200000000" Dst="2" />
+<file name="test_database_integration.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041282925702815" remote="134047855200000000" Dst="2" />
+<file name="test_database_status.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044336385220049" remote="134047855200000000" Dst="2" />
+<file name="test_db_connection.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134043926924405567" remote="134047855200000000" Dst="2" />
+<file name="test_db_simple.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044309081152230" remote="134047855200000000" Dst="2" />
+<file name="test_discipline_popover.html" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134043487628173629" remote="134047855200000000" Dst="2" />
+<file name="test_discipline_powers.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041199232344239" remote="134047855200000000" Dst="2" />
+<file name="test_file_check.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044657407203694" remote="134047855200000000" Dst="2" />
+<file name="test_fixed_save.html" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044405794828905" remote="134047855200000000" Dst="2" />
+<file name="test_gradual_insert.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041315802956500" remote="134047855200000000" Dst="2" />
+<file name="test_items_api.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046418785732423" remote="134047855200000000" Dst="2" />
+<file name="test_method.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044658859173566" remote="134047855200000000" Dst="2" />
+<file name="test_morality.html" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134042058829873710" remote="134047855200000000" Dst="2" />
+<file name="test_mysql_connection.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134043926949595072" remote="134047855200000000" Dst="2" />
+<file name="test_php_simple.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044312889865052" remote="134047855200000000" Dst="2" />
+<file name="test_progressive_insert.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041320599429491" remote="134047855200000000" Dst="2" />
+<file name="test_remote_file.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044670660029593" remote="134047855200000000" Dst="2" />
+<file name="test_remote_syntax.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044478037713060" remote="134047855200000000" Dst="2" />
+<file name="test_save.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134041062424760154" remote="134047855200000000" Dst="2" />
+<file name="test_save_debug.html" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044468711611963" remote="134047855200000000" Dst="2" />
+<file name="test_save_simple.html" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044468711611963" remote="134047855200000000" Dst="2" />
+<file name="test_simple.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044659352961315" remote="134047855200000000" Dst="2" />
+<file name="test_story_to_location_config.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134046490065468925" remote="134047855200000000" Dst="2" />
+<file name="test_syntax.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044477202391967" remote="134047855200000000" Dst="2" />
+<file name="test_tables.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044332625135868" remote="134047855200000000" Dst="2" />
+<file name="test_xampp.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134040901816269434" remote="134047855200000000" Dst="2" />
+<file name="test_xampp_setup.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134043926943455763" remote="134047855200000000" Dst="2" />
+</dwsync>

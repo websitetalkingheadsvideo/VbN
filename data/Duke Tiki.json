@@ -1,0 +1,121 @@
+{
+  "character_name": "Duke Tiki",
+  "player_name": "Player Name or ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Bon Vivant",
+  "demeanor": "Mentor",
+  "concept": "Celebrated Tiki artist and Kindred mentor",
+  "clan": "Toreador",
+  "generation": 10,
+  "sire": "Unknown",
+  "pc": 0,
+  "biography": "Duke Tiki was a celebrated sculptor and designer of Polynesian-inspired art and décor, capturing the essence of the mid-century Tiki craze. He was a regular at Bali Hai, holding court over rum cocktails and torchlight, sketching murals and carving idols that would adorn the lounges of the jet set. He wasn't Hawaiian or Polynesian himself—more of a mid-century romantic who saw escapism in the imagery of paradise—but he treated his craft as homage rather than kitsch. He believed Tiki culture was about inviting warmth and joy into a cold world.\n\nAmong his regulars was Bob, a man who didn't create but understood art. Bob saw the soul in his carvings and could articulate it better than the artist himself. That drew the Toreador's attention. He saw in Bob not a rival, but a rare admirer who truly 'saw.' After a long friendship, and with the Prince's blessing, he Embraced Bob—a testament to the Toreador belief that beauty and perception are equally divine.",
+  "equipment": "Finely crafted carving tools, a sketchbook filled with ideas and inspirations, a collection of Tiki artifacts, a tailored suit with subtle Tiki accents",
+  "traits": {
+    "Physical": ["Graceful", "Charismatic", "Confident"],
+    "Social": ["Charming", "Inspiring", "Diplomatic"],
+    "Mental": ["Creative", "Observant", "Wise"]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Perfectionistic"],
+    "Mental": []
+  },
+  "abilities": [
+    {"name": "Occult", "category": "Mental", "level": 3},
+    {"name": "Academics", "category": "Mental", "level": 4},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Stealth", "category": "Physical", "level": 2},
+    {"name": "Subterfuge", "category": "Social", "level": 3},
+    {"name": "Alertness", "category": "Optional", "level": 3},
+    {"name": "Leadership", "category": "Social", "level": 2}
+  ],
+  "disciplines": [
+    {
+      "name": "Auspex",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"},
+        {"level": 2, "power": "The Spirit's Touch"},
+        {"level": 3, "power": "Psychic Projection"}
+      ]
+    },
+    {
+      "name": "Presence",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Awe"},
+        {"level": 2, "power": "Dread Gaze"},
+        {"level": 3, "power": "Entrancement"}
+      ]
+    },
+    {
+      "name": "Celerity",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Supernatural Speed"},
+        {"level": 2, "power": "Quicken Reflexes"}
+      ]
+    }
+  ],
+  "backgrounds": {
+    "Generation": 1,
+    "Resources": 3,
+    "Mentor": 2,
+    "Status": 2,
+    "Contacts": 2,
+    "Allies": 0,
+    "Herd": 2,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0
+  },
+  "backgroundDetails": {
+    "Resources": "Duke Tiki still benefits from royalties and mortal patrons who collect his art, ensuring he has the means to maintain his lifestyle and support his artistic endeavors.",
+    "Mentor": "He is a mentor to Bob and occasionally to other Kindred artists, offering wisdom and encouragement.",
+    "Status": "He is well-regarded among Toreador and the Camarilla elite, respected for his artistry and his contributions to Kindred society."
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  "merits_flaws": [
+    {
+      "name": "Natural Linguist",
+      "type": "merit",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Learns languages easily"
+    },
+    {
+      "name": "Inferiority Complex",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Feels need to constantly prove worth"
+    }
+  ],
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 11,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc."
+  },
+  "specializations": {
+    "Occult": "Specific area of expertise",
+    "Academics": "Specific academic field"
+  },
+  "research_notes": {
+    "custom_field_name": "Any character-specific data that doesn't fit elsewhere. This entire object is optional."
+  }
+}

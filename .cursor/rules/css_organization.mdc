@@ -1,0 +1,66 @@
+---
+description: Guidelines for organizing CSS code using external files instead of embedded style blocks
+globs: **/*.php, **/*.html, **/*.css
+alwaysApply: true
+---
+
+# CSS Organization Rule - External Stylesheets
+
+- **Main Rule**: Always use external CSS files in the `css/` folder for all styling instead of embedded `<style>` blocks in HTML/PHP files.
+
+- **Benefits:**
+  - **Maintainability** - All CSS in organized files
+  - **Reusability** - Multiple pages can share stylesheets
+  - **Performance** - CSS files can be cached by browsers
+  - **Clean code** - Separates presentation from structure
+  - **Easier debugging** - Styles are easier to find and modify
+  - **Better IDE support** - Full syntax highlighting and IntelliSense
+
+- **Implementation:**
+  1. Create `css/` folder in project root
+  2. Create appropriate CSS files (`css/header.css`, `css/login.css`, `css/dashboard.css`)
+  3. Link with: `<link rel="stylesheet" href="css/filename.css">`
+  4. Remove all embedded `<style>` blocks
+
+- **File Organization:**
+  - **Component-based**: `css/header.css`, `css/footer.css` for shared components
+  - **Page-specific**: `css/login.css`, `css/dashboard.css`, `css/admin_panel.css`
+  - **Utility**: `css/utilities.css` for helper classes
+  - **Base**: Load base/common CSS first, then page-specific
+
+- **Code Examples:**
+  ```html
+  <!-- ✅ DO: Use external CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/login.css">
+  
+  <!-- ❌ DON'T: Embed CSS -->
+  <style>
+  .login-box {
+      background: #1a0f0f;
+      padding: 40px;
+  }
+  </style>
+  ```
+
+- **Naming Conventions:**
+  - Use lowercase with hyphens: `admin-panel.css` not `adminPanel.css`
+  - Match page names: `login.php` → `login.css`
+  - Component prefix: `header.css`, `footer.css`, `modal.css`
+
+- **Loading Order:**
+  1. Base/reset styles
+  2. Component styles (header, footer)
+  3. Page-specific styles
+  4. Override/utility styles (if needed)
+
+- **Integration with PHP:**
+  - Use path variables for subdirectories: `<?php echo $path_prefix; ?>css/style.css`
+  - Keep PHP for dynamic content, CSS for static presentation
+  - Pass dynamic values via CSS variables if needed
+
+- **Performance Considerations:**
+  - Combine related styles into single files when appropriate
+  - Minify CSS files for production
+  - Use browser caching headers
+  - Consider critical CSS for above-the-fold content
