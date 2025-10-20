@@ -12,10 +12,8 @@ if (session_status() === PHP_SESSION_NONE) {
 // Get username from session
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
 
-// Get version - check multiple locations for the constant
-if (!defined('LOTN_VERSION')) {
-    define('LOTN_VERSION', '0.2.5');
-}
+// Include centralized version management
+require_once __DIR__ . '/version.php';
 $version = LOTN_VERSION;
 
 // Get current page for navigation highlighting

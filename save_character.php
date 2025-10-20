@@ -1,6 +1,7 @@
 <?php
 // LOTN Character Save Handler - Version 0.2.1 (FIXED)
-define('LOTN_VERSION', '0.2.1');
+// Include centralized version management
+require_once __DIR__ . '/includes/version.php';
 
 // Enable error reporting for debugging
 error_reporting(E_ALL);

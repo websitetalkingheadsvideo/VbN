@@ -1,6 +1,7 @@
 <?php
 // LOTN Character Creator - Version 0.3.0
-define('LOTN_VERSION', '0.3.1');
+// Include centralized version management
+require_once __DIR__ . '/includes/version.php';
 
 session_start();
 

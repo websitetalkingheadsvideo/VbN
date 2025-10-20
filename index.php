@@ -5,7 +5,8 @@
  */
 
 // Define version constant
-define('LOTN_VERSION', '0.2.5');
+// Include centralized version management
+require_once __DIR__ . '/includes/version.php';
 
 // Start session
 session_start();
