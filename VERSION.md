@@ -1,25 +1,58 @@
 # LOTN Character Creator - Version History
 
-## Version 0.3.3 (Current)
-**Date:** October 20, 2025
-
-### Changes:
-- Auto-increment patch version
-
----
-
-
-## Version 0.3.3 (Current)
-**Date:** October 20, 2025
-
-### Changes:
-- Auto-increment patch version
-
----
-
-
-## Version 0.3.3 (Current)
+## Version 0.4.0 (Current)
 **Date:** January 4, 2025
+
+### Database-Driven Questionnaire System:
+- ✅ **Complete 39-Question System** - All questions from Questions_1, Questions_2, and Questions_3 markdown files
+- ✅ **Database Table Creation** - questionnaire_questions table with ID, category, question, answers, clan weights
+- ✅ **Cinematic Category Display** - Beautiful animated category headers with descriptions for each question type
+- ✅ **Admin Management Interface** - Full CRUD system for managing questions and clan scoring weights
+- ✅ **Production URL Migration** - Replaced all localhost references with http://vbn.talkingheads.video/
+- ✅ **Admin Panel Integration** - Added questionnaire management link to admin navigation
+- ✅ **Question Population Scripts** - Automated scripts to populate database with all 39 questions
+
+### Questionnaire Features:
+- **17 Categories** - Pre-Embrace, Post-Embrace, Embrace, Personality, Perspective, Powers, Motivation, Supernatural, Secrets, Fears, Scenario, Workplace, Family, Social, Moral, Power, Life
+- **Cinematic Headers** - Animated category displays with dramatic titles and descriptions
+- **Database-Driven** - All questions stored in database for easy management
+- **Admin Interface** - Add, edit, delete questions with clan scoring weight management
+- **Clan Scoring System** - Proper clan weight distribution across all 39 questions
+- **Production Ready** - All URLs updated for production deployment
+
+### Technical Improvements:
+- Created questionnaire_questions database table
+- Built populate_complete_39_questions.php script
+- Created questionnaire_admin.php management interface
+- Updated character_questionnaire_database.php with cinematic categories
+- Added questionnaire_database.js for database-driven functionality
+- Integrated questionnaire admin link into admin panel
+- Replaced all localhost references with production URLs
+
+### Files Created:
+- create_questionnaire_table.php (database table creation)
+- populate_complete_39_questions.php (39-question population)
+- questionnaire_admin.php (admin management interface)
+- character_questionnaire_database.php (database-driven questionnaire)
+- js/questionnaire_database.js (database-driven JavaScript)
+- update_categories.php (category management)
+- show_categories.php (category display)
+- populate_all_questions.php (complete question set)
+
+### Database Changes:
+- questionnaire_questions table with 10 fields
+- 39 questions across 17 categories
+- Proper clan scoring weights for all answers
+- Admin management system integration
+
+### User Experience Improvements:
+- Cinematic category headers enhance immersion
+- Database-driven system allows easy question management
+- Admin interface provides full control over questionnaire
+- Production-ready deployment with proper URLs
+- Integrated admin panel access for questionnaire management
+
+---
 
 ### Character Loading/Saving System Fixes:
 - ✅ **Fixed Character Loading System** - Resolved disciplines.map error and data structure issues

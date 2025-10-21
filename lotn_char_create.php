@@ -1,5 +1,5 @@
 <?php
-// LOTN Character Creator - Version 0.3.0
+// LOTN Character Creator - Version 0.4.0
 // Include centralized version management
 require_once __DIR__ . '/includes/version.php';
 
@@ -249,7 +249,7 @@ include 'includes/connect.php';
         
         <!-- Progress Indicator -->
         <div class="tab-progress">
-            <div class="tab-progress-bar" id="tabProgressBar" style="width: 12.5%;"></div>
+            <div class="tab-progress-bar" id="tabProgressBar"></div>
         </div>
         
         <form id="characterForm">

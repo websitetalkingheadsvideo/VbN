@@ -27,6 +27,7 @@ include __DIR__ . '/../includes/header.php';
         <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
         <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
         <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
     </div>
     
     <!-- Character Statistics -->
@@ -57,6 +58,23 @@ include __DIR__ . '/../includes/header.php';
         <div class="stat-mini">
             <span class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></span>
             <span class="stat-label">NPCs</span>
+        </div>
+    </div>
+
+    <!-- Questionnaire Statistics -->
+    <div class="questionnaire-stats">
+        <?php
+        // Get questionnaire statistics
+        $questionnaire_query = "SELECT COUNT(*) as total_questions FROM questionnaire_questions";
+        $questionnaire_result = mysqli_query($conn, $questionnaire_query);
+        $questionnaire_count = $questionnaire_result ? mysqli_fetch_assoc($questionnaire_result)['total_questions'] : 0;
+        ?>
+        <div class="stat-mini">
+            <span class="stat-number"><?php echo $questionnaire_count; ?></span>
+            <span class="stat-label">Questions</span>
+        </div>
+        <div class="stat-mini">
+            <a href="questionnaire_admin.php" class="stat-link">📝 Manage</a>
         </div>
     </div>
 

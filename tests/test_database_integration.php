@@ -3,7 +3,7 @@
 require_once 'includes/connect.php';
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=lotn_characters", "root", "");
+    $pdo = new PDO("mysql:host=vdb5.pit.pair.com;dbname=working_vbn", "working_64", "pcf577#1");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die("Connection failed: " . $e->getMessage());
@@ -102,7 +102,7 @@ try {
 // Test 6: Test API endpoint
 echo "<h2>Test 6: API Endpoint</h2>\n";
 try {
-    $url = 'http://localhost/api_disciplines.php?action=all';
+    $url = 'http://vbn.talkingheads.video/api_disciplines.php?action=all';
     $response = file_get_contents($url);
     if ($response === false) {
         echo "❌ Could not fetch from API endpoint<br>\n";

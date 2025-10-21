@@ -22,7 +22,7 @@
 #### **XAMPP Setup & Database:**
 - ✅ **Fixed MySQL startup issues** - Resolved file permission problems
 - ✅ **Database setup complete** - `lotn_characters` database with 17 tables
-- ✅ **Project copied to XAMPP** - All files accessible at http://localhost/VbN/
+- ✅ **Project deployed** - All files accessible at http://vbn.talkingheads.video/
 - ✅ **MySQL running properly** - Database connection working correctly
 
 ### **Key Features:**
@@ -53,15 +53,15 @@
 ## 🎯 NEXT SESSION: Chat System Enhancement & Testing
 
 ### **Current State:**
-- **Server running** on `http://localhost:8080` (if using Python) or `http://localhost/VbN/` (XAMPP)
+- **Server running** on `http://vbn.talkingheads.video/`
 - **Chat System** fully functional with character selection
 - **Database** working with all character data accessible
 - **XAMPP setup** complete and stable
 - **All systems** using consistent architecture
 
 ### **Ready for Testing:**
-- Navigate to Dashboard: http://localhost/VbN/dashboard.php
-- Click Chat link to access: http://localhost/VbN/chat.php
+- Navigate to Dashboard: http://vbn.talkingheads.video/dashboard.php
+- Click Chat link to access: http://vbn.talkingheads.video/chat.php
 - Test character selection functionality
 - Verify character information display
 - Test responsive design on different devices
@@ -104,7 +104,7 @@
 - **Apache:** Running on port 80
 - **MySQL:** Running on port 3306
 - **Database:** `lotn_characters` with 17 tables
-- **Project URL:** http://localhost/VbN/
+- **Project URL:** http://vbn.talkingheads.video/
 - **Status:** Fully functional and stable
 
 ### **Next Session Goal:**
@@ -116,10 +116,10 @@ Test the completed Chat System with character selection and determine next devel
 # Open XAMPP Control Panel and start Apache + MySQL
 
 # Test URLs:
-# Dashboard: http://localhost/VbN/dashboard.php
-# Chat: http://localhost/VbN/chat.php
-# Character Creator: http://localhost/VbN/lotn_char_create.php
-# Setup Test: http://localhost/VbN/test_xampp_setup.php
+# Dashboard: http://vbn.talkingheads.video/dashboard.php
+# Chat: http://vbn.talkingheads.video/chat.php
+# Character Creator: http://vbn.talkingheads.video/lotn_char_create.php
+# Setup Test: http://vbn.talkingheads.video/test_xampp_setup.php
 ```
 
 **Everything is committed and ready to go!** 🚀

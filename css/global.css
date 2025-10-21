@@ -482,3 +482,52 @@ body {
     }
 }
 
+/* ===== QUESTIONNAIRE STATISTICS ===== */
+.questionnaire-stats {
+    background: rgba(26, 15, 15, 0.8);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.questionnaire-stats .stat-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.questionnaire-stats .stat-number {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #c9a96e;
+    font-family: var(--font-title);
+}
+
+.questionnaire-stats .stat-label {
+    font-size: 0.9em;
+    color: #ddd;
+    margin-top: 4px;
+}
+
+.questionnaire-stats .stat-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #8b0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.questionnaire-stats .stat-link:hover {
+    background: #a00000;
+    color: white;
+    text-decoration: none;
+}
+

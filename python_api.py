@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 # Database configuration
 DB_CONFIG = {
-    'host': 'localhost',
+    'host': 'vdb5.pit.pair.com',
     'user': 'root',
     'password': '',
     'database': 'lotn_characters',
@@ -331,6 +331,6 @@ def calculate_xp():
 
 if __name__ == '__main__':
     print("Starting LOTN Character Creator API...")
-    print("Make sure XAMPP MySQL is running on localhost:3306")
-    print("API will be available at: http://localhost:5000")
+    print("Make sure MySQL is running on vdb5.pit.pair.com:3306")
+    print("API will be available at: http://vbn.talkingheads.video/api")
     app.run(debug=True, host='0.0.0.0', port=5000)

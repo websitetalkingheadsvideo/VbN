@@ -3,7 +3,7 @@
 require_once 'includes/connect.php';
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=lotn_characters", "root", "");
+    $pdo = new PDO("mysql:host=vdb5.pit.pair.com;dbname=working_vbn", "working_64", "pcf577#1");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die("Connection failed: " . $e->getMessage());

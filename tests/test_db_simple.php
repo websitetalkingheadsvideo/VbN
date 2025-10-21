@@ -2,7 +2,7 @@
 echo "<h1>Database Connection Test</h1>";
 
 // Test basic MySQL connection
-$servername = "localhost";
+$servername = "vdb5.pit.pair.com";
 $username = "root";
 $password = "";
 $dbname = "lotn_characters";

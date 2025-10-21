@@ -17,11 +17,11 @@ C:\xampp\php\php.exe test_db_connection.php
 echo.
 
 echo [3/4] Opening setup test page...
-start "" "http://localhost/VbN/test_xampp_setup.php"
+start "" "http://vbn.talkingheads.video/test_xampp_setup.php"
 echo.
 
 echo [4/4] Opening main application...
-start "" "http://localhost/VbN/lotn_char_create.php"
+start "" "http://vbn.talkingheads.video/lotn_char_create.php"
 echo.
 
 echo ========================================
@@ -29,9 +29,9 @@ echo Setup Complete!
 echo ========================================
 echo.
 echo Your application should now be accessible at:
-echo - Main App: http://localhost/VbN/lotn_char_create.php
-echo - Setup Test: http://localhost/VbN/test_xampp_setup.php
-echo - phpMyAdmin: http://localhost/phpmyadmin
+echo - Main App: http://vbn.talkingheads.video/lotn_char_create.php
+echo - Setup Test: http://vbn.talkingheads.video/test_xampp_setup.php
+echo - Database: vdb5.pit.pair.com
 echo.
 echo If you see any errors, check the XAMPP Control Panel
 echo to ensure Apache and MySQL are both running.

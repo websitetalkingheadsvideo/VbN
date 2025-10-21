@@ -60,7 +60,7 @@ foreach ($required_files as $file) {
 
 echo "<h2>Next Steps:</h2>";
 echo "<ol>";
-echo "<li>If all tests pass, your application should be accessible at: <a href='lotn_char_create.php'>http://localhost/VbN/lotn_char_create.php</a></li>";
+echo "<li>If all tests pass, your application should be accessible at: <a href='lotn_char_create.php'>http://vbn.talkingheads.video/lotn_char_create.php</a></li>";
 echo "<li>If database tests fail, make sure MySQL is running in XAMPP</li>";
 echo "<li>If file tests fail, make sure you're in the correct directory</li>";
 echo "</ol>";

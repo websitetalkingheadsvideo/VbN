@@ -22,8 +22,8 @@ pip install -r requirements.txt
 
 echo.
 echo [3/3] Starting Python API server...
-echo Python API will run on http://localhost:5000
-echo PHP application should be accessible via XAMPP at http://localhost/VbN/
+echo Python API will run on http://vbn.talkingheads.video/api
+echo PHP application should be accessible at http://vbn.talkingheads.video/
 echo.
 echo Press Ctrl+C to stop the Python server
 echo.

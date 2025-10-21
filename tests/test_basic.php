@@ -7,7 +7,7 @@ session_start();
 echo "<p>Session started</p>";
 
 // Test database connection without include
-$servername = "localhost";
+$servername = "vdb5.pit.pair.com";
 $username = "root";
 $password = "";
 $dbname = "lotn_characters";

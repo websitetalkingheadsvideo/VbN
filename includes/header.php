@@ -34,7 +34,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     $path_prefix = $in_admin_folder ? '../' : '';
     
     // Get the application root path (everything before the filename)
-    // This handles /vbn/ on live server, root on localhost
+    // This handles /vbn/ on live server, root on development
     $app_root = dirname($script_name);
     // If in admin folder, remove /admin from path
     if ($in_admin_folder) {

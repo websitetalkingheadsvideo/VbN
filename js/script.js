@@ -2,7 +2,7 @@
 // Version 0.2.0
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://vbn.talkingheads.video/api';
 const PHP_BASE_URL = ''; // Relative path for PHP scripts
 
 // Tab functionality

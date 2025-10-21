@@ -24,7 +24,7 @@ Run the SQL file to create the necessary tables:
 
 ```bash
 # Option A: Via XAMPP phpMyAdmin
-1. Go to http://localhost/phpmyadmin
+1. Access database at vdb5.pit.pair.com
 2. Select your "vbn" database
 3. Click "Import" tab
 4. Choose "create_items_tables.sql"
@@ -46,7 +46,7 @@ Run the import script to populate the items table:
 
 ```bash
 # Navigate to your project folder in browser
-http://localhost/vbn/import_items.php
+http://vbn.talkingheads.video/import_items.php
 ```
 
 **Expected Output:**
@@ -413,13 +413,13 @@ SHOW TABLES LIKE '%equipment%';
 ### **Test 2: API Endpoints**
 ```bash
 # Get all items
-http://localhost/vbn/api_items.php
+http://vbn.talkingheads.video/api_items.php
 
 # Filter by category
-http://localhost/vbn/api_items.php?category=Firearms
+http://vbn.talkingheads.video/api_items.php?category=Firearms
 
 # Search items
-http://localhost/vbn/api_items.php?search=pistol
+http://vbn.talkingheads.video/api_items.php?search=pistol
 ```
 
 ### **Test 3: Frontend**

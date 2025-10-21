@@ -62,7 +62,7 @@ function send_email($to, $subject, $body, $from_name = 'Valley by Night') {
  * @return bool Success status
  */
 function send_verification_email($email, $username, $token) {
-    // Get base URL (handles localhost and live server)
+    // Get base URL (handles development and production server)
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
     $host = $_SERVER['HTTP_HOST'];
     $base_path = dirname($_SERVER['SCRIPT_NAME']);

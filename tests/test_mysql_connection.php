@@ -1,7 +1,7 @@
 <?php
 echo "Testing MySQL connection...\n";
 
-$conn = mysqli_connect('localhost', 'root', '');
+$conn = mysqli_connect('vdb5.pit.pair.com', 'working_64', 'pcf577#1');
 
 if ($conn) {
     echo "✅ MySQL connection: SUCCESS\n";

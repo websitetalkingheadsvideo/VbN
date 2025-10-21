@@ -16,7 +16,7 @@ This guide will help you set up XAMPP and Python integration for the Laws of the
    - Ensure both are running (green status)
 
 2. **Set Up Database**
-   - Open phpMyAdmin (http://localhost/phpmyadmin)
+   - Access database at vdb5.pit.pair.com
    - Create a new database called `lotn_characters`
    - Import the `setup_xampp.sql` file or run the SQL commands
 
@@ -29,8 +29,8 @@ This guide will help you set up XAMPP and Python integration for the Laws of the
 
 4. **Access the Application**
    - **Production Site**: http://vbn.talkingheads.video/
-   - **Local Development**: http://localhost/VbN/
-   - **Python API**: http://localhost:5000/api/health
+   - **Development**: http://vbn.talkingheads.video/
+   - **Python API**: http://vbn.talkingheads.video/api/health
 
 ## Manual Setup
 
@@ -72,7 +72,7 @@ This guide will help you set up XAMPP and Python integration for the Laws of the
 ### PHP Configuration
 
 The `includes/connect.php` file is already configured for XAMPP:
-- Host: `localhost`
+- Host: `vdb5.pit.pair.com`
 - Username: `root`
 - Password: (empty)
 - Database: `lotn_characters`
@@ -126,9 +126,9 @@ The Python API provides these endpoints:
 
 1. **Start XAMPP** (Apache + MySQL)
 2. **Run `start_development.bat`** (starts Python API)
-3. **Open browser** to http://localhost/VbN/ (local) or http://vbn.talkingheads.video/ (production)
+3. **Open browser** to http://vbn.talkingheads.video/
 4. **Make changes** to PHP/JavaScript files
-5. **Test API** at http://localhost:5000/api/health
+5. **Test API** at http://vbn.talkingheads.video/api/health
 
 ## Production Deployment
 

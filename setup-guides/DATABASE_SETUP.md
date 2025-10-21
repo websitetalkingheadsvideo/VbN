@@ -10,7 +10,7 @@ This guide will help you set up the database integration for the LOTN Character 
 
 ## Step 1: Create Database Tables
 
-1. Open phpMyAdmin in your browser: `http://localhost/phpmyadmin`
+1. Access database at vdb5.pit.pair.com
 2. Select the `lotn_characters` database
 3. Go to the "SQL" tab
 4. Copy and paste the contents of `setup_xampp.sql`
@@ -41,22 +41,22 @@ This will insert:
 
 ## Step 3: Test the Integration
 
-1. Open your browser and navigate to: `http://localhost/test_database_integration.php`
+1. Open your browser and navigate to: `http://vbn.talkingheads.video/test_database_integration.php`
 2. Verify all tests show ✅ (green checkmarks)
 3. If any tests fail, check the error messages and troubleshoot
 
 ## Step 4: Test the API
 
-1. Open your browser and navigate to: `http://localhost/api_disciplines.php?action=all`
+1. Open your browser and navigate to: `http://vbn.talkingheads.video/api_disciplines.php?action=all`
 2. You should see a JSON response with all discipline data
 3. Test other endpoints:
-   - `http://localhost/api_disciplines.php?action=disciplines`
-   - `http://localhost/api_disciplines.php?action=clans`
-   - `http://localhost/api_disciplines.php?action=clan-disciplines`
+   - `http://vbn.talkingheads.video/api_disciplines.php?action=disciplines`
+   - `http://vbn.talkingheads.video/api_disciplines.php?action=clans`
+   - `http://vbn.talkingheads.video/api_disciplines.php?action=clan-disciplines`
 
 ## Step 5: Test the Frontend
 
-1. Open your browser and navigate to: `http://localhost/lotn_char_create.php`
+1. Open your browser and navigate to: `http://vbn.talkingheads.video/lotn_char_create.php`
 2. Open the browser's developer console (F12)
 3. Look for the message: "✅ Discipline data loaded from database"
 4. Test the discipline selection to ensure everything works
