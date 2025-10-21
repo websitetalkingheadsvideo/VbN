@@ -112,7 +112,7 @@ include __DIR__ . '/../includes/header.php';
                     echo "<tr><td colspan='7'>Query Error: " . mysqli_error($conn) . "</td></tr>";
                 } elseif (mysqli_num_rows($relationship_result) > 0) {
                     while ($char = mysqli_fetch_assoc($relationship_result)) {
-                        $is_npc = ($char['player_name'] === 'ST/NPC');
+                        $is_npc = ($char['player_name'] === 'NPC');
                         $has_sire = !empty($char['sire']);
                         $has_childer = $char['childe_count'] > 0;
                 ?>

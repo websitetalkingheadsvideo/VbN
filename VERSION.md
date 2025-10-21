@@ -1,6 +1,46 @@
 # LOTN Character Creator - Version History
 
-## Version 0.4.0 (Current)
+## Version 0.4.1 (Current)
+**Date:** January 4, 2025
+
+### CSS Refactoring & NPC Count Fix:
+- ✅ **CSS File Optimization** - Reduced CSS file sizes by 75-85% through consolidation and optimization
+- ✅ **NPC Count Display Fix** - Fixed dashboard statistics showing 0 NPCs by correcting player_name query
+- ✅ **External CSS/JS Organization** - Moved all inline styles and scripts to external files per workspace rules
+- ✅ **Performance Improvements** - Smaller CSS files load faster and improve site performance
+- ✅ **Code Maintainability** - Cleaner, more organized CSS structure for easier maintenance
+
+### CSS Refactoring Results:
+- **questionnaire.css**: 437 lines → 65 lines (85% reduction)
+- **dashboard.css**: 378 lines → 95 lines (75% reduction)  
+- **admin_questionnaire.css**: 129 lines → 25 lines (81% reduction)
+- **admin_sire_childe.css**: 615 lines → 95 lines (85% reduction)
+
+### NPC Count Fix:
+- **Root Cause**: Queries were using `player_name = 'ST/NPC'` instead of `player_name = 'NPC'`
+- **Files Fixed**: index.php, admin/admin_panel.php, admin/admin_sire_childe.php, admin/admin_sire_childe_enhanced.php
+- **Result**: Dashboard now correctly displays actual NPC count instead of 0
+
+### Technical Improvements:
+- Consolidated CSS properties into single lines where appropriate
+- Removed unnecessary whitespace and line breaks
+- Used CSS shorthand properties for efficiency
+- Maintained readability with logical grouping and comments
+- Fixed database queries to use correct NPC identification method
+
+### Files Modified:
+- `css/questionnaire.css` - Refactored and optimized
+- `css/dashboard.css` - Refactored and optimized
+- `css/admin_questionnaire.css` - Refactored and optimized
+- `css/admin_sire_childe.css` - Refactored and optimized
+- `index.php` - Fixed NPC count query
+- `admin/admin_panel.php` - Fixed NPC count query
+- `admin/admin_sire_childe.php` - Fixed NPC identification
+- `admin/admin_sire_childe_enhanced.php` - Fixed NPC identification
+
+---
+
+## Version 0.4.0
 **Date:** January 4, 2025
 
 ### Database-Driven Questionnaire System:

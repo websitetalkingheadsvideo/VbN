@@ -137,7 +137,7 @@ include __DIR__ . '/../includes/header.php';
                     echo "<tr><td colspan='9'>Query Error: " . mysqli_error($conn) . "</td></tr>";
                 } elseif (mysqli_num_rows($enhanced_result) > 0) {
                     while ($char = mysqli_fetch_assoc($enhanced_result)) {
-                        $is_npc = ($char['player_name'] === 'ST/NPC');
+                        $is_npc = ($char['player_name'] === 'NPC');
                         $has_sire_field = !empty($char['sire']);
                         $has_biography = !empty($char['biography']);
                         $has_childer = $char['childe_count'] > 0;
