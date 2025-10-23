@@ -141,14 +141,14 @@ class TraitSystem {
         const state = this.stateManager.getState();
         const traits = [...state.traits[category]];
         
-        // Check if we're at the maximum (capped at free points during character creation)
+        // Cap at free points during character creation; duplicates allowed until cap
         const freePoints = this.getFreePoints(category);
         if (traits.length >= freePoints) {
-            console.error(`TraitSystem: Maximum ${freePoints} traits allowed in ${category} category during character creation.`);
+            console.error(`TraitSystem: Maximum ${freePoints} free traits allowed in ${category} during character creation.`);
             return;
         }
         
-        // Add trait to the list (all traits are free during character creation)
+        // Add trait to the list (duplicates permitted by repeated clicks)
         traits.push(traitName);
         
         // Update state

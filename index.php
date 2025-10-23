@@ -106,7 +106,7 @@ include 'includes/header.php';
                     <div class="card-icon">🌟</div>
                     <h3>Clan Discovery Quiz</h3>
                     <p>Test the character creation questionnaire</p>
-                    <a href="character_questionnaire.php" class="gothic-button">Take Quiz</a>
+                    <a href="questionnaire.php" class="gothic-button">Take Quiz</a>
                 </div>
                 
                 <div class="action-card disabled">
@@ -146,7 +146,7 @@ include 'includes/header.php';
                     <span class="btn-text">Create New Character</span>
                 </a>
                 
-                <a href="character_questionnaire.php" class="quiz-character-btn">
+                <a href="questionnaire.php" class="quiz-character-btn">
                     <span class="btn-icon">🌟</span>
                     <span class="btn-text">Discover Your Clan</span>
                 </a>

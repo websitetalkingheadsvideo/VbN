@@ -1,0 +1,117 @@
+{
+  "character_name": "Sofia Alvarez",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Architect",
+  "demeanor": "Gallant",
+  "concept": "The Spatial Empath / Conversational Architect",
+  "clan": "Ghoul (Domitor: Étienne Duvalier)",
+  "generation": "Ghoul",
+  "sire": "N/A - Ghouled by Étienne Duvalier in 2006",
+  "pc": 0,
+  "biography": "Originally an architect from Barcelona in her early 30s, Sofia Alvarez was ghouled by Étienne Duvalier in 2006 and has served as his interior designer and conversational architect for 8 years. She dresses in structured silhouettes favoring whites, grays, and soft metallics, and sketches constantly - light patterns, seating curves, conversational sightlines. Her presence is warm, confident, and disarmingly insightful; she reads a room like a book. She believes conversations are compositions and that her domitor is the city's true composer. She ensures the gallery's conversational geometry is perfect, arranging seating, lighting, and wine service to encourage intimate clusters - she calls it 'social choreography.' Other Kindred find her charming and disarming, unaware she's mapping their relationships in her head for Étienne's quiet analysis. She embodies Étienne's obsession with flow - shaping motion and social dynamics.",
+  "equipment": "Sketchbook (constantly in hand), architectural tools, structured designer clothing in whites/grays/metallics, measuring tape",
+  
+  "traits": {
+    "Physical": ["Graceful", "Graceful", "Graceful"],
+    "Social": ["Charismatic", "Charismatic", "Charismatic", "Charismatic", "Persuasive", "Persuasive", "Persuasive", "Elegant", "Elegant", "Elegant", "Elegant", "Alluring"],
+    "Mental": ["Observant", "Observant", "Observant", "Observant", "Intelligent", "Intelligent", "Intelligent", "Attentive", "Attentive", "Attentive"]
+  },
+  
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  
+  "abilities": [
+    {"name": "Empathy", "category": "Social", "level": 4},
+    {"name": "Crafts", "category": "Physical", "level": 4},
+    {"name": "Expression", "category": "Social", "level": 3},
+    {"name": "Etiquette", "category": "Social", "level": 3},
+    {"name": "Linguistics", "category": "Mental", "level": 3},
+    {"name": "Subterfuge", "category": "Social", "level": 2},
+    {"name": "Performance", "category": "Social", "level": 2},
+    {"name": "Academics", "category": "Mental", "level": 2},
+    {"name": "Politics", "category": "Mental", "level": 2}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Presence",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Awe"},
+        {"level": 2, "power": "Dread Gaze"}
+      ],
+      "notes": "Via vitae - uses charm and poise to set moods effortlessly"
+    },
+    {
+      "name": "Auspex",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"}
+      ],
+      "notes": "Via vitae - reads group tension and spatial energy"
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 0,
+    "Resources": 0,
+    "Status": 0,
+    "Contacts": 2,
+    "Allies": 0,
+    "Herd": 0,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0,
+    "Mentor": 0
+  },
+  
+  "backgroundDetails": {
+    "Retainer": "Serves Étienne Duvalier (rating 2) - deeply devoted, interior designer and social coordinator",
+    "Contacts": "Art world connections, gallery staff, architectural firms, event planners"
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 4,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 7
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Ghoul",
+      "type": "special",
+      "category": "Supernatural",
+      "cost": 0,
+      "description": "Fed Toreador vitae regularly since 2006. Gains Potence 1 automatically, plus Presence 2 and Auspex 1 taught by domitor. Ages approximately 1 year per decade."
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 10,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "Ghoul retainer of Étienne Duvalier since 2006 (8 years). Interior designer and conversational architect. Early 30s, structured clothing in whites/grays/metallics. Warm, confident, disarmingly insightful. Sketches constantly - light patterns, seating curves, conversational sightlines. Practices 'social choreography' - arranges gallery spaces to encourage specific social dynamics. Maps Kindred relationships mentally for Étienne's analysis. Other Kindred find her charming, unaware of her true purpose. Embodies flow - shapes motion and conversation. Believes conversations are compositions and Étienne is the city's true composer. Works with Lucien as pair - he shapes form, she shapes flow. Presence 2 allows her to set moods effortlessly."
+  },
+  
+  "rituals": [],
+  
+  "specializations": {
+    "Crafts": "Interior design and spatial arrangement",
+    "Performance": "Conversation layouts and social choreography",
+    "Linguistics": "Spanish (native), Catalan, English",
+    "Empathy": "Reading group dynamics and spatial energy"
+  }
+}

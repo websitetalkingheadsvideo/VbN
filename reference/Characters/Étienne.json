@@ -1,0 +1,189 @@
+{
+  "character_name": "Étienne Duvalier",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Perfectionist",
+  "demeanor": "Bon Vivant",
+  "concept": "Patron of Beauty / Social Architect",
+  "clan": "Toreador",
+  "generation": 9,
+  "sire": "Prestigious Parisian Toreador elder",
+  "pc": 0,
+  "biography": "Embraced in 1794 Paris during the revolutionary period, Étienne Duvalier has spent two centuries cultivating beauty, taste, and social influence across Europe and America. As Toreador Primogen in Phoenix, he dominates the local and national art scenes with unrivaled magnetism and centuries of refined charm. He maintains a penthouse loft above a restored theatre in downtown Mesa, where he curates not just art but society itself. His relationship with Prince Solomon Reaves is one of barely concealed contempt wrapped in perfect civility - he commands the city through culture while the Prince commands through politics. Étienne is training Sebastian and Sabine (the twins) alongside Cordelia Prescott as part of his grand plan to eventually take over New York Kindred society with a cultivated power bloc. He cannot abide imperfection and often rearranges objects or seating mid-conversation to 'improve symmetry.' His voice is hypnotic, his presence commanding, and to disappoint him is social death among Toreador.",
+  "equipment": "Silver walking stick with concealed blade, key to The Hawthorne Estate's private gallery vault, collection of 18th-20th century art catalogs (some annotated in blood), encrypted communication devices linked to Elysium and gallery",
+  
+  "traits": {
+    "Physical": ["Graceful", "Precise", "Quick", "Coordinated"],
+    "Social": ["Charismatic", "Charismatic", "Charismatic", "Charismatic", "Charismatic", "Persuasive", "Persuasive", "Persuasive", "Persuasive", "Elegant", "Elegant", "Elegant", "Elegant", "Striking"],
+    "Mental": ["Observant", "Observant", "Observant", "Observant", "Intelligent", "Intelligent", "Intelligent", "Attentive", "Attentive", "Attentive", "Attentive"]
+  },
+  
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  
+  "abilities": [
+    {"name": "Etiquette", "category": "Social", "level": 5},
+    {"name": "Crafts", "category": "Physical", "level": 5},
+    {"name": "Expression", "category": "Social", "level": 4},
+    {"name": "Empathy", "category": "Social", "level": 4},
+    {"name": "Subterfuge", "category": "Social", "level": 4},
+    {"name": "Linguistics", "category": "Mental", "level": 6},
+    {"name": "Politics", "category": "Mental", "level": 4},
+    {"name": "Leadership", "category": "Social", "level": 3},
+    {"name": "Academics", "category": "Mental", "level": 3},
+    {"name": "Performance", "category": "Social", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 2},
+    {"name": "Melee", "category": "Physical", "level": 2},
+    {"name": "Security", "category": "Physical", "level": 2},
+    {"name": "Streetwise", "category": "Social", "level": 2},
+    {"name": "Finance", "category": "Mental", "level": 2},
+    {"name": "Occult", "category": "Mental", "level": 2},
+    {"name": "Intimidation", "category": "Social", "level": 1},
+    {"name": "Firearms", "category": "Physical", "level": 1}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Presence",
+      "level": 5,
+      "powers": [
+        {"level": 1, "power": "Awe"},
+        {"level": 2, "power": "Dread Gaze"},
+        {"level": 3, "power": "Entrancement"},
+        {"level": 4, "power": "Summon"},
+        {"level": 5, "power": "Majesty"}
+      ]
+    },
+    {
+      "name": "Auspex",
+      "level": 4,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"},
+        {"level": 2, "power": "Aura Perception"},
+        {"level": 3, "power": "The Spirit's Touch"},
+        {"level": 4, "power": "Telepathy"}
+      ]
+    },
+    {
+      "name": "Celerity",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Cat's Grace"},
+        {"level": 2, "power": "Rapid Reflexes"},
+        {"level": 3, "power": "Lightning Strike"}
+      ]
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 6,
+    "Resources": 4,
+    "Influence": 5,
+    "Allies": 3,
+    "Contacts": 3,
+    "Retainers": 2,
+    "Status": 5,
+    "Herd": 0,
+    "Fame": 0,
+    "Mentor": 0
+  },
+  
+  "backgroundDetails": {
+    "Resources": "Wealth accumulated from centuries of art collection, curation, and real estate investments across Europe and America",
+    "Influence": "Art World - Dominates local and national art scenes, museum boards, gallery openings, critical discourse. His word can make or break artistic careers",
+    "Allies": "Network of artists, curators, and high society figures across multiple cities who owe him favors or genuinely admire his patronage",
+    "Contacts": "Museum directors, art critics, private collectors, cultural institutions, wealthy patrons",
+    "Retainers": "Two loyal ghouls - a talented sculptor and an interior designer who manage his properties and artistic projects",
+    "Status": "Toreador Primogen of Phoenix, elder of elegance and taste, his approval is sought by all Toreador neonates. To disappoint him is social death"
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 4,
+    "self_control": 3,
+    "courage": 4,
+    "willpower_permanent": 8,
+    "willpower_current": 8,
+    "humanity": 7
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Enchanting Voice",
+      "type": "merit",
+      "category": "Social",
+      "cost": 2,
+      "description": "His voice captivates any listener. When he speaks, people instinctively lean in and listen."
+    },
+    {
+      "name": "Prestigious Sire",
+      "type": "merit",
+      "category": "Social",
+      "cost": 1,
+      "description": "His lineage from a renowned Parisian elder commands automatic deference among Toreador society."
+    },
+    {
+      "name": "Natural Leader",
+      "type": "merit",
+      "category": "Social",
+      "cost": 1,
+      "description": "Others instinctively defer to his sense of authority and grace. His presence commands respect."
+    },
+    {
+      "name": "Rivalry (Prince Solomon Reaves)",
+      "type": "flaw",
+      "category": "Social",
+      "cost": 2,
+      "description": "A subtle, simmering opposition to the Prince. Barely concealed contempt wrapped in perfect civility."
+    },
+    {
+      "name": "Obsessive Perfectionism",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Cannot abide imperfection in any form. Distraction and frustration can erode his composure when confronted with the flawed or ugly."
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 250,
+    "xp_spent": 250,
+    "xp_available": 0,
+    "blood_pool": 20,
+    "blood_per_turn": 2,
+    "health_levels": 7,
+    "notes": "END-GAME NPC. Toreador Primogen, 200+ years old, master of social architecture. Training Sebastian & Sabine (the twins) for eventual New York takeover. Barely conceals contempt for Prince Solomon Reaves - 'The Prince commands the city. I compose it.' Professional respect with Seneschal (forbidden friendship). Admires Christopher Duvall's precision but dislikes utilitarian aesthetics. Revered and feared by Toreador neonates. Behavioral quirks: lowers voice when others raise theirs, rearranges objects/seating mid-conversation for symmetry, shifts languages mid-sentence for nuance, sketches guests in document margins to 'capture posture.' Presence 5 (Majesty) makes him nearly untouchable in social settings. Lives in penthouse loft above restored theatre in downtown Mesa. Art History 4, Crafts (Sculpture) 5, speaks 7 languages fluently. 'Perfection is not a goal - it is the absence of noise.'"
+  },
+  
+  "rituals": [],
+  
+  "specializations": {
+    "Crafts": "Sculpture",
+    "Performance": "Art curation and exhibition design",
+    "Linguistics": "French (native), English, Spanish, Italian, Portuguese, Romanian, Catalan",
+    "Politics": "Camarilla social maneuvering",
+    "Academics": "Art History and aesthetic theory"
+  },
+  
+  "relationships": {
+    "Prince Solomon Reaves": "Barely concealed contempt wrapped in civility. Political rival.",
+    "Seneschal": "Professional harmony and private mutual respect. A friendship forbidden by circumstance.",
+    "Christopher Duvall (Keeper)": "Professional respect. Admires precision but dislikes utilitarian aesthetics.",
+    "Toreador Neonates": "Revered and feared. To disappoint him is social death.",
+    "Sebastian & Sabine": "His childer, being trained alongside Cordelia for eventual New York takeover.",
+    "Cordelia Prescott": "Ally in training the twins, mutual respect as social architects.",
+    "Rembrandt Jones": "Amusing disaster, living performance art he doesn't fully understand yet."
+  },
+  
+  "quotes": [
+    "Perfection is not a goal — it is the absence of noise.",
+    "The Prince commands the city. I compose it.",
+    "Conversation, my dear, is the art of sculpting the invisible."
+  ]
+}

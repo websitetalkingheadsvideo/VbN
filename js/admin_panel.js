@@ -196,7 +196,7 @@ function initializeDeleteButtons() {
         btn.addEventListener('click', function() {
             deleteCharacterId = this.dataset.id;
             const characterName = this.dataset.name;
-            const isFinalized = this.dataset.finalized === '1';
+            const isFinalized = this.dataset.status === 'finalized';
             
             // Show modal
             document.getElementById('deleteCharacterName').textContent = characterName;
@@ -346,5 +346,197 @@ function createPageButton(text, page) {
 function goToPage(page) {
     currentPage = page;
     updatePagination();
+}
+
+// View character functionality
+let currentViewMode = 'compact';
+let currentViewData = null;
+
+function viewCharacter(characterId) {
+    document.getElementById('viewModal').classList.add('active');
+    document.getElementById('viewCharacterContent').innerHTML = 'Loading...';
+    
+    fetch('view_character_api.php?id=' + characterId)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                currentViewData = data;
+                document.getElementById('viewCharacterName').textContent = data.character.character_name;
+                renderCharacterView(currentViewMode);
+            } else {
+                document.getElementById('viewCharacterContent').innerHTML = '<p style="color: red;">Error: ' + data.message + '</p>';
+            }
+        })
+        .catch(error => {
+            document.getElementById('viewCharacterContent').innerHTML = '<p style="color: red;">Error loading character</p>';
+            console.error(error);
+        });
+}
+
+function setViewMode(mode, event) {
+    currentViewMode = mode;
+    document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
+    if (currentViewData) {
+        renderCharacterView(mode);
+    }
+}
+
+function renderCharacterView(mode) {
+    const char = currentViewData.character;
+    let html = '';
+    
+    if (mode === 'compact') {
+        // Compact view - essential info only
+        html = '<div class="character-details compact">';
+        html += '<div class="info-grid">';
+        html += '<p><strong>Player:</strong> ' + char.player_name + '</p>';
+        html += '<p><strong>Clan:</strong> ' + char.clan + '</p>';
+        html += '<p><strong>Generation:</strong> ' + char.generation + 'th</p>';
+        html += '<p><strong>Concept:</strong> ' + char.concept + '</p>';
+        html += '<p><strong>Nature:</strong> ' + char.nature + '</p>';
+        html += '<p><strong>Demeanor:</strong> ' + char.demeanor + '</p>';
+        html += '</div>';
+        
+        if (currentViewData.traits && currentViewData.traits.length > 0) {
+            const physical = currentViewData.traits.filter(t => t.trait_category === 'Physical');
+            const social = currentViewData.traits.filter(t => t.trait_category === 'Social');
+            const mental = currentViewData.traits.filter(t => t.trait_category === 'Mental');
+            
+            html += '<h3>Traits</h3>';
+            if (physical.length > 0) html += '<p><strong>Physical:</strong> ' + physical.map(t => t.trait_name).join(', ') + '</p>';
+            if (social.length > 0) html += '<p><strong>Social:</strong> ' + social.map(t => t.trait_name).join(', ') + '</p>';
+            if (mental.length > 0) html += '<p><strong>Mental:</strong> ' + mental.map(t => t.trait_name).join(', ') + '</p>';
+        }
+        
+        if (currentViewData.disciplines && currentViewData.disciplines.length > 0) {
+            html += '<h3>Disciplines</h3>';
+            html += '<p>' + currentViewData.disciplines.map(d => d.discipline_name + ' ' + d.level).join(', ') + '</p>';
+        }
+        
+        html += '</div>';
+    } else {
+        // Full view - all details
+        html = '<div class="character-details full">';
+        
+        html += '<h3>Basic Information</h3>';
+        html += '<div class="info-grid">';
+        html += '<p><strong>Player:</strong> ' + char.player_name + '</p>';
+        html += '<p><strong>Chronicle:</strong> ' + char.chronicle + '</p>';
+        html += '<p><strong>Nature:</strong> ' + char.nature + '</p>';
+        html += '<p><strong>Demeanor:</strong> ' + char.demeanor + '</p>';
+        html += '<p><strong>Concept:</strong> ' + char.concept + '</p>';
+        html += '<p><strong>Clan:</strong> ' + char.clan + '</p>';
+        html += '<p><strong>Generation:</strong> ' + char.generation + 'th</p>';
+        html += '<p><strong>Sire:</strong> ' + (char.sire || 'Unknown') + '</p>';
+        html += '</div>';
+        
+        // Traits
+        if (currentViewData.traits && currentViewData.traits.length > 0) {
+            const physical = currentViewData.traits.filter(t => t.trait_category === 'Physical');
+            const social = currentViewData.traits.filter(t => t.trait_category === 'Social');
+            const mental = currentViewData.traits.filter(t => t.trait_category === 'Mental');
+            
+            html += '<h3>Physical Traits (' + physical.length + ')</h3>';
+            html += '<div class="trait-list">';
+            physical.forEach(t => html += '<span class="trait-badge">' + t.trait_name + '</span>');
+            html += '</div>';
+            
+            html += '<h3>Social Traits (' + social.length + ')</h3>';
+            html += '<div class="trait-list">';
+            social.forEach(t => html += '<span class="trait-badge">' + t.trait_name + '</span>');
+            html += '</div>';
+            
+            html += '<h3>Mental Traits (' + mental.length + ')</h3>';
+            html += '<div class="trait-list">';
+            mental.forEach(t => html += '<span class="trait-badge">' + t.trait_name + '</span>');
+            html += '</div>';
+        }
+        
+        // Abilities
+        if (currentViewData.abilities && currentViewData.abilities.length > 0) {
+            html += '<h3>Abilities</h3>';
+            html += '<div class="trait-list">';
+            currentViewData.abilities.forEach(a => {
+                html += '<span class="trait-badge">' + a.ability_name + ' ' + a.level + '</span>';
+            });
+            html += '</div>';
+        }
+        
+        // Disciplines
+        if (currentViewData.disciplines && currentViewData.disciplines.length > 0) {
+            html += '<h3>Disciplines</h3>';
+            html += '<div class="trait-list">';
+            currentViewData.disciplines.forEach(d => {
+                html += '<span class="trait-badge">' + d.discipline_name + ' ' + d.level + '</span>';
+            });
+            html += '</div>';
+        }
+        
+        // Backgrounds
+        if (currentViewData.backgrounds && currentViewData.backgrounds.length > 0) {
+            html += '<h3>Backgrounds</h3>';
+            html += '<div class="trait-list">';
+            currentViewData.backgrounds.forEach(b => {
+                html += '<span class="trait-badge">' + b.background_name + ' ' + b.level + '</span>';
+            });
+            html += '</div>';
+        }
+        
+        // Morality
+        if (currentViewData.morality) {
+            const m = currentViewData.morality;
+            html += '<h3>Morality & Virtues</h3>';
+            html += '<div class="info-grid">';
+            html += '<p><strong>Humanity:</strong> ' + m.humanity + '/10</p>';
+            html += '<p><strong>Willpower:</strong> ' + m.willpower_current + '/' + m.willpower_permanent + '</p>';
+            html += '<p><strong>Conscience:</strong> ' + m.conscience + '</p>';
+            html += '<p><strong>Self-Control:</strong> ' + m.self_control + '</p>';
+            html += '<p><strong>Courage:</strong> ' + m.courage + '</p>';
+            html += '</div>';
+        }
+        
+        // Merits & Flaws
+        if (currentViewData.merits_flaws && currentViewData.merits_flaws.length > 0) {
+            const merits = currentViewData.merits_flaws.filter(m => m.type === 'merit');
+            const flaws = currentViewData.merits_flaws.filter(m => m.type === 'flaw');
+            
+            if (merits.length > 0) {
+                html += '<h3>Merits</h3>';
+                html += '<div class="trait-list">';
+                merits.forEach(m => html += '<span class="trait-badge">' + m.name + ' (' + m.point_value + ')</span>');
+                html += '</div>';
+            }
+            
+            if (flaws.length > 0) {
+                html += '<h3>Flaws</h3>';
+                html += '<div class="trait-list">';
+                flaws.forEach(f => html += '<span class="trait-badge">' + f.name + ' (' + f.point_value + ')</span>');
+                html += '</div>';
+            }
+        }
+        
+        // Status
+        if (currentViewData.status) {
+            const s = currentViewData.status;
+            html += '<h3>Status & Resources</h3>';
+            html += '<div class="info-grid">';
+            html += '<p><strong>Health:</strong> ' + s.health_levels + '</p>';
+            html += '<p><strong>Blood Pool:</strong> ' + s.blood_pool_current + '/' + s.blood_pool_maximum + '</p>';
+            if (s.sect_status) html += '<p><strong>Sect Status:</strong> ' + s.sect_status + '</p>';
+            if (s.clan_status) html += '<p><strong>Clan Status:</strong> ' + s.clan_status + '</p>';
+            html += '</div>';
+        }
+        
+        html += '</div>';
+    }
+    
+    document.getElementById('viewCharacterContent').innerHTML = html;
+}
+
+function closeViewModal() {
+    document.getElementById('viewModal').classList.remove('active');
 }
 

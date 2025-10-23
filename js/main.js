@@ -295,10 +295,17 @@ class CharacterCreationApp {
     async initializeApplication() {
         console.log('Initializing application...');
         
-        // Load saved state if available
-        const hasSavedState = this.modules.stateManager.loadState();
-        if (hasSavedState) {
-            console.log('Loaded saved state');
+        // Only resume saved state if explicitly requested via ?resume=1
+        const urlParams = new URLSearchParams(window.location.search);
+        const resume = urlParams.get('resume');
+        if (resume === '1') {
+            const hasSavedState = this.modules.stateManager.loadState();
+            if (hasSavedState) {
+                console.log('Resumed saved state');
+            }
+        } else {
+            // Start with a fresh state for new character creation
+            this.modules.stateManager.reset();
         }
         
         // Initialize basic info tab

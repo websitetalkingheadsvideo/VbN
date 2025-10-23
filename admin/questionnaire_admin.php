@@ -69,31 +69,7 @@ $questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire Admin - Valley by Night</title>
     <link rel="stylesheet" href="../css/global.css">
-    <style>
-        .admin-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .admin-header { background: #1a0f0f; color: #c9a96e; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .question-form { background: #2a1f1f; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; color: #c9a96e; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group textarea, .form-group select { 
-            width: 100%; padding: 8px; border: 1px solid #444; background: #1a0f0f; color: #c9a96e; border-radius: 4px; 
-        }
-        .form-group textarea { height: 80px; resize: vertical; }
-        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
-        .btn-primary { background: #8b0000; color: white; }
-        .btn-secondary { background: #666; color: white; }
-        .btn-danger { background: #cc0000; color: white; }
-        .questions-table { background: #2a1f1f; border-radius: 8px; overflow: hidden; }
-        .questions-table table { width: 100%; border-collapse: collapse; }
-        .questions-table th, .questions-table td { padding: 12px; text-align: left; border-bottom: 1px solid #444; }
-        .questions-table th { background: #1a0f0f; color: #c9a96e; font-weight: bold; }
-        .questions-table td { color: #ddd; }
-        .questions-table tr:hover { background: #3a2f2f; }
-        .message { padding: 10px; margin: 10px 0; border-radius: 4px; }
-        .message.success { background: #004400; color: #90ee90; }
-        .message.error { background: #440000; color: #ffaaaa; }
-        .edit-form { display: none; background: #3a2f2f; padding: 15px; border-radius: 4px; margin-top: 10px; }
-    </style>
+    <link rel="stylesheet" href="../css/admin_questionnaire.css">
 </head>
 <body>
     <div class="admin-container">
@@ -316,15 +292,6 @@ $questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
     </div>
 
-    <script>
-        function toggleEdit(id) {
-            const editForm = document.getElementById("edit-" + id);
-            if (editForm.style.display === "none" || editForm.style.display === "") {
-                editForm.style.display = "table-row";
-            } else {
-                editForm.style.display = "none";
-            }
-        }
-    </script>
+    <script src="../js/admin_questionnaire.js"></script>
 </body>
 </html>

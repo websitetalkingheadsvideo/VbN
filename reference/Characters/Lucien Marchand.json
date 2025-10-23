@@ -1,0 +1,114 @@
+{
+  "character_name": "Lucien Marchand",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Perfectionist",
+  "demeanor": "Conformist",
+  "concept": "Devoted Artisan / Living Chisel",
+  "clan": "Ghoul (Domitor: Étienne Duvalier)",
+  "generation": "Ghoul",
+  "sire": "N/A - Ghouled by Étienne Duvalier in 1927",
+  "pc": 0,
+  "biography": "Originally a Parisian conservator in his late 20s, Lucien Marchand was ghouled by Étienne Duvalier in 1927 and has served as his sculptor's assistant and personal attendant for nearly 70 years. Tall, quiet, and ghost-pale with short blond hair and intense blue eyes, his hands are perpetually dusted with fine white powder from marble, plaster, and bone. He moves like a statue that decided to breathe, utterly devoted to the belief that Étienne's art is divine work and that his purpose is to assist a god in creation. He rarely speaks unless asked direct questions and sometimes carves tiny, unfinished statues that he hides around Elysium - uncommissioned works reflecting Kindred faces seen in passing. Étienne occasionally finds and corrects them in their silent collaboration. He embodies Étienne's obsession with form - shaping matter with absolute precision.",
+  "equipment": "Sculptor's tools (chisels, mallets, files), fine white powder residue, sketchbook of unfinished works, work apron",
+  
+  "traits": {
+    "Physical": ["Strong", "Strong", "Strong", "Precise", "Precise", "Precise", "Steady-handed", "Resilient", "Resilient", "Resilient"],
+    "Social": ["Earnest", "Earnest", "Attractive", "Attractive", "Attractive"],
+    "Mental": ["Observant", "Observant", "Observant", "Observant", "Attentive", "Attentive", "Attentive"]
+  },
+  
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Shy"],
+    "Mental": []
+  },
+  
+  "abilities": [
+    {"name": "Crafts", "category": "Physical", "level": 4},
+    {"name": "Alertness", "category": "Optional", "level": 2},
+    {"name": "Athletics", "category": "Physical", "level": 2},
+    {"name": "Melee", "category": "Physical", "level": 2},
+    {"name": "Stealth", "category": "Physical", "level": 2},
+    {"name": "Security", "category": "Physical", "level": 2},
+    {"name": "Linguistics", "category": "Mental", "level": 2},
+    {"name": "Empathy", "category": "Social", "level": 1}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Celerity",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Cat's Grace"},
+        {"level": 2, "power": "Rapid Reflexes"}
+      ],
+      "notes": "Via vitae - unnatural speed and precision with tools"
+    },
+    {
+      "name": "Auspex",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"}
+      ],
+      "notes": "Via vitae - can sense artistic or emotional resonance in art pieces"
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 0,
+    "Resources": 0,
+    "Status": 0,
+    "Contacts": 0,
+    "Allies": 0,
+    "Herd": 0,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0,
+    "Mentor": 0
+  },
+  
+  "backgroundDetails": {
+    "Retainer": "Serves Étienne Duvalier (rating 3) - absolute loyalty, sculptor's assistant and personal attendant"
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 6,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 6
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Ghoul",
+      "type": "special",
+      "category": "Supernatural",
+      "cost": 0,
+      "description": "Fed Toreador vitae regularly since 1927. Gains Potence 1 automatically, plus Celerity 2 and Auspex 1 taught by domitor. Ages approximately 1 year per decade."
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 10,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "Ghoul retainer of Étienne Duvalier since 1927 (67 years). Sculptor's assistant. Tall, pale, blond, intense blue eyes. Rarely speaks. Believes Étienne's art is divine work. Carves tiny unfinished statues of Kindred and hides them around Elysium - Étienne finds and corrects them in silent collaboration. Hands perpetually dusted with white powder. Moves like a statue that breathed. Embodies form - shapes matter. Would accept Final Death before betraying domitor. Specializes in sculpture, stonework, precise tool work. Has Celerity 2 for supernatural precision with chisels."
+  },
+  
+  "rituals": [],
+  
+  "specializations": {
+    "Crafts": "Sculpture and stonework",
+    "Melee": "Chisel and improvised weapons",
+    "Linguistics": "French (native), English"
+  }
+}

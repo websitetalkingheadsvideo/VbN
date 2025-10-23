@@ -149,6 +149,9 @@ class TabManager {
         
         // Update navigation buttons
         this.updateNavigationButtons();
+
+        // Update overall progress bar based on current tab position
+        this.updateOverallProgressBar();
         
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -427,6 +430,7 @@ class TabManager {
         
         this.updateTabButtons(this.currentTab);
         this.updateNavigationButtons();
+        this.updateOverallProgressBar();
     }
     
     /**
@@ -505,6 +509,19 @@ class TabManager {
             completionPercentage: percentage,
             nextIncompleteTab: this.getNextIncompleteTab()?.id
         };
+    }
+
+    /**
+     * Update the overall top progress bar (by index position)
+     */
+    updateOverallProgressBar() {
+        const progressBar = this.uiManager.getElement('#tabProgressBar');
+        if (!progressBar) return;
+        const currentIndex = this.tabs.findIndex(tab => tab.id === this.currentTab);
+        const totalTabs = this.tabs.length;
+        if (currentIndex < 0 || totalTabs <= 0) return;
+        const pct = ((currentIndex + 1) / totalTabs) * 100;
+        progressBar.style.width = pct.toFixed(2) + '%';
     }
 }
 

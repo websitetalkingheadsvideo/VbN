@@ -1,6 +1,41 @@
 # LOTN Character Creator - Version History
 
-## Version 0.4.1 (Current)
+## Version 0.4.2 (Current)
+**Date:** January 4, 2025
+
+### Questionnaire System Enhancements:
+- ✅ **Category Reassignment** - Removed "Pre-Embrace" and "Post-Embrace" categories, reassigned all questions to appropriate existing categories
+- ✅ **Visual Styling Updates** - Changed question-category color to dark-red (#8b0000) for better visual hierarchy
+- ✅ **Scoring Logic Fix** - Clan scores now only update when "Next Question" button is clicked, not immediately on answer selection
+- ✅ **Results Page Redesign** - Enhanced clan logo display with 350px width, 25px padding, dark drop shadow, and gold border
+- ✅ **Testing Mode Implementation** - Added direct results page access for Brujah, Tremere, and Gangrel clans via URL parameters
+- ✅ **Header Management** - Questionnaire header now hidden on results page for cleaner presentation
+- ✅ **Clan Logo Container Styling** - Fixed width (400px), gold border, dark-red background with radial gradient, rounded corners (20px), and drop shadows
+
+### Technical Improvements:
+- Updated populate_complete_39_questions.php to reassign question categories
+- Enhanced questionnaire.php with testing mode support for multiple clans
+- Improved js/questionnaire.js with generic showTestClanResults() function
+- Updated css/questionnaire.css with enhanced results page styling
+- Fixed index.php links to point to correct questionnaire.php file
+
+### User Experience Improvements:
+- Cleaner category organization with more logical groupings
+- Better visual feedback with dark-red category headers
+- More intuitive scoring system that doesn't change until user confirms
+- Enhanced results page with professional clan logo presentation
+- Easy testing access for multiple clans without going through full questionnaire
+
+### Files Modified:
+- `populate_complete_39_questions.php` - Category reassignment
+- `questionnaire.php` - Testing mode implementation
+- `js/questionnaire.js` - Scoring logic and testing functions
+- `css/questionnaire.css` - Visual styling updates
+- `index.php` - Fixed questionnaire links
+
+---
+
+## Version 0.4.1
 **Date:** January 4, 2025
 
 ### CSS Refactoring & NPC Count Fix:

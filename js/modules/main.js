@@ -282,10 +282,16 @@ class CharacterCreationApp {
                 this.modules.notificationManager.error('Failed to load character: ' + error.message);
             }
         } else {
-            // Load saved state if available (for new characters)
-            const hasSavedState = this.modules.stateManager.loadState();
-            if (hasSavedState) {
-                console.log('Loaded saved state');
+            // Only resume saved state if explicitly requested via ?resume=1
+            const resume = urlParams.get('resume');
+            if (resume === '1') {
+                const hasSavedState = this.modules.stateManager.loadState();
+                if (hasSavedState) {
+                    console.log('Resumed saved state');
+                }
+            } else {
+                // Start with a fresh state for new character creation
+                this.modules.stateManager.reset();
             }
         }
         

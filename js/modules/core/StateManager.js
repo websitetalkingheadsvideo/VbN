@@ -9,7 +9,7 @@ class StateManager {
             // Basic character information
             characterName: '',
             playerName: '',
-            chronicle: '',
+            chronicle: 'Valley by Night',
             concept: '',
             clan: '',
             generation: 13,
@@ -302,7 +302,7 @@ class StateManager {
         this.state = {
             characterName: '',
             playerName: '',
-            chronicle: '',
+            chronicle: 'Valley by Night',
             concept: '',
             clan: '',
             generation: 13,

@@ -1,0 +1,139 @@
+{
+  "character_name": "Betty",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Visionary",
+  "demeanor": "Professional",
+  "concept": "Tech Prodigy Nosferatu - Shrecknet Architect",
+  "clan": "Nosferatu",
+  "generation": 9,
+  "sire": "Alistaire",
+  "pc": 0,
+  "biography": "Embraced in 1989 at age 22, fresh out of her Computer Science degree. Betty was a brilliant programmer who caught Alistaire's attention while working on cutting-edge networking protocols. He saw the future of information warfare and Embraced her to give the Phoenix Nosferatu a technological edge.\n\nAs a one-year-old fledgling in 1990, Betty is intensely grateful for her Embrace - viewing it as winning the lottery. She received immortality, unlimited access to cutting-edge technology, and a budget rivaling major tech companies. Her Nosferatu curse manifests as 'The Living Terminal' - her skin glows with CRT phosphorescence, fiber-optic filaments grow from her scalp and arms, her fingertips have hardened into connector pins, and her eyes display scan lines when focused.\n\nBetty largely ignores vampire society politics, focusing entirely on building systems and pushing technological boundaries. She coordinates the three-person Nosferatu tech team (herself, #3, and #4) working on Shrecknet development, making Phoenix a crucial node in the emerging global vampire information network. She's the most social of the three, handling all external communication and system architecture decisions while her teammates handle deep technical implementation.\n\nShe operates from Alistaire's bunker haven, monitoring the decoy storm drain location and running surveillance across his domain. Her relationship with her 'brother' Terry is one of respectful indifference - he doesn't understand her 'magic boxes' but trusts her intelligence, and she doesn't need him to understand packet sniffing to appreciate his street-level reconnaissance skills.\n\nBetty specializes in both Microsoft and Unix systems, making her dual-platform expertise rare and valuable. Any company in the Phoenix metro area is vulnerable to her team's hacking capabilities. She's obsessed with the future of technology, constantly theorizing about networking, AI, and digital communication - making predictions that sound insane in 1990 but will prove eerily accurate.",
+  "equipment": "Multiple server racks (Microsoft and Unix systems), custom-built networking equipment, early modem banks, extensive hard drive arrays, prototype surveillance equipment, laptop (cutting edge for 1990), tool kits for hardware maintenance, backup power systems, encrypted communication devices",
+  
+  "traits": {
+    "Physical": ["Alert", "Nimble"],
+    "Social": ["Persuasive", "Friendly"],
+    "Mental": ["Intelligent", "Clever", "Observant", "Knowledgeable", "Creative", "Disciplined"]
+  },
+  
+  "negativeTraits": {
+    "Physical": ["Repugnant (Nosferatu Curse)"],
+    "Social": ["Tactless"],
+    "Mental": ["Obsessed"]
+  },
+  
+  "abilities": [
+    {"name": "Computer", "category": "Mental", "level": 5},
+    {"name": "Technology", "category": "Mental", "level": 4},
+    {"name": "Science", "category": "Mental", "level": 3},
+    {"name": "Security", "category": "Mental", "level": 4},
+    {"name": "Investigation", "category": "Mental", "level": 3},
+    {"name": "Stealth", "category": "Physical", "level": 3},
+    {"name": "Subterfuge", "category": "Social", "level": 2},
+    {"name": "Streetwise", "category": "Social", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 3},
+    {"name": "Repair", "category": "Optional", "level": 3}
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Obfuscate",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Cloak of Shadows"},
+        {"level": 2, "power": "Unseen Presence"}
+      ]
+    },
+    {
+      "name": "Potence",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Prowess"}
+      ]
+    },
+    {
+      "name": "Animalism",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Feral Whispers"}
+      ]
+    }
+  ],
+  
+  "backgrounds": {
+    "Generation": 4,
+    "Resources": 5,
+    "Mentor": 4,
+    "Status": 1,
+    "Contacts": 3,
+    "Allies": 2,
+    "Herd": 0,
+    "Influence": 0,
+    "Retainers": 0,
+    "Fame": 0
+  },
+  
+  "backgroundDetails": {
+    "Resources": "Effectively unlimited budget for computer equipment provided by Alistaire - rivals small-to-medium tech companies. Maintains expensive server infrastructure, prototype equipment, and cutting-edge hardware.",
+    "Mentor": "Alistaire (sire) - Provides guidance, resources, protection, and vision for Shrecknet development. Trusts Betty with massive responsibilities despite her youth.",
+    "Status": "Recognized within Nosferatu clan as rising tech specialist. Low status in broader Camarilla due to youth, but her value is undeniable.",
+    "Contacts": "Tech industry contacts from mortal life, underground hacker networks, BBS operators, computer science academics.",
+    "Allies": "Nosferatu #3 and #4 (her tech team), Terry (fellow childe of Alistaire)"
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 4,
+    "courage": 3,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 7
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Computer Aptitude",
+      "type": "merit",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Natural affinity with computers, -2 difficulty on all Computer rolls"
+    },
+    {
+      "name": "Nightmares",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 1,
+      "description": "Plagued by disturbing dreams of merging with machines"
+    }
+  ],
+  
+  "status": {
+    "created_date": "2025-10-22",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 20,
+    "blood_per_turn": 2,
+    "health_levels": 7,
+    "notes": "ST Notes: Betty is only 1 year old as a vampire but has Generation 9 power. She's a prodigy with computers and technology, already crucial to Shrecknet development. Uses Obfuscate to install surveillance equipment, Animalism for backup 'sensors' (rats as living cameras), and Potence for server maintenance. \n\nRoleplaying: Enthusiastic about technology, dismissive of vampire politics, grateful to Alistaire. Voice has slight static undertone. Eyes flicker with scan lines when deeply focused. Speaks in mix of technical jargon and accessible explanations depending on audience.\n\nKey Relationships: Coordinates with Nosferatu #3 (Gen 12) and #4 (Gen 13) on Shrecknet. Respectful but distant relationship with Terry. Devoted to Alistaire's vision.\n\nMechanical Notes: As Gen 9, she has Blood Pool 20 and can spend 2 blood per turn. Her Nosferatu appearance penalty is severe - she must use Obfuscate or Mask of 1000 Faces for social interaction with non-Nosferatu. Monitors decoy storm drain haven remotely."
+  },
+  
+  "specializations": {
+    "Computer": "Networking protocols, security systems, dual-platform (Microsoft/Unix)",
+    "Technology": "Server infrastructure, surveillance systems",
+    "Security": "Corporate espionage, penetration testing"
+  },
+  
+  "research_notes": {
+    "shrecknet_role": "Phoenix node architect - one of three Nosferatu building the early Shrecknet infrastructure. Responsible for system architecture and external coordination.",
+    "curse_evolution": "Curse is still developing. May become more machine-like over time. Currently: CRT glow, fiber-optic filaments, connector-pin fingers, scan-line eyes.",
+    "tech_predictions": "Makes accurate predictions about future tech: internet everywhere, pocket computers, digital surveillance states, end of privacy.",
+    "team_dynamic": "Betty handles coordination/architecture, #3 handles deep Unix work, #4 handles hardware/security. She's the face of the operation.",
+    "corporate_targets": "Can hack any Phoenix metro company within hours given phone line access. Primarily extracts intelligence for Alistaire.",
+    "haven_location": "Operates from Alistaire's bunker - climate controlled, redundant power, physical security managed by Alistaire's network."
+  }
+}

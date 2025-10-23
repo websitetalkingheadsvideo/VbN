@@ -15,6 +15,7 @@ class PreviewManager {
         this.isUpdating = false;
         this.lastUpdate = 0;
         this.updateThrottle = 100; // 100ms throttle
+        this.lastDisciplinesSignature = '';
         
         this.init();
     }
@@ -303,7 +304,18 @@ class PreviewManager {
             let disciplines = state.disciplines || [];
             const disciplinePowers = state.disciplinePowers || {};
             
-            console.log('PreviewManager updateDisciplines - raw disciplines:', disciplines);
+            // Compute a lightweight signature to avoid redundant work/logging per keystroke
+            const signature = (() => {
+                try { return JSON.stringify({ d: disciplines, p: disciplinePowers }); } catch { return String(Date.now()); }
+            })();
+            if (signature === this.lastDisciplinesSignature) {
+                return; // No meaningful change; skip processing/logging
+            }
+            this.lastDisciplinesSignature = signature;
+            
+            if (window && window.DEBUG_PREVIEW) {
+                console.log('PreviewManager updateDisciplines - raw disciplines:', disciplines);
+            }
             
             // Ensure disciplines is always an array
             if (!Array.isArray(disciplines)) {
@@ -322,7 +334,9 @@ class PreviewManager {
                 }
             }
             
-            console.log('PreviewManager updateDisciplines - processed disciplines:', disciplines);
+            if (window && window.DEBUG_PREVIEW) {
+                console.log('PreviewManager updateDisciplines - processed disciplines:', disciplines);
+            }
             
             const listElement = this.uiManager.getElement('#previewDisciplines');
             if (listElement) {
