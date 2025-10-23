@@ -1,170 +1,98 @@
-# 📝 Next Session: Questionnaire Question Rewrite
+# Next Session: Questionnaire Question Rewrite & Enhancement
 
-## 🎯 **Session Goal**
-Rewrite and improve the questionnaire questions to better align with vampire clan characteristics and create more meaningful clan differentiation.
+## Current Status (v0.4.2)
+✅ **Questionnaire System Complete** - All 39 questions are working with database-driven system
+✅ **Category System Fixed** - Removed Pre-Embrace/Post-Embrace, reassigned to appropriate categories
+✅ **Visual Design Enhanced** - Dark-red headers, gold borders, professional results page
+✅ **Testing Mode Working** - Direct access to Brujah, Tremere, and Gangrel results
+✅ **Scoring Logic Fixed** - Clan scores only update on Next button click
 
----
+## Next Session Goals
 
-## 📊 **Current Status - v0.2.6**
+### 1. Question Content Review & Rewrite
+- **Review all 39 questions** for clarity, relevance, and vampire theme
+- **Rewrite poorly worded questions** to be more engaging and thematic
+- **Ensure questions feel like vampire character creation** rather than generic personality tests
+- **Add more vampire-specific scenarios** and dilemmas
 
-### ✅ **Completed Features**
-- **Enhanced UI**: Fade-out transitions, results display with 400px clan logos
-- **Category System**: Questions organized by categories (embrace, personality, powers, etc.)
-- **Cinematic Animations**: Category entries with 75% transparency and smooth transitions
-- **Clan Tracking**: Real-time clan score tracking with popup display
-- **Results Display**: Beautiful clan reveal with descriptions and all scores
-- **Action Buttons**: Retake questionnaire and create character options
+### 2. Question Quality Improvements
+- **Make questions more immersive** - Use vampire terminology and concepts
+- **Improve answer options** - Make them more distinct and meaningful
+- **Add atmospheric descriptions** - Enhance the gothic feel
+- **Ensure cultural sensitivity** - Review for any problematic content
 
-### 🗂️ **Current Question Categories**
-1. **Embrace** - How you became a vampire
-2. **Personality** - Character traits and behaviors
-3. **Perspective** - Views on humanity and immortality
-4. **Powers** - Preferred supernatural abilities
-5. **Motivation** - Personal goals and drives
-6. **Supernatural** - Views on other supernatural beings
-7. **Secrets** - Hidden aspects of character
-8. **Fears** - Greatest immortal fears
-9. **Scenario** - Situational responses (multiple questions)
-10. **Workplace** - Professional conflict resolution
-11. **Family** - Family crisis management
-12. **Social** - Social situation responses
-13. **Moral** - Ethical dilemma handling
-14. **Power** - Leadership and authority
-15. **Life** - Major life decisions
+### 3. Potential New Questions
+- **Consider adding 5-10 new questions** to make it a 45-50 question system
+- **Focus on vampire-specific themes**:
+  - Blood drinking preferences and methods
+  - Relationship with humanity and mortals
+  - Clan-specific power fantasies
+  - Supernatural encounters and reactions
+  - Vampire society and politics
+  - Feeding habits and hunting methods
 
----
+### 4. Category Enhancement
+- **Review current categories** for better organization
+- **Consider adding new categories**:
+  - "Feeding" - Questions about blood drinking and hunting
+  - "Supernatural" - Questions about other supernatural beings
+  - "Politics" - Questions about vampire society and power structures
+  - "Humanity" - Questions about maintaining human connections
 
-## 🔄 **Question Rewrite Objectives**
+### 5. Technical Improvements
+- **Question difficulty balancing** - Ensure questions aren't too easy or hard
+- **Clan scoring optimization** - Fine-tune the scoring weights
+- **Question flow improvement** - Better progression from basic to complex
+- **Mobile optimization** - Ensure all questions work well on mobile
 
-### **Primary Goals**
-1. **Better Clan Differentiation**: Ensure each clan has distinct, meaningful choices
-2. **Improved Balance**: More even distribution of clan points across questions
-3. **Enhanced Thematic Coherence**: Questions that better reflect vampire lore
-4. **Clearer Answer Options**: More distinct and meaningful answer choices
-5. **Better Scenarios**: More engaging and vampire-specific situations
+## Files to Work With
 
-### **Clan Focus Areas**
+### Primary Files:
+- `populate_complete_39_questions.php` - Contains all question data
+- `questionnaire.php` - Main questionnaire page
+- `js/questionnaire.js` - Frontend functionality
+- `css/questionnaire.css` - Styling
 
-#### **Ventrue (Blue Bloods)**
-- Leadership, authority, tradition
-- Political maneuvering, social hierarchy
-- Responsibility, duty, ruling others
-- Wealth, power, influence
+### Reference Files:
+- `reference/Questions_1.md` - Original question set 1
+- `reference/Questions_2.md` - Original question set 2  
+- `reference/Questions_3.md` - Original question set 3
+- `NEXT_SESSION_QUESTIONNAIRE.md` - Original questionnaire plan
 
-#### **Tremere (Warlocks)**
-- Knowledge, secrets, magic
-- Scholarly pursuits, research
-- Mystical arts, blood magic
-- Hidden knowledge, ancient lore
+## Current Question Categories (17 total):
+1. **embrace** - The Embrace & Transformation (Question 21)
+2. **personality** - Core Personality Traits (Questions 22-23)
+3. **perspective** - Worldview & Philosophy (Question 24)
+4. **powers** - Supernatural Abilities (Question 25)
+5. **motivation** - Personal Goals & Drives (Question 26)
+6. **supernatural** - Other Supernatural Beings (Question 27)
+7. **secrets** - Hidden Truths & Secrets (Question 28)
+8. **fears** - Deepest Fears & Dreads (Question 29)
+9. **scenario** - Hypothetical Scenarios (Questions 11, 13, 15, 17, 18, 30-34)
+10. **workplace** - Professional Situations (Questions 5, 8, 35)
+11. **family** - Family & Relationships (Questions 3, 10, 36)
+12. **social** - Social Interactions (Questions 1, 4, 6, 7, 9, 12, 37)
+13. **moral** - Moral Dilemmas (Questions 2, 20, 38)
+14. **power** - Power & Authority (Questions 14, 16, 19, 39)
+15. **life** - Life-Changing Decisions (Question 40)
 
-#### **Brujah (Rabble)**
-- Passion, rebellion, justice
-- Fighting for beliefs, challenging authority
-- Emotional intensity, social causes
-- Revolutionary spirit, direct action
+## Testing Access
+- **Brujah**: `questionnaire.php?test=brujah`
+- **Tremere**: `questionnaire.php?test=tremere`
+- **Gangrel**: `questionnaire.php?test=gangrel`
 
-#### **Nosferatu (Sewer Rats)**
-- Information, secrets, shadows
-- Hidden knowledge, surveillance
-- Resourcefulness, survival
-- Understanding true power through information
+## Success Criteria
+- [ ] All questions feel authentically vampire-themed
+- [ ] Questions are engaging and immersive
+- [ ] Answer options are distinct and meaningful
+- [ ] Question flow feels natural and progressive
+- [ ] All questions work perfectly on mobile
+- [ ] Clan scoring feels balanced and accurate
+- [ ] Overall experience feels like vampire character creation
 
-#### **Malkavian (Lunatics)**
-- Madness, insight, different perspective
-- Prophetic visions, hidden wisdom
-- Unconventional thinking, riddles
-- Seeing what others cannot
-
-#### **Toreador (Degenerates)**
-- Art, beauty, aesthetics
-- Passion for the finer things
-- Emotional depth, artistic expression
-- Appreciation of human creativity
-
-#### **Gangrel (Outlanders)**
-- Nature, survival, independence
-- Animal instincts, primal power
-- Self-reliance, wilderness
-- Connection to the natural world
-
----
-
-## 📋 **Rewrite Strategy**
-
-### **Question Types to Improve**
-1. **Generic Questions**: Make more vampire-specific
-2. **Weak Clan Differentiation**: Ensure each answer clearly favors specific clans
-3. **Unbalanced Scoring**: Redistribute clan weights for better balance
-4. **Vague Scenarios**: Make more concrete and engaging
-5. **Missing Categories**: Add questions for underrepresented areas
-
-### **New Question Categories to Consider**
-- **Hunting**: How you approach feeding
-- **Domain**: How you establish territory
-- **Allies**: How you build relationships
-- **Enemies**: How you handle threats
-- **Tradition**: Views on vampire society
-- **Innovation**: Approach to change
-- **Mortality**: Views on death and dying
-- **Legacy**: What you want to leave behind
-
-### **Scoring Improvements**
-- **Current**: 1-3 points per answer
-- **Proposed**: 1-5 points for stronger differentiation
-- **Balance**: Ensure no single clan dominates
-- **Variety**: Mix of high-impact and subtle questions
-
----
-
-## 🛠️ **Technical Considerations**
-
-### **Database Structure**
-- Questions stored in `questionnaire_questions` table
-- Fields: `category`, `question`, `answer1-4`, `clanWeight1-4`
-- Clan weights in format: `"clan:points,clan:points"`
-
-### **Files to Modify**
-- `populate_questionnaire.php` - Update question data
-- `questionnaire.php` - May need minor adjustments
-- Database - Run update script to replace questions
-
-### **Testing Requirements**
-- Test all 20 questions load properly
-- Verify clan tracking works correctly
-- Check results display shows proper clan
-- Ensure animations work smoothly
-
----
-
-## 🎯 **Success Metrics**
-
-### **Clan Balance**
-- No single clan should score >40% more than others on average
-- Each clan should have 3-5 "strong" questions (3+ points)
-- Each clan should have 2-3 "weak" questions (1 point or less)
-
-### **Question Quality**
-- Each answer should clearly favor 1-2 clans
-- Questions should be engaging and vampire-themed
-- Scenarios should be realistic and meaningful
-- Categories should be well-distributed
-
-### **User Experience**
-- Questions should feel immersive and thematic
-- Results should feel accurate and meaningful
-- Transitions should remain smooth
-- Overall flow should be engaging
-
----
-
-## 📝 **Next Steps**
-
-1. **Review Current Questions**: Analyze existing questions for improvement areas
-2. **Draft New Questions**: Create improved versions with better clan differentiation
-3. **Balance Scoring**: Ensure fair distribution of clan points
-4. **Test Implementation**: Verify all technical aspects work correctly
-5. **User Testing**: Get feedback on question quality and results accuracy
-
----
-
-**Ready for next session: Questionnaire Question Rewrite! 🧛‍♂️**
+## Notes
+- Current system is fully functional and ready for content improvements
+- Database-driven system makes it easy to update questions
+- Admin interface available for question management
+- All visual styling is complete and professional
+- Testing mode allows easy validation of changes

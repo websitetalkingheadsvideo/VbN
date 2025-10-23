@@ -1,6 +1,15 @@
 # LOTN Character Creator - Version History
 
-## Version 0.4.2 (Current)
+## Version 0.4.3 (Current)
+**Date:** October 23, 2025
+
+### Changes:
+- Auto-increment patch version
+
+---
+
+
+## Version 0.4.3 (Current)
 **Date:** January 4, 2025
 
 ### Questionnaire System Enhancements:
