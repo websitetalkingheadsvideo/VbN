@@ -5,7 +5,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.6.0');
+define('LOTN_VERSION', '0.6.1');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -85,6 +85,27 @@ include __DIR__ . '/../includes/header.php';
             <button class="filter-btn" data-filter="pcs">PCs Only</button>
             <button class="filter-btn" data-filter="npcs">NPCs Only</button>
         </div>
+        <div class="clan-filter">
+            <label for="clanFilter">Sort by Clan:</label>
+            <select id="clanFilter">
+                <option value="all">All Clans</option>
+                <option value="Assamite">Assamite</option>
+                <option value="Brujah">Brujah</option>
+                <option value="Caitiff">Caitiff</option>
+                <option value="Followers of Set">Followers of Set</option>
+                <option value="Gangrel">Gangrel</option>
+                <option value="Giovanni">Giovanni</option>
+                <option value="Lasombra">Lasombra</option>
+                <option value="Malkavian">Malkavian</option>
+                <option value="Nosferatu">Nosferatu</option>
+                <option value="Ravnos">Ravnos</option>
+                <option value="Toreador">Toreador</option>
+                <option value="Tremere">Tremere</option>
+                <option value="Tzimisce">Tzimisce</option>
+                <option value="Ventrue">Ventrue</option>
+                <option value="Ghoul">Ghoul</option>
+            </select>
+        </div>
         <div class="search-box">
             <input type="text" id="characterSearch" placeholder="🔍 Search by name..." />
         </div>
@@ -128,7 +149,8 @@ include __DIR__ . '/../includes/header.php';
                         $is_npc = ($char['player_name'] === 'ST/NPC');
                 ?>
                     <tr class="character-row" data-type="<?php echo $is_npc ? 'npc' : 'pc'; ?>" 
-                        data-name="<?php echo htmlspecialchars($char['character_name']); ?>">
+                        data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
+                        data-clan="<?php echo htmlspecialchars($char['clan'] ?? 'Unknown'); ?>">
                         <td><?php echo $char['id']; ?></td>
                         <td><strong><?php echo htmlspecialchars($char['character_name']); ?></strong></td>
                         <td>
@@ -241,6 +263,11 @@ include __DIR__ . '/../includes/header.php';
 .search-box input { width: 100%; padding: 10px 15px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; }
 .search-box input:focus { outline: none; border-color: #8B0000; }
 .search-box input::placeholder { color: #666; }
+
+.clan-filter { display: flex; align-items: center; gap: 10px; }
+.clan-filter label { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; font-size: 0.95em; }
+.clan-filter select { padding: 8px 12px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; cursor: pointer; min-width: 120px; }
+.clan-filter select:focus { outline: none; border-color: #8B0000; }
 
 .page-size-control { display: flex; align-items: center; gap: 10px; }
 .page-size-control label { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; font-size: 0.95em; }

@@ -5,6 +5,7 @@
 
 // State management
 let currentFilter = 'all';
+let currentClanFilter = 'all';
 let currentSort = { column: 'id', direction: 'desc' };
 let deleteCharacterId = null;
 let currentPage = 1;
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     allRows = Array.from(document.querySelectorAll('.character-row'));
     
     initializeFilters();
+    initializeClanFilter();
     initializeSearch();
     initializeSorting();
     initializeDeleteButtons();
@@ -43,6 +45,19 @@ function initializeFilters() {
     });
 }
 
+// Clan filter functionality
+function initializeClanFilter() {
+    const clanFilter = document.getElementById('clanFilter');
+    
+    if (clanFilter) {
+        clanFilter.addEventListener('change', function() {
+            currentClanFilter = this.value;
+            console.log('Clan filter changed to:', currentClanFilter);
+            applyFilters();
+        });
+    }
+}
+
 // Search functionality
 function initializeSearch() {
     const searchInput = document.getElementById('characterSearch');
@@ -54,7 +69,7 @@ function initializeSearch() {
     }
 }
 
-// Apply both filter and search
+// Apply filter, clan filter, and search
 function applyFilters() {
     const searchTerm = document.getElementById('characterSearch').value.toLowerCase();
     const rows = document.querySelectorAll('.character-row');
@@ -64,13 +79,25 @@ function applyFilters() {
     rows.forEach(row => {
         const type = row.dataset.type;
         const name = row.dataset.name.toLowerCase();
+        const clan = row.dataset.clan || '';
         
-        // Check filter
+        // Check filter (PC/NPC)
         let showByFilter = true;
         if (currentFilter === 'pcs' && type !== 'pc') {
             showByFilter = false;
         } else if (currentFilter === 'npcs' && type !== 'npc') {
             showByFilter = false;
+        }
+        
+        // Check clan filter
+        let showByClan = true;
+        if (currentClanFilter !== 'all' && clan !== currentClanFilter) {
+            showByClan = false;
+        }
+        
+        // Debug logging
+        if (currentClanFilter !== 'all') {
+            console.log(`Character: ${name}, Clan: "${clan}", Filter: "${currentClanFilter}", Show: ${showByClan}`);
         }
         
         // Check search
@@ -80,7 +107,7 @@ function applyFilters() {
         }
         
         // Track visible rows
-        if (showByFilter && showBySearch) {
+        if (showByFilter && showByClan && showBySearch) {
             row.classList.remove('filtered-out');
             visibleRows.push(row);
         } else {

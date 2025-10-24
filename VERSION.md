@@ -1,6 +1,38 @@
 # LOTN Character Creator - Version History
 
-## Version 0.4.3 (Current)
+## Version 0.6.1 (Current)
+**Date:** January 11, 2025
+
+### Admin Panel Clan Filtering System:
+- ✅ **Clan Sorting Dropdown** - Added comprehensive clan filter dropdown to admin panel
+- ✅ **Multi-Filter Support** - Clan filter works alongside existing PC/NPC filters and search
+- ✅ **Real-time Filtering** - Characters filter instantly when clan is selected
+- ✅ **Comprehensive Clan List** - Includes all major vampire clans plus Ghoul option
+- ✅ **Data Attribute Integration** - Added data-clan attributes for reliable JavaScript filtering
+- ✅ **Pagination Integration** - Filtered results respect pagination system
+- ✅ **Debug Logging** - Added console logging for troubleshooting
+
+### Clan Filter Features:
+- **Complete Clan Coverage** - Assamite, Brujah, Caitiff, Followers of Set, Gangrel, Giovanni, Lasombra, Malkavian, Nosferatu, Ravnos, Toreador, Tremere, Tzimisce, Ventrue, Ghoul
+- **Multi-Filter Support** - Works with PC/NPC filters and name search simultaneously
+- **Real-time Updates** - Instant filtering without page reload
+- **Consistent UI** - Matches existing admin panel gothic theme
+- **Pagination Aware** - Filtered results properly paginate
+
+### Technical Improvements:
+- Added `data-clan` attributes to character table rows for reliable JavaScript access
+- Updated `applyFilters()` function to include clan filtering logic
+- Added `initializeClanFilter()` function for dropdown event handling
+- Enhanced CSS styling for clan filter dropdown
+- Added debug console logging for troubleshooting
+
+### Files Modified:
+- `admin/admin_panel.php` - Added clan filter dropdown and data attributes
+- `js/admin_panel.js` - Added clan filtering functionality and debug logging
+
+---
+
+## Version 0.4.3
 **Date:** October 23, 2025
 
 ### Changes:
