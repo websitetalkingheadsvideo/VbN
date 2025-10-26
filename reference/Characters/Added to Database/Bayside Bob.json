@@ -120,4 +120,3 @@
     "custom_field_name": "Any character-specific data that doesn't fit elsewhere. This entire object is optional."
   }
 }
-```

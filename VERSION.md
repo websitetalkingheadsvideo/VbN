@@ -1,7 +1,26 @@
 # LOTN Character Creator - Version History
 
-## Version 0.6.1 (Current)
+## Version 0.6.2 (Current)
 **Date:** January 11, 2025
+
+### Folder Reorganization & Clan Logo Path Updates:
+- ✅ **Renamed and Moved Folder** - `svgs/` → `images/Clan Logos/`
+- ✅ **Updated Code References** - Fixed all JavaScript paths in `js/questionnaire.js` (2 locations)
+- ✅ **Updated Task References** - Fixed reference in `.taskmaster/tasks/tasks.json`
+- ✅ **Database Schema Documentation** - Documented character storage structure (pc BOOLEAN, status ENUM, clan VARCHAR)
+
+### Technical Changes:
+- Moved 16 clan logo files from root `svgs/` to `images/Clan Logos/`
+- Updated logo paths from `svgs/LogoClan[Name].webp` to `images/Clan Logos/LogoClan[Name].webp`
+- Updated `displayClanResult()` and `showTestClanResults()` functions
+- Removed empty `svgs` directory
+
+### Documented Character Storage:
+- **NPC Flag:** `pc` BOOLEAN (0=NPC, 1=PC, default TRUE)
+- **Status:** `status` ENUM (`'draft'`, `'finalized'`, `'active'`, `'dead'`, `'baseline'`, default `'draft'`)
+- **Clan:** `clan` VARCHAR(50) - stored as string (not foreign key)
+
+---
 
 ### Admin Panel Clan Filtering System:
 - ✅ **Clan Sorting Dropdown** - Added comprehensive clan filter dropdown to admin panel
@@ -41,7 +60,7 @@
 ---
 
 
-## Version 0.4.3 (Current)
+## Version 0.6.2 (Current)
 **Date:** January 4, 2025
 
 ### Questionnaire System Enhancements:

@@ -455,7 +455,7 @@ function displayClanResult(clan) {
     const clanDescription = document.getElementById('clan-description');
     
     if (clanLogo) {
-        clanLogo.src = `svgs/LogoClan${capitalizeFirst(clan)}.webp`;
+        clanLogo.src = `images/Clan Logos/LogoClan${capitalizeFirst(clan)}.webp`;
         clanLogo.alt = `${capitalizeFirst(clan)} Clan Logo`;
     }
     
@@ -552,7 +552,7 @@ function showTestClanResults(clan) {
         const allClanScores = document.getElementById('all-clan-scores');
         
         if (clanLogo) {
-            clanLogo.src = `svgs/LogoClan${capitalizeFirst(clan)}.webp`;
+            clanLogo.src = `images/Clan Logos/LogoClan${capitalizeFirst(clan)}.webp`;
             clanLogo.alt = `${capitalizeFirst(clan)} Clan Logo`;
         }
         

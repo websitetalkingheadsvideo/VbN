@@ -1,0 +1,135 @@
+{
+  "character_name": "Piston",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Rebel",
+  "demeanor": "Thug",
+  "concept": "Hell's Angel Enforcer / Anarch Street Fighter",
+  "clan": "Brujah",
+  "generation": 9,
+  "sire": "Fred Osmond",
+  "pc": 0,
+  "biography": "Originally generation 10, Piston committed diablerie on a Gangrel during the Los Angeles Anarch faction wars (late 1980s/early 1990s). A former Hell's Angels member embraced in mid-1980s LA by Fred Osmond, he adapted to Kindred life while maintaining his biker identity. He found the Anarch philosophy aligned with Hell's Angels anti-authority stance. During the LA Anarch Free State internal faction wars, he rose in power through combat prowess. In late 80s/early 90s during a gang clash, he frenzied in combat with a Gangrel enforcer. The Beast took over and he committed diablerie, gaining Fortitude but acquiring the mark. LA became too dangerous after the diablerie - Gangrel wanted revenge, faction was divided. He fled to Phoenix early-to-mid 1990s, established in Surprise, and embraced two former Hell's Angels (Butch Reed and Basher) to rebuild brotherhood. Now running criminal operations to fund acquisition of a bar.",
+  "equipment": "Harley-Davidson (classic model from the 80s), fists (primary with Potence), knife, possibly firearms, multiple leather jackets, denim, boots, biker gear",
+  "traits": {
+    "Physical": ["Strong", "Tough", "Athletic", "Resilient", "Imposing"],
+    "Social": ["Intimidating", "Loyal", "Direct", "Protective", "Brotherly", "Blunt"],
+    "Mental": ["Streetwise", "Survivor", "Instinctive", "Practical"]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Aggressive", "Violent"],
+    "Mental": ["Impulsive", "Reckless"]
+  },
+  "abilities": [
+    {"name": "Brawl", "category": "Physical", "level": 5},
+    {"name": "Dodge", "category": "Physical", "level": 4},
+    {"name": "Intimidation", "category": "Social", "level": 5},
+    {"name": "Drive", "category": "Physical", "level": 4},
+    {"name": "Firearms", "category": "Physical", "level": 3},
+    {"name": "Melee", "category": "Physical", "level": 4},
+    {"name": "Stealth", "category": "Physical", "level": 2},
+    {"name": "Survival", "category": "Physical", "level": 3},
+    {"name": "Streetwise", "category": "Mental", "level": 4},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 3}
+  ],
+  "disciplines": [
+    {
+      "name": "Celerity",
+      "level": 4,
+      "powers": [
+        {"level": 1, "power": "Supernatural Speed"},
+        {"level": 2, "power": "Quicken Reflexes"},
+        {"level": 3, "power": "Lightning Strike"},
+        {"level": 4, "power": "Rapid Strike"}
+      ]
+    },
+    {
+      "name": "Potence",
+      "level": 4,
+      "powers": [
+        {"level": 1, "power": "Supernatural Strength"},
+        {"level": 2, "power": "Lethal Body"},
+        {"level": 3, "power": "Soaring Leap"},
+        {"level": 4, "power": "Unstoppable Force"}
+      ]
+    },
+    {
+      "name": "Presence",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Awe"},
+        {"level": 2, "power": "Dread Gaze"}
+      ]
+    },
+    {
+      "name": "Fortitude",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Endurance"},
+        {"level": 2, "power": "Resist Pain"}
+      ]
+    }
+  ],
+  "backgrounds": {
+    "Generation": 1,
+    "Resources": 1,
+    "Mentor": 0,
+    "Status": 0,
+    "Contacts": 3,
+    "Allies": 2,
+    "Herd": 0,
+    "Influence": 3,
+    "Retainers": 0,
+    "Fame": 0
+  },
+  "backgroundDetails": {
+    "Contacts": "Street contacts from Hell's Angels days and current criminal operations",
+    "Allies": "His two childer, Butch Reed and Basher, plus some Phoenix Anarch connections",
+    "Influence": "Street influence in northwest Phoenix suburbs, some underworld connections"
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 5,
+    "conscience": 2,
+    "self_control": 2,
+    "courage": 5,
+    "willpower_permanent": 8,
+    "willpower_current": 8,
+    "humanity": 5
+  },
+  "merits_flaws": [
+    {
+      "name": "Diablerie",
+      "type": "flaw",
+      "category": "Supernatural",
+      "cost": 2,
+      "description": "Black veins visible in aura to Auspex users, marking him as a diablerist. The Gangrel clan seeks revenge. Other Kindred react with suspicion or fear."
+    }
+  ],
+  "status": {
+    "created_date": "2025-01-11",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 14,
+    "blood_per_turn": 2,
+    "health_levels": 9,
+    "notes": "Generation 9 Brujah Anarch. Originally generation 10, committed diablerie on Gangrel in LA. Now in Phoenix running criminal operations. Wants to acquire a bar for his coterie. Has two childer: Butch Reed and Basher. Marked by diablerie - black veins visible to Auspex users."
+  },
+  "specializations": {
+    "Brawl": "Street fighting",
+    "Intimidation": "Physical threats",
+    "Drive": "Motorcycles",
+    "Streetwise": "Biker culture"
+  },
+  "research_notes": {
+    "diablerie_details": "Committed diablerie on Gangrel enforcer during LA Anarch faction wars. Gained Fortitude discipline but acquired the diablerie mark.",
+    "current_plan": "Considering hijacking semi-trucks on Phoenix-Las Vegas route to raise capital for bar purchase (stupid plan due to low mental stats)",
+    "territory": "Claims Surprise and northwest Phoenix suburbs",
+    "haven": "Farmhouse in Surprise, Arizona with garage space for motorcycles",
+    "coterie": "Butch Reed (burglary specialist) and Basher (street enforcer), both former Hell's Angels",
+    "relationships": "Bayside Bob tolerates him as useful muscle but sees him as loose cannon. Gangrel clan wants him dead for diablerie."
+  }
+}

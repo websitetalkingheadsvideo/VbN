@@ -1,0 +1,285 @@
+[
+  {
+    "character_name": "Core (Alexandra Chen)",
+    "player_name": "ST/NPC",
+    "chronicle": "Digital Resistance",
+    "nature": "Penitent",
+    "demeanor": "Director",
+    "concept": "Elite corporate defector turned resistance leader",
+    "clan": "N/A - Human",
+    "generation": 11,
+    "sire": "N/A",
+    "pc": 0,
+    "biography": "Alexandra 'Core' Chen, age 28, was once NexaCorp's most valued security specialist, responsible for implementing surveillance and control systems across multiple sectors. For five years, she designed the very tools that would monitor, track, and suppress millions. Her technical brilliance and tactical mind made her indispensable to corporate interests. The turning point came when she witnessed firsthand the human cost of her work - families torn apart, activists disappeared, lives destroyed by the systems she built. The guilt became unbearable. She orchestrated her own defection, stealing critical intel on corporate infrastructure and vulnerabilities. Now she leads a resistance cell, using her insider knowledge to dismantle what she helped create. Core carries the weight of her past actions like chains, driving herself relentlessly to atone. She's a strategic mastermind who coordinates complex operations, but struggles to forgive herself or fully trust others. Her partnership with Phreak has become the closest thing to genuine connection she allows herself, though she keeps emotional walls firmly in place. Core represents the ultimate insider threat - someone who knows every weakness because she designed them.",
+    "equipment": "Tactical bodysuit with concealed armor plating, encrypted multi-band communicator, compact 9mm with suppressor, corporate security bypass credentials (expired but useful), tactical knife, emergency medkit, data tablet with custom security software, false identification documents, cash and cryptocurrency reserves",
+    
+    "traits": {
+      "Physical": ["Athletic", "Quick Reflexes", "Tireless", "Graceful", "Alert"],
+      "Social": ["Commanding", "Intimidating", "Persuasive"],
+      "Mental": ["Cunning", "Observant", "Patient", "Analytical", "Disciplined"]
+    },
+    
+    "negativeTraits": {
+      "Physical": [],
+      "Social": ["Callous", "Distant"],
+      "Mental": ["Guilt-Ridden", "Unforgiving"]
+    },
+    
+    "abilities": [
+      {"name": "Tactics", "category": "Mental", "level": 5},
+      {"name": "Security Systems", "category": "Mental", "level": 5},
+      {"name": "Leadership", "category": "Social", "level": 4},
+      {"name": "Firearms", "category": "Physical", "level": 4},
+      {"name": "Stealth", "category": "Physical", "level": 4},
+      {"name": "Brawl", "category": "Physical", "level": 4},
+      {"name": "Investigation", "category": "Mental", "level": 4},
+      {"name": "Intimidation", "category": "Social", "level": 3},
+      {"name": "Computer", "category": "Mental", "level": 3},
+      {"name": "Streetwise", "category": "Social", "level": 3},
+      {"name": "Athletics", "category": "Physical", "level": 3},
+      {"name": "Alertness", "category": "Physical", "level": 4},
+      {"name": "Subterfuge", "category": "Social", "level": 3}
+    ],
+    
+    "disciplines": [],
+    
+    "backgrounds": {
+      "Generation": 0,
+      "Resources": 2,
+      "Contacts": 4,
+      "Allies": 3,
+      "Status": 0,
+      "Mentor": 0,
+      "Herd": 0,
+      "Influence": 2,
+      "Retainers": 0,
+      "Fame": 0
+    },
+    
+    "backgroundDetails": {
+      "Resources": "Moderate funds from careful planning and resistance fundraising",
+      "Contacts": "Extensive network within corporate security, underground resistance, black market suppliers, and information brokers",
+      "Allies": "Trusted resistance cell members who would risk their lives for her",
+      "Influence": "Can manipulate certain corporate security protocols and has blackmail material on former colleagues"
+    },
+    
+    "morality": {
+      "path_name": "Humanity",
+      "path_rating": 6,
+      "conscience": 4,
+      "self_control": 4,
+      "courage": 4,
+      "willpower_permanent": 8,
+      "willpower_current": 8,
+      "humanity": 6
+    },
+    
+    "merits_flaws": [
+      {
+        "name": "Combat Reflexes",
+        "type": "merit",
+        "category": "Physical",
+        "cost": 2,
+        "description": "Never surprised in combat situations, enhanced initiative"
+      },
+      {
+        "name": "Corporate Knowledge",
+        "type": "merit",
+        "category": "Mental",
+        "cost": 3,
+        "description": "Intimate understanding of corporate security systems and protocols"
+      },
+      {
+        "name": "Haunted",
+        "type": "flaw",
+        "category": "Mental",
+        "cost": 3,
+        "description": "Plagued by memories of those harmed by her past work"
+      },
+      {
+        "name": "Hunted",
+        "type": "flaw",
+        "category": "Social",
+        "cost": 4,
+        "description": "NexaCorp actively seeks her capture or elimination"
+      },
+      {
+        "name": "Emotional Isolation",
+        "type": "flaw",
+        "category": "Social",
+        "cost": 1,
+        "description": "Difficulty forming genuine emotional connections"
+      }
+    ],
+    
+    "status": {
+      "created_date": "2025-10-23",
+      "xp_total": 0,
+      "xp_spent": 0,
+      "xp_available": 0,
+      "blood_pool": 0,
+      "blood_per_turn": 0,
+      "health_levels": 7,
+      "notes": "Core is most effective when planning multi-stage operations and coordinating team efforts. Her guilt drives her but also blinds her to her own needs. She has unacknowledged romantic tension with Phreak that she buries under professionalism. In combat, she's coldly efficient. Her character arc involves learning to forgive herself and accept imperfect victories. Key personality: Speaks in military brevity during operations, shows rare vulnerability in quiet moments. Roleplaying hint: She touches an old NexaCorp security badge she keeps as reminder of who she was."
+    },
+    
+    "specializations": {
+      "Tactics": "Urban combat operations and infiltration planning",
+      "Security Systems": "Corporate-grade surveillance and access control"
+    },
+    
+    "research_notes": {
+      "signature_move": "The 'Core Gambit' - using enemies' own security systems against them",
+      "relationship_phreak": "Complex partnership with underlying romantic tension neither acknowledges",
+      "redemption_arc": "Seeking atonement for designing oppressive systems",
+      "internal_conflict": "Balancing idealistic goals with pragmatic methods",
+      "physical_tells": "Clenches jaw when stressed, unconsciously checks weapon when anxious"
+    }
+  },
+  {
+    "character_name": "Phreak",
+    "player_name": "ST/NPC",
+    "chronicle": "Digital Resistance",
+    "nature": "Rebel",
+    "demeanor": "Jester",
+    "concept": "Elite hacker and digital resistance operative",
+    "clan": "N/A - Human (Cybernetically Enhanced)",
+    "generation": 11,
+    "sire": "N/A",
+    "pc": 0,
+    "biography": "Phreak's real name and past remain deliberately obscured, even from close allies. Estimated age 26, they emerged from the digital underground as a self-taught prodigy who learned hacking as a survival skill. Growing up in the margins of a surveillance state, Phreak discovered early that reality itself could be manipulated through code. They lost someone important to corporate surveillance systems - the details are never discussed, but the wound drives their commitment to the resistance. Phreak built a legendary reputation in hacker collectives before partnering with Core, recognizing in her a kindred spirit fighting the same war from different angles. Where Core is tactical and physical, Phreak is improvisational and digital. They have a custom neural interface allowing direct brain-computer connection, pushing the boundaries of human-machine integration. Phreak treats hacking like an art form and AI systems like conversation partners, often having philosophical debates with the very programs they're subverting. Their constant humor and playful energy mask a sharp mind and deeper pain. The partnership with Core has evolved from professional respect to something neither can quite name - Phreak uses jokes to deflect the growing emotional connection they fear acknowledging.",
+    "equipment": "Custom neural interface port, modified laptop with quantum processing capabilities, multiple burner phones, portable signal jammer, AR smart glasses with HUD overlay, lock-pick set disguised as stylus collection, encrypted storage drives, faraday cage bag, custom-coded USB attack vectors, energy drinks and stimulants, layered clothing with hidden tech pockets",
+    
+    "traits": {
+      "Physical": ["Quick", "Nimble", "Dexterous"],
+      "Social": ["Witty", "Friendly", "Charismatic"],
+      "Mental": ["Genius", "Creative", "Insightful", "Observant", "Knowledgeable", "Alert"]
+    },
+    
+    "negativeTraits": {
+      "Physical": ["Clumsy", "Delicate"],
+      "Social": ["Oblivious"],
+      "Mental": ["Impulsive"]
+    },
+    
+    "abilities": [
+      {"name": "Computer", "category": "Mental", "level": 6},
+      {"name": "Technology", "category": "Mental", "level": 5},
+      {"name": "Science", "category": "Mental", "level": 4},
+      {"name": "Cryptography", "category": "Mental", "level": 5},
+      {"name": "Electronics", "category": "Mental", "level": 4},
+      {"name": "Investigation", "category": "Mental", "level": 3},
+      {"name": "Streetwise", "category": "Social", "level": 3},
+      {"name": "Subterfuge", "category": "Social", "level": 4},
+      {"name": "Expression", "category": "Social", "level": 2},
+      {"name": "Stealth", "category": "Physical", "level": 2},
+      {"name": "Security", "category": "Physical", "level": 3},
+      {"name": "Alertness", "category": "Physical", "level": 3},
+      {"name": "Academics", "category": "Mental", "level": 2}
+    ],
+    
+    "disciplines": [],
+    
+    "backgrounds": {
+      "Generation": 0,
+      "Resources": 1,
+      "Contacts": 5,
+      "Allies": 2,
+      "Status": 0,
+      "Mentor": 0,
+      "Herd": 0,
+      "Influence": 1,
+      "Retainers": 0,
+      "Fame": 3
+    },
+    
+    "backgroundDetails": {
+      "Resources": "Lives lean, most money goes into tech upgrades",
+      "Contacts": "Extensive network throughout hacker collectives, darknet communities, AI researchers, and underground tech traders",
+      "Allies": "Fellow hackers who owe favors and trust Phreak's skills",
+      "Fame": "Legendary reputation in digital underground circles as elite hacker"
+    },
+    
+    "morality": {
+      "path_name": "Humanity",
+      "path_rating": 7,
+      "conscience": 3,
+      "self_control": 2,
+      "courage": 4,
+      "willpower_permanent": 6,
+      "willpower_current": 6,
+      "humanity": 7
+    },
+    
+    "merits_flaws": [
+      {
+        "name": "Neural Interface",
+        "type": "merit",
+        "category": "Mental",
+        "cost": 5,
+        "description": "Direct brain-computer connection enabling enhanced hacking and information processing"
+      },
+      {
+        "name": "Computer Aptitude",
+        "type": "merit",
+        "category": "Mental",
+        "cost": 2,
+        "description": "Natural genius with computer systems, reduces difficulty"
+      },
+      {
+        "name": "Reputation",
+        "type": "merit",
+        "category": "Social",
+        "cost": 2,
+        "description": "Known and respected in hacker communities"
+      },
+      {
+        "name": "Overconfident",
+        "type": "flaw",
+        "category": "Mental",
+        "cost": 1,
+        "description": "Believes they can hack anything, sometimes recklessly"
+      },
+      {
+        "name": "Dark Secret",
+        "type": "flaw",
+        "category": "Social",
+        "cost": 1,
+        "description": "True identity and past carefully hidden for dangerous reasons"
+      },
+      {
+        "name": "Phobia: Physical Vulnerability",
+        "type": "flaw",
+        "category": "Mental",
+        "cost": 2,
+        "description": "Uncomfortable in situations where hacking skills can't help"
+      }
+    ],
+    
+    "status": {
+      "created_date": "2025-10-23",
+      "xp_total": 0,
+      "xp_spent": 0,
+      "xp_available": 0,
+      "blood_pool": 0,
+      "blood_per_turn": 0,
+      "health_levels": 7,
+      "notes": "Phreak excels at improvisation and thinking in unconventional ways. They treat AI systems almost like living entities and can 'persuade' programs in ways others can't. Uses humor as emotional armor. Has unacknowledged feelings for Core that terrify them. In crisis, makes jokes to cope. Character arc involves accepting vulnerability and real-world consequences. Key personality: Rapid-fire tech speak mixed with pop culture refs. Fidgets constantly, fingers always moving. Roleplaying hint: They have one-sided conversations with AI systems and treat code like poetry. Physical tell: Taps fingers in rhythm when thinking."
+    },
+    
+    "specializations": {
+      "Computer": "Quantum encryption breaking and AI system manipulation",
+      "Technology": "Custom hardware modification and exploit development",
+      "Cryptography": "Real-time decryption and code breaking"
+    },
+    
+    "research_notes": {
+      "signature_technique": "The 'Phreak Protocol' - convincing AI systems to cooperate rather than forcing them",
+      "relationship_core": "Deep respect and loyalty masked by banter; unspoken romantic tension",
+      "philosophy": "Reality is just poorly debugged code waiting to be patched",
+      "internal_conflict": "Maintaining joy and playfulness while facing increasingly dark stakes",
+      "mysterious_past": "Lost someone to surveillance systems; details never discussed",
+      "neural_interface_cost": "Occasional sensory glitches, difficulty sleeping, mild addiction to digital immersion"
+    }
+  }
+]
