@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create VbN Favicon</title>
+    <style>
+        body {
+            background: #0a0606;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            color: #e8d5c4;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .instructions {
+            max-width: 600px;
+            background: #1a0f0f;
+            padding: 20px;
+            border: 2px solid #8b0000;
+            border-radius: 5px;
+        }
+        
+        .favicon-preview {
+            background: white;
+            padding: 20px;
+            border: 2px solid #8b0000;
+            border-radius: 5px;
+        }
+        
+        #favicon-container {
+            width: 32px;
+            height: 32px;
+        }
+        
+        button {
+            background: #8b0000;
+            color: #e8d5c4;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'IM Fell English', serif;
+        }
+        
+        button:hover {
+            background: #a00000;
+        }
+        
+        .size-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .size-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        
+        ol {
+            line-height: 1.8;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>🧛‍♂️ VbN Favicon Creator</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click a button below to download the favicon at your preferred size</li>
+            <li>Go to <strong>convertio.co/png-ico</strong> or <strong>favicon.io</strong></li>
+            <li>Upload the downloaded PNG file</li>
+            <li>Convert it to <code>favicon.ico</code></li>
+            <li>Download and place it in your project root</li>
+        </ol>
+    </div>
+    
+    <div class="favicon-preview">
+        <h3 style="color: #000; text-align: center; margin-top: 0;">Preview (32x32)</h3>
+        <div id="favicon-container">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#2a1515;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#1a0f0f;stop-opacity:1" />
+                </linearGradient>
+                <filter id="shadow">
+                  <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.8"/>
+                </filter>
+              </defs>
+              <rect width="32" height="32" fill="url(#bgGradient)" rx="3"/>
+              <rect width="32" height="32" fill="none" stroke="#8B0000" stroke-width="2" rx="3"/>
+              <text x="16" y="22" font-family="'IM Fell English', serif" font-size="14" fill="#ff0000" text-anchor="middle" font-weight="bold" filter="url(#shadow)">VbN</text>
+            </svg>
+        </div>
+    </div>
+    
+    <div class="size-options">
+        <button class="size-btn" onclick="downloadFavicon(16)">Download 16x16</button>
+        <button class="size-btn" onclick="downloadFavicon(32)">Download 32x32</button>
+        <button class="size-btn" onclick="downloadFavicon(48)">Download 48x48</button>
+        <button class="size-btn" onclick="downloadFavicon(64)">Download 64x64</button>
+    </div>
+    
+    <div class="instructions">
+        <h3>Alternative: Use SVG directly</h3>
+        <p>Modern browsers support SVG favicons! Just add this to your <code>&lt;head&gt;</code>:</p>
+        <pre style="background: #000; padding: 10px; overflow-x: auto; border-radius: 3px;"><code>&lt;link rel="icon" href="images/favicon.svg" type="image/svg+xml"&gt;</code></pre>
+    </div>
+
+    <!-- Load html2canvas from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    
+    <script>
+        async function downloadFavicon(size) {
+            console.log(`Creating ${size}x${size} favicon...`);
+            
+            // Create a temporary container with the desired size
+            const tempContainer = document.createElement('div');
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.left = '-9999px';
+            tempContainer.style.width = size + 'px';
+            tempContainer.style.height = size + 'px';
+            document.body.appendChild(tempContainer);
+            
+            // Create SVG at the desired size
+            const svg = `
+                <svg width="${size}" height="${size}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="bgGradient${size}" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#2a1515;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#1a0f0f;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="shadow${size}">
+                      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.8"/>
+                    </filter>
+                  </defs>
+                  <rect width="32" height="32" fill="url(#bgGradient${size})" rx="3"/>
+                  <rect width="32" height="32" fill="none" stroke="#8B0000" stroke-width="2" rx="3"/>
+                  <text x="16" y="22" font-family="'IM Fell English', serif" font-size="14" fill="#ff0000" text-anchor="middle" font-weight="bold" filter="url(#shadow${size})">VbN</text>
+                </svg>
+            `;
+            
+            tempContainer.innerHTML = svg;
+            
+            // Wait a moment for fonts to load
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Convert to canvas
+            const canvas = await html2canvas(tempContainer, {
+                backgroundColor: null,
+                scale: 1,
+                width: size,
+                height: size,
+                logging: false
+            });
+            
+            // Convert to blob and download
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.download = `vbn-favicon-${size}x${size}.png`;
+                link.href = url;
+                link.click();
+                URL.revokeObjectURL(url);
+                
+                // Clean up
+                document.body.removeChild(tempContainer);
+                
+                console.log(`Downloaded ${size}x${size} favicon!`);
+            }, 'image/png');
+        }
+    </script>
+</body>
+</html>
+

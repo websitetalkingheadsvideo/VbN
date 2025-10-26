@@ -35,35 +35,68 @@
     flex-shrink: 0;
 }
 
-.logo-frame {
-    width: 80px;
-    height: 80px;
-    border: 3px solid #8B0000;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 0 10px rgba(139, 0, 0, 0.5),
-        inset 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+.logo-link {
+    display: block;
+    line-height: 0;
 }
 
-.logo-frame:hover {
-    border-color: #b30000;
-    box-shadow: 
-        0 0 20px rgba(139, 0, 0, 0.8),
-        inset 0 0 20px rgba(0, 0, 0, 0.5);
+.logo-svg {
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.logo-initial {
-    font-family: var(--font-brand), 'IM Fell English', serif;
-    font-size: 28px;
-    color: #8B0000;
-    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
-    font-weight: bold;
-    letter-spacing: 2px;
+/* Hover effect on the entire SVG */
+.logo-link:hover .logo-svg {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(139, 0, 0, 0.6));
+}
+
+/* Animated elements inside the SVG */
+.logo-svg .logo-border {
+    transition: stroke 0.3s ease, filter 0.3s ease !important;
+}
+
+.logo-svg .logo-text {
+    transition: fill 0.3s ease, filter 0.3s ease !important;
+}
+
+.logo-svg .fang-left,
+.logo-svg .fang-right,
+.logo-svg .drop-1,
+.logo-svg .drop-2 {
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    transform-origin: center !important;
+}
+
+/* Hover animations */
+.logo-link:hover .logo-border {
+    stroke: #ff0000 !important;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)) !important;
+}
+
+.logo-link:hover .logo-text {
+    fill: #ff0000 !important;
+    filter: drop-shadow(0 0 12px rgba(255, 0, 0, 1)) !important;
+}
+
+.logo-link:hover .fang-left {
+    opacity: 1 !important;
+    transform: translateY(5px) !important;
+}
+
+.logo-link:hover .fang-right {
+    opacity: 1 !important;
+    transform: translateY(5px) !important;
+}
+
+.logo-link:hover .drop-1 {
+    opacity: 1 !important;
+    transform: translateY(8px) !important;
+}
+
+.logo-link:hover .drop-2 {
+    opacity: 1 !important;
+    transform: translateY(8px) !important;
 }
 
 .title-section {

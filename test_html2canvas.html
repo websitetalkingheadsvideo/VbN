@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML2Canvas Test - VbN Character Sheet</title>
+    <link rel="stylesheet" href="css/lotn_char_create.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #0a0606;
+            color: #e8d5c4;
+        }
+        
+        .test-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1a0f0f;
+            padding: 20px;
+            border: 2px solid #8b0000;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        .test-controls button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #8b0000;
+            color: #e8d5c4;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .test-controls button:hover {
+            background: #a00000;
+        }
+        
+        #image-loading {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #2a1f1f;
+            text-align: center;
+        }
+        
+        .sample-character-sheet {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a0f0f;
+            padding: 30px;
+            border: 3px solid #8b0000;
+            border-radius: 10px;
+        }
+        
+        .sheet-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 15px;
+        }
+        
+        .sheet-header h1 {
+            font-family: 'Cinzel', serif;
+            color: #8b0000;
+            margin: 0;
+        }
+        
+        .character-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            padding: 10px;
+            background: #2a1f1f;
+            border-left: 3px solid #8b0000;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #8b0000;
+            font-size: 0.9em;
+        }
+        
+        .traits-section {
+            margin-top: 20px;
+        }
+        
+        .traits-section h3 {
+            color: #8b0000;
+            border-bottom: 1px solid #8b0000;
+            padding-bottom: 5px;
+        }
+        
+        .trait-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .trait-badge {
+            background: #2a1f1f;
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px solid #8b0000;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Test Controls -->
+    <div class="test-controls">
+        <h3 style="margin-top: 0;">Image Export Test</h3>
+        <button onclick="convertToImage('character-sheet', 'vampire-character.png')">
+            Download as PNG
+        </button>
+        <button onclick="testBase64()">
+            Get Base64 (Console)
+        </button>
+        <button onclick="shareCharacterSheet('character-sheet', 'My Vampire Character')">
+            Share Image
+        </button>
+        <div id="image-loading">
+            <span>Converting to image...</span>
+        </div>
+    </div>
+
+    <!-- Sample Character Sheet -->
+    <div id="character-sheet" class="sample-character-sheet">
+        <div class="sheet-header">
+            <h1>Vampire: The Masquerade</h1>
+            <h2>Character Sheet</h2>
+        </div>
+
+        <div class="character-info">
+            <div class="info-item">
+                <div class="info-label">Name</div>
+                <div>Marcus Blackwood</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Clan</div>
+                <div>Tremere</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Generation</div>
+                <div>8th Generation</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Sire</div>
+                <div>Lady Isadora</div>
+            </div>
+        </div>
+
+        <div class="traits-section">
+            <h3>Physical Traits</h3>
+            <div class="trait-list">
+                <span class="trait-badge">Athletic</span>
+                <span class="trait-badge">Brutal</span>
+                <span class="trait-badge">Nimble</span>
+                <span class="trait-badge">Quick</span>
+                <span class="trait-badge">Stalwart</span>
+            </div>
+        </div>
+
+        <div class="traits-section">
+            <h3>Social Traits</h3>
+            <div class="trait-list">
+                <span class="trait-badge">Charismatic</span>
+                <span class="trait-badge">Commanding</span>
+                <span class="trait-badge">Diplomatic</span>
+            </div>
+        </div>
+
+        <div class="traits-section">
+            <h3>Mental Traits</h3>
+            <div class="trait-list">
+                <span class="trait-badge">Alert</span>
+                <span class="trait-badge">Clever</span>
+                <span class="trait-badge">Creative</span>
+                <span class="trait-badge">Cunning</span>
+                <span class="trait-badge">Insightful</span>
+            </div>
+        </div>
+
+        <div class="traits-section">
+            <h3>Disciplines</h3>
+            <div class="trait-list">
+                <span class="trait-badge">Auspex ●●●</span>
+                <span class="trait-badge">Dominate ●●</span>
+                <span class="trait-badge">Thaumaturgy ●●●●</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load html2canvas from CDN (FREE!) -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    
+    <!-- Load our integration script -->
+    <script src="js/html2canvas-integration.js"></script>
+    
+    <!-- Test function -->
+    <script>
+        async function testBase64() {
+            console.log('Getting character sheet as base64...');
+            const base64 = await getImageAsBase64('character-sheet');
+            if (base64) {
+                console.log('Base64 image generated successfully!');
+                console.log('Length:', base64.length);
+                console.log('Preview:', base64.substring(0, 100) + '...');
+            }
+        }
+    </script>
+</body>
+</html>
+

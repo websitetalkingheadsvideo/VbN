@@ -1,6 +1,72 @@
 # LOTN Character Creator - Version History
 
-## Version 0.6.2 (Current)
+## Version 0.6.3 (Current)
+**Date:** January 26, 2025
+
+### Logo & Branding System:
+- ✅ **SVG Logo Creation** - Created custom VbN logo with gothic vampire theme
+- ✅ **Animated Logo Hover Effects** - Logo scales up 10% and glows bright red on hover with smooth transitions
+- ✅ **SVG Favicon System** - Created favicon.svg for modern browser support
+- ✅ **Favicon Generator Tool** - Built create_favicon.html to generate PNG versions for .ico conversion
+- ✅ **Header Integration** - Replaced text placeholder with inline SVG logo in includes/header.php
+- ✅ **JavaScript Animation** - Added js/logo-animation.js for smooth hover effects
+- ✅ **External CSS Styling** - Logo animations in css/header.css with !important flags for specificity
+
+### Logo Features:
+- **Gothic Design** - Dark red/black gradient background with blood-red "VbN" text
+- **Hover Animations** - Border glows, text glows, logo scales up with 0.3s smooth transitions
+- **Scalable SVG** - Vector format looks perfect at any size
+- **Clickable** - Logo links to homepage for easy navigation
+- **Favicon Support** - SVG favicon for modern browsers, PNG generator for traditional .ico
+
+### HTML2Canvas Integration (Free Image Export):
+- ✅ **Zero-Cost Solution** - Implemented html2canvas library (100% free, no API keys needed)
+- ✅ **Client-Side Processing** - All image generation happens in browser, no server required
+- ✅ **Integration Script** - Created js/html2canvas-integration.js with three core functions
+- ✅ **Test Page** - Built test_html2canvas.html to verify functionality
+- ✅ **Documentation** - Comprehensive docs/HTML2CANVAS_USAGE.md with examples and tips
+
+### Image Export Features:
+- **convertToImage()** - Download character sheets as PNG images
+- **getImageAsBase64()** - Get image data for server upload
+- **shareCharacterSheet()** - Share via Web Share API (mobile support)
+- **Unlimited Usage** - No costs, no limits, works completely offline
+- **Quality Control** - Adjustable scale (1-3) for different quality/file size needs
+
+### Technical Improvements:
+- Created images/vbn-logo.svg (80x80 header logo)
+- Created images/favicon.svg (32x32 favicon)
+- Created js/html2canvas-integration.js (image export functions)
+- Created js/logo-animation.js (logo hover animations)
+- Updated css/header.css (logo animation styles with !important)
+- Created test_html2canvas.html (testing tool)
+- Created create_favicon.html (favicon generator)
+- Created docs/HTML2CANVAS_USAGE.md (complete documentation)
+- Updated includes/header.php (inline SVG logo + favicon link)
+
+### Files Created:
+- images/vbn-logo.svg
+- images/favicon.svg
+- js/html2canvas-integration.js
+- js/logo-animation.js
+- test_html2canvas.html
+- create_favicon.html
+- docs/HTML2CANVAS_USAGE.md
+
+### Files Modified:
+- includes/header.php (added favicon link, inline SVG logo, animation script)
+- css/header.css (logo animation styles)
+
+### User Experience Improvements:
+- Professional logo with smooth hover animations
+- Favicon appears in browser tabs and bookmarks
+- Character sheet image export capability (ready for future implementation)
+- Free, unlimited image generation with no external dependencies
+- Beautiful gothic branding throughout the site
+
+---
+
+## Version 0.6.2
 **Date:** January 11, 2025
 
 ### Folder Reorganization & Clan Logo Path Updates:

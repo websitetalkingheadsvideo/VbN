@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Animation Test</title>
+    <style>
+        body {
+            background: #0a0606;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        h1 {
+            color: #e8d5c4;
+            font-family: Arial, sans-serif;
+        }
+        
+        .logo-link {
+            display: block;
+            line-height: 0;
+        }
+
+        .logo-svg {
+            display: block;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Hover effect on the entire SVG */
+        .logo-link:hover .logo-svg {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.9));
+        }
+
+        /* Animated elements inside the SVG */
+        .logo-svg .logo-border {
+            transition: stroke 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo-svg .logo-text {
+            transition: fill 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo-svg .fang-left,
+        .logo-svg .fang-right,
+        .logo-svg .drop-1,
+        .logo-svg .drop-2 {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform-origin: center;
+        }
+
+        /* Hover animations */
+        .logo-link:hover .logo-border {
+            stroke: #ff0000;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+        }
+
+        .logo-link:hover .logo-text {
+            fill: #ff0000;
+            filter: drop-shadow(0 0 12px rgba(255, 0, 0, 1));
+        }
+
+        .logo-link:hover .fang-left {
+            opacity: 1;
+            transform: translateY(5px);
+        }
+
+        .logo-link:hover .fang-right {
+            opacity: 1;
+            transform: translateY(5px);
+        }
+
+        .logo-link:hover .drop-1 {
+            opacity: 1;
+            transform: translateY(8px);
+        }
+
+        .logo-link:hover .drop-2 {
+            opacity: 1;
+            transform: translateY(8px);
+        }
+        
+        .instructions {
+            color: #e8d5c4;
+            background: #1a0f0f;
+            padding: 20px;
+            border: 2px solid #8b0000;
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logo Animation Test</h1>
+    
+    <div class="instructions">
+        <p><strong>Hover over the logo below</strong></p>
+        <p>You should see:</p>
+        <ul style="text-align: left;">
+            <li>Logo scales up (gets bigger)</li>
+            <li>Border glows red</li>
+            <li>Text glows bright red</li>
+            <li>Fangs drop down</li>
+            <li>Blood drops fall</li>
+        </ul>
+    </div>
+
+    <a href="#" class="logo-link">
+        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <defs>
+            <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2a1515;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#1a0f0f;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="shadow">
+              <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.8"/>
+            </filter>
+          </defs>
+          <rect width="80" height="80" fill="url(#bgGradient)" rx="8"/>
+          <rect x="3" y="3" width="74" height="74" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1" rx="6"/>
+          <rect width="80" height="80" fill="none" stroke="#8B0000" stroke-width="3" rx="8" class="logo-border"/>
+          <text x="40" y="52" font-family="serif" font-size="28" fill="#8B0000" text-anchor="middle" font-weight="bold" letter-spacing="2" filter="url(#shadow)" class="logo-text">VbN</text>
+          <path d="M 25 25 L 23 30 L 27 30 Z" fill="#8B0000" opacity="0.6" class="fang-left"/>
+          <path d="M 55 25 L 53 30 L 57 30 Z" fill="#8B0000" opacity="0.6" class="fang-right"/>
+          <circle cx="20" cy="60" r="2" fill="#8B0000" opacity="0.5" class="drop-1"/>
+          <circle cx="60" cy="60" r="2" fill="#8B0000" opacity="0.5" class="drop-2"/>
+        </svg>
+    </a>
+    
+    <div class="instructions">
+        <p><strong>If you don't see animations:</strong></p>
+        <ol style="text-align: left;">
+            <li>Make sure you're using a modern browser (Chrome, Firefox, Edge)</li>
+            <li>Try hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)</li>
+            <li>Check browser console (F12) for errors</li>
+        </ol>
+    </div>
+</body>
+</html>
+
