@@ -46,6 +46,7 @@
 - **Implement character comparison** - Side-by-side character comparison feature
 - **Add character export functionality** - Export characters to PDF or print-friendly format
 - **Create character templates** - Pre-made character templates for quick creation
+- **✅ NPC Agent Briefing System** - Admin page listing all NPCs with detailed briefing info for playing characters (nature/demeanor, traits, abilities, biography, agentNotes, actingNotes) - **COMPLETED v0.6.4**
 
 ### Admin Panel Enhancements
 - **Fix admin panel character display** - Some character information shows as Null

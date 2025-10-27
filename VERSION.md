@@ -1,6 +1,66 @@
 # LOTN Character Creator - Version History
 
-## Version 0.6.3 (Current)
+## Version 0.6.4 (Current)
+**Date:** October 26, 2025
+
+### NPC Agent Briefing System:
+- ✅ **Complete NPC Management System** - Dedicated admin page for viewing and managing all NPCs
+- ✅ **Agent Briefing Modal** - Comprehensive character information display for playing NPCs during sessions
+- ✅ **Notes Management** - Two editable note fields: Agent Notes (AI-formatted briefing) and Acting Notes (post-session notes)
+- ✅ **Database Migration** - Added agentNotes and actingNotes TEXT columns to characters table
+- ✅ **NPC List with Filtering** - Sortable table with clan filter, name search, and pagination (20/50/100 per page)
+- ✅ **Notes-Only Edit Modal** - Quick edit modal for agentNotes and actingNotes without full character editor
+- ✅ **NPC Player Name Standardization** - Fixed all NPCs to use player_name = 'NPC' (purple badge) instead of inconsistent variations
+
+### Briefing Features:
+- **Complete Character Info** - Core identity (nature, demeanor, concept, clan, generation, sire)
+- **Traits by Category** - Physical, Social, Mental traits organized and displayed clearly
+- **Abilities & Disciplines** - Key abilities and disciplines formatted as comma-separated lists with levels
+- **Backgrounds Display** - Social and resource backgrounds shown with levels
+- **Biography** - Full character biography for context
+- **AI-Formatted Agent Notes** - Structured briefing information for playing the character
+- **Post-Session Acting Notes** - Storyteller observations and developments after playing
+
+### Database Changes:
+- Created `database/add_npc_briefing_fields.php` - Migration to add agentNotes and actingNotes columns
+- Created `database/normalize_npc_player_names.php` - Normalizes all NPC player_name values to 'NPC'
+- Updated all NPC queries to use `player_name = 'NPC'` instead of 'ST/NPC'
+
+### Admin Panel Integration:
+- Created `admin/admin_npc_briefing.php` - Main NPC briefing page with table and modals
+- Created `admin/api_npc_briefing.php` - API endpoint to fetch comprehensive NPC data
+- Created `admin/api_update_npc_notes.php` - API endpoint to save notes
+- Created `js/admin_npc_briefing.js` - Client-side interactions and modal handlers
+- Updated admin panel navigation on all admin pages to include NPC Briefing link
+- Purple badge displays correctly for all NPCs in admin panel
+
+### User Experience Improvements:
+- Quick access to all NPC information needed for sessions
+- Dedicated space for structured agent briefings
+- Easy note-taking for post-session observations
+- Consistent NPC identification across the system
+- Smooth modal interactions with keyboard shortcuts (ESC to close)
+
+### Files Created:
+- `admin/admin_npc_briefing.php` - Main NPC briefing page
+- `admin/api_npc_briefing.php` - Briefing data API
+- `admin/api_update_npc_notes.php` - Notes save API
+- `js/admin_npc_briefing.js` - Client-side logic
+- `database/add_npc_briefing_fields.php` - Database migration
+- `database/normalize_npc_player_names.php` - NPC normalization
+- `NPC_BRIEFING_IMPLEMENTATION.md` - Technical documentation
+- `NPC_BRIEFING_QUICK_START.md` - User guide
+- `NPC_PLAYER_NAME_FIX.md` - Fix documentation
+
+### Files Modified:
+- `admin/admin_panel.php` - Added NPC Briefing nav, updated player_name filter
+- `admin/admin_sire_childe.php` - Added NPC Briefing nav
+- `admin/admin_sire_childe_enhanced.php` - Added NPC Briefing nav
+- `ToDo.MD` - Marked NPC Briefing as complete
+
+---
+
+## Version 0.6.3
 **Date:** January 26, 2025
 
 ### Logo & Branding System:

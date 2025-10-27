@@ -30,6 +30,8 @@ include __DIR__ . '/../includes/header.php';
         <a href="admin_sire_childe_enhanced.php" class="nav-btn">🔍 Enhanced Analysis</a>
         <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
         <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
+        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
     </div>
     
     <!-- Relationship Statistics -->

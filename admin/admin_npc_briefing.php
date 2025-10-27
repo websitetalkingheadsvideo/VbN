@@ -1,6 +1,7 @@
 <?php
 /**
- * Admin Panel - Character Management
+ * Admin Panel - NPC Agent Briefing
+ * Quick reference for playing NPCs in sessions
  */
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -18,76 +19,55 @@ include __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="admin-panel-container">
-    <h1 class="panel-title">🔧 Character Management</h1>
-    <p class="panel-subtitle">Manage all characters across the chronicle</p>
+    <h1 class="panel-title">📋 NPC Agent Briefing</h1>
+    <p class="panel-subtitle">Quick reference for playing NPCs in sessions</p>
     
     <!-- Admin Navigation -->
     <div class="admin-nav">
-        <a href="admin_panel.php" class="nav-btn active">👥 Characters</a>
+        <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
         <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
         <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
         <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
         <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
+        <a href="admin_npc_briefing.php" class="nav-btn active">📋 NPC Briefing</a>
     </div>
     
-    <!-- Character Statistics -->
+    <!-- NPC Statistics -->
     <div class="character-stats">
     <?php
         $stats_query = "SELECT 
             COUNT(*) as total,
-            SUM(CASE WHEN player_name = 'NPC' THEN 1 ELSE 0 END) as npcs,
-            SUM(CASE WHEN player_name IS NOT NULL AND player_name != '' AND player_name != 'NPC' THEN 1 ELSE 0 END) as pcs
-            FROM characters";
+            SUM(CASE WHEN status = 'active' OR status = 'finalized' THEN 1 ELSE 0 END) as active,
+            SUM(CASE WHEN status = 'dead' OR status = 'missing' THEN 1 ELSE 0 END) as retired
+            FROM characters
+            WHERE player_name = 'NPC'";
         $stats_result = mysqli_query($conn, $stats_query);
         
         if ($stats_result) {
             $stats = mysqli_fetch_assoc($stats_result);
         } else {
-            $stats = ['total' => 0, 'npcs' => 0, 'pcs' => 0];
+            $stats = ['total' => 0, 'active' => 0, 'retired' => 0];
             echo "<p style='color: red;'>Stats query error: " . mysqli_error($conn) . "</p>";
         }
         ?>
         <div class="stat-mini">
             <span class="stat-number"><?php echo $stats['total'] ?? 0; ?></span>
-            <span class="stat-label">Total</span>
+            <span class="stat-label">Total NPCs</span>
         </div>
         <div class="stat-mini">
-            <span class="stat-number"><?php echo $stats['pcs'] ?? 0; ?></span>
-            <span class="stat-label">PCs</span>
+            <span class="stat-number"><?php echo $stats['active'] ?? 0; ?></span>
+            <span class="stat-label">Active</span>
         </div>
         <div class="stat-mini">
-            <span class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></span>
-            <span class="stat-label">NPCs</span>
-        </div>
-    </div>
-
-    <!-- Questionnaire Statistics -->
-    <div class="questionnaire-stats">
-        <?php
-        // Get questionnaire statistics
-        $questionnaire_query = "SELECT COUNT(*) as total_questions FROM questionnaire_questions";
-        $questionnaire_result = mysqli_query($conn, $questionnaire_query);
-        $questionnaire_count = $questionnaire_result ? mysqli_fetch_assoc($questionnaire_result)['total_questions'] : 0;
-        ?>
-        <div class="stat-mini">
-            <span class="stat-number"><?php echo $questionnaire_count; ?></span>
-            <span class="stat-label">Questions</span>
-        </div>
-        <div class="stat-mini">
-            <a href="questionnaire_admin.php" class="stat-link">📝 Manage</a>
+            <span class="stat-number"><?php echo $stats['retired'] ?? 0; ?></span>
+            <span class="stat-label">Retired</span>
         </div>
     </div>
 
     <!-- Filter Controls -->
     <div class="filter-controls">
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Characters</button>
-            <button class="filter-btn" data-filter="pcs">PCs Only</button>
-            <button class="filter-btn" data-filter="npcs">NPCs Only</button>
-        </div>
         <div class="clan-filter">
-            <label for="clanFilter">Sort by Clan:</label>
+            <label for="clanFilter">Filter by Clan:</label>
             <select id="clanFilter">
                 <option value="all">All Clans</option>
                 <option value="Assamite">Assamite</option>
@@ -127,7 +107,6 @@ include __DIR__ . '/../includes/header.php';
                 <tr>
                     <th data-sort="id">ID <span class="sort-icon">⇅</span></th>
                     <th data-sort="character_name">Name <span class="sort-icon">⇅</span></th>
-                    <th data-sort="player_name">Player <span class="sort-icon">⇅</span></th>
                     <th data-sort="clan">Clan <span class="sort-icon">⇅</span></th>
                     <th data-sort="generation">Gen <span class="sort-icon">⇅</span></th>
                     <th data-sort="status">Status <span class="sort-icon">⇅</span></th>
@@ -140,27 +119,20 @@ include __DIR__ . '/../includes/header.php';
                 $char_query = "SELECT c.*, u.username as owner_username
                                FROM characters c 
                                LEFT JOIN users u ON c.user_id = u.id
+                               WHERE c.player_name = 'NPC'
                                ORDER BY c.id DESC";
                 $char_result = mysqli_query($conn, $char_query);
                 
                 if (!$char_result) {
-                    echo "<tr><td colspan='8'>Query Error: " . mysqli_error($conn) . "</td></tr>";
+                    echo "<tr><td colspan='7'>Query Error: " . mysqli_error($conn) . "</td></tr>";
                 } elseif (mysqli_num_rows($char_result) > 0) {
                     while ($char = mysqli_fetch_assoc($char_result)) {
-                        $is_npc = ($char['player_name'] === 'NPC');
                 ?>
-                    <tr class="character-row" data-type="<?php echo $is_npc ? 'npc' : 'pc'; ?>" 
+                    <tr class="character-row" 
                         data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
                         data-clan="<?php echo htmlspecialchars($char['clan'] ?? 'Unknown'); ?>">
                         <td><?php echo $char['id']; ?></td>
                         <td><strong><?php echo htmlspecialchars($char['character_name']); ?></strong></td>
-                        <td>
-                            <?php if ($is_npc): ?>
-                                <span class="badge-npc">NPC</span>
-                            <?php else: ?>
-                                <?php echo htmlspecialchars($char['player_name']); ?>
-                            <?php endif; ?>
-                        </td>
                         <td><?php echo htmlspecialchars($char['clan'] ?? 'Unknown'); ?></td>
                         <td><?php echo $char['generation']; ?>th</td>
                         <td>
@@ -173,23 +145,18 @@ include __DIR__ . '/../includes/header.php';
                         </td>
                         <td><?php echo date('M j, Y', strtotime($char['created_at'])); ?></td>
                         <td class="actions">
-                            <button class="action-btn view-btn" 
+                            <button class="action-btn briefing-btn" 
                                     data-id="<?php echo $char['id']; ?>"
-                                    title="View Character">👁️</button>
-                            <a href="../lotn_char_create.php?id=<?php echo $char['id']; ?>" 
-                               class="action-btn edit-btn" 
-                               title="Edit Character">✏️</a>
-                            <button class="action-btn delete-btn" 
-                                    data-id="<?php echo $char['id']; ?>" 
-                                    data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
-                                    data-status="<?php echo $char['status'] ?? 'draft'; ?>"
-                                    title="Delete Character">🗑️</button>
+                                    title="View Agent Briefing">📋</button>
+                            <button class="action-btn edit-btn" 
+                                    data-id="<?php echo $char['id']; ?>"
+                                    title="Edit Notes">✏️</button>
                         </td>
                     </tr>
                 <?php 
                     }
                 } else {
-                    echo "<tr><td colspan='8' class='empty-state'>No characters found.</td></tr>";
+                    echo "<tr><td colspan='7' class='empty-state'>No NPCs found.</td></tr>";
                 }
                 ?>
             </tbody>
@@ -199,7 +166,7 @@ include __DIR__ . '/../includes/header.php';
     <!-- Pagination Controls -->
     <div class="pagination-controls" id="paginationControls">
         <div class="pagination-info">
-            <span id="paginationInfo">Showing 1-26 of 26 characters</span>
+            <span id="paginationInfo">Showing NPCs</span>
         </div>
         <div class="pagination-buttons" id="paginationButtons">
             <!-- Buttons will be generated by JavaScript -->
@@ -207,39 +174,45 @@ include __DIR__ . '/../includes/header.php';
     </div>
 </div>
 
-<!-- View Character Modal -->
-<div id="viewModal" class="modal">
+<!-- Briefing Modal -->
+<div id="briefingModal" class="modal">
     <div class="modal-content large-modal">
-        <h2 class="modal-title">📄 <span id="viewCharacterName">Character Details</span></h2>
-        <button class="modal-close" onclick="closeViewModal()">×</button>
+        <h2 class="modal-title">📋 Agent Briefing: <span id="briefingCharacterName"></span></h2>
+        <button class="modal-close" onclick="closeBriefingModal()">×</button>
         
-        <!-- View Mode Toggle -->
-        <div class="view-mode-toggle">
-            <button class="mode-btn active" onclick="setViewMode('compact', event)">Compact</button>
-            <button class="mode-btn" onclick="setViewMode('full', event)">Full Details</button>
-        </div>
-        
-        <div id="viewCharacterContent" class="view-content">
+        <div id="briefingContent" class="briefing-content">
             Loading...
         </div>
+        
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeViewModal()">Close</button>
+            <button class="modal-btn cancel-btn" onclick="closeBriefingModal()">Close</button>
         </div>
     </div>
 </div>
 
-<!-- Delete Modal -->
-<div id="deleteModal" class="modal">
-    <div class="modal-content">
-        <h2 class="modal-title">⚠️ Confirm Deletion</h2>
-        <p class="modal-message">Delete character:</p>
-        <p class="modal-character-name" id="deleteCharacterName"></p>
-        <p class="modal-warning" id="deleteWarning" style="display:none;">
-            ⚠️ <strong>Finalized character</strong> - all data will be lost!
-        </p>
+<!-- Edit Notes Modal -->
+<div id="editNotesModal" class="modal">
+    <div class="modal-content large-modal">
+        <h2 class="modal-title">✏️ Edit Notes: <span id="editCharacterName"></span></h2>
+        <button class="modal-close" onclick="closeEditNotesModal()">×</button>
+        
+        <div class="briefing-content">
+            <h3>AGENT NOTES</h3>
+            <p style="color: #b8a090; font-size: 0.9em; margin-bottom: 10px;">
+                AI-formatted briefing with nature/demeanor, traits, and key information for playing this character.
+            </p>
+            <textarea id="editAgentNotes" rows="10" style="width: 100%; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical;"></textarea>
+            
+            <h3 style="margin-top: 30px;">ACTING NOTES (Post-Session)</h3>
+            <p style="color: #b8a090; font-size: 0.9em; margin-bottom: 10px;">
+                Your notes after playing this character in a session.
+            </p>
+            <textarea id="editActingNotes" rows="10" style="width: 100%; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical;"></textarea>
+        </div>
+        
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeDeleteModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="confirmDeleteBtn">Delete</button>
+            <button class="modal-btn cancel-btn" onclick="closeEditNotesModal()">Cancel</button>
+            <button class="modal-btn confirm-btn" id="saveEditNotesBtn" onclick="saveNotesFromEdit()">Save Notes</button>
         </div>
     </div>
 </div>
@@ -255,10 +228,6 @@ include __DIR__ . '/../includes/header.php';
 .nav-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
 
 .filter-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 20px; flex-wrap: wrap; }
-.filter-buttons { display: flex; gap: 10px; }
-.filter-btn { padding: 10px 20px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
-.filter-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
-.filter-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
 
 .search-box { flex: 1; max-width: 400px; }
 .search-box input { width: 100%; padding: 10px 15px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; }
@@ -303,7 +272,6 @@ include __DIR__ . '/../includes/header.php';
 .character-table td { padding: 12px; font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; }
 .character-table td strong { color: #f5e6d3; font-size: 1.05em; }
 
-.badge-npc { background: #4a1a6b; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-draft { background: #8B6508; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-finalized { background: #1a6b3a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-active { background: #0d7a4a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
@@ -313,17 +281,15 @@ include __DIR__ . '/../includes/header.php';
 .actions { display: flex; gap: 8px; justify-content: center; }
 .action-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; text-decoration: none; font-size: 1.1em; cursor: pointer; background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); transition: all 0.2s; }
 .action-btn:hover { background: rgba(139, 0, 0, 0.4); transform: scale(1.1); }
-.view-btn { background: rgba(0, 100, 200, 0.2); border-color: rgba(0, 100, 200, 0.4); }
-.view-btn:hover { background: rgba(0, 100, 200, 0.4); }
+.briefing-btn { background: rgba(100, 50, 200, 0.2); border-color: rgba(100, 50, 200, 0.4); }
+.briefing-btn:hover { background: rgba(100, 50, 200, 0.4); }
 .edit-btn { background: rgba(139, 100, 0, 0.2); border-color: rgba(139, 100, 0, 0.4); }
 .edit-btn:hover { background: rgba(139, 100, 0, 0.4); }
-.delete-btn { background: rgba(139, 0, 0, 0.2); border-color: rgba(139, 0, 0, 0.4); }
 .empty-state { text-align: center; padding: 40px; color: #b8a090; font-style: italic; }
 
 .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; }
 .modal.active { display: flex; }
-.modal-content { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 3px solid #8B0000; border-radius: 10px; padding: 30px; max-width: 500px; position: relative; }
-.modal-content.large-modal { max-width: 900px; max-height: 90vh; overflow-y: auto; }
+.modal-content { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 3px solid #8B0000; border-radius: 10px; padding: 30px; max-width: 900px; max-height: 90vh; overflow-y: auto; position: relative; }
 .modal-close { position: absolute; top: 15px; right: 15px; background: rgba(139, 0, 0, 0.3); border: 1px solid #8B0000; border-radius: 50%; width: 35px; height: 35px; font-size: 1.5em; color: #f5e6d3; cursor: pointer; transition: all 0.2s; }
 .modal-close:hover { background: rgba(139, 0, 0, 0.6); transform: scale(1.1); }
 .view-mode-toggle { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
@@ -331,17 +297,19 @@ include __DIR__ . '/../includes/header.php';
 .mode-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
 .mode-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
 
-.view-content { color: #d4c4b0; font-family: var(--font-body), 'Source Serif Pro', serif; line-height: 1.6; }
-.view-content h3 { color: #f5e6d3; font-family: var(--font-title), 'Libre Baskerville', serif; margin-top: 20px; margin-bottom: 10px; border-bottom: 1px solid rgba(139, 0, 0, 0.3); padding-bottom: 5px; }
-.view-content p { margin: 8px 0; }
-.view-content strong { color: #b8a090; }
-.view-content .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.view-content .trait-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.view-content .trait-badge { background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); padding: 4px 10px; border-radius: 4px; font-size: 0.9em; }
+.briefing-content { color: #d4c4b0; font-family: var(--font-body), 'Source Serif Pro', serif; line-height: 1.6; }
+.briefing-content h3 { color: #f5e6d3; font-family: var(--font-title), 'Libre Baskerville', serif; margin-top: 20px; margin-bottom: 10px; border-bottom: 2px solid rgba(139, 0, 0, 0.5); padding-bottom: 5px; font-size: 1.3em; }
+.briefing-content p { margin: 8px 0; }
+.briefing-content strong { color: #b8a090; }
+.briefing-content .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 15px 0; }
+.briefing-content .trait-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.briefing-content .trait-badge { background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); padding: 4px 10px; border-radius: 4px; font-size: 0.9em; }
+.briefing-content .trait-badge.negative { background: rgba(139, 0, 0, 0.4); border-color: rgba(139, 0, 0, 0.6); }
+.briefing-content .ability-list { margin-top: 10px; color: #d4c4b0; }
+.briefing-content textarea { width: 100%; min-height: 150px; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical; }
+.briefing-content textarea:focus { outline: none; border-color: #8B0000; }
+
 .modal-title { font-family: var(--font-brand), 'IM Fell English', serif; color: #f5e6d3; font-size: 2em; margin-bottom: 20px; text-align: center; }
-.modal-message { font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; font-size: 1.1em; margin-bottom: 10px; }
-.modal-character-name { font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-size: 1.4em; text-align: center; margin: 20px 0; font-weight: bold; }
-.modal-warning { background: rgba(139, 0, 0, 0.3); border-left: 4px solid #8B0000; padding: 15px; margin: 20px 0; color: #f5e6d3; }
 .modal-actions { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
 .modal-btn { padding: 12px 30px; border-radius: 5px; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; cursor: pointer; border: 2px solid; }
 .cancel-btn { background: rgba(100, 100, 100, 0.2); border-color: #666; color: #d4c4b0; }
@@ -350,7 +318,7 @@ include __DIR__ . '/../includes/header.php';
 .confirm-btn:hover { background: linear-gradient(135deg, #b30000 0%, #8B0000 100%); }
 </style>
 
-<!-- Include the external JavaScript file for admin panel functionality -->
-<script src="../js/admin_panel.js"></script>
+<script src="../js/admin_npc_briefing.js"></script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+

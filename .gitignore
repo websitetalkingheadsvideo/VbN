@@ -21,8 +21,13 @@ reference/Characters/Images/
 .idea/
 *.swp
 *.swo
+.cursor/
 
 # OS files
 .DS_Store
 Thumbs.db
 sync_config.jsonc
+
+# Environment files with API keys
+.env
+config.env
