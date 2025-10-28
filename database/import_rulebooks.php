@@ -79,7 +79,8 @@ function import_rulebook(mysqli $conn, array $book_data, string $json_path, stri
     $metadata = $book_data['metadata'];
     $filename = $metadata['filename'];
     
-    echo "  Importing: {$filename}\n";
+    echo "  Importing: {$filename} ({$metadata['page_count']} pages)\n";
+    echo "  Progress: Processing metadata...\n";
     
     // Prepare book metadata
     $title = generate_title($filename);
@@ -152,6 +153,10 @@ function import_pages(mysqli $conn, int $rulebook_id, array $pages): int {
     
     $stmt = $conn->prepare($sql);
     
+    $total_pages = count($pages);
+    $processed_pages = 0;
+    echo "  Progress: Importing {$total_pages} pages...\n";
+    
     foreach ($pages as $page) {
         $page_num = $page['page_number'];
         $text = $page['text'];
@@ -162,9 +167,15 @@ function import_pages(mysqli $conn, int $rulebook_id, array $pages): int {
         if ($stmt->execute()) {
             $imported++;
         }
+        
+        $processed_pages++;
+        if ($processed_pages % 10 == 0 || $processed_pages == $total_pages) {
+            echo "  Progress: {$processed_pages}/{$total_pages} pages imported\n";
+        }
     }
     
     $stmt->close();
+    echo "  ✅ Completed: {$imported} pages imported\n";
     return $imported;
 }
 
@@ -193,7 +204,9 @@ function import_all_rulebooks(mysqli $conn, string $data_dir): void {
     echo "=" . str_repeat("=", 59) . "\n";
     
     foreach ($summary['files'] as $file_info) {
-        $json_path = $file_info['output_json'];
+        // Convert Windows paths to server paths
+        $json_path = str_replace('G:\\VbN\\data\\extracted_rulebooks\\', $data_dir . '/', $file_info['output_json']);
+        $json_path = str_replace('\\', '/', $json_path);
         
         // Skip books with no pages
         if ($file_info['page_count'] == 0) {
@@ -218,7 +231,7 @@ function import_all_rulebooks(mysqli $conn, string $data_dir): void {
         }
         
         // Get PDF path
-        $pdf_path = str_replace('data\\extracted_rulebooks\\', 'reference\\Books\\', $json_path);
+        $pdf_path = str_replace('data/extracted_rulebooks/', 'reference/Books/', $json_path);
         $pdf_path = str_replace('.json', '.pdf', $pdf_path);
         
         // Import the book
