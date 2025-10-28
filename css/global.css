@@ -35,6 +35,10 @@ body {
     flex-direction: column !important;
     margin: 0;
     padding: 0;
+    /* Mobile-first responsive base */
+    font-size: 16px; /* Prevents iOS zoom on form inputs */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 /* ===== PAGE WRAPPER & MAIN CONTENT ===== */
@@ -479,6 +483,103 @@ body {
     .quiz-character-btn {
         width: 100%;
         max-width: 300px;
+    }
+}
+
+/* ===== MOBILE UTILITY CLASSES ===== */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.tablet-only {
+    display: none;
+}
+
+/* Touch-friendly interactive elements */
+.touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile-first responsive containers */
+.responsive-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Mobile-friendly tables */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+}
+
+.table-responsive table {
+    min-width: 100%;
+    white-space: nowrap;
+}
+
+/* Mobile-friendly forms */
+.form-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-mobile .form-group {
+    width: 100%;
+}
+
+/* Mobile breakpoints */
+@media (max-width: 767px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .tablet-only {
+        display: none;
+    }
+    
+    .responsive-container {
+        padding: 0 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .tablet-only {
+        display: block;
+    }
+    
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .desktop-only {
+        display: block;
+    }
+    
+    .mobile-only,
+    .tablet-only {
+        display: none;
     }
 }
 

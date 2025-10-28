@@ -1,7 +1,8 @@
 # Valley by Night - Apache Configuration
 
 # Enable Rewrite Engine
-RewriteEngine On
+# TEMPORARILY DISABLED - Causing 404s on all .php files
+RewriteEngine Off
 
 # Force HTTPS (optional - uncomment if you want to force SSL)
 # RewriteCond %{HTTPS} off

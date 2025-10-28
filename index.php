@@ -92,7 +92,7 @@ include 'includes/header.php';
                     <div class="card-icon">⚔️</div>
                     <h3>Items Database</h3>
                     <p>Manage equipment and artifacts</p>
-                    <a href="admin/admin_equipment.php" class="gothic-button">Manage Items</a>
+                    <a href="admin/admin_items.php" class="gothic-button">Manage Items</a>
                 </div>
                 
                 <div class="action-card">
@@ -107,6 +107,13 @@ include 'includes/header.php';
                     <h3>Clan Discovery Quiz</h3>
                     <p>Test the character creation questionnaire</p>
                     <a href="questionnaire.php" class="gothic-button">Take Quiz</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="card-icon">🧛</div>
+                    <h3>Laws Agent</h3>
+                    <p>Ask AI about VTM/MET rules and lore</p>
+                    <a href="admin/laws_agent.php" class="gothic-button">Ask Questions</a>
                 </div>
                 
                 <div class="action-card disabled">
@@ -204,6 +211,13 @@ include 'includes/header.php';
             
             <!-- Additional Player Links -->
             <div class="player-links">
+                <div class="link-card">
+                    <div class="card-icon">🧛</div>
+                    <h3>Laws Agent</h3>
+                    <p>Ask AI about VTM/MET rules and lore</p>
+                    <a href="admin/laws_agent.php" class="gothic-button">Ask Questions</a>
+                </div>
+                
                 <div class="link-card">
                     <div class="card-icon">💬</div>
                     <h3>Chat Room</h3>

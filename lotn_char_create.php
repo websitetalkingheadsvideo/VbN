@@ -1695,6 +1695,14 @@ include 'includes/connect.php';
         </form>
     </div>
 
+    <!-- Mobile Save Button Container -->
+    <div class="mobile-save-container mobile-only">
+        <div class="button-group">
+            <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
+            <button type="button" class="finalize-btn" data-action="finalize-character">🎯 Finalize</button>
+        </div>
+    </div>
+
     <!-- Clan Guide Modal -->
     <div id="clanGuideModal" class="modal">
         <div class="modal-content">

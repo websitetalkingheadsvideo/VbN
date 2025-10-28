@@ -89,6 +89,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
             
             <!-- User Info Section -->
             <div class="header-right">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                <div class="quick-nav" style="margin-bottom: 10px;">
+                    <a href="<?php echo $path_prefix; ?>admin/laws_agent.php" 
+                       style="padding: 8px 15px; background: rgba(139, 0, 0, 0.3); color: #fff; text-decoration: none; border-radius: 4px; border: 1px solid #8b0000; font-size: 14px; transition: background 0.3s;"
+                       onmouseover="this.style.background='rgba(139, 0, 0, 0.5)'"
+                       onmouseout="this.style.background='rgba(139, 0, 0, 0.3)'">
+                        🧛 Laws Agent
+                    </a>
+                </div>
+                <?php endif; ?>
                 <div class="user-info">
                     <span class="user-label">Kindred:</span>
                     <span class="username"><?php echo htmlspecialchars($username); ?></span>

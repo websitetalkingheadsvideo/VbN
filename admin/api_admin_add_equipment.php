@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
 // TODO: Add proper admin check
 // if (!$_SESSION['is_admin']) { ... }
 
-require_once 'includes/connect.php';
+require_once '../includes/connect.php';
 
 // Get POST data
 $data = json_decode(file_get_contents('php://input'), true);

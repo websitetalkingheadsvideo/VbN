@@ -121,7 +121,7 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <!-- Character Table -->
-    <div class="character-table-wrapper">
+    <div class="character-table-wrapper table-responsive">
         <table class="character-table" id="characterTable">
             <thead>
                 <tr>

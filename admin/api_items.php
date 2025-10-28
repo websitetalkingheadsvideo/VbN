@@ -12,7 +12,7 @@
  */
 
 header('Content-Type: application/json');
-require_once 'includes/connect.php';
+require_once '../includes/connect.php';
 
 try {
     // Build base query - specify columns explicitly (avoid SELECT *)

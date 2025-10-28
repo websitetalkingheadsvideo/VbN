@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 header('Content-Type: application/json');
-require_once 'includes/connect.php';
+require_once '../includes/connect.php';
 
 if (!isset($_GET['character_id']) || !is_numeric($_GET['character_id'])) {
     http_response_code(400);

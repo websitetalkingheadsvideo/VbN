@@ -1,0 +1,168 @@
+# VbN Database MySQL Compliance Update - PRD
+
+## Project Overview
+Update all database-related PHP files in the VbN (Vampire by Night) project to comply with MySQL best practices and security standards as defined in the mysql.mdc rules.
+
+## Current State Analysis
+The project has:
+- 59 PHP files using mysqli_query with potential SQL injection vulnerabilities
+- 16 files using SELECT * (inefficient queries)
+- 18 files with proper prepared statements (good examples to follow)
+- Mixed character set handling (some tables use utf8mb4, others don't specify)
+- Some tables have proper indexes and foreign keys, others don't
+- No consistent use of transactions for multi-step operations
+- Database connection in includes/connect.php
+
+## MySQL Rules to Enforce
+1. Use appropriate data types (INT for IDs, VARCHAR with proper length)
+2. Create indexes for columns in WHERE, JOIN, and ORDER BY clauses
+3. Use foreign keys for referential integrity
+4. Use EXPLAIN to analyze queries
+5. Avoid SELECT * - specify needed columns only
+6. Use prepared statements to prevent SQL injection
+7. Use utf8mb4_unicode_ci character set and collation
+8. Use transactions for atomic operations
+
+## Success Criteria
+- Zero uses of mysqli_query with dynamic SQL (all converted to prepared statements)
+- Zero uses of SELECT * (all replaced with explicit column lists)
+- All tables have utf8mb4_unicode_ci charset/collation
+- All frequently queried columns have appropriate indexes
+- All foreign key relationships properly defined
+- All multi-step operations wrapped in transactions
+- Documentation of database schema with optimization notes
+
+## Implementation Phases
+
+### Phase 1: Database Connection & Configuration
+- Update includes/connect.php to set utf8mb4 charset
+- Add transaction helper functions
+- Add prepared statement wrapper functions for common patterns
+
+### Phase 2: Table Schema Updates
+- Audit all CREATE TABLE statements
+- Add missing indexes to existing tables
+- Add missing foreign keys
+- Update charset/collation to utf8mb4_unicode_ci
+- Optimize data types
+
+### Phase 3: Query Security Updates (Priority Files)
+High-risk files (direct user input):
+- save_character.php (character creation/updates)
+- login_process.php (authentication)
+- register_process.php (user registration)
+- load_character.php (character loading)
+- upload_character_image.php (file uploads)
+- remove_character_image.php (deletions)
+
+Admin files:
+- admin/npc_tracker_submit.php
+- admin/api_disciplines.php
+- admin/api_items.php
+- admin/api_create_location.php
+- admin/api_admin_add_equipment.php
+- admin/api_admin_remove_equipment.php
+- admin/api_admin_update_equipment.php
+
+### Phase 4: Data Retrieval Optimization
+Files with SELECT * to optimize:
+- admin/view_character_api.php
+- load_character.php
+- questionnaire_summary.php
+- questionnaire.php
+- admin/questionnaire_admin.php
+- admin/api_disciplines.php
+- admin/npc_tracker_submit.php
+- admin/admin_locations.php
+- admin/api_items.php
+- admin/admin_equipment.php
+- data/view_character.php
+- data/verify_andrei.php
+
+### Phase 5: Database Utility Files
+Update migration and setup scripts:
+- database/setup_database.php
+- database/create_missing_tables.php
+- database/create_locations_table.php
+- database/create_boons_table.php
+- database/create_npc_tracker_table.php
+- database/setup_items_database.php
+- database/add_email_verification_columns.php
+- database/add_npc_briefing_fields.php
+- database/populate_discipline_data.php
+
+### Phase 6: Transaction Implementation
+Identify and wrap multi-step operations:
+- Character creation (character + traits + disciplines + abilities)
+- Character deletion (cascade deletes)
+- Equipment assignment (inventory updates)
+- Location creation (with relationships)
+- Boon tracking (creditor/debtor updates)
+
+### Phase 7: Testing & Validation
+- Create test suite for prepared statements
+- Verify all queries use indexes (EXPLAIN analysis)
+- Test transaction rollback scenarios
+- Performance testing before/after
+- Security audit of all user inputs
+
+### Phase 8: Documentation
+- Document database schema with indexes
+- Create query optimization guide
+- Document common prepared statement patterns
+- Create migration guide for future updates
+
+## Technical Requirements
+
+### Prepared Statement Pattern
+Replace:
+```php
+$sql = "SELECT * FROM characters WHERE id = $id";
+mysqli_query($conn, $sql);
+```
+
+With:
+```php
+$stmt = $conn->prepare("SELECT id, name, clan FROM characters WHERE id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+```
+
+### Transaction Pattern
+```php
+mysqli_begin_transaction($conn);
+try {
+    // Multiple queries
+    mysqli_commit($conn);
+} catch (Exception $e) {
+    mysqli_rollback($conn);
+    throw $e;
+}
+```
+
+### Index Creation Pattern
+```sql
+CREATE INDEX idx_character_user ON characters(user_id);
+CREATE INDEX idx_character_clan ON characters(clan);
+```
+
+## Risk Mitigation
+- Test all changes on development database first
+- Create database backups before schema changes
+- Implement changes incrementally by file/module
+- Keep detailed changelog of all modifications
+- Maintain backwards compatibility during transition
+
+## Timeline Estimate
+- Phase 1: 2-3 hours
+- Phase 2: 4-6 hours
+- Phase 3: 8-10 hours (highest priority)
+- Phase 4: 4-6 hours
+- Phase 5: 2-3 hours
+- Phase 6: 3-4 hours
+- Phase 7: 4-5 hours
+- Phase 8: 2-3 hours
+
+Total: 29-40 hours of focused development work
+

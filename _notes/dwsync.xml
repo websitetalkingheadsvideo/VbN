@@ -23,7 +23,7 @@
 <file name="dashboard.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047367979642710" remote="134047854600000000" Dst="2" />
 <file name="HOME_PAGE_BUILD_SUMMARY.md" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047249234458266" remote="134047854600000000" Dst="2" />
 <file name="HOME_PAGE_REBUILD_PLAN.md" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047223385062812" remote="134047854600000000" Dst="2" />
-<file name="index.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047368046925076" remote="134047854600000000" Dst="2" />
+<file name="index.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134061129833023632" remote="134061222000000000" Dst="2" />
 <file name="login_process.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047265202389975" remote="134047854600000000" Dst="2" />
 <file name="lotn_char_create.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134044672809080242" remote="134047854600000000" Dst="2" />
 <file name="NEXT_SESSION_ITEMS.md" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047370534718703" remote="134047854600000000" Dst="2" />
@@ -48,4 +48,6 @@
 <file name="status.md" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134048240670816137" remote="134048814000000000" Dst="2" />
 <file name="verify_email.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134047769788833311" remote="134048814000000000" Dst="2" />
 <file name="favicon.ico" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134059346874015644" remote="134059450200000000" Dst="2" />
+<file name="phpinfo.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134061145959976979" remote="134061222000000000" Dst="2" />
+<file name="test.php" server="vps798.pairvps.com//usr/home/working/public_html/vbn.talkingheads.video/" local="134061142431948200" remote="134061222000000000" Dst="2" />
 </dwsync>

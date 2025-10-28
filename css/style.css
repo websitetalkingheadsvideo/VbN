@@ -4130,16 +4130,938 @@ select {
 
 
 /* ========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - MOBILE FIRST APPROACH
    ======================================== */
 
+/* Mobile-first base styles are above, desktop overrides below */
+
+/* Mobile phones (up to 767px) */
+@media (max-width: 767px) {
+    /* Fix body layout for mobile */
+    body {
+        flex-direction: column !important;
+        padding: 5px;
+        gap: 10px;
+    }
+
+    /* Fix container layout */
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 0;
+    }
+    
+    /* Fix sidebar positioning */
+    .sidebar {
+        order: 2;
+        position: static;
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Fix main content order */
+    #sheet {
+        order: 1;
+    }
+    
+    /* Fix form rows to stack vertically */
+    .form-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    /* Fix info grids to stack vertically */
+    .info-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+    }
+    
+    /* Make all tables horizontally scrollable */
+    .table-responsive,
+    .discipline-table-container,
+    .clan-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+    
+    /* Ensure all buttons are touch-friendly */
+    button,
+    .button-group button,
+    .tab,
+    .trait-btn,
+    .ability-btn,
+    .discipline-btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 16px;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+    
+    /* Fix tab navigation for mobile */
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #780606 #333;
+        padding-bottom: 5px;
+    }
+    
+    .tabs::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .tabs::-webkit-scrollbar-track {
+        background: #333;
+    }
+    
+    .tabs::-webkit-scrollbar-thumb {
+        background: #780606;
+        border-radius: 3px;
+    }
+    
+    .tab {
+        min-width: 100px;
+        padding: 12px 16px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    
+    /* Fix input elements for mobile */
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px; /* Prevents iOS zoom */
+        padding: 12px;
+        min-height: 44px;
+    }
+    
+    /* Mobile-specific modal improvements */
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
+        margin: 2% auto;
+        max-height: 95vh;
+    }
+    
+    /* Mobile character preview */
+    .character-preview {
+        margin-top: 20px;
+        padding: 10px;
+    }
+    
+    .character-preview .preview-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .preview-card {
+        padding: 10px;
+    }
+    
+    .preview-name {
+        font-size: 1.2em;
+    }
+    
+    .preview-traits {
+        gap: 6px;
+    }
+    
+    .preview-trait {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+    
+    /* Admin Panel Mobile Styles */
+    .admin-panel-container {
+        padding: 10px;
+    }
+    
+    .admin-nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        min-height: 44px;
+    }
+    
+    .character-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stat-mini {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        padding: 12px;
+        min-height: 44px;
+        text-align: center;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .clan-filter,
+    .page-size-control {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .clan-filter select,
+    .page-size-control select {
+        width: 100%;
+        min-width: auto;
+        padding: 12px;
+        min-height: 44px;
+    }
+    
+    .character-table-wrapper {
+        margin: 0 -10px; /* Extend to screen edges on mobile */
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .character-table {
+        min-width: 800px; /* Ensure table doesn't get too cramped */
+    }
+    
+    .character-table th,
+    .character-table td {
+        padding: 8px 6px;
+        font-size: 0.9em;
+    }
+    
+    .character-table th {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    /* Character Creation Mobile Styles */
+    .character-info-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .character-info-left,
+    .character-info-right {
+        width: 100%;
+    }
+    
+    /* Trait sections mobile optimization */
+    .trait-section,
+    .ability-section,
+    .discipline-section {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+    .trait-header,
+    .ability-header,
+    .discipline-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .trait-progress,
+    .ability-progress,
+    .discipline-progress {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .trait-progress-label,
+    .ability-progress-label,
+    .discipline-progress-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .trait-progress-bar,
+    .ability-progress-bar,
+    .discipline-progress-bar {
+        width: 100%;
+    }
+    
+    /* Trait buttons mobile grid */
+    .trait-options,
+    .ability-options,
+    .discipline-options {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .trait-option-btn,
+    .ability-option-btn,
+    .discipline-option-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    /* Selected traits/abilities mobile layout */
+    .trait-list,
+    .ability-list,
+    .discipline-list {
+        flex-direction: column;
+        gap: 8px;
+        min-height: auto;
+    }
+    
+    .trait-tag,
+    .selected-ability,
+    .selected-discipline {
+        width: 100%;
+        justify-content: space-between;
+        padding: 8px 12px;
+    }
+    
+    /* Backgrounds section mobile */
+    .background-section {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+    
+    .background-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .background-progress {
+        width: 100%;
+        align-items: flex-start;
+    }
+    
+    .background-progress-bar {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .background-options {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .background-option-btn {
+        width: 100%;
+        padding: 12px;
+        min-height: 44px;
+        text-align: center;
+    }
+    
+    /* Morality section mobile */
+    .morality-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .virtue-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .virtue-bars {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .virtue-progress-container {
+        width: 100%;
+    }
+    
+    .humanity-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .humanity-track {
+        width: 100%;
+    }
+    
+    /* Merits & Flaws mobile */
+    .merits-flaws-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-group input {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .merits-flaws-summary {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .merit-flaw-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .merit-flaw-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    /* Button groups mobile */
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .button-group button {
+        width: 100%;
+        padding: 12px 20px;
+        min-height: 44px;
+    }
+    
+    /* Sticky save button for mobile */
+    .mobile-save-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1a0f0f 0%, #0d0606 100%);
+        border-top: 2px solid #8B0000;
+        padding: 10px;
+        z-index: 1000;
+        box-shadow: 0 -4px 15px rgba(139, 0, 0, 0.3);
+    }
+    
+    .mobile-save-container .button-group {
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .mobile-save-container button {
+        flex: 1;
+        min-height: 44px;
+    }
+    
+    /* Add bottom padding to body to account for sticky save button */
+    body {
+        padding-bottom: 80px;
+    }
+    
+    /* Dashboard/Index Mobile Styles */
+    .dashboard-container {
+        padding: 10px;
+    }
+    
+    .dashboard-admin,
+    .dashboard-player {
+        padding: 10px;
+    }
+    
+    .section-heading {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    
+    .welcome-text {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    
+    .stats-panel {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .stat-card {
+        width: 100%;
+        min-width: auto;
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2em;
+    }
+    
+    .stat-label {
+        font-size: 0.9em;
+    }
+    
+    .character-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .character-card {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .character-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .character-name {
+        font-size: 1.2em;
+    }
+    
+    .character-clan {
+        font-size: 0.9em;
+    }
+    
+    .character-actions {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .character-actions button {
+        width: 100%;
+        padding: 12px;
+        min-height: 44px;
+    }
+    
+    .quick-actions {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .quick-actions .action-card {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .action-card h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .action-card p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+    
+    .action-card button {
+        width: 100%;
+        padding: 12px 20px;
+        min-height: 44px;
+    }
+    
+    .chronicle-info {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    
+    .chronicle-info h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .chronicle-info p {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+    
+    /* Character Viewing Mobile Styles */
+    .container {
+        padding: 10px;
+    }
+    
+    .actions-bar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .back-link,
+    .delete-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .header-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 10px;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid #d4af37;
+        border-radius: 5px;
+    }
+    
+    .info-label {
+        font-size: 0.9em;
+        color: #b49037;
+    }
+    
+    .info-value {
+        font-size: 1em;
+        color: #f5e6d3;
+    }
+    
+    .trait-section {
+        margin-bottom: 20px;
+    }
+    
+    .trait-section h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .trait-category {
+        margin-bottom: 15px;
+    }
+    
+    .trait-category h3 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+    
+    .trait-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .trait-item {
+        padding: 10px;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid #d4af37;
+        border-radius: 5px;
+    }
+    
+    .ability-list,
+    .discipline-list,
+    .background-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .ability-item,
+    .discipline-item,
+    .background-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+    }
+    
+    .morality-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .morality-item {
+        padding: 15px;
+    }
+    
+    .merit-flaw-item {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .biography,
+    .notes {
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+    
+    .powers-list {
+        margin-top: 10px;
+        padding-left: 15px;
+        font-size: 0.85em;
+    }
+    
+    .specialization {
+        font-size: 0.8em;
+        margin-top: 5px;
+    }
+    
+    /* Universal Mobile Improvements */
+    
+    /* Header/Navigation Mobile */
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .header-center {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .header-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .version-info {
+        font-size: 0.8em;
+    }
+    
+    /* Modal improvements for mobile */
+    .modal {
+        padding: 10px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
+        margin: 2% auto;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+    
+    .modal-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3em;
+    }
+    
+    .modal-close {
+        align-self: flex-end;
+        padding: 8px 12px;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    
+    /* Form improvements for mobile */
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px; /* Prevents iOS zoom */
+        min-height: 44px;
+        border-radius: 5px;
+    }
+    
+    .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+    
+    /* Button improvements for mobile */
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+        width: 100%;
+        padding: 12px 20px;
+        min-height: 44px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    /* Tab improvements for mobile */
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #780606 #333;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .tabs::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .tabs::-webkit-scrollbar-track {
+        background: #333;
+    }
+    
+    .tabs::-webkit-scrollbar-thumb {
+        background: #780606;
+        border-radius: 3px;
+    }
+    
+    .tab {
+        min-width: 100px;
+        padding: 12px 16px;
+        font-size: 14px;
+        white-space: nowrap;
+        min-height: 44px;
+    }
+    
+    /* Tab content mobile */
+    .tab-content {
+        padding: 15px;
+        min-height: 400px;
+    }
+    
+    .tab-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .card-header {
+        margin-bottom: 15px;
+    }
+    
+    .card-title {
+        font-size: 1.3em;
+    }
+    
+    /* Progress indicators mobile */
+    .tab-progress {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        border-radius: 4px;
+    }
+    
+    .progress-text {
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    
+    /* Collapsible sections mobile */
+    .collapsible-header {
+        padding: 12px 0;
+        font-size: 1.1em;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .collapsible-content {
+        padding: 10px 0;
+    }
+    
+    /* Info boxes mobile */
+    .info-box {
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+    
+    /* XP tracker mobile */
+    .xp-tracker {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .xp-display {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .xp-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .xp-btn {
+        width: 100%;
+        padding: 10px;
+        min-height: 44px;
+    }
+}
+
 /* Tablet Responsive Design */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     body {
         gap: 15px;
         padding: 3px;
     }
+}
 
+/* Legacy mobile styles - keeping for compatibility */
 @media (max-width: 768px) {
     /* Mobile Layout */
     body {

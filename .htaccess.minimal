@@ -1,0 +1,10 @@
+# Minimal .htaccess for testing
+# Just the bare essentials
+
+# Prevent Directory Listing
+Options -Indexes
+
+# Custom Error Pages
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
