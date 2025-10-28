@@ -1,0 +1,192 @@
+{
+  "total_files": 31,
+  "successful": 31,
+  "files": [
+    {
+      "filename": "Guide to the Camarilla.pdf",
+      "page_count": 0,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Guide to the Camarilla.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Guide to the Camarilla.txt"
+    },
+    {
+      "filename": "LOR - Laws of the Resurrection (5035).pdf",
+      "page_count": 274,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\LOR - Laws of the Resurrection (5035).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\LOR - Laws of the Resurrection (5035).txt"
+    },
+    {
+      "filename": "MET - DA - The Long Night (5008).pdf",
+      "page_count": 194,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - DA - The Long Night (5008).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - DA - The Long Night (5008).txt"
+    },
+    {
+      "filename": "MET - Dark Epics.pdf",
+      "page_count": 112,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Dark Epics.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Dark Epics.txt"
+    },
+    {
+      "filename": "MET - Journal 1 (5401).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 1 (5401).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 1 (5401).txt"
+    },
+    {
+      "filename": "MET - Journal 2 (5402).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 2 (5402).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 2 (5402).txt"
+    },
+    {
+      "filename": "MET - Journal 3 (5403).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 3 (5403).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 3 (5403).txt"
+    },
+    {
+      "filename": "MET - Journal 4 (5404).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 4 (5404).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 4 (5404).txt"
+    },
+    {
+      "filename": "MET - Journal 5 (5405).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 5 (5405).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 5 (5405).txt"
+    },
+    {
+      "filename": "MET - Journal 6 (5406).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 6 (5406).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 6 (5406).txt"
+    },
+    {
+      "filename": "MET - Journal 7 (5407).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 7 (5407).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 7 (5407).txt"
+    },
+    {
+      "filename": "MET - Journal 8 (5408).pdf",
+      "page_count": 82,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 8 (5408).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - Journal 8 (5408).txt"
+    },
+    {
+      "filename": "MET - LOE - Laws of the East (5016).pdf",
+      "page_count": 298,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - LOE - Laws of the East (5016).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - LOE - Laws of the East (5016).txt"
+    },
+    {
+      "filename": "MET - VTM - Anarch Guide (5040).pdf",
+      "page_count": 186,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Anarch Guide (5040).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Anarch Guide (5040).txt"
+    },
+    {
+      "filename": "MET - VTM - Camarilla Guide (5017).pdf",
+      "page_count": 101,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Camarilla Guide (5017).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Camarilla Guide (5017).txt"
+    },
+    {
+      "filename": "MET - VTM - Introductory Kit.pdf",
+      "page_count": 32,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Introductory Kit.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Introductory Kit.txt"
+    },
+    {
+      "filename": "MET - VTM - Laws of Elysium (5012).pdf",
+      "page_count": 162,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Laws of Elysium (5012).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Laws of Elysium (5012).txt"
+    },
+    {
+      "filename": "MET - VTM - Liber des Goules (5006).pdf",
+      "page_count": 113,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (5006).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (5006).txt"
+    },
+    {
+      "filename": "MET - VTM - Liber des Goules (text) (5006).pdf",
+      "page_count": 34,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (text) (5006).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (text) (5006).txt"
+    },
+    {
+      "filename": "MET - VTM - Reference Guide.pdf",
+      "page_count": 22,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Reference Guide.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Reference Guide.txt"
+    },
+    {
+      "filename": "MET - VTM - Sabbat Guide (5018).pdf",
+      "page_count": 202,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Sabbat Guide (5018).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Sabbat Guide (5018).txt"
+    },
+    {
+      "filename": "MET - VTM - Storyteller_s Guide (5021).pdf",
+      "page_count": 184,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Storyteller_s Guide (5021).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Storyteller_s Guide (5021).txt"
+    },
+    {
+      "filename": "MET - WTO - Oblivion (5400).pdf",
+      "page_count": 259,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - WTO - Oblivion (5400).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - WTO - Oblivion (5400).txt"
+    },
+    {
+      "filename": "MTA - Laws of Ascension (5022).pdf",
+      "page_count": 282,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MTA - Laws of Ascension (5022).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MTA - Laws of Ascension (5022).txt"
+    },
+    {
+      "filename": "MTA - Laws of Ascension Companion (5033).pdf",
+      "page_count": 214,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MTA - Laws of Ascension Companion (5033).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MTA - Laws of Ascension Companion (5033).txt"
+    },
+    {
+      "filename": "VTM - Blood Magic - Secrets of Thaumaturgy.pdf",
+      "page_count": 140,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Magic - Secrets of Thaumaturgy.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Magic - Secrets of Thaumaturgy.txt"
+    },
+    {
+      "filename": "VTM - Blood Sacrifice - The Thaumaturgy Companion.pdf",
+      "page_count": 98,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Sacrifice - The Thaumaturgy Companion.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Sacrifice - The Thaumaturgy Companion.txt"
+    },
+    {
+      "filename": "VTM - Counsel of Primogen.pdf",
+      "page_count": 127,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Counsel of Primogen.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Counsel of Primogen.txt"
+    },
+    {
+      "filename": "WOD - Dark Epics.pdf",
+      "page_count": 112,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\WOD - Dark Epics.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\WOD - Dark Epics.txt"
+    },
+    {
+      "filename": "WOD - Laws of Judgment (5099).pdf",
+      "page_count": 298,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\WOD - Laws of Judgment (5099).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\WOD - Laws of Judgment (5099).txt"
+    },
+    {
+      "filename": "Wraith - MET - Oblivion (5400).pdf",
+      "page_count": 259,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).txt"
+    }
+  ]
+}

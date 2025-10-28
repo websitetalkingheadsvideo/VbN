@@ -1,0 +1,2690 @@
+I I  
+I
+i
+ 
+11 
+KS 
+
+
+c 
+L 
+A 
+L
+ISAN 1-56504-777-X 
+WW5401 $7 95 U S 
+- --15h' I 
+.. 
+---n l
+5
+
+
+BECAUSE T H E  MIND’S EYE NEVER B L I N K S  
+
+
+CREDITS 
+Authors: Charles Bailey, Carl Bowen, Richard E. Dansky, Shane De Freest, Jess Heinig 
+and Lindsay Woodcock 
+Developer: Carl Bowen 
+Editor: Ken Cliffe 
+Art Director: Rich Thomas 
+Photographer: J.P. Rhea 
+Front and Back Cover Design: Matt Milberger 
+Layout and Typesetting: Matt Milberger 
+S P E C I A L  
+THANKS 
+Andrew “Why are you talking?” Bates, for making me feel like part of the family. 
+Rich “Fed-Ex” Dansky, for exploiting an intern who can’t pack a box. 
+Ed “Two Fatal Errors” Hall, for giving me a chance anyway. 
+Ken “Elephant Man” Cliffe, for my second editing test. And for liking peanuts. 
+Jess “Invisible Gryphons” Heinig, for at least giving me something to work with. 
+Justin R. “I’m sexy” Achilli, for making the Sabbat Guide.. . interesting. 
+And to Phil Brucato, Allison Sturms, Cary Goff, Ian Lemke and Jane Palmer, for all the 
+wonders you have yet to discover. 
+0 1999 White Wolf Publishing, Inc. 
+All rights reserved. Reproduction without 
+the written permission of the publisher is 
+expressly forbidden, except for the purposes 
+of reviews, and for blank character sheets, 
+which may be reproduced for personal use 
+only. White Wolf, Vampire the Masquerade, 
+Vampire the Dark Ages, Mage the Ascension 
+and World of Darkness are registered trade- 
+marks ofWhite Wolf Publishing, Inc. All rights reserved. Werewolf the Apocalypse, Wraith 
+the Oblivion, Changeling the Dreaming, Werewolf the Wild West, Trinity, Mind’s Eye 
+Theatre Journal, Laws of the Night, Savage West, Laws of the Wild, Laws of the Wyld West, 
+Laws of the Hunt, Oblivion, Antagonists, Dirty Secrets of the Black Hand and The Shining 
+Host are trademarks of White Wolf Publishing, Inc. All rights reserved. All characters, 
+names, places and text herein are copyrighted by White Wolf Publishing, Inc. 
+The mention of or reference to any company or product in these pages is not a 
+challenge to the trademark or copyright concerned. 
+This book uses the supernatural forsettings, characters and themes. All mystical and 
+supernatural elements are fiction and intended for entertainment purposes only. Reader 
+discretion is advised. 
+735 PARK NORTH BLVD. 
+SUITE 128 
+QJRKIJON, CA 30021 
+USA 
+C A M E  S T U D I O  
+Check out White Wolf online at 
+http://www.white-wolf.com; 
+alt.games.whitewolf and rec.games.frp.storyteller 
+PRINTED IN THE USA. 
+
+
+actually swing the sword yourself,” they informed me. “And you throw beanbags 
+at each other, too.” 
+I, in my infinite wisdom at the time, responded, “AD@D? What’s that, a 
+Dungeons €4 Dragons knock-off? How obvious can you get?” 
+Deciding then that perhaps sword-and-sorcery-type LARPs were not exactly my 
+bag, my acquaintances told me that they participated in another game in which all 
+conflicts and confrontations were resolved by playing Rock-Paper-Scissors -that 
+there wasn’t so much of the socking-each-other-with-the-padded-pipes business. 
+That type of game seemed a little more my speed, so they loaned me a battered copy 
+of Vampire: The Masquerade as “reference material,” and off I went. 
+Unfortunately, I fell out of touch with my two erstwhile gamer buddies shortly 
+after returning their book to them, and I didn’t do much roleplaying until college 
+(though other friends of mine and I did make our own padded swords and hack at 
+each other when the need - 
+and our raging, unrequited hormones - 
+overtook us 
+and we had to vent or die). 
+In college, I got a slightly better education in the fine points of tabletop 
+roleplaying (“Boy, this When Will You Rage anthology iscool. I wonder what it’s like 
+to be one of these werewolves.. ..”), and I discovered a troupe of live-action garners 
+on campus. I’d actually been in a Vampire tabletop game or two by this point, so 
+naturally I was ready to go. I spent my first couple of live-action games wandering 
+from character concept to character concept until I happened upon something I 
+liked and stuck with it. I was concurrently involved in increasingly more complex 
+and mature tabletop roleplaying games, and I was thoroughly hooked by the end 
+of my senior year. I loved the World of Darkness, favored Vampire and Werewolf, 
+and adored the live-action expression of those two games. 
+So, after college, on a whim, I sent my r6sum6 to White Wolf (among other 
+publishing companies across the state) and waited to see if there might be a job for 
+me. As luck would have it, my gaming experience (and my preference for White 
+Wolfs material) complemented my editing skills, and I landed a job as an editor. 
+Three short months later, my manager (or Derfishinkanadian, Hew Cliffe, as I call 
+him when he’s well out of earshot) offered me the chance to develop this quarterly. 
+It’s a perfect match, actually. I’ve come a long way from the “How in the world 
+could you have a die with only four sides?“ high schooler to the publisher-gamer I 
+am now. Likewise, MET has come a long way from its boxed-set roots. The game 
+and its systems will continue to change, and as I grow and change with it, I’ll keep 
+you all up to date. If you have questions, comments, advice, death threats (or pretty 
+much whatever), let me know. I’m always here, 24 hours aday (though I only answer 
+e-mail in an eight-hour block between 9:OO and 5:00), and I’d love to hear from you. 
+Carl Bowen 
+carl@white-wolf.com 
+
+
+THF CURRFNT 
+THINKINCj 
+
+
+sacrifices roleplaying (and thus the entire purpose of LARP ... which contrary to 
+popular belief is NOT to “beat shit up”) for the ability to create characters who are more 
+complicated than they are in the tabletop games? Why not use some facade of “realism” 
+(used in quotes because it is, after all, roleplaying) and get Camarilla-certified so you 
+can be intelligent roleplayers and not absurd rules-mongers? I know lots of great 
+unsanctioned games that are good because the roleplaying is good, not because lots of 
+big vampires run around and diablerize each other. 
+Paul Daniel Bond 
+The following responses folloru the basic e-mail reply format of cite the 
+original text aside and arguing point by point. 
+Mister Bond, 
+Why in the name of all that is (or is not) holy have you adopted this over- 
+complicated system that sacrifices the roleplaying (and thus the entire purpose 
+of LARP ... )? 
+So we should jump on the Mind’s Eye Theatre bandwagon and just say to hell 
+with clearly defined rules? The live-action environment is, if anything, more 
+complicated than tabletop. It demands a more comprehensive rules system. 
+Why not use some facade of “realism” (used in quotes because it is, after 
+all, roleplaying) and get Camarilla-certified so you can be intelligent roleplayers 
+and not absurd rules-mongers? 
+So since we’re not in the Camarilla, we’re not cool? 
+Talk about complex. I for one don’t want to have to certify my plotlines just 
+Steve McDonald - 
+Athens by Night Storyteller 
+so I can become one with White Wolfs fan club. 
+After a personal e-mail back from Bond (in bold). 
+[Daniel], 
+I have played with both the Mind’s Eye Theatre system and our system. I 
+understand that one of the reasons that Mind’s Eye combat is so poorly defined is 
+because combat isdiscouraged. I think this is a bad idea, as combat is, in many ways, 
+inevitable in the World of Darkness. Dark forces collide and destroy one another. 
+Part of the problem here is that a lot of what would be background in a tabletop 
+game (behind-the-scenes strikes by underlings/ lackeys/ ghouls) must be carried 
+out by players in live-action. 
+You can’t just stick your head in the sand and say “combat sucks” and hope it 
+won’t happen. Roleplaying is the center of anything we do. But if you leave a 
+section of the rules poorly defined simply because you don’t like it, then it will come 
+back to haunt you. 
+Tehehe. You make me sound like an elitist and that makes me smile. The 
+Camarilla wants you to certify plotlines so bullshit like rampant Masquerade- 
+breaches (and I KNOW you have a massive problem with that, to the point that 
+a justicar threatened to kick you out of the Camarilla if they weren’t stopped), 
+
+
+unrealistic gaming (your disproportionate number of Kindred, your Nosferatu 
+prince, your propensity for including wererats, werespiders and lots of other 
+rare creatures into your game), and general stupidity. 
+1) We,asStorytellers,sentanarchon(notajusticar) 
+into thegame inthelast session. 
+2 )  ( h e  of the things that makes Athens by Night an exciting and interesting 
+game is the fact that we break out of the form that every other Vampire LARP has 
+set. How many times can you come into a seven-clan game with a Ventrue prince and 
+little or no outside supernatural presence (which seems to be stock-in-trade for every 
+other LARP in the whole wide world) and not get bored? 
+We’re an alternative. Part of being an alternative is doing things differently. 
+Once word of Steve and Daniel’s argument got out to the greater Athens by 
+Night e-mail list, others registered their opinions. 
+1’11 jump in here: 
+The point of a LARP is just that: to roleplay in live action. Period. The 
+purpose is not to “beat shit up” (I’ll say this once again as you ignored it the first 
+time. If it were, you would be right. Since it is not, I am right. 
+The purpose [of Athens by Night] is not just to roleplay. Ifwe wanted that, we 
+would conduct a play. [ABN] is a game, as well as a roleplaying event. The goal is 
+to balance the roleplaying and game aspects. This is hard, and different LARPs 
+strike a different balance. But that doesn’t make one LARP more “right” than 
+another. 
+It’s just different, that’s all. 
+Richard Coleman 
+I 
+And so did others. 
+[Mister Bond], 
+Roleplaying is almost entirely based on the non-rules related aspects of the game. 
+Whether the rules say I must play Rock-Paper-Scissors to do challenges, or play entire 
+games of Monopoly to do so, I can roleplay whatever I desire. I can be asmarmy Ventrue 
+car dealer or I can be a pissy, stupid Scottish kilt-wearin’ Brujah. 
+... ( and thus the entire purpose of LARP.. . which contrary to popular belief 
+is NOT to “beat shit up”) ... 
+Purpose of a LARP? Who says so... Yahweh? What if in the course of 
+roleplaying, I decide to beat shit up? Am I not allowed? It’s my shit, after all. 
+Besides, being Camarilla-certified is no guarantee of being an intelligent roleplayer. 
+Roleplaying (and rules-mongering) is in the individual player, not the rules. The 
+Masquerade Second Edition and Laws of the Night are each twice the length of 
+AIT’s rules [AIT is another independent LARP run in Atlanta], and I know we 
+are at least neck and neck with ABN. If you need your rules to be custom tailored 
+as your roleplayingcrutch, feel free to find agame that suits you. Meanwhile, I don’t 
+tell the Iranians how to run their country.. . because I don’t live there and they 
+don’t directly affect any of my interests. Why does this seem to bother you so? 
+Scott McDaniel, Atlanta Interactive Theater 
+
+
+F U R T H E R  FUEL 
+Two wery different wiewpoints; two opinions with the same 
+answer. Both say their system leaves the chaff behind andmakes 
+way for roleplaying .... What’s your opinion? Are the MET rules 
+too complicated, oversimplified or just right? How far can we 
+reasonably expect you to stretch our “Cjolden Rule” to adapt the 
+rules for your setting? How far is too far before you lose the 
+roleplaying and Storytelling aspects that make our games what 
+they are? Let me hear from you! 
+Youcane-mail youranswers to these points, or opinionsonsubjects 
+White Wolf Publishing Inc. 
+Attn: Mind’s Eye Theatre Journal 
+735 Park North Blud. 
+Suite 128 
+Clarkston, GA 30021 
+USA 
+of your choosing to carlawhite-wolf.com, or mil them to: 
+
+
+DFADCjUY 
+- 
+SPFAKS 
+Rich has been a part of White Wolf since just 
+shortly before Christ crawkd from the primordial 
+ocean at Cyprus. He has developed Mind’s Eye 
+Theatre, Wraith: The Oblivion and Vampire: 
+The Dark Ages. Watchfor this column to showcase 
+Rich’s unique insight, wit, observations on life in 
+general, and (should we be so lucky) his views on 
+Mind’s Eye Theatre development. In his first col- 
+umn, Rich relates the tak of how Mind’s Eye came 
+into its current incamtion. 
+CHAPTER 
+ONE: YOUR 
+LAWS, 
+MY TRICEPS 
+It all started because my arm got tired. Honest. I couldn’t make this stuff up if I wanted to. 
+ItwasNovember, 1995. I’d just come on board as the developer for Wraith: The Oblivion 
+andMind’s Eye Theatre, and I was about to get shipped off to my first convention appearance. 
+The place: Kansas City. The convention: Shauncon. The reason I was there: I was the first 
+developer our con-support guy saw (the others having heard his ominous footsteps and gone 
+to ground until he had seized another victim. Picture the dinosaur sequence in Fantasia - 
+the 
+one in which the stegosaurus gets it in the neck - 
+and you’ve pretty much got the idea). 
+The folks at Shauncon were very friendly and helpful, and they got in touch with me well 
+before the event to see what I’d be interested indoing, what I’d like to see, and so on; they were 
+perfect hosts. As part of that conversation, they mentioned that they had a long-running 
+Masquerade game, a chapter of which would take place at the convention, and that they’d 
+written a special-guest part that they’d love to have me play. So if I could just see my way clear 
+to popping into character for a few hours Saturday night.. .. 
+“Sure,” I said. “It sounds great! Let me know what sort of character it is, so I can bring 
+appropriate costuming.” 
+Well, that’s what I said out loud. Internally, I was screaming. “What are you doing? What 
+if you make a mistake? You’we newer played anything besldes a Tor& 
+with a goofy accent! What 
+if you screw up - 
+they’ll lose all respect for you and the product line! AAAAAGGHHHH!” 
+(Mind you, this whole thing took place before I was informed that White Wolfdevelopers 
+are supposed to spend conventions drunk and surly at hotel bars, as opposed to playing in games. 
+I have since had my misapprehension corrected and can now be found at most major 
+conventions sitting in the corner of the local watering hole, guzzling various unidentifiable 
+fluids and channeling my inner black-clad hooligan. He likes Amaretto Sours and Purpom hard 
+cider, in case you feel like bribing him.) 
+So I fortified myself for the potentially traumatic experience. Armed with the proper 
+equipment ( IO-foot pole, a dozen iron spikes, 50 feet of rope and a .22 automatic), I descended 
+into the “Out of Print” pile in the warehouse in hopes of excavating a copy of the Players Kit. 
+Why? Because I was going to be playing a Giovanni - 
+and at the time we had no rules for 
+
+
+playing Giclvanni in print. Oops. “This is probably something I should rectify,” I said to myself, 
+even as I hacked my way through the tentacled nasties who guarded the piles ofbooks I needed. 
+Emerging victorious, I sat down in my office with my prize and a copy of Masquerade 2nd 
+Edition (not to mention Antagonists and, for some unknown reason, The Book of Props) and 
+started reading. My goal was to memorize every single word of all of those books before I got on 
+the plane for Kansas City. So I read. And I read. And then I read some more. My e-mail account 
+clogged. My mailbox overflowed. Dirty dishes in my sink at home began breathing, developed 
+language skills and voted to secede from my apartment. In the end, though, it was worth it - 
+I managed to get every single word of those suckers down. I was a walking encyclopedia of rules 
+knowledge. Headheldhigh, I tookmyseaton theaircraft, settled inwithaThomasLigottishort- 
+story collection, and let the friendly skies convey me to where I was going. 
+And somewhere over Tennessee, I managed to forget every blessed word I’d read. 
+So, to make a long story short (too late, I know), I arrived safely in KC, but as a virtual 
+tabula rasa of live-action information. The game rolled around. I did the only thing I could. 
+I tucked the entire MET library under my arm for reference, muttered a swift prayer and went 
+off to play. (No one really needs to hear about the steakhouse meeting with the vegetarian 
+who’d thrown his front door onto the fireplace for warmth, the funky chickeneers at the 
+wedding next door, the bar band‘s salsa-flavored rendition of Van Morrison’s Greatest Hits, 
+or about the half-dozen or so gamers whom I found strewn across my hotel room, asleep, 
+Saturday morning. Caveat: I’d never met any of them before, I haven’t seen any of them 
+since, I have no idea what any of their names were, and the only concrete fact I have about 
+the matter was the knowledge that at least three of them snored like a goddamned bandsaw 
+factory on swing shift.) 
+Five hours later, I was back in my hotel room with one noticeable difference. (Okay, 
+two - 
+I’d cleaned the gamers out.) My right arm, the one I’d used to carry the books, was 
+about two inches longer than the left, and it felt like someone had emphatically and 
+repeatedly mistaken it for a large, pinkish piece of linguine. Oh, the game had gone well - 
+I’d wandered into town, made my introductions, acquired the ridiculously powerful magical 
+whosits that I was supposed to remove from play, mucked with a few of the more uppity 
+players and then strolled off into the night. My mission was accomplished, my work was 
+done, and I’d managed to avoid being asked any questions I couldn’t answer. 
+But boy, was my arm tired. The longer I sat there thinking about it, the more I realized 
+that the situation simply wasn’t satisfactory. The books were heavy and awkward, and they 
+simply looked out of place next to costuming. Players who had made the investment in 
+tuxedos or evening gowns, or even just the investment of time and effort to look right for 
+their characters, deserved better than to be weighted down with a stack of 8.5-by-1 I-inch 
+green books. The old format was simply too obtrusive, and it did too much to shatter the 
+game’s illusion. 
+Besides, my arm was tired. I had no intention of ever lugging that many books around 
+for that long in that heavy a jacket again. (Costuming note for all you would-be Giovanni 
+out there: Black‘s a great color for dressing up, but when the only black clothes you have are 
+wool, it’s okay to vary things a little. Even in November. Trust me.) 
+So I started thinking. Problem#l was that the books were physically awkward. Problem 
+#2 was that necessary material wasn’t available to players. Problem #3 was that, and I have 
+to be honest here, the rules didn’t work terribly well. (Yeah, I know, they’re still not perfect, 
+but we’re trying here. Honest.) Scattered over three books and two editions, drawn from 
+dozens of sources, the rules often contradicted one another, making it necessary for folks to 
+tote around hundreds of pages worth of Photoshop-bespangled reference material. 
+
+
+Something clearly had to be done. So Sunday night, I sat down with the two gentlemen who 
+ran the game I’d played in, and over friendly conversation, I floated the idea. “What would you 
+guys think,” I said -“and this is just an idea, mind you - 
+of a pocket-sized rulebook for Mind’s 
+Eye Theatre? None of the storytelling material, minimal background - 
+just the rules in a size 
+that you could carry with you and that you could tuck into a pocket when you weren’t using it.” 
+For what it’s worth, they liked the idea. I can’t tell you exactly what they said (partially 
+because I’m not sure I can quote it accurately, partially because the things I can remember to 
+quote accurately aren’t necessarily printable in a family roleplaying journal), but they liked it. 
+If they hadn’t, I probably would have scrapped the whole idea and gone back to figure out how 
+many curls I would have needed to do in order to prep for the next game. But armed with a 
+mandate from folks who were elbow-deep in the game, and who knew what they needed to 
+make their games run more smoothly, I could go back home and set up the project (that is, after 
+the incident with the massive hangover, the Star Wars‘ line designer, the ship’s bell and the 
+approximately 4000 miniatures). 
+Ittookawhile, andit tooksomeconvincing.The ideaofapocketguide-justrules, nothing 
+else - 
+was so contrary to what we’d done before that some folks were skeptical of it. I knew the 
+idea was a good one, though, and once I noted to People in High Places that we wouldn’t be 
+incurring any new writing costs on the book, I got the green light. That’s when the fun started. 
+Initially, the idea of the book was simply to cut and paste the rules files from the old books 
+into the new one. It would be easy, fast and useful - 
+and it would save my sanity, because I was 
+working on Wraith 2nd Edition at the same time. Unfortunately, this simple plan ran into a few 
+snags. First of all, the files for the Players Kit were nowhere to be found. While I could do without 
+the print specs for the blood capsules that were included in the original box, I did sort of need the 
+files for the lesser clans, their Disciplines and all of the other crunchy goodness that needed to go 
+into the book. Eventually the diskette with the required files turned up. (If I remember correctly, 
+it was in the Marketing department, filed with the details of the White Wolf Microbrewery idea 
+that thankfully never got off the ground, and was labeled “I Gotcher Barney DoomWADs Right 
+Here.” But I could be mistaken.) Pulling up the files led to problem number two: They were amess. 
+I mean, I knew there were a few discrepancies between The Masquerade and the Vampire 
+Players Guide, but once I started digging in, I realized that more work was needed. A lot more 
+work. As a matter of fact, so much work was needed that I had no idea where to start. There 
+was only one thing to do: Go back to the source. 
+I bundled myselffor the Atlanta winter (yep, that meant a longsleeve shirt and jeans) and 
+headed off to the Red Light Caf6, where the local Vampire LARP crowd hung out on Tuesday 
+nights. I sat down at a table and snagged random passersby, asking them what they felt needed 
+changing; scoping out which rules needed to be cleaned up or explicated better. 
+Hoo boy, did I get anearful. Three hours later, I staggeredoutunder theweightofmynotes. 
+Then, masochist that I am, I fired up the computer and asked the same questions offriends who 
+played MET all over the continent. The response was avalanche-like in its volume, intensity 
+and ambient temperature. People had a lot of concerns. Even worse, a great many of those 
+concerns and proposed fixes contradicted each other. It was hopeless. So I did what any sane 
+man would do in that sort of situation. I screamed for help. 
+Help arrived in the form of Editrix (no, that’s not a dirty word, and get your minds out of 
+the gutter, you filthy-headed brutes) Cynthia Summers, whose experience with actual Mind’s 
+Eye gameplay dwarfed mine, and who had long since set herself up as the Cerberus of MET. 
+Nothing that saw print for the line escaped her baleful gaze - 
+which was a good thing for me. 
+We sat down with the old files, copious notes, e-mails and a healthy supply of caffeinated 
+
+
+beverages, and we decided which changes needed to be made, whose ideas for fixes were worth 
+following up on, and whom we were going to pummel senseless when the process was all over. 
+I also had the unenviable task ofdecidingprecisely what material went into the book. The 
+basic clans and Disciplines? They had to be in there. The Sabbat? Sort of a necessity, I thought. 
+Minor clans and bloodlines? Well, they weren’t available anywhere else. Other Disciplines? If 
+the clans were going to be in there, the appropriate rules had to be as well. Background? At least 
+some, for new players just picking up the book. The basics of the game? Indubitably. A little 
+bit ofcommon-sense warning? A necessity, in light of all the rumbles about PTAs and religious- 
+watchdog groups hassling MET games. A FAQ? Considering the number of changes we’d 
+made, it sort of had to go in there. 
+You see how books get big, fast? Suddenly a 50,000-wordcut-and-paste job had turned into 
+a 110,000-word monstrosity. Some things got cut out of the draft - 
+there was no choice if we 
+wanted it to fit between two covers- but still, it remained a towering, imposing pile of verbiage. 
+A month or so later, a manuscript emerged. With much fanfare and other goofiness, it 
+went through the copy-editing process - 
+multiple times - 
+and eventually emerged into the 
+light of Production and layout. 
+Those ofyou with long memories might note that Laws of the Night was the first of the MET 
+books to not have acover adorned with photographs and Photoshop. Rather, the book‘s cover has 
+a subdued gray marble background and little else - 
+just logos (which are something of a design 
+necessity). That was deliberate. The idea (hashed out in many discussions with the talented Mr. 
+Larry Snelly and Ms. Katie McCaskill, who laid out the book) was to create a book that acharacter 
+could carry - 
+or even open - 
+during play, without having it look like, well, a game book. 
+Hopefully, we could put the rules in something that the most foppish Toreador or the most staid 
+Tremere wouldn’t feel awkward about whipping out in the midst of heavy roleplaying. 
+Digression: I consider the illusion of the game world to be one of the most important 
+aspects of gameplay. I’m a big fan of deep immersion; every time a test goes off or dice hit the 
+table, it’s a forcible reminder that you are Just Playing A Game. I like my illusions, and I like 
+them with as little duct tape holding them together as possible. That means if I have to check 
+a rule during gameplay, I want to do so in a way that seems like part of the action. Ergo, the book 
+that gets pulled out for that check should look like an in-play prop, something my character 
+would have naturally. 
+That wasn’t the end of it, not by a long shot. The book was too long, which meant that 
+even more material had to be cut or squeezed - 
+Katie did heroic work shrinking headers, 
+smooshing sidebars and annexing borders so that everything that was vital would fit. Suddenly, 
+from what had been a jumble, there emerged a book. 
+For all of its flaws - 
+and I know the book has them, thank you- 
+it does what it was intended 
+to: It makes looking rules up in gameplay easier; it addresses the concerns of the people who helped 
+poke at it. Most of all, it’s useful. 
+And that, after all, is what I was after from the very beginning. 
+
+
+Times prophesied in the Book ofNod. Far more successful than most Gehenna cults, the 
+True Hand claimed exclusive dominion over rare powers and mysterious secrets. These 
+elders infiltrated and manipulated Camarilla and Sabbat alike, sometimes sirnulta- 
+neously. Their crusaders hunted and killed vampires with a skill worthy of the Assamites. 
+However, even the most fervent fanaticism is no equal to the destruction 
+unleashed in the Final Nights. The deaths of powerful vampires and the chaos of war 
+has split the True Hand from its former contacts and allies, forcing its former members 
+to hide or be destroyed. Crushed under the weight of centuries and the inevitability 
+of change, the True Hand is no more, its vampires little better than the squabbling 
+Cainites against whom they so recently fought and maneuvered. 
+Once, the True Hand sought to serve the will of the Antediluvians. Its holdings 
+in the Shadowlands - 
+the realm of the dead - 
+lay beyond the reach of its enemies, 
+and its careful manipulations and unique abilities allowed it to control entire broods 
+of vampires with ease. The hierarchy of the True Hand is now disrupted, and its 
+resources are scattered and broken. Only by integrating themselves into Kindred 
+society can the True Hand’s former members survive. 
+(Note: The True Black Hand and its adherents are not necessarily suitable for 
+all styles of play. Storytellers should choose whether or not they wish to acknowl- 
+edge the existence of the Black Hand in their individual chronicles. Certainly, the 
+bloodlines and Disciplines presented here diverge considerably from those of 
+“mainstream” vampires, and can be unbalancing. 
+Also note that the Nagaraja as presented here differ slightly from their tabletop 
+incarnation in Dirty Secrets of the Black Hand. This is an intentional result of 
+updating them to conform to the standards of the revised Vampire.) 
+N ~q A RAJ A 
+Of course mankind continues on after death, my childe. Our existence should be 
+enough to prove that. But what of the others who do not share in our particular cursed 
+blessing of immortality? Why, they continue on as well, 1 assure you. That man there, 
+
+
+by the corner, is going to die in the next few nights, as a matter offact. I am quite sure 
+that we will see him again shortly thereafter. How can I tell? Suffice it to say, I can see 
+such things. And yes, I can teach you as well, though your tutelage will begin a bit 
+differently than mine. We don’t have quite so demanding a schedule ahead of us as I did 
+when 1 was inducted into this world. 
+But come. We will return to this subject in time. You and I mwt dine tonight, and 
+I hawe prepared a most succulent repast. Do you remember the woman I pointed out to 
+you a week ago? The woman who had been hawing those terrible headaches.. .? 
+The forbidden experiments of the Tremere were not the only magical works 
+to produce results. In the early days of the True Hand, a subsect of mages obsessed 
+with the secrets of death and the afterlife bent their collective will toward 
+understanding vampirism. At last, convinced that their research granted them the 
+power to manipulate the vampiric curse to their own ends, they conducted a great 
+ceremony to strike the life from their bodies and become undead forever. 
+The Nagaraja still exist, and they continue to study and develop the secrets 
+of death and what lies beyond. Their command of necromantic arts is rivaled only 
+by that of the Giovanni, and the Flesh Eaters have some secrets that not even the 
+upstart Necromancers have discovered. Without the True Hand, the Nagaraja is 
+a directionless and dying bloodline; whether it survives the coming reckoning or 
+falls to the paranoid waltz of the Jyhad remains to be seen. 
+Clan Disciplines: Auspex, Dominate, Necromancy 
+Advantage: Instead of practicing the forms of Necromancy pioneered by the 
+Giovanni, the Nagaraja use Vitreous Necromancy (sometimes called “Nihilistics”) 
+- 
+a special path concerned with the energies of death and decay. Should your 
+game include the additionalNecromancy powers fromvampire, the Nagaraja use 
+Ash Necromancy and are capable of learning Vitreous Necromancy after attain- 
+ing expertise to an Intermediate level. Otherwise, use Vitreous Necromancy as 
+their primary Necromancy path, giving them access to unusual abilities unknown 
+to other clans and bloodlines. Because of their sensitivity to the energies of the 
+dead, Nagaraja can automatically sense the presence of any wraiths in their 
+vicinity (about lofeet), although they cannot necessarily see or identify particular 
+wraiths (at least, not without AshNecromancyor the Merits: Ghostsight or Speaker 
+with the Dead). 
+Disadvantage: In addition to drinking blood, the Nagaraja must consume 
+human flesh. A Nagaraja must devour two health levels’ worth of flesh each day, 
+preferably fresh. A normal human corpse is considered to have three servings of 
+“the other white meat.” Vampiric flesh will not do, as it rots and decays once it is 
+devoured. ANagaraja who fails to “get his pound of flesW’gains theNegative Trait: 
+Sickly for eachnight offasting; theseTraits disappear iftheNagarajalater consumes 
+additional flesh (one serving for each Trait). 
+Nagaraja have no special capacity for eating food other than raw flesh, unless 
+they take the Merit: Eat Food. 
+I N C L U D I N C ~ T H E  
+NAC~ARAJAIN 
+YOUR CHRONICLE 
+As a bloodline of perhaps adozen members from avampiric society now nearly 
+destroyed, the Nagaraja would seem to have limited potential for use as characters. 
+With the extent of the True Hand’s influence in vampiric society, though, such is 
+hardly the case. Agents of the True Hand from almost all clans infiltrate various 
+
+
+levels ofthe Camarilla and Sabbat, and even in the wake of recent upheavals, they 
+continue to advance their own schemes while hiding within the other sects. 
+Formidable necromantic prowess combines with the wisdomofgreat age tomake 
+the Nagaraja cunning and dangerous adversaries. Obviously, other necromancers are 
+the most likely to know of the Nagaraja; the Giovanni family in particular considers 
+the Nagaraja a nuisance, but still casts a jealous eye toward the bloodline’s secrets. For 
+their part, the Nagaraja take an interest in the larger movements of Kindred society. 
+Any seemingly insignificant political or social change within either Camarilla or 
+Sabbat could conceal the maneuvers of the ancients; such chess matches draw the 
+attention of the True Hand and its members. Without the safety of any secure haven 
+or widespread allies, the Nagaraja must travel where their studies and needs take them 
+- 
+and so one or even two may appear just about anywhere, if only briefly. 
+Due to their scarcity, Nagaraja shouldn’t arrive in a chronicle in droves. Rather, 
+they are harbingers of terrible portents, foreshadowing the schemes of ancient 
+vampires playing in the Jyhad. Too much an unknown quantity to be actively 
+persecuted, the Nagaraja are largely an enigma to the more common clans. 
+Possible ideas for adding Nagaraja to your chronicle include: 
+Nagaraja follow up on hidden or lost necromantic secrets with an almost 
+religious fanaticism. A character unearthing an unusual bit of occult lore may 
+attract the attention of a Nagaraja. 
+The movements of the ancients always draw the attention of the Tal’mahe’Ra. 
+A Nagaraja agent may use his necromantic abilities to investigate unusual 
+conspiracies or hidden influence in a city. 
+Since veryfew Nagaraja exist-and 
+as they are not exactly protected by the 
+sheltering arms of the Camarilla or Sabbat - 
+it makes sense for them to seek out 
+places to hide, or allies on whom they can depend. A single Nosferatu contact or 
+a Brujah bodyguard can go a long way toward making unlife safer and more 
+productive, and the Nagaraja aren’t above making such contacts surreptitiously. 
+With their small bloodline size, Embracing potential recruits seems like a valid 
+strategy for Nagaraja. Of course, educating a brand-new vampire and teaching her to 
+avoid notice, unearth the secrets of unlife and defend against potential threats is a risky 
+undertaking, so the Nagaraja seek out only the most talented and intelligent recruits. 
+A mentor-student team might seek shelter with a small group of neonates or ancillae, 
+so that the fledgling Flesh Eater can adjust to her new condition in relative security. 
+The forbidding workings of Vitreous Necromancy can be used to sense and 
+manipulate the dark energies ofentropy, decay and death. Formerly called “Nihilistics,” 
+this type of Necromancy is practiced almost exclusively by the now-vanished 
+Nagaraja bloodline. Other necromancers would give much to unearth this Discipline’s 
+secrets, for it is a powerful adjunct to the ability to control the Restless. Its true 
+capabilities, however, lie buried with its makers in the realm of the True Black Hand. 
+V I  
+T R E o u s NE c R o M A N  CY 
+B A S I C  
+Eyes of the Dead 
+Tapping into the flow of death energy, you can see through the eyes of any 
+wraiths who happen to be around you. By examining auras with the ghostly sight 
+of the dead, you can determine relative states of health, decay and injury. 
+
+
+System: You must expend a Mental Trait to use this power. Once activated, you are 
+capable of using a wraith’s Deathsight for the remainder of the scene, or until you pull your 
+perceptions back into your ownbcdy (your normalsight is coopted by this power). You see from 
+the wraith’s perspective, allowing you to view the decaying architecture of the Underworld. By 
+looking at a person or object, you can determine if the subject is damaged or diseased. You can 
+also see the ebb and flow of baleful magic (curses and binding enchantments). 
+Hour of Death 
+Like Eyes of the Dead, this power lets you see with the perceptions of a wraith. You 
+can pick out auras using your own vision, and see the telltale marks of death on all things. 
+System: Activating this power calls for the expenditure of a Mental Trait. 
+Like Eyes ofthe Dead, you can determine injury and disease with this power, simply 
+with your normal sight (instead of borrowing a wraith‘s vision). You may be able 
+to tell if a subject is about to die - 
+if a character is dying, you may ask a Narrator 
+how long the subject has to live (as determined by the target’s remaining Physical 
+Traits). You can also distinguish between different forms of entropy, so you can tell 
+the relative power of various curses and harmful spells. 
+I N T E R M E D I A T E  
+Soul Judgment 
+Tapping into the Beast that resides even in ghosts, you can sense a wraith‘s 
+dark passions, the emotions that give it strength but also feed its hatred of the 
+living. You can determine whether a wraith is in the thrall of its Beast (called the 
+“Shadow”), allowing you to plan your dealings accordingly. Since many wraiths are 
+unaware of what their Beasts do while in control, this power allows you to bargain 
+with them in ways that may not be immediately apparent. 
+System: You must expend a Willpower Trait and make a Mental Challenge 
+with the wraith in question in order to determine whether its higher self, or 
+“Psyche,” has been overridden by its Shadow. This power also allows you to 
+determine whether the wraith is routinely dominated by its Shadow; such wraiths 
+are called Spectres and are exceedingly dangerous. 
+Breath of Thanatos 
+Drawing entropic energy out of your own dead body, you can breathe a fine, 
+invisible mist of death over an area. This energy settles like a seething cloud that 
+attracts the attention of malefic spirits. 
+System: You must expend a Blood Trait and make a Simple Test (win or tie) to 
+exhale the BreathofThunutos. Ifsuccessful, you can cause the ghostly cloud to settle over 
+an area around you; Spectres will come to this area, very likely to harass anyone within. 
+Alternately, you may breathe the mist at an individual (requiring a Mental Challenge 
+to direct the gases successfully). In this case, the victim suffers one health level of 
+aggravateddamage and is afflicted with theNegative SocialTraits: Repugnant x2 for the 
+remainder of the evening; the energies give the victim an eerie, pallid aura. Also, such 
+a victim registers as tainted by Oblivion and Wyrm-energies. Multiple uses of this 
+Discipline in the same evening are not cumulative on any one victim. 
+ADVANCED 
+Soul Feasting 
+This puissant power allows you to literally drain the energy of ghosts and the dead, 
+absorbing it foryourownpurposes. Youcan thenuse thisenergy tofuel your undeadpowers. 
+
+
+System: You must expend a Willpower Trait to activate this power for the 
+duration of a conflict. You can attack wraiths with your bite, just as if feeding 
+normally. If you manage to bite successfully (with a Physical Challenge), your fangs 
+penetrate into the Underworld and allow you to devour the wraith’s energy - 
+each 
+Corpus level (health level) stolen in this fashion gives you one Trait of Entropy. (If 
+you “drink the wraith dry” in this fashion, the unlucky spirit falls into a Destruction 
+Harrowing.) Alternately, you may simply draw entropy from your surroundings, if you 
+are in a cemetery, Haunt or other place of the dead; in this case, you gain one Entropy 
+Trait for each Mental Trait that you expend, up to three Traits total from any given 
+area. These Entropy Traits may then be used to power Disciplines in the place of 
+Blood Traits, although they cannot be used for any other functions common to Blood 
+Traits (such as healing, reviving someone from torpor or improving Physical Traits). 
+Entropy Traits gained with this power last throughout the evening, until spent. 
+TRUE 
+BRUJAH 
+Ifinditmostineriguing, really, thatmoreofthe Rubbledon’t knowaboutus. Troile was 
+so proud of his victory over our father, and the younger ones haw such a time controlling 
+themelves that it would seem obvious that those of Troile’s line would be different. It seem 
+that the self-proclaimed scholars should be able to make the connection easily enough and 
+hypothesiTe our existence, at least. But the young one I.. . questioned.. . had never heard of 
+mybrothersandI. Hekeptinsisting(evenwhenIap~liedwhite-hotbra~ 
+tohim) thathe was 
+a “true Brujuh. ” He honestly did not see the difference between himselfand I. But he will learn 
+soon enough, I suppose. He waits now in the hopes that the coming of day will let him escape 
+It’s of no consequence, ultimately. I have an eternity of night to convince 
+him otherwise. Then I can get buck to my real studies. 
+According to the legends of the Kindred, the Brujah clan hails from the 
+lineage of Troile, an upstart who diablerized the original Brujah Antediluvian. 
+Though Troile stole the ancient’s power, he failed to usurp the entirety of the 
+bloodline, and to this day several very old and very cunning descendants of the 
+original Antediluvian are rumored to exist. Following the tradition of scholarship 
+handed down through their bloodline, the survivors’ logical minds and keen 
+intellects focused on the acquisition of knowledge and the finer points of philoso- 
+phy; their calm, rational natures led to a reputation as legendary thinkers and 
+keepers of wisdom. In addition to this wisdom, the True Brujah honed a keen sense 
+of perception, leading them to develop unparalleled political machinations and an 
+uncannv sense of history. Originally founding members of the True Black Hand, 
+the True Bruj ah - 
+if, indeed, any remain - 
+are said to control the perceptions of 
+time and even, among the eldest, the currents of the ages. 
+A keen grasp of philosophy makes for a well-honed mind, but not necessarily an 
+understanding or moral one. Indeed, the True Brujah as a whole left behind human 
+morality centuries before. In their quest for knowledge and their search for perfection 
+of the mind, they delved into much forbidden lore. Bent to the purity of developing 
+Platonic ideals, they did not recognize the dangers of consorting with infernalists, and 
+they welcomed rites and sacraments most foul. With the patience of timesight and a 
+drive unfettered by emotions or morality, the True Brujah brought about their own 
+doom at Carthage and other places. Even when forming the True Black Hand, they 
+refused to rectify their errors, and their demonic taint and ties continued to infect 
+them - 
+and still do in modern nights. 
+
+
+Having fled the destruction of their sect, what True Brujah remain would 
+presumably be solitary and independent figures, weighted by powerful blood and 
+centuries of age. Beyond vengeance, petty politics or material concerns, these 
+introspective Cainites have only their shared thirst for knowledge left. If any 
+survive, they are surely ensconced in the furthest comers of the world, studying 
+esoteric works beyond the ken of mankind or younger vampires. 
+Clan Disciplines: Potence, Presence, Temporis 
+Advantage: True Brujah are exceedingly controlled and unemotional. De- 
+void of passion, they find it easy to resist the ravages of frenzy, as they are not easily 
+moved to displays of rage or terror. A True Brujah always gains one free test to 
+attempt to avoid frenzy (generally at the standard Trait difficulty), even without 
+expending a Willpower Trait. True Brujah also gain a single retest against powers 
+or Disciplines that would incite frenzy in lesser vampires. 
+Disadvantage: Because of their detachment and coldness, True Brujah have 
+difficulty holding to moral or philosophical concerns. To them, such abstractions 
+are intellectual exercises, nothing more. True Brujah are likely to gain Beast or Path 
+Traits as a result of their inability to hold to a system of beliefs. Any time that a True 
+Brujah would be called upon to test for a new Beast or Path Trait, the player must 
+make two tests and take the worst result. If astoryteller decides to assign anew Beast 
+or Path Trait without a test, the player should make one Simple Test; failure 
+indicates that the character gains two Beast or Path Traits instead of just one. 
+I N C L U D I N ~ T H E  
+TRUE 
+BRUJAH 
+I N  YOUR CHRONICLE 
+Time and contemplation weigh heavily on the True Brujah. Determined to 
+reclaim their stolen destiny from the brood of Troile, they weave convoluted and 
+long-running plots to take revenge for their losses. Though slow to anger, their fury 
+is as boundless as any vampire’s when they are roused. 
+The appearance of a True Brujah is not something publicly bandied about. 
+Indeed, most Kindred are completely unaware of the existence of the bloodline proper. 
+Generally, aTrue Brujahmasqueradesas aVentrueor Lasombrawhenassociating with 
+Camarilla or Sabbat groups, relying on age and experience to dissuade investigation 
+into the truth. After all, with their history at Carthage and their supposed betrayal by 
+Troile, they are quite experienced in deception and hidden warfare. 
+For the most part, True Brujah are historical scholars, antiquated relics of a 
+bygone age who mull over much philosophy but rarely act. The days of the bloodline’s 
+prominence - 
+if, indeed, they ever truly were the basis of the Brujah clan - 
+are long 
+gone, and they now concern themselves with memories of the past. As a result, True 
+Brujah often cloister themselves from all but a few Kindred, seeking memories of their 
+former glory or the sleep of ages. Only a rare few actively involve themselves in the 
+present, and even they are hard pressed to keep up with the constant changes of the 
+frightening modem age. Whether or not the coming Final Nights will rouse the True 
+Brujah to action - 
+or lead to their ultimate destruction - 
+remains to be seen. 
+Possible ideas for adding True Brujah to a chronicle include: 
+With their time senses, True Brujah often have a good idea of important 
+places in the unfolding of history. The ebb and tide of unusual events can draw a 
+True Brujah to investigate. 
+With their scholastic knowledge and long history, True Brujahare always in search 
+of new discoveries. When a piece of arcane lore is unearthed in a particular chronicle, a 
+
+
+to the flow of time; you can keeptime with perfect 
+precision. Unnatural eddies in the flow of time are also sensed. Magical alterations of 
+time, or other uses of Temporis, are therefore quite apparent. 
+
+
+System: No challenge or expenditure is necessary to use this Discipline; once 
+a practitioner becomes familiar with the ebb and flow of time, its rhythms are 
+always apparent. 
+Ramble On 
+By affecting a subject’s sense of the passage of time, you can force the 
+individual to continue performing a particular action. The victim is entranced, 
+carrying on his action long after he intended to stop. An individual taking a walk, 
+for instance, continues walking even after he has overshot his destination; a victim 
+trying to run away becomes so intent upon fleeing that he keeps trying to run even 
+after he has been captured. 
+System: You must make a Social Challenge against the target to use this 
+power. Once activated, the subject automatically attempts to repeat the same 
+action performed in the current turn in the next turn. Thus, in the next turn, the 
+victim repeats what he was doing previously, as long as the action is repeatable. A 
+character who picks up a book, for instance, cannot be made to try to pick up the 
+same book once he’s already holding it; in the presence of several books, though, 
+he could be made to pick up an additional book. 
+I N T F R M E D I A T F  
+Zombie’s Curse 
+Warping a target’s perception of time, you can make the victim take longer 
+to do anything. The subject slows down, moving as if smothered in molasses, and 
+he has difficulty reacting to things happening at “normal speed.” 
+System: You must engage in a Social Challenge with your victim in order to 
+affect her perception of time. If successful, the subject is slowed for the next 15 
+seconds (four turns). A slowed victim may still use weapons and powers, but her 
+actions always come after everyone else’s, and she may have difficulty in combat. The 
+slowed target suffers from the Negative Traits: Clumsy x2 due to dulled reactions. 
+Cowalker 
+Blinking outside of time, you can move briefly between ticks of the clock. A 
+concerted force ofwill allows you to step beyond the bounds of normal time, so that 
+you are able to act while the world is frozen around you. 
+System: Expend a Willpower Trait to step betweenseconds, and you are able to take 
+one action (and only one, without any enhancements from Ceknty or other powers) 
+between turns. You cannot affect anything else that is frozen in time - 
+thus, you could 
+battle another individual who is also using this power, but you cannot open a door, punch 
+someone or turn on a light. In effect, you are free to move for one turn - 
+generally, to 
+a distance of three steps. However, if you can get out of reach of your opponent or find 
+a suitable hiding place, you may be able to use this power for a Fair Escape. You can also 
+attack from surprise by using this power in combat, at least the first time you “blink.” 
+ADVANCED 
+Frozen Object 
+You can literally warp the fabric of time around an object, causing it to exist 
+in a pocket outside the flow of the seconds. Such an object retains any energy or 
+properties that it had when frozen, but it cannot be affected by interactions from 
+:he normal time stream. As a result, you can throw a knife and then leave it in mid- 
+iir, or halt time for a grenade thrown at you long enough to escape. 
+
+
+System: An object may be frozen for up to 15 seconds (four turns) of normal 
+time. You must decide how long to freeze the object when halting it. Although you 
+do not need to touch the item, you must be able to see it, and it cannot be in the 
+possession of another individual. Therefore, you can freeze a knife, a bomb or a 
+falling object, but unless you have some means of seeing a bullet (such as by 
+stepping outside time with the Cowalker power), you cannot affect it. Frozen 
+objects retain their energy but cannot interact with the physical world; thus, a 
+thrown knife resumes flying once this power elapses, but it cannot be plucked from 
+the air while frozen. Activating this Discipline requires the expenditure of one 
+Physical Trait. 
+MASTER 
+Control Aging 
+You can alter the effects of time upon a particular subject. With a touch, you can 
+rapidly speed up, slow down or even reverse the accumulation of time in your target. 
+System: You must grasp your target physically in order to control time’s effects 
+upon it; this may require al’hysical Challenge in the case of unwilling subjects. The 
+object can be no larger than roughly man-sized - 
+generally, 500 pounds or so is 
+the upper limit. You must then expend one Physical Trait for each decade that you 
+wish to add to or subtract from the victim’s age. Note that vampires altered 
+chronologically with this power do not undergo physical changes (they are 
+immune to the ravages of time), but may suffer supernatural difficulties (such as 
+inability to gain sustenance from the blood of animals or even humans). Once this 
+power is used on a given individual, it may not be used again on the same subject 
+in the same game session. 
+Domain of Evernight 
+By dilating the perceived flow of time around yourself, you can make it appear 
+that time has sped up incredibly. Everyone in the area - 
+including you - 
+experiences a highly altered flow of time. This power can be used to great effect 
+when defending a haven, by causing night to come with rapidity or by exposing 
+vampiric foes to daylight. 
+System: This power affects only a single room at a time. You must win a Static 
+Mental Challenge (difficulty seven Traits) to cause one hour of time to pass in the 
+space of a single turn (about five seconds of real time or so, when not in combat). 
+You must have a Narrator present in order to use this power; all events in the given 
+room are taken “out of location” as the area steps outside of the normal time stream. 
+Those who step into the area are immediately included in the perception- 
+distorting effects. If a room is affected with this power, those inside cannot return 
+to the normal flow of the game until outside time “catches up” with their perceived 
+time frame. 
+For example, if Laocrines the True Brujah activates this power in a side room 
+at seven o’clock, he can make a Mental Challenge to cause everyone in the area 
+to experiencedilated time for an hour (althoughsubjectively the inhabitants ofthe 
+room experience only a single turn). No one who enters the room or is in the area 
+of effect can leave the room until eight o’clock outside. 
+Due to the potential disruptiveness of this power (possibly causing several 
+players to wait for an hour or more before returning to play), Storytellers should 
+exercise extreme caution in allowing its use in their games. 
+E N OC  H IAN MYSTICISM 
+e 
+
+
+PUMONCA EOR 
+WYLD W € S T  
+by Jess Heinig 
+6 
+The Nuwisha and the Cmax aren’t the only newcomers to Mind’s Eye 
+st. Enter the Bastet. Lithe, 
+Theatre with the advent of Law 
+The Pure Lands have b 
+these hardy loners hav 
+the arrival of the Wyr 
+warriors, the Pum 
+Storm Umbra and 
+ters and relentless 
+line cousins of the 
+It isnotuntil the 1880s 
+united face to protect their lands 
+BASTFT BASICS 
+Bastet cannot step sideways naturally. Only through the use of a 
+special Intermediate Gift (Walking Between Worlds) -or 
+if they are within 
+their Den-Realm - 
+can they enter the Umbra as do Garou. 
+r 
+
+
+Bastet never have the Backgrounds: Past Life or Totem. 
+A Bastet’s initial Rage and Willpower Traits areiboth based upon her tribe; 
+- a  representation of their 
+re and Demeanor Archetypes). 
+rious effects of that metal listed 
+y. Whenever a Bastet 
+est. Failure (a loss, but 
+ly, changing one form 
+or until the scene ends). 
+m to another - 
+a 
+lent ofGlabro) and 
+their own inter-tribal 
+lex messages require Ho 
+derived from their whiskers, 
+for the purposes of negating pe 
+Bastet heal and regenerate just like Garou. 
+Bastet have some special Gifts and Backgroun 
+Bastet have homid, metis and feline breeds, corres 
+homid, metis and lupus breeds of the Garou. These breeds 
+same fashion as for Garou, except that all Bastet start with 
+Homid: Cat Claws, Sweet Hunter’s Smile 
+Metis: Create Element, Sense Pnml Nature 
+Feline: Mark as Mine, Kitten’s Cry 
+PYRIO 
+Pyrio must be different than his Nature or Demeanor (some Bastet are straightforward 
+and honest about the face they show the world), but these different levels of identity 
+
+
+nt facets of their existence. The 
+hange roughly determines her 
+allow players to regain Willpower Traits for 
+h exceptional roleplaying. 
+N K A N D  REN 
+e - 
+and so, too, are tales 
+Just like Garou, Bastet measure Re 
+status. However, because Bastet are s 
+Garou, but they may 
+ious nature of Bastet 
+correspond roughly to the Garou Renown of 
+The same Trait descriptions can generally 
+- 
+BASTETRA 
+Rank 
+Title 
+1 
+Tekhmet 
+2 
+Aka 
+3 
+Tilau 
+4 
+Ilani 
+20 
+5 
+Bon Bhat 
+25 
+
+
+BASTET BACKGROUNDS 
+eritage, Bastet have access to some Backgrounds that are 
+arou. In addition to many of the Backgrounds described in 
+a Bastet can choose from Den-Realm, 
+Jamuk and Trinket. 
+sedisasters and attacks, and you can 
+r instantly at a cost of one Gnosis (but 
+with this Background 
+totem: It works for th 
+Buying a Jamuk is just like pur 
+must pay all of the associated poin 
+Bastet tend to pick up curious 
+
+
+etish Background, but the 
+outside the realm of spirits 
+shoots fire, summons rats. 
+S O R C ~ R Y  
+A N D  
+dy said that learning the hidden mysteries was easy.. .. 
+forms. Doing so costs 
+of the scene, or until 
+normally, inflicting a 
+look quite unusual in 
+Negative Physical Trait: 
+Sokto forms, and thus cause you to suffer the 
+Jam Gun: This functions j 
+of the Wyld West. 
+Sweet Hunter’s Smile: Yo 
+your cat-like charms. By expendin 
+nderstandable form 
+f your forms allows you to alter your 
+mid form to look like any sort of 
+
+
+change, and beings with supernatural senses may attempt to detect your change 
+(though they cannot see your true form) by makingaMenta1 Challenge against you. 
+ows you to destroy food, drink and 
+letely toxic and spoiled. 
+Advanced 
+arable land. You render any co 
+arability of a square mi 
+food is rendered rotten 
+METIS C ~ I E T S  
+Blinding Moonbea 
+no exception. You can caus 
+must win or tie a Simple Test 
+of moonlight allowing you to s 
+eyes generate beams 
+tsforone turn. With 
+successful challen 
+ait. You gain total perception of everything within 10 
+you make a Mental Challenge to notice hidden or 
+smites matter and wounds foes. With 
+growl, you can make a test of your 
+of the moon at night (only), you can 
+
+
+Gnosis Trait to create the gateway, and make a Static Mental Challenge with a 
+difficulty dependent upon your familiarity with the destination - 
+five Traits for 
+your own home, 20 or more for an unknown place or otherwsrldly Realm. You may 
+Redeem the Wa 
+you lend it some of y 
+strike across the 
+Advanced 
+Moon Sense: You can extend 
+extrasensory powers of Clairvoyance 
+tant places as with the 
+under the light of the 
+arby and familiar locale, 
+1 minute ofviewing costs 
+can react if you are discovered 
+effects end instantly. 
+you whip up a terrible storm. You must expend a Gnosis Trait and three Social 
+Traits. Within a few seconds (a turn at most), a terrifyingly potent storm rises, 
+whipping about the area and causing all manner of difficulty. Storytellers may 
+'ons?-q a result of the storm - 
+ranged combat 
+e n k d  powers are largely overwhelmed. This 
+lenge (about five minutes or less). 
+use your opponents 
+. You must engage in 
+y. If you succeed, your 
+you then take the 
+opportunity to counterstrike), or your target feels disposed to assist you (with 
+
+
+healing Gifts, the assistance of Influence, or just some kind words). This Gift does 
+not endear you to those who take joy in harming the weak- 
+Wyrm-creatures and 
+usk allows you to mark your 
+ognizes the mark as the sign 
+Mark as Mine: Treating an o 
+territory and objects. Any shapeshift 
+order to use this Gift on any 
+the same Gift a second time 
+to see and remove the Gift w 
+This Gift does work on creature 
+Perfect Cover: Maki 
+ove the mark by using 
+This Gift can be used only 
+Ily concealed - 
+in shadows, 
+Intermediate 
+Whisker Sight: As per the Basic Metis Gift of the same name. 
+Advanced 
+Judgment of Pestilence: Calling upon the boons of Mother Cat and the 
+natural winds, you can pull the ravages of disease to or away from a particular 
+location. You must expend a Gnosis Trait and make a Simple Test to absorb a 
+disease from a particular location. If you succeed (win or tie on the test), you can 
+then carry the disease, unharmed, to another location, there to release it. If you fail, 
+or if you carry the disease for more than a single night or day (at the next sunrise 
+or sunset), you are overwhelmed by the toxins and die immediately. 
+
+
+~ E N E R A L  
+~ I E T S  
+(Note: These Gifts are all Basic Level. A player may choose one of these Gifts 
+at character creation.) 
+Banish Sickness: By spending a Trait of the Medicine Ability and winning 
+a Simple Test, a Bastet can purge a subject’s body of illness, disease or venom. 
+Particularly virulent diseases require an expenditure of from one to three Gnosis 
+Traits depending on severity. Some illnesses (such as cancer or leprosy) may even 
+be incurable. 
+Catfeet: As the Basic Lupus Gift in Laws of the Wild, page 97. 
+Command Attention: By entering a room and making a number of Simple 
+TestswithaNarratorequal to thenumberofSocialTraitshehas, aBastetmaydraw 
+on his innate sensuality and feline presence to get the attention of everyone inside. 
+Activating the Gift requires at least one victory (not a tie) on the Simple Tests, 
+and ifsuccessful, the Bastet draws the immediate attentionofeveryone in the room 
+as he enters. He also gains a Bonus Social Trait (dependent on what effect the 
+Bastet was hoping for when he entered the room) for every Simple Test he wins, 
+for use in the next Social Challenge. This Bonus applies only once upon entering 
+the room, and each Bonus Trait won must be the same. 
+Dowsing: By pawing andsniffing around (i.e., makingaMentalChallenge), 
+a Bastet can locate nearby water sources and determine whether or not said water 
+is safe to drink. The difficulty of this challenge is based on how far away the source 
+is (it must be within 100 feet) and how much water is present. 
+Lick Wounds: As the Basic Theurge Gift: Mother’s Touch. However, a 
+Bastet can use this Gift to heal herself, and she can use the Gift as many times as 
+she wants (at the cost of one Gnosis Trait per “lick”). 
+Open Seal: As the Basic Ragabash Gift. 
+ic Ahroun Gift. 
+
+
+cord muscles and predictably catlike 
+features. In Sokto form (equivalent to 
+Glabro), the Pumoncagains the Traits: 
+Ferocious, Quick and Tough, but suffers 
+theNegative SocialTrait: Bestial. InCrinos 
+form, the Pumonca gains the Traits: Brawny, Ferocious x2, Nimble, Quick x2, Robust, 
+Relentless and Tough x2, but suffers the Negative Social Traits: Bestial x2 and Tactless. 
+In Chatro (great cat) form, the Pumonca gains Ferocious x2, Quick x2 and Relentless x2, 
+but takes the Negative Traits: Bestial x2 and Shortsighted. In Feline (cougar) form, the 
+Pumonca gains Quick x2 and Tireless x2, but suffers from Bestial. 
+PUMONCA 
+YAVA 
+A Pumonca is one with her land; if she leaves it for more than a full lunar 
+The essence of poisoned land (toxic waste, radiation, sewage) is deadly to 
+a puma. Immerse him in its toxins, and he will perish quickly. 
+All beasts fear the puma. No horse will bear him, no dog will follow him. The 
+great cats are his kin and they befriend him, but no other animal can approach 
+
+
+Mockingbird’s Mirror: The simple trick of mimicry allows the Pumonca to 
+throw his voice anywhere, and to even imitate various sounds: people, machines, 
+loudy day; 15 Traits for 
+a small pocket of clouds 
+or clay, and the effects are 
+entire session. 
+nts, oozes and vines, by crooning to the 
+pend a Rage Trait and a Gnosis Trait 
+ugged x2, Tireless xi! and Tough x2, a normal 
+no penalties from wounds), and one level of 
+ith the expenditure of a Gnosis Trait and a 
+culty of the Gauntlet), you can summon up an 
+Element-Folk 
+successful Social Cha 
+elemental spirit for a 
+Elemental Gift, page 
+The elemental remains for one scene, one hour or 
+the earth to tremble and crack. You must expend a Rage Trait and make a Social 
+Challenge with a difficulty equal to twice the area’s Gauntlet. If you succeed, a 
+natural disaster befalls everyone within 100 feet - 
+swamps beget quicksand, 
+mountains suffer rock slides, snowcaps suffer avalanches, deserts and plains crack 
+open and swallow offenders. Everyone in the area takes one health level of damage 
+automatically (so this Gift probably injures just about everyone in play). 
+Thunderbolt: From a pact with Thunderbird, you can call a stroke of the 
+storm out of the sky! Any cloud, however small, can serve as asource for this power. 
+Spend a Rage Trait and make a Physical Challenge to hit the target; success causes 
+
+
+the victim to be struck by lightning, scoring one level of aggravated damage for 
+every two Traits of permanent Gnosis that you possess (round down). 
+Advanced 
+Earthspeaking: Whispering to the rocks in their own tongue, you can 
+discern what has passed on the earth before. The spirits respond to a single paean. 
+You must expend a Mental Trait to see into the past; you gain a vision or impression 
+of events that happened there before, much like the vampiric power of Spirit’s 
+Touch or mortal Psychometry. However, your vision is quite vivid and includes 
+many components ofsight and sound, not just emotional sensation. Ask aNarrator 
+for details; cats who use this Gift too often may find themselves subject to 
+unwanted emotional problems or Derangements from the recurring intensity of 
+past events. 
+Thunderbird’s Cry: As per the Metis Bastet Gift: Wrath of Nab. 
+
+
+ts and mortal organizations. 
+[ay l! 
+sies, Laws of the NI 
+Hunter's Tools and Mind's Eye Theatre 
+All rights reserved. 
+
+
+The rituals of “Master-Level” Thaumaturgy 
+present some of the most arcane and confidential 
+secrets of the Tremere, as opposed to a next step 
+higher along any particular Thaumaturgy path. These 
+are taught to only the most trusted of the clan, and those who 
+possess these secrets are watched to ensure that said secrets do not find their way to outsiders. 
+For a player to purchase these rituals, the character must be of at least seventh 
+generation and of exceptional standing with House and Clan Tremere. The cost is the same 
+as for any Master-Level Discipline, however this level of Thaumaturgy does not impart any 
+additional powers; it simply allows the character to learn these closely guarded rituals. 
+We recommend that Storytellers require characters to pursue research into these rituals 
+in-game (through the use of Influences and Abilities) to represent the rarity of this class of 
+blood magic. Each ritual requires a rare component that should be gained through 
+roleplaying; it isdoubtful that your local Chantrywould have, say, aLupine skin lying around. 
+- 
+R A I S B T H E  DEAD 
+Johnny Dash had just sunk his fangs into the prostitute’s neck whena hand came down 
+on his shoulder from behind. “Always when I’mfeeding,” he thought. He tookaquickgulp 
+then pulled his head back, still keeping a grip on the whore’s hair. “This better be good.” 
+“Lord Asteron requests your presence, ” the figure behind him stated. “Come with me. ” 
+Johnny was about to slam-dunk the weirdo into anearby dumpster, but the name it invoked 
+gave him pause. Asteron was one of the old Warlocks his sire was always muttering about. The 
+figure steppd forward, andJohnny saw a symbol carved or tattooed on its forehead - 
+that and 
+the fact rhat most of the “man’s” h r  was either white or gone, and that its eyes had sunk deeply 
+beneath its dohow brow. “Hurry. After this task, I am to be released from this bondage.” 
+Johnny nodded and let the whore fall to her knees on the alley floor. He didn’t like 
+the Tremere, but he understood one thing.. . freedom. If his going with this walking corpse 
+meant its release , he was all fbr it. 
+This ritual allows the thaumaturge to resurrect a dead body. The corpse is not 
+truly the same person brought back from the dead; the body merely acts as the host 
+for a spirit that the thaumaturge coerces into inhabiting the corpse. 
+This existence is torturous for the spirit in question, and most spirits seek 
+release from the bondage. Unfortunately, there is no way for the spirit to become 
+free unless the thaumaturge lifts the enchantment, or the body decomposes. The 
+MASTER- 
+LEVEL” 
+THAUMATUEtjY RITUALS 
+4 4  
+
+
+Warlock most likely uses this fact as a bargaining tool to get the spirit to do his 
+bidding. However, the spirit retains its free will and it can act as it wishes. 
+Requirements 
+The thaumaturge must have a cadaver with flesh still on the bones - 
+the fresher 
+the corpse, the longer the ritual holds the spirit. If the caster wishes the corpse to interact 
+with the outside world, it is recommended that the body be less than a week old. 
+He must brand a symbol that translates as “debtor” on the corpse’s forehead, 
+and must pour the wax from a black candle over the heart and throat of the subject. 
+The wax is the symbol that initially binds the spirit into the corpse. The room in 
+which this ritual is performed must be completely devoid of light with the exception 
+of the black candle used. The entirety of the ritual must also be conducted in a salt 
+circle with a diameter equal to the length of the body, from head to toe. 
+System 
+The casting character should possess either Spirit Eyes (Basic Spirit 
+Thaumaturgy) or Spirit Slave (Intermediate Spirit Thaumaturgy) before purchas- 
+ing this ritual, as either allows the character to interact with the spirits necessary. 
+The character must defeat the spirit in a Static Mental Challenge versus 14 
+Traits to successfully coerce the spirit to enter the corpse. Once the spirit is bound 
+into the cadaver, the thaumaturge has no firm control over the actions of the 
+corpse, other than what is gained through roleplaying. 
+The corpse’s initial Physical/Mental/Social Traits should be determined by the 
+Storyteller after the ritual is completed. The corpse possesses the same number of health 
+levels as a regular character. These levels can be lost to damage other than decomposi- 
+tion, and cannot be healed back. However, the corpse is not subject to wound penalties. 
+At the beginning of each game session, the thaumaturge player must engage 
+in a Static Physical Challenge versus 12 Traits. If the player loses, the corpse loses 
+a health level due to decomposition. 
+Once the corpse loses all of its health levels, the spirit is released and the ritual 
+effect is ended. 
+The corpse of a vampire who has suffered Final Death cannot be used in this ritual. 
+R I T U A L O P  
+HOLDING 
+It wasn’t easy, but Yusef had finally located his target. Carvel had been missing 
+almost half the night, but Yusef had not yet given up. And now he had found him, not two 
+blocks from the target’s despicable “Chantry . ” Yusef had waited longfor the chance to spill 
+a Tremere’s blood, and now would be his chance. 
+Stealingfrom his hidingplace in the shadows ofa two-story parkingdeck, Yusef crept 
+up on Carvel unawares. In a burst of speed that scattered litter and dust in its wake, Yusef 
+swept Carvel into a darkened alley across the street from where he stood. The Tremere 
+fought bneflr , but Yusef tackled him to the ground, blanketed the area in a heavy cloak 
+of silence and pinned the vampire down with a knee on each of Carvel’s slim elbows. 
+Mouthing the words, “Welcome the sun,” he pulled two woodenstakesfrom beneath his 
+plain wool jacket. As per his orders, he would leave the Tremere paralyzed until the sun 
+rose overhead. Yet, the Tremere seemed more surgnsed than afraid or wurried. 
+Without even a shrug, Yusef plunged the first of his two stakes into the Tremere’s 
+chest. Unsurprisingly, the shaft exploded into hamless chips when it touched Carvel’s 
+skin. Yusef had been warned that many Tremere knew a ritual that protected them from 
+
+
+minglestake, andhe hadcomeprepared. Smiling, he brought thesecondstakedownwhere 
+the first had disintegrated. Let the Tremere choke on his proud faith in his rituals. 
+Ama~ngly, the second shaft went the way of the first. Yusef sfingers closed on air, 
+andhefalteredinshock. Thehesitationwasall Carwelneeded. Inaninstant, Yuseffound 
+himselfpinned. Carvel put a handover Yusefs heart andmouthed the words, “Welcome 
+the Devil. ” A moment later, Carvel’s eyes danced as his hand erupted in flames. 
+This ritual enhances the effects of other rituals. The effects of this enhance- 
+ment differ according to the type of ritual with which it is used. 
+Requirements 
+Performing this ritual adds six hours to the casting time of its partner ritual. 
+The material component of the Ritual of Holding is a solidTgold sphere. After 
+completion of the initial ritual, the thaumaturge immerses the sphere in two points 
+of his blood and spends six hours chanting over the sphere. After that time, the 
+sphere absorbs the blood and the second ritual is considered complete. 
+Onlv one ritual may be extended by a given casting of the Ritual of Holding 
+System 
+To represent the concentration required for this ritual, the character must 
+engage in a Static Mental Challenge against 14 Traits. If she loses, the Ritual of 
+Holding fails and there is no change to the original ritual. 
+The benefit of the Ritual of Holding is specific to the ritual with which it is used. 
+The player may suggest the effect that she wishes to achieve, but the Storyteller is the 
+final authority as to what actually happens. Some suggested effects include: 
+Blood Walk: Extends the reach of the ritual to the progeny of the target, or 
+to those whose blood the target has tasted. 
+Engaging the Vessel of Transference: Exchanges only one Blood Trait for 
+every two taken. 
+Shaft of Belated Quiescence: Makes it impossible for Cleansing of the Flesh 
+to remove the shaft. 
+Once the effect of the ritual is decided, the Storyteller should fill out a card 
+detailing the results, and give it to the player. 
+The player and Storyteller should discuss the effect that Holding has, and 
+they should conduct any tests involved in advance of the ritual. Doing so allows 
+the character to perform the ritual during downtime rather than miss an entire 
+game session. 
+UTTER 
+DBSTRUCTIONOE 
+BONDS 
+Here 1 am, locked in the back seat of a car, in the middle of the junkyard outside of 
+town, with less than 20 minutes before dawn. I’ve tried all the doors, but they seem to be 
+welded shut from the outside. On top of that, I’m too weak to break through any of the 
+bullet-proof windows. 1 guess the prince was serious, after all. 
+There’s garbage ewerywhere. If 1 could just get out of this metal pnson, 1 could 
+burrow under it and sleep inrelatiwe safety. As it stands, I’we got only afew minutes before 
+Apollo’s chariot breaks the hwizon and fries me alive. 
+But I’mcalm.. . . I’we beenin tighter spots. I clear my mindandstart chanting. The incantation 
+is long and complex, which is a pain since I’m getting drowsy and I’m almost swenting blood. But 
+the hardest pmtcomes last.. . . I don’t have a knife. For dus to work, I have to cut out my own tongue, 
+MAST E E- LEV E L” TH 
+A U  M ATU R CjY RI T u A IS 
+6 6  
+I 
+eD 
+
+
+and that’s no small trick even with a knife. So instead, I blank my mind, grab my tongw 
+the tip 
+andbiteitoutwithmy teeth. lnearly blackout, butlstillhave thepres~eofmindtosmearwhat’s 
+kftinmy hundagainrtthewindow. Withawhoosh! andapop!, thewindowexplodesoutwardand 
+I pile out through the gaping, ragged hole. Half-blind with pain and mor, I claw my way to the 
+nearest festering pile of refuse and worm my way into it, the rays of dawn pushing me forward. 
+This ritual is incredibly powerful, yet few realize the full extent of its potential. 
+The ritual, once completed, opens any designated object and prevents the object 
+from ever being closed again. 
+Requirements 
+The caster utters a 10-minute incantation, at the end of which she removes 
+System 
+Removing the tongue inflicts three aggravated health levels of damage, and 
+renders the character unable to speak until his tongue can be grown back. 
+Additionally, one Willpower Trait must be spent for the character to steel himself 
+for the gruesome task of removing his tongue. 
+The ritual can be used to open manacles, chests, safes, boxes, windows, doors 
+and eyes. If used to destroy a ward, no other can ever be placed in the same area 
+again. This ritual can also be used to open dimensional portals that are tied to 
+objects, although Storytellers should be very careful when allowing this applica- 
+tion of the ritual; the portal cannot be closed once this ritual is used to open it. 
+(Note: Utter Destruction of Bonds cannot be used to break Blood Bonds or 
+mental commands issued with the Dominate Discipline.) 
+her tongue, crushes it and smears it on the object to be opened. 
+RECLAIMED 
+TREMERE 
+ANTITRIBU 
+RITUALS 
+After the destruction of the Tremere antitribu, these rituals were discovered 
+and brought back to Vienna for study. These are the first of the antitribu rituals to 
+be released for use within the Tremere clan as a whole. Any character who wishes 
+to learn any of the antitriburituals should be prepared for several months of research 
+and roleplaying before being able to learn even one of them. 
+CHILL 
+O E T H E  WINDSABER 
+Valentine had tracked the Tremere d 
+over Russia, and now, just over the burder, she 
+found him at last. The Tremere Larian had killed Valentine’s uncle - 
+bj dl reports, he had 
+uctuully skinned the ancient Silver Fang-and 
+Valentine declared that she would quench her 
+Rage with Larian’s blood. She plodded through the ankk-high snow toward the cabin where 
+Larian was reported to be holed up. She fantasizedabout his death screams and wondered what 
+she would say if he begged for mercy. The sun had long since gone down, but Valentine wmn’ t 
+worried. If she found the cabin empty, she would simply wait ins& until sunrise. 
+Whenshe was withinbowshotofthecabin, herearsdetectedsomethingduringaluUin the 
+wind. ltsoundedlikeasmpfrmins& thecabin, thoughVakntinecouldn’tbesure. She pused 
+a m n t ,  her tail beating a constant rhythm against her legs, and then moved ahead again. 
+She had &n 
+only a few steps when she saw the snow part in front of her like the trail 
+of an outboard mom. The disturbance bored toward her from a cabin window and slammed 
+into her midsection like a locomtive. She hit the ground hard and realized that she couldn’t 
+feel her hind legs -which 
+lay where she once stood. She could not even raise a howl of agony 
+or defeat as the night sky slowly grew ominously darker. 
+
+
+Chill of the Windsaber is perhaps the most controlled of the antitribu ritual,, 
+and for good reason. A Tremere that possesses this ritual has the ability to destroy 
+an opponent from a distance without leaving a trace of the attacker 
+This ritual is very tightly regulated by the Tremere, to the extent that most of the 
+clanstilldonot know that itexists. ForaTremere to be taught this ritual, hemust spend 
+at least three months in Vienna where his loyalty to house and clan is tested. If he is 
+deemed worthy, the ritual is taught to him. The penalty for teaching this ritual to 
+anyone who has not undergone this trial is Final Death for both teacher and student. 
+Requirement 
+Before the ritual can begin, the vampire must possess something that belongs 
+to the intended victim, such as a piece of clothing, a lock of hair or a Blood Trait. 
+Once this item has been obtained, the vampire must spend one hour using the item 
+to create a doll that represents the intended victim. 
+The second item required is a small piece of glass. This glass is placed on the doll, 
+and the cabter must spend another hour chanting over the doll to complete the ritual. 
+The vampire must be totally alone and undisturbed while intoning this ritual. 
+If his concentration is broken, he must begin again. 
+To activate the ritual, thevampiremust have bothdoll andglass in his possession 
+(bothofwhichmustbe inthesamecondition theywereinwhen theritualwas enacted 
+in order to preserve their magical properties), and he must be within 50 feet of the 
+intended victim. The vampire points at the victim and snaps the glass. The resulting 
+telekinetic force inflicts damage - 
+up to and including severing the target’s head. 
+System 
+The player must present the Storyteller with an item card that represents a 
+Due to the nature of this ritual, it should not be performed during downtime. 
+After the ritual is completed, the player must make a Static Mental Challenge against 
+12 Traits to see if his concentration is broken. If the player wins, the ritual is successful; if 
+not, the ritual fails and the character must start all over with a new item from the victim. 
+To activate the ritual, the player must defeat the victim in a Mental 
+Challenge. If the player wins the challenge, he decides how many Willpower to 
+spend to fuel the effect. For each Willpower spent, the victim suffers one health 
+level of damage. If the caster spends four Willpower, the full effect of the ritual is 
+imposed and the victim’s head is severed from her body. 
+personal item of the victim’s before the ritual can begin. 
+T H E  GIET 
+“The infiltraaon was successful?” the weathered old woman asked, peenng int( 
+recruit’s soul (or so it felt). 
+“Yes, Excellency,” the young Assamite nodded. “And I returned with the boa 
+the one you asked for. ” 
+“Most amanng, Ramhi,” the old woman sad, as if she had sad the same worc 
+countless other recruits ame and again. “You are to be rewarded most handsomely. I rt 
+that 1 cannot offer you your target’s blood-” 
+“By your grace, Excellency ,” Ramsh murmured. 
+“-but 
+1 can make your night-hunting easier.” Turning to a door recessed ir 
+adobe wall behind her, the old woman called out, “Malakai~” 
+MA s T E R- LE 
+V E  I” THAW 
+M ATU R 9 
+Y RI T w A LS 
+(6 
+@ 
+
+
+Moments later, a dark-skinned man dressed in scholarly robes that had gone out of 
+fashion centunes ago appeared through the door. “Yes, Excellency,” he sad quietly. “My 
+studies proceed slowly now that Brother Raintree has disappeared.” 
+“You will take Ramshi to your chamber and bestow upon hzm the benefit of your 
+supernatural senses ,” the old woman said, ignonng Malakai’s quiet protest. Ramshz tned 
+not to break out in a proud smile. 
+Malakui’s shoulders slumped m a  gesture that would have been a sigh if Malakai still 
+breathed. “By your command, Excellency ” 
+This ritual allows the thaumaturge to transfer his Disciplines to another, through 
+a laying on of hands. The exact Disciplines and number are up to the thaumaturge. 
+This ritual was often used as a form of reward for service among the antttnbu. 
+Requirements 
+The material component of this ritual is a silver mirror, a Trait of the caster’s 
+blood and one Trait of the recipient’s blood. 
+The caster mixes the blood Traits together and writes the name of the 
+Disciplines she wishes to transfer onto the surface of the mirror. Once this is 
+completed, both parties touch the mirror for the prescribed time. 
+System 
+The ritual requires 15 minutes of contact per Discipline transferred. 
+The Tremere player must succeed in a Mental Challenge versus 12 Traits. If 
+she wins, the character transfers exactly the amount of the Discipline she intended. 
+If the player ties, the caster transfers less than intended; if the player fails, the caster 
+transfers more than intended. In either case, it is up to the Storyteller to be the final 
+arbiter of exactly how much of the intended Discipline is transferred. 
+You may not use this ritual to give a character a level of a Discipline that he 
+could not normally achieve. In other words, you cannot use the ritual to give a 
+13th-generation vampire a Master-Level Discipline. 
+The transfer of Disciplines affects the donor and recipient in the following 
+way: The donor looses Disciplines from the highest level down, and the recipient 
+gains Disciplines from the lowest level up. 
+Example: Cassiodorus, an aged Tremere, uses The Gift on Bobby, a Brujah in 
+his service, to give Bobby Heightened Senses. Cassiodorus loses his highest level of 
+the Auspex Discipline - 
+in this case Psychic Projectton - 
+at the end of the ritual. 
+Transferred Disciplines can be bought back by the donor at the normal 
+Experience Trait costs. (See Laws of the Night, page 61.) 
+Ian looked doeon at the sobbing woman at his feet, then glanced around quickly to see 
+ifanyone could hear her cries fur help. He had always had a taste fur blondes, but they could 
+never seem to keep their mouths shut when he tried to feedfrom him. It was really annoying. 
+“You bit me,” the woman sobbed, cowering her neck and sliding back up against the 
+steps of her apartment building. “Why did you bite me?” 
+Concentratingjust as his sire had taught him, Ianreachedinto the woman’s eyes with 
+his own and said, “I never bit you, woman. You were mugged by two men.” The 
+woman grew quiet instantly as her mind processed the information Ian had planted there. 
+However, he still had not had a chance to feed.. . . 
+
+
+“Now close your eyes,” he said The woman obeyed. “Tilt back your head. The 
+woman did as lan commanded. “Now relax.” The woman’s shoulder’s slumped. 
+Conwinced that his victcm would gwe him no more problems, Ian closed his eyes and 
+leaned close to the woman’s cold neck like a lover with- 
+cold neck? 
+Something struck lan in the chest and he flew backward through the air. A moment 
+later, his back connected with afire-escape ladder and he crumpled to the ground, unable 
+to move. Something was stuck through his chest. It felt like his weins were tied to a rock 
+that wassinkinginquicksand. The petite blondestareddownat htmwithglowingredeyes, 
+silhouetted against the flickenng streetlights. 
+“For a Keeper of Elysium, you’re pretty dense,” she mocked, all traces offear and 
+submission gone. She hoisted him painfully onto her shoulder with one hand and leaped 
+up to catch the fire escape with the other. “At least it’llmake you easy to control. Bishop 
+Mark likes them easy. ” 
+This ritual is very useful when you do not wish to be spied upon through use of 
+Auspex. O f  the anambu rituals, this one is used most frequently. However, use of this 
+ritual when dealing with others in the Tremere hierarchy is not looked upon kindly. 
+Requirements 
+This ritual requires an object, such as a hatpin or earring, that is made entirely 
+of iron, and a lodestone that has been soaked in the blood of the caster for three 
+nights prior to the ritual. O n  the third night, the caster must spend an hour 
+speaking an incantation while rubbing the lodestone over the surface of the iron 
+object. At the end of the hour, the object takes on a reddish color and is ready to 
+use. The object must then be worn on the head in some fashion - 
+as a hairpin, an 
+earring, a tlara or whatever. 
+While the ritual is in effect, the caster is virtually immune to Auspex. Anyone 
+attempting to use this Discipline on the caster notices that something is wrong, but 
+not what. The effect of the ritual lasts until the next sunrise or until the object IS 
+removed from the caster’s head. 
+System 
+The player must win a Static Mental Challenge versus 12 Traits. If the player 
+wins, the ritual is a success; if not, the ritual fails. 
+While under the effects of this ritual, the character receives the Mental Traits: 
+Ihscipkwd x5, which can only be used to defend against Auspex-related challenges. 
+Additionally, the character receives a free retest on each Auspex-related challenge he loses. 
+While under the effects of this ritual, acharacter may not relent to any Au 
+challenge. Thus, you cannot choose to let an ally communicate with yo1 
+Telepathy; you would have to lose both the initial challenge and the free retc 
+communicate telepathically. 
+S H A D O  w o E T H  
+F: W o  
+L E  
+“Bretheren,” the ancient-looking Siker Fang called Knows-His-Words, said 
+rily as dawn neared, “you have defended this place well agams t our enemies, the waml 
+Many ofour kin have fallen this night, but their stories will be told throughout the a 
+Some ofthe othersgrowled their agreement, but nos t p t  sat stdm exhaustion and list 
+“Though the leeches’ treachery war most foul,” the Fang continued, “though 
+tned to betray me under aflagof truce two nights ago, we hawe yet prewailed. Your! 
+will be sung by the tale-keepers for ages hence. ” 
+M A S T  E R- LEV EL” TH A U  MAT U R Cj Y RI 
+T u A LS 
+4 4  
+I 
+
+
+Again, the remaining Garou could raise only weary enthusiasm ower the Fang’s 
+words. Many had died in the night, and those left had suffered griewously. 
+“I want you to know,” the Fang continued, seeming to sag a bit where he stood, 
+though his voice picked up speed, “that you hawe done me aserwice as well. You hawe taken 
+care of those who would have been my greatest riwals. For that I will sing your praises. ” 
+The others raised confused eyebrows at that, but the Silver Fang only smiled and took an 
+illustrious bow. The sky lightened in the east. When the Fang tumd, his skin was lined with even 
+more wrinkles than it had been a moment ago. His brow was heawy with concern, or so it seemed. 
+“And now I go to rest , ” he said, suddenly full of life despite his appearance. 
+He raised his a m  in a fluid motion and shrugged mightily. With a sound like a sheet 
+tearing, he stepped back and sloughed off the outer layer of his skin. Now, standing before 
+the remaining Garou was a thin, pale man with a long black ponytail and a vicious smik. He 
+bowed again, stepped back into the s M w  of the trees and disappeared with the skin of 
+Knows-His-Words danglingraggedfrom his hand. Before the Garou could rouse themselwes 
+to give chase, they heard a sound like laughter in the forest surrounding the caem. All around 
+them, wague, twisted shapes clawed and squirmed out of the Umbra and crept closer.. . . 
+This potent ritual allows a vampire to actually become a Lupine for one 
+evening. The material component is a cloak made from the skin of a werewolf. The 
+tribe to which the vampire “belongs” depends upon the type of skin used in the 
+ritual; Auspice is always Theurge. 
+While the ritual imparts the form of a Lupine, it does not bestow the vampire 
+any Gifts, Rites or knowledge of how to act like a Garou. It behooves the vampire 
+to have at least one level of Garou Lore before attempting this ritual. 
+Requirements 
+The vampire must chant over the ill-gotten Lupine skin for an hour-and-a-half 
+while sprinkling his own blood around it. At the end of that time, the vampire dons 
+the cloak, which fuses to his own skin for the remainder of the evening. Once this 
+process is complete, the vampire becomes (for all intents and purposes) a Lupine. The 
+cloak separates from the vampire at sunrise, and may be reused, although the ritual 
+must be repeated each time the vampire wishes to become a werewolf thereafter. 
+System 
+Upon completion of the ritual, the player engages in a Static Mental 
+Challenge versus 14 Traits to determine if the ritual is successful. 
+The player needs to create a werewolf character and identity using his vampire 
+as a basis. The Lupine is subject to all the advantages and limitations of a normal 
+Garou. It may change forms and it is vulnerable to silver. 
+The werewolf begins with two Rage for each Beast Trait that the caster 
+possesses, and one Gnosis. The player may attempt to raise these ratings asa normal 
+Lupine would. 
+If the caster reuses the cloak, the player must engage in a Simple Test to see 
+if the skin is still viable for the ritual. 
+The Garou Gift: Scent of True Form detects that there is something amiss 
+about the “werewolf,” but it gives no specifics. 
+The Garou Gift: Sense Wyrm detects Wyrm-taint if the vampire possess more 
+than two Beast Traits. 
+Unless the character has some level of the Ability: Garou Lore, he finds it nigh 
+impossible to interact with Garou society. 
+
+
+T- 
+s P I D E R ’ S  W E B  
+Marcel sliced the window pane away with hs glass-cutter and jimmied the lock open 
+The place ddn’t even hawe an alarm system, which was odd, consdenng how adamant the 
+man who’d hired him - 
+a creepy old fart named Regrnald - 
+had been about not gettmg 
+caught Marcel med to tell the guy that nobody would go to so much trouble to protect a book, 
+but the old dude ddn’t listen. It seemed Marcel was nght, after all. As usual 
+With barely a sound, he pushed open the window sash, pushed back the heavy black 
+curtainands~ppedquietly ins&. He seemed to be insome sort ofdrawingroom, but that was 
+all he could tell. Severaldusty c h r s  cluttered the flour The dour to the hallway (wluchwould 
+hopefully lead to the basement where Regnald sad the book would be) hung open Keeping 
+close to tha w& to awoid squeaky floorboards, Marcel made hs way into the hallway 
+The corndm was pitch-dark. The intruder went no more t h n  a few steps when his 
+leg tangled in something and he had to stop. He tned to brace himself to pull himself free 
+- 
+it felt like he’d stepped onto a huge flysmp - 
+but he only managed to get his ann 
+entangled a.5 well. After a few moments of squirming, Marcel realized that he was 
+completely trapped 
+what felt like grasping lquid hands He desperately decided to use 
+his ghs-cutter when the lights in the hallway snapped on almost audibly. 
+When the spots stopped dancing in front of his eyes, Marcel could see what had 
+entangled him: webs Either hundreds of them or one mother-lowin’ huge one. He started 
+to struggle frantically - 
+what kind of spider makes webbing like this? - 
+but he only 
+succeeded in minng himself further. 
+From behind, Marcel heard footsteps followed by cold laughter He could not even 
+turn his heal to look by that point 
+“‘Order-in dining’ indeed,” an old woman mused seemingly to herself “Quite 
+entertaining, Reonald. Quite entertaining ” 
+This ritual allows a vampire to create a web that resembles an actual spider’s 
+web in all respects. The difference is that the webbing can fill an entire room and 
+is strong enough to capture and hold victims immobile The webbing lasts until it 
+is tom down, making it an excellent defense for a haven. 
+~ 
+Requirements 
+Before enacting this ritual, the vampire must obtain a black widow spider and 
+feed it vitae on seven consecutive evenings. O n  the final evening, 
+crushes the spider in a marble container and consumes it While invoking a chant, 
+the vampire begins to exude webbing from her hands. This webbing can be shnned 
+into any form and can cover up to 400 square feet. 
+I 
+System 
+The player must win a Static Mental Challenge versus 12 Traits to coml 
+this ritual successfully. 
+The character is immune to any webbing he creates; he can move fi 
+throughout it. This does not mean, however, that the character can climb or 
+strands. He simply does not get stuck as others do. 
+If a different character contacts the web, he is stuck. A victim may attem 
+tear or cut himself free by winning three Static Physical Challenges versus t 
+Traits. Potence retests are allowed. 
+If a character wishes to enter the web and avoid getting stuck, a test is reqi 
+using a dexterity-based Physical Trait (Nimble, Athletic) versus 12 Traits. 
+MAST E R- LE v E L” THAW 
+M ATU R cj Y RI T w A LS 
+66 
+@ 
+
+
+3 
+by Shane De Freeat 
+Eye Theatre characters in The h
+g
+ 
+Night 
+have an opportunity to get in on the actton! 
+Presented here are several Discipline-com- 
+bination powers that can be found in Vampire 
+The Dark Ages, built for use in The Long Night. ." 
+future Libellus Sanguinis releases showcase the unique 
+capabilities of the clans, expect more combination Disciplines to rise under the 
+light of the moon. 
+Learning a combination Discipline requires a great deal of effort. In addition to 
+requiring certain levels of proficiency in various Disciplines, combination Disciplines 
+have their own Experience Trait costs. Furthermore, many of these powers are known 
+to only a few scattered members of specific clans; such esoterica requires unusual 
+dedication and study. A Storyteller is well within rights to limit the selection of 
+available combination Disciplines, requiring characters to seek out elder mentors and 
+to undertake harrowing training and quests in pursuit of these unusual capabilities. 
+A R M O R O E  
+DARKNESS 
+(Basic Fortitude, Intermediate Obtenebration) 
+We lured the damned thing that used to be wise Lord Albert into the stables. The 
+brave lads who muck the stalk; barred the doors, locking the monster inside. Archibald, 
+the former squire to the unliving knight, ordered torches lightedandflame-arrows notched. 
+At his order, we rained our fire on the stables, turnzng the dry tinder to a beacon that 
+pushed back the night. We hughedin contempt at Lord Albert's unholy screamsfor mercy 
+andabsolutton. Then, suddenly, the screams turned tomocking laughter, and the burnmg 
+stabledoorflewapart likematchsticks. Archibaldfroze: Therein thedoorway, silhouetted 
+by hungry flame and crashing ruin, stood Lord Albert m amor darker than nighted 
+shadow. Albert advanced on his erstwhile squire, but I learned not the fate ofeither. Devil 
+hound us all, the others and I fled, leaving Archibald to hu fate. 
+Combining a vampire's preternatural resilience with the inky shadowstuff of 
+Obtenebration, some Magisters are able to cloak themselves in adarkness that resists 
+the pall of fire and sunlight. So armored, these fearsome Lasombra venture into 
+even daylight to further their schemes. 
+
+
+ 
+expenditure of a Social Trait, you may choose to shape it into the guises of various 
+forms of night-black clothing or armor. 
+Activating Armor of Darkness requires the expenditure of a Willpower Trait, and the 
+further expenditure of three Mental Traits for each level of protection. Maintaining the 
+armor then requires concentration; all actions undertaken while garbed increase in diff iculty 
+by one Trait. The armor lasts until destroyed by fire or sunlight; each level of protection 
+absorbs one level of damage from such sources, until the shadows are burned away. 
+Learning this power requires commerce with one of the few and secretive Magisters 
+who practices it, and it costs eight Experience Traits. 
+A U R A O E  
+INESCAPABLE 
+TRUTH 
+(Intermediate Dominate, Intermediate Presence) 
+“Who invited you to my court?” the Ventrue Prince Valmont asked, peering lazily from 
+his oaken throne. The assassin thoughtfun’ously , silently recounting the details ofthe story he’d 
+practiced time and again, and thanking the Maker that he could no longer sweat. The pnnce’s 
+harpies and his wizened, scrawny seneschal leaned closer. They eyed the assassin like circling 
+wultures--merely interestedat present, but in strikingdistance skould things turn to theirfawor . 
+“I.. . ” the assassin stammered, his fingers twitching toward the poisoned knife in his sleewe- 
+sheathe. Why couldn’t he just use his story? He could remember it; why couldn’t he just say it? 
+“Tell me why you have come to my domain!” 
+“I.. . the seneschal hired me to kill you,” the assassin gasped. 
+“I see,” Valmont said, leaning back, glancing at his second as his harpies and guards 
+closed ranks. “How interesting.. . .” 
+A favorite of Ventrue courts, this formidable power combines direct mental 
+control with subtle influence to force subjects to speak only the truth. Though taxing, 
+this power is unquestionably vital to the political battlefields of elder Cainites. 
+When establishing the Aura of Inescapable Truth, you must expend a Will- 
+power Trait, and then engage in a mass Social Challenge against everyone who can 
+see your face (risking one Social Trait for each target). If you win the challenge, 
+nobody under the influence of the power may deliberately speak untruthfully; 
+those who attempt to do so simply find themselves unable to speak at all, though 
+a target may still speak an untruth if he behewes it to be true. 
+The Aura of Inescapable Truth does not force victims to remain within your 
+presence, nor does it continue to function if they leave. The power’s activation and 
+influence are automatically noticeable to anyone affected. As with all Dominate 
+powers, vampires of lower generation than yourself are unhindered by this power, 
+although this may not be immediately apparent. 
+This power costs 11 Experience Tram to dewelop. 
+BLESSED RESILIENCE 
+(Master Fortitude, Intermediate Mortis) 
+Isawztall, begmnzngtoend. I w a  therewhenmymasterfelltothebngands’swords. 
+They encircled him like apack of dogs, then fell on him like staraed ravens. He met them 
+
+
+bravely, his ‘own sword biting deep, but the brigands were too many. My heart broke to 
+merely watch-withoutgivingaid- 
+but1 hadmy orders. “Those ofmy bloodhavemade 
+dire enemies,” my master said. “Should I fall to treachery, you must deliver my body to 
+my sanctum and wait with it there.” 
+I protested when he told me, but tonight I saw him fall, and I have done as I was bid. 
+I have loved and served my master well, but I fear that even his s&s 
+of death and the soul 
+are no match for- But lo, he s tin! God be puisedforreturningmy master to mefium beyond 
+the very graue! Let his enemies tremble! Yes, come, master. Take my hand.. . . 
+With command of incredible resilience and unmatched insight into the secrets 
+of death, the Cappadocians are the undisputed masters of death during the Long 
+Night. For the truly dedicated Cappadocian, even the grave itself may be overcome. 
+When extinguished- beaten, burned, cut or otherwise driven to Final Death 
+- 
+you may draw upon your monumental reserves to pull yourself back across the 
+threshold of destruction. You immediately expend all of your remaining Blood 
+Traits and two Willpower Traits (plus one additional Willpower Trait for each 
+severed limb that must re-attach to your body). If you do not have sufficient 
+Willpower, you fail to rise. Otherwise, your body parts crawl back together and re- 
+knit (as long as they are nearby - 
+within about 10 paces or so). You then return 
+to the Incapacitated health level. 
+When you exercise Bkssed Resilience, you tax your supernatural reserves to 
+their absolute limits. Effectively, your generation rises by one - 
+a seventh- 
+generation Cappadocian using this power is considered eighth-generation afterward, 
+with all of the concomitant losses to Blood Traits, Willpower Traits, Attribute 
+Traits and high-level Disciplines. This weakening is permanent, though you may 
+still lower your generation later through diablerie. 
+Unearthing the masterful Blessed Resilience costs 18 Experience Traits. 
+BLOOD P B A R L O E T H E ~ O M B U  
+(Basic Mortis, Basic Necromancy, Basic Thaumaturgy, and at least two 
+Intermediate levels or one Advanced level in these Disciplines) 
+I wasn’t good enough, they said. They told me I didn’t have the power and discipline 
+to control the dead. Officious bastards. Augustus wouldn’t have put up with thutgarbage 
+if they’d said it to him. I studied the dead, magic and the occult - 
+the modern theories - 
+for years before these “scholars” came along. I know what I’mdoing. The deadcandance 
+on my strings just as easily as theirs. I uncovered this body myself. I preserved it. I even 
+infused my blood into the pearl completely on my o m .  
+And the corpse rises, just like I said it would. It rises! Now I’ll show those bastards 
+who’s “not good enough”! 
+The rombu, more commonly called “zombies,” are unfailing servants of the 
+Clan of Death. For young members of the clan, the necessary expertise in the Mortis 
+Discipline is impossible to achieve due to the simple impediment of generation. 
+However, by combining research of the recently inducted Giovanni with more 
+general magical knowledge, it is possible for even novices to develop a means to 
+create unliving servants. 
+By distilling two Blood Traits into a special magical pearl-like sphere (a 
+process requiring eight hours of work, and thus generally performed outside the 
+confines of game time), you may enchant your blood to animate a corpse. Success 
+C O M B I N E D  DISCIPLINES 
+Ion THE LONC~ 
+N I ~ H T  
+@ 
+
+
+[in; you must place the blood pearl in the mouth of the corpse and make 
+?ental Challenge (difficulty 6). If you succeed, the formerly inert corpse 
+qombu under your direct control for the remainder of the evening, 
+; 
+into dust at sunrise. 
+zombu has the Attribute Traits it possessed in life, although Dextrous, 
+id Quick are replaced with Tenacious, Tireless or Tough. The creation also 
+.e health levels it possessed in life, but does not suffer wound penalties. 
+blood pearl created by this ritual works on only true corpses -vampires 
+are not atfected by it. 
+a library or mentor after achieving the requisite levels of skill in Disciplines. 
+As a ritual, this power does not cost Expenence Traits, but it must be studiedfrom 
+BODY ARMORY 
+(Intermediate Protean, Intermediate Vicissitude) 
+Reinhart clutched the ruby tight in one fist and crouched in the moonshadow of the 
+baron’s castle. A few quick seconds would put him in the woods and near enough to the 
+river where he’d h&n 
+his rowboat. He heard that the baron was no man to make an 
+enemy of- 
+some rumurs ewen suggested that the lord devoured those who crossed him 
+- 
+but Reinhart cared only for the ruby. It had belonged to his family before the baron had 
+established his “domain” here. Let the peasants whisper about the “hellspawn” that 
+guarded the baron’s gates; Reinhart had seen none when he sneaked in. Let the ignorant 
+fanners believe that the nobleman drank blood and tortured his enemies for amusement; 
+all Reinhart knew was that in another few moments he would reach his boat and be safely 
+away with the means to restore his family’s fortune. 
+“Ah, Hew Reinhart,” a thzckly accented voice said as a hand fell heavily on his 
+shoulder. Reinhart turned to see the baron himself, dressed in all his lordly finery, peering 
+down at him. Reinhart had not ewen heard him approach. “I believe you are trespassing.” 
+Reinhartmadeasiftosay something, butanobjectinthe baron’shandgave himpawe. 
+It appeared to be a spade, but it seemed to grow and elongate, like watchingan icicle melt, 
+until the baronappe~edtobeholdinga~kedly 
+longspearhead. Reinhartquailedas thelord 
+spoke again, raising the weapon into the moonlight. When the baron did so, Reinhart could 
+see that he held no object in his hand at d; 
+the insmment held aloft was the man’s hand. 
+sorts of hand-held weapons. 
+Turning a limb into a weapon with this power costs one Blood Trait, two 
+Traits for two-handed weapons. Only hand weapons may be imitated - 
+you 
+cannot fashion a bow and arrows out of your body. 
+This power costs nine Expenence Traits. 
+DARK 
+STEEL 
+(Intermediate Obtenebratiun, Intermediate Potence) 
+“You hide from me in darkness, ” Adrienne sighed, her lilting voice carrying into the 
+rocky niche where Michael hid, halfway up the cold mountainside. “How quaint.” 
+
+
+Michael almost shot back that he would sooner be wed to a fishmonger’s spotty 
+daughter than to the blasphemous parody of a woman Adrienne had become, but a sound 
+outside his hiding place stopped him. Something long and heawy slid along the ground 
+outside. It sounded like someone dragging a tree. 
+“But you denied me, Michael,” Adrienne went on. “You should hawe run sooner and 
+farther.” As she spoke, a column of ebon smoke (or so it seemed to Michael) snaked into his 
+shelter and coiled around h ankle like an iron manacle. He shrieked, and the black tentacle 
+hoisted him roughly out of the hole and into the air. He dangkd upside down like an animal 
+caught in a snare, blubbenng in terror as Adrienne - 
+beautiful, damned Adrienne - 
+emergedfrm the shadows. The tentacle around Michael’s foot curried him closer w her. 
+“Now, Michael, let us talk of Hell and the fury that only it can cowet.” 
+Perhaps one of the most fearsome combination powers known, Dark Steel 
+imbues the shades of Obtenebration with the unnatural might of Potence. Shade 
+tentacles conjured with the Arms of Ahriman become frighteningly strong. 
+Should you choose to use Dark Steel, you must expend a Blood Trait upon 
+activating Arms of Ahriman. Summoning the tentacles themselves proceeds as 
+usual, but the tentacles have six Physical Traits, plus two more Physical Traits for 
+each additional Blood Trait expended. 
+Learning this power requires the expenditure of nine Expm‘ence Traits. 
+HATCHTHE 
+VIPER 
+(Basic Protean, Intermediate Seeentis) 
+“Bring him before me,” Gillem proclaimed, motioning the guards to stand back and 
+let the wisitorstepforward. “I will hear this blackguard’s message in the prince’s absence. 
+It is better than he deserwes, certainly.” 
+The wisitur, a suspected Follower of Set, strode forward, smiling audaciously at the 
+prince’s seneschal, ewen winking at Gillem! The pnnce’s courtiers tittered at that, but 
+none of them showed the proper decorum by deigning to scoff. Gillem made a note to 
+himself that it was time for new attendants. The pnnce would have to be made aware of 
+that when he returned. 
+“You have a message?” the seneschal asked, when the alleged Setite stopped boldly 
+in front ofhim. He was, admittedly, rather handsome up close, ifa bit aloof. 
+The Setiteonly noddedalittlestiffly, butsaidnothing. Gillemleanedcloser, towenng 
+ower the slim Egyptian man. “Then speak.” 
+The Egyptian’s +-oat pulsedand he opened his mouth with a reptihn hiss. Gillem cried 
+to scream, but it was too late. Something grubbed his throat in an iron grip and began to coil 
+abouthisneckandshoul. T~SetiteonlysmiLdandwanlshedbeforeGiUem’sbulgifigeyes. 
+A disturbing power known to only Setites, this combination of Disciplines 
+allows a Serpent to disgorge a living viper from his very mouth. The Follower of Set 
+concentrates his vitae and forms it into a serpentine ghoul, which he vomits forth 
+in a horrifying gout of scaly flesh. 
+
+
+A full turn of concentration must precede the birth of a serpent, and you must 
+expend two Blood Traits. The serpent is considered a ghoul and exhibits the Foratude 
+Discipline at the level of Endurance. With a poisonous bite, the viper can be deadly 
+to mortals; it is considered to possess the Physical Traits: Lithe x2 and Qwck x2. If the 
+serpent is not fed one Blood Trait every week, it dissolves into poisonous blood-like 
+bile that causes two health levels of damage to anyone foolish enough to drink it. 
+You may sustain more than one serpent, but each must be fed blood if it is to 
+survive. Serpents created with this power typically display distinctive patterns and 
+personalities that may be traced to their creator. Your Storyteller can issue a card 
+representing your ghoulish serpents. 
+This power costs nine Expenence Traits. 
+T H E  ILLNESS 
+UNVEILED 
+(Basic Ausgex, Master Fortitude) 
+“Heismostgnevously ill,” the hermitsaid, leaningover thesickchild’s body tospeak 
+to his mother. “You are wise to have brought hzm to me.” 
+“I thankyou, but theysayyouservetheDevil,”Magdastammered, 
+unsettledby thehermit’s 
+gaze. “In the town, that is, sir. But not I.” The hermit only laughed at Magda’s dscomfort and 
+laul IS withered hands on her son’s forehead. He sard no prayers; he used no herbs; he dd not 
+even light the fire beneath the iron pot in the comer of his cabin. The apothecary in topun s a d  that 
+thts man could heal her son, but Magda grew m e  and more uneasy by the moment. 
+The boy suddenly broke out in a cold sweat, his legs twitching and kicking. His lips 
+bared back from his teeth m a  snarl, and his back arched. Skll, the hermit said nothing; 
+he only stood with his gnarled, rootlike hands on the boy’s face. 
+Magda’s eyes grew wzde - 
+surely this was not natural! The townsfolk were nght; 
+this hermit was in league with Satan. She wavered, then reached a tentatwe hand toward 
+her son, the other makinga crude wardinggesture. The hermit’s wiry hands tlghtened on 
+her son, and in one final gasp the boy lay silent. 
+“Theworstispassing,” the hermitsadat last. Theoldmanlookedlikehehadexerted 
+himselfagreathal, but didnot seem to be breathinghard. “The boy willrecover in time.” 
+The hermit stood silent for a moment, then glanced up at Magda. As the woman put a 
+hand on her son’s brow, the hermit grabbed her wnst. 
+“And now,” he whispered, “kt us discuss my payment.” 
+By diagnosing a victim through the use of supernatural senses, and then sharing 
+vampiric preternatural resilience, it is possible to help mortals through the throes of 
+dangerous diseases. In an age rife with plagues and sickness, this is a very useful ability 
+for keeping one’s retainers alive (especially for the Cappadocians, whose Lamia 
+servitors have an unfortunate tendency to pass on rather hideous and fatal infections). 
+You must make a Static Mental Challenge (difficulty eight Traits) in order to 
+diagnose a disease successfully; this diagnosis is subject to the limitations of your 
+Medicine knowledge. Once you diagnose a disease, you may bolster the victim’s 
+resistance with your own. Make a Static Physical Challenge with a difficulty 
+determined by the nature of the disease: five Traits for a common cold, up to nine 
+for typhoid and 12,15 or more for particularly nasty afflictions such as Black Plague 
+(the Lamia disease rates 18 Traits). A successful challenge allows the victim to 
+begin recovering, although the process may still take days or weeks. 
+This power costs 10 Expenence Trazts to learn. 
+
+
+R E T A I N T H E  QUICK 
+BLOOD 
+(Intermediate Celerity, Intermediate Quietus) 
+Right now, I am “feeding. ” I appeared in silence and scythed through the gwcrds and 
+retainers ofthis city’s prince OM hour ago, only to use up the last ofmy vitae before laying 
+into my “true” quarry. I barely escaped the pnnce’s chambers before he called for 
+reinforcements; the fact that I had to leave clues as to my destination only made matters 
+doubly difficult. Now the city’s “sheriff‘ - 
+one Eric Fit?-Walter - 
+comes for me, 
+confident in the assumption that I stalk the streets for kine blood before I can make good 
+my escape. He has beenstompingaroundjust out ofsight since his shockedprince ordered 
+meapgrehended. I have hadno chance tostopandfeed, and this sheriffdoubtlessly believes 
+I am at the end of my reserves. He is so confident. Wouldn’t he be surprised to know that 
+even as I slow to wait for him, my strength returns of its own accord? Wouldn’t he be 
+surpnsed to learn that his very prince hired me to “get the bothersome Mister Fit?-Walter 
+out of the way”? I think he would. Ah, he approaches. Perhaps I will ask him. 
+The fearsome Assamites are capable of maintaining the power of their vitae, 
+even after calling upon their blood for the preternatural speed of Celerity. An 
+Assamite can cause the blood that energizes his limbs to trickle slowly back into 
+his system to be spent again. 
+When using this power, all Blood Traits expended for Celerity in a given 
+conflict return after an hour. Should you ingest additional blood during this period, 
+any returning blood that would exceed your normal Blood Trait limit is lost. Thus, 
+if a vampire with a full blood pool expends two Traits of blood for Celerity, then 
+drinks a single Blood Trait, the returning vitae simply grants one Blood Trait - 
+the second returning Trait is lost because the vampire is already at the limit of his 
+blood capacity. Returning blood “wasted” in this fashion literally seeps out of the 
+vampire’s pores and tear ducts - 
+a disturbing sight indeed. 
+Mastery of this power requires the expenditure of eight Experience Traits. 
+SHADOWED 
+BYES 
+(Intermediate Auspex, Intermediate Obtenebration) 
+RudolphandGeraldstudied the body that lay by the crossroads. It was Lord Albert’s, 
+for certain. They had been given the “demon’s” description in painstaking detail by the 
+bishop. Rut rather thanfind the rampaging terror ofthe nighted countryside (as they’d been 
+told) , they found this lifeless, unmoving corpse. Apparently, either the rumms were all 
+false or the villagers had dealt with their own probkm. Quite a bother, actually. 
+“Dead as they get,” Gerald said, spitting on the cold body’s lifeless face. “Dead and 
+dumped. ” Hissalivaraninto the blackpools where ravenshadalready beenatlordAlbert’s eyes. 
+“Don’t make sense ,” Rudolph observed, turning away from the discomforting body 
+and lookinginto the surrounding woods, as ifexpectinganattack. “Too simple. And why 
+didn’t anybody tell us when we got in? And why ha’en’t wolves been at the body if he’s 
+been dead a while!” 
+Gerald stood next to his longtime partner. As they talked, neither noticed Lord 
+Albert’s “corpse” stir. The vampire sat up silently. The pools ofblackness fell away from 
+his eyes like water drainingfrom a bath. Outraged by Gerald’s insult, Albert wiped the 
+spit from his face and stood to his full height, a blood-song singing in his ears. 
+“Mighty hunters,” he sneered. “Here is your prey.” 
+C O M B I N E D  DISCIPLINES 
+EOR THE  LON^ N I ~ H T  
+e 
+
+
+ough any Magister can see through the blackness created with his own use 
+tebration, the blinding and smothering effects of the darkness disorient foes. 
+L Lasombra needs to discomfit an opponent without relying upon blatant 
+of shadow-shaping, precise control is required, as evidenced by this power. 
+ien you invoke Shadowed Eyes (at the cost of one Physical Trait), you 
+2 small patches of blackness that surround the eyes of your target. Obvi- 
+lis blackness blinds your foe (see Laws of the Hunt for rules on darkness, 
+7) and renders his appearance most unsettling (bestowing the Negative 
+’rait: Bestial). Alternately, you may use this power on yourself, enabling you 
+iidate your adversaries while retaining the ability to sense your surround- 
+~ p .  
+uoing so grants you the additional Social Trait: Intimidating. Shadowed Eyes 
+remain for the duration of the conflict or for 10 minutes. 
+Learning Shadowed Eyes costs six Experience Traits. 
+S M O T H E R I N C ~  
+DARKNESS 
+(Basic Obfuscate, Basic Obtenebration) 
+I chant and cry along with the others in the mob, though I feel a different fervor than 
+they do. They are filled withfaith in their only-god, and they believe that they willrout this 
+vampire with nothing more than piety and torches. They are fools. 
+We crest the hill - 
+the mob and I - 
+and the vampire pee ts us from the battlements 
+ofhis stronghold. He has the gall to wave as we come boilingover the crest likefire-bearing 
+ants; he has even left hisgate open in mockinginvitation. Were I like the others in this mob, 
+I might be afraid at his cavalier fearlessness, but I am not like the others. I understand my 
+enemy. I alone have any power over him. 
+As the mob comes within bowshot ofthe stronghold, the vampire suddenly s t a d  up 
+straight and lifts his a m ,  as if to welcome us. Many within the mob shout insults or 
+condemnations, and most gesture angrily with their torches. I do not. I carry no torch. 
+Moments later, a mass of black shapes erupts from just behind the vampire and streams 
+towardus. Oneamongthemobshouts, “Bats,” but1 know better. The blackshapesarrow 
+straight for the torches, extinguishing the flames like vile black rain. 
+Instantly, the night closes in on us and the mob erupts into chaos. Not I. I lift my 
+head and shout defiance. I needed the others to lead me here. Now I shift down to four 
+clawed feet and dart through the mass of terrified humans to the open gate. The blood- 
+drinker will be mine. 
+Mobile, “living” shadows are the hallmark of the Obtenebration Discipline, but 
+with this power, you can send batlike shades to extinguish offending light sources 
+- 
+torches, lamps, candles and such. The shadows flit about, surrounding and 
+smothering the brightest lights in the area, plunging the place into darkness. 
+You must see (or otherwise sense) the light source that you wish to extinguish 
+with this power. Each Mental Trait expended causes a shadow to seek out and 
+extinguish one flame or light, up to the size of a torch. Particularly large flames may 
+be susceptible to multiple shadows, at the Storyteller’s discretion. These shadows 
+have actual physical substance. Though they cannot injure, they can certainly 
+startle and confuse; shadows summoned without a target flap about, causing noise 
+and bumping into things for the duration of the conflict (or 10 minutes). 
+This power costs five Experience Traits to learn. 
+
+
+* 
+i 
+t 
+ANY MOTHFR’S CHILD 
+by Carl Bowen 
+Inspired by a Vampire character created by Hannah Curry 
+We intend to include a piece of World of Darkness fiction in every issue of the Journal. 
+We hope to showcase talented new writers (one of whom I am not - 
+new, that is) who might 
+not have a chance to appear elsewhere. Plus, fiction dealing with the World of Darkness offers 
+insightsintothelivesand timesofthepeople (i.e., thechracters) whoinhabitit, andsuchinsights 
+ofJeryou(asplarersandStorytellers)~vorandspice tomake your Mind’sEye Theatregames 
+all the m
+e
+ 
+attractiwe. Mind’s Eye Theatre releases should be simultaneously entertaining and 
+useful. This piece, in particular, serves as a look at how derangements driwe characters to 
+dangerous, thoughtless deeds, yet can sometimes serwe to make them all too human. 
+The mother grabbed her daughter by the collar a bit too roughly and pulled her 
+close. People pressed in on all sides, crowding to get on the trains that would take them 
+away from the war-blighted countryside to one of the ghetto-towns. The mother feared 
+losing her daughter in the crowd. They had been marched to the train yard days away 
+from their home, and not once had the woman let her daughter out ofher sight. The girl 
+told her mother that she was supposed to get on a different train, but the mother didn’t 
+listen. She stoically led her daughter to her own train- the trainshe should be boarding 
+with her husband and son - 
+determined that she would keep the girl with her. 
+Dmitri, the father, had to fight. He had to demand that the soldiers leave them alone. 
+The soldiers took the boy first; a soldier shot him through the head as Dmitri stared in mute 
+horror. Dmitri fell next as his wife and daughter looked on. It all happened so fast that the 
+mother had no chance to do anything before the soldiers restrained her. They would 
+probably have killed Dmitri anyway, but if he hadn’t tried to fight them, perhaps.. .. 
+Now, the mother would not be left alone. She clamped a vise-like hand on her 
+daughter’s shoulder and moved toward her own train. She would not raise her coming 
+unborn child alone. The soldiers would not tell them why they were being herded and 
+prodded. They were not even Jewish as many of the shouting, jeering soldiers seemed 
+to think, but there seemed to be no reason other than random chance why she and her 
+daughter should be split up. Perhaps if she got her daughter onto the train with her 
+before the soldiers noticed.. . . 
+A sharp blow to the back sent the mother sprawling, dragging her daughter to 
+the ground with her. She turned to see a soldier towering over her with his rifle 
+upraised, his body silhouetted in the last red rays of sunset. He shouted at her in his 
+language that sounded like barking dogs, then pointed at the girl. The mother 
+clutched her daughter tighter with one hand and put the other to her stomach. 
+The soldier brought the rifle stock down on her again, sending screaming 
+white non-images through her brain. He shouted and pointed again, looking even 
+more like a barking dog, his billowing winter-breath like an enraged canine’s froth. 
+Others of his pack gathered around, pushing back people who tried to see what was 
+going on. One of the soldiers grabbed the woman’s daughter and tried to pull her 
+to her feet. The girl clutched more tightly to her mother. 
+A N Y  MOTHER’S CHILD 
+@ 
+
+
+The screaming soldier brought the rifle down again, still shouting his unintelligible 
+language, and the world went dark. Or perhaps the sun finally set. The mother could not tell. 
+v
+r
+ 
+The woman almost catches the lone girl, but the orphan is clever and eludes 
+capture. The woman looks in trashdumpsters andglances occasionally at creaking fire 
+escapes, but the girl is nowhere to be found. Surely she does not think that the woman 
+would hurt her? She only wants to take care of the child. To give her a home and family 
+again. To protect her. This is no place to be alone. 
+v
+v
+ 
+The mother awoke in a cold tent with a bandage above her left eye and a 
+frightening soreness beneath her stomach. She heard the muted sound of the 
+soldiers’ barking outside, and she could see that the sun had long since set. The air 
+still smelled like crowds and machine oil, so she knew she was in the train yard, but 
+she wondered why she had not been packed unconscious onto one of the trains. 
+The woman lifted her head stiffly and looked around for her daughter. The girl 
+was not in the tent. Perhaps that was why the woman had not been moved. Maybe 
+her daughter had been sent on ahead. Alarmed, the woman called out the girl’s name. 
+“She has not been harmed,” a voice assured her in broken Polish. “She is 
+waiting. Calm yourself.” 
+The woman turned, sore muscles protesting, to find a tall soldier slouching just 
+inside the tent flap. He wore a long leather coat, belted at the waist, with a bent-edged 
+cross on a red arm band below his left shoulder. He removed his hat, smoothed his 
+close-cut blond hair and crouched down beside her. Reluctantly, she calmed down. 
+“You put up fight,” the man said, his sparkling blue eyes boring into her with 
+an unsettling fascination. “Why?” 
+Certainly, she hadn’t been the only one to do so. Why had this soldier singled her out? 
+“Where is my daughter?” 
+“Yes, I see,” the man nodded, apparently understanding only the last two 
+“My daughter ...” 
+“Yes, yes,” the man said. He lay a hand absently on the woman’s leg, where it 
+showed through a rip in her skirt. “I keep you together somewhere else. You will 
+not go the bad towns with the cattles.” 
+The woman said nothing; she only shivered in dread. Her daughter would be 
+returned to her and they would be spared whatever fate awaited those who rode the trains, 
+but they would survive on the mercy of this man. This man with his unsettling eyes. The 
+woman squirmed in the grasp he had on her leg. His hand was unnaturally cold, even in 
+the winter air. What was more, his breath did not make white clouds when he spoke. 
+words of the woman’s answer. “Loyalty is most noble, no?” 
+The old woman stops her search and stands alone in the middle of the street. Young 
+people on either side pause to look at her (this strange, frantic creature wearing outdated, 
+shapeless homespun). They move on without interest when she fails to amuse them. 
+M I N D ’ S  
+E Y E  T H E A T R E  J O U R N A L  
+
+
+-+? 
+i 
+e 
+She has lost sight of the orphan-child. It is not the first time -she has birthed 
+many children who fled her or fell from grace - 
+but each is still heart-breaking in 
+its own way. Why must they always go? Why can none of them trust her and stay 
+with her when all she wants to do is protect them and take care of them? Not even 
+her friends - 
+those too old to be her children- 
+believe her capable of this. Why? 
+And where is the child? Doesn’t she know that the soldiers are out there right 
+now, lying in wait to take her unawares? 
+v
+v
+ 
+The woman did not see the tall blond man again for several months. The 
+morning after she and her daughter were reunited, a truck full of leering, slavering 
+soldiers arrived and packed them off to an encampment miles from their home. 
+When they arrived, a kapo - 
+a rail-thin, balding man who sneered behind the 
+backs of the soldiers, though he treated the prisoners no less roughly - 
+took them 
+to a cramped tent behind a ramshackle barracks and ordered them to remain there 
+until summoned. He spoke only the barking language, but his angry gestures and 
+the short cudgel he was allowed to carry said enough. 
+They stayed, clinging to each other wordlessly, until the kapo returned. He 
+ordered the mother to stand and follow him, which she did with trembling knees. 
+She whispered to her child to stay in the tent until she came back, and the kapo hit 
+her across the mouth. Clamping a powerful hand around her elbow, he dragged her 
+away from her child. Her unborn baby gave a feeble kick, and was still. 
+The woman stops and listens to the night wind. The barren street rustles with 
+discarded litter and scurrying, furtive footsteps, but no one reveals himself in the 
+garish pink-orange of the streetlights. The child is gone, but now someone follows 
+the woman. Faint footsteps begin to grow louder and more distinct, and someone 
+calls her name from a great distance. Panicking, the woman darts away in the 
+direction she last saw the child. She must find the girl before the other one - 
+the 
+one in pursuit - 
+tries to take her. The woman has done too much, suffered too 
+much, to let anyone take the child now. She hears the crying of a lost and lonely 
+soul, and she homes in on it like an arrow. The child will be safe; she will see to that. 
+v
+v
+ 
+For the next few months, the woman lived in Hell. Every day, sometimes as many 
+as five or six times, the kapo dragged her to yet another of the dog-soldiers to be abused. 
+Life so far from the front, in the harsh winter climate, had stoked raging furnaces in the 
+soldiers’ hearts. When there were no men to kill, the woman served as that rage’s only 
+vent. Aside from her daughter, she was the only female for miles, and “subhuman” (as 
+they told her she was) or not, she filled a niche. 
+In the first weeks, whenever she came into the presence ofa soldier who had not yet 
+seen her, she would beg him to not hurt her. She pleaded on behalf of her unborn child; 
+she cried out of her own fear; she pleaded that if she died, no one would take care of her 
+daughter. Nothing changed the soldiers’ minds. Those who even understood her only 
+laughed or beat her. The woman eventually learned not to beg. It brought only more 
+abuses and punishments, and the very mention of her daughter brought frightening, 
+A N Y  M O T H E R ’ S  CHILD 
+
+
+lascivious looks to the men’s faces. By the end of the second month, she had learned to 
+not cry or show fear at all. When the baby she was carrying died at the beginning of the 
+third month, she did not even shed a tear, though the pain and anguish wrenched her 
+into an immobile ball for days after the aborted delivery. She watched as the barking 
+soldiers casually tossed the dead thing that should have been a child into a refuse pile, and 
+she did not cry. When she heard the jokes the soldiers made - 
+the most popular one 
+asking if the “roadblock” had been cleared - 
+she pretended she did not understand. 
+The only thing that still had any effect on her at all was the safety of her still-living 
+daughter. The girl was 14 and developing quickly for her age. The woman saw how the 
+soldiers leered at her. She commanded her daughter to remain in the filthy, flimsy tent 
+they shared at all costs, lest the soldiers’ glances result in something more serious. The 
+daughter - 
+withdrawing into her own shell of depression, fear and silence - 
+always 
+agreed. However, the woman knew that the soldiers were getting tired of having their 
+fun with her alone. Soon, she would be the one left behind cowering in the tent when 
+the kapo came. The woman knew she could not allow that. She had only to look at her 
+daughter’s hollow eyes, hear the stifled sobs she tried to hide as they slept on their 
+unclean pallet, to know she must protect her child at all costs. 
+The pursuing footsteps are just two comers away as the woman catches up to the 
+child at last. The child sits looking up at her from the darkened front stoop of a 
+condemned tenement building. Her large green eyes stare out from a dirty face, wide 
+and dancing in fear. The woman stops her crazed sprint and closes the last distance 
+between herself and the frightened child at a cautious walk. The child has nowhere 
+else to run, so she huddles into a tight ball, scrawny knees clutched to her frail chest. 
+The woman comes closer slowly, her eyes still alight from the chase. The 
+soldier’s footsteps are near, but she proceeds with caution. If she scares the child 
+away, she willsurely flush the frightened thing right into the soldier’s arms. She lifts 
+her hands peacefully and speaks. 
+“I will not let them harm you, precious one. They are coming, but they will 
+not take you.” 
+The woman’s daughter looked at her with undisguised fear. “What do you mean, 
+mother?” Her mother had been sitting quietly for hours since the kapo last returned 
+her to the tent. The sun had descended and set, yet the older woman had said nothing. 
+‘‘I heard the soldiers laughing as I left their barracks. The kapo will come for 
+you in the morning.” 
+“What do you mean?’ the girl whispers. She is too frightened to speak any louder. 
+“DO not be afraid,” the woman says, placing a gentle hand on the girl’s dirty 
+face and gazing at her with unspeakable pity. “They will not come before you and 
+I have finished.” 
+M I N D ’ S  
+B Y E  T H E A T R E  J O U R N A L  
+4D 
+
+
+“Finished with what?” her daughter asked, shaken by the strange look in her 
+mother’s eyes. She did not know exactly where the kapo takes her mother each day, 
+but she knew why. Over the months, she had seen the toll such treatment had 
+takenon the older woman. The life had long since vanished from her mother’s eyes. 
+The girl shivered and huddled against the thin fabric of the tent. 
+“Don’t be afraid,” her mother said, taking off her dirty, threadbare scarf. “Put this on.” 
+The orphan recoils as the strange woman takes the ancient shawl from around 
+her shoulders and places it around the girl’s, but she cannot move away. The 
+intensity of the woman’s brown eyes pins her. 
+“What’s this for? I don’t know you.” 
+v
+v
+ 
+The woman flinched at that, but she did not back away. “It will be cold,” she 
+said. “They’re coming for you. Put this on.” 
+Her daughter obeyed meekly, and the woman slipped the scarf around her neck 
+and under her dark-brown hair. She wrapped it twice and laid the ends between the 
+vague curves of the girl’s budding breasts. As her daughter sat uncomfortably looking 
+at her, the woman held the ends lightly between her fingers. 
+v
+v
+ 
+“You’re scaring me,” the girl says, swallowing and stretching her slender neck 
+uncomfortably. She looks past the woman’s shoulder and sees someone come into 
+view down the alley. The woman doesn’t seem to notice. 
+“They’re coming,” the woman says again. “They don’t want me this time. 
+They want you.” 
+“Who?” the girl says. “Who are they?” 
+“They’re devils,” the woman tells her, her hands closing over the ends of the 
+scarf. “They’re through with me, and now they want to take you. They can’t 
+terrorize me any more, but they know you’re still afraid of them.” 
+At that moment, the girl was more afraid of her mother than any soldier, and 
+she leaned back, trying to put distance between the two of them. Her mother only 
+bent closer, pulling uncomfortably on the ends of the scarf. 
+“They cannot take you.” 
+v
+v
+ 
+“No one’s coming,” the girl says, gulping audibly under the edge of the 
+woman’s shawl. “I don’t know what you’re talking about. No one’s trying to take 
+me anywhere.” 
+The strange woman with the flying, wild brown hair and the intense brown 
+eyes only sighs. 
+A N Y  M O T H E R ’ S  CHILD 
+
+
+“It’s all right, my dearest. I won’t let them.” She looks down, and absently lays 
+a hand aside her stomach. 
+v
+v
+ 
+“Please,” the daughter said, her voice a bit thin. Her green eyes flashed and 
+“Be quiet now, sweetheart.” 
+“Everything will be fine.” 
+The girl’s eyes bulge and her hands shoot to her neck, but her fingers only 
+pluck at the fabric there before falling back to rest meekly in her lap. The woman 
+hears a vague sound like running steps, but knows it is only her heartbeat 
+thundering in her ears. Or perhaps her daughter’s heartbeat. It is so hard to tell. 
+The girl sits upright in one last spasm, and her chin jerks up to the hazy night 
+sky. The mother wonders briefly if she can see the gates of Heaven as it is rumored 
+those trapped in Hell can do. 
+“You are free, little one,” she whispers. “They will not find you. They cannot 
+take you.” She holds the child to her chest and cradles her, a tear of bitter triumph 
+tracing a line down her nose and falling on the girl’s face. 
+showed the whites. She gulped even louder. 
+v
+v
+ 
+v
+v
+ 
+The mother covered her daughter’s cold body with the thin sheet they had to 
+share at night, and turned to leave her tent. The dog soldiers would probably kill 
+her, but she was not afraid. She had not been for months. Maybe the kapo would 
+be the first one to find her and deal with her. The best part about being in Hell, she 
+knew, was that there were always devils close by if you needed them. 
+As she exited the tent and took a deep, cold breath, the woman found herself 
+proven right. There before her stood the tall, blond soldier she hadn’t seen in 
+months. He looked exactly the same, down to the folds in his long, belted leather 
+jacket. The band on his arm blazed a fierce red, drawing her eyes to the bent-edged 
+cross in the center. She was almost glad. 
+The soldier glanced into the tent at the body of the child and cocked a thin 
+yellow eyebrow. His blue eyes sparkled with amazement. 
+“A relation of yours?’! he asked. His accent was still horrible, but he seemed 
+to have acquired a better grasp of Polish. Or maybe the mother had gained a better 
+understanding of the dog soldiers’ barking language. 
+“Most interesting.” He came a step closer to the woman and put a hand on her 
+shoulder. He backed her easily into the tent and sat her down on the ground beside 
+the pallet. The woman only stared past the tall soldier into the night, as if unaware 
+of where she was. 
+The soldier lifted the woman’s chin. She shivered at the unnatural cold of his 
+skin, but moved her head as she was bid. This man was more gentle than the other 
+soldiers in the camp, but the woman didn’t notice. He leaned closer to her and 
+touched her neck with the tip of his dry tongue. The woman could feel her pulse 
+where the man touched her. She was calm. Her daughter was safe. 
+M I N D ’ S  
+E Y E  T H E A T R E  J O U R N A L  
+
+
+The soldier mumbled something like a blessing, and the woman’s neck 
+burned. She closed her eyes. Maybe the man was an angel sent to take her from this 
+place to be with her family again. 
+v
+v
+ 
+Someone shakes the woman roughly from behind, and she opens her eyes. She 
+turns to see a familiar man looking at her with anxiety. White clouds huff from his 
+mouth as his breath freezes in the chill air. 
+“I’ve been trying to find you for hours,” the man says. He runs his hand 
+unconsciously through his long black hair and nervously tucks it into the collar of 
+his stylish overcoat. His cheeks flush red from exertion and the cold, and he looks 
+over his shoulder continuously. “What are you doing in this part of town?” 
+“She is safe,” the woman answers dreamily. ‘‘I had to protect her from the 
+soldiers. They would have come for her in the morning.” 
+The man stares at her in confusion, his eyebrows drawn down into one black 
+line. He shakes her shoulders roughly and says, “English. Speak English.” 
+The woman blinks and tries to concentrate. Her friend hates it when she slips 
+into her native tongue. She glances over her shoulder at the heap sprawled in the 
+tenement doorway. ‘‘I was making sure-” 
+The man, her friend Alex, the one who takes care of her as she sleeps, looks 
+past her at the body. His brown eyes widen and his jaw goes slack. 
+“Who is this child?” 
+“My daughter,” the woman says, smiling with remembered pride. “She is so 
+beautiful and pure. She is safe now.” 
+Alex only gulps audibly and shakes his head. “We have to leave before 
+someone finds us. Or her.” 
+“It doesn’t matter,” the woman says, focusing on Alex for the first time. “She 
+is safe. That is all I care about.” 
+“Come on,” Alex says, pulling the woman forward into astumbling walk. “We 
+may have to leave the city for good this time. Drake is tired of cleaning up after your 
+messes. Did I tell you he ordered me to put you to Final Death if you did something 
+like this again?” 
+“If it is what you want, Alex,” the woman says, still looking back at the body. 
+“I haven’t seen Dmitri for a while. It would be nice to talk to him again.” 
+Sighing, Alex pulls the woman deeper into the city, toward the nearest 
+subway entrance. He could no more kill her than he could kill himself. He would 
+sooner face the wrath of all the city’s elders than live with the shame of causing the 
+woman any harm. 
+Hopefully Drake will be able to cover this up, he thinks. He has done so before in 
+worse situations. I doubt he’ll even miss the two of us. 
+The woman shambles off after Alex dreamily. Alex will take care of her. He 
+always has. And she has taken care of him. She would never let anything happen to 
+him. No matter what dangers may come, she will make sure he stays safe with her. 
+A N Y  MOTHER’S CHILD 
+e 
+
+
+of the central Circle; having familiar elements introduce or elaborate on new plot 
+threads increases the drama and believability of the game. Plus, employing existing 
+characters to drive this plot offers direct motivation for the players’ characters to 
+get involved, and it makes the players feel like active participants in the develop- 
+ment of events. Still, we include profiles for significant participants at the end of 
+each installment in case you need to fill any holes. 
+A final note: The three parts of Mayday! mix and match with your existing 
+game. You could wait until all three parts are released, then play them all together 
+as a series, or you could play each part as it comes out in the Journal, separating 
+episodes with events from your own chronicle. 
+Players, everythingpast this point IS Storyteller material. If youdon’t want to spoil 
+the surprise or clue yourself in before you actually play the game, read no further. 
+P A R T  O N E :  AMBASSADOR 
+S U ~ C ~ E S T I O N S  
+Running this installment of Mayday! in your live-action chronicle requires only 
+one Storyteller character who does not already exist in your game: Tadashi Nakagawa. 
+Other useful characters for this plot include an “acquaintance” - 
+be he a diplomatic 
+envoy to the Jade Kingdom or simply the first Necropolis guard to spot Nakagawa- 
+who introduces Nakagawa to the Circle; a secretive Heretic, should the Circle be able 
+to locate the wraith from the “list” they find in the course of action; various members 
+of officious Hierarchy bureaucracy; and even a Renegade or two. 
+Props for this installment of Mayday! include representations of the box 
+Tadashi Nakagawa carries, as well as of the items in the box. 
+S C E N E  O N E  
+HARD 
+INEO 
+The Circle is introduced to (or comes across, if there are no existing allies or 
+acquaintances to make introductions) Tadashi Nakagawa, a Jade wraith who claims to 
+be on an ambassadorial trip to the higher-ups of the Necropolis. Nakagawa appears 
+young, andisunfailinglypolite. Hecarriesarelic boxabout thesizeofadepartment-store 
+gift box. He does not open the box and does not give any information about its contents. 
+After approximately 10 minutes of play (or if the characters become 
+inexcusably rude), Nakagawa bows and walks away, leaving the characters alone. 
+The acquaintance (should there be one) leaves with Nakagawa. 
+The Circle might be polite and friendly; any courtesy or goodwill the 
+wraiths show Nakagawa is reciprocated. 
+Dependingon the individual characters, they might offer to takeNakagawa 
+to the Hierarchy. Nakagawa declines such help. 
+If the Circle is belligerent or antagonistic, the Jade wraith simply makes 
+graceful excuses and leaves quickly. No matter how rude the Circle wraiths 
+become, their attempts to bully or intimidate Nakagawa are unproductive. 
+M I N D ’ S  
+B Y E  T H E A T R E  J O U R N A L  
+
+
+S C E N E  
+Two 
+H A R D  I N E O  
+Shortly after leaving the Circle, the Jade wraith drops into a Harrowing as 
+one of his Fetters is destroyed suddenly (by an unknown attacker, as revealed in part 
+three of this chronicle). The box does not go with him into the Harrowing. 
+The box comes into the possession of the Circle, either delivered or found. 
+It contains a relic wakizasht (Japanese short sword) with a foreign sigil carved into 
+the hilt, a page of jotted notes and a list of names and locations. 
+The notes read: “Find optimal points; solidify alliances; look for the 
+unblinking.” 
+The list of names and locations refers to local Heretics and their Haunts. 
+Most of the Heretics on the list are both high-Status and high-secrecy. The 
+revelation that the names on the list are those of Heretics should come as 
+something of a surprise to the wraiths, especially if the names are those of covert 
+Heretics who already exist in your game. 
+If a character takes the waktzasht out of the box and keeps it on his person 
+for more than 10 minutes of game time, he begins to accumulate Temporary Angst 
+due to a strong taint on the weapon. This effect should not be immediately obvious 
+to the character, since the taint is subtle and seductive. The character is eventually 
+subject to Catharsis. 
+C H O I C E S  
+The characters may choose to not open the box, taking it directly to the 
+authorities instead. 
+The Circle might wait until Nakagawa comes back from his Harrowing and 
+makes his way back to the Necropolis, and then try to interrogate him. This is 
+somewhat problematic, since Nakagawa’s Fetters are far away, and who knows 
+what kind of red tape he’ll run into when he appears back in the Jade Empire? 
+They open the box. If any of the characters have Heretic status, they may 
+make Static Mental Challenges to see if they recognize any of the names. A few 
+names might be known to characters with high Hierarchy status. Again, not all of 
+the names should be those of recognized Heretics. However, the names are all those 
+of Heretics. 
+If the Circle decides to investigate the names itself, trying to find out what’s 
+going on, the Heretics should be difficult to find. Should the Circle find any of 
+them, the Heretics attempt to take the box and might well try to send the 
+characters into Oblivion for “knowing too much.” 
+Should the group decide to head to the Hierarchy for help, it’s in for a rough 
+time. Unless one or more of the wraiths has at least two, if not three, Hierarchy 
+Status Traits, the entire group is given the run-around until members explicitly 
+refer to the Heretics by name or show someone the list. The Hierarchy is extremely 
+suspicious: The functionary who sees the Circle takes the box and interrogates the 
+characters intensely. If the characters play their cards right, the Hierarchy lets 
+them go z but not without setting a nigh-constant watch on them. Clumsy or 
+belligerent roleplaying gets the wraiths in serious trouble: a fight, perhaps, or 
+attempts to imprison, enslave or even soulforge them. The trouble should be 
+escapable, though, to keep the story moving. 
+MAYDAY! 
+
+
+If the characters hold onto the box and tell no one about it, parties from both 
+the Heretics and the Hierarchy come looking for it - 
+news of relics, especially 
+interesting or powerful ones, travels fast - 
+and interrupt anything the Circle might 
+attempt. The Hierarchy wants the box from a purely materialistic standpoint; it doesn’t 
+know exactly what’s in it yet. The Heretics want the potentially damning list of names 
+destroyed and all wimesses eliminated. 
+The Circle could go to the Renegades for protection. This course of action 
+occurs at the Storyteller’s discretion, but the Renegades may be the characters’ best 
+hope for physical protection and allies. 
+This installment of the story should effectively end with the Circle’s decision 
+about what to do with the information and the resulting brouhaha. These events 
+can take all evening to play, given good roleplaying and strong characters. 
+So ends Part I of Mayday! Look for Part 11: Deployment in the next issue of the 
+Journal. The following is a “skin and bones” cheat-sheet of suggested Traits and a 
+background sketch for Tadashi Nakagawa. 
+THE 
+AMBASSADOR 
+T H E  SKIN 
+Tadashi Nakagawa either meets or is introduced to the Circle early in this 
+installment of Mayday!, and his involvement in the wraiths’ afterlives has an effect 
+onatlofStygia. Butwho ishe? Attheriskofgivingaway toomuch tooearly,Nakagawa 
+is a Jade wraith on a unique and dangerous mission. He has been entrusted with a 
+specific responsibility, and he does not stop or be deterred by normal means. 
+In life, Nakagawa was little more than what we in the 20th century would call 
+a “number-cruncher” or a “bean-counter,” but he always took his work seriously 
+(perhaps even a bit too seriously). In death, he is a pawn of a higher power, but his 
+mission is of the utmost importance to him. Nothing sways him from his course; 
+not even the Harrowing he undergoes when one of his Fetters is destroyed. 
+T H E  BONES 
+p E R s o N A L  INFO R M A T I  o N 
+Name: Tadashi Nakagawa 
+Life: Minor Functionary 
+Death: Heart Disease 
+Nature: Bureaucrat 
+Demeanor: Architect 
+Regret: Never expressed love to his wife and son 
+M I N D ’ S  
+E Y E  T H E A T R E  J O U R N A L  
+
+
+A R C A N O I  
+Intimation (all innates): The Gleaming, Deep Desiring, The Craving 
+Moliate (all innates): Sculpt, Martialry 
+Outrage (all innates): Wraithgrasp 
+Usury (all innates): Transfer, Charitable Trust, Exchange Rate 
+Protect the Empire (Duty) 
+Advise Wife and Extended Family (Love) 
+Keep Records of Court History (Duty) 
+Gain Power (Greed) 
+[Note: One Fetter, the teacup, is destroyed during the course of the game.] 
+Brush with which he wrote at work 
+Ancestor shrine in his home 
+Teacup given by his great-grandfather 
+Jade Court Status 2 
+Living Family 1 
+Wraith Family 2 
+The Perfectionist 
+PASSIONS 
+EETTFRS 
+BACKC~ROUNDS 
+NAKAC~AWA’S p ’0 (SHADOW) 
+DARK PASSIONS 
+Destroy Family (Hate) 
+Undermine Empire (Spite) 
+THORNS 
+Spectre Prestige 
+Shadow Trait: Brutal 
+
+
+ERFQUFNTLY ASKFD 
+QUFSTIONS 
+The constant evolution of Mind’s Eye Theatre bnngs new 
+anddifferentquestions to thegame. Thismonth, we tacklequestions 
+and comments about Laws of Elysium and the elder game, as well 
+as a couple ofgeneral Trait questions. 
+Send your Mind’s Eye Theatre questions to: 
+White Wolf 
+Attn: Mind’s Eye Theati-eloumal, Frequently AskedQuesaons 
+735 Park North Blvd. 
+Clarkston, GA 30021 
+carlawhite-wolf. com 
+Q In JAWS 
+of Elysium, Master-Level Dis- 
+ciplinesare available to eighth or lower generation 
+characters. In the tabletop game, vampires get 
+the really powerful Disciplines only if they’re 
+seventh generation or lower. What gives? 
+A: Some troupes may wish to experiment 
+with the new Master-Level Disciplines without 
+adding elder powerhouses to the game - 
+for 
+them, eighth- (or even ninth-) generation Kin- 
+dred are good candidates for these powers. 
+However, if a large game hosts a few true elders 
+(seventh or lower generation), it’s generally a 
+good idea to keep the Master Disciplines in the 
+hands of those puissant characters. These pow- 
+ers are supposed to be rare and forbidding, after 
+all! The key is to make sure that the Disciplines 
+are available if you want to use them, without 
+making them commonly available to everyone. 
+Q. The Thaumaturgy Path of Conjuring says that the vampire can’t summon 
+anything larger or heavier than himself, including a LAW rocket, but LAW rockets 
+aren’t that big. Also, the Permanency power says that Conjured items must be returned 
+physically to their place of origin, when those items are really just created from nothing. 
+A: The note about LAW rockets is pertinent to game balance. A conjurer can 
+generate a stake, a sword or a vial of blood, but some things should be too difficult to 
+make (like high explosives or nuclear weapons). A good rule of thumb is to require the 
+conjurer to have enough Abilities to actually build the item in question. Thus, the 
+thaumaturge can’t conjure a pistol without a few levels of Repair and Firearms; he needs 
+a lot of Demolitions and Science to make explosives. Of course, simple items (like 
+wooden stakes, metal bars and rocks) can be conjured without any special Abilities. 
+
+
+Permanently conjured items are fully real and solid. The confusion here comes 
+from the fact that mortal Conjuring (see Laws of the Hunt) simply moves objects 
+without creating things. An object moved with mortal Conjuring must be taken 
+back to its place of origin if the conjurer intends to return it. Conversely, an object 
+created with the Thaumaturgy Path of Conjuring has no “place of origin” since it 
+was created from nothing. 
+Q: How come the new Discipline level for Chimerstry looks suspiciously 
+like one of the old ones in Laws of the Night? 
+A: Because the minor difference is in motion. Illusions created with Fata 
+Morgana (second Basic Chimerstry) cannot move; they are wholly static, though 
+they can affect all of the senses. Illusions made with higher levels ofchimerstry can 
+appear to move and interact with their surroundings. 
+Q: How come modem gargoyles can’t fly while Dark Ages ones can? 
+A: Did we leave that line out? Silly us. Modem gargoyles do have wings, and 
+they can fly. The gargoyle’s flight speed depends on his level of the Visceratika 
+Discipline; each level of the Discipline allows the gargoyle to fly 5 mph. 
+Q: Can an Assamite with high levels of Occult Influence use that capacity 
+to leam other sects’ rituals to get Thaumaturgy rituals using his Quietus 
+Discipline? 
+A: What a strange and convoluted path. No, Quietus is not sufficient to learn 
+rituals aside from the special Assamite ones. Thaumaturgy does not allow someone 
+to leam Assamite rituals without Quietus, for that matter. 
+Q: Are Bladed Hands (from the ritual of the same name) visible? 
+A: No. When you invoke Bladed Hands, you become capable of cutting 
+through things with your hands, but your limbs do not appear to change at all. 
+Don’t pick your nose. 
+Q: So what’s the real skinny on Spirit Thaumaturgy? According to some sources, 
+it works on wraiths. According to others, it’s Umbral spirits. Which one is it? 
+A: Spirit Thaumaturgy is designed to contact and control Umbral spirits. Of 
+course, only tainted spirits would ever deal willingly with a vampire. For the sake of 
+expanding possibilities, Storytellers may allow Spirit Thaumaturgy to function against 
+wraiths, but in general that’s the purview of the Necromancy Discipline. 
+Q: How come there’s no Master-Level Thaumaturgy in Laws of Elysium? 
+A: Well, technically, there isnoMasterLeve1 in the DisciplineofThaumaturgy. 
+“What, then-” 
+you may ask, “-is 
+the meaning of the article on page 41 ?” In that 
+article, we use the term Master-Level more as a representative stroke than as a 
+technical term. A master thaumaturge (like a pontifex, for instance) is more likely 
+to have branched out into several different Thaumaturgical paths (or even created 
+his own) rather than perfected one to a higher level. However, there are some 
+rituals that are available to only the most trusted, the most wise and the most 
+respected scholars of the clan, and those scholars can be considered thaumaturges 
+of the Master Level. 
+
+
+Q: OK, so if there are Lasombra antitribu, how come there are no Tzimisce 
+untitribu in Laws of Elysium, just Old Clan Tzimisce? 
+A: Because there’s maybe something like one Tzimisce in the Camarilla. 
+Tzimisce antitribu are about as common as Salubri, and as such their differences 
+from the main clan can’t be covered by generalities - 
+they are unique and 
+extremely bizarre individuals. 
+Q: Why didn’t the Ogham Discipline from The Long Night get an extra 
+level in Laws of Elysium? 
+A: Because Ogham is already a dying Discipline in 1198, and its powers are 
+limited. If you are absolutely fired up to have an additional level (perhaps for 
+balance purposes), try this: 
+I N S C R I B E  T H E  C U R S E  ( S E C O N D  I N T E R M E D I A T E )  
+The Lhiannan traces runic glyphs of a foe’s true name on her body, thus gaining 
+power over that enemy. You must know your foe’s true name, and you must expend 
+two Blood Traits to trace the unusual runes. The runes must be visible to the enemy 
+in order to function, and you must make a Mental Challenge when you first engage 
+your opponent. The effects of the runes last until the runes are removed or until you 
+suffer two health levels of damage (thus obscuring them). 
+You may choose one of four effects for the runes: affecting the body renders the 
+victim impotent and unable to use Blood Traits; the mind causes the foe to suffer from 
+the Negative Traits: Oblivious x2; the voice makes the target mute; and affecting the 
+soul makes the opponent lose all ties in tests against frenzy. You may use only one rune 
+at a time, so you can choose only one effect and impose it against one person. 
+(Note: This power causes Ogham to have more Intermediate levels than Basic 
+levels. Such is the curse of trying to learn a dying Discipline - 
+it’s hard!) 
+Q: What are the Attribute Trait maximums for changelings and wraiths in 
+The Shining Host and Oblivion? 
+A: In both cases, a character’s effective age comes into play. Obviously, most 
+wraiths and changelings won’t beat up on elder vampires, so their Traits are not always 
+as high.. . but an old and experienced character always has other tricks. 
+For changelings, the character’s seeming determines Trait maximums. 
+Childlings are limited to 10 Traits in each category except Physical, for which they 
+can have no more than six Traits. Wilders can have up to 12 Traits in each 
+category, and grumps may have up to 14 Traits in each category. A childling redcap 
+won’t bite any vampires in half, but watch out for elder trolls. 
+Wraiths are products of self-image. A wraith‘s personal characteristics are a 
+reflection of the individual’s internalized self-perceptions. As a result, old wraiths 
+often surpass the limits of their meat-bodies, taking themselves to new levels of 
+ability. Enfants (newly dead wraiths) are limited to 10 (just dead) or 11 (dead for 
+a few years) Traits in each category. Lemures (fairly old wraiths, maybe a few 
+decades in age) can have up to 12 or 13 Traits, while Gaunts (centuries-old 
+wraiths) can have 14 or sometimes even more Traits. Players are unlikely to play 
+wraiths older than young Lemures, though. A fair compromise is to allow a wraith 
+character to start with a limit of 10 Traits, but to improve to 11 and 12 after six 
+months and one year of play, respectively. 
+
+
+_I_ 
+_I 
+PLAY 
+CONCENTRATE ON TH 
+ENCHAN 1 MEN I AND Atih-OLD MYSTERY - 
+THE WOR 
+N G  nfE DREAMING. 
+VG I . .  RIE j 
+ND REVEIATIO 
+i THAT TELL OF 
+I USED AS A AC 
+W
+E
+ 
+AND h N (  
+F GLAMOUR 
+- 

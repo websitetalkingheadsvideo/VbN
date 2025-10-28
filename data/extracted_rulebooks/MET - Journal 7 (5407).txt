@@ -1,0 +1,3022 @@
+I 
+h 
+IINK 
+
+
+Welcome to the 
+Mind's Eye Theatre Journal, 
+The magazine that picks up where 
+7 
+I 
+ISBN 1-56504-783-4 
+I 
+WW5407 $7.95 U.S. 
+50795 
+J 9 781565 047839 
+
+
+BECAUSF ‘THF MIND’S €YE N F V F R  B L I N K S  
+
+
+Issue #4 
+The secrets of the wraiths of the Jade Empire. 
+The conclusion of the Mayday! Chronicle. 
+Live-Action Mage rules.. . sort of. 
+Issue #5 
+The first part of MET’S look at Wraith: The Great War. 
+A look at the Bunyip for Laws of the Wyld West. 
+The eznherjur of the Dark Ages. 
+Issue #6 
+The second part of MET’S look at Wraith: The Great War 
+Werewolves in the Dark Ages 
+Yulan-Jin and Dhampyrs 
+7% PARK NORTH BUD. 
+SUITE 128 
+CLARKSTON, GA 30021 
+[ w K I T [  
+W O L F (  USA 
+6 A M f  S T U D I O  
+0 
+2000 White Wolf Publishing, Inc. All 
+rights reserved. Reproduction without the writ- 
+ten permission of the publisher is expressly 
+forbidden, except for the purposes of reviews, and 
+for blank character sheets, which may he repro- 
+duced for personal useonly. White Wolf, Vampire 
+the Masquerade, Vampire the Dark Ages, Mage 
+the Ascension, World of Darkness and Aberrant 
+are registered trademarks of White Wolf Publish- 
+ing, Inc. All rights reserved. Werewolf the Apocalypse, Wraith the Oblivion, Changeling the 
+Dreaming, Hunter the Reckoning, Werewolf the Wild West, Mage the Sorcerers Crusade, 
+Wraith the Great War, Trinity, Mind’s Eye Theatre Journal, Oblivion, Kindred of the East 
+Companion, and Laws of the Hunt are trademarks of White Wolf Publishing, Inc. All rights 
+reserved. All characters, names, places and text herein are copyrighted by White Wolf 
+Publishing, Inc. The mention of or reference to any company or product in these pages is not 
+a challenge to the trademark or copyright concerned. This book uses the supernatural for 
+settings, characters and themes. All mystical and supernatural elements are fiction and intended 
+for entertainment purposes only. Reader discretion is advised. 
+For a free White Wolf catalog call 1-800-454-WOLF. 
+Check out White Wolf online at 
+http://www.white-wolf.com; 
+alt.games.whitewolf and rec.games.frp.storyteller 
+PRINTED IN THE UNITED STATES. 
+
+
+w E LCO M E! 
+Hello again, everybody, and welcome to the seventh issue of the MET 
+Journal! For those of you who are new to the publication, let me take a second 
+to acquaint you with just what you’ve got here. (For those of you who already 
+know, you may skip ahead to Cynthia’s article on staying in character.) 
+The Journal is a quarterly publication dedicated to filling in the gaps in 
+your White Wolf LARP environment. We offer rules for new character types, 
+original story lines to work into your chronicles, guides for keeping your games 
+under control and running smoothly and rules updates you won’t find in any 
+other Mind’s Eye release. Plus, you’ll find answers to the questions that have 
+plagued you, original World of Darkness fiction and columns from people 
+who’ve been LARPing or working here at White Wolf (or both) for years. 
+In this issue, we delve into the acting side of live-action roleplaying. 
+Cynthia Summers and Matthew Hooper provide insight on how to truly make 
+your character come to life on the mobile stage of roleplaying. On the other end 
+of the spectrum, I offer rules for fomori and slip in the heretical Dharma rules 
+that didn’t make it into Laws of the East. And that’s just a sample of what’s 
+in store for you here. We’ll also take a look at what you’ve missed in previous 
+issues (if you’re joining us late) and what to expect in the future of Mind’s Eye 
+Theatre and White Wolf in general. 
+In the next issue of the Journal, we’ll finish up Laura Hanson’s series on 
+costuming, I’ll say a few words about running a LARP chronicle, and I’ll make 
+an unrelated revelation you might not expect. 
+Until then, you can help make the Journal even better. Send us letters on 
+your opinions about the state of live-action roleplaying today. Send us 
+questions about the features and rules you see here, as well as notes about the 
+broken rules you come across in different MET publications. Send us horror 
+stories about games gone wrong and how your player characters fixed them. 
+We’re interested in all aspects of live-action roleplaying, and we want to know 
+what you think. 
+Stick around. The Journal is on the cutting edge of the live-action genre; 
+we’ve got something for everybody. And if we don’t have it yet, let us know. 
+We’ll get it for you. 
+Curl Bowen 
+Developer 
+carl@white-wolf. corn 
+White Wolf 
+Attn: Mind’s Eye Theatre Journal Developer 
+735 Park North Blvd, Suite 128 
+Clarkston, GA 30021 
+USA 
+
+
+STAYING 
+I N  CHARACTER 
+by Cynthia Summers 
+Cynthia knows things. She’s been developing Mind’s Eye Theatre for 
+more than a year now, and she’s been pkzying Mind’s Eye Theatre since she 
+started working for White Wolf in 1994. She’s one of the resident LARPing 
+experts in house. As an observer of the dynamics of he-action rokplayingsociety , 
+she is without peer. 
+When you go to aMind’s Eye Theatre game, or any LARP for that matter, 
+one of the game’s greatest charms is the total immersion in the scene. For the 
+next several hours, you’re not who you are at home. You’re the dread prince of 
+the city or the brave knight questing for the treasure or the ghost that’s been 
+terrorizing the kids on Lovers’ Lane. When you’re at the game, you have a 
+character. Unfortunately, there are numerous distractions that can make 
+maintaining that character challenging at best, impossible at worst. This is the 
+challenge of every actor and every roleplayer - 
+how to maintain character. 
+There are a number of reasons why you may have trouble in the first place, but 
+for every reason, there is certainly a solution. 
+B E I N G  AROUND 
+OTHERS 
+W H O  
+A R E  OUTOE PLAY 
+Sometimes, you get a couple of folks who just saw the latest Star Wars and 
+simply must discuss it right there in the middle of the game (and they sure don’t 
+sound like the Red Talons they’re supposed to be.. .). Or you have to deal with 
+some fool who insists on quoting you the entirety of Monty Python’s The Life of 
+Brian to prove he can. Then you have the two who haven’t seen each other since 
+the panty raid at Gropecon’97, and they just reunited in the middle of the game. 
+Ask your Storyteller about designating a spot in the game site as out-of- 
+play and announcing at the beginning of the night where it is. Those who are 
+being noisy should be encouraged to take their discussion elsewhere. Don’t go 
+into the area unless you have to. If you’re having trouble maintaining 
+character, it’ll be that much harder around a bunch of folks who are there to 
+smoke, greet their long-lost buddies or whatever. 
+THE PHYSICAL 
+THINGS 
+Eating, drinking, and sleeping - 
+little things that our alletoo-human 
+bodies crave - 
+can sometimes run roughshod over the mood in a chronicle 
+(particularly for those playing the non-living). People tend to drop character 
+
+
+fantasy works or going to the movies? If you don’t know how your character 
+views these things, that can really hamper staying in character when you’re 
+around others who are discussing the movie that surely inspired a Chrysalis or 
+two. Even Ghengis Khan took a break. 
+DAMN, I’VE C ~ O T T O  S I T O O P  
+Sometimes you’ve got to leave the action. Maybe you’re going to play 
+another character for the Storyteller, maybe you’ve been asked to sit away from 
+the in-play area while your character runs a ritual or drives somewhere, or 
+you’ve got to leave early for a real-life job. There are definitely more viable 
+options than making the out-of-play sign and leaving. 
+If you’re going to do something in another part of the game (playing a 
+Storyteller character or helping at check-in), then consider excusing yourself 
+in character to make a phone call, check email or do some other little thing 
+that should naturally occur off-stage. Before you return, take a moment to 
+reorient yourself and re-enter to whatever chaos greets you. The same option 
+is open if you’re leaving for a job or other event. Leave under some character 
+pretext (answeringapage, feeding thecat, writing thepontifex), make your in- 
+character farewells and depart. Doing so is a lot more story-friendly than simply 
+barging out and making a great deal of out-of-character noise. 
+In the case of driving, rituals or other tasks that have a time requirement, 
+you need not sit and twiddle your thumbs, nor fall into out-of-play conversa- 
+tion you’re not interested in. Grab a book or something that your character 
+might actually be interested in, or think about what your character is doing 
+while running the ritual, hacking the system or driving. Did she run a red light? 
+Did she take extra care with drawing her circles? Storytellers may ask such 
+things as plot fodder, but even if they don’t, it can be a neat detail to bring back 
+to play, in addition to keeping you focused. 
+M O M ,  WE’RE 
+BORED! 
+Then, last but not least, there’s that great enemy of the roleplayer - 
+boredom. Sitting by yourself doing nothing seems to be one of the greatest 
+temptations to all sorts ofnaughtiness. It can also be apowerful motive to slide 
+out of character. After all, you’re not doing anything, so why bother? 
+If you foresee a slow evening for an in-play circumstance, or there’s a 
+chance the event you were planning for doesn’t go off, bring things with you 
+that your character could do to keep busy, such as a book, the tools of your craft 
+or a game. Chess seems to be the default sport of kings, but backgammon, go, 
+mancala or mah jhong are equally valid. Plus there’s always a deck of cards. If 
+you must sit out, then you’ll have something to keep busy with. Ifyou’re in play, 
+
+
+seeing you with something in your hands may well bring over curious observers, 
+and some of the best roleplaying can spring from in-play interest. It also 
+squashes the risk of sliding out of character and distracting those around you. 
+It could be that the character itself has gone a little stale. You may feel that 
+the character has reached its limits, and he has no more story to tell. Consider 
+a brief walkabout or time away - 
+even the sweetest song can get old if it’s 
+played too many times. Some downtime may bring you back refreshed and 
+raring to go, or you may find that you really have reached the end of the road. 
+If the latter is the case, then go gracefully - 
+whether into the sunset or 
+Valhalla - 
+and take what you learn into your next incarnation. 
+
+
+I 
+by Richard E. Dansky 
+C ~ A B B A  HEY, 
+GABBA 
+HEY, 
+NOT O N E O E  
+Us 
+or 
+P R E c r s E L r  WHY & L O #  YOUR 
+N o N - L A R P I N ~  
+IRIENDS 
+THINK YOU’RE 
+NUTS 
+If you’re reading this column, you fall into one of two classes of people: players of Mind’s 
+Eye Theatre or my immediate family. If you’re one of the former (and the odds are, I think, 
+pretty good), then you’ve probably had a conversation that goes something like this: 
+FRIEND 
+Hi there! Want to go catch a movie Friday? 
+YOU 
+Umm, sorry, I can’t. It’s Masquerade night, and I really have to be there. 
+FRIEND 
+You said that two weeks ago. And two weeks before that. 
+YOU 
+I know, I know, but this is something I’ve been working towards for a long time, and I 
+have to be there tonight or the Ventrue primogen will ... 
+FRIEND 
+Whatever. Say hi to Count Chocula for me. 
+Sounds familiar, doesn’t it? Not only that, but it’s incredibly frustrating. After all, you 
+want to spend time with your friends who don’t play the game, but it seems like every time 
+you talk to them, they’re demanding that you give up a game session that invariably contains 
+some crucial chain of events. (And I hope I’m not going out on a limb here by assuming that 
+you do indeed have friends who don’t play.) 
+Your friends, on the other hand, see every attempt to be social stymied because you’ve 
+got to go to the game. Even worse, they see all of your free time sucked up by this game to 
+such an extent that they’re ready to hire Harvey Keitel to kidnap and deprogram you (on 
+the condition that he promises to keep his pants on at all times). 
+It’s not a pretty situation, and it’s one that can lead to a lot of strain on both you and 
+your non-gaming social circle. Left untended, that sort of dilemma can cause resentment, 
+wreck friendships and generate enough angst to fuel every Oblivion chronicle on the 
+(OK, the wise-ass who said, “Both of them?” is getting a stem talking-to when this 
+column is over. Count on it.) 
+Dealing with those who are “outside the tribe” of gamers has always been problematic, 
+but it gets even more so when you have problems dealing with non-LARPers who are at least 
+initially friendly to the idea of LARP. Note, however, that “Friendly to the idea of LARP” 
+
+
+is not semantically equivalent to “Ripe fodder for recruitment into your little ghoul army.” 
+A friend can appreciate that you have fun playing Masquerade without having the slightest 
+inclination to do so herself, and repeated attempts to haul her into play willy-nilly will 
+squander that appreciation rapidly. 
+Let’s put it this way: Many of my friends regard Arnold Schwarzenegger as a luminous 
+paradigm of the thespian craft. I think he’s got the dramatic range of a kangaroo’s discus toss, 
+but I certainly don’t begrudge my friends their enjoyment. I wish them happiness when they 
+get together for that boffo Commando/ Red Heat double feature playing down at the campus 
+cinema series, but I’m not going to partake myself, thanks. 
+The same goes for LARPing. Just because someone doesn’t immediately condemn your 
+vampireLARPasa toolofsatan (who, incidentally,reallyshouldhave kickedAmold’sassmuch 
+harder in Endof Days), she’snot necessarily ready to dive whole-heartedly into the game. Maybe 
+she just appreciates the fact that you’re having a good time. There is middle ground. Honest. 
+Unfortunately, there’s a steady, basic miscommunication between the LARP commu- 
+nity and the rest of the world as to what exactly is going on once the capes come out and 
+the fangs appear. To all but the most closely proximate non-tribesman, that Vampire LARP 
+thing you do is a “game.” On a certain level, they’re right. It’s a game, a simulation and an 
+exercise that you do for the sake of fun and social interaction. 
+However, where the problem comes in is your definition of a “game” versus theirs. After 
+all, they think you’re playing a game in the same way that they’d play chess or Parcheesi or 
+Frogger. You play, someone wins, and it’s over. That’s it, end of story, it’s time to move on. 
+You, however, are aware that you are instead partaking in a chronicle, a long-running 
+series of interconnected stories detailing character growth and conflict, and carried out over 
+a series of sessions that can last years. 
+What we have here, as the man said, is failure to communicate. Oops. 
+Is this anyone’s fault? Of course not - 
+at least not initially. Most of the folks out there 
+have certain perceptions of what a game is, how it’s played and what its demarcations are. 
+There’s no reason for them to expect that MET behaves any differently, after all. On the 
+other hand, you have every reason to expect your friends to be understanding of your need 
+to devote time to something that you’ve invested a lot of work and emotional energy into. 
+Therein, to be honest, lies the rub. A chronicle is not an episodic sort of thing. It’s 
+cumulative. Plots evolve and move forward. Characters become more complex and more 
+fully realized. Social interactions acquire depth. Plus, there are more and more people whose 
+characters you have to consider as each session rolls past. 
+That sounds fairly generic, right? Every activity gets more complex with time. But you, 
+you’ve put innumerable hours into your plans and building your alliances. You’ve spent lots 
+of downtime writing reports, sending in-character emails and arranging brief between- 
+sessions roleplaying moments. You’ve laid out cash, at the very least, for costuming. You’ve 
+put a ton of energy into maneuvering yourself into a position where you can grab power in 
+the city and learn that new Discipline you’ve had your eye on. Now you’re ready to put areal 
+stick up your arch-rival’s butt, but it’s all going to depend on the next session, and you had 
+better be there to make sure all goes according to plan. 
+Besides, if you skip the session, that son of a bitch Ventrue suddenly jumps two points 
+ahead of you on the experience curve, which means he’s in that much better position to 
+crush everything you’ve worked for, kill your character, and render the long-winded setup 
+in the previous paragraph moot. 
+(Side note: Why is it that the most intense roleplayers, the ones who put in the absolute 
+most time plotting, scheming, building characters, acquiring experience, shmoozing fellow 
+players and generally working to bend the game to their will are inevitably the guys you hate 
+
+
+-
+-
+ 
+of power for the sake of benefiting their characters or screwing over people he doesn’t like.] 
+Combating this sort of thing often turns into a vendetta for even the most reasonable 
+folks. They’re willing to lose status, have plans come to naught and even kiss beloved 
+characters good-bye - 
+but not if that asshole is the one who benefits. After all, that asshole 
+will, ifcrowned prince, ruin the game, killoff tons of characters and generally wreckeveryone’s 
+fun. Unfortunately, to prevent this outcome, otherwise-well-balanced people are forced into 
+an ever-widening spiral of commitment, just to keep pace with the schmuck du jour. 
+Of course, to an outside observer, this phenomenon looks like a rapid descent into 
+obsessive-compulsive behavior, and possibly an Academy Award-nominated role for 
+Winona Ryder when they finally make that movie about you.) 
+So let’s take a step back to that hypothetical conversation we started things with. Your 
+friend sees everything you’re doing to culminate all of the work you’ve done for the character 
+and cut off Ye Schmuck0 Grande, and he decides that you’ve gone LARP crazy and that you 
+no longer have any use for people outside that special little world. After all, on those rare 
+occasions when you do manage to hang out, you talk about what you’ve done recently - 
+which is LARP. 
+(Side Note #2: This sort of situation is usually not helped by infrequent sessions of 
+hanging out. After all, at those moments you talk about what you’ve done recently, which 
+often consists of ... what you’ve done at the LARP. It’s an affliction common to all 
+enthusiastic hobbyists - 
+you should hear fantasy baseball players ramble on for hours about 
+the minutiae of the Cubs’ backup middle infielder situation - 
+but it’s inevitably really 
+incredibly annoying to the non-hobbyists forced to endure it.) 
+You, on the other hand, have decided that your friend is an insensitive bastard for 
+demanding that you abandon everything you’ve worked for just to catch a movie that will 
+no doubt be on video within the hour anyway. Plus, he’s showing an appalling lack of 
+understanding of all the work, passion and probably money you’ve put into this, and exactly 
+how much will go down the drain if you miss the session. 
+So who’s at fault? Again, nobody is. It’s just a miscommunication. However, that 
+miscommunication will do a Godzilla-style number on your friendships with folks outside 
+the game that you’re in if it’s allowed to continue. This column isn’t me trying to be funny 
+or get in a backhanded slam at folks who genuinely enjoy playing MET full-throttle. This 
+stuff happens, and it happens a lot, which is a shame. After all, like I keep on saying, MET 
+is a game. It’s supposed to add to your life and make it more fun. Stressing friendships does 
+not, by my definition of the word, add to anyone’s fun, and it behooves you and your friends 
+outside the tribe to make some efforts to bridge that gap of communication before anything 
+irrevocable occurs. 
+The most important step in achieving some sort of dktente between your LARPing and 
+non-LARPing lives is clearing up the misunderstanding over what sort ofgame it is. The best 
+way to go about it is to couch it in terms that your friends will recognize and relate to. If they 
+bowl, they’d be offended if you asked them to skip a league night for amovie, especially with 
+the league championship (and the coveted gold-plated ugly shoes trophy) on the line. 
+Therefore, it’s only a short jump to comparing your showdown with Vinnie the Ventrue to 
+his showdown with the guys who normally hang out on lane 21. 
+Couching the session in question in terms like that helps on several levels. First of all, 
+it provides an easily understandable parallel for what you’re doing and why you’re doing it. 
+You’ve put a lot of time into the character, he’s put a lot of time into his game. You’ve put 
+a lot of money into costuming, he’s bought a strike ball, a spare ball and a pair of God- 
+damned ugly shoes. And so it goes. By bringing what you’ve done into close comparison to 
+what he’s done, it suddenly makes more sense. 
+I 
+
+
+significantly. If your behaviors suddenly aren’t so different from his behaviors, he may well have 
+a more sympathetic view toward what you’re doing and how you’re going about doing it. 
+(Then again, your buddy may just decide that he, too, is an irredeemable freak, and 
+begin the process of ritual self-immolation in the nearest crosswalk. Those, however, are the 
+risks you have to take for the greater good.) 
+It’s a small step, but it’s a worthwhile one. You can’t mandate understanding on your 
+friends’ part; you can only provide the tools and opportunities by which they just might 
+understand why exactly you do that wacky thing you do. Think of yourself as an enabler, and 
+suddenly you’ll feel much better about the process. 
+Then again, there always remains the slim possibility that maybe, just maybe, your 
+friend is right and you actually are devoting too much time to the game. Take a minute and 
+popopenyourcopyofLawsof theNight. Somewhere in that bookisadisclaimer abouthow, 
+if you’re calling the primogen at 327 in the morning to discuss who did what to whose socks 
+at Elysium, you need to take a break. That one’s in there for a reason, folks, and it’s not to 
+pad word count. If enough people are saying, “Gee, you’re playing that game an awful lot,” 
+it’s worth a minute or two to do a mental check on exactly how much time, effort and money 
+you’re putting into play. If you can answer in the affirmative to more than half of these 
+questions, you might want to take a step back: 
+1-Do you get your mail and find yourself vaguely annoyed that none of it is addressed 
+to your character? 
+2-Does your character have a larger wardrobe than you do? 
+3-Does your email application have a separate folder for IC game correspondence that’s 
+slightly larger than a scanned-in copy of War and Peace? 
+4-Do the waitrons at the local 24 hour restaurants know you by your character name 
+rather than your real one? 
+5-Does the sight of a T-shirt emblazoned with the exhortation, “DO NOT TELL ME 
+ABOUT YOUR CHARACTER!” inspire sudden rage in you? 
+6-Do you look forward to traveling to exotic locales because they’ve been described in 
+White Wolf books and you can’t wait to have your character announce that he’s spoken to 
+the canonical White Wolf characters? 
+7-Have you ever been in an uncomfortable discussion or situation and had someone 
+say, “Why are your arms folded across your chest all of a sudden?” 
+8-Do you find yourself mentally assigning Negative Traits to people you don’t like? 
+9-Have you ever seriously considered dating someone else’s character, even if you 
+wouldn’t touch that particular player with a biohazard suit on? 
+10-Have you ever screwed up at school or work and found yourself actually trying to 
+explain to your superior/ professor that it wasn’t your fault because the Nosferatu kept you 
+11-Have you ever shown off your copy of the old Laws of the Night and proudly 
+identified it as a first printing because a.) the spine lettering is unreadable and b.) it doesn’t 
+have the typo on the back cover? 
+If you answered “Yes” to a majority of these questions, it’s probably time to slow down 
+a bit. If you answered“Yes, and your point is?” it’s definitely time to take a break, and possibly 
+time for another hobby. 
+This is not to say that because you play MET, you automatically play too much MET. 
+After all, I like the fact that you’re playing the game. It means, among other things, that you 
+buy MET-related products, and I get to keep churning out this nifty column for which they 
+pay me quite nicely. Having devoted an ungodly number of hours and an untold amount of 
+
+
+-
+-
+ 
+start decrying the evils of the game system. I mean, come on, people. 
+However, it’s easy to fall into the great trap of the continuing live-action chronicle, 
+which is to say its cumulative nature. Yes, this week is when everything comes to a head - 
+but odds are, there’s going to be something just as vital at the next session, and the one after 
+that, and so on. There’s always another idiot or munchkin or asshole or twink who’s on the 
+verge of ruining the game if you, personally, don’t interpose yourself. There’s always another 
+email to write, just to make sure that everything’s going according to plan, another XP to 
+pick up to ensure that you’re character will survive the next game. And so it goes - 
+it’s no 
+better or worse or different than computer gamers who hog-tie themselves to Ciuilizutiun so 
+they can build one more chariot unit before bed, except that there are other people involved, 
+for better or for worse. 
+If you lose sight of that, then just maybe your friend might have a point. After all, no 
+matter how many times you throw yourself on the grenade of El Twinko, every chronicle 
+ends sooner or later. Every game winds down. And when it does, you want to be able to dust 
+yourself off, smile nostalgically at your much-marked character sheet, and walk off with your 
+life having been made better by the fact that you played. You don’t want to look around at 
+the wreckage with a wide-eyed expression of panic and start planning a new game just 
+because you have no idea what the hell else to do with your time. 
+You have a responsibility, after all, a responsibility to yourself. You do not have a 
+responsibility to Save The Game. If Baron Von Twinkenstein is ruining it, you don’t 
+necessarily have to be the hero every time. If he’s really that bad, someone else will probably 
+try to help; if he isn’t, maybe you need to relax. And if worse comes to worst, you can always 
+start a new game. If the guy’s that much of a ninny, odds good that are the folks you actually 
+want to play with will come with you - 
+and if you’re not going toe to toe with your pet 
+schmuck, odds are you’ll have a little more time around the game. 
+More importantly, you have a responsibility to yourself to make yourself happy, and 
+even the most avid player will - 
+upon due reflection - 
+agree that letting the rest of your 
+life atrophy for the sake of the game probably doesn’t cover that criterion too well. 
+In the end, it does come down to perspective. You have to help your friends achieve 
+a clearer perspective on what you’re doing and why it’s important to you. If they’re friends 
+worth keeping, they’ll respect that, stick around and make an effort to get together around 
+your gaming schedule. By the same token, you owe it to yourself to re-examine your 
+perspective on the whole thing, and make sure you’re happy with the role the game is playing 
+in your life. Yes, it’s fun, and yes, it can happily suck up as much time as you want to give 
+it. Just be sure you’re happy with how much time you’re giving it, and how much time you’re 
+giving everything else. 
+In the end, after all, it’s a game that you play - 
+that’s all. All in all, that’s a pretty 
+damned good thing for it to be. You’ll probably want to keep it from becoming anything 
+more. Your friends have no right to try to make it anything less. But in the meantime, that 
+middle’s a heck of a place to be. 
+And if not? There’s always room for one more at the bowling alley, if you can stand the 
+shoes. 
+I 
+
+
+ALL THE 
+WORLD’S 
+A STAC~E 
+A ROUGH C ~ U I D E T O  ACTING 
+I N M E T play 
+by Matthew Hooper 
+Matthew 1 Hooper has spent over two decades chasing a career in theater. 
+He graduated from the Catholic University of America with a theater major. He 
+came to Atlanta, GA to become a starving actorlwaiter, only realizing late in life 
+that, while acting is cool, starving sucks. While some of the roles he played were 
+immense fun - 
+especially the lead in Romeo and Juliet - 
+eventually he hung 
+up his tights and rapier and went to work in the mundane world. These days, he 
+writes freelance material for White Wolf, contributing to the cjuide to the 
+Camarilla and Storytellers guide. He still feels the need to treud the boards 
+occasionally, though. 
+“So, what’s this weird hobby of yours you do on the weekends?” Most 
+Mind’s Eye Theatre players have faced this awkward question from well- 
+meaning friends or relatives at some point. It’s never aneasy one to tackle. How 
+do you explain to your dear Aunt Edna that you pretend to be a werewolf on 
+alternate Tuesdays without making her cough up her dentures and give your 
+folks embarrassed glances? Do you lie and tell her you like to take long, soulful 
+walks in the woods? After all, you can leave out the part where you bay at the 
+moon. Do you just dodge the question by complementing her on her new 
+crocheted sweater? 
+A lot ofplayers settle for this half-truth: “I’m in an improvisational theater 
+troupe.” It sounds nice and profound. The conversation can move on again 
+safely. After all, theater is a respectable hobby. And while improv comedy isn’t 
+Shakespeare, Clive Anderson and his friends had a huge hit with that Whose 
+Line is it Anyway? show of theirs. Theater is an ancient, noble art where you 
+dress up and pretend to be someone else in front of an audience, while live- 
+action games, why, they’re some scruffy hobby where.. er.. . you do the same 
+thing without an audience. And with some games of Rock-Paper-Scissors 
+tossed in to boot. 
+Hmm. Maybe that convenient explanation isn’t so far from the truth 
+after all. 
+Live-action gaming is a form of theater, pure and simple. Mind you, there’s 
+no audience at a LARP, but that doesn’t mean that you aren’t acting when you 
+assume the role. Acting and live-action gaming are both about playing make 
+
+
+believe. Acting focuses exclusively on taking that “make believe” as far as 
+possible, while LARPers just settle for enjoying ourselves. 
+Sure, live-action roleplaying is just a game. So is chess. So is business. So 
+is a love affair. So is art. A game is any activity with rules and a goal and a lot 
+of joy involved with the process. Some of the best games - 
+like love or business 
+- 
+are deadly serious. Theater is as much a game as any LARP, in its own way. 
+You just don’t keep score the same way. 
+Trust me. Ask any actor. They aren’t in it for the money. Why do you 
+think we’re called “starving artists”? 
+Acting in a LARP and acting on stage isn’t quite the same. You have to 
+work a lot harder on your concentration in a LARP than on stage. You have 
+more freedom - 
+and more work - 
+at a game than in front of the footlights. 
+But the raw pleasure of it all is the same. When you are In Character (in capital 
+letters), you know it, and you never forget how good it feels. 
+It’s hard to explain what that feeling is like. It’s not a matter of “forgetting” 
+yourself. You don’t suddenly develop Multiple Personality Disorder. You just 
+focus completely on the moment. Forget that you’re in a high school gym. 
+Forget that you’re speaking in sonnets. Forget that your tights itch. If you put 
+all these things away and concentrate - 
+really concentrate - 
+on being 
+someone else for an hour, it can be magic. You’re never going to “be” that 
+person, but you’re going to be more in tune with yourself by focusing on making 
+that role come to life. 
+You can feel it on stage all the time. At an MET game, it’s a lot more rare, 
+but those moments of clarity are present. The tests and the rules exist to make 
+those magic moments when the world comes alive happen. And with a little 
+practice, those moments happen a lot more often. 
+This article is intended to help coach you through getting into character 
+for a LARP, using some basic theater techniques. You won’t be ready to star in 
+the Scottish play after reading these steps, but you will find it easier to enter 
+and stay in character if you follow them. Before your next game, give them a 
+try and see what happens. With any luck, you’ll be able to find those In 
+Character moments more easily, once you have an idea of how to get there. 
+Eocus: P U T T I N ~ T H E  
+DAY AWAY 
+The most important aspect of making a character is concentration. It’s all 
+about focus. You can’t convince anybody you’re an 18th century vampire if 
+you’re talking about the latest episode of Duwson’s Creek or catching up on the 
+latest gossip. Building a character takes work. If you’re not concentrating on 
+the job, it’ll slip away from you. 
+Before you start your next game, take a minute to walk away from the 
+crowd and get yourself ready. Take a few deep breaths. Think about all the 
+things you did today, the good and the bad. Take a moment to look at them. 
+Then breathe out. Put those things away. For the next couple of hours, you 
+
+
+a few hours, right? So get serious about it. Set the day’s worries aside. Above 
+all, take your time. Leave the stuff that’s outside the game, outside the game. 
+The biggest distraction any actor can face is stage fright. When you start 
+to worry about what the audience thinks about you, your concentration is shot. 
+If you worry about what the other players think about you, you can’t focus. If 
+you can’t focus, you can’t do the job correctly. 
+If you’re afraid, you’re afraid. That’s fine. Focus on who you are and what 
+you’re doing. Ignore the spectators. Think about what you are doing right now. 
+Take that fear, look at it a little bit, and then set it on the shelf with today’s 
+troubles. You’ve got something else to do for the next few hours. You’re too 
+There is no hurry here. Take as much time as you need to get ready. If the 
+game starts without you, fine. It’s always better to be late and be 100 percent 
+there, than to do a poor job. 
+Now try something really scary: Stretch. That’s right, move around a bit. 
+Roll your neck and stretch out your back. You’re going to be using your body 
+as much as your brain for the next few hours. Acting is as much a physical 
+exercise as a mental one. You need to have both in gear. 
+Take one more deep breath for luck. Ready? Good. All right, pick up your 
+character and start finding a way into him. 
+GETTINS STARTED: 
+I N S I D E  
+A N D  OUTSIDE 
+There’s an old story in theater about how Dustin Hoffman and Sir 
+Lawrence Olivier prepared for their roles in the movie Marathon Man. Sir 
+Lawrence Olivier was playing a torturer, and Hoffman was his victim. 
+Hoffman really got into the role he was playing: He didn’t sleep for three 
+days before the shoot. He didn’t eat the day before. The day of the shoot, he 
+didn’t bathe. Finally, he showed up to the set, ready to go. 
+Sir LawrenceOlivierwaswaitingforhim. 
+Hestaredathis youngpartner and 
+exclaimed, “Good Lord! You look terrible! What on earth happened to you?” 
+‘‘I starved myself for the role,” Hoffman replied groggily. 
+Sir Lawrence stared at him a bit, and then replied crisply: “My dear boy. 
+Next time try acting. It’s so much easier.” 
+Hoffman and Olivier both had very different techniques for getting into 
+character. Hoffman built on the “interior technique” of acting. He put himself 
+through some really nasty experiences to learn what it felt like to be tortured. 
+Then he took those personal experiences to his character. The end result was 
+a very realistic performance. (Maybe too realistic for those downwind of him.) 
+A L L T H F  
+WORLD’S 
+A STAGE 
+
+
+Sir Lawrence, on the other hand, used an older technique- 
+the “exterior 
+technique.” He focused on how his character moved- how the tortured stood, 
+how he walked, how he stared at Hoffman. Then he listened to what those 
+changes in his body did to his voice and his heart, and he carried them through 
+to the stage. The end result was just as good, and just as credible, as Hoffman’s. 
+Both techniques offer a window into getting inside a character. So which 
+technique is best to use in Mind’s Eye Theatre? Both, of course. 
+€ XTE R I  o R TECHNIQUE 
+First and foremost, acting is an active process. Saying so sounds silly, but it’s 
+anundeniable basicofthe art. You tell your audiencewho youarewith your body. 
+Your posture defines your personality more than anything else about you. It 
+doesn’t matter how detailed your character background is. It doesn’t matter if you 
+tell me that you’re a professional bodyguard who lived through the Punic Wars. 
+If I don’t see it in the way you walk, I don’t believe you, and nothing you say can 
+convince me. And if you can’t convince me, how can you convince yourself? 
+Actors often refer to their bodies as instruments. An actor “uses his 
+instrument” to convey a role to an audience. It sounds pretentious [or dirty, if 
+your mind works like that], but there’s a lot of truth there. Without an 
+understanding of it, it doesn’t matter how much thought and research you put 
+into a role. If an audience doesn’t see your work, you’re as effective as a 
+trombonist who hums along to the orchestra. An entire philosophy of acting, 
+called the Alexander Technique, is devoted to this idea of acting with your 
+body. We don’t have space for the thousands ofpages written about it, but here 
+are some highlights. 
+Try this on for size. Get up out of your chair and start walking. Don’t think 
+about walking, just walk like you were getting a coke from the fridge. Okay. 
+Now speed up a little. Don’t run. Just pick up the pace. Concentrate, now. 
+Don’t think about how silly you may look, just do it. 
+While you’re walking, think about how you’re standing. When you walk 
+through the door to the kitchen, what’s the first part of your body that passes 
+the doorframe? No, it’s not your feet - 
+not unless you’re taking giant steps. 
+Odds are it’s your nose or your hips or your stomach. 
+What happenswhen you leadwithyourchin?Don’tstickout Like youwere 
+taking a punch, just think about leading with your chin. Keep it small. Turn 
+around. When you turn, what part of your body turns first? Try to move in such 
+a way that your chin is the first thing that moves when you decide to hang a 
+left into the kitchen. 
+Clench your jaw. Swing your arms. Clench your fists. Unclench them. 
+Swing your head from side to side, like you were working a kink in your back out. 
+Stop. How do you feel? 
+If you said “Angry,” that’s good. You paid attention to what your body was 
+telling you. Congratulations. You just acted. 
+
+
+.______-- 
+ 
+A lot of times, you can slip right into a role just by concentrating on how 
+a character moves. Bodyguards, scholars and slaves all stand still in completely 
+different ways. If you pay attention to this aspect of your character, you’ll go 
+a long way toward getting into his shoes. 
+Body language is absolutely crucial for the more animalistic roles in the 
+World of Darkness, like those of the Garou. Do you want to play a lupus-breed 
+werewolf? Do yourself a favor. Plant yourself in front of the Discovery Channel. 
+Watch wolves for an hour or two. A wolf moves in a certain way. He reacts in 
+a certain way. How do you take your two-legged body and make yourself move 
+like that wolf on the television screen? Try it and find out. Eventually, you’ll 
+never have to say, ‘‘I’m a lupus,” to other players. They’ll know before you can 
+Show the other players what you are. One of the worst sins you can commit 
+at a game is to raise your fingers and explain yourself. Don’t say, “You can see 
+thatI’mreallybeatenup.”Don’tsay, 
+“Youcansee that I’mfurious.”Show these 
+things! How does someone move when they’ve been beaten to a pulp? How do 
+you look at someone when you’re ready to chew nails and spit baling wire? Part 
+of you probably knows. At some time in your life, you’ve been that bruised. 
+You’ve probably been that angry as well. Feel those feelings all over again, and 
+let your fellow gamers see it. The fewer times you have to step out of character, 
+the stronger your character will be. 
+Before you enter your next game, spend some time thinking about how 
+your character moves. How does he walk? Is he sneaky? Lead with your nose. 
+Is he arrogant? Lead with your chin. Try as many things as you like. Don’t just 
+think about these mannerisms, try them. If you are sitting in a chair pondering 
+all of this stuff, you’ve missed the point. 
+Costuming helps a great deal in figuring out the body language of your 
+character. An evening gown forces you move in a certain way. So does a tuxedo 
+or a pair of blue jeans or a doublet and hose. It’s hard to slouch in a tuxedo or 
+gown. You have to keep your back straight. As a result, you look more formal. 
+And if you look formal, you feel more formal. Incorporate those restrictions 
+into your character’s movement. Every small cue informs your character 
+choices; they all help you decide what does and doesn’t fit in your game play. 
+Now that you’ve got your character up on its feet, it’s time to turn your 
+brain on and start thinking through your role. 
+INTERIOR 
+TECHNIQUE 
+Start going over your character history at this point. Run it through your 
+head like a good movie or a slideshow. Pick three events from your character 
+history that you consider important. 
+Take a good look at those important moments. Play them back in your 
+head. Go into detail. What did you see? What did you hear? What did you 
+smell? What did you touch? Try and drag all five senses into the mix. 
+A L L T H E  
+WORLD’S 
+A S T A ~ E  
+
+
+‘Try and really immerse yourself into the moment, at least for now. 
+Now start taking a peek into your character’s head. What was he feeling 
+when these things happened? 
+Let’s say that your character’s father was killed by the Sabbat. How would 
+that make your character feel? Angry? Sure. How about afraid? After all, your 
+father was far more powerful than you were once. How about disappointed? You 
+always thought your dad was stronger than this. How about happy? What did 
+your father do to you that would make you happy to see him dead? Hmmm.. . 
+Maybe some answers are right. Maybe some aren’t. But ask every 
+question you can, even the ones you think are wrong. Maybe you’ll be 
+surprised. People are capable of the most amazing things sometimes. Don’t 
+settle for the easy answers. 
+Above all, avoid saying no. Consider everything. Try everything. You owe 
+it to yourself to look at every option. One of the greatest joys about this hobby 
+is that you can be absolutely anyone or anything. You owe it to yourself to 
+explore every possibility, even the ones that you wouldn’t normally allow 
+yourself to look at twice. 
+Now that you’ve explored these emotions in your character, try and link 
+them to your own experiences in the world. It doesn’t matter if your character 
+is a centuries old vampire or a bloodthirsty werewolf or whatever. You’ve had 
+feelings and experiences that are similar to that creature. If it was impossible 
+to empathize with a character, he’d be boring. If you can imagine a character, 
+you can step into his shoes. It’s just a matter of trying. There are no such things 
+as aliens in this world, only strangers. 
+Maybe your parents haven’t been killed by anybody, but have you 
+experienced the feelings that your character felt when his father was killed? 
+Can you remember what it was like to be afraid for you father? When were you 
+angry with your father? Were you ever disappointed with your father? What did 
+those things feel like? Think of those moments. Think of your character 
+history. Splice them together. Now you’ve really got material to work with. 
+A lot of material has been written about this internal technique for acting. 
+It’s called the Stanislavsky Technique, and again, we don’t have a thousand 
+pages to discuss it. The material you’ve got here is a good start, however. Don’t 
+be afraid to take risks, to make choices, and to ask questions. There are no 
+wrong answers here -only 
+answers that you’re afraid to try. Dare it. Try them. 
+Remember, it’s only a game. The world of make believe is a wonderful place 
+to explore your heart. As long as you keep the line between fantasy and reality 
+strong, you can find some amazing things. 
+One final note: Make sure that your character’s Nature and Demeanor 
+agree with the choices you’ve made about the character so far. You’ll be using 
+those two little words as a touchstone for your character’s innermost desires as 
+the game goes on. Don’t be surprised if, after all this work, you find that the 
+character’s Nature is completely different from what you thought it was going 
+
+
+to be. When you start on a creative process like this, it tends to develop a 
+direction all its own. Change it around until the Nature and Demeanor fit 
+again, and get ready to move on. 
+TAKINC~ 
+ACTION: 
+ACTINC~ 
+WITHINTHE 
+~ A M E  
+So, you feel like you’re getting into character. You’re ready to get into the 
+game. Good. Now the work really begins. 
+Acting applies to your body, and it applies to your mind. When you start 
+playing the game, you need to make an active choice about what you’re going 
+to get done that night. 
+We make choices every day, most of which aren’t terribly important. We 
+decide what to have for lunch. We decide what to wear. Theater, and acting, 
+is all about making choices too. Big choices. The bigger, the better. Hamlet 
+isn’t deciding on lunch, he’s deciding whether he should kill himself or murder 
+his stepfather. The choices you make need to be active choices, things that 
+other people can see and hear, so that they can react to your actions and make 
+the story happen. 
+What does your character want tonight? Before you answer that question, 
+keep the following guideline in mind: Don’t answer in the passive tense. 
+Acting is an active process, remember? Your goal can’t be “stay alive.” That’s 
+boring. Try the goal “kill anyone who tries to hurt me.” Or maybe even “run 
+away from anyone who tries to hurt me.” As long as you have something for 
+your character to do, you’re in good shape. 
+How about the goal “become prince”? Try harder. Become is a pretty 
+passive word. How about the goal “kill the old prince,” or “discredit the old 
+prince”? Those active goals are much better. 
+Make sure that your choice is informed by all the work that you’ve done 
+so far. Don’t choose to kill the prince for the heck of it. Choose it if your 
+character wants it, for reasons all his own. And don’t be afraid to set impossible 
+goals for yourself. It’s the choice that is important here, not your success or 
+failure. Your goal, as a player, is to create the most interesting story you can 
+tonight. Your character’s goal should be chosen with that fact firmly in mind. 
+Keep the choices big. Don’t make your goal for the evening “get an ice 
+cream cone.” That’s too easy. Once you get it, you’ll be stuck for something to 
+do for the rest of the evening. A good story involves a big decision. Big 
+decisions entail big risks. Never settle for second best. Don Quixote didn’t 
+become a librarian or a writer, he set out to restore the lost age of chivalry. Be 
+ambitious in setting your goals. Even if your character fails in his quest, you 
+won’t have failed to tell an epic story. 
+Stuck? Try looking at your character’s Nature and Demeanor. Your 
+character wants something very specific from life. If his Nature is Bravo, he 
+
+
+wants to scare people. If it’s Judge, he wants to find the truth. Your character’s 
+Demeanor lets you know how the character gets the things his Nature 
+demands. If your Nature is Bravo, and your Demeanor is Critic, you may want 
+to ruin someone’s self esteem by criticizing her at every turn. When all else fails, 
+use your Nature and Demeanor as the touchstones for your character’s desires. 
+Don’t become obsessed with this one goal, however, unless your character 
+is thusly deranged. Goals can change during the course of a game. You can want 
+different things. You can even want completely opposite things. After all, every 
+vampire wants to let the Beast out, but at the same time, he wants to keep it in 
+check. That internal conflict is a great way to bring depth and excitement to your 
+character. Be ready to go with major course changes when they happen. You can 
+never anticipate everything that can happen to a character. You can only react. 
+What if your goal conflicts with another player’s goal? Good. That’s what 
+good roleplaying is all about. A conflict lies at the heart of all good theater. 
+Every single stagedproduction you can thinkof (fromNo Exit to Wrestlemania) 
+has a struggle of some kind in it. You get involved in LARPs to stage a 
+production and tell a story, and conflict is what makes that story work. 
+If your goal conflicts with another player’s goal, try your damnedest to get 
+your way. You have every option in the book open to you - 
+you can beg, you 
+can whimper, you can threaten, you can bribe, and you can even kill. But don’t 
+back down. At least, don’t back down until a more important goal comes across 
+your path. Most people try to suppress conflict in real life. They get along with 
+their coworkers and their friends, so that we can all survive the day smoothly. 
+You aren’t required to play nice in the World of Darkness. Don’t be afraid to 
+stop playing nice and go for the jugular. (Figuratively speaking, of course.) 
+When you’re playing a supernatural creature like a vampire or a werewolf, 
+you have a lot of freedom. You can go to extremes that human beings can never 
+dream of. The anger of a werewolf is legendary. The passions of a vampire dwarf 
+regular emotions. When you play one of these characters, you have every right 
+to jump in with both feet. Don’t hold back or make a halfhearted choice. Don’t 
+like something if you can love it. Don’t love it if you can obsess over it. And don’t 
+dislike something. Hate it. Your choices need to be as bold and strong as possible. 
+The more you try for something, the stronger your character will be for it. 
+This last piece of advice comes with a very strong caveat, however: Don’t 
+forget to respect the real world around you. Don’t bellow your inhuman fury 
+at the top of your lungs if you’re in a banquet hall filled with people who aren’t 
+playing. If nothing else, remember that every supernatural wants to keep his 
+or her nature hidden, for some very good reasons. 
+More to the point, however, you need to keep the flow of the game going. 
+If everyone has to step out of character to calm down irate hotel clerks and 
+mothers, then all of that drama gets wasted. Theater only works when you have 
+the trust of your fellow actors. If the other players worry constantly that you’ll 
+disrupt the event and force everyone to break character, they’ll have a much 
+harder time involving themselves in your work. 
+
+
+After the game’s over, ask yourself this question: Did I achieve my goal! 
+More importantly, did I have a good time? Now think ahead to the next game. 
+What will be your goal then? How about the game after that? How about over 
+the next year? Be ambitious, and be bold. There are no bad choices, only half- 
+hearted ones. 
+EINAL NOTES: 
+COVERINC~THE 
+ODD MOMENTS 
+There are a lot of oddities to acting in a LARP the demand some specific 
+advice. “Real” theater rarely goes into masscombat, after all. Here are some tips 
+about the little pitfalls your characters can fall into, and how to make the best 
+role-play possible out of them. 
+Combat is inevitable in every LARP. If you’ve been serious about chasing 
+your goals thus far, it’s very likely that your character will end up throwing a 
+punch at someone at some point. Remember to keep roleplaying your charac- 
+ter even as he’s fighting for his life. It’s hard to keep character in mind while 
+you’re juggling numbers in the back of your head, but keep focused. Above all, 
+sell the combat with your words and with your body. Combat can be fun. It’s 
+exciting imaging your character performing stunts that make Jet Li in Romeo 
+Must Die look like Marlon Brando in The Freshman. Long sessions of Rock- 
+Paper-Scissors, however, are not fun. Focus on the story, not the hand signals. 
+Describe what your character is doing as much as possible. Paint the scene for 
+your opponent and your audience. If you can mime out your character’s actions 
+(without engaging in stunts ur touching other people), do so. Remember that the 
+safety of those around you is always more important than the game. Above all, 
+try to get out of turns and into real time as soon as possible. 
+In the course of a game, it’s very likely that you’ll have a character die. 
+Accept this fact and keep going. It can be very painful to lose a character that 
+you’ve spent a lot of time and energy creating, but at the same time, there’s 
+nothing more powerful to play - 
+either on stage or in a LARP - 
+than a good, 
+juicy death scene. If you have chased your goals as character with such 
+devotion that you can only choose between their success and your character’s 
+death, you’ve done very well as an actor in live-action play. If your character 
+chooses death at the final hour, you’ve built a story that will change the nature 
+of your chronicle for years. Remember, the goal of this game isn’t to build a 
+nice, safe character that lives to a ripe old age. If that were the case, we’d play 
+couch potatoes, not vampires werewolves. You’re here to tell the most exciting 
+story you can. Don’t be afraid to risk everything your character has for the sake 
+of making the story sing. 
+In the same vain, don’t be afraid to let your character fail occasionally. 
+Failure is a powerful motivator for change. Characters that change are always 
+more interesting to watch and play. Don’t avoid plotting treachery against the 
+
+
+prince just because you know as a player that some obfuscated spy is watching 
+you. Let yourself fail. Have fun fighting with the consequences. Remember, 
+your job as a player is not necessarily to succeed in the goal you set for your 
+character. Rather, it’s to tell the most compelling story you can in the course 
+of the night. Occasionally, that means letting the opposition win. It’ll make 
+your eventual comeback and victory that much sweeter. 
+A number of powers in Mind’s Eye Theatre can force you to play your 
+character very differently from normal. Dominate, Dementation and blood 
+bonds can alter your character’s deepest emotions in ways you’d never 
+anticipate. Don’t fight these changes. Try to embrace them. Don’t be afraid to 
+step out of character for a minute or two to walk back through your process if 
+you need to. What does your character want now? How is he going to get it? 
+Remember that now supernatural power can fundamentally change who your 
+character is. It is your choice as a player how any effect is portrayed. A blood 
+bond might feel like the greatest love affair a character has ever known. It 
+might also feel like the most powerful drug addiction imaginable. Is your 
+character a lover or a junkie? The choice is ultimately yours. 
+Trust your fellow players. They’re here to tell the best story they can 
+tonight, just like you. If you cooperate, you’ll be much more successful. 
+Remember that while characters might butt heads, players can always make 
+the conflict more interesting if they work in harmony. Sometimes you’re the 
+hero in your own story. Sometimes you’re the supporting character in someone 
+else’s tale. Share the spotlight with good grace. 
+Finally, remember the most important questions anyone can ask about 
+theater: “Who cares? So What?” Why should you bother being a vampire? 
+Who cares about werewolves? Theater only works if it moves and changes its 
+audience somehow. In a live-action game, you are your own audience. It’s very 
+legitimate to say that you’re doing all this work just to be entertained. In fact, 
+that should always be the first goal of any game. However, don’t be surprised 
+if, after trying on all of these different goals and emotions, you find that you 
+have changed and moved yourself somehow. An actor’s only real reward for his 
+work is the applause of the audience at the end of the show. When the game’s 
+over, put the character away. Applaud yourself. Take your bow. Think about 
+what you’ve done this night. 
+Who knows.. . Perhaps you’ll have found that playing a monster for a 
+night has taught you something new about being human. 
+
+
+HFRFTICAL DHARMAS 
+by Peter Woodworth 
+Given the fulfillment of our wishes, we’d cram every ounce of information 
+we could into each book White Wolf publishes. However, conservation of space 
+(and trees) often forbids us from doing so. With the advent of the Journal, 
+however, we can - 
+us the buck cover proclaims -pick 
+up where our other books 
+leave off. In this article, we take a look at some of the more unusual schools of 
+Kuei-jin thought that didn’t make it into Laws of the East. 
+These relatively young Dharmas are rejected as heretical by the Quincunx, 
+but many of them are gaining support in the tumultuous days of the Fifth Age 
+as younger vampires look to make their own mark on the world. Bear in mind 
+that such freedom from established doctrine comes with a high price as well. 
+Finding teachers for these paths is seldom easy, and open followers of these paths 
+can expect cold welcomes (at best) when it comes to dealing with traditional 
+elders. Being branded akuma for espousing such radically different beliefs is 
+never far away for Kuei-jin on these paths, and the brightest of them never forget 
+that this threat hangs over their heads constantly. 
+Existing as they do outside traditional Kuei-jin astrology, Kuei-jin who 
+follow a heretical Dharma do not receive a lucky number for their Dharma if they 
+purchase the Horoscope Background. Such is the price of following such an 
+unorthodox route. 
+T H E  
+E L A M E O E T H E  R I S I N C ~  
+PHOENIX 
+VIRTUE: HUNAND 
+Y A N ~  
+Not all vampires believe that they are set down on the Road Back in order 
+to forge a new identity for themselves. Some believe that their responsibility lies 
+in finishing the tasks they failed to accomplish during their breathing days; to 
+set right what so obviously wouldn’t let them rest the first time. The reasoning 
+is sound enough to their minds. If life was so short on karma that the Kuei-jin 
+had to return to life once more, then doesn’t it make sense that their old lives 
+should be the focus of their renewed attentions? The abilities of the Kuei-jin are 
+only tools that they are meant to use in order to set their lives straight once more, 
+and Phoenixes struggle hard to overcome their P’os and rejoin the world of their 
+living relatives. At first, many of them are surprisingly successful, acting as 
+guardian angels over the ones they considered dear to them in life and settling 
+old accounts left unpaid on their death. Even the most jaded elder harbors the 
+kind of thoughts that drive this Dharma, of returning to his family home or 
+visiting his old love once more. This secret sympathy is perhaps the only reason 
+that this Dharma is merely scorned and not actively hunted. 
+However, try as they might, the compassion and optimism of the Phoe- 
+nixes inevitably fades as time goes by. Relatives die, times change, and 
+sometimes the Kuei-jin herself is even responsible for some great family 
+
+
+~~~~~ 
+~ 
+~ 
+tragedy (usually committed during a period of shadow soul). Such events can 
+unhinge even the most devoted members of this Dharma unless they possess 
+absolute devotion to their cause, and after a time most Phoenixes are far more 
+pragmatic than idealistic when it comes to restoring harmony to their old 
+lives. Many also start looking for a bigger picture, tending to larger groups of 
+mortals and sheltering them from the dark indulgences of other shen. They go 
+from viewing their own lives as the key to their redemption to seeing all human 
+life as necessary to achieve enlightenment. Make no mistake, though. These 
+Kuei-jin are unholy terrors when they feel their protectorates are threatened. 
+More than one kyonshi has discovered that affinity for life and the higher soul 
+by no means excludes warriors. 
+The strangest thing about this Dharma is that it has produced no known 
+bodhisattvas. As soon as they reach a certain level of enlightenment, elder 
+Phoenixes simply disappear into thin air, and even powerful divinations cannot 
+determine their fate for certain. Naturally, the Quincunx and others are quick 
+to use this fact as an example of how this Dharma must be fundamentally 
+Ylawed” in some way or another, and they step up persecution of this Dharma 
+accordingly. Of course, the Phoenixes simply claim that it proves that their ways 
+are correct. However, even they admit that the absence of bodhisattvas and 
+other powerful elders makes their unlives more politically dangerous than those 
+of other Kuei-jin. As for the missing elders themselves, perhaps the Sixth Age 
+will shed some light on their true fates.. . . 
+Training: Phoenixes typically “train” by spending as much time as they can 
+among mortals, studying their interactions and learning what it takes both to 
+heal them and stir their imaginations. Many take to the arts in some form or 
+another as a means of expressing their hopeful sentiments to mortals at large, and 
+there have been more than a few fairly reputable artists in the last century who 
+were actually counted among the members of this Dharma. 
+Dharmic Strength: Bonds of Living Harmony 
+All Phoenixes are exceptionally attuned to mortal emotions and manners. 
+Their players receive a free retest on all Empathy and Etiquette tests with mortals. 
+All Phoenixes also receive a free Compassionate Social Trait, which cannot be 
+lost permanently as long as they remain on this Dharma. Most Phoenixes go to 
+great lengths to avoid injuring mortals if it is at all possible in a given situation, 
+although they receive no special benefits for doing so. 
+Dharmic Weakness: Tending Orchids 
+Phoenixes are doomed to lose themselves among the teeming masses of 
+humanity, where the ravages of the Demon, the hunger and more eventually 
+take their toll on those the Kuei-jin cares about. As a result, most Phoenixes 
+choose one person in particular they wish to shelter from the ravages of their new 
+condition. They are extremely loyal guardians, but any harm to this chosen 
+mortal brings down the terrible wrath of the Phoenix. All Phoenixes must take 
+the Flaw: Ward, representing a close friend or family member from their mortal 
+days whom they are especially dedicated to protecting. They are two Traits up 
+on any challenge to resist harming this individual, but their increased attention 
+toward one mortal inevitably draws the notice of enemies willing to use the ward 
+
+
+Traits down on all Social Tests) until she has taken suitable revenge against the 
+one who dared to harm her chosen mortal. Should the ward die, another must 
+be chosen within a month. This cycle of pain and protection cannot end short 
+of reaching dah. 
+TENETS: 
+1: Return to the world from which you came. 
+2: Repay the debts of your human life. 
+3: Help others to find the unique value of humanity. 
+4: Fight the Demon and deny monstrosity. 
+5: Live not with extremes or balance, but simply well. 
+6: Wake the sleeper who shuns experience. Life is the arising 
+7: Never deny the joys and sorrows of life. 
+8: Return to your mortal ways; seek your human state. 
+of experiences. 
+Concepts: Shopkeeper, public servant, professor, student, poet, artist 
+Affiliations: Mankind, the color gold and the east direction. 
+Auspicious Omens and Symbols: Birds of paradise, clear skies, celebra- 
+Quote: “Why return to this world, only to ignore it?” 
+tions of birth, spinning tops, kites 
+T H E  T E M ~ E S T O E  
+INWARD Eocus 
+VIRTUE: 
+BALANCE 
+All the universe is a system of push and pull, give and take. It should make 
+sense, then, that some vampires are dedicated to finding the perfection at the 
+center of such eternal reactions. Kuei-jin who follow the Tempest Dharma are 
+models of diversity and singular function in one stroke; their wide interests 
+matched only by their hunger for knowledge. Whereas the Rootless Trees 
+approach Balance as a matter of finding lessons by hopping from life to life, 
+Tempests prefer to sit in the well of the chaos that is creation and draw their 
+experiences from the storm swirling all around them. Other Kuei-jin have 
+trouble puzzling their ways through the mysterious facades of the Tempests, 
+unable to reconcile how Tempests can take tea with demons one day and dance 
+in the halls of Heaven the next. For the Tempests, however, such seeming 
+contradiction only underscores the foundation of their Dharma - 
+that enlight- 
+enment exists in the void between two poles. 
+Like the Rootless Trees who share their Dharmic Virtue, the Tempests are 
+invariably wanderers either in truth or in ideal, always pushing on to another 
+goal in hopes of rounding out their soul ever more completely. All things are 
+worthy of study, say the Tempests, but only if one remembers that study to the 
+exclusion of all else is to deny the magnificence of creation itself. This is not to 
+say that the Tempests lack focus; quite the contrary, in fact. When a Kuei-jin of 
+this Dharma expresses an interest in a subject, he spares little expense to track 
+
+
+down everything he can about it until he becomes a master in his field. Existence 
+may be a matter of moderation to the followers of Balance, but nothing said it 
+had to be moderation born of mediocrity! Indeed, many Tempests strive 
+constantly to raise their personal bars higher and higher, and a piece of 
+information never leaves their hands once it passes their way. These Kuei-jin 
+simply strive not to overbalance themselves in one area or another. 
+Ultimately, the Tempests strive to find what lies in between mortal and 
+vampire, spirit and matter, and this quest eventually leads them away from the 
+material, elemental aspects of Kuei-jin society and into deep contemplation of 
+the mysteries of the Kuei-jin soul. Many elder Tempests are masters of arts that 
+allow for introspection and spiritual education, and they puzzle constantly about 
+matters both large and small concerning the undead condition and its relation 
+to the universe around them. Their mastery of a multitude of subjects aside, these 
+masters claim to be searching for what lies beyond the gateway of enlighten- 
+ment. If the riddles and koans of this Dharma are correct, they surmise, the 
+answer can be nothing less than the universe itself, and so they seek to become 
+one with all things by denying any strong ties to a particular object or condition. 
+Training: Most Tempests fit nicely in the Western conception of a 
+“Renaissance thinker.” They strive to master a wide variety of skills, from 
+mundane labor to hidden occult lore to one more Kuei-jin Discipline. There- 
+fore, their training is an eclectic affair designed to expose them to many different 
+subjects but immerse them innone, allowing them to choose their destiny freely. 
+Great measures are taken to balance the forces of Yin and Yang simmering 
+beneath the Kuei-jin’s skin, and while they take pains to study the Hun and its 
+devotion to duty, Tempests also probe and develop the Demon carefully. Some 
+think the Tempests are shallow, drinking deeply of nothing, but such modera- 
+tion is what allows them to have the proper perspective between the clashing 
+forces of the universe. 
+Dharmic Strength: Eye of the Storm 
+Existing as they do in an unlife of moderation and temperance, the 
+Tempests are capable of remarkable feats of restraint when called for. Once per 
+session, the Tempest’s player may receive a free retest on any fire, wave or 
+shadow soul Test, making the Tempest much less likely to fly off the handle than 
+their more temperamental brethren. 
+Dharmic Weakness: Faintly Fading Winds 
+Paradoxical as it seems, excessive moderation can do as much harm to the 
+soul as overindulgence can, and the Tempests are prime examples of this 
+principle in action. While their Dharma may espouse forbearance, many 
+Tempests become reactionary after a while, moving one step behind the world 
+because they are too cautious to really embrace the chances that are given to 
+them. Because of their hesitant ways, all Tempests receive the Negative Trait: 
+Predictabk, which cannot be bought off short of reaching dah. Furthermore, any 
+time the character feels he has overindulged in a particular activity, it ruins his 
+careful sense of balance. When such occasions come to pass, the Tempest is one 
+Trait down on all challenges until such time as he has properly atoned for the 
+indulgence with activities like long meditation or forbearance of material goods. 
+The Storyteller may enforce this penalty if the player does not. 
+
+
+TENETS: 
+1: Pull all things near and make them part of yourself. 
+2: Balance the needs and desires on all poles, that they strive 
+3: Never stray from the core of your nature. 
+4: Realize the potential to learn from all people. 
+5: Remember the lessons of the past. Apply them to the future. 
+6: Be consistent in your rewards and punishments. 
+7: Teach others the virtues of peace and moderation. 
+8: Bring harmony to the spirit worlds though balancing the 
+against each other. 
+living realm. 
+Concepts: Ascetic, monk, teacher, servant, philosopher, laborer, poet, 
+Affiliations: The material world, the color gray and the center direction. 
+Auspicious Omens and Symbols: Cyclones, mindless spiral helixes, ex- 
+Quote: “The view from the center of the storm is the most breathtaking of all.” 
+lunatic 
+ploding fireworks, ripples in water. 
+T H E  
+E A C E O F T H E  SODS 
+VIRTUE: 
+HUNAND 
+p’o 
+Not all Kuei-jin accept that they are being punished for some transgression. 
+Indeed, some Kuei-jin look on their new state with hope and reverence, sure that 
+they have been chosen by Heaven for some great destiny. The followers of the 
+Face of the Gods Dharma are prime examples of the latter philosophy. These 
+Kuei-jin see themselves as souls who once attained godhood, but then fell to a 
+lesser status once more due to some great error. According to the Divine Faces, 
+their new state is proof that they were once something more than mere mortal; 
+that their death was just a transition state, and that it is their joss to reclaim the 
+title of gods once more. After all, the Godlings reason, why else would they have 
+been given another chance in a form so assuredly marked by signs of godhood, 
+but at the same time is riddled with so many temptations as well? This new life 
+must be a test of some kind, a training ground for the place in Heaven they are 
+meant to achieve - 
+and woe to the poor being who stands in the way of a 
+Godling along the road to the Celestial Ministry! 
+The unlives of these bizarre and eerily compelling Kuei-jin center around 
+the nature of godly contradictions. They meditate ceaselessly on how their 
+nature stands - 
+barely glimpsed omniscience side by side with the darkest lusts 
+outside of Yomi - 
+and think of ways to combine and strengthen both sides 
+without losing oneself to either total duty or the Demon. To their minds, the 
+Divine Faces must search out the source of this conflict between insatiable evil 
+and infinite compassion and overcome it if they wish to reclaim their godhood. 
+Thus, they must experiment with all manner of situations and ideals in the hopes 
+of finding the right way to unite their disparate halves once more. Other Kuei- 
+jin are often fooled into thinking that the Godlings seek some sort of blissful 
+transformation of their undead state. Such nalve vampires change their minds 
+
+
+quickly when the Divine Face decides to explore the nature of demonic fury. 
+Godlings do their best to be the best in ways both wise and wicked, and they 
+make no secret of the fact that they will demonstrate either side of their 
+personality as they see fit, Demon or not! According to the sacred texts of the 
+Divine Faces - 
+the Red Book of the Iron Bndge and The Celestial Nail - 
+the 
+Heavens can be restored to their former glory only by the return of the gods who 
+have lost their way. The Godlings have no intention of disappointing. 
+Given the openness with which they hold their natures, it is unsurprising 
+to discover that many Divine Faces have mortal cults flourishing around them, 
+which the Faces administer with all the grace and horror that befits their divine 
+status. (It takes a rare mortal to deny a god that walks among them bestowing 
+favors and influence in exchange for mere worship!) Not that most Godlings 
+truly care about their “parishioners.” Such mortals are a means to the end of 
+returning to Heaven once more, a font of Chi waiting to be tapped. Indeed, even 
+in the relatively tolerant world of the Middle Kingdom, many Kuei-jin meet 
+Godlings for the first time while carrying out a court mission to order the 
+Godlings to stop demonstrating their powers in public. Of course, such actions 
+are perfectly reasonable to their minds. When one aspires to godhood, after all, 
+who cares if the mortals catch a glimpse of your power along the way? 
+Training: The training of Divine Faces tends to be abrupt and to the point. 
+Another Godling finds the Kuei-jin and instructs him in the lessons of reincar- 
+nation, divinity, deific values and the need to embrace both sin and virtue in 
+order to reclaim the favor of Heaven and return once more. Many Godlings are 
+also taught the nuances of etiquette and courtly manners during this time. The 
+Kuei-j in must present themselves as nothing less than divine! 
+Dharmic Strength: Mantle of Godhood 
+The Godlings are nothing if not majestic, and they learn early on how to 
+project a formidable otherworldly aura to the lesser beings around them when 
+necessary. Sometimes this face is full of the Divine Radiance of Heaven; 
+sometimes it is the Eyes of Hell. Either way, the results are bound to impress. The 
+Godling may use each visage once per story. Divine Radiance requires a Yang 
+Trait to activate, while the Eyes of Hell requires a Trait of Demon Chi. When 
+Divine Radiance is active, the Kuei-jin receives the Traits Compassionate, 
+Commanding and Magnetic for the remainder of the scene, as well as a free retest 
+on all Social Tests related to empathy and courtly grace. By contrast, the Eyes 
+of Hell is treated the same as the Delirium (see the Demon Shintai Discipline in 
+Laws of the East for details), sending mortals scurrying or cowering in terror 
+before the anger of the Godling. 
+Dharmic Weakness: Vanity of the Lotus 
+Convinced of their own perfection, Godlings can be absolutely insufferable 
+company at times, particularly around those they consider to be “lesser beings” 
+(i.e., everyone but them). Divine Faces receive a permanent Condescending 
+Negative Trait, and they are one Trait down to resist fire soul when it’s directly 
+sparked by the actions of a lesser being. The Godlings find it difficult to control 
+themselves when they discover that “mere mortals and other rabble” are still 
+capable of upsetting their carefully laid plans. 
+
+
+TENETS: 
+1: Develop your divine nature. 
+2: Expand both godly and demonic consciousness. 
+3: Accept the veneration of mortals, but answer their prayers in return. 
+4: Harness Chi to bring divinity back to your dead form. 
+5: Act according to the tenets of your Godly Voice, and your Godly 
+6: Visit the Heavens to remember what you have lost. 
+7: Practice ritual and tradition to empower your own essence. 
+8: Commune with the spirits; learn of their messages from Heaven. 
+Desire shall be fulfilled. 
+Concepts: Priest, cultist, criminal, magician, psychologist, traditionalist, 
+Affiliations: The heavenly realms, the color violet and the south direction 
+Auspicious Omens and Symbols: Temple ceremonies, stands of burning 
+Quote: “Perfection is my birthright, wisdom my key. What else do I need?” 
+venerated ancestor, wacko 
+incense and candles, shooting stars 
+THE S P I R I T O F T H E  
+LIVING 
+€ARTH 
+VIRTUE: 
+YINAND 
+Y A N ~  
+While every Kuei-jin recognizes the existence of spirits and pays homage (or 
+at least lip service) to the ethereal world, some Kuei-jin return along the Road 
+Back convinced that they have been given the gifts of spirit-sight in order to fulfill 
+the wishes of the spirits they often ignored in life. These Kuei-jin strive to bring 
+balance to the natural world and peace to the shades of the departed, though 
+typically more of the former than the latter, since the Bone Flowers are quite 
+jealous of their trade with the dead. Early in their new existence, the Kuei-jin come 
+across the staggering array of spirits in the world and recognize their wisdom, 
+humbling themselves before the mighty lords of the Mirror Lands and seeking to 
+serve the Earth as best they can. While Kuei-jin of animistic backgrounds 
+understand and respect the goals of the Cerulean Veils, many others consider them 
+either harmless eccentrics or dangerous eco-terrorists, depending on the indi- 
+vidual in question, but the truth lies somewhere in between. 
+Veils move in a strange and beautiful world, keeping the taboos of the spirits 
+(which helps to explain a lot of their peculiar reputation) while tending to the 
+mundane concerns of the environment around them. Following such guidelines 
+means appeasing the spirits, and appeasing the spirits means another bit of the 
+world will be explained for the vampire - 
+no small payment in an existence 
+fraught with open questions and seeming philosophical dead-ends! These Kuei- 
+jin keep only a nominal interest in the mortal world, considering it transitory 
+and unimportant next to the energies of the earth itself. They typically interact 
+with modem society only in order to feed or when the spirits command them to 
+do so. Other Kuei-jin sometimes see these vampires as little more than slaves to 
+the whims of the Mirror Lands, but that concept is overly simplistic. Cerulean 
+Veils follow the dictates of the spirits because that is what they feel is expected 
+
+
+of them in their new unlives. To them, such obedience is no more absurd than 
+expecting a child to obey its parents. Even when they do enter into regular 
+society, the Veils are often marked by a kind, otherworldly air. While they are 
+more than capable of defending themselves and the spirits they hold dear, most 
+Veils typically have so little concern for the perils of the mortal world that they 
+refuse to arm themselves against it as others do. 
+In the dark days of the Fifth Age, however, more and more Veils are being 
+called into the modem world to right wrongs done to their beloved spirits and even 
+to defend the land against those who would defile it. As such, they are becoming 
+a more and more common sight in courts across the Middle Kingdom. Ancestors 
+debate the value of allowing these wise Kuei-jin into their courts to battle the 
+Yama Kings against the threat presented by the loyalty these Kuei-jin give to the 
+spirit worlds over their fellow undead. For their part, the Veils seek only what they 
+always have: an Earth in balance and an unlife guided by the will of the spirits. 
+Training: These Kuei-jin place agreat deal of emphasis on ritual, ceremony 
+and the observance of taboos. However, aside from some basic grounding on 
+different issues, each Veil is generally left to his own devices when it comes to 
+inventing rites to use and learning the ways of the spirit worlds. This individu- 
+ality serves only to confuse other Kuei-jin further, since - 
+while every Veil 
+follows an elaborate system of chants and rituals - 
+no two members of this 
+Dharma do things quite the same way! 
+Dharmic Strength: Clasping Hands with Heaven 
+Attuned as they are to the invisible world, Veils gain several potent benefits 
+when it comes to dealing with spirits and the spirit worlds. First of all, Veils 
+ignore the first level ofNotoriety they may receive every story automatically, as 
+their reputation with the spirits defuses what would normally be a hostile 
+situation. Veils are up two Traits on all Social Tests with spirits except demons 
+and other creatures of Yomi. Finally, the Veils receive a free level of the Rites 
+Background due to their ritualistic upbringing. 
+Dharmic Weakness: Lost In the Mists 
+Absorbed as they are in the spirit worlds, Veils have trouble relating to 
+mortals, and they are two Traits down on all Social Tests with mortals unless 
+they have known the person in question for at least one story. They even have 
+trouble dealing with others of their own kind, and they are one Trait down on 
+all Social Tests with unfamiliar Kuei-jin. Finally, the special place these Kuei- 
+jin hold in the eyes of some spirits only marks them in the eyes of others. Yomi 
+spirits always make it their special task to attack, harass and otherwise badger 
+these Kuei-jin above any others in the area. 
+
+
+TENETS: 
+1: Obey the will of the spirits. 
+2: Perform the proper ceremonies to remain pure. 
+3: Shun the defiled. 
+4: Tread across the Earth to absorb its full glory. 
+5: Pass wisdom to others freely. 
+6: Help others to surpass the shortcomings of the flesh. 
+7: Renew your thanks and commitment to enlightenment each day. 
+8: Observe your taboos rigidly, that you may overcome your curse. 
+~ ~ ~ _ _ _ _ _ _  
+Concepts: Wanderer, ritualist, competitor, fang shih 
+Affiliations: The spirit realms, the color blue and west direction 
+Auspicious Omens and Svmbols: Shrines and statuettes. tea ceremonies. 
+torii arches, sacred groves and ponds, parades 
+shame that mortals have forgotten such a glorious heritage.” 
+Quote: “Between Yin and Yang, Heaven and Earth, lies humanity. It is a 
+
+
+~ E H E N N A  
+WEARSA 
+PURPLE 
+DRESS 
+TONIC~HT 
+by Ed Spymoun 
+I 
+This story is a LARPer’s cautionary tale in the truest sense. Once you read 
+through to the chilling, world-altering finale, you’ll see why. 
+Vague Threats 
+Uglyface Johnson loved the frog pond. Each night, before the Licks oozed 
+out of Dallas and Fort Worth to buy his secrets, Uglyface studied himself in the 
+pond’s mirrored surface. There were many Nosferatu in this unattractive 
+metropolis; they all hated their reflections. 
+The Nosferatu looked over his shoulder. He didn’t want Iron Teeth 
+McGinty to walk up and witness his vanity. 
+Uglyface’s reflection smiled at him, and he smiled back. He saw the spots 
+on his face, mottled in such interesting patterns. And his reflection was trying 
+to tell him something he couldn’t quite make out. Uglyface sounded out the 
+words with the ripples of the water. “You.. . must.. . taste.. . as.. . good as.. . as.. . 
+you look.” 
+He expected his reflection to spring out of the water and suck him down, 
+but his Final Death came at him from behind instead. Uglyface felt the blood 
+draining from his stomach. He looked down at the row of claws jutting from his 
+belly just below his heart. Wooden fingernails. Uglyface remembered what his 
+sire had told him about wooden fingernails. 
+He saw teeth, then blackness. His mouth tasted like ash; then there was only 
+beauty. A vague darkness near oblivion; a beauty greater than his own. 
+Information Networks 
+King Roachman studied his appearance in the mirror. He centered his 
+monocle, sweeping the flakesofcrusty face-skinaway witha brush. His foot-long 
+fingers knotted his tie, moving like spider legs. 
+The door to Roachman’s haven slammed shut as someone who was invisible 
+but now wasn’t entered. “Ready for a night of wining and dining with the undead 
+of Dallas?” 
+Roachman went back to his tie. “Hello, McGinty. Glad you’re coming with 
+me. No one’s gonna try anything stupid with you there.” 
+“I’ve got some juicy information to sell tonight anyway. Have you heard 
+from Uglyface?” 
+“Nope. Is he missing now too? Lots of us have turned up missing lately, 
+according to my sources. You think somebody’s offing Nosferatu? Maybe those 
+hunter fellows I’ve been hearing about from my sources?” 
+
+
+“I guess. Glad I stood him up last night. I was busy in my occult library 
+reading up on the Wan Xian.” 
+Roachman remembered the meeting because he had set it up himself. 
+Uglyface and McGinty were supposed to meet Hortense’s little crippled friend 
+tonight after the Elysium meeting at the community center. A week prior - 
+at 
+the previous Elysium meeting - 
+they were supposed to hammer out some lies 
+to keep the cripple’s mistress off their backs. No big deal that the preliminary 
+meeting with Uglyface didn’t happen, though. 
+“Go ahead and take the meeting with that wheelchair fellow and tell him 
+there’s a new BSD hive in Sherman,” Roachman said. ‘That should keep 
+Hortense jumping at shadows for a while. You know how she’s always trying to 
+fight the designs of the Wyrm.” 
+Roachman finished tying his tie, and he and Iron Teeth set out into the 
+tunnels. McGinty protested that the king’s route would take forever, then 
+suggested taking the tunnel up to Grapevine then going southwest straight into 
+the city. Roachman didn’t want to use that tunnel because he didn’t want to 
+walk into Elysium with the shit of the cattle all over his shoes. Their route 
+decided, Roachman and McGinty crawled deep beneath the city, past Roachman’s 
+traps and ghouled albino alligators, deep into the earthen tunnels of the 
+Nosferatu of Dallas in nights long forgotten. 
+‘(Who you think‘s offing us, Roachman?” 
+“Not sure. This is a rough town to be Nosferatu. Everyone’s got a thing 
+against us. What’s one Sewer Rat more or less? That mage up from New Orleans 
+says the Gauntlet was all fucked up at the pond. He thinks something hopped 
+out of the Umbra and ate Uglyface.” 
+“HOW’S 
+he know that?” 
+“True Magic is beyond my grasp, the mage told me. He said the monster had 
+an Old and Hungry Resonance, though.” 
+Roachman squinted his tiny little eyes and peered left and right, not 
+remembering which way to turn. McGinty sorted through all the creatures in the 
+world of darkness that they inhabited, trying to imagine what kind might have 
+such a Resonance. 
+“It’s not.. . one of them, is it?” 
+“Oh no. It couldn’t be. Absolutely not. Well.. . maybe.” 
+McGinty and Roachman turned right, and after stooping through a series 
+of warrens and mazes that even the King of the Sewers could hardly navigate, 
+they arrived in one of the storm drains beneath Plano. 
+(‘Roachman, what are we going to do about this monster from the Umbra?” 
+“Sell the information, I guess.” 
+Iron Teeth liked the sound of that. “Maybe we could use it to solve our 
+Hortense problem. Make sure she hears it from the rumor mill. Then, after you 
+sell the same info to her little gimp friend tonight, she’ll think it’s solid. She’ll 
+throw a fit, then the prince will get fed up and stick her out in the sun for a few 
+minutes, if you know what I mean. We teach her how to fish, then we watch her 
+hang herself.” 
+“Good thinking, McGinty.” 
+Q F H B N N A  Wtxns A PunpLE Dncss TONIGHT 
+
+
+“But if there really is something hopping out of the Umbra and eating 
+Nosferatu, it’ll wipe out the whole clan before the city handles the damage 
+she’ll cause in the meantime. You know the Brujah. They’re one-man- 
+wrecking crews.” 
+Roachman smiled. “You’re half right, McGinty. Hortense is a trouble 
+magnet. She’ll step in this big pile ofdog shit, then after she draws this thing out, 
+our plans will come to fruition. 
+“But first, we must make sure the rumor makes it to her. Hurry ahead and 
+take it to LSD.” 
+Impotence and Ambition 
+Hortense of Clan Brujah came to Elysium to convince the Ventrue prince 
+that Dallas needed cleaning up, and that she was just the Lick to do it. She 
+warned him about the nascent Sabbat, she warned him about the encroaching 
+werewolves, she told him of the rumors she’d heard inNovember 1999 about the 
+hunters whose auras shined like gold. Somewhere during her diatribe about 
+Nosferatu overcrowding in Dallas, she started screaming. 
+“Those liars! The Nos are sewer-dwelling, shit-sucking liars! And I can 
+prove it!” 
+Theprince,forhispart,didhisbestto tuneherout. Justafewfeetaway, asmall 
+crowd listened to the Toreador primogen extemporize about some new form of 
+fiction. “The whole enterprise is doomed,” the effete Toreador droned, “because 
+it uses a comedic structure to tell a tragic tale.” The prince couldn’t keep up with 
+the conversation because of the crackpot Brujah shouting in his ear. 
+‘This is all very interesting, Hortense, but I still don’t see why you should 
+be sheriff.” 
+“I’m a Brujah.” 
+“We’ve already got a Gangrel sheriff. He’s loyal even though his clan 
+“He’s a dove. You need a Brujah hawk.” 
+“No I don’t.” 
+“I’ve got Fortitude and Protean that I learned in the Sabbat before I 
+reformed and moved to Dallas. I’m ideally suited.” 
+The prince did some math in his head and determined that having spent so 
+much time learning Disciplines, Hortense could not possibly have directed her 
+experience into learning how to use those Disciplines effectively, considering 
+how old she was. 
+“I don’t think that’s a good idea, Hortense. Sometimes a sheriffs got to be 
+a diplomat instead of a cop. I’m not sure you possess the vision necessary to 
+enforce our Traditions.” 
+Hortense rolled her eyes. “Fuck all that. The only way to keep us safe is to 
+kill anyone who threatens the Masquerade. You might as well name me sheriff 
+because that’s already what I do. Without me and my ally, Stumpy, this whole 
+town would’ve met its Final Death long ago.” 
+The prince pretended to notice something across the room and started 
+walking away. “Oh look. I think that’s Ludovici waving to you. Go see what he 
+wants, and I’ll be content to consider what you’ve told me tonight.” 
+abandoned us.” 
+
+
+Hortense looked over at Ludo. The Malkavian wasn’t waving to her at all, 
+but staring at some stranger in a purple dress. Hortense put aside her clan’s long- 
+standing hatred for all Malkavians and approached her demented friend. 
+Dialogue Is Not Action 
+Somewhere amid the swirls of the auras and tracers left by the drama of 
+“Ludo ?” 
+Ludovici continued looking at the strange Kindred in the purple dress. 
+Hortense’s aura was a deep purple, just like the stranger’s dress. Ludovici’s 
+irredeemable madness suggested that there must be some connection. The 
+stranger seemed oddly familiar with the prince as well, although she had never 
+met the Ventrue before tonight. 
+Elysium, Ludovici Sinistrati D’Ameno tasted a familiar voice. 
+“L&! 
+” 
+Hortense was talking to him. How best to explain what he was doing? In his 
+madness, he heard her staring at him. He remembered that he had something to 
+tell her. 
+“Ludo? What the fuck are you doing?” 
+Ludovici fled his perceptions and returned his sight to the Realm of 
+Waking. He smiled at Hortense as ifhe had just noticed her. Her glare scared the 
+look from his face. He looked down at his shoes and mumbled. 
+“I’m a weird cat,” he said. “I try not to romanticize it.” 
+“Are you swimming in auras again?” 
+“Yeah. I saw a good one, but it confused me.” 
+The Malkavian could tell Hortense was pissed off about something. That 
+was always a safe assumption with her, considering how hot-blooded her clan 
+was. She glowered about the room, edging closer to him. 
+“The prince is trying to fire me again,” she whispered. 
+“There’s no time for that now. I’ve heard something. Something big.” 
+Ludovici was disappointed that this provocative statement hadn’t cheered 
+her up. Still, he told her about his conversation with Iron Teeth McGinty. Just 
+after sundown, they’d both arrived at Elysium. In exchange for a small boon, he 
+told her, McGinty had told him about the disappearance of several Nosferatu. 
+Something from the Umbra was up to no good. Again. 
+“The End Times are here, just like it says in the Book of Nod, Ludo,” 
+Hortense said. “This thing from the Umbra, this thing killing Nosferatu, is 
+clearly one of the Nictuku.” 
+‘‘I think that’s a pretty crazy theory, Hortense.” 
+“Good God, man, it’s the only one that makes sense! That clan is complicit 
+in its own destruction.” 
+Ludo allowed his perceptions to catch up to him, and he swam back into 
+the auras. Somehow, it was no defense against Hortense’s designs. She was 
+sucking him in like she did every time. Why did she have to have such an 
+interesting aura? 
+“Here’s what we do, Ludo: We kidnap Iron Teeth McGinty and feed him 
+to the Nictuku. That shows it we’re serious. Then we help it round up the rest 
+of the Nosferatu. When it’s sated - 
+taking care of the Nosferatu overpopula- 
+C ~ E H E N N A  WEARS 
+A PURPLE 
+DRESS 
+TONIGHT 
+
+
+tion - 
+the Nictuku will leave. The prince will have to acknowledge my 
+talents then.” 
+T h a t  sounds like a nice plan, Hortense. But how can we be sure the Umbral 
+monster is a Nictuku?” 
+Hortense reached into her purse and grabbed her cell phone. “I’ll call 
+Stumpy and tell him to ask Iron Teeth McGinty when he meets him tonight. 
+Maybe the Sewer Rat will have learned something new by then. And after he 
+finds out what we need to know, Stumpy’ll bring McGinty in.” 
+The Lines Cross 
+Hortense and Ludovici left Elysium and walked through downtown Dallas. 
+With a few hours to kill while Stumpy acquired McGinty, they decided to get 
+fucked up on some changeling blood down at the May Molloch. 
+“You know,” Ludovici said, “among his kind, Stumpy is called a ‘metis.”’ 
+“Yeah, I know. I knew it when I first saw him.” 
+“No, I said metis -you 
+can’t possibly know what a metis is. I learned of it 
+“I learned many strange things during the time I spent fighting the Wyrm 
+Ludovici couldn’t argue with that. He changed the subject. 
+“So what’s this place we’re going to?’’ 
+“The May Molloch. The changelings meet there once a week for some kind 
+of court. Strangely, it occurs on the same day as our Elysium. I know you dig auras, 
+and you’ll see some tripped-out auras on fae blood.” 
+Ludovici hugged his coat around him and walked faster. He walked with 
+Hortense between him and the street. 
+through the Malkavian Madness Network over the last month.” 
+alongside the Garou, Ludo.” 
+0.. 
+Stumpy wrapped his jaws around his chair’s joystick and steered down the 
+path that led to the frog pond. He took it slow, making patient turns andcoasting 
+down hills. The motor didn’t make much noise at such slow speeds. Although 
+the metis could see in pitchdarkness, he knew the path by heart. He’dcome here 
+with Hortense a hundred times. And aside from Hortense, he’d dealt with 
+McGinty more than any other Lick in town. 
+He found McGinty waiting for him. Always the same place, always on time. 
+“We know about the thing from the Umbra that’s eating Nosferatu,” 
+“Both your master and her insane friend owe me boons for this, you know.” 
+“Agreed. They’ll owe you. Is it Nictuku?” 
+‘‘Our Nosferatu sources think so. You know I’ll expect- Aieeeeee!” 
+Iron Teeth McGinty’s head burst into flame. He screamed as his flailing 
+hands slapped at his face. Stumpy felt the elements lingering in the air, waiting 
+for him to realize them. He reached out to Gaia. McGinty’s eyeballs exploded 
+from his head. The vampire collapsed to the ground. 
+With a whip of his back, Stumpy fell from his wheelchair and inched 
+himself over to the collapsed vampire. Stumpy thought about his missing feet, 
+and his missing hands. The thoughts fueled his rage, and he changed form 
+Stumpy said. “We just want to know this: Is it Nictuku?” 
+
+
+instantaneously. He snarled and went for the vampire’s throat. Somewhere in 
+the back of his mind, Stumpy heard his ancestors beating war drums. 
+The metis felt the flames on his lips. He leaped up with a yelp and swayed 
+back and forth trying to find a balance on his feetless legs. Stumpy fell to the 
+ground. He called upon Gaia again for water to extinguish the flames. McGinty’s 
+teeth faded from hot orange to dull gray as the evaporating water hissed away 
+into vapor. 
+‘‘I want to tell you a story, while you’re in a condition to appreciate it: There 
+used to be this pack of Garou. Two of them loved each other very much. From 
+their forbidden passions came a child. But the kid was fucked up, see. Twisted 
+and deformed; I mean his soul as well as his body. The kid had some weird 
+appetites - 
+something I’m sure you can understand with those crazy teeth of 
+yours. But the pack must have figured that Gaia needs all the help She can get, 
+because they tolerated that hungry little shit for years. Until he was old enough 
+to join his pack in the fight against the Damned, that is - 
+he had a bad habit 
+of eating his vanquished foes. 
+“The packdidn’t like the whole vampire-eating thing. His pack took him into 
+the city then cut off his hands and feet. But they couldn’t just leave him for dead. 
+They entrusted him to a bad luck princess they’d fought alongside for years, but 
+told her to never return to Garou lands. She’s helped the kid get back on his feet.” 
+McGinty lifted his eyeless face from the dirt. He tried to laugh. “Must.. . 
+be.. . figurative.. .” 
+“Real funny, Sewer Rat! But I didn’t tell you end of my story. Remember 
+how I said the kid used to eat vampires? His favorite was Nosferatu.” 
+Stumpy snapped his jaws over McGinty’s ear. He ripped the cooked meat 
+off McGinty’s face. The metis rolled on his back, chewing the Nosferatu’s flesh. 
+McGinty screamed. Blood streamed from his eye sockets, and horror washed 
+over him. 
+Stumpy swallowed the last bits of McGinty’s nose. “Don’t fuck with me, 
+Leech. 1’11 light you up every time. Now get up off your ass and help me back into 
+my chair.” 
+Distractions 
+“Ludo? I’m trippin’ balls.” 
+“Me too.” 
+“What are you thinking about?” 
+“About drinking another faerie.” 
+‘This one’s scared. I can see his aura. 
+Hortense and Ludovici gazed up at the stars, nestled in the trash bags 
+piled behind the May Molloch. The changeling boy squirmed between 
+them. If it seemed like he was about to worm away, they grabbed his wrists 
+and bared their fangs. 
+‘They killed J.F.K. here, Hortense.” 
+“I remember. I was there in brighter days.” 
+Hortense and Ludovici had gone on something of a binge, draining about 
+a third of the faerie court in the last 30 minutes. The blood did strange things 
+to their dead brains. 
+9 E H E N N A  W E A R S  A P U R P L E  Dnsss T O N I ~ H T  
+e 
+
+
+“I can see your aura, Ludo. You’re fucked up, dude.” 
+Hortense heard their van pulling up. It arrived with that familiar hiss of its 
+loose power-steering belt. She heard the backdoor slide open and the hydraulic 
+lift lowering Stumpy’s chair to the ground. The sound of his wheels came closer 
+to them. Ludovici looked up at the sound and threw a few trash bags over their 
+changeling captive, his paranoia overwhelming the half-hearted Arcadian 
+protest. Stumpy rolled up on the pile of trash. 
+“You didn’t tell me you’d be out back,” he said. 
+“Did you get ... that big-teeth guy I sent you to get?” 
+“Yeah, Hortense. He’s waiting in the van. He ain’t got no face.” 
+“Did he say the Umbral monster was a Nictuku like I thought?” 
+“Definitely.” 
+The world reoriented itself as Hortense sat up. She picked moldy cheese 
+from her hair and looked over at her metis companion. “NOW all we need to do 
+is find the Iron Teeth McGinty and take Nictuku to it.” 
+The changeling boy struggled again. Ludovici socked him in the face with 
+a brutal chop to calm him down. “I think I know where the beast lurks,” he 
+whispered. “NOW that I am completely out of my head, the language of the auras 
+is apparent to me. I think I’ve already seen the creature tonight, but we must 
+make sure.” Ludo pulled himself out of the pile and brushed himself off. “But I’m 
+not sure that Elysium is the safest place for this betrayal. This Nictuku is no doubt 
+very dangerous.” 
+But Hortense was already walking to the van. “NO more dangerous than the 
+three BSDs I killed when I was in Montreal last year. Let’s go.” 
+Ludovici realized that, for tonight at least, Hortense was his clanmate. He 
+volunteered to drive. 
+Population Control 
+Elysium had peaked by the time Hortense and Ludovici showed up. The 
+current scene was strictly post-mortem. The proclamation of the prince that 
+there would be no more Embraces in Dallas for the next 50 years hadn’t gone 
+over well with the assembled Licks. Most of them had left in a huff, and the few 
+who remained stood around seeing who could prophecy the most utter doom. 
+The Toreador primogen, though, was still there, deep into the discussion he had 
+begun earlier that evening. His audience stood and snored. Stumpy, and the 
+disoriented fae boy in his lap, rolled past the keeper of Elysium, who figured it 
+was too late in the evening to start kickingout Lupines and changelings. Instead, 
+he invited them to join him at the bar. 
+Ludovici placed his hand on Hortense’s shoulder to steady himself as he 
+prepared to surrender to his perceptions. With an explosion of color, the 
+emotions and secret thoughts that lingered in the room revealed themselves to 
+the Malkavian. He looked at the young stranger who sat at the right hand of the 
+prince whispering things unheard by Kindred ears. 
+“It is just as I suspected,” Ludovici gasped. “Gehenna wears a purple dress 
+tonight.” 
+“I know. I see it too.” 
+
+
+With the fae blood in their systems, Hortense and Ludovici saw the thing 
+for what it really was. It was not some new childe, some anonymous traveler, but 
+an old and hungry evil, a curse inflicted by an Antediluvian on his childer. Her 
+aura was a constantly exploding purple, a purple deeper than even Hortense 
+could transmit, a purple that summed all the murderessness of the vampiric 
+condition. Hortense and Ludovici felt the Curse of Caine heavy upon them. 
+Hortense looked at Ludo. The disgruntled frown was gone. “It’s time, 
+Ludo.” Was she nervous, perhaps? “Everything depends on this moment.” 
+The pair approached the Nictuku. 
+The woman in purple exuded the most charming presence even when 
+perceived in the normal spectrum. She curtsied to each of them and made small 
+talk about Dallas and how she was looking forward to making her haven here. 
+As she talked, Ludovici watched Hortense growing increasingly skittish. Fi- 
+nally, the tension exploded. 
+“Look, you can cut the bullshit! We know you’re a Nictuku. We figured it 
+all out.” 
+“But we don’t fear you!” Ludovici added, just in time to keep the prince from 
+calling a Blood Hunt on the monster in his Elysium. “In fact, we’ve brought you 
+one of your clan’s errant childer. We’ll deliver the rest of them as soon as we can.” 
+The woman didn’t seem to appreciate their generous offer. “I don’t know 
+what you’re talking about, I’m not a - 
+what did you say again? - 
+Nictuku?” At 
+the sound of the word, a few vampires turned to listen to the conversation. Even 
+the Toreador primogen ceased in his ramblings. Roachman slipped quietly into 
+the shadows with a look of terror and fear. 
+Hortense leaned in and whispered to the ancient beast. “If I were aNictuku, 
+I believe I’d do almost anything to take a bite out of Iron Teeth McGinty.” 
+The thing’s eyes narrowed as a smile crossed her face. 
+“Yes,” it said. “Did you know he actually has iron teeth? A descendant of 
+Ludovici backed away from the Nictuku. “Time to leave, Hortense. Are you 
+“No way. We’re so close, Ludo. Don’t crap out of me now!” 
+The woman in purple ripped off Hortense’s arm and stuffed it into her 
+growing mouth. The halls of Elysium echoed with screams. Hortense stood 
+there, disbelief in her eyes. “This isn’t supposed to be the way it happens! I 
+thought you ate Nosferatu!” 
+“I do. And Brujah, and Malkavians, and on down the line. Each has its own 
+flavor.” The Nictuku licked her lips, which were already swelling into turgid 
+scars as the svelte young vampire melted away to reveal the creature’s immense 
+true form. “The only thing I like more than vitae is fae blood. And Garou blood.” 
+There was a quiet whimper from Stumpy’s direction, and a yellow pool 
+collected under his chair. He put aside his species’ ancient hatred of all vampires 
+-he 
+and the Leeches had a common enemy now! 
+Baba Yaga perhaps. He must be delicious.” 
+still looking at her aura?” 
+The Inevitable Showdown 
+The Nictuku ripped through Elysium, tearing apart the Kindred in her 
+wake. A legless neonate tried to drag himself to safety until the Nictuku planted 
+C ~ E H E N N A  
+WEARS 
+A PURPLE 
+DRESS T O N I ~ H T  
+
+
+its massive foot in his back. The Toreador Primogen had lost his eyes and was 
+clutching at his skull. Nothing beautiful transfixed him now. Only horror. A 
+broken wooden fingernail in the heart of the prince held him immobile. For 
+some reason, theNictukudidnot destroy him outright asshe hadso many others. 
+Hortense and Ludovici huddled behind an overturned banquet table. 
+Hortense grasped her bleeding shoulder while Ludo stared at the aura light show. 
+“The whole room is purple now, Hortense.” 
+‘Who fucking cares! We’re gonna die!” 
+“We’re not going to die. I have an idea, but I am much too preoccupied right 
+now to vocalize it.” He felt Hortense screaming something about how he should 
+snap out of it. 
+“I’m trying to be patient. We must wait for the prerequisite conditions to 
+realize themselves.” The Nictuku fell upon the changeling and gulped him 
+down. The creature’s purple aura wavered then threatened to black out the room 
+while the changeling’s aura floated away into the ether. 
+“Now!” Ludo leaped over the table and made his way through the door 
+while the beast oriented itself to its new outlook on reality. 
+At kast Stumpy won’t abandon me, Hortense thought as the Nictuku picked 
+up Stumpy’s chair and hurled the shrieking metis across the room. The chair 
+bent when it landed, trapping Stumpy underneath. 
+Hortense huddled behind the table, unable to formulate a coherent escape 
+with the fae blood swishing around in her head. She briefly considered making 
+peace with her maker but quickly decided it was important to remain stand- 
+offish at the end. Her hot-blooded Brujah heritage would permit nothing less. 
+She presumed that no miracles would be forthcoming on her behalf. 
+All hope seemed lost, but suddenly, Iron Teeth McGinty burst into the 
+room. His bums had disappeared and most of his face had grown back. He now 
+had a healthy complexion for a man with mottled green skin. Ludovici stumbled 
+in after him, grasping at the door frame trying desperately to remain upright. He 
+crawled across the room to rejoin Hortense as the Nictuku wheeled around and 
+faced her new opponent. 
+“McGinty!” the Nictuku screamed. 
+“Absimiliard’s Concubine!” McGinty shouted back. “The Mistress with 
+Wooden Claws! I haven’t seen you this side of the Gauntlet since you killed my 
+sire. His old occult books told me how to finally defeat you!” 
+McGinty lunged at the Nictuku and buried his iron fangs deep into her 
+skull. Where the iron contacted the changeling blood in the beast’s system, a 
+strange spectral feedback began. The Nictuku’s aura became a negative of itself 
+and started shrinking. The aura around McGinty seemed to vibrate, speeding up 
+to some grand explosion. Then the beast bit his head off and spit out 12 iron 
+spikes. They left colorful trails in the air as they fell. 
+Ludovici leaned over and whispered to Hortense. “That was fucking cool.” 
+The Nictuku staggered about the room, holding the spot McGinty had 
+bitten into. She howled in pain then ripped the Tremere primogen in two. No 
+one in the room seemed to mind. 
+“Nice tactic, the iron and changeling blood,” Hortense said. “But it looks 
+like she’s still going strong.” 
+
+
+“One again, Hortense, you underestimate your enemies. Her aura is 
+diminishing, and thus her power. Now in comes the cavalry.” 
+As if on cue, the remaining strength of the Dallas Nosferatu coalesced out 
+of the shadows. Each held a broadsword reinforced to withstand the rigors of 
+their advanced levels of Potence, and they all wore chain-mail vests beneath 
+their clothing. The King of the Sewer led the creeping deployment, admonish- 
+ing the Nictuku in a language Hortense didn’t understand. Then, only for a 
+moment, a silence held the floor. The Nictuku roared, and the Nosferatu waded 
+in to destroy her. 
+Transferable Characters 
+Hortense saw herself in the rear-view mirror, applying her makeup with her 
+remaining hand while Stumpy desperately gripped the steering wheel of the van 
+with his forearms. “The whole Nictuku thing ruined my buzz,” she said to 
+Ludovici, who sat in the back seat holding his head. They heard a scream from 
+somewhere inside the community center. 
+“Hurry it up, Stumpy. The police are going to be here soon to investigate 
+this disturbance.” 
+“I’m far too mad for the police to catch,” Ludovici said. “But I’m worried 
+about whoever wins that brawl in there. I’d like to be someplace else. Like 
+Minnesota, maybe.” 
+Stumpy whined and floored the pedal. The van merged onto 1-35 North as 
+the vampires crawled under their seats to sleep the day away. Stumpy rolled 
+down the window and licked his lips. He wondered what the Nosferatu tasted 
+like in Minnesota. 
+9 E H B N N A  W E A R S  A P U R P L E  DRESS 
+T O N I ~ H T  
+e 
+
+
+by Carl Bowen 
+WHATARETHE 
+EOMORI. 
+Fomori are the product of the fusion of a human and a spirit in service to the 
+Wyrm. For a myriad of reasons and through a wide variety of means, an otherwise 
+normal man or woman devotes him- or herself to the ideals of corruption and 
+destruction that motivate all other servants of the Wyrm. 
+It is a common misconception that Pentex, a corrupt organization wholly 
+in thrall to the Wyrm, creates and directs all fomori. Not to understate matters, 
+Pentex does indeed go to great lengths to recruit new fomori and keep them busy 
+doing the company’s dirty work. Pentex scientists also keep themselves busy 
+finding new ways to facilitate the creation offomori among the populace at large. 
+However, the company did not create the process by which Bane spirits bond 
+with human souls. All human beings have qualities attractive to the Wyrm’s evil 
+Banes, be they weak spots in our moral fiber or antisocial tendencies we only 
+barely manage to keep in check. Once a Bane detects the avenue through which 
+it may exploit this potential in a prospective human host, it needs no coaching 
+to travel that road on its own. 
+TYPES 
+O E  BANES 
+These listed spirits are not the only ones that serve the Wyrm, but they are 
+the spirits best able to possess humans. Most fomori are the product of joining 
+one of the following Banes with a human subject. The possession is not 
+instantaneous, however, so a Garou warrior with a mind to prevent the 
+conjunction could travel into the Umbra to do battle with the spirit before the 
+fomor is born. Keep in mind, though, that most fomori are not necessarily the 
+product of joining these Banes with willing human subjects. A Bane with a 
+powerful enough command of the Possession Charm can latch on to the soul of 
+a victim regardless of the victim’s resistance. The fight for dominance may take 
+some Banes longer than others, but enough struggle will overcome any obstacle 
+BLOOD BANES 
+Blood Banes are the farmers of the crop of filthy, festering cesspits that the 
+modem age is heir to. These Banes frequent toxic dumps, blights and other 
+equally repulsive sites in hopes of acquiring disease. They then seek out victims 
+to infect with the diseases they pick up. When a Blood Bane has transferred a 
+disease successfully- much as a bee would pollinate a flower - 
+it feeds on both 
+the disease and the concomitant suffering to which the disease gives birth. 
+Rage 6, Gnosis 5, Willpower 6, Power 20 
+Charms: Airt Sense, Possession 
+These Banes are responsible for the existence of the Ferectoi breed offomor. 
+The Banes appear from the Umbra to extract the semen or fertilized egg of a 
+BREEDER 
+BANES 
+
+
+sleeping human victim. They then retreat back across the Gauntlet. Most 
+Breeder Banes use the Charm: Breeding Trance to erase all memory of the rape 
+from their victims’ minds. The Charm replaces the memory with one of a 
+disturbingly violent erotic dream, provided it works. The most fortunate victims 
+of these Banes suffer minor brain damage and lose all memory of the events that 
+tookplace that night. The least fortunate victims remember both the dream and 
+the nocturnal visitation itself. 
+Rage 5, Gnosis 6, Willpower 5, Power 25 
+Charms: Airt Sense, Breeding Trance, Materialize 
+Lacking almost entirely in form, these Banes are difficult foes to overcome. 
+Worse yet, they do not attack the body or corrupt the land. Instead, Howling 
+Insanities lie in wait for prey, then shriek and howl mindlessly. The sounds buffet 
+the minds of those who hear them, stripping the victims of their sanity. The 
+Banes then feed on the madness they create. These Banes were among those who 
+brought about the downfall of the White Howler tribe. 
+Rage 7, Gnosis 6, Willpower 7, Power 20 
+Charms: Airt Sense, Corruption, Possession 
+Mind Feeders have existed as long as the human mind has existed, leading 
+some to wonder if humanity somehow created them long ago. Further specula- 
+tion suggests that these Banes’ manipulation gave rise to the first human 
+psychics. Putting speculation aside, however, some facts about these three-eyed 
+monstrosities cannot be ignored. For some reason, the Pentex Corporation has 
+been enjoying greater cooperation with Mind Feeder Banes as part of a project 
+to create anew, psychic breed of fomor. Tests have shown that these Banes bond 
+best and become most powerful when they bond with human psychics. Other- 
+wise, they bond with the most intelligent non-psychics they can find. 
+H O W L I N C ~  
+INSANITIES 
+M I N D  FEEDERS 
+Rage 4, Gnosis 5 ,  Willpower 8, Power 20 
+Charms: Airt Sense, Corruption, Possession 
+A single Bane creates a Scavenger Pack by possessing a host of small animals 
+then seeking out a larger animal inside which to make a true home. The most 
+common example of this phenomenon is that of a Bane possessing a horde of rats. 
+The rats then seek out a dead or dying human body and force their way inside, 
+hollowing out as much space for themselves as they can. The resultant bulging, 
+shambling mass becomes a fomor known as a Hollow Man. 
+While possessing the host of smaller animals, the Bane’s consciousness 
+extends to all of the individual members while remaining anchored in only one. 
+If that particular anchor animal is destroyed, the Bane is forced back into the 
+Umbra where it must start its search anew. 
+SCAVENC~BR 
+PACK 
+Rage 4, Gnosis 6, Willpower 4, Power 20 
+Charms: Airt Sense, Healing, Materialize, Possession, Prolonged Dying 
+
+
+TYPES 
+O E  EOMORI 
+BRAIN EATERS 
+Despite the schlocky sound of their name, the Brain Eaters are some of the 
+most subtle, insidious Fomori ever created. As part of a far-reaching initiative 
+to corrupt those fortunate few humans born with psychic powers, a division of 
+the Pentex corporation binds a Bane known as a Mind Feeder to the brain of a 
+latent human psychic. The torture and anguish the psychic suffers as a result of 
+the operation awakens his power, but at a terrible cost. While it makes the 
+psychic more powerful than he would have become on his own, the Mind Feeder 
+Bane creates in the new fomor the urge to consume living human brains. Should 
+the psychic deny himself this urge for longer than a week, his powers atrophy, 
+and his very body begins to wither and decay. The addiction is so strong, 
+however, that most Brain Eaters indulge more than once a week after they have 
+indulged the first time. 
+In return for dining on this gruesome delicacy, the fomor develops the 
+power to make people hallucinate, he no longer needs fear the Delirium, and he 
+can read people’s minds with ease. Worse yet, the fomor retains any psychic 
+powers he may have had before being bound to his Bane. To top off all else, the 
+binding operation causes no noticeable physical change in the fomor, allowing 
+him to blend in with the rest of human society without so much as a ripple. 
+ENTICERS 
+Enticers exist to bring out and exploit the worst, most base instinctual 
+behavior in human beings. They live and breathe such raw, powerful sexual 
+magnetism that only the most saintly and reserved victims can control 
+themselves. (And even their resistance ultimately folds.) Regardless of sex or 
+sexual orientation, once an Enticer spots a victim, the victim is doomed to the 
+fomor’s depredations. 
+Pentex uses Enticers as Judas goats or Jezebels, depending on the circum- 
+stances. Many a valiant and driven werewolf has followed a stunning Enticer 
+into a trap, never realizing his mistake until it was too late. Many a pack of young 
+hotheads has been torn apart as its members fought tooth and claw for the 
+“affections” of the same fomor. More often than not, an Enticer needs only 
+whisper a few encouraging words in the right ears to accomplish its dire aims. 
+Should physical confrontation be necessary, however, the Enticer’s only form of 
+defense is a row of wickedly barbed fangs. 
+Should a character ever manage to see through an Enticer’s seductive 
+illusion, he might be surprised to see an entirely normal-looking person 
+underneath. Enticer fomori are created by repeated exposure to a highly 
+addictive chemical in a special brand of cosmetics distributed by a subsidiary of 
+Pentex. The chemical creates an intense high in the wearer, while transforming 
+the sweat glands in the wearer’s skin into high-output pheromone factories. 
+These pheromones attract members of either sex equally (regardless of the sex 
+of the person wearing the makeup) by dredging up the image of sexual perfection 
+in the victim’s mind and lowering the victim’s inhibitions accordingly. 
+Pentex keeps Enticer fomori compliant very simply by threatening to cut off 
+the Enticer’s supply of its addictive makeup if the Enticer does not do as it is told. 
+THE EOMOBI 
+@ 
+
+
+E E R E C T O I  
+Born from the disgusting womb of a Breeder Bane, the Ferectoi consider 
+themselves the larvae of the Wyrm on Earth. They look human and act human 
+and have human motivations. To the casual observer, each appears entirely 
+human (if a particularly vital and ruthless human). Even the Ferectoi’s formi+ 
+dable powers remain concealed when they’re not in use. However, these fomori’s 
+resemblance to humanity stops at the surface. Deep down, the Ferectoi are 
+Wyrmcreatures through and through. While some might struggle with their true 
+nature, that nature always wins out eventually. 
+In the mean time, the Ferectoi enjoy all the pleasures of power and luxury 
+life on Earth offers. Banes and lesser Wyrm beings serve them, as do the 
+unwitting humans the Ferectoi dominates in his human semblance. 
+EOMORI EAMILIBS 
+Sometimes, groups of Banes choose the path of least resistance in bonding 
+with human hosts. These Banes congregate around blights or Hellholes in 
+remote backwoods areas and infest the sequestered, inbred families that some- 
+times also congregate in such isolated areas. Once they have become fomori 
+themselves, the older members of these families do most of the work for these 
+Banes thereafter. When their offspring grow old enough, the parents take them 
+to the site where the Banes wait and perform a twisted bastardization of the Rite 
+of Passage. This rite makes the young adult part of the family “right and proper,” 
+ending the hellish existence the child has likely endured thus far. The child then 
+receives his first taste of the special Charm (and Taint) that runs in the family, 
+otherwise known as the “family gift.” 
+ERBAKEEBT 
+These beasts are almost comically monstrous. They scuttle along on long, 
+muscular arms and stunted legs. Their fingers and prehensile toes stretch out of 
+proportion to their limbs. Their luminescent, unblinking eyes bulge grotesquely 
+from the sockets. Liver spots stipple their slimy skin, and they communicate in 
+porcine snorts and clicks. Morbidly obese “queen” Freakfeet lounge about laying 
+eggs and being served by the more able males of the species. 
+Oddly enough, not even the Pentex Corporation appreciates the existence 
+of these disgusting beasts. Originally created by joining a Sludge Elemental 
+(known as a H’ruggling Bane) with a human-amphibian genetic hybrid, the first 
+generation of Freakfeet escaped from Pentex’s service after an explosion at the 
+lab that created them. When given the opportunity, Pentex field operatives 
+“sanitize” Freakfeet hives where they find them. Unfortunately, however, 
+Freakfeet were designed to be prolific in any climactic conditions. The creatures 
+maintain subterranean hives all over the world, regardless of Pentex’s every 
+effort to cull the expanding population. 
+Despite the human DNA that led to their creation, Freakfeet young do not 
+gestate within a Freakfeet queen. Rather, the queen injects her fertilized eggs 
+into the body of a living human being with a sharp stinger/ ovipositor at the base 
+of her spine. Freakfeet males gather human hosts by venturing up through sewer 
+pipes in urban areas and abducting them. They use the Rat Head power to make 
+the journey up out of the sewer - 
+often emerging through toilet bowls in their 
+
+
+victims’ homes - 
+and they use the Maleate power on the victims in order to 
+reverse the journey with their prize. More often than not, a human will die as a 
+result of the Freakfeet birthing process. Those hardy few who survive remain in 
+the hive as “breeders” until they either expire or are traded to another hive. 
+ OREH HOUNDS 
+While it can be argued that some fomori resist the changes that overtake 
+them and make them less than human, no such case can be made for the 
+Gorehounds. Gorehounds revel in what they become, living up to whatever 
+ghastly potential they possess. The transformation into a Gorehound usually 
+marks the human’s achievement of a lifelong goal. 
+Deranged loners brimming with repressed rage and sadistic fantasies make 
+the best prospective Gorehounds. To capitalize on this fresh pool of potential 
+fomori, the Pentex Corporation distributes Bane-possessed slasher videotapes 
+through a shell company called Slaughterhouse Video. Merely watching the 
+tapes opens the viewer to possession by the Bane. Once in place, the Bane helps 
+reduce the viewer’s inhibitions, opening the floodgates on the barely contained 
+sadism. Inspired by the “heroes” of the slasher tapes he watcher, the young 
+Gorehound sets out to stake his own claim on trademarked over-the-top 
+violence. The serial torture and murder of which Gorehounds are capable and 
+all too happy to indulge in knows no bounds. A new Gorehound might begin his 
+career on a small scale (say by mutilating household animals in his neighbor- 
+hood), but his ambition to indulge in more sensational violence grows as his 
+confidence grows. 
+Should a Gorehound ever be caught or confronted, he will fight to escape 
+for as long as he can move, causing as much crippling pain and destruction as he 
+can. While unreliable as operatives or employees of Pentex, Gorehounds do the 
+work of the Wyrm with admirable zeal, and they provide an excellent distraction 
+or scapegoat for actors undertaking more important Pentex initiatives. 
+HOLLOW 
+MEN 
+Although no one is entirely certain of where the Hollow Men came from, 
+most speakers who have a reputable opinion on the subject agree that no other 
+breed of fomor has existed longer onEarth. These horrifying monsters have done 
+much to bring about the destruction and ultimate corruption of Gaia. 
+From the outside (and adistance), Hollow Men appear human, if somewhat 
+distracted and fidgety. Closer examination, however, reveals more hints to the 
+true nature of just what a Hollow Man is. A Hollow Man’s skin bulges and ripples 
+when he moves. His joints bend stiffly or with a too-fluid grace. His chest fails 
+to rise and fall with the rhythm of respiration. Occasionally, a particularly alert 
+viewer might even see a dark shape scuttling across the Hollow Man’s skin, 
+climbing out of one orifice to disappear into another. The Hollow Men appear 
+thus because the bodies they wear on the outside are little more than convenient 
+homes for a horde of smaller animals possessed by a Scavenger Pack Bane. The 
+spirit of the human shell remains intact enough to bond with the Bane, granting 
+the pitiful human a grotesque type of immortality in return for taking the 
+Scavenger Pack into his body and carrying out the urges of the Wyrm. 
+The types of animals most likely to make up a Scavenger Pack include rats, 
+snakes, bees, roaches and the larger species of spiders. 
+T 
+H E  EOMORI 
+@ 
+
+
+I 
+a lithe, sinewy frame with skin somewhat darker than their racial average. Yet, 
+what sets them apart from normal people most distinctly is the jet-black sheen 
+of their eyes. Very few individuals outside the Pentex corporate structure have 
+seen the eyes of a Shadowfiend and lived to describe them, however. 
+CRBATINC~ 
+EOMORI CHARACTERS 
+Creating a fomor character proceeds initially just as does the creation of a 
+human in Laws of the Hunt. Assign the character a Nature and Demeanor, as 
+well as a motivation. Give the character six, four and three Attribute Traits in 
+the primary, secondary and tertiary Attribute categories as you see fit. Assign 
+whatever negative Traits go along with the concept as well. Finally, add in the 
+character’s Willpower, Backgrounds, Merits and Flaws. Don’t bother tracking 
+the Humanity Trait, however. The slow descent from full humanity to utter 
+corruption by the Wyrm is better represented through roleplaying than random 
+marks on a character sheet. 
+After creating a human character, pick from the preceding selection a breed 
+of fomor that such a character would most likely become. Reflect the change and 
+the reason why your character is most suited to that breed in your write-up of the 
+character’s history. (Unless, of course, you’re playing a Freakfeet fomor, in which 
+case your character history pretty much writes itself.) 
+When you’ve come this far, assign the character Powers andTaints. You are 
+not limited in the selection of your character’s Powers, but keep in mind that 
+some Powers are more appropriate to some breeds than others. Remember also 
+that Powers do not come at all cheap. You cannot spend Freebie Traits on 
+Powers, you cannot spend the Traits derived from Flaws on Powers, and you 
+cannot spend the Traits derived from Negative Traits on Powers. The only 
+Traits you can spend on Powers are those you receive from taking Taints. 
+Luckily, though, you can spend the points you receive from Taints on Traits 
+other than Powers. 
+For instance, you can assign your character seven Traits worth of Taints 
+then take seven Traits worth of Powers. If you don’t want seven Traits worth of 
+
+
+Powers, you could take four Traits worth of Powers and spend the remaining 
+Traits just as you would spend Traits derived from Flaws or Negative Traits. 
+U S I N ~ T H E  
+EOMORI I N A  CHRONICLE 
+Potential players of fomor characters, be prepared to hear this response to 
+your initial request: “You want to play a what! ?” Fomori are not pretty, they’re 
+not heroic, and they certainly aren’t going to come out victorious in the end. 
+Even when the fomori are the good guys in a chronicle, they’re still bad guys. 
+They exist by only either the grace of the Wyrm or thanks to the genius of Pentex 
+scientists. Should the fomor ever step out of line and try to do the right thing, 
+one or the other will assuredly make him pay. Fomori, as characters, have little 
+to no redeeming value whatsoever. How then can you possibly hope to use such 
+a character in an ongoing chronicle? 
+On one hand, the easy answer to this question is to use fomori as Pentex and 
+the Wyrm intend: as the bad guys. Fomori make excellent villains, shock troops 
+and Wyrm-beast mooks. No better evidence of the Corrupter’s presence on 
+Earth than the existence of these monsters. Roleplaying a fomor offers a player 
+the chance to explore the deepest, most vile depths to which his imagination can 
+sink then put that nastiness aside when the character meets his inevitable end. 
+Letting your character give in wholly to his evil nature (for the sake of plot) is 
+one of the most cathartic experiences roleplaying has to offer. At the same time, 
+the character’s story demonstrates the price of power and the importance of 
+keeping your darker urges tightly in check. 
+By the same token, it’s just fun to play the bad guy sometimes. If you’re 
+enjoying yourself by playing a right bastard, the other players should have just 
+as much fun trying to put a stop to your nefarious schemes. Nothing is more fun 
+than overcoming an unrepentantly evil opponent, especially if that opponent 
+is one’s equal in all but motivation. Playing the villain everyone loves to hate 
+is an awful lot of fun, even when the good guys finally manage to pull together 
+and conquer you once and for all. 
+On the other hand, one can tell a compelling story in which the fomori 
+characters are the protagonists. This type of story, however, is not nearly as much 
+funas the preceding one. Fomor-centered stories are some of the most horrifying 
+and tragic tales one can find in the World of Darkness. Consider the life-cycle 
+of the standard fomor: A bleak, depressing or violent life leaves gaps in the soul 
+of the potential victim. A spirit of corruption finds (or is directed to) those gaps, 
+and it begins to attach itself to them. The hapless individual feels this intrusion, 
+but he is powerless to prevent it. After all, some part of him wants the spirit to 
+fill the void within him. When the fusion is complete, the victim’s body warps 
+and mutates to match the changes that go on in his mind. After the transforma- 
+tion (or before, in many cases), a corporation driven by a force more sinister than 
+greed tries in every way to exploit the new monster in any way it can. Finally, 
+often before the poor, pitiful wretch can come to grips with the horrifying 
+changes that have been so rudely thrust upon him, he runs afoulof vicious zealots 
+who want to tear him apart with tooth and claw for no better reason than the 
+fact that he even exists. 
+
+
+new state, all while trying to hold tightly to what made them human in the first 
+- -  
+of halves as a multiplication of wholes. 
+The following list is not all-inclusive, but it does cover the basic range 
+available to the fomor breeds listed. Storvtellers and Dlavers are encouraged to 
+Berserker (variable) 
+The fomor begins play with Rage Traits equal to the cost of the Power at 
+character creation. He may use these Traits just Garou use their Rage, but the 
+player may not buy more Rage Traits after character creation. The fomor regains 
+spent Rage the first time he is wounded in a game session, at the beginning of 
+any new conflict or when he’s particularly humiliated. 
+Brain Eating (6 Traits) 
+A character using this Power robs his victim of Mental Traits and adds 
+those Traits to his own Mental Traits. The fomor’s player steals one Mental 
+Trait from the victim per Willpower Test he wins. The transfer affects the 
+characters’ effective maximum number of Mental Traits for the rest of the 
+game session. Should either player spend a Willpower Trait to refresh his 
+character’s Mental Traits during that game session, the expenditure refreshes 
+the newly adjusted number of Traits. The stolen Traits return at the beginning 
+of the next game session. 
+This attack does not constitute a physical assault, but the victim will know 
+who is using the power. Should the fomor actually eat the victim’s physical brain 
+after the victim has died, he adds the victim’s Mental Traits and Willpower 
+Traits to his own for the remainder of the session. 
+Chameleon Coloration (four Traits) 
+When the player spends Mental Traits, the character’s skin changes color 
+to blend in with his surroundings. The nature of the change causes the Mental 
+Claws, Fangs or Horns (three, five or seven Traits) 
+An unnatural adaptation (be it cybernetic, organic or a mixture of the two) 
+makes the fomor’s attacks all the more vicious. Although these adaptations can 
+be disguised or retracted, they cannot be removed without causing serious 
+physical pain. In combat, claws, fangs and horns add an extra level of lethal 
+damage to the fomor’s attacks. The base Trait cost purchases one adaptation; the 
+secondary cost provides two. The full seven-Trait cost adds all three bodily 
+
+
+Colony Powers (variable) 
+Particular to the Hollow Men, Colony Powers bestow an ability to the fomor 
+that is usually attributed to the animal that makes up its Scavenger Pack. A 
+Hollow Man full of spiders might be able to scale sheer walls or infect his victims 
+with a deadly venom. Being inhabited by a Scavenger Pack of rats might grant 
+the fomor the Rat Head Power. The Storyteller should assess the advantage the 
+Colony Powers grant the character and price them accordingly. 
+Corrupted Visions (four Traits) 
+When the player spends a Mental Trait and wins a Mental Test against his 
+opponent, the fomor causes his victim to suffer from compelling hallucinations. 
+Fomori use this Power to prod victims into action or to drive them over the edge 
+into insanity. The victim’s player may banish these hallucinations by spending 
+a Willpower Trait. 
+Darksight (two Traits) 
+The fomor can see in perfect darkness, and the player suffers no Trait 
+penalties for impaired visibility. This power represents chiropteran sonar, feline 
+low-light vision or a heightened sensitivity to disturbances in the air, as is 
+appropriate to the character. Should the character’s compensatory sense be 
+overloaded suddenly by sensation, however, he is completely stunned for one 
+turn, and he suffers the Negative Trait Oblivious x 2 for the entirety of the scene 
+after which the character recovers from the onslaught. He also loses the 
+Darksight advantage for the rest of the scene. 
+Dispersion (four Traits) 
+As another Power specific to the Hollow Men, Dispersion is a fantastic 
+defense mechanism. By spending a Trait of Willpower, the fomor’s player can 
+force the entire Scavenger Pack to evacuate its hollow human shell at once. The 
+empty human body collapses and remains inert, but the fomor’s entire con- 
+sciousness extends to each member of the Scavenger Pack. Should the animal 
+central to the Pack be killed, the fomor dies. When a Hollow Man is beaten to 
+the Incapacitated health level, this Power activates automatically. 
+Enhancement (three Traits) 
+By winning a Social Challenge against the player of her intended victim, 
+the player of a fomor can cause herself to appear to be her victim’s ideal physical 
+mate, regardless of the fomor’s actual appearance. Should the fomor’s player lose 
+the test, the fomor still seems attractive, if only slightly above average. 
+Foot Pads (one Trait) 
+Spongy pads on the bottom of the fomor’s feet muffle the sound of his 
+footsteps to such a degree that only supernatural perception can detect the sound. 
+Garou Gifts (variable) 
+The fomor’s player may purchase and use Garou Gifts for one Trait times 
+Immunity to the Delirium (one Trait) 
+Having become monsters themselves, the sight of a werewolf in its Crinos form 
+the Gift’s level plus one. 
+does not trigger the instinctual fear response to which normal humans are heir. 
+
+
+Malleate (six Traits) 
+By piercing the hide of her opponent, a fomor injects a powerful venom 
+under the skin that changes the victim’s body into a putty-like mass. The fomor 
+may then warp and shape that mass as she sees fit. Using this power requires the 
+fomor’s player to win a Physical Challenge to make the first contact and 
+successive Physical Challenges to make the desired changes. The effects of this 
+Power are permanent unless the victim uses the Gifts: Resist Toxin, Doppelganger 
+or Adaptation. A Garou can also purge the venom from the body of a victim with 
+a successful Rite of Cleansing. When the venom is gone, the victim’s body 
+returns to normal. 
+Changes made to one’s body by this Power cause health levels of aggravated 
+damage. The severity of this damage is up to Storyteller discretion and the 
+magnitude of the change. 
+Mind Rape (six Traits) 
+If a fomor’s player spends a Willpower Trait and wins a Mental Challenge, 
+his character can invade the mind of a victim and pull out even well hidden 
+secret thoughts. That is to say, after a successful challenge, the user of this Power 
+can demand from the victim a complete and honest answer to one question. The 
+player of the victim must give as thorough an answer as possible, even if his 
+character has blocked the information out subconsciously. This Power cannot 
+detect uses of other supernatural mind-altering powers, nor can it retrieve 
+information that another supernatural power has erased. Use of this Power is in 
+no way subtle, as far as the victim is concerned. 
+Prolonged Life (four Traits) 
+The Bane fused to the human’s soul extends his life span far beyond that of 
+any mere mortal. Any fomor with this Power, however, must take the Addiction 
+Taint. The fomor will not die of old age as long as he engages regularly in his 
+addiction. This Power, however, will not protect the fomor from the external 
+rigors of its existence. 
+Rat Head (four Traits) 
+By spending a Physical Trait, the player allows his character to wriggle 
+through a space roughly one-twentieth of his size. For example, a fomor of 
+average human size could squeeze underneath a closed door or escape danger 
+through the drain in a sink. 
+Regeneration (five Traits) 
+The fomor with this power recovers from non-aggravated damage at the 
+same accelerated rate werewolves do. 
+Scent of the Wyld or Weaver (five Traits) 
+The fomor’s player spends a Mental Trait in order to mask his character’s 
+obvious Wymvtaint. Characters who use the Gift: Sense Wyrm on a fomor using 
+this Power fail automatically, gaining a strong sense that the fomor is actually 
+acreature of the Wyld or Weaver. However, neither Red Talons nor Glasswalkers 
+are fooled by this Power. 
+Slobber Snot (three Traits) 
+Oozing warts cover the fomor’s skin, exuding a slick coat of foul-smelling 
+slime. This slime grant’s the fomor’s player a free retest in all Physical Challenges 
+
+
+in which he is trying to break free of an opponent’s grasp. This slime also makes 
+it particularly easy for a fomor to escape from ropes, handcuffs or tightly confined 
+spaces, The slime’s distinctive and powerful stench puts the fomor’s player one 
+Trait down in all challenges related to stealth. 
+Spirit Ties (variable) 
+The fomor may draw upon a well of Gnosis, which he can use just as the 
+Garou can. The player receives one Gnosis Trait per Trait he spends into the 
+Power at character creation. He cannot increase this Trait thereafter. The fomor 
+regains spent Gnosis Traits by meditating (see Laws of the Wild), destroying 
+fetishes or slaughtering Umbral spirits. 
+TAINTS 
+The Taints listed here serve as guidelines for building fomor characters. 
+Players should work out the specifics of each Taint with their Storytellers with 
+an eye toward their games’ particular balance and the dramatic needs of their 
+stories. 
+Addiction (variable) 
+The fomor must engage in some activity on a regular schedule, lest 
+withdrawal and distraction overwhelm him. The frequency with which the 
+fomor must indulge his taste varies from once per month to once per hour. The 
+substance or action to which he is addicted also varies. The player may even 
+designate the use of one of his character’s Powers - 
+such as Brain Eating - 
+as 
+the activity to which the character is addicted. Should the character deny his 
+addiction, he loses a health level, and the player is one Trait down in all 
+challenges per period that the character has abstained. 
+Brainwashed (three Traits) 
+As a result of intensive psychological treatment or skillful emotional 
+manipulation, your character has adopted with fanatical zeal a belief that was 
+not originally her own. She will not question this belief, and she reacts violently 
+to those who question its validity. In her opinion, the naysayersagainst her belief 
+are obviously vicious malcontents bent on destroying all she holds dear, no 
+matter how ridiculous the idea with which she has been brainwashed is. Not 
+even blatant, incontrovertible evidence of malfeasance can shake the faith with 
+which she’s been indoctrinated. The player of a brainwashed fomor is down two 
+Traits in any confrontation against an acknowledged representative of her 
+character’s faith. 
+The Crusties (three Traits) 
+Fomor with the Power: Slobber Snot are the most common victims of this 
+Taint. Once a month, for a period of approximately a week, the coating of mucus 
+and oil on the fomor’s skin dries out and flakes off in itchy, irritating patches. 
+During the period of this affliction, a fomor is one Trait down on all challenges 
+due to the constant distraction. On the plus side, the Slobber Snot Power still 
+functions optimally during this period. However, instead of the low-viscosity 
+slime protecting the fomor’s skin, the flakes themselves provide the benefit by 
+tearing away more easily. 
+
+
+Derangement (three Traits) 
+Fomor are not the most stable individuals to begin with, but your character 
+has gone further around the bend than most. The Bane that possesses your fomor 
+has discovered a particularly prickly spot in your character’s psyche, and it 
+exploits that sensitive spot in any way it can. This mental malady is now the core 
+of your character’s every motivation. 
+Check a psychology textbook for the symptoms of some common mental 
+illnesses and roleplay them in everything your character does. You may not 
+spend Willpower Traits to overcome the drives of your character’s derangement. 
+Physical Wasting (six Traits) 
+One of your character’s Powers takes a physical toll on your character’s 
+body. Whenever the character uses that Power in a scene, he loses one Physical 
+Trait for the scene. Each subsequent scene in which the character uses the Power 
+in question robs the character of another Physical Trait unless he has rested 
+sufficiently between uses. Wasted Traits return at the rate of one Trait per hour 
+after the scene in which they are used. 
+Rotting (six Traits) 
+The fomor’s body is falling apart. The character loses one health level per 
+month as his body withers and decays. The fomor’s player may make a Static Test 
+to hold off the loss of the health level at the beginning of each month, but he 
+must win the test. Players who test successfully to attack a character with this 
+Taint may immediately make a second Static Test. If the attacking player wins 
+the additional test, his character’s attack inflicts an additional health level of 
+normal damage. 
+Walking Bomb (five Traits) 
+Agents of the Pentex Corporation have implanted an explosive charge in 
+the base of your character’s skull to secure his future cooperation. The bomb can 
+be set to detonate under avariety of conditions (a remote switch, a heart monitor 
+implanted in the Pentex agent himself, a proximity sensor or a simple count- 
+down timer), but only a qualified Pentex explosives expert can deactivate it. 
+Neither blunt trauma nor even a direct hit from a .357 slug will cause the bomb 
+to go off, but the fomor’s employer can detonate the device at whim. The charge 
+is shaped so that the explosion will blow the fomor’s head clean off with as little 
+collateral damage as possible. 
+Variants of this device flood the fomor’s system with a deadly venom, 
+deliver a debilitating electric shock, release a highly caustic acid or pump ultra- 
+concentrated depressants into the fomor’s bloodstream. 
+
+
+WRAITH MFRITS AND ELAWS 
+FOR oblivion 
+by Jess Heinig 
+The dead have plenty to worry about. It’s tough enough just hanging on after dying. Since 
+every wraith is an individual, complete with carefully plotted goals and driving Passions, it 
+only makes sense that their foibles, problems and advantages be similarly unique. 
+Each wraith character has a personal set of Attributes, Abilities, Arcanoi, Passions and 
+Fetters. Some, though, have their own spins on such things, or peculiarities that aren’t 
+common to other wraiths. Thus, we give you Merits and Flaws for Oblivion characters. 
+Remember: A modifier to bidding affects the number of Traits required to enter a 
+challenge. A one-Trait bid penalty means that you must bid an extra Trait on a challenge. 
+A modifier to resolution affects total Traits for resolving ties and overbids. 
+CORPOREAL 
+MERITSAND 
+ELAWS 
+BOTCHED 
+MOLIITION( 1-3 TRAIT 
+TE LAW) 
+Something went horribly, horribly wrong during a Moliate attempt, and your character’s 
+Corpus has resisted attempts to change it back. This deformity gives him problems, and it’s 
+not going to go away soon. Perhaps some guilty, dark part of your character’s psyche believes 
+that he really deserves to reflect the deformity, or maybe he’s just an unlucky punk who’s 
+stuck with an extra tentacle for the rest of his existence. 
+For one Trait, your character has a relatively minor and annoying moliation “scar.” 
+Perhaps he has an ugly-looking hunch, a discoloration or some other noticeable incongru- 
+ity. This incongruity makes him easily recognizable unless he takes steps to cover it, and it’s 
+in an inconvenient place where it’ll take some work to conceal it. A funny color under one’s 
+arm doesn’t count. A hand that’s been moliated into a gnarled, inflexible lump is a much 
+more reasonable expression of this Flaw. 
+For two Traits, the moliation problem is fairly nasty. Maybe your character has a 
+withered arm, or his skin is scaly in patches due to a failed attempt at creating armor. When 
+the botched moliation isn’t concealed, the character suffers an extra negative Social Trait 
+of Repugnant, for which you gain no extra Traits. Your character might be able to conceal 
+this problem, but it takes some real effort. 
+For three Traits, some terrible mistake inconveniences your character horribly. Not only 
+do you suffer a Negative Social Trait of Repugnant, but you also suffer a one-Trait penalty to 
+all challenges where the specific moliation might hinder the character. For instance, if your 
+character’s legs are fused together above the knees, he will have trouble running or balancing. 
+If his head is sunk into the center of his torso, he’ll have difficulty seeing peripherally or 
+speaking to people. These botches are generally too extreme to conceal. 
+The victim of a botched moliation may be able to repair the damage eventually (with 
+a good use of Moliate and the expenditure of experience Traits equal to twice the Flaw’s 
+value), but it’s sure to be an annoyance for quite a while. You must wear a tag in a 
+conspicuous location, which explains the nature of the deformity. If another wraith uses 
+Moliate to correct this deformitv, his player must spend one extra Pathos Trait beyond the 
+art’s standard cost per turn he‘wishds the moliaied change to last. At the end of those 
+
+
+Some feature (such as blue hair, a prominent tattoo carried over from life or eyes of 
+different colors) really stands out about your character. Unlike having a botched moliation, 
+this feature is not necessarily repulsive or problematic, but it’s also not something that a 
+character could hope to change permanently, either. Indicate this feature by wearing make- 
+up to simulate it (or by wearing a prominent card that describes it). The Moliate Arcanos 
+could cover it up temporarily, of course. After the moliation, the character’s appearance 
+reverts to normal at the end of a scene. 
+ROTTING (a TRAIT  LAW) 
+I 
+Organic matter in the land of the living decays and rots away eventually, and that fact 
+haunts your character’s mind. In fact, it’s so closely tied to her conception of death that her 
+very self-image as a dead thing is corrupted by rot. Chunks of her body are rotted away, and 
+tatters of flesh hang over corded muscle. Naturally, this psychonecrosis doesn’t necessarily 
+hinder or damage the Corpus itself, but it’s definitely unpleasant and unsightly. You suffer 
+an automatic one-Trait penalty to Social Challenge resolution. When interacting with 
+mortals, they react to the Fog (Oblivion, p. 234) much more strongly. If the player of the 
+mortal wins his Static Mental Challenge against 20 Traits, the Storyteller or Narrator 
+representing the Fog gets an automatic retest. 
+F R A ~ I L E  conpus (3 TRAIT fiLAW) 
+The strands of will that hold your character’s plasm together just aren’t as strong as 
+those of many other wraiths. When he become insubstantial due to physical damage, he 
+loses two levels of Corpus instead of just one. If he ever suffers four or more levels of damage 
+in a single blow, you must win or tie a Simple Test, lest the character collapse immediately 
+into a Harrowing. 
+A M B I D C K T R ~ U S  ( I TRAIT MERIT) 
+Most people are good with just one hand or the other, but your character is equally good 
+with both. You suffer no Trait penalty for using either hand since your character IS equally 
+good with his right or left (or Moliated tentacle or whatever). Of course, you still suffer a 
+one-Trait coordination penalty if your character uses both hands at once, but you incur no 
+additional penalty for using an uncoordinated hand. 
+Interestingly, many wraiths seem to slide toward ambidexterity over time. As a wraith‘s 
+selfdimage changes, his sense of handedness may well erode. 
+~
+u
+i
+i
+o
+p
+ 
+~ I p e ( 1 - 4  TRAIT MERIT) 
+While most wraiths are sad, pallid things, your character’s Corpus is so strong that it 
+practically glows with vibrancy. The character seems more “solid” than most plasm, and it’s 
+harder to discorporate her. For each Trait that you spend on this Merit, your character starts 
+with one extra level of permanent Corpus. While above 10 Corpus, though, she is 
+extraordinarily conspicuous to other entities in the lands of the dead. 
+MALLCABLE 
+(a TRAIT 
+MERIT) 
+Like the semi-liquid plasm from which it’s formed, your character’s Corpus flows into 
+new shapes easily. Anyone using the Moliate Arcanos upon her (including herself) receives 
+a two-Trait resolution bonus. 
+DISEMBODIED (6 TRAIT MERIT) 
+Most wraiths form a corporeal shell that resembles an idealized version of their living 
+form. Your character, however, has discarded the entire notion of flesh. He has no Corpus 
+or body at all; he’s just a floating voice, a collection of memories and thoughts. 
+
+
+anything, nor can he interact with anyone physically. He has no Physical Traits at all. He 
+can’t even use Arcanoi that would interact with physical material, including Embody, 
+Inhabit, Moliate, Outrage and Pandemonium. (Similar restrictions might apply to certain Jade 
+Kingdom Arcanoi, too.) 
+On the upside, your character is pretty much immune to physical trauma. He simply 
+can’t be hurt that way. Nobody can make Physical Challenges against you; weapons can’t 
+hurt your character because he’s not there. Arcanoi and other powers that require touch or 
+contact with some part of the body fail because he have no body to touch. Ifsome power that 
+your character has would require you to make a Physical Challenge, just use a Mental 
+Challenge instead. Your character has no Corpus rating, so he obviously can’t be sent into 
+a normal Destruction Harrowing. Should he fall into a Harrowing by running out of 
+Willpower (or, perhaps, by falling into a Harrowing with another wraith), you risk 
+permanent Willpower instead. If he ever runs out of permanent Willpower Traits, he 
+disappears into Oblivion. 
+You should wear a tag to indicate your character’s discorporate status. It helps if you wear 
+a shroud or the like as well, so that you have no distinguishing features. Remember, though, 
+that your character cannot pick up, push or touch anything on either side of the Shroud. 
+MENTAL 
+MERITSAND 
+ELAWS 
+A ~ ~ I C T I O N ( I - B  TRAIT ~ ~ a w )  
+Just as wraiths cling tenuously to the remnants of existence through force of will and 
+memory, they sometimes fall victim to dangerous and compelling psychological drives. Your 
+character is attached to some activity or substance in such a fashion. If he is denied access 
+to the subject of his addiction, you lose a number of Traits equal to the value of this Flaw 
+in all test-resolutions. The source of this addiction may even be harmful in some way, but 
+the character is miserable without it. He will go to any lengths he can to fulfill this addiction 
+(including Skinriding or possessing humans who indulge in it). 
+C O M P U L S I O N  ( I TRAIT #LAW) 
+Your character is compelled to perform some sort of noticeable, curious or harmful 
+action. It may be a constant urge or just one that strikes at inconvenient times. Perhaps he 
+can never seem to shut up, or maybe he twitches spasmodically for several seconds any time 
+someone mentions the Hierarchy. Maybe he hoards every scrap of relic detritus he comes 
+across, no matter how useless the junk seems at the time. You must roleplay the effects of 
+the compulsion. You can spend a Willpower Trait to suppress the urge; if you fail to roleplay 
+the compulsion, a Narrator may rule that you have spent such a Trait already. 
+D A R K  
+SFCRET(I 
+TRAIT LAW) 
+Your character keeps skeletons in the closet.. . possibly literally. Some dirty deed in her 
+past haunts her. Although it’s not widely known, if knowledge of the misdeed were to get out, 
+it would cause serious inconvenience. Perhaps she was Reaped by a Mnemos, or maybe she 
+opened the gates to a Citadel for the Spectres. Worse still, situations seem to come up from 
+time to time where her dark secret might get out. She may have to make difficult or 
+embarrassing compromises to keep the truth under wraps. The Storyteller determines when 
+and how the secret comes up in play. Should it ever be exposed, your character is likely to suffer 
+the social consequences. Gaining an enemy or losing status are just two of the possibilities. 
+B C H O E S O P T H E  p A S T ( 1 - 3  T R A I T  ELAW) 
+Whether consciously or not, your character can’t leave the living world behind. Some 
+trapping associated with him in life continues to bleed into the living lands even after his 
+
+
+death. Some characteristic or trait associated with the character during his mortal days 
+continues to manifest wherever he goes, even in a fashion noticeable to the living. These 
+manifestations are uncontrollable, and they don’t relate directly to your character’s actions. 
+Rather, they just “happen” in the material world when he’s around. 
+For one Trait, the character causes a specific, peculiar scent in the world of the living. 
+People might catch a whiff of a perfume that she used to wear or smell the cordite from the 
+gun involved in her death. This scent is noticeable to anyone who searches for it specifically. 
+Someone who has a vague idea that something is wrong - 
+perhaps because of a subtle use 
+of Arcanoi in the area-can 
+make a Static Mental Challenge (difficulty of six Traits), with 
+success indicating that he notices the scent and recognizes it. 
+For two Traits, your character’s presence causes sounds in the physical realm. People 
+might hear ghostly footsteps, catch the hint of rattling chains or notice a distant laugh. 
+People in the immediate area will almost certainly hear some manifestation, although the 
+sounds are not constant, and someone who just brushes by may not be present for an echo. 
+(Use a StaticMentalChallenge atadifficultyofsixTraitsfromsomeonenearyou ifhe might 
+hear an unexpected echo.) People near your location - 
+just outside the room, for instance 
+- 
+might hear an echo if one occurs. A Static Mental Challenge (difficulty of eight Traits) 
+is appropriate, although someone who’s listening specifically for such things would notice 
+the effect. 
+For three Traits, your wraith actually causes some sort of visual manifestation. Perhaps 
+people see dancing candle flames when she’s around or a hazy blob of light or a hallucinatory, 
+translucent image of something important to your character in life. People in the room with 
+you will almost certainly notice and be startled by such manifestations. Individuals within 
+a reasonable distance will notice such things if they succeed on a Static Mental Challenge 
+with a difficulty of six Traits. 
+You can take this Flaw multiple times to generate multiple Effects. For six Traits, your 
+character creates a hazy image accompanied by strange sounds and smells. 
+o ~ & R C O N ~ ~ I D F N T (  
+I TRAIT BLAW) 
+Your character believes in a rather exaggerated impression of his actual capabilities. 
+While most people have enough sense not to get in over their heads, he honestly believes 
+that he’s better than he really is, and he lets that belief get him into trouble. During 
+situations in which he’s under duress or threat, your character is likely to forge ahead 
+heedless of the consequences and convinced of victory. 
+Some overpowering fear seizes your character in the presence of a specific object or 
+situation. This fear may be tied to circumstances of her death - 
+a fear of large bodies of 
+water, for a drowning victim - 
+or it may come from some hidden impulse that predates her 
+demise. When the character encounters the object ofher fear, you must expend a Willpower 
+Trait or retreat in terror. If unable to escape, fear makes the character shaky and uncertain. 
+You are two Traits down on all challenges in such a situation. 
+~ o N n u s F D  
+(a TRAIT ILAW) 
+The world is a disjointed place. Everything is disturbed, noisy and grating. Maybe 
+your mind was unhinged during death, or perhaps you can’t seem to filter out all the 
+background chaos of the Underworld. You are always a bit distracted and disoriented, but 
+when you are subjected to intense stimuli, such as a sudden whipping of a Maelstrom, a 
+barrage of conversation from multiple people or a loud and chaotic situation, your mind 
+simply can’t make sense of it all. Under such stress you must spend a Willpower Trait to 
+overcome your problems for the scene, or else you just curl up, helplessly unable to cope 
+with your surroundings. 
+
+
+Well, your character’s already died, so it’s not like curiosity can kill him, right? He just 
+tends to stick his nose into anything and everything. When presented with an innocuous 
+little mystery - 
+a locked container, a secret room, a mysterious library or the like - 
+you 
+must win a Simple Test, lest your character mosey on into trouble. 
+~ B s c s s I o N  
+(a TRAIT PLAW) 
+A driving fixation permeates your character’s every thought and drives him to 
+unhealthy extremes in pursuit of his fascination. Often, he finds himself in difficult straits 
+because of the obsession. Perhaps he would spend his last obolus for some relic of a sort that 
+he collects obsessively, or maybe he hangs out around some Skinlands area that’s dangerous 
+to him. Only by spending a Willpower Trait can you overcome your character’s obsession 
+for a short time. 
+Storytellers should make sure that obsessions do not tie into strong Passions. A 
+disadvantage that isn’t a disadvantage isn’t really worth much, after all. 
+V C N q ’ E A N C E  (a T R A I T  PLAW) 
+A certain score must be settled, whether it’s against some still-living foes or against an 
+already-dead one, and your character intends to see justice done. Heck, maybe your 
+character intends to kill her enemy then send him screaming to Oblivion. In short, someone 
+did your wraith wrong, and now she’s driven in the pursuit of a vendetta. You must spend 
+a Willpower Trait if your character has anopportunity to pursue her vengeance but you want 
+to avoid doing so-for 
+instance, to avoid screaming and charging into the Labyrinth to get 
+the Spectre that Harrowed your daughter’s ghost. 
+Again, Storytellers should make sure that the Vengeance Flaw does not tie into any 
+Passions.Thewraithdoesnotdrawstrengthfrom 
+hervengeance; she just hasanunrelenting 
+need to get even. 
+D R I V I N ~  9 0 a L ( 3  TRAIT PLAW) 
+Some overreaching goal pushes your character on, even past the strength of will that 
+it took to cheat death. He’ll never achieve this goal completely, but he keeps trying. This 
+goal is limitless in depth, yet your character feels compelled to strive toward it constantly. 
+Examples of such goals include proving to the living world that ghosts really do exist, tearing 
+down the Hierarchy entirely and making an all-inclusive map of all of the Far Shores. You 
+don’t gain any bonus Traits when pursuing your character’s driving goal, but you must spend 
+a Willpower Trait to avoid pursuing it. The goal directs and focuses all of your character’s 
+actions. 
+Like other similar Flaws, Driving Goal cannot tie to a wraith‘s Passions. 
+P L A S H B A C K S  (3 T R A I T  PLAW) 
+When your character is under stress, he flashes back to some similar horrible situation 
+in his past. Perhaps he has memories of his time as a soldier, and he suffers post-traumatic 
+stress syndrome. Maybe he relives horrible memories of a torturous adolescence. It’s entirely 
+possible that he relives the events of his most recent Harrowing time and again. While the 
+wraith suffers these flashbacks, he’s off in his own little world. He can’t hear or interact with 
+the people and circumstances around him. He might sometimes incorporate a person or 
+action into the nightmare fantasy, but it’s always in the fashion of what he hallucinates, 
+which means that he’s functionally useless for at least a full turn. 
+
+
+Your character has a deep and abiding respect for life. Perhaps she was always this 
+compassionate, or maybe she got that way after she lost her own. Either way, she is loath to 
+use violence or to inflict harm on others. She’ll never endanger people or other wraiths 
+willingly, nor will she actively harm another person. These objections aren’t nearly as strong 
+with respect to animals, Spectres and other creatures, but she still dislikes violence or 
+inflicting injury in any form. If the character is forced into a confrontational situation, she 
+may go so far as to defend herself, but you suffer a one- or two-Trait penalty because the 
+character’s heart isn’t in it. Such a character would sooner run away from a fight than hurt 
+someone in self-defense. 
+I 
+C O M M O N  S E N S E  ( I  T R A I T  MERIT) 
+They say common sense ain’t nearly so common these days, but your character is a 
+repository of such wisdom. Her intuition and folk sayings carry her through many a rough 
+situation with simple wit. When your character is about to do something impractical or just 
+stupid, the Storyteller will stop you and warn you that the action may not be sensible. This 
+Merit is excellent for new players, in keeping them from making mistakes due to inexperi- 
+ence playing the game. 
+C O N C E N T R A T I O N  ( I T R A I T  MERIT) 
+When your character focuses on a task, he shuts out all distractions completely and lets 
+absolute precision overtake him. Nothing shakes this resolve. You never suffer any penalty 
+Traits due to environmental circumstances such as loud noises, strobing lights or howling 
+Maelstrom-winds. 
+L I ~ A T N I N ~  
+CALCULATOR( 
+I TRAIT MERIT) 
+Your character has a natural talent with numbers. He performs complex calculations 
+in his head with ease and near-perfect accuracy. Higher mathematics such as calculating 
+standard deviation and variance or calculating trajectory require a few moments more of 
+thought (and the expenditure of a Mental Trait). Number theory may be entirely beyond 
+you, but nobody’s perfect. 
+If your character has this Merit, you never need to test to perform basic math 
+calculations on the fly. You [the player] can use a calculator, ifyou like, even ifyour character 
+doesn’t own one; the character runs all the numbers in his head. Vegas casino owners hate 
+. people like this. 
+CODE 
+O P  HONOR( 
+a TRAIT 
+MERIT) 
+Acharacterwithastrongcode ofhonor continues to follow aspecificset ofbeliefs, even 
+after death. This discipline gives the wraith strength, and his adherence to his code stands 
+out as exceptional. Work with the Storyteller to detail the code of honor as aspecific ethical 
+or moral framework. Although your character may not delineate it in specific terms, it 
+should be written down out of game to give a basic idea of what behavior he considers 
+unacceptable. Any time supernatural compulsion is brought to bear in a manner that would 
+violate said code of honor, you get a free retest to resist. 
+E I D E T I C  M E M O R Y (  B TRAIT MERIT) 
+Your character has a mind like a steel trap, and this one’s not rusty. She remembers the 
+general sense of most events that she experiences, and she’s particularly good at remember- 
+ing names, dates and written material. After a single turn of concentration, she can 
+memorize a page of material or the gist of a scene completely. Doing so requires a Static 
+Mental Challenge, difficulty of six Traits, if the character is in combat or otherwise under 
+duress. You should have a small “cheat sheet” of notes so that you and the Storyteller can 
+agree on what your character has committed to memory. 
+
+
+lncidentallv. rnc‘moric‘s of this ilualit\r arc cxtremelv clear and conclse to the .Mnemosvnrs 
+, I  
+,
+I
+ 
+Arcanos. A Mnemos who delves into these memories sees them with vivid clarity. Conversely, 
+if someone tries to erase or alter said memories, the operation leaves jagged “holes” around the 
+area affected. Therefore, you get a free retest to defend against memory manipulation, but 
+others looking in on your character’s memories gain a retest to draw out details. 
+NATURAL 
+LINBUIST( 
+B TRAIT 
+MERIT) 
+Although your character don’t necessarily have the ability to learn extra languages 
+automatically, he does have a powerful command of language in general. He finds it easy to 
+sort out principles and ideas in other languages. You get a three-Trait bonus in all challenges 
+related to any languages that your character knows. Of course, since all wraiths speak the 
+language of the dead, this Merit is most useful with written material or when interacting 
+with the Quick. 
+I R O N  
+WILL(+ TRAIT 
+MERIT) 
+It’s very difficult to shake a character with an iron will from his chosen course. Even 
+magical compulsions take minimal hold against such formidable determination. You may 
+expend a Willpower Trait to gain a retest against any use of the vampiric Dominate 
+Discipline, and if you win, your character is immune to that vampire’s further uses of 
+Dominate against him for the rest of the scene. Furthermore, you gain three extra Traits in 
+all defenses against direct mental (not emotional) manipulation. 
+S C L P  C O N P I D F N T ( 5  T R A I T  MEBIT) 
+In difficult situations, your character draws upon a reservoir of skill and confidence to 
+perform with grace. When your character is forced to perform some difficult task, you need 
+only spend a Willpower Trait to succeed automatically. 
+When you’re making a Static Challenge with a difficulty of six Traits or more, you can 
+spend a Willpower Trait for automatic success. This trick works only if the subject of the 
+challenge is not another character. Your character could manage to open a tough lock 
+automatically (if he has the Security Ability), or he might manage to jump across a chasm, 
+but he wouldn’t be able to use the benefits of this Merit to Crescendo someone into Oblivion. 
+Note specifically that this Merit supersedes the normal ruling that Willpower cannot 
+be used to win a Static Challenge automatically. Remember, though, that it does not apply 
+to Simple Tests, to challenges with a difficulty of less than six Traits or to challenges against 
+other characters (including Narrator characters). 
+SOCIAL 
+MERITSAND 
+ELAWS 
+E N E M Y (  1-5 TRAIT E L A ~ )  
+Someone out there is after your character, and he wants her dead, dead, dead. (For good 
+this time.) This enemy is probably a fellow wraith or a Spectre, but it might be some other 
+sort of creature capable of causing serious problems. The Trait value of this Flaw determines 
+the overall potency of the enemy. For one Trait, your character has an opponent roughly 
+similar in power to herself; for five Traits, a seemingly unstoppable enemy is out to do her 
+in. The motives of this enemy should tie in to your character’s background and history in 
+some fashion. The Storyteller determines when and how the enemy intervenes in stories- 
+possibly even to the point of going after your character’s entire Circle as well. 
+s H r ( I  TRAIT E L A ~ )  
+Some people are just uncomfortable around crowds and in social situations. When your 
+
+
+B o o N ( I - 3  TRAIT 
+MERIT) 
+Someone owes your character. Maybe this someone is a lowly wraith among a 
+Renegade gang, or maybe he’s an important Hierarchy official. The more important the 
+wraith, and the more he owes, the greater the value of the boon. 
+For one Trait, someone owes your character for going out of her way on his behalf. He’ll 
+give you useful information or shelter, but he probably won’t do anything risky for her. 
+For two Traits, your character did someone a serious favor. This someone might sneak 
+your wraith some contraband or look the other way while she cross through restricted 
+territory. He may also speak up on her behalf within his organization once or twice. (Just 
+hope that he doesn’t go into Catharsis and sell your character out.) 
+For three Traits, some wraith pretty much owes his existence to your character. He’ll 
+shield and protect her to the best of his ability, speak up for her with his organization and 
+even break a few wraithly laws to pay off the debt. 
+Note that if a powerful Gaunt owes your character are a boon, however, the wraith 
+probably won’t give her as much as a less powerful wraith would. One can assume that a 
+Gaunt has sufficient influence and power to pay his debts with little effort, after all. This 
+Merit assumes that the wraith in question feels bound for some reason to pay back the boon, 
+be it through blackmail or just an unquiet conscience. 
+MORTAL 
+C O M p A N I O N ( a  T R A I T  MERIT) 
+Despite death and the Fog, your character has managed to keep reasonably close ties 
+with a living person. This person may be a parapsychologist, a medium or just someone who 
+has a mutual tie to one of your character’s Fetters. This person is as helpful and sympathetic 
+as a still-living person can be to a ghost, but she does have a life, and she won’t always be 
+able to help out directly. Plus, a few episodes of Catharsis may make this acquaintance 
+rethink the relationship. Still, if you exercise a few Arcanoi on this person’s behalf, you can 
+often expect a good return in the living world. 
+P S Y C H I C  ALLY(+ 
+TRAIT M E ~ I T )  
+Not only is your character on decent terms with a mortal, but that mortal is a bona fide 
+sensitive. The mortal can perceive ghostly visitations in some fashion, and he accepts the 
+existence of ghosts for exactly what it is. Your Storyteller must determine the full extent of 
+the mortal’s powers and motivations, as well as how that person manages to communicate 
+with the other side. Furthermore, some vindictive or desperate wraiths may try to steal away 
+or hurt this link to the other side. (See Laws of the Hunt for some ideas about mortals with 
+psychic powers and the ability to speak to the dead.) 
+SUPERNATURAL 
+ME RIT SAND 
+ELAWS 
+c ~ R ~ E ~ ( I - J  
+TRAIT P L A ~ )  
+Some awful bane afflicts your character, even beyond death. In certain circumstances, he 
+may find himself compelled to do terrible things, or perhaps some things just never go right. 
+The strength of the curse determines the value of this Flaw. For one Trait, perhaps one 
+always suffers dire consequences from betraying a confidence. For five Traits, maybe the 
+character is so cursed that he will wander the lands of the dead endlessly without surcease 
+or rest, unable to ever Transcend or even make a modicum of success in his endeavors to 
+protect his Fetters or Passions. 
+D A M N E D  ( I TRAIT BLAW) 
+Despite being a believer in some mortal religion, your character has come to realize that 
+the endless Purgatory of the Shadowlands is just another torment and another lie in the 
+chink of his former faith. Whenever your character enters a place sacred to his former 
+
+
+religion, you lose a Willpower Trait each minute due to the psychological stress. If he 
+touches an artifact of the faith (material or corporeal), he suffers a level of Corpus damage 
+as his form sloughs off in agony of this existence. 
+The Storyteller should make sure that the player selects a religion that may actually 
+appear in the course of the game. A Zoroastrian is unlikely to suffer much inconvenience 
+from this Flaw in a modern urban setting. 
+~ R p R o p e R L y  
+B U R I E D  ( I TRAIT ELAW) 
+Many superstitions surround the practices of burial. By your character’s beliefs, he was 
+interred improperly. Perhaps he was buried without clothes, or maybe he needed to be buried 
+in his family’s grave plot, but such was not to be the case. Whatever the case, he suffers 
+extreme discomfort in the afterlife. This difficulty with his own corpse causes him to suffer 
+by taking your own body as a Fetter (and not as a free one, either), but you gain no Trait 
+bonuses when trying to resolve or affect it. Instead, you suffer a one-Trait resolution penalty 
+when your character tries to affect his corpse. He might overcome this Flaw if someone 
+finally inters his body properly (and you spend two experience Traits). 
+TH E BARD’S T o ~ g u c  
+( I  TRAIT 
+ELAW) 
+Terrible truths come from your character’s lips, completely unbidden and without 
+forewarning. It’s not that he sees the future; rather, things that he says have an uncanny way 
+of coming true. 
+Once per game session, some uncomfortable truth will come out of your character’s 
+mouth, and the dire predictions of this event are almost certain to pass. Should a Storyteller 
+note a particularly appropriate phrase, then when it has a chance of fulfillment, anyone 
+trying to resist it must make an automatic retest and take the worst result. Thus, such a 
+character might remarkoffhandedly, “Just what we need. What’s next, a batch of Spectres?” 
+only to hear cackling and howling a few minutes later. Perhaps he’ll note, “You’ll never be 
+able to cross the Shroud like that,” and suddenly find that the player of the character to 
+whom he said it must retest his next attempt to use Embody. 
+TIRE Crc~c(I-5 TRAIT 
+ELAW) 
+Your character’s death is tied somehow to a repeating pattern of time. The Shroud’s 
+effective rating is one to four Traits higher for you (equal to the value of the Flaw), except 
+for certain times when you can reach normally. If your character has a certain “hour of 
+death” that works for her each day, this Flaw is worth its normal value. If she is limited to, 
+say, only one day a month, add one Trait to the Flaw’s value. You should tie this time to an 
+actual event surrounding your character’s death. If she died at sea, she might only be able 
+to affect the world at the hours around high and low tide. If she was killed on a Sunday, she 
+can only touch the world on Sundays. 
+B C H O E S ( a - 5  TRAIT &AW) 
+Old wives’ tales and superstitions about ghosts are true with respect to your character. 
+When he’s around, animals react strongly; open flames seem to hypnotize him; running 
+water bars his passage, as does seasalt; his outline sometimes appears in fog. Sounds he makes 
+can be recorded on tape, and he might even leave bits of ectoplasm on things that he touches 
+in the living lands. Your character can’t control this phenomenon; he just seems to reflect 
+the area residents’ beliefs regarding the behavior of ghosts naturally. 
+The value of this Flaw depends upon its severity. For two Traits, the character may just 
+make the occasional bump in the night or cold spot. For five Traits, he slimes everything 
+he touches, he causes animals to hiss and spit at him, and he can be driven out by exorcism 
+rites and wards against the Evil Eye. 
+
+
+LIMITED 
+L I ~ E S I ~ H T ( ~  
+TRAIT PLAW) 
+Your character has great difficulty seeing living things and their patterns. While most 
+wraiths can sense the general patterns of emotion and life in people, you suffer a two-Trait 
+resolution penalty in such challenges (Oblivion, p. 160). To your character, the living world 
+is blurry and difficult to see, almost as if the shroud of death itself keeps him from tying back 
+into the brilliance of the living. 
+LIMITED 
+D F A T H S I ~ H T (  
+a TRAIT PLAW) 
+Your character’s ability to discern patterns of injury and decay is quite limited. Maybe 
+she rejects death so much that she can’t sense it in others, or perhaps it’s just not part ofher 
+conception of ghostly power. For whatever reason, you suffer a two-Trait resolution penalty 
+in all challenges with Deathsight (Oblivion, p. 160). 
+~ o v N o ( 3  
+TRAIT  law) 
+Some place or event holds such significance to your character that he can’t leave it. 
+Maybe he can haunt only a house where he lived and died, or perhaps he haunts a particular 
+tree. You cannot move more than 100 yards from this location, and you must take it as a 
+Fetter. 
+Naturally, this Flaw can limit your story possibilities a great deal, so choose carefully! 
+Should the character ever resolve this Fetter, you will be able to leave the area, thankfully. 
+Most wraiths just have dark urges in their minds encouraging them to do nasty things. 
+For your wraith, though, those urges manifest in the form of asmall plasmic animal or object. 
+It can manifest at odd times, even moving around to interact with things as if it has one 
+Physical Trait. If it’s discorporated by force, the Shadow simply dissolves back into your 
+character’s head to torment him internally. (You can’t get away from it that easily!) While 
+the Shadow exists in this external form, you must speak aloud to address it. 
+You should carry a prop or card that represents this disembodied Shadow. From time 
+to time, your Storyteller or Shadowguide may rule that it’s harassing someone or playing 
+around with objects in the vicinity. 
+DISEMBODIED 
+! h A D O W ( 3  
+T R A I T  PLAW) 
+U M B R A L  c O N N G C T I O N ( 3  T R A I T  PLAW) 
+By some quirk of chance, your character’s existence extends into the middle Umbra, 
+the mirror of the vibrant living lands. Although he cannot see or affect the Umbra, spirits 
+that wander there can see him as a pale shade. Werewolves or magicians can even use their 
+magical powers to affect such an unfortunate character, binding him or banishing him while 
+he remains unaware of what exactly is going on. 
+DARE 
+g A T E  (5 T R A I T  PLAW) 
+Your character is doomed not only to an existence more horrid than this wraithly one, 
+but to a final end where all of his struggles come to naught. Worse still, he is aware of this 
+fate through vague dreams, hunches or premonitions - 
+or maybe just because some 
+malicious demon or Shadow told him about it. At some point, his struggles will end, and he 
+will go on to a fate more terrible than Oblivion, more repugnant than Spectrehood and more 
+inevitable than death. Your Storyteller will design this final end, of which you may have 
+occasional premonitions. 
+U N K N O W N  d E T T E R ( 1 - 5  T R A I T  M E R I T )  
+Some connection ties your character to a place or object, but he has no idea what it is 
+or why he’s connected. Certain Arcanoi might help one to identify this Fetter, but otherwise 
+it’s a mystery. This Merit is actually quite handy, though, because nobody else is likely to 
+
+
+know of the Fetter either, and thus it’s not at great risk of destruction by enemies. Then 
+again, a wraith can’t protect a Fetter if he doesn’t know what it is. 
+The value of this Merit depends on the value and durability of the Fetter in question. 
+If the Fetter is unlikely to suffer from outside intervention, it costs more to be unknown. If 
+neither your character nor his enemies ever discover it, it may exist forever! A Fetter that’s 
+at risk of discovery or that is more easily disposable costs less. 
+C O L D  ( B TRAIT MERIT) 
+Remember those tales of ghosts causing “cold spots” in haunted areas! They’re true with 
+your character. When he walks through an area, the temperature drops noticeably in the 
+living lands. This drop can draw attention to the character’s presence, and it could even be 
+tracked and measured with heat-sensing gear. On the other hand, most mortals will only 
+shiver and try to get away. By applying the effects of this Merit carefully, a ghost can 
+encourage people to leave a haunt or to pay attention to him, or even communicate crudely 
+with the living. (This cold spot is just a blob of low-temperature, though. The wraith with 
+this Merit does not appear as a ghostly silhouette if viewed through infrared goggles.) 
+~ u c w ( 3  
+TRAIT MERIT) 
+All right, your character can’t be all that lucky - 
+she’s dead, after all -but 
+Fortune 
+does seem to favor her. You have three Lucky Traits that you can use for retests on any 
+challenge. As usual, you can only use one such Trait on any given challenge. These Traits 
+refresh each game session. 
+OTHER HALE (3 TRAIT MERIT) 
+Some philosophers believe that each person is a half-soul, who can find completion 
+only by discovering its other half in another person. Well, your character did just that. This 
+other half is just about anyone still living - 
+casual acquaintance, old friend, relative, 
+whatever - 
+but the depth of the connection is profound. Count this individual as one of 
+your wraith‘s Fetters (no, not as afree one). Whenever the character is near this individual 
+(within, say, the same room), he regains one Corpus Trait per hour. Any bonuses that you’d 
+gain for acting on the person are doubled, making it very easy for your character to attune 
+the individual and then use his Arcanoi on him. 
+You cannot take both this Merit and the Merit: True Love. 
+B R I g H T ( 4  T R A I T  M E R I T )  
+Even the Shroud cannot staunch the intensity of your character’s drives. His desire to 
+exist beyond life is so powerful that he practically radiates his emotions into the living lands. 
+(Or, perhaps he doesn’t intend to do so, but for some reason, he finds that the Shroud doesn’t 
+keep him from interacting there.) You gain a one-Trait bonus to resolution of tests across 
+the Shroud, and any mortal who cares to interact with your character gains a similar one- 
+Trait bonus on the test to notice him. Furthermore, all mortals gain a free retest against the 
+Fog when dealing with such a character. The emotions he generates are so intense that it 
+impresses him on their minds and memories. 
+TRUE 
+h V E ( 4  TRAIT 
+M E R I T )  
+At some point, in either life or death, your character found a true love. Memories of 
+this joy buoy him in difficult situations, and the thought of his love is enough to keep him 
+pressing on when the afterlife seems stacked against him. You gain a one-Trait bonus on all 
+challenges in which your character is acting to directly maintain his relationship with his 
+true love (for as long as his true love reciprocates the feeling). 
+You cannot take both this Merit and the Merit: Other Half. 
+
+
+Your character’s dark emotions have limited sway over him. Perhaps his superego is 
+stronger than most, or maybe he’s just a naturally temperate soul. Your character’s Shadow 
+must win or tie a Simple Test to enter Catharsis after spending five Angst, and it gains Angst 
+from Dark Passions only if it wins a Simple Test, rather than getting a retest on a tie (see 
+Oblivion, p. 170). 
+TRUE 
+~ A I T H  (7 TRAIT MERIT) 
+I 
+The strength of your character’s religious convictions buoys her. She believes firmly 
+that some sentient power guides and watches over the cosmos. Although this existence may 
+not be the afterlife she was promised, her strength of character expresses itself in the 
+unshakeable devotion to her principles. You receive the benefits of the Merit: Code of 
+Honor, 
+plus an added perk. Attempts to coerce your character to eschew or betray her code 
+of honor - 
+be they supernatural or attempted Social Challenges based on your character’s 
+Nature -fail automatically. You may also make a Simple Test after using an Eidolon Trait 
+to put down your character’s Shadow. If you win that test, you do not lose that Eidolon Trait 
+(as you should, as per Oblivion p. 136). 
+
+
+rUS 
+Kdge n g a u t x  Lhe Darkness; 
+Tempe, AZ 
+Kevin Lynch 11, 
+Collin Toohey, 
+KWLynch@aol.com 
+Song of Sonora; Tucson, AZ 
+Cy bertec@cyberdude.com 
+(520) 722-2688 
+(602) 942-4994 
+O T H E R S  ( U N S ~ E C I E I E D A N D  
+M I X E D  C ~ A M E S )  
+Dark Carpathia, Portland, Maine 
+More Than Night: 
+Portland, Oregon 
+http://home.maine.rr.com/ 
+darkcarpathia/darkcarp.html 
+(Independent game that some- 
+times 
+playtests 
+upcoming 
+supplements) 
+East of the River, Vernon, CT 
+Bruce Baugh, bruce-baugh@sff.net 
+D. Scott Stewart, 
+storyteller@eotr.org 
+Nox Imperium; Longview, WA 
+katzmeow@kalama.com 
+Fortress of the Mind’s Eye: 
+Lansing, MI 
+Of Shadow & Light, 
+Aaron Ledger, 
+Cincinnati, Ohio 
+1edgeraaQpilot .msu.edu 
+Brian-Joseph Baker, 
+bakebj b@email.uc.edu 
+(517) 372-1452 
+(513) 777-7778 
+Imagination Shop Theater Guild 
+Fridays: Sacramento, CA 
+Alternate Saturdays: 
+Santa Cruz, CA 
+Sundays: Santa Rosa, CA 
+Pete Magnetti, 
+I STG-M AIN @hot mai l.com 
+Trails End Troupe; Salem, OR 
+Coordinatrix@hotmail.com 
+United San Diego; San Diego, CA 
+Dennis “Tristan” Hanson, 
+Dollphynn@aol.com 
+(9 16) 369-6948 
+80 

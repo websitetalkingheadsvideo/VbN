@@ -1,0 +1,5278 @@
+ 
+ 
+ 
+VAMPIRE THE MASQUERADE DIRECTORY 
+Revised Edition – Mind’s Eye Theatre 
+ 
+Sects 
+Sect  
+Title & Page Number 
+ 
+Autarkis  
+The Long Night 18 
+Anarchs  
+Laws of the Night: Anarch Guide 
+Camarilla  
+Laws of the Night: Camarilla Guide 
+ 
+Sect  
+Title & Page Number 
+ 
+Independents  
+Laws of the Night 29 
+Laibon  
+Faith & Fire 70 
+Sabbat  
+Laws of the Night: Sabbat Guide 
+ 
+Clans & Bloodlines 
+Clan or Bloodline  
+Title & Page Number 
+ 
+Ahrimanes 
+Clanbook: Gangrel, Revised Ed. 48 
+Assamite 
+Laws of the Night 46 
+Assamite Antitribu 
+Laws of the Night: Sabbat Guide 30 
+Baali  
+Laws of the Night: Storyteller Guide 16 
+Blood Brothers 
+Laws of the Night: Sabbat Guide 32 
+Brujah  
+Laws of the Night 30 
+Brujah Antitribu 
+Laws of the Night: Sabbat Guide 34 
+Caitiff 
+Laws of the Night 68 
+Daitya 
+Clanbook: Followers of Set, Revised Ed. 50 
+Daughters of Cacophony  
+Laws of the Night 56 
+Followers of Set  
+Laws of the Night 48 
+Gangrel  
+Laws of the Night 50 
+Gangrel Antitribu 
+Laws of the Night: Sabbat Guide 36 
+Gargoyles 
+Laws of the Night: Camarilla Guide 36 
+Giovanni  
+Laws of the Night 52 
+Harbingers of Skulls 
+Laws of the Night: Sabbat Guide 38 
+Kiasyd 
+Laws of the Night: Sabbat Guide 40 
+Laibon 
+Faith & Fire 70 
+Lamia 
+Faith & Fire 71 
+Lasombra  
+Laws of the Night 42 
+Lhiannan 
+Faith & Fire 73 
+Clan or Bloodline  
+Title & Page Number 
+ 
+Malkavian 
+Laws of the Night 32 
+Malkavian Antitribu 
+Laws of the Night: Sabbat Guide 42 
+Nagaraja  
+Laws of the Night: Storyteller Guide 18 
+Nosferatu  
+Laws of the Night 34 
+Nosferatu Antitribu  
+Laws of the Night: Sabbat Guide 44 
+Old Clan Tzimisce  
+Laws of the Night: Storyteller Guide 111 
+Panders 
+Laws of the Night: Sabbat Guide 46 
+Ravnos  
+Laws of the Night 54 
+Ravnos Antitribu  
+Laws of the Night: Sabbat Guide 48 
+Salubri 
+Laws of the Night 57 
+Salubri Antitribu 
+Laws of the Night: Sabbat Guide 50 
+Samedi 
+Laws of the Night 58 
+Serpents of the Light 
+Laws of the Night: Sabbat Guide 52 
+Tlacique 
+Clanbook: Followers of Set, Revised Ed. 51 
+Toreador  
+Laws of the Night 36 
+Toreador Antitribu  
+Laws of the Night: Sabbat Guide 54 
+Tremere  
+Laws of the Night 38 
+True Brujah  
+Laws of the Night: Storyteller Guide 20 
+Tzimisce  
+Laws of the Night 44 
+Ventrue  
+Laws of the Night 40 
+Ventrue Antitribu  
+Laws of the Night: Sabbat Guide 56 
+ 
+Revenant Bloodlines 
+Bloodline  
+Title & Page Number 
+ 
+Bratovitch  
+Laws of the Night: Sabbat Guide 172 
+Grimaldi  
+Laws of the Night: Sabbat Guide 173 
+Obertus  
+Laws of the Night: Sabbat Guide 174 
+Bloodline  
+Title & Page Number 
+ 
+Oprichniki  
+Clanbook: Tzimisce, Revised Ed. 65 
+Zantosa  
+Laws of the Night: Sabbat Guide 175 
+ 
+
+
+ 
+ 
+Archetypes: Nature & Demeanor 
+Archetype  
+Title & Page Number 
+ 
+Architect  
+Laws of the Night 73 
+Autocrat  
+Laws of the Night 73 
+Barbarian 
+Faith & Fire 91 
+Bon Vivant  
+Laws of the Night 73 
+Bravo  
+Laws of the Night 73 
+Capitalist 
+Laws of the Night: Sabbat Guide 60 
+Caregiver  
+Laws of the Night 73 
+Caretaker  
+Faith & Fire 91 
+Celebrant  
+Laws of the Night 73 
+Chameleon  
+Laws of the Night: Sabbat Guide 60 
+Child  
+Laws of the Night 73 
+Competitor  
+Laws of the Night 73 
+Conformist  
+Laws of the Night 73 
+Conniver  
+Laws of the Night 73 
+Creep Show  
+Laws of the Night: Sabbat Guide 60 
+Curmudgeon  
+Laws of the Night 73 
+Dabbler 
+Laws of the Night: Camarilla Guide 23 
+Daredevil 
+Laws of the Night: Sabbat Guide 60 
+Dark Pioneer  
+Laws of the Night: Sabbat Guide 60 
+Dark Poet  
+Laws of the Night: Sabbat Guide 60 
+Defender  
+Faith & Fire 91 
+Deviant  
+Laws of the Night 74 
+Director 
+Laws of the Night 74 
+Dreamer 
+Faith & Fire 91 
+Drunk Uncle  
+Laws of the Night: Sabbat Guide 60 
+Enigma  
+Laws of the Night: Sabbat Guide 60 
+Eye of the Storm 
+Laws of the Night: Sabbat Guide 60 
+Fanatic  
+Laws of the Night 74 
+Gallant  
+Laws of the Night 74 
+Archetype  
+Title & Page Number 
+ 
+Guru  
+Laws of the Night: Sabbat Guide 60 
+Idealist  
+Laws of the Night: Camarilla Guide 23 
+Innovator  
+The Long Night 41 
+Jester  
+Faith & Fire 91 
+Judge  
+Laws of the Night 74 
+Loner 
+Laws of the Night 74 
+Martyr 
+Laws of the Night 74 
+Masochist  
+Laws of the Night 74 
+Monster  
+Laws of the Night 74 
+Pedagogue  
+Laws of the Night 74 
+Penitent 
+Laws of the Night 74 
+Perfectionist  
+Laws of the Night 74 
+Rebel  
+Laws of the Night 74 
+Recruiter  
+Laws of the Night: Sabbat Guide 60 
+Rogue  
+Laws of the Night 74 
+Sadist  
+Laws of the Night: Sabbat Guide 60 
+Scientist  
+Laws of the Night: Camarilla Guide 23 
+Sociopath  
+Laws of the Night: Sabbat Guide 60 
+Soldier  
+Laws of the Night: Camarilla Guide 23 
+Sorority Sister  
+Laws of the Night: Sabbat Guide 60 
+Stalker  
+Laws of the Night: Sabbat Guide 60 
+Survivor  
+Laws of the Night 74 
+Thrill-Seeker  
+Laws of the Night 74 
+Torturer  
+Laws of the Night: Sabbat Guide 60 
+Traditionalist  
+Laws of the Night 74 
+Trickster  
+Laws of the Night 74 
+Tyrant  
+The Long Night 41 
+Visionary  
+Laws of the Night 74
+ 
+Attributes 
+Attribute  
+Title & Page Number 
+ 
+Strength 
+ Brawny 
+Laws of the Night 80 
+ Ferocious 
+Laws of the Night 80 
+ Stalwart  
+Laws of the Night 81 
+ Tough  
+Laws of the Night 81 
+ Vicious  
+Laws of the Night: Sabbat Guide 62 
+ Wiry  
+Laws of the Night 81 
+Dexterity  
+ Dexterous  
+Laws of the Night 80 
+ Fierce 
+Laws of the Night: Sabbat Guide 62 
+ Graceful  
+Laws of the Night 80 
+Attribute  
+Title & Page Number 
+ 
+ Lithe  
+Laws of the Night 80 
+ Nimble  
+Laws of the Night 81 
+ Quick 
+Laws of the Night 81 
+Stamina 
+ Deadly 
+Laws of the Night: Sabbat Guide 62 
+ Enduring 
+Laws of the Night 80 
+ Resilient 
+Laws of the Night 81 
+ Robust 
+Laws of the Night 81 
+ Rugged 
+Laws of the Night 81 
+ Savage 
+Laws of the Night: Sabbat Guide 62 
+ Tireless  
+Laws of the Night 81 
+
+
+ 
+ 
+Attribute  
+Title & Page Number 
+ 
+Misc Physical 
+ Aggressive 
+Laws of the Night: Sabbat Guide 62 
+ Agile 
+Laws of the Night 80 
+ Brutal 
+Faith & Fire 100 
+ Energetic 
+Laws of the Night 80 
+ Steady 
+Laws of the Night 81 
+ Tenacious 
+Laws of the Night 81 
+ Vigorous 
+Laws of the Night 81 
+Negative Physical 
+ Clumsy 
+Laws of the Night 81 
+ Cowardly 
+Laws of the Night 81 
+ Decrepit 
+Laws of the Night 81 
+ Docile 
+Laws of the Night 81 
+ Flabby 
+Laws of the Night 81 
+ Frail 
+Laws of the Night: Sabbat Guide 62 
+ Lame 
+Laws of the Night 81 
+ Lethargic 
+Laws of the Night 82 
+ Puny 
+Laws of the Night 82 
+ Sickly 
+Laws of the Night 82 
+ Slow 
+Laws of the Night: Sabbat Guide 62 
+ Soft 
+Laws of the Night: Sabbat Guide 62 
+Charisma 
+ Charismatic 
+Laws of the Night 82 
+ Charming 
+Laws of the Night 82 
+ Dignified  
+Laws of the Night 82 
+ Eloquent  
+Laws of the Night 82 
+ Expressive  
+Laws of the Night 82 
+ Genial 
+Laws of the Night 82 
+ Threatening 
+Laws of the Night: Sabbat Guide 63 
+Manipulation 
+ Beguiling 
+Laws of the Night 82 
+ Callous 
+Laws of the Night: Sabbat Guide 63 
+ Commanding 
+Laws of the Night 82 
+ Cruel 
+Laws of the Night: Sabbat Guide 63 
+ Ingratiating 
+Laws of the Night 83 
+ Manipulative 
+Laws of the Night: Sabbat Guide 63 
+ Persuasive 
+Laws of the Night 83 
+Appearance 
+ Alluring 
+Laws of the Night 82 
+ Elegant 
+Laws of the Night 82 
+ Gorgeous 
+Laws of the Night 83 
+ Magnetic 
+Laws of the Night 83 
+ Seductive 
+Laws of the Night 83 
+Misc Social 
+ Diplomatic 
+Laws of the Night 82 
+ Empathetic 
+Laws of the Night 82 
+Attribute  
+Title & Page Number 
+ 
+ Intimidating 
+Laws of the Night 83 
+ Friendly 
+Laws of the Night 83 
+ Witty 
+Laws of the Night 83 
+Negative Social 
+ Bestial 
+Laws of the Night 83 
+ Callous 
+Laws of the Night 83 
+ Condescending 
+Laws of the Night 83 
+ Dull 
+Laws of the Night 83 
+ Empathetic 
+Laws of the Night: Sabbat Guide 63 
+ Feral 
+Laws of the Night 83 
+ Kind 
+Laws of the Night: Sabbat Guide 63 
+ Meek 
+Laws of the Night: Sabbat Guide 63 
+ Naive 
+Laws of the Night 83 
+ Obnoxious 
+Laws of the Night 83 
+ Repugnant 
+Laws of the Night 83 
+ Shy 
+Laws of the Night 83 
+ Tactless 
+Laws of the Night 83 
+ Untrustworthy 
+Laws of the Night 83 
+Perception 
+ Analytical 
+Laws of the Night: Sabbat Guide 63 
+ Attentive 
+Laws of the Night 84 
+ Discerning 
+Laws of the Night 84 
+ Insightful 
+Laws of the Night 84 
+ Observant 
+Laws of the Night 84 
+ Vigilant 
+Laws of the Night 85 
+Intelligence 
+ Cunning 
+Laws of the Night 84 
+ Disciplined 
+Laws of the Night 84 
+ Focused 
+Laws of the Night: Sabbat Guide 63 
+ Knowledgeable 
+Laws of the Night 84 
+ Rational 
+Laws of the Night 84 
+ Reflective 
+Laws of the Night 84 
+Wits 
+ Alert 
+Laws of the Night 83 
+ Clever 
+Laws of the Night 84 
+ Insidious 
+Laws of the Night: Sabbat Guide 63 
+ Intuitive 
+Laws of the Night 84 
+ Shrewd 
+Laws of the Night 85 
+ Wily 
+Laws of the Night 85 
+ Dedicated 
+Laws of the Night 84 
+Misc Mental 
+ Creative 
+Laws of the Night 84 
+ Depraved 
+Laws of the Night: Sabbat Guide 63 
+ Determined 
+Laws of the Night 84 
+ Inhumane 
+Laws of the Night: Sabbat Guide 63 
+ Patient 
+Laws of the Night 84 
+
+
+ 
+ 
+Attribute  
+Title & Page Number 
+ 
+ Wise 
+Laws of the Night 85 
+Negative Mental 
+ Deceitful 
+Laws of the Night: Sabbat Guide 64 
+ Forgetful 
+Laws of the Night 85 
+ Gullible 
+Laws of the Night 85 
+ Ignorant 
+Laws of the Night 85 
+ Impatient 
+Laws of the Night 85 
+ Oblivious 
+Laws of the Night 85 
+Attribute  
+Title & Page Number 
+ 
+ Predictable 
+Laws of the Night 85 
+ Shortsighted 
+Laws of the Night 85 
+ Squeamish 
+Laws of the Night: Sabbat Guide 64 
+ Submissive 
+Laws of the Night 85 
+ Unstable 
+Laws of the Night: Sabbat Guide 64 
+ Violent 
+Laws of the Night 85 
+ Witless 
+Laws of the Night 85
+ 
+Abilities 
+Ability 
+Title & Page Number 
+ 
+Academics  
+Laws of the Night 87 
+Acting 
+The Long Night 49 
+Animal Ken 
+Laws of the Night 87 
+Archery 
+Faith & Fire 108  
+Athletics  
+Laws of the Night 87 
+Awareness 
+Laws of the Night 87 
+Blindfighting 
+Laws of the Night: Sabbat Guide 69 
+Brawl 
+Laws of the Night 87 
+Commerce 
+Faith & Fire 109 
+Computer  
+Laws of the Night 88 
+Crafts 
+Laws of the Night 88 
+Dodge 
+Laws of the Night 88 
+Drive 
+Laws of the Night 88 
+Empathy 
+Laws of the Night 88 
+Etiquette 
+Laws of the Night 88 
+Expression 
+Laws of the Night 89 
+Finance 
+Laws of the Night 89 
+Firearms  
+Laws of the Night 89 
+Fire Dancing 
+Laws of the Night: Sabbat Guide 69 
+Fortune-Telling 
+Laws of the Night: Sabbat Guide 69 
+Hearth Wisdom 
+Faith & Fire 110 
+Herbalism 
+The Long Night 51 
+History 
+The Long Night 51 
+Hunting 
+Laws of the Night: Camarilla Guide 24 
+Intimidation 
+Laws of the Night 89 
+Investigation 
+Laws of the Night 89 
+Larceny 
+The Long Night 51 
+Ability 
+Title & Page Number 
+ 
+Law 
+Laws of the Night 89  
+Leadership 
+Laws of the Night 90 
+Legerdemain 
+Faith & Fire 111 
+Linguistics 
+Laws of the Night 90 
+Medicine 
+Laws of the Night 90 
+Melee 
+Laws of the Night 90 
+Occult 
+Laws of the Night 90 
+Panhandling 
+The Long Night 53 
+Performance 
+Laws of the Night 91 
+Politics 
+Laws of the Night 91 
+Psychology 
+Laws of the Night: Camarilla Guide 24 
+Repair 
+Laws of the Night 91 
+Ride 
+Faith & Fire 113 
+Rituals 
+Laws of the Night: Sabbat Guide 69 
+Science 
+Laws of the Night 91 
+Security 
+Laws of the Night 91 
+Seneschal 
+Faith & Fire 113 
+Scrounge 
+Laws of the Night 91 
+Stealth 
+Laws of the Night 91 
+Street Sense 
+The Long Night 55 
+Streetwise 
+Laws of the Night 91 
+Subterfuge 
+Laws of the Night 91 
+Survival 
+Laws of the Night 92 
+Theology 
+Faith & Fire 114 
+Torture 
+Laws of the Night: Sabbat Guide 69 
+Vamp 
+Laws of the Night: Sabbat Guide 70
+ 
+
+
+ 
+ 
+Backgrounds 
+Background  
+Title & Page Number 
+ 
+Allies 
+Laws of the Night 93 
+Contacts 
+Laws of the Night 94 
+Domain 
+Faith & Fire 116 
+Fame 
+Laws of the Night 94 
+Generation 
+Laws of the Night 96 
+Background  
+Title & Page Number 
+ 
+Herd 
+Laws of the Night 96 
+Insight 
+Laws of the Night: Anarch Guide 110 
+Mentor 
+Laws of the Night 104 
+Resources 
+Laws of the Night 104 
+Retainers 
+Laws of the Night 105 
+ 
+Influences 
+Influence  
+Title & Page Number 
+ 
+Bureaucracy 
+Laws of the Night 97 
+Church 
+Laws of the Night 98 
+Court 
+The Long Night 57 
+Finance 
+Laws of the Night 98 
+Health 
+Laws of the Night 99 
+High Society 
+Laws of the Night 99 
+Industry 
+Laws of the Night 100 
+Learning 
+The Long Night 58 
+Legal 
+Laws of the Night 100 
+Influence 
+Title & Page Number 
+ 
+Media 
+Laws of the Night 100 
+Occult 
+Laws of the Night 101 
+Police 
+Laws of the Night 101 
+Political 
+Laws of the Night 102 
+Street 
+Laws of the Night 102 
+Transportation 
+Laws of the Night 103 
+Underworld 
+Laws of the Night 103 
+University 
+Laws of the Night 103
+ 
+Virtues 
+Virtue 
+Title & Page Number 
+ 
+Conscience 
+Laws of the Night 70  
+Conviction 
+Laws of the Night 70 
+Courage 
+Laws of the Night 70 
+Virtue 
+Title & Page Number 
+ 
+Instinct 
+Laws of the Night 70 
+Self-Control 
+Laws of the Night 70 
+ 
+Paths of Enlightenment 
+Path 
+Title & Page Number 
+ 
+Path of Blood 
+Laws of the Night 76  
+Path of Bone 
+Laws of the Night 77 
+Path of Caine 
+Laws of the Night: Sabbat Guide 76 
+Path of Cathari 
+Laws of the Night: Sabbat Guide 78 
+Path of Death and the Soul 
+Laws of the Night: Sabbat Guide 81 
+Path of Ecstasy 
+Laws of Elysium 55 
+Path of Evil Revelation 
+Laws of the Night: Sabbat Guide 83 
+Path of Feral Heart 
+Laws of the Night: Sabbat Guide 86 
+Path of Harmony 
+Laws of Elysium 49 
+Path 
+Title & Page Number 
+ 
+Path of Honorable Accord 
+Laws of the Night: Sabbat Guide 88 
+Path of Lilith 
+Laws of the Night: Sabbat Guide 90 
+Path of Metamorphosis 
+Laws of the Night 77 
+Path of Night 
+Laws of the Night 78 
+Path of Paradox 
+Laws of the Night 78 
+Path of Power and the Inner Voice Laws of the Night: Sabbat Guide 93 
+Path of Typhon 
+Laws of the Night 79 
+Path of the Warrior 
+Laws of Elysium 56
+ 
+
+
+ 
+ 
+Roads 
+Road 
+Title & Page Number 
+ 
+Road of the Beast 
+Faith & Fire 94  
+Road of Heaven 
+Faith & Fire 95 
+Road of Humanity 
+Faith & Fire 96 
+Road 
+Title & Page Number 
+ 
+Road of Kings 
+Faith & Fire 97 
+Road of Sin 
+Faith & Fire 98
+ 
+Merits & Flaws 
+Merit or Flaw (value) 
+Title & Page Number 
+ 
+Acute Sense 1 
+Laws of the Night 112 
+Addiction -3 
+Laws of the Night 114 
+Ambidextrous 1 
+Laws of the Night 113 
+Amnesia -2 
+Laws of the Night 117 
+Ancestral Soil Dependence -2 
+Clanbook: Tzimisce, Revised Ed. 70 
+Anosmia -2  
+Clanbook: Nosferatu, Revised Ed. 73 
+Attuned Taste 2  
+Clanbook: Tremere, Revised Ed. 66 
+Bad Sight -1 to -3 
+Laws of the Night 114 
+Bastard Childe -2 
+Laws of Elysium 33 
+Beacon of the Unholy -2 
+Laws of the Night: Camarilla Guide 26 
+Benevolent Blood 1  
+Clanbook: Malkavian, Revised Ed. 64 
+Beserker 3 
+Faith & Fire 137 
+Blind -6 
+Laws of the Night 116 
+Blunt Fangs -1  
+Clanbook: Nosferatu, Revised Ed. 72 
+Blush of Health 2 
+Laws of the Night 113 
+Bound -2 
+Laws of the Night: Camarilla Guide 26 
+Bound to the Council -3  
+Clanbook: Tremere, Revised Ed. 67 
+Bright Aura 1 
+Laws of the Night: Camarilla Guide 25 
+Bruiser 1 
+Laws of the Night: Camarilla Guide 24 
+Calm Heart 3 
+Laws of the Night 116 
+Can’t Cross Running Water -3 
+Laws of the Night 121 
+Cast No Reflection -1 
+Laws of the Night 121 
+Catlike Balance 1 
+Laws of the Night 113 
+Celestial Attunement 1 
+Faith & Fire 137 
+Child -3 
+Laws of the Night 114 
+Clan Weakness -2 
+Laws of the Night: Anarch Guide 114 
+Code of Honor 2 
+Laws of the Night 116 
+Cold Breeze -1 
+Laws of the Night: Camarilla Guide 26 
+Coldly Logical 1 
+Laws of the Night: Camarilla Guide 25 
+Common Sense 1 
+Laws of the Night 116 
+Compassionate 4 
+Clanbook: Brujah, Revised Ed. 68 
+Concentration 1 
+Laws of the Night 116 
+Consanguineous Resistance 1 
+Clanbook: Giovanni, Revised Ed. 77 
+Conspicuous Consumption -4 
+Laws of the Night 118 
+Consumption -5  
+Clanbook: Tzimisce, Revised Ed. 70 
+Contagious -5  
+Clanbook: Nosferatu, Revised Ed. 74 
+Controllable Night Sight 1  
+Clanbook: Lasombra, Revised Ed. 63 
+Merit or Flaw (value) 
+Title & Page Number 
+ 
+Crusader 1 
+Faith & Fire 140 
+Cursed -1 to -5 
+Laws of the Night 120 
+Danger Sense 3 
+Faith & Fire 142 
+Daredevil 3 
+Laws of the Night 113 
+Dark Fate -5 
+Laws of the Night 121 
+Dark Secret -1 
+Laws of the Night 119 
+Deadened Nerves 4  
+Clanbook: Malkavian, Revised Ed. 65 
+Deaf -4 
+Laws of the Night 115 
+Death Wish -1 to -5 
+Laws of Elysium 33 
+Death’s Reflection -3  
+Clanbook: Lasombra, Revised Ed. 64 
+Deathsight -2 
+Laws of the Night: Camarilla Guide 26 
+Debt of Gratitude 1 to 3 
+Laws of the Night 118 
+Decrepitude -3 
+Laws of the Night: Anarch Guide 114 
+Deep Sleeper -1 
+Laws of the Night 117 
+Deformity -2 
+Laws of the Night 114 
+Disease Carrier -4 
+Laws of the Night 115 
+Diseased -1 to -5 
+Faith & Fire 135 
+Disembodied Mentor 5  
+Clanbook: Malkavian, Revised Ed. 65 
+Disfigured -2 
+Laws of the Night 114 
+Double Betrayer -4  
+Clanbook: Tremere, Revised Ed. 67 
+Dracon’s Temperament 3  
+Clanbook: Tzimisce, Revised Ed. 69 
+Dulled Bite -2 
+Laws of the Night: Camarilla Guide 24 
+Dynamic Personality 5 
+Clanbook: Brujah, Revised Ed. 68 
+Early Riser 1 
+Laws of the Night: Sabbat Guide 72 
+Eat Food 1 
+Laws of the Night 113 
+Eerie Presence -2 
+Laws of the Night 121 
+Efficient Digestion 3 
+Laws of the Night 113 
+Eidetic Memory 2 
+Laws of the Night 116 
+Embraced Without the Cup 3  
+Clanbook: Tremere, Revised Ed. 67 
+Enchanting Voice 2 
+Laws of the Night 113 
+Enemy Brood -3  
+Clanbook: Nosferatu, Revised Ed. 73 
+Enlightened 1 to 7 
+Laws of Elysium 31 
+Enemy -1 to -5 
+Laws of the Night 119 
+False Reflection 3  
+Clanbook: Nosferatu, Revised Ed. 71 
+Fangless -2 
+Laws of the Night: Anarch Guide 115 
+Fifteenth Generation -4 
+Laws of the Night: Anarch Guide 113 
+Flesh Eater -4 
+Faith & Fire 139 
+
+
+ 
+ 
+Merit or Flaw (value) 
+Title & Page Number 
+ 
+Flesh of the Corpse -5 
+Laws of the Night 115 
+Flashbacks -6 
+Laws of the Night: Sabbat Guide 73 
+Foul Blood 3  
+Clanbook: Nosferatu, Revised Ed. 71 
+Fourteenth Generation -2 
+Laws of the Night 114 
+Friendly Face 1 
+Laws of the Night: Camarilla Guide 24 
+Gaping Maw 2  
+Clanbook: Nosferatu, Revised Ed. 71 
+Glowing Eyes -2 
+Laws of the Night: Camarilla Guide 25 
+Grip of the Damned -4 
+Laws of the Night 121 
+Guilt-Wracked -4 
+Laws of the Night: Camarilla Guide 25 
+Hard of Hearing -1 
+Laws of the Night 113 
+Hatred -2 
+Faith & Fire 138 
+Haunted -3 
+Laws of the Night 121 
+Haven Affinity 3  
+Clanbook: Tzimisce, Revised Ed. 69 
+Healing Touch 1 
+Laws of the Night: Camarilla Guide 25 
+Hemetic -4 
+Laws of the Night: Anarch Guide 114 
+Holdings 1 to 5 
+Laws of Elysium 31 
+Huge Size 4 
+Laws of the Night 113 
+Hunted -4 
+Laws of the Night 119 
+Immaculate Aura 1  
+Clanbook: Malkavian, Revised Ed. 64 
+Inbred -1 to -5 
+Clanbook: Giovanni, Revised Ed. 78 
+Incoherent -5  
+Clanbook: Nosferatu, Revised Ed. 74 
+Inept -5 
+Faith & Fire 141 
+Infamous Autarkis -1  
+Clanbook: Nosferatu, Revised Ed. 72 
+Infamous Sire -1 
+Laws of the Night 119 
+Infectious -3  
+Clanbook: Malkavian, Revised Ed. 66 
+Infectious Bite -2 
+Laws of the Night 114 
+Infertile Vitae -5 
+Laws of the Night: Sabbat Guide 73 
+Inoffensive to Animals 1 
+Laws of the Night: Camarilla Guide 26 
+Iron Will 3 
+Laws of the Night 117 
+Introspection 1 
+Laws of the Night: Sabbat Guide 73 
+Jilted Paramour -1 to -3 
+Laws of Elysium 32 
+Known Diablerist -5 
+Laws of Elysium 34 
+Lame -3 
+Laws of the Night 115 
+Lazy -3 
+Laws of the Night: Sabbat Guide 72 
+Leper -2 to -3 
+Faith & Fire 135 
+Light-Sensitive -5 
+Laws of the Night 122 
+Light Sleeper 2 
+Laws of the Night 116 
+Lizard Limbs 1  
+Clanbook: Nosferatu, Revised Ed. 70 
+Long Fingers 1  
+Clanbook: Nosferatu, Revised Ed. 70 
+Lord of the Flies -2 
+Laws of the Night: Camarilla Guide 26 
+Loyal Childe 3 
+Laws of Elysium 32 
+Lucky 3 
+Laws of the Night 120 
+Lunacy -2 
+Laws of the Night 117 
+Magic Addict -3 or -5 
+Clanbook: Assamite, Revised Ed. 76 
+Magic Resistance 2 
+Laws of the Night 119 
+Matricide/Patricide -4 
+Laws of Elysium 34 
+Merit or Flaw (value) 
+Title & Page Number 
+ 
+Medium 2 
+Laws of the Night 120 
+Mistaken Identity -1 
+Laws of the Night 119 
+Monstrous -3 
+Laws of the Night 115 
+Mute -4 
+Laws of the Night 115 
+Natural Leader 1 
+Laws of the Night 118 
+Natural Linguist 2 
+Laws of the Night 116 
+Necrophile -3  
+Clanbook: Nosferatu, Revised Ed. 73 
+Nightmares -1 
+Laws of the Night 117 
+Nine Lives 6 
+Laws of the Night 120 
+Obvious Predator -2 
+Clanbook: Brujah, Revised Ed. 69 
+One Eye -2 
+Laws of the Night 114 
+Oracular Ability 3 
+Laws of the Night 120 
+Oversized Fangs 1  
+Clanbook: Nosferatu, Revised Ed. 70 
+Pain Tolerance 2  
+Clanbook: Tzimisce, Revised Ed. 69 
+Paramour 3 to 5 
+Laws of Elysium 32 
+Paragon 6 
+Clanbook: Ventrue, Revised Ed. 77 
+Parasitic Infestation -2  
+Clanbook: Nosferatu, Revised Ed. 73 
+Patagia 4  
+Clanbook: Nosferatu, Revised Ed. 72 
+Pelagic Harmony 3  
+Clanbook: Lasombra, Revised Ed. 64 
+Permanent Fangs -2 
+Laws of the Night: Camarilla Guide 25 
+Permanent Wound -3 
+Laws of the Night 115 
+Personal Masquerade 3 
+Laws of the Night: Anarch Guide 114 
+Phobia -2 
+Laws of the Night 117 
+Piscine 1  
+Clanbook: Nosferatu, Revised Ed. 71 
+Pitiable 2 
+Faith & Fire 140 
+Poseidon’s Call -1  
+Clanbook: Lasombra, Revised Ed. 64 
+Poverty -1 
+Laws of Elysium 32 
+Prestation Debt -1 to -5 
+Laws of Elysium 33 
+Prestation Gifts 2 to 6 
+Laws of Elysium 32 
+Prestigious Sire 1 
+Laws of the Night 118 
+Prey Exclusion -1 
+Laws of the Night 117 
+Probationary Sect Member -4 
+Laws of the Night 119 
+Projectile Vomiting 2  
+Clanbook: Nosferatu, Revised Ed. 71 
+Proxy Kissed 4 
+Clanbook: Giovanni, Revised Ed. 77 
+Putrescent -4  
+Clanbook: Nosferatu, Revised Ed. 74 
+Ragged Bite -2 
+Faith & Fire 135 
+Ravaging Years -2 
+Laws of the Night: Anarch Guide 114 
+Recently Arisen -3 
+Laws of Elysium 34 
+Religious Prohibition -2 to -4 
+Faith & Fire 139 
+Repelled by Crosses -3 
+Laws of the Night 121 
+Reptile Buddy 3  
+Clanbook: Nosferatu, Revised Ed. 71 
+Repulsed by Garlic -1 
+Laws of the Night 121 
+Revenant Disciplines 3  
+Clanbook: Tzimisce, Revised Ed. 69 
+Revenant Weakness –3  
+Clanbook: Tzimisce, Revised Ed. 70 
+Rugged Bad Looks 5  
+Clanbook: Nosferatu, Revised Ed. 72 
+Sanctity 2 
+Laws of the Night: Sabbat Guide 73 
+
+
+ 
+ 
+Merit or Flaw (value) 
+Title & Page Number 
+ 
+Sanguine Incongruity 5 
+Clanbook: Giovanni, Revised Ed. 78 
+Scarface -2 to -4  
+Clanbook: Tzimisce, Revised Ed. 70 
+Secret Diablerist -2 
+Laws of Elysium 34 
+Shadow Walker -6 
+Clanbook: Giovanni, Revised Ed. 78 
+Short -1 
+Laws of the Night 113 
+Short Fuse -2 
+Laws of the Night 118 
+Shy -1 
+Laws of the Night 117 
+Sire’s Resentment -1 
+Laws of the Night 119 
+Sleep Unseen 2  
+Clanbook: Nosferatu, Revised Ed. 71 
+Slimy 1  
+Clanbook: Nosferatu, Revised Ed. 71 
+Slow Healing -3 
+Laws of the Night 115 
+Smell of the Grave -1 
+Laws of the Night 114 
+Soft-Hearted -1 
+Laws of the Night 117 
+Special Responsibility 1 
+Laws of the Night: Sabbat Guide 73 
+Speech Impediment -1 
+Laws of the Night 117 
+Spirit Mentor 3 
+Laws of the Night 120 
+Stench -1  
+Clanbook: Nosferatu, Revised Ed. 72 
+Stigmata -2 to -4  
+Clanbook: Malkavian, Revised Ed. 66 
+Supersition Variable 
+Laws of the Night: Anarch Guide 115 
+Sympathetic Bond 5  
+Clanbook: Malkavian, Revised Ed. 66 
+Merit or Flaw (value) 
+Title & Page Number 
+ 
+Territorial -2 
+Laws of the Night 118 
+Thaumaturgically Inept -5  
+Clanbook: Tremere, Revised Ed. 67 
+Thin Blood -4 
+Laws of the Night 115 
+Thirst for Innocence -2 
+Laws of the Night: Camarilla Guide 25 
+Time Sense 1 
+Laws of the Night 116 
+Touch of Frost -1 
+Laws of the Night 121 
+Tough Hide 2  
+Clanbook: Nosferatu, Revised Ed. 71 
+Traitor -4  
+Clanbook: Nosferatu, Revised Ed. 74 
+True Faith 7 
+Laws of the Night 120 
+True Love 4 
+Laws of the Night 120 
+Unbroken -3 
+Clanbook: Assamite, Revised Ed. 77 
+Unbondable 3 
+Laws of the Night 120 
+Uncontrollable -5 
+Clanbook: Brujah, Revised Ed. 69 
+Uncontrollable Night Sight -2  
+Clanbook: Lasombra, Revised Ed. 64 
+Vainglorious -1 to -3 
+Laws of Elysium 33 
+Vengeful -2 
+Laws of the Night 118 
+Vengeful Childe -2 
+Laws of Elysium 33 
+Vulnerability to Silver -2 
+Laws of the Night: Sabbat Guide 72 
+Weather Sense 1  
+Clanbook: Lasombra, Revised Ed. 63 
+Weak-Willed -3 
+Laws of the Night 118 
+Withered Leg -3  
+Clanbook: Nosferatu, Revised Ed. 73
+ 
+Derangements 
+Derangement  
+Title & Page Number 
+ 
+Amnesia 
+Faith & Fire 250 
+Angelism 
+The Long Night 68 
+Beserk 
+Laws of the Night: Sabbat Guide 70 
+Blood Addict 
+Laws of the Night: Sabbat Guide 70 
+Blood Sweats 
+Laws of the Night: Sabbat Guide 71 
+Blood Taste 
+Laws of the Night: Sabbat Guide 71 
+Bulimia 
+Laws of the Night 212 
+Creation Memory 
+Laws of the Night: Sabbat Guide 71 
+Crimson Rage 
+Laws of the Night 213 
+Fantasy/Delusion 
+Faith & Fire 250 
+Fugue 
+Laws of the Night 213 
+Gluttony 
+Laws of the Night: Sabbat Guide 71 
+Hysteria 
+Laws of the Night 213 
+Immortal Terror 
+Laws of the Night 213 
+Lunacy 
+Faith & Fire 251 
+Melancholia 
+The Long Night 69 
+Manic-Depression 
+Laws of the Night 213 
+Derangement  
+Title & Page Number 
+ 
+Megalomania 
+Laws of the Night 213 
+Multiple Personalities 
+Laws of the Night 214 
+Obsession 
+Laws of the Night: Sabbat Guide 71 
+Obsessive/Compulsive 
+Laws of the Night 214 
+Overcompensation 
+Faith & Fire 251 
+Pack Feeding 
+Laws of the Night: Sabbat Guide 71 
+Paranoia 
+Laws of the Night 214 
+Paranoid of Ancients 
+Laws of the Night: Sabbat Guide 72 
+Passion Player 
+Laws of the Night: Sabbat Guide 72 
+Perfectionism 
+Faith & Fire 253 
+Phobia 
+Laws of the Night: Sabbat Guide 72 
+Regression 
+Laws of the Night 214 
+Ritual Freak 
+Laws of the Night: Sabbat Guide 72 
+Saint Vitus’s Dance 
+Faith & Fire 253 
+Sanguinary Animism 
+Laws of the Night 214 
+Schizophrenia 
+Laws of the Night 214 
+Visions 
+Faith & Fire 254 
+ 
+ 
+
+
+ 
+ 
+States of Being 
+State 
+Title & Page Number 
+ 
+Blood Bond 
+Laws of the Night 211 
+Derangements 
+Laws of the Night 214 
+Diablerie 
+Laws of the Night 215 
+Faith 
+Laws of the Night 210 
+State 
+Title & Page Number 
+ 
+Fire 
+Laws of the Night 200 
+Frenzy & Rötschreck 
+Laws of the Night 208 
+Golconda 
+Laws of the Night 210 
+Sunlight 
+Laws of the Night 200 
+ 
+Miscellaneous Items 
+Trait  
+Title & Page Number 
+ 
+Blood Pool 
+Laws of the Night 106 
+Experience 
+Laws of the Night 122 
+Gargoyle Flight 
+Laws of the Night: Camarilla Guide 74 
+Health 
+Laws of the Night 198 
+Morality 
+Laws of the Night 74 
+Rep 
+Laws of the Night: Anarch Guide 175 
+ 
+Trait  
+Title & Page Number 
+ 
+Ritae 
+Laws of the Night: Sabbat Guide 139 
+Status, Camarilla 
+Laws of the Night 216 
+Status, Sabbat 
+Laws of the Night: Sabbat Guide 158 
+Thaumaturgical Countermagic  Laws of the Night: Camarilla Guide 92 
+Willpower 
+Laws of the Night 107 
+ 
+Disciplines 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Abombwe 
+ 
+z 
+ 
+ 
+Predator’s Communion 
+Faith & Fire 152 
+ 
+zz 
+ 
+ 
+Taming the Beast 
+Faith & Fire 152 
+ 
+zzz 
+ 
+ 
+Whistling Up the Beast 
+Faith & Fire 153 
+ 
+zzzz 
+ 
+ 
+Beast‐Channel 
+Faith & Fire 153 
+ 
+zzzzz 
+ 
+ 
+Taking the Skin 
+Faith & Fire 153 
+ 
+zzzzz z 
+ 
+ 
+Predator’s Mastery 
+Faith & Fire 154 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Animalism 
+ 
+z 
+ 
+ 
+Feral Whispers  
+Laws of the Night 134 
+ 
+ 
+zz 
+ 
+ 
+Beckoning  
+Laws of the Night 134 
+ 
+zzz 
+ 
+ 
+Quell the Beast  
+Laws of the Night 135 
+ 
+zzzz 
+ 
+ 
+Subsume the Spirit  
+Laws of the Night 135 
+ 
+zzzzz 
+ 
+ 
+Drawing Out the Beast 
+Laws of the Night 136 
+ 
+zzzzz z 
+ 
+ 
+Animal Succulence 
+Laws of the Night: Camarilla Guide 41 
+ 
+ 
+Eye of the Szlachta  
+Clanbook: Tzimisce, Revised Ed. 69 
+ 
+ 
+Quell the Herd 
+Clanbook: Gangrel, Revised Ed. 61 
+ 
+ 
+Shared Soul 
+Laws of the Night: Camarilla Guide 41 
+ 
+ 
+Song in the Dark  
+Clanbook: Nosferatu, Revised Ed. 76 
+ 
+ 
+Species Speech 
+Laws of the Night: Camarilla Guide 42 
+ 
+zzzzz zz 
+ 
+ 
+Conquer the Beast 
+Laws of the Night: Camarilla Guide 42 
+ 
+ 
+Stampede  
+Clanbook: Gangrel, Revised Ed. 62 
+ 
+zzzzz zzz 
+ 
+ 
+Crimson Fury  
+Clanbook: Gangrel, Revised Ed. 63 
+ 
+ 
+Taunt the Caged Beast 
+Laws of the Night: Camarilla Guide 42 
+ 
+zzzzz zzzz 
+ 
+ 
+Eyes of the Forest  
+Clanbook: Gangrel, Revised Ed. 64 
+ 
+ 
+Unchain the Beast 
+Laws of the Night: Camarilla Guide 43 
+ 
+Animalism/Auspex 
+ 
+zzzzz/zzzz 
+ 
+ 
+Call Upon the Blood 
+Laws of the Night: Anarch Guide 57 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Animalism/Chimerstry 
+ 
+zzz/zzz  
+ 
+ 
+Mask of Cathay  
+Clanbook: Ravnos, Revised Ed. 68 
+ 
+Animalism/Dominate 
+ 
+zzz/zzz  
+ 
+ 
+Aspect of the Beast 
+Laws of the Night: Anarch Guide 55 
+ 
+Animalism/Protean 
+ 
+z/zzzzz  
+ 
+ 
+Suck It Up 
+Laws of the Night: Anarch Guide 64 
+ 
+Animalism/Vicissitude 
+ 
+zzzzz z/zzzzz z  
+ 
+ 
+Birth the Vozhd  
+Clanbook: Tzimisce, Revised Ed. 73 
+ 
+Assamite Sorcery - Awakening of the Steel 
+ 
+z  
+ 
+ 
+Confer with the Blade  
+Clanbook: Assamite, Revised Ed. 74 
+ 
+zz 
+ 
+ 
+Grasp of the Mountain  
+Clanbook: Assamite, Revised Ed. 75 
+ 
+zzz 
+ 
+ 
+Pierce Steelʹs Skin  
+Clanbook: Assamite, Revised Ed. 75 
+ 
+zzzz 
+ 
+ 
+Razorʹs Shield  
+Clanbook: Assamite, Revised Ed. 76 
+ 
+zzzzz 
+ 
+ 
+Strike at the True Flesh  
+Clanbook: Assamite, Revised Ed. 76 
+ 
+Auspex 
+ 
+z 
+ 
+ 
+Heightened Senses  
+Laws of the Night 137 
+ 
+zz 
+ 
+ 
+Aura Perception  
+Laws of the Night 137 
+ 
+zzz 
+ 
+ 
+Spiritʹs Touch, The  
+Laws of the Night 138 
+ 
+zzzz 
+ 
+ 
+Telepathy  
+Laws of the Night 138 
+ 
+zzzzz 
+ 
+ 
+Psychic Projection  
+Laws of the Night 139 
+ 
+zzzzz z 
+ 
+ 
+Babble  
+Clanbook: Malkavian, Revised Ed. 60 
+ 
+ 
+Clairvoyance 
+Laws of the Night: Camarilla Guide 43 
+ 
+ 
+Crocodileʹs Tongue  
+Clanbook: Toreador, Revised Ed. 72 
+ 
+ 
+Prediction 
+Laws of the Night: Camarilla Guide 43 
+ 
+ 
+Sibylʹs Tongue  
+Clanbook: Malkavian, Revised Ed. 60 
+ 
+zzzzz zz 
+ 
+ 
+Anima Gathering  
+Clanbook: Assamite, Revised Ed. 63 
+ 
+ 
+Karmic Sight 
+Laws of the Night: Camarilla Guide 44 
+ 
+zzzzz zzz 
+ 
+ 
+Call, The  
+Clanbook: Malkavian, Revised Ed. 60 
+ 
+ 
+Psychic Assault  
+Laws of the Night: Camarilla Guide 45 
+ 
+zzzzz zzzz 
+ 
+ 
+False Slumber 
+Laws of the Night: Camarilla Guide 46 
+ 
+Auspex/Celerity/Fortitude 
+ 
+z/z/z 
+ 
+ 
+Guardian Vigil 
+Laws of the Night: Anarch Guide 58 
+ 
+Auspex/Celerity/Obfuscate 
+ 
+zzz/z/z 
+ 
+ 
+Doubletalk  
+Clanbook: Toreador, Revised Ed. 75 
+Level & Discipline  
+Title & Page Number 
+ 
+Auspex/Chimerstry 
+ 
+zzzz/zz 
+ 
+ 
+Heartʹs Desire  
+Clanbook: Ravnos, Revised Ed. 68 
+ 
+Auspex/Dementation 
+ 
+z/zz 
+ 
+ 
+Sensory Overload 
+Laws of the Night: Anarch Guide 61 
+ 
+Auspex/Obfuscate 
+ 
+zzzzz/zzzzz 
+ 
+ 
+Smiling Jack’s Trick 
+Laws of the Night: Anarch Guide 64 
+ 
+Auspex/Presence 
+ 
+zzzz/zz 
+ 
+ 
+Soul Painting  
+Clanbook: Toreador, Revised Ed. 74 
+ 
+Auspex/Protean 
+ 
+zzzz/zzzz 
+ 
+ 
+See the Reflected Form  
+Clanbook: Gangrel, Revised Ed. 72 
+ 
+Auspex/Thaumaturgy 
+ 
+zz/z 
+ 
+ 
+Thaumaturgical Sight  
+Clanbook: Tremere, Revised Ed. 47 
+ 
+Celerity 
+ 
+z  
+ 
+ 
+Alacrity 
+Laws of the Night 141 
+ 
+zz 
+ 
+ 
+Swiftness 
+Laws of the Night 141 
+ 
+zzz 
+ 
+ 
+Rapidity 
+Laws of the Night 141 
+ 
+zzzz 
+ 
+ 
+Legerity 
+Laws of the Night 141 
+ 
+zzzzz 
+ 
+ 
+Fleetness 
+Laws of the Night 141 
+ 
+zzzzz z 
+ 
+ 
+Precision  
+Clanbook: Assamite, Revised Ed. 64 
+ 
+ 
+Projectile 
+Laws of the Night: Camarilla Guide 46 
+ 
+ 
+Quickness 
+Faith & Fire 161 
+ 
+zzzzz zz 
+ 
+ 
+Flower of Death 
+Laws of the Night: Camarilla Guide 47 
+ 
+ 
+Stutter‐Step  
+Clanbook: Brujah, Revised Ed. 68 
+ 
+zzzzz zzz 
+ 
+ 
+Zephyr 
+Laws of the Night: Camarilla Guide 47 
+ 
+zzzzz zzzz 
+ 
+ 
+Between the Ticks 
+Laws of the Night: Camarilla Guide 48 
+ 
+Celerity/Fortitude 
+ 
+zz/zz 
+ 
+ 
+Forced March  
+Clanbook: Assamite, Revised Ed. 71 
+ 
+zzz/zzzzz z 
+ 
+ 
+Seventh Chinese Brother 
+Laws of the Night: Anarch Guide 62 
+ 
+Celerity/Obfuscate 
+ 
+zz/zz 
+ 
+ 
+Shadow Feint  
+Clanbook: Assamite, Revised Ed. 72 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Celerity/Potence 
+ 
+zzz/zzz 
+ 
+ 
+Burning Wrath  
+Clanbook: Brujah, Revised Ed. 66 
+ 
+Celerity/Quietus 
+ 
+zzzzz/zzzzz 
+ 
+ 
+Retain the Quick Blood 
+Laws of the Night: Anarch Guide 61 
+ 
+Chimerstry 
+ 
+z 
+ 
+ 
+Ignis Fatuus  
+Laws of the Night 142 
+ 
+zz 
+ 
+ 
+Fata Morgana  
+Laws of the Night 142 
+ 
+zzz 
+ 
+ 
+Apparition  
+Laws of the Night 143 
+ 
+zzzz 
+ 
+ 
+Permanency  
+Laws of the Night 143 
+ 
+zzzzz 
+ 
+ 
+Horrid Reality  
+Laws of the Night 143 
+ 
+zzzzz z 
+ 
+ 
+False Resonance  
+Clanbook: Ravnos, Revised Ed. 62 
+ 
+ 
+Fatuus Mastery  
+Clanbook: Ravnos, Revised Ed. 62 
+ 
+ 
+Shared Nightmare  
+Clanbook: Ravnos, Revised Ed. 63 
+ 
+zzzzz zz 
+ 
+ 
+Far Fatuus  
+Clanbook: Ravnos, Revised Ed. 63 
+ 
+ 
+Suspension of Disbelief  
+Clanbook: Ravnos, Revised Ed. 64 
+ 
+zzzzz zzz 
+ 
+ 
+Occlusion  
+Clanbook: Ravnos, Revised Ed. 64 
+ 
+zzzzz zzzz 
+ 
+ 
+Mayaparisatya  
+Clanbook: Ravnos, Revised Ed. 65 
+ 
+Daimoinon 
+ 
+z 
+ 
+ 
+Sense the Sin 
+Laws of the Night: Storyteller’s Guide 22 
+ 
+zz 
+ 
+ 
+Fear of the Void Below 
+ 
+ 
+ 
+ 
+Laws of the Night: Storyteller’s Guide 22 
+ 
+zzz 
+ 
+ 
+Conflagration 
+Laws of the Night: Storyteller’s Guide 23 
+ 
+zzzz 
+ 
+ 
+Psychomachia 
+Laws of the Night: Storyteller’s Guide 23 
+ 
+zzzzz 
+ 
+ 
+Condemnation 
+Laws of the Night: Storyteller’s Guide 24 
+ 
+zzzzz z 
+ 
+ 
+Concordance 
+Laws of the Night: Storyteller’s Guide 24 
+ 
+zzzzz zz 
+ 
+ 
+Summon the Herald of Topheth 
+ 
+ 
+ 
+Laws of the Night: Storyteller’s Guide 25 
+ 
+zzzzz zzz 
+ 
+ 
+Contagion 
+Laws of the Night: Storyteller’s Guide 25 
+ 
+zzzzz zzzz 
+ 
+ 
+Call the Great Beast 
+Laws of the Night: Storyteller’s Guide 26 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Dark Thaumaturgy – The Fires of the Inferno 
+ 
+z 
+ 
+ 
+Flash Blind 
+Laws of the Night: Sabbat Guide 100 
+ 
+zz 
+ 
+ 
+Flame Lance 
+Laws of the Night: Sabbat Guide 100 
+ 
+zzz 
+ 
+ 
+Ring of Fire 
+Laws of the Night: Sabbat Guide 100 
+ 
+zzzz 
+ 
+ 
+Incinerate 
+Laws of the Night: Sabbat Guide 101 
+ 
+zzzzz 
+ 
+ 
+Furnaces of Hell 
+Laws of the Night: Sabbat Guide 101 
+ 
+Dark Thaumaturgy – The Path of Phobos 
+ 
+z 
+ 
+ 
+Induce Fear 
+Laws of the Night: Sabbat Guide 102 
+ 
+zz 
+ 
+ 
+ 
+Spook 
+Laws of the Night: Sabbat Guide 102 
+ 
+zzz 
+ 
+ 
+Terrorize 
+Laws of the Night: Sabbat Guide 103 
+ 
+zzzz 
+ 
+ 
+Fear‐Plague 
+Laws of the Night: Sabbat Guide 103 
+ 
+zzzzz 
+ 
+ 
+Leech of Fear 
+Laws of the Night: Sabbat Guide 103 
+ 
+Dark Thaumaturgy – Taking of the Spirit 
+ 
+z 
+ 
+ 
+Mind Leech 
+Laws of the Night: Sabbat Guide 104 
+ 
+zz 
+ 
+ 
+Stigmatize 
+Laws of the Night: Sabbat Guide 104 
+ 
+zzz 
+ 
+ 
+Drain Resolve 
+Laws of the Night: Sabbat Guide 104 
+ 
+zzzz 
+ 
+ 
+Sap Will 
+Laws of the Night: Sabbat Guide 104 
+ 
+zzzzz 
+ 
+ 
+The Gift of Servitude 
+Laws of the Night: Sabbat Guide 104 
+ 
+Dark Thaumaturgical Rituals - Basic 
+ 
+Call Forth the Host 
+Laws of the Night: Sabbat Guide 105 
+ 
+Bind the Interloper 
+Laws of the Night: Sabbat Guide 106 
+ 
+Curse of Oedipus 
+Laws of the Night: Sabbat Guide 106 
+ 
+Video Nefas 
+Laws of the Night: Sabbat Guide 106 
+ 
+Dark Thaumaturgical Rituals - Intermediate 
+ 
+Felis Negrum 
+Laws of the Night: Sabbat Guide 107 
+ 
+Plague’s Secret Domain 
+Laws of the Night: Sabbat Guide 107 
+ 
+Dark Thaumaturgical Rituals - Advanced 
+ 
+Close the Ways 
+Laws of the Night: Sabbat Guide 109 
+ 
+Into the Abyss 
+Laws of the Night: Sabbat Guide 109 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Dementation 
+ 
+z 
+ 
+ 
+Passion  
+Laws of the Night 144 
+ 
+zz 
+ 
+ 
+Haunting, The  
+Laws of the Night 144 
+ 
+zzz 
+ 
+ 
+Eyes of Chaos  
+Laws of the Night 145 
+ 
+zzzz 
+ 
+ 
+Voice of Madness  
+Laws of the Night 145 
+ 
+zzzzz 
+ 
+ 
+Total Insanity  
+Laws of the Night 146 
+ 
+zzzzz z 
+ 
+ 
+Babble  
+Clanbook: Malkavian, Revised Ed. 60 
+ 
+ 
+Call, The  
+Clanbook: Malkavian, Revised Ed. 60 
+ 
+ 
+Lingering Malaise 
+Laws of the Night: Sabbat Guide 110 
+ 
+ 
+Shattered Mirror 
+Laws of the Night: Sabbat Guide 110 
+ 
+zzzzz zz 
+ 
+ 
+Childmind  
+Clanbook: Malkavian, Revised Ed. 62 
+ 
+ 
+Restructure 
+Laws of the Night: Sabbat Guide 110 
+ 
+ 
+Sleep of Reason  
+Clanbook: Malkavian, Revised Ed. 63 
+ 
+zzzzz zzz 
+ 
+ 
+Deny  
+Clanbook: Malkavian, Revised Ed. 63 
+ 
+ 
+Personal Scourge 
+Laws of the Night: Sabbat Guide 111 
+ 
+zzzzz zzzz 
+ 
+ 
+Lunatic Eruption 
+Laws of the Night: Sabbat Guide 111 
+ 
+Dementation/Dominate 
+ 
+zzzz/zzzzz 
+ 
+ 
+Chaos Fold 
+Laws of the Night: Anarch Guide 57 
+ 
+Dominate 
+ 
+z 
+ 
+ 
+Command  
+Laws of the Night 146 
+ 
+zz 
+ 
+ 
+Mesmerism 
+Laws of the Night 146 
+ 
+zzz 
+ 
+ 
+Forgetful Mind  
+Laws of the Night 147 
+ 
+zzzz 
+ 
+ 
+Conditioning  
+Laws of the Night 147 
+ 
+zzzzz 
+ 
+ 
+Possession  
+Laws of the Night 148 
+ 
+zzzzz z 
+ 
+ 
+Chain the Psyche 
+Laws of the Night: Camarilla Guide 49 
+ 
+ 
+Loyalty 
+Laws of the Night: Camarilla Guide 49 
+ 
+ 
+Obedience 
+Laws of the Night: Camarilla Guide 49 
+ 
+ 
+Oberonʹs Grail  
+Clanbook: Tremere, Revised Ed. 48 
+ 
+zzzzz zz 
+ 
+ 
+Mass Manipulation 
+Laws of the Night: Camarilla Guide 49 
+ 
+ 
+Still the Mortal Flesh 
+Laws of the Night: Camarilla Guide 50 
+ 
+zzzzz zzz 
+ 
+ 
+Far Mastery 
+Laws of the Night: Camarilla Guide 51 
+ 
+zzzzz zzzz 
+ 
+ 
+Speak Through the Blood 
+ 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 51 
+ 
+Dominate/Fortitude 
+ 
+zzz/zzz 
+ 
+ 
+Denial of Aphroditeʹs Favor  Clanbook: Ventrue, Revised Ed. 77 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Dominate/Obtenebration 
+ 
+zzz/zzz 
+ 
+ 
+Shroud of Absence  
+Clanbook: Lasombra, Revised Ed. 72 
+ 
+Dominate/Presence 
+ 
+z/z 
+ 
+ 
+Lifesong  
+Clanbook: Ventrue, Revised Ed. 77 
+ 
+ 
+Fortitude 
+ 
+z  
+ 
+ 
+Endurance 
+Laws of the Night 149 
+ 
+zz 
+ 
+ 
+Mettle 
+Laws of the Night 149 
+ 
+zzz 
+ 
+ 
+Resilience 
+Laws of the Night 149 
+ 
+zzzz 
+ 
+ 
+Resistance 
+Laws of the Night 149 
+ 
+zzzzz 
+ 
+ 
+Aegis 
+Laws of the Night 150 
+ 
+zzzzz z 
+ 
+ 
+Force 
+Faith & Fire 172 
+ 
+ 
+Imperviousness 
+Faith & Fire 161 
+ 
+ 
+Personal Armor 
+Laws of the Night: Camarilla Guide 52 
+ 
+ 
+Sensory Shield 
+Clanbook: Gangrel, Revised Ed. 64 
+ 
+zzzzz zz 
+ 
+ 
+Curse the Laurel  
+Clanbook: Ventrue, Revised Ed. 76 
+ 
+ 
+Resilient Mind  
+Clanbook: Gangrel, Revised Ed. 65 
+ 
+ 
+Shared Strength 
+Laws of the Night: Camarilla Guide 52 
+ 
+zzzzz zzz 
+ 
+ 
+Adamantine 
+Laws of the Night: Camarilla Guide 53 
+ 
+ 
+King of the Mountain  
+Clanbook: Gangrel, Revised Ed. 66 
+ 
+zzzzz zzzz 
+ 
+ 
+Juggernaut 
+Laws of the Night: Camarilla Guide 53 
+ 
+Fortitude/Animalism 
+ 
+zzzz/zz 
+ 
+ 
+Claw Immunity  
+Clanbook: Gangrel, Revised Ed. 72 
+ 
+Fortitude/Chimerstry 
+ 
+zzzz/zz 
+ 
+ 
+Sympathetic Agony  
+Clanbook: Ravnos, Revised Ed. 67 
+ 
+Fortitude or Potence/Presence 
+ 
+z/zz 
+ 
+ 
+Give ‘Em Hell 
+Laws of the Night: Anarch Guide 58 
+ 
+Fortitude/Presence 
+ 
+zzzzz/zzz 
+ 
+ 
+King of the Hill 
+Laws of the Night: Anarch Guide 59 
+ 
+Fortitude/Protean 
+ 
+z/zzzz 
+ 
+ 
+Badger’s Hide 
+Laws of the Night: Anarch Guide 56 
+ 
+Gargoyle Thaumaturgical Rituals - Basic 
+ 
+Feather‐Stone 
+Faith & Fire 219 
+ 
+Know the Unnatural Beast 
+Faith & Fire 219 
+ 
+Skin of the Chameleon 
+Faith & Fire 220 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Gargoyle Thaumaturgical Rituals – Intermediate 
+ 
+Defender of the Haven 
+Faith & Fire 220 
+ 
+Rite of the Sorcerous Shield 
+Faith & Fire 220 
+ 
+Infusion of Earth 
+Faith & Fire 220 
+ 
+Gargoyle Thaumaturgical Rituals – Advanced 
+ 
+Transform the Skin to Stone 
+Faith & Fire 221 
+ 
+Heart of Granite 
+Faith & Fire 221 
+ 
+Gift of the Immobile Form 
+Faith & Fire 221 
+ 
+Koldunic Sorcery - The Way of Sorrow 
+ 
+z 
+ 
+ 
+Frustrations of Nestrecha, The Clanbook: Tzimisce, Revised Ed. 64 
+ 
+zz 
+ 
+ 
+Insults of Krivda, The  
+Clanbook: Tzimisce, Revised Ed. 66 
+ 
+zzz 
+ 
+ 
+Weeping of Kruchina, The   Clanbook: Tzimisce, Revised Ed. 66 
+ 
+zzzz 
+ 
+ 
+Misfortune of Chernogolov, The  
+ 
+ 
+ 
+ 
+Clanbook: Tzimisce, Revised Ed. 66 
+ zzzzz 
+ 
+ 
+Starvation of Marena, The   Clanbook: Tzimisce, Revised Ed. 67 
+ 
+Melpominee 
+ 
+z 
+ 
+ 
+Missing Voice, The 
+Laws of the Night 150 
+ 
+zz 
+ 
+ 
+Phantom Speaker 
+Laws of the Night 151 
+ 
+zzz 
+ 
+ 
+Madrigal 
+Laws of the Night 151 
+ 
+zzzz 
+ 
+ 
+Sirenʹs Beckoning 
+Laws of the Night 151 
+ 
+zzzzz 
+ 
+ 
+Virtuosa 
+Laws of the Night 151 
+ 
+zzzzz z 
+ 
+ 
+Shattering Crescendo 
+Laws of the Night: Camarilla Guide 54 
+ 
+zzzzz zz 
+ 
+ 
+Persistent Echo 
+Laws of the Night: Camarilla Guide 54 
+ 
+Mortis – Cadaverous Animation 
+ 
+z 
+ 
+ 
+Trace of Life 
+Faith & Fire 177 
+ 
+zz 
+ 
+ 
+Call the Homuncular Servant 
+Faith & Fire 177 
+ 
+zzz 
+ 
+ 
+Raise the Corpse to Service 
+Faith & Fire 178 
+ 
+zzzz 
+ 
+ 
+Call the Athanatos 
+Faith & Fire 178 
+ 
+zzzzz 
+ 
+ 
+Muster the Corpse Army 
+Faith & Fire 179 
+ 
+Mortis – The Corpse in the Monster 
+ 
+z 
+ 
+ 
+Masque of Death 
+Faith & Fire 175 
+ 
+zz 
+ 
+ 
+Cold of the Grave 
+Faith & Fire 175 
+ 
+zzz 
+ 
+ 
+Curse of Life 
+Faith & Fire 176 
+ 
+zzzz 
+ 
+ 
+Gift of the Corpse 
+Faith & Fire 176 
+ 
+zzzzz 
+ 
+ 
+Gift of Life 
+Faith & Fire 176 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Mortis – The Four Humours 
+ 
+z 
+ 
+ 
+Whispers to the Soul 
+Faith & Fire 179 
+ 
+zz 
+ 
+ 
+Kiss of the Dark Mother 
+Faith & Fire 179 
+ 
+zzz 
+ 
+ 
+Dark Humours 
+Faith & Fire 180 
+ 
+zzzz 
+ 
+ 
+Clutching the Shroud 
+Faith & Fire 180 
+ 
+zzzzz 
+ 
+ 
+Black Breath 
+Faith & Fire 180 
+ 
+Mortis – The Grave’s Decay 
+ 
+z 
+ 
+ 
+Destroy the Husk 
+Faith & Fire 173 
+ 
+zz 
+ 
+ 
+Rigor Mortis 
+Faith & Fire 173 
+ 
+zzz 
+ 
+ 
+Wither 
+Faith & Fire 174 
+ 
+zzzz 
+ 
+ 
+Corrupt the Undead Flesh 
+Faith & Fire 174 
+ 
+zzzzz 
+ 
+ 
+Dissolve the Flesh 
+Faith & Fire 174 
+ 
+Mortis Rituals - Basic 
+ 
+Final Sight 
+Faith & Fire 181 
+ 
+Revivify the Cold Vitae 
+Faith & Fire 181 
+ 
+Eyes of the Grave 
+Faith & Fire 181 
+ 
+Mortis Rituals - Advanced 
+ 
+Walk Through the Shroud 
+Faith & Fire 182 
+ 
+Mytherceria 
+ 
+z 
+ 
+ 
+Folderol 
+Laws of the Night: Sabbat Guide 112 
+ 
+zz 
+ 
+ 
+Fae Sight 
+Laws of the Night: Sabbat Guide 112 
+ 
+zzz 
+ 
+ 
+Aura Absorption 
+Laws of the Night: Sabbat Guide 112 
+ 
+zzzz 
+ 
+ 
+Chanjelin Ward 
+Laws of the Night: Sabbat Guide 113 
+ 
+zzzzz 
+ 
+ 
+Riddle Phantastique 
+Laws of the Night: Sabbat Guide 113 
+ 
+zzzzz z 
+ 
+ 
+Steal the Mind 
+Laws of the Night: Sabbat Guide 114 
+ 
+zzzzz zz 
+ 
+ 
+Absorb the Mind 
+Laws of the Night: Sabbat Guide 114 
+ 
+zzzzz zzz 
+ 
+ 
+The Grandest Trick 
+Laws of the Night: Sabbat Guide 114 
+ 
+Necromancy - The Ash Path 
+ 
+z 
+ 
+ 
+Shroudsight 
+Laws of the Night 154 
+ 
+zz 
+ 
+ 
+Lifeless Tongues 
+Laws of the Night 154 
+ 
+zzz 
+ 
+ 
+Dead Hand 
+Laws of the Night 154 
+ 
+zzzz 
+ 
+ 
+Ex Nihilo 
+Laws of the Night 154 
+ 
+zzzzz 
+ 
+ 
+Shroud Mastery 
+Laws of the Night 155 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Necromancy - The Bone Path 
+ 
+z 
+ 
+ 
+Tremens 
+Laws of the Night 155 
+ 
+zz 
+ 
+ 
+ 
+Apprentice’s Brooms 
+Laws of the Night 155 
+ 
+zzz 
+ 
+ 
+Shambling Hordes 
+Laws of the Night 156 
+ 
+zzzz 
+ 
+ 
+Soul Stealing 
+Laws of the Night 156 
+ 
+zzzzz 
+ 
+ 
+Daemonic Possession 
+Laws of the Night 156 
+ 
+Necromancy - The Cenotaph Path 
+ 
+z 
+ 
+ 
+A Touch of Death 
+Clanbook: Giovanni, Revised Ed. 68 
+ 
+zz 
+ 
+ 
+Reveal the Catene 
+Clanbook: Giovanni, Revised Ed. 68 
+ 
+zzz 
+ 
+ 
+Tread Upon the Grave 
+Clanbook: Giovanni, Revised Ed. 69 
+ 
+zzzz 
+ 
+ 
+Death Knell 
+Clanbook: Giovanni, Revised Ed. 69 
+ 
+zzzzz 
+ 
+ 
+Ephemeral Binding 
+Clanbook: Giovanni, Revised Ed. 70 
+ 
+Necromancy - The Mortuus Path 
+ 
+z 
+ 
+ 
+Reaper’s Shroud 
+Laws of the Night: Sabbat Guide 116 
+ 
+zz 
+ 
+ 
+Blight 
+Laws of the Night: Sabbat Guide 116 
+ 
+zzz 
+ 
+ 
+Resume the Coil 
+Laws of the Night: Sabbat Guide 117 
+ 
+zzzz 
+ 
+ 
+True Death 
+Laws of the Night: Sabbat Guide 117 
+ 
+zzzzz 
+ 
+ 
+Mercy for Seth 
+Laws of the Night: Sabbat Guide 118 
+ 
+Necromancy - The Sepulchre Path 
+ 
+z 
+ 
+ 
+Insight 
+Laws of the Night 152 
+ 
+zz 
+ 
+ 
+Summon Soul 
+Laws of the Night 152 
+ 
+zzz 
+ 
+ 
+Compel Soul 
+Laws of the Night 153 
+ 
+zzzz 
+ 
+ 
+Haunting 
+Laws of the Night 153 
+ 
+zzzzz 
+ 
+ 
+Torment 
+Laws of the Night 153 
+ 
+Necromancy - Vitreous Path 
+ 
+z 
+ 
+ 
+Eyes of the Dead 
+Laws of the Night: Storyteller Guide 27 
+ 
+zz 
+ 
+ 
+Hour of Death 
+Laws of the Night: Storyteller Guide 28 
+ 
+zzz 
+ 
+ 
+Soul Judgement 
+Laws of the Night: Storyteller Guide 28 
+ 
+zzzz 
+ 
+ 
+Breath of Thanatos 
+Laws of the Night: Storyteller Guide 29 
+ 
+zzzzz 
+ 
+ 
+Soul Feasting 
+Laws of the Night: Storyteller Guide 30 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Necromantic Rituals - Basic 
+ 
+Call of the Hungry Dead 
+Laws of the Night 157 
+ 
+Eldritch Beacon 
+Laws of the Night: Sabbat Guide 118 
+ 
+Eyes of the Grave 
+Laws of the Night 157 
+ 
+Puppet 
+Laws of the Night: Sabbat Guide 118 
+ 
+Spirit Beacon 
+Laws of the Night 157 
+ 
+Necromantic Rituals - Intermediate 
+ 
+Cadaver’s Touch 
+Laws of the Night 157 
+ 
+Call on the Shadow’s Grace 
+Laws of the Night 157 
+ 
+Din of the Damned 
+Laws of the Night: Sabbat Guide 119 
+ 
+Peak Past the Shroud 
+Laws of the Night: Sabbat Guide 119 
+ 
+Ritual of the Unearthed Fetter 
+Laws of the Night 158 
+ 
+Necromantic Rituals - Advanced 
+ 
+Chill of Oblivion 
+Laws of the Night: Sabbat Guide 119 
+ 
+Grasp the Ghostly 
+Laws of the Night 158 
+ 
+Obeah 
+ 
+z 
+ 
+ 
+Sense Vitality 
+Laws of the Night 158 
+ 
+zz 
+ 
+ 
+Anesthetic Touch 
+Laws of the Night 159 
+ 
+zzz 
+ 
+ 
+Corpore Sano 
+Laws of the Night 159 
+ 
+zzzz 
+ 
+ 
+Mens Sana 
+Laws of the Night 159 
+ 
+zzzzz 
+ 
+ 
+Unburdening the Bestial Soul 
+Laws of the Night 160 
+ 
+zzzzz z 
+ 
+ 
+Renewed Vigor 
+Laws of the Night: Camarilla Guide 55 
+ 
+zzzzz zz 
+ 
+ 
+Safe Passage 
+Laws of the Night: Camarilla Guide 55 
+ 
+zzzzz zzz 
+ 
+ 
+Purification 
+Laws of the Night: Camarilla Guide 56 
+ 
+zzzzz zzzz 
+ 
+ 
+Unbind the Flesh‐Clad Soul 
+ 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 56 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Obfuscate 
+ 
+z 
+ 
+ 
+Cloak of Shadows 
+Laws of the Night 161 
+ 
+zz 
+ 
+ 
+Unseen Presence 
+Laws of the Night 161 
+ 
+zzz 
+ 
+ 
+Mask of a Thousand Faces 
+Laws of the Night 162 
+ 
+zzzz 
+ 
+ 
+Vanish from the Mindʹs Eye 
+Laws of the Night 162 
+ 
+zzzzz 
+ 
+ 
+Cloak the Gathering 
+Laws of the Night 163 
+ 
+zzzzz z 
+ 
+ 
+Blithe Acceptance 
+Clanbook: Assamite, Revised Ed. 64 
+ 
+ 
+Conceal 
+Laws of the Night: Camarilla Guide 57 
+ 
+ 
+Confusion of the Eye Clanbook: Followers of Set, Revised Ed. 68 
+ 
+ 
+Mental Maze 
+Clanbook: Followers of Set, Revised Ed. 67 
+ 
+ 
+Mind Blank 
+Laws of the Night: Camarilla Guide 57 
+ 
+ 
+Scrawl 
+Clanbook: Malkavian, Revised Ed. 61 
+ 
+ 
+Soul Mask 
+Laws of the Night: Camarilla Guide 57 
+ 
+zzzzz zz 
+ 
+ 
+Cache 
+Laws of the Night: Camarilla Guide 58 
+ 
+zzzzz zzz 
+ 
+ 
+Old Friend 
+Laws of the Night: Camarilla Guide 58 
+ 
+ 
+Phantom Haunter 
+Clanbook: Malkavian, Revised Ed. 62 
+ 
+zzzzz zzzz 
+ 
+ 
+Create Name 
+Laws of the Night: Camarilla Guide 58 
+ 
+Obfuscate/Fortitude 
+ 
+zzz/zz 
+ 
+ 
+Flesh Wound 
+Clanbook: Gangrel, Revised Ed. 72 
+Obfuscate/Obtenebration 
+ 
+zz/z 
+ 
+ 
+Tenebrous Veil 
+Laws of the Night: Anarch Guide 65 
+ 
+Obfuscate/Presence 
+ 
+zzz/zzz 
+ 
+ 
+True Loveʹs Face 
+Clanbook: Followers of Set, Revised Ed. 69 
+ 
+zzzzz/zzz 
+ 
+ 
+Memory Rift 
+Laws of the Night: Anarch Guide 60 
+ 
+Obtenebration 
+ 
+z 
+ 
+ 
+Shadow Play 
+Laws of the Night 163 
+ 
+zz 
+ 
+ 
+Shroud of Night 
+Laws of the Night 164 
+ 
+zzz 
+ 
+ 
+Arms of the Abyss 
+Laws of the Night 164 
+ 
+zzzz 
+ 
+ 
+Black Metamorphosis 
+Laws of the Night 165 
+ 
+zzzzz 
+ 
+ 
+Tenebrous Form 
+Laws of the Night 165 
+ 
+zzzzz z 
+ 
+ 
+The Darkness Within 
+Laws of the Night: Sabbat Guide 120 
+ 
+ 
+Shadowstep 
+Laws of the Night: Sabbat Guide 120 
+ 
+zzzzz zz 
+ 
+ 
+Shadow Twin 
+Laws of the Night: Sabbat Guide 121 
+ 
+zzzzz zzz 
+ 
+ 
+Oubliette 
+Laws of the Night: Sabbat Guide 121 
+ 
+zzzzz zzzz 
+ 
+ 
+Ahriman’s Demense 
+Laws of the Night: Sabbat Guide 122 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Ogham 
+ 
+z 
+ 
+ 
+Consecrate the Grove 
+Faith & Fire 187 
+ 
+zz 
+ 
+ 
+Crimson Woad 
+Faith & Fire 187 
+ 
+zzz 
+ 
+ 
+Inscribe the Curse 
+Faith & Fire 188 
+ 
+zzzz 
+ 
+ 
+Moon and Sun 
+Faith & Fire 188 
+ 
+zzzzz 
+ 
+ 
+Drink Dry the Earth 
+Faith & Fire 188 
+ 
+zzzzz z 
+ 
+ 
+Inscribe the Forgotten Names 
+Faith & Fire 189 
+ 
+Potence 
+ 
+z 
+ 
+ 
+Prowess 
+Laws of the Night 166 
+ 
+zz 
+ 
+ 
+Might 
+Laws of the Night 166 
+ 
+zzz 
+ 
+ 
+Vigor 
+Laws of the Night 166 
+ 
+zzzz 
+ 
+ 
+Intensity 
+Laws of the Night 166 
+ 
+zzzzz 
+ 
+ 
+Puissance 
+Laws of the Night 167 
+ 
+zzzzz z 
+ 
+ 
+Gentle Rebuke, The 
+Clanbook: Brujah, Revised Ed. 67 
+ 
+ 
+Imprint 
+Laws of the Night: Camarilla Guide 59 
+ 
+ 
+Relentless Pursuit 
+Clanbook: Brujah, Revised Ed. 68 
+ 
+zzzzz zz 
+ 
+ 
+Earthshock 
+Laws of the Night: Camarilla Guide 60 
+ 
+zzzzz zzz 
+ 
+ 
+Flick 
+Laws of the Night: Camarilla Guide 60 
+ 
+zzzzz zzzz 
+ 
+ 
+Destruction 
+Laws of the Night: Camarilla Guide 61 
+ 
+Potence/Auspex 
+ 
+zzz/z 
+ 
+ 
+Pulse of Undeath 
+Clanbook: Brujah, Revised Ed. 66 
+ 
+Potence/Presence 
+ 
+zzz/zzz 
+ 
+ 
+Iron Heart 
+Clanbook: Brujah, Revised Ed. 66 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Presence 
+ 
+z 
+ 
+ 
+Awe 
+Laws of the Night 167 
+ 
+zz 
+ 
+ 
+Dread Gaze 
+Laws of the Night 167 
+ 
+zzz 
+ 
+ 
+Entrancement 
+Laws of the Night 168 
+ 
+zzzz 
+ 
+ 
+Summon 
+Laws of the Night 168 
+ 
+zzzzz 
+ 
+ 
+Majesty 
+Laws of the Night 168 
+ 
+zzzzz z 
+ 
+ 
+Absent Sway 
+Clanbook: Toreador, Revised Ed. 73 
+ 
+ 
+Love 
+Laws of the Night: Camarilla Guide 61 
+ 
+ 
+Paralyzing Glance 
+Laws of the Night: Camarilla Guide 62 
+ 
+ 
+Spark of Rage 
+Laws of the Night: Camarilla Guide 62 
+ 
+ 
+Temptation 
+Clanbook: Followers of Set, Revised Ed. 68 
+ 
+zzzzz zz 
+ 
+ 
+Cooperation 
+Laws of the Night: Camarilla Guide 62 
+ 
+ 
+Father Knows Best 
+Laws of the Night: Camarilla Guide 63 
+ 
+ 
+Phobia 
+Clanbook: Followers of Set, Revised Ed. 69 
+ 
+ 
+Scourging the Instinct 
+Laws of the Night: Anarch Guide 69 
+ 
+zzzzz zzz 
+ 
+ 
+Corruption 
+Clanbook: Followers of Set, Revised Ed. 69 
+ 
+ 
+Ironclad Command 
+Laws of the Night: Camarilla Guide 64 
+ 
+zzzzz zzzz 
+ 
+ 
+Pulse of the City 
+Laws of the Night: Camarilla Guide 64 
+ 
+Presence/Dominate 
+ 
+zzz/zz 
+ 
+ 
+Bliss 
+Clanbook: Toreador, Revised Ed. 73 
+ 
+Protean 
+ 
+z 
+ 
+ 
+Eyes of the Beast 
+Laws of the Night 169 
+ 
+zz 
+ 
+ 
+Feral Claws 
+Laws of the Night 169 
+ 
+zzz 
+ 
+ 
+Earth Meld 
+Laws of the Night 169 
+ 
+zzzz 
+ 
+ 
+Shape of the Beast 
+Laws of the Night 170 
+ 
+zzzzz 
+ 
+ 
+Mist Forrm 
+Laws of the Night 170 
+ 
+zzzzz z 
+ 
+ 
+Earth Control 
+Laws of the Night: Camarilla Guide 65 
+ 
+ 
+Flesh of Marble 
+Laws of the Night: Camarilla Guide 65 
+ 
+ 
+Shape Mastery 
+Clanbook: Gangrel, Revised Ed. 69 
+ 
+zzzzz zz 
+ 
+ 
+Animal Swarm 
+Clanbook: Gangrel, Revised Ed. 70 
+ 
+ 
+Restore the Mortal Visage 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 66 
+ 
+ 
+Shape of the Beast’s Wrath 
+ 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 66 
+ 
+ 
+Spectral Body 
+Laws of the Night: Camarilla Guide 67 
+ 
+ 
+Turnabout 
+Laws of the Night: Anarch Guide 69 
+ 
+zzzzz zzz 
+ 
+ 
+Mythic Form 
+Clanbook: Gangrel, Revised Ed. 71 
+ 
+ 
+Purify the Impaled Beast 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 67 
+ 
+zzzzz zzzz 
+ 
+ 
+Inward Focus 
+Laws of the Night: Camarilla Guide 68 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Protean/Animalism 
+ 
+zzzzz z/zzz 
+ 
+ 
+Beast Meld 
+Clanbook: Gangrel, Revised Ed. 73 
+ 
+Protean/Vicissitude 
+ 
+zzzz/zzz 
+ 
+ 
+Pater Szlachta 
+Clanbook: Tzimisce, Revised Ed. 72 
+ 
+Quietus 
+ 
+z 
+ 
+ 
+Silence of Death 
+Laws of the Night 171 
+ 
+zz 
+ 
+ 
+Scorpionʹs Touch 
+Laws of the Night 171 
+ 
+zzz 
+ 
+ 
+Dagonʹs Call 
+Laws of the Night 172 
+ 
+zzzz 
+ 
+ 
+Baalʹs Caress 
+Laws of the Night 172 
+ 
+zzzzz 
+ 
+ 
+Taste of Death 
+Laws of the Night 172 
+ 
+zzzzz z 
+ 
+ 
+Blood Sweat 
+Clanbook: Assamite, Revised Ed. 66 
+ 
+ 
+Purification 
+Clanbook: Assamite, Revised Ed. 67 
+ 
+ 
+Ripples of the Heart 
+Clanbook: Assamite, Revised Ed. 67 
+ 
+ 
+Selective Silence 
+Clanbook: Assamite, Revised Ed. 66 
+ 
+zzzzz zz 
+ 
+ 
+Baalʹs Bloody Talons 
+Clanbook: Assamite, Revised Ed. 68 
+ 
+ 
+Poison the Well of Life 
+Clanbook: Assamite, Revised Ed. 69 
+ 
+zzzzz zzz 
+ 
+ 
+Songs of Distant Vitae 
+Clanbook: Assamite, Revised Ed. 69 
+ 
+zzzzz zzzz 
+ 
+ 
+Condemn the Sins of the Father 
+ 
+ 
+ 
+ 
+Clanbook: Assamite, Revised Ed. 71 
+ 
+Sanguinus 
+ 
+z 
+ 
+ 
+Brother’s Blood 
+Laws of the Night: Sabbat Guide 122 
+ 
+zz 
+ 
+ 
+Octopod 
+Laws of the Night: Sabbat Guide 123 
+ 
+zzz 
+ 
+ 
+Gestalt 
+Laws of the Night: Sabbat Guide 123 
+ 
+zzzz 
+ 
+ 
+Walk of Caine 
+Laws of the Night: Sabbat Guide 124 
+ 
+zzzzz 
+ 
+ 
+Coagulated Entity 
+Laws of the Night: Sabbat Guide 124 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Serpentis 
+ 
+z 
+ 
+ 
+Eyes of the Serpent, The 
+Laws of the Night 173 
+ 
+zz 
+ 
+ 
+Tongue of the Asp, The 
+Laws of the Night 173 
+ 
+zzz 
+ 
+ 
+Skin of the Adder, The 
+Laws of the Night 173 
+ 
+zzzz 
+ 
+ 
+Form of the Cobra, The 
+Laws of the Night 173 
+ 
+zzzzz 
+ 
+ 
+Heart of Darkness, The 
+Laws of the Night 174 
+ 
+zzzzz z 
+ 
+ 
+Cobra Fangs 
+Clanbook: Followers of Set, Revised Ed. 66 
+ 
+zzzzz zz 
+ 
+ 
+Divine Image 
+Clanbook: Followers of Set, Revised Ed. 66 
+ 
+zzzzz zzz 
+ 
+ 
+Heart Thief 
+Clanbook: Followers of Set, Revised Ed. 67 
+ 
+zzzzz zzzz 
+ 
+ 
+Shadow of Apep 
+Clanbook: Followers of Set, Revised Ed. 67 
+ 
+Serpentis/Auspex 
+ 
+zzzzz/zzz 
+ 
+ 
+Weigh the Heart 
+Clanbook: Followers of Set, Revised Ed. 70 
+ 
+Serpentis/Potence 
+ 
+zzzz/zzz 
+ 
+ 
+Typhonic Beast 
+Clanbook: Followers of Set, Revised Ed. 69 
+ 
+Temporis 
+ 
+z 
+ 
+ 
+Time Attunement 
+Laws of the Night: Storyteller Guide 32 
+ 
+zz 
+ 
+ 
+Internal Recursion 
+Laws of the Night: Storyteller Guide 33 
+ 
+zzz 
+ 
+ 
+Lapse 
+Laws of the Night: Storyteller Guide 34 
+ 
+zzzz 
+ 
+ 
+Subjective Suspension  Laws of the Night: Storyteller Guide 35 
+ 
+zzzzz 
+ 
+ 
+Clotho’s Gift 
+Laws of the Night: Storyteller Guide 36 
+ 
+zzzzz z 
+ 
+ 
+Kiss of Lachesis 
+Laws of the Night: Storyteller Guide 37 
+ 
+zzzzz zz 
+ 
+ 
+Halls of Hades’ Court 
+Laws of the Night: Storyteller Guide 39 
+ 
+zzzzz zzz 
+ 
+ 
+Clio’s Kiss 
+Laws of the Night: Storyteller Guide 39 
+ 
+zzzzz zzzz 
+ 
+ 
+Tangle Atropos’ Hand  Laws of the Night: Storyteller Guide 40 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Thanatosis 
+ 
+z 
+ 
+ 
+Hagsʹ Wrinkles 
+Laws of the Night 174 
+ 
+zz 
+ 
+ 
+Putrefaction 
+Laws of the Night 175 
+ 
+zzz 
+ 
+ 
+Ashes to Ashes 
+Laws of the Night 175 
+ 
+zzzz 
+ 
+ 
+Withering 
+Laws of the Night 175 
+ 
+zzzzz 
+ 
+ 
+Necrosis 
+Laws of the Night 176 
+ 
+zzzzz z 
+ 
+ 
+Creeping Infection 
+Laws of the Night: Camarilla Guide 68 
+ 
+zzzzz zz 
+ 
+ 
+Dust to Dust 
+Laws of the Night: Camarilla Guide 69 
+ 
+zzzzz zzz 
+ 
+ 
+Putrescent Servitude 
+Laws of the Night: Camarilla Guide 69 
+ 
+Thaumaturgy – Alchemy 
+ 
+z 
+ 
+ 
+Commuta 
+Laws of the Night: Storyteller Guide 47 
+ 
+zz 
+ 
+ 
+Conforma 
+Laws of the Night: Storyteller Guide 48 
+ 
+zzz 
+ 
+ 
+Scinde 
+Laws of the Night: Storyteller Guide 48 
+ 
+zzzz 
+ 
+ 
+Mutate 
+Laws of the Night: Storyteller Guide 48 
+ 
+zzzzz 
+ 
+ 
+Transmute 
+Laws of the Night: Storyteller Guide 48 
+ 
+Thaumaturgy – Biothaumaturgy 
+ 
+z 
+ 
+ 
+Thaumaturgial Forensics 
+ 
+ 
+ 
+Laws of the Night: Storyteller Guide 48 
+ 
+zz 
+ 
+ 
+Thaumaturgial Surgery Laws of the Night: Storyteller Guide 49 
+ 
+zzz 
+ 
+ 
+Lesser Animation 
+Laws of the Night: Storyteller Guide 49 
+ 
+zzzz 
+ 
+ 
+Greater Animation 
+Laws of the Night: Storyteller Guide 49 
+ 
+zzzzz 
+ 
+ 
+Cognizant Construction 
+ 
+ 
+ 
+Laws of the Night: Storyteller Guide 50 
+ 
+Thaumaturgy – The Green Path 
+ 
+z 
+ 
+ 
+Herbal Wisdom 
+Laws of the Night: Camarilla Guide 79 
+ 
+zz 
+ 
+ 
+Speed the Season’s Passing 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 79 
+ 
+zzz 
+ 
+ 
+Dance of Vines 
+Laws of the Night: Camarilla Guide 79 
+ 
+zzzz 
+ 
+ 
+Verdant Haven 
+Laws of the Night: Camarilla Guide 80 
+ 
+zzzzz 
+ 
+ 
+Awaken the Forest Giants 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 80 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Thaumaturgy – Elemental Mastery 
+ 
+z 
+ 
+ 
+Elemental Strength 
+Laws of the Night: Camarilla Guide 76 
+ 
+zz 
+ 
+ 
+Wooden Tongues 
+Laws of the Night: Camarilla Guide 77 
+ 
+zzz 
+ 
+ 
+Animate the Unmoving  Laws of the Night: Camarilla Guide 77 
+ 
+zzzz 
+ 
+ 
+Elemental Form 
+Laws of the Night: Camarilla Guide 77 
+ 
+zzzzz 
+ 
+ 
+Summon Elemental 
+Laws of the Night: Camarilla Guide 78 
+ 
+Thaumaturgy – The Focused Mind 
+ 
+z 
+ 
+ 
+Readiness 
+Laws of the Night: Storyteller Guide 50 
+ 
+zz 
+ 
+ 
+Centering 
+Laws of the Night: Storyteller Guide 50 
+ 
+zzz 
+ 
+ 
+One‐Tracked Mind 
+Laws of the Night: Storyteller Guide 51 
+ 
+zzzz 
+ 
+ 
+Dual Thought 
+Laws of the Night: Storyteller Guide 51 
+ 
+zzzzz 
+ 
+ 
+Perfect Clarity 
+Laws of the Night: Storyteller Guide 51 
+ 
+Thaumaturgy – Hands of Destruction 
+ 
+z 
+ 
+ 
+Decay 
+Laws of the Night 183 
+ 
+zz 
+ 
+ 
+Gnarl Wood 
+Laws of the Night 184 
+ 
+zzz 
+ 
+ 
+Acidic Touch 
+Laws of the Night 184 
+ 
+zzzz 
+ 
+ 
+Atrophy 
+Laws of the Night 184 
+ 
+zzzzz 
+ 
+ 
+Turn to Dust 
+Laws of the Night 184 
+ 
+Thaumaturgy – The Hearth Path 
+ 
+z 
+ 
+ 
+Guest’s Herald 
+Laws of the Night: Storyteller Guide 52 
+ 
+zz 
+ 
+ 
+Master’s Order 
+Laws of the Night: Storyteller Guide 52 
+ 
+zzz 
+ 
+ 
+Rhyme of Discord 
+Laws of the Night: Storyteller Guide 52 
+ 
+zzzz 
+ 
+ 
+Temportal 
+Laws of the Night: Storyteller Guide 52 
+ 
+zzzzz 
+ 
+ 
+The Cauldron’s Rede 
+Laws of the Night: Storyteller Guide 52 
+ 
+Thaumaturgy – The Lure of Flames 
+ 
+z 
+ 
+ 
+Hand of Flame 
+Laws of the Night 179 
+ 
+zz 
+ 
+ 
+Flame Bolt 
+Laws of the Night 179 
+ 
+zzz 
+ 
+ 
+Wall of Fire 
+Laws of the Night 179 
+ 
+zzzz 
+ 
+ 
+Engulf 
+Laws of the Night 179 
+ 
+zzzzz 
+ 
+ 
+Firestorm 
+Laws of the Night 180 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Thaumaturgy – Mastery of the Mortal Shell 
+ 
+z 
+ 
+Vertigo 
+Laws of the Night: Storyteller Guide 53 
+ 
+zz 
+ 
+ 
+Controtion 
+Laws of the Night: Storyteller Guide 53 
+ 
+zzz 
+ 
+ 
+Seizure 
+Laws of the Night: Storyteller Guide 53 
+ 
+zzzz 
+ 
+ 
+Body Failure 
+Laws of the Night: Storyteller Guide 54 
+ 
+zzzzz 
+ 
+ 
+Marionette 
+Laws of the Night: Storyteller Guide 54 
+ 
+Thaumaturgy – Movement of the Mind 
+ 
+z 
+ 
+ 
+Force Bolt 
+Laws of the Night 180 
+ 
+zz 
+ 
+ 
+Manipulate 
+Laws of the Night 180 
+ 
+zzz 
+ 
+ 
+Flight 
+Laws of the Night 181 
+ 
+zzzz 
+ 
+ 
+Repulse 
+Laws of the Night 181 
+ 
+zzzzz 
+ 
+ 
+Control 
+Laws of the Night 181 
+ 
+Thaumaturgy – Neptune’s Might 
+ 
+z 
+ 
+ 
+Eyes of the Sea 
+Laws of the Night: Camarilla Guide 81 
+ 
+zz 
+ 
+ 
+Prison of Water 
+Laws of the Night: Camarilla Guide 81 
+ 
+zzz 
+ 
+ 
+Blood to Water 
+Laws of the Night: Camarilla Guide 82 
+ 
+zzzz 
+ 
+ 
+Flowing Wall 
+Laws of the Night: Camarilla Guide 82 
+ 
+zzzzz 
+ 
+ 
+Dehydrate 
+Laws of the Night: Camarilla Guide 83 
+ 
+ Thaumaturgy – Oneiromancy 
+ 
+z 
+ 
+ 
+Portents 
+Laws of the Night: Storyteller Guide 55 
+ 
+zz 
+ 
+ 
+Foresee 
+Laws of the Night: Storyteller Guide 55 
+ 
+zzz 
+ 
+ 
+Dreamspeak 
+Laws of the Night: Storyteller Guide 55 
+ 
+zzzz 
+ 
+ 
+Augury 
+Laws of the Night: Storyteller Guide 55 
+ 
+zzzzz 
+ 
+ 
+Reveal the Heart’s Dreams 
+ 
+ 
+ 
+Laws of the Night: Storyteller Guide 56 
+ 
+Thaumaturgy - The Path of Blood 
+ 
+z 
+ 
+ 
+A Taste for Blood 
+Laws of the Night 177 
+ 
+zz 
+ 
+ 
+Blood Rage 
+Laws of the Night 177 
+ 
+zzz 
+ 
+ 
+Blood of Potency 
+Laws of the Night 177 
+ 
+zzzz 
+ 
+ 
+Theft of Vitae 
+Laws of the Night 178 
+ 
+zzzzz 
+ 
+ 
+Cauldron of Blood 
+Laws of the Night 178 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Thaumaturgy – Path of the Blood’s Curse 
+ 
+z 
+ 
+ 
+Ravages of the Beast 
+Laws of the Night: Storyteller Guide 56 
+ 
+zz 
+ 
+ 
+Weight of the Sun 
+Laws of the Night: Storyteller Guide 57 
+ 
+zzz 
+ 
+ 
+Abated Tooth 
+Laws of the Night: Storyteller Guide 57 
+ 
+zzzz 
+ 
+ 
+Treacherous Bonds 
+Laws of the Night: Storyteller Guide 57 
+ 
+zzzzz 
+ 
+ 
+The Withering of Ages  Laws of the Night: Storyteller Guide 58 
+ 
+Thaumaturgy – The Path of Conjuring 
+ 
+z 
+ 
+ 
+Summon the Simple Form 
+Laws of the Night 182 
+ 
+zz 
+ 
+ 
+Permanency 
+Laws of the Night 182 
+ 
+zzz 
+ 
+ 
+Magic of the Smith 
+Laws of the Night 183 
+ 
+zzzz 
+ 
+ 
+Reverse Conjuration 
+Laws of the Night 183 
+ 
+zzzzz 
+ 
+ 
+Power Over Life 
+Laws of the Night 183 
+ 
+Thaumaturgy – The Path of Corruption 
+ 
+z 
+ 
+ 
+Contradict 
+Laws of the Night: Camarilla Guide 84 
+ 
+zz 
+ 
+ 
+Subvert 
+Laws of the Night: Camarilla Guide 84 
+ 
+zzz 
+ 
+ 
+Dissociate 
+Laws of the Night: Camarilla Guide 85 
+ 
+zzzz 
+ 
+ 
+Addiction 
+Laws of the Night: Camarilla Guide 85 
+ 
+zzzzz 
+ 
+ 
+Dependence 
+Laws of the Night: Camarilla Guide 86 
+ 
+Thaumaturgy – The Path of Curses 
+ 
+z 
+ 
+ 
+Stigma 
+Laws of the Night: Storyteller Guide 59 
+ 
+zz 
+ 
+ 
+Malady 
+Laws of the Night: Storyteller Guide 59 
+ 
+zzz 
+ 
+ 
+Pariah 
+Laws of the Night: Storyteller Guide 59 
+ 
+zzzz 
+ 
+ 
+Corrupt Body 
+Laws of the Night: Storyteller Guide 59 
+ 
+zzzzz 
+ 
+ 
+Fall from Gracex 
+Laws of the Night: Storyteller Guide 60 
+ 
+Thaumaturgy - The Path of the Father’s Vengeance 
+ 
+z 
+ 
+ 
+Zillah’s Litany 
+Laws of the Night: Sabbat Guide 127 
+ 
+zz 
+ 
+ 
+The Crone’s Pride 
+Laws of the Night: Sabbat Guide 128 
+ 
+zzz 
+ 
+ 
+Feast of Ashes 
+Laws of the Night: Sabbat Guide 129 
+ 
+zzzz 
+ 
+ 
+Uriel’s Disfavor 
+Laws of the Night: Sabbat Guide 129 
+ 
+zzzzz 
+ 
+ 
+Valediction 
+Laws of the Night: Sabbat Guide 129 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Thaumaturgy - The Path of the Levinbolt 
+ 
+z 
+ 
+ 
+Spark 
+Clanbook: Tremere, Revised Ed. 51 
+ 
+zz 
+ 
+ 
+Illuminate 
+Clanbook: Tremere, Revised Ed. 52 
+ 
+zzz 
+ 
+ 
+Power Array 
+Clanbook: Tremere, Revised Ed. 52 
+ 
+zzzz 
+ 
+ 
+Zeusʹ Fury 
+Clanbook: Tremere, Revised Ed. 52 
+ 
+zzzzz 
+ 
+ 
+Eye of the Storm 
+Clanbook: Tremere, Revised Ed. 53 
+ 
+Thaumaturgy - The Path of Mars 
+ 
+z 
+ 
+ 
+War Cry 
+Laws of the Night: Sabbat Guide 126 
+ 
+zz 
+ 
+ 
+Strike True 
+Laws of the Night: Sabbat Guide 126 
+ 
+zzz 
+ 
+ 
+Wind Dance 
+Laws of the Night: Sabbat Guide 126 
+ 
+zzzz 
+ 
+ 
+Fearless Heart 
+Laws of the Night: Sabbat Guide 126 
+ 
+zzzzz 
+ 
+ 
+Comrades at Arms 
+Laws of the Night: Sabbat Guide 127 
+ 
+Thaumaturgy - The Path of Shadowcrafting 
+ 
+z 
+ 
+ 
+Out Light 
+Clanbook: Tremere, Revised Ed. 53 
+ 
+zz 
+ 
+ 
+Shadow Taunt 
+Clanbook: Tremere, Revised Ed. 53 
+ 
+zzz 
+ 
+ 
+Coruscating Shadow 
+Clanbook: Tremere, Revised Ed. 54 
+ 
+zzzz 
+ 
+ 
+Nightʹs Veil 
+Clanbook: Tremere, Revised Ed. 55 
+ 
+zzzzz 
+ 
+ 
+Abyssal Pact 
+Clanbook: Tremere, Revised Ed. 55 
+ 
+Thaumaturgy – The Path of Technomancy 
+ 
+z 
+ 
+ 
+Analyze 
+Laws of the Night: Camarilla Guide 86 
+ 
+zz 
+ 
+ 
+Burnout 
+Laws of the Night: Camarilla Guide 87 
+ 
+zzz 
+ 
+ 
+Encrypt/Decrypt 
+Laws of the Night: Camarilla Guide 87 
+ 
+zzzz 
+ 
+ 
+Remote Access 
+Laws of the Night: Camarilla Guide 88 
+ 
+zzzzz 
+ 
+ 
+Telecommute 
+Laws of the Night: Camarilla Guide 88 
+ 
+Thaumaturgy – Path of Transmutation 
+ 
+z 
+ 
+ 
+Fortify the Solid Form  Laws of the Night: Storyteller Guide 60 
+ 
+zz 
+ 
+ 
+Crystalize the Liquid Form 
+ 
+ 
+ 
+ 
+Laws of the Night: Storyteller Guide 60 
+ 
+zzz 
+ 
+ 
+Liquefy the Solid Form  Laws of the Night: Storyteller Guide 60 
+ 
+zzzz 
+ 
+ 
+Gaol 
+Laws of the Night: Storyteller Guide 61 
+ 
+zzzzz 
+ 
+ 
+Ghost Wall 
+Laws of the Night: Storyteller Guide 61 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Thaumaturgy – Spirit Manipulation 
+ 
+z 
+ 
+ 
+Hermetic Sight 
+Laws of the Night: Camarilla Guide 89 
+ 
+zz 
+ 
+ 
+Astral Cant 
+Laws of the Night: Camarilla Guide 90 
+ 
+zzz 
+ 
+ 
+Voice of Command 
+Laws of the Night: Camarilla Guide 90 
+ 
+zzzz 
+ 
+ 
+Entrap Ephemera 
+Laws of the Night: Camarilla Guide 90 
+ 
+zzzzz 
+ 
+ 
+Duality 
+Laws of the Night: Camarilla Guide 91 
+ 
+Thaumaturgy – Vine of Dionysus 
+ 
+z 
+ 
+ 
+Methyskein 
+Laws of the Night: Storyteller Guide 62 
+ 
+zz 
+ 
+ 
+Omophagy 
+Laws of the Night: Storyteller Guide 62 
+ 
+zzz 
+ 
+ 
+Hamartia 
+Laws of the Night: Storyteller Guide 62 
+ 
+zzzz 
+ 
+ 
+Enthousiasmos 
+Laws of the Night: Storyteller Guide 63 
+ 
+zzzzz 
+ 
+ 
+Oinos Aimatos 
+Laws of the Night: Storyteller Guide 63 
+ 
+Thaumaturgy – Weather Control 
+ 
+z 
+ 
+ 
+Fog 
+Laws of the Night: Camarilla Guide 93 
+ 
+zz 
+ 
+ 
+Rain or Snow 
+Laws of the Night: Camarilla Guide 93 
+ 
+zzz 
+ 
+ 
+High Winds 
+Laws of the Night: Camarilla Guide 94 
+ 
+zzzz 
+ 
+ 
+Storm 
+Laws of the Night: Camarilla Guide 94 
+ 
+zzzzz 
+ 
+ 
+Lightning Strike 
+Laws of the Night: Camarilla Guide 94 
+ 
+Thaumaturgical Rituals - Basic 
+ 
+Banish Big Brother 
+Laws of the Night: Anarch Guide 66 
+ 
+Blood Mead 
+Laws of the Night: Storyteller Guide 64 
+ 
+Blood Rush 
+Laws of the Night: Sabbat Guide 130 
+ 
+Brand of the Paramour 
+Laws of the Night: Storyteller Guide 65 
+ 
+Communicate with Kindred Sire 
+Laws of the Night 185 
+ 
+Craft Bloodstone 
+Laws of the Night: Storyteller Guide 65 
+ 
+Defense of the Sacred Haven 
+Laws of the Night 185 
+ 
+Deflection of Wooden Doom 
+Laws of the Night 185 
+ 
+Devil’s Touch 
+Laws of the Night 185 
+ 
+Domino of Life 
+Laws of the Night: Sabbat Guide 130 
+ 
+Encrypt Missive 
+Laws of the Night: Storyteller Guide 65 
+ 
+Enhancing the Curse 
+Laws of the Night: Storyteller Guide 65 
+ 
+Extinguish 
+Laws of the Night: Storyteller Guide 66 
+ 
+Eyes of the Night Hawk 
+Laws of the Night: Sabbat Guide 130 
+ 
+Flatline 
+Laws of the Night: Anarch Guide 66 
+ 
+Illuminate Trail of the Prey 
+Laws of the Night: Sabbat Guide 131 
+ 
+Impassable Trail 
+Laws of the Night: Storyteller Guide 66 
+ 
+Impressive Visage 
+Laws of the Night: Storyteller Guide 66 
+ 
+The Imp’s Affliction 
+Laws of the Night: Storyteller Guide 66 
+ 
+Iron Body 
+Laws of the Night: Anarch Guide 67 
+ 
+Jinx 
+Laws of the Night: Storyteller Guide 66 
+ 
+Learning the Mind Enslumbered 
+ 
+ 
+ 
+Laws of the Night: Storyteller Guide 67 
+ 
+Machine Blitz 
+Laws of the Night: Sabbat Guide 131 
+ 
+Mourning Life Curse 
+Laws of the Night: Storyteller Guide 66 
+Level & Discipline  
+Title & Page Number 
+ 
+ 
+The Open Passage 
+Laws of the Night 186 
+ 
+Principle Focus of Vitae Infusion 
+Laws of the Night 186 
+ 
+Purge the Inner Demon 
+Laws of the Night: Storyteller Guide 67 
+ 
+Rebirth of Mortal Vanity  Laws of the Night: Storyteller Guide 67 
+ 
+Recure of the Homeland 
+Laws of the Night: Sabbat Guide 131 
+ 
+Rite of Introduction 
+Laws of the Night: Storyteller Guide 68 
+ 
+Sanguineous Phial 
+Laws of the Night: Storyteller Guide 68 
+ 
+Scent of the Lupine’s Passing 
+Laws of the Night 186 
+ 
+The Scribe 
+Laws of the Night: Storyteller Guide 68 
+ 
+Sense the Mystical 
+Laws of the Night: Storyteller Guide 68 
+ 
+Trima 
+Laws of the Night: Storyteller Guide 69 
+ 
+Wake with the Evening’s Freshness 
+Laws of the Night 186 
+ 
+Ward versus Ghoul 
+Laws of the Night 186 
+ 
+Whispers of the Ghost 
+Laws of the Night: Storyteller Guide 69 
+ 
+Widow’s Spite 
+Laws of the Night: Sabbat Guide 132 
+ 
+Thaumaturgical Rituals - Intermediate 
+ 
+Blood Allergy 
+Laws of the Night: Storyteller Guide 69 
+ 
+Bone of Lies 
+Laws of the Night 186 
+ 
+Cleansing of the Flesh 
+Laws of the Night: Storyteller Guide 69 
+ 
+Clinging of the Insect 
+Laws of the Night: Sabbat Guide 132 
+ 
+Craft Dream Catcher 
+Laws of the Night: Storyteller Guide 70 
+ 
+The Curse Belated 
+Laws of the Night: Storyteller Guide 70 
+ 
+Detect the Hidden Observer  Laws of the Night: Anarch Guide 67 
+ 
+Firewalker 
+Laws of the Night: Sabbat Guide 132 
+ 
+Hell’s Calling 
+Laws of the Night: Anarch Guide 68 
+ 
+Incorporeal Passage 
+Laws of the Night 186 
+ 
+Infim Inert 
+Laws of the Night: Storyteller Guide 70 
+ 
+Major Creation 
+Laws of the Night: Storyteller Guide 71 
+ 
+Mirror of Second Sight 
+Laws of the Night: Sabbat Guide 133 
+ 
+Pavis of Foul Presence 
+Laws of the Night 187 
+ 
+Return of the Heart 
+Laws of the Night: Storyteller Guide 71 
+ 
+Rutor’s Hands 
+Laws of the Night 187 
+ 
+Scry 
+Laws of the Night: Storyteller Guide 71 
+ 
+Soul of the Homunculi 
+Laws of the Night 187 
+ 
+Stolen Kisses 
+Laws of the Night: Storyteller Guide 71 
+ 
+Telecommunication 
+Laws of the Night: Storyteller Guide 72 
+ 
+A Touch of Nightshade 
+Laws of the Night: Storyteller Guide 72 
+ 
+Track Transgressor 
+Laws of the Night: Storyteller Guide 72 
+ 
+Ward versus Fae 
+Laws of the Night: Storyteller Guide 73 
+ 
+Ward versus Vitae 
+Laws of the Night: Anarch Guide 68 
+ 
+Thaumaturgical Rituals - Advanced 
+ 
+Blood Contract 
+Laws of the Night 187 
+ 
+Cobra’s Favor 
+Laws of the Night: Storyteller Guide 73 
+ 
+Court of the Hallowed Truth 
+ 
+ 
+ 
+Laws of the Night: Storyteller Guide 73 
+ 
+Nectar of the Bitter Rose 
+Laws of the Night 187 
+ 
+Paper Flesh 
+Laws of the Night: Sabbat Guide 133 
+ 
+Severed Hand 
+Laws of the Night: Storyteller Guide 73 
+ 
+Stone of the True Form 
+Laws of the Night: Storyteller Guide 74 
+ 
+Stone Slumber 
+Laws of the Night: Storyteller Guide 74 
+ 
+Umbra Walk 
+Laws of the Night 188 
+ 
+Thaumaturgical Rituals - Master 
+ 
+Refined Digestion 
+Laws of the Night: Storyteller Guide 74 
+ 
+Thaumaturgical Rituals - Ascendent 
+ 
+Eyes of the Ever Vigilant  Laws of the Night: Storyteller Guide 75 
+ 
+
+
+ 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Valeren 
+ 
+z 
+ 
+ 
+Sense Vitality 
+Laws of the Night 158 
+ 
+zz 
+ 
+ 
+Anesthetic Touch 
+Laws of the Night 158 
+ 
+zzz 
+ 
+ 
+Burning Touch 
+Laws of the Night: Sabbat Guide 134 
+ 
+zzzz 
+ 
+ 
+Ending the Watch 
+Laws of the Night: Sabbat Guide 134 
+ 
+zzzzz 
+ 
+ 
+Vengeance of Samiel 
+Laws of the Night: Sabbat Guide 134 
+ 
+zzzzz z 
+ 
+ 
+Blissful Agony 
+Laws of the Night: Sabbat Guide 135 
+ 
+Valeren – Path of the Healer 
+ 
+z 
+ 
+ 
+Sense Life 
+Faith & Fire 210 
+ 
+zz 
+ 
+ 
+Gift of Sleep 
+Faith & Fire 210 
+ 
+zzz 
+ 
+ 
+Healing Touch 
+Faith & Fire 211 
+ 
+zzzz 
+ 
+ 
+Sheperd’s Watch 
+Faith & Fire 211 
+ 
+zzzzz 
+ 
+ 
+The Ailing Spirit 
+Faith & Fire 211 
+ 
+zzzzz z 
+ 
+ 
+Warding the Beast 
+Faith & Fire 211 
+ 
+ Valeren – Path of the Warrior 
+ 
+ 
+z 
+ 
+Sense Death 
+Faith & Fire 212 
+ 
+ 
+zz 
+ 
+Morphean Blow 
+Faith & Fire 212 
+ 
+ 
+zzz 
+ 
+Burning Touch 
+Faith & Fire 212 
+ 
+ 
+zzzz 
+ 
+Armor of Caine’s Fury 
+Faith & Fire 212 
+ 
+ 
+zzzzz 
+ 
+Vengeance of Samiel 
+Faith & Fire 213 
+ 
+ 
+zzzzz z 
+ 
+Fiery Agony 
+Faith & Fire 213 
+ 
+Level & Discipline  
+Title & Page Number 
+ 
+Vicissitude 
+ 
+z 
+ 
+ 
+Malleable Visage 
+Laws of the Night 188 
+ 
+zz 
+ 
+ 
+Fleshcraft 
+Laws of the Night 188 
+ 
+zzz 
+ 
+ 
+Bonecraft 
+Laws of the Night 189 
+ 
+zzzz 
+ 
+ 
+Horrid Form 
+Laws of the Night 189 
+ 
+zzzzz 
+ 
+ 
+Bloodform 
+Laws of the Night 189 
+ 
+zzzzz z 
+ 
+ 
+Blood of Acid 
+Laws of the Night: Sabbat Guide 136 
+ 
+ 
+Chiropteran Marauder 
+Laws of the Night: Sabbat Guide 135 
+ 
+ 
+Ecstatic Agony 
+Clanbook: Tzimisce, Revised Ed. 68 
+ 
+zzzzz zz 
+ 
+ 
+Cocoon 
+Laws of the Night: Sabbat Guide 136 
+ 
+zzzzz zzz 
+ 
+ 
+Breath of the Dragon 
+Laws of the Night: Sabbat Guide 136 
+ 
+zzzzz zzzz 
+ 
+ 
+Earth’s Vast Haven 
+Laws of the Night: Sabbat Guide 137 
+ 
+Vicissitude/Auspex/Obfuscate 
+ 
+zzz/zz/zz 
+ 
+ 
+Soul Decoration 
+Clanbook: Tzimisce, Revised Ed. 72 
+ 
+Visceratika 
+ 
+z 
+ 
+ 
+Skin of the Chameleon  Laws of the Night: Camarilla Guide 70 
+ 
+zz 
+ 
+ 
+Scry the Hearthstone 
+Laws of the Night: Camarilla Guide 71 
+ 
+zzz 
+ 
+ 
+Bond with the Mountain 
+ 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 71 
+ 
+zzzz 
+ 
+ 
+Armor of Tera 
+Laws of the Night: Camarilla Guide 72 
+ 
+zzzzz 
+ 
+ 
+Flow within the Mountain 
+ 
+ 
+ 
+ 
+Laws of the Night: Camarilla Guide 72 
+ 
+ 
+ 
+
+
+ 
+ 
+Creation Points 
+Trait 
+Points 
+ 
+Attributes (1st / 2nd / 3rd) 
+7 / 5 / 3 
+Abilities 
+5 
+Disciplines 
+3 (4 for Sabbat) 
+Backgrounds 
+5 (None for Sabbat) 
+Virtues 
+7 
+Humanity 
+Conscience + SC  
+ 
+/2 (Round up) 
+ 
+Freebie Points (15) 
+Trait 
+Cost per dot 
+ 
+Attribute 
+1 
+Ability 
+1 
+Background 
+1 
+Virtue 
+2 
+Humanity 
+3 
+Willpower 
+3 
+ 
+Experience Points 
+Trait Increase 
+Cost 
+ 
+Attribute 
+1 
+Ability 
+1 (2 for 6‐10) 
+Background 
+1 
+Clan Discipline 
+3/6/9 
+Non‐clan Discipline 
+4/7/10 
+New Ritual 
+2/4/6 
+ (Necromancy or Thaumatury) 
+ 
+Virtue 
+3 
+Willpower 
+3 
+Buy off Negative 
+2 
+ 
+ 
+Edited by Jessica Orsini 
+Camarilla # US2006037576 
+Data Harvesting by Jeremy Ambrose 
+Camarilla # US2002034177 
+Revised 10 February 2010 
