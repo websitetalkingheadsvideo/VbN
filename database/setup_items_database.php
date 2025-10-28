@@ -41,8 +41,9 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         INDEX idx_type (type),
         INDEX idx_category (category),
-        INDEX idx_rarity (rarity)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+        INDEX idx_rarity (rarity),
+        INDEX idx_name (name)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
     
     if ($conn->query($items_table)) {
         echo "✅ 'items' table created successfully\n";
@@ -65,8 +66,9 @@ try {
         FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
         FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE CASCADE,
         INDEX idx_character (character_id),
-        INDEX idx_item (item_id)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+        INDEX idx_item (item_id),
+        INDEX idx_equipped (equipped)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
     
     if ($conn->query($equipment_table)) {
         echo "✅ 'character_equipment' table created successfully\n";

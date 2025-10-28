@@ -22,8 +22,11 @@ $sql = "CREATE TABLE IF NOT EXISTS character_disciplines (
     level INT NOT NULL DEFAULT 1,
     xp_cost INT NOT NULL DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
-)";
+    FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+    INDEX idx_character (character_id),
+    INDEX idx_discipline (discipline_name),
+    INDEX idx_level (level)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
 if (mysqli_query($conn, $sql)) {
     echo "✅ character_disciplines table created successfully<br>";

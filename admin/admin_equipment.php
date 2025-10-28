@@ -29,8 +29,9 @@ while ($type_row = $types_result->fetch_assoc()) {
     $item_types[] = $type_row['type'];
 }
 
-// Get all items organized by category
-$items_query = "SELECT * FROM items ORDER BY category, name";
+// Get all items organized by category with explicit columns
+$items_query = "SELECT id, name, type, category, damage, `range`, rarity, price, image 
+                FROM items ORDER BY category, name";
 $items_result = $conn->query($items_query);
 $all_items = [];
 while ($row = $items_result->fetch_assoc()) {

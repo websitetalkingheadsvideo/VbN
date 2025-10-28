@@ -13,20 +13,78 @@ if (!$character_id) {
     die("ERROR: No character ID provided. Usage: view_character.php?id=42");
 }
 
-// Get character data
-$char = $conn->query("SELECT * FROM characters WHERE id = $character_id")->fetch_assoc();
+// Get character data using helper function with explicit columns
+$char = db_fetch_one($conn,
+    "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept,
+            clan, generation, sire, pc, biography, character_image, equipment, notes,
+            total_xp, spent_xp, created_at, updated_at
+     FROM characters WHERE id = ?",
+    "i",
+    [$character_id]
+);
+
 if (!$char) {
     die("ERROR: Character ID $character_id not found");
 }
 
-// Get all related data
-$traits = $conn->query("SELECT * FROM character_traits WHERE character_id = $character_id ORDER BY trait_category, trait_name");
-$neg_traits = $conn->query("SELECT * FROM character_negative_traits WHERE character_id = $character_id ORDER BY trait_category, trait_name");
-$abilities = $conn->query("SELECT * FROM character_abilities WHERE character_id = $character_id ORDER BY level DESC, ability_name");
-$disciplines = $conn->query("SELECT * FROM character_disciplines WHERE character_id = $character_id ORDER BY discipline_name, level");
-$backgrounds = $conn->query("SELECT * FROM character_backgrounds WHERE character_id = $character_id ORDER BY level DESC");
-$morality = $conn->query("SELECT * FROM character_morality WHERE character_id = $character_id")->fetch_assoc();
-$merits_flaws = $conn->query("SELECT * FROM character_merits_flaws WHERE character_id = $character_id ORDER BY type, category");
+// Get all related data using prepared statements with explicit columns
+$traits_result = db_select($conn,
+    "SELECT id, trait_name, trait_category, trait_type, xp_cost
+     FROM character_traits WHERE character_id = ? ORDER BY trait_category, trait_name",
+    "i",
+    [$character_id]
+);
+
+$neg_traits_result = db_select($conn,
+    "SELECT id, trait_name, trait_category, xp_cost
+     FROM character_negative_traits WHERE character_id = ? ORDER BY trait_category, trait_name",
+    "i",
+    [$character_id]
+);
+
+$abilities_result = db_select($conn,
+    "SELECT id, ability_name, ability_category, specialization, level, xp_cost
+     FROM character_abilities WHERE character_id = ? ORDER BY level DESC, ability_name",
+    "i",
+    [$character_id]
+);
+
+$disciplines_result = db_select($conn,
+    "SELECT id, discipline_name, level, xp_cost
+     FROM character_disciplines WHERE character_id = ? ORDER BY discipline_name, level",
+    "i",
+    [$character_id]
+);
+
+$backgrounds_result = db_select($conn,
+    "SELECT id, background_name, level, xp_cost
+     FROM character_backgrounds WHERE character_id = ? ORDER BY level DESC",
+    "i",
+    [$character_id]
+);
+
+$morality = db_fetch_one($conn,
+    "SELECT id, path_name, path_rating, conscience, self_control, courage,
+            willpower_permanent, willpower_current, humanity
+     FROM character_morality WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
+
+$merits_flaws_result = db_select($conn,
+    "SELECT id, name, type, category, point_value, description, xp_bonus
+     FROM character_merits_flaws WHERE character_id = ? ORDER BY type, category",
+    "i",
+    [$character_id]
+);
+
+// Convert results to arrays for iteration
+$traits = $traits_result;
+$neg_traits = $neg_traits_result;
+$abilities = $abilities_result;
+$disciplines = $disciplines_result;
+$backgrounds = $backgrounds_result;
+$merits_flaws = $merits_flaws_result;
 
 // Organize traits by category
 $trait_categories = ['Physical' => [], 'Social' => [], 'Mental' => []];

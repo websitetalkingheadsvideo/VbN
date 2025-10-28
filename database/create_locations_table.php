@@ -99,7 +99,7 @@ try {
         -- Foreign Key
         FOREIGN KEY (parent_location_id) REFERENCES locations(id) ON DELETE SET NULL
         
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
     
     if ($conn->query($create_table)) {
         echo "✅ locations table created successfully!\n\n";

@@ -17,64 +17,85 @@ if (!$character_id) {
 }
 
 try {
-    // Get character data
-    $char_query = "SELECT * FROM characters WHERE id = ?";
-    $stmt = $conn->prepare($char_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Get character data - specify only needed columns (avoid SELECT *)
+    $character = db_fetch_one($conn,
+        "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept, 
+                clan, generation, sire, pc, biography, character_image, equipment, notes, 
+                total_xp, spent_xp, created_at, updated_at 
+         FROM characters WHERE id = ?",
+        "i",
+        [$character_id]
+    );
     
-    if ($result->num_rows === 0) {
+    if (!$character) {
         http_response_code(404);
         echo json_encode(['success' => false, 'message' => 'Character not found']);
         exit;
     }
     
-    $character = $result->fetch_assoc();
+    // Get all related data using helper functions
+    $traits = db_fetch_all($conn,
+        "SELECT id, trait_name, trait_category, trait_type, xp_cost 
+         FROM character_traits 
+         WHERE character_id = ? 
+         ORDER BY trait_category, trait_name",
+        "i",
+        [$character_id]
+    );
     
-    // Get all related data
-    $traits_query = "SELECT * FROM character_traits WHERE character_id = ? ORDER BY trait_category, trait_name";
-    $stmt = $conn->prepare($traits_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $traits = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $negative_traits = db_fetch_all($conn,
+        "SELECT id, trait_name, trait_category, xp_cost 
+         FROM character_negative_traits 
+         WHERE character_id = ? 
+         ORDER BY trait_category, trait_name",
+        "i",
+        [$character_id]
+    );
     
-    $neg_traits_query = "SELECT * FROM character_negative_traits WHERE character_id = ? ORDER BY trait_category, trait_name";
-    $stmt = $conn->prepare($neg_traits_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $negative_traits = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $abilities = db_fetch_all($conn,
+        "SELECT id, ability_name, ability_category, specialization, level, xp_cost 
+         FROM character_abilities 
+         WHERE character_id = ? 
+         ORDER BY level DESC, ability_name",
+        "i",
+        [$character_id]
+    );
     
-    $abilities_query = "SELECT * FROM character_abilities WHERE character_id = ? ORDER BY level DESC, ability_name";
-    $stmt = $conn->prepare($abilities_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $abilities = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $disciplines = db_fetch_all($conn,
+        "SELECT id, discipline_name, level, xp_cost 
+         FROM character_disciplines 
+         WHERE character_id = ? 
+         ORDER BY discipline_name, level",
+        "i",
+        [$character_id]
+    );
     
-    $disciplines_query = "SELECT * FROM character_disciplines WHERE character_id = ? ORDER BY discipline_name, level";
-    $stmt = $conn->prepare($disciplines_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $disciplines = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $backgrounds = db_fetch_all($conn,
+        "SELECT id, background_name, level, xp_cost 
+         FROM character_backgrounds 
+         WHERE character_id = ? 
+         ORDER BY level DESC",
+        "i",
+        [$character_id]
+    );
     
-    $backgrounds_query = "SELECT * FROM character_backgrounds WHERE character_id = ? ORDER BY level DESC";
-    $stmt = $conn->prepare($backgrounds_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $backgrounds = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $morality = db_fetch_one($conn,
+        "SELECT id, path_name, path_rating, conscience, self_control, courage, 
+                willpower_permanent, willpower_current, humanity 
+         FROM character_morality 
+         WHERE character_id = ?",
+        "i",
+        [$character_id]
+    );
     
-    $morality_query = "SELECT * FROM character_morality WHERE character_id = ?";
-    $stmt = $conn->prepare($morality_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $morality_result = $stmt->get_result();
-    $morality = $morality_result->num_rows > 0 ? $morality_result->fetch_assoc() : null;
-    
-    $merits_flaws_query = "SELECT * FROM character_merits_flaws WHERE character_id = ? ORDER BY type, category";
-    $stmt = $conn->prepare($merits_flaws_query);
-    $stmt->bind_param("i", $character_id);
-    $stmt->execute();
-    $merits_flaws = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $merits_flaws = db_fetch_all($conn,
+        "SELECT id, name, type, category, point_value, description, xp_bonus 
+         FROM character_merits_flaws 
+         WHERE character_id = ? 
+         ORDER BY type, category",
+        "i",
+        [$character_id]
+    );
     
     // Organize traits by category
     $trait_categories = ['Physical' => [], 'Social' => [], 'Mental' => []];

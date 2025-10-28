@@ -33,40 +33,53 @@ $item_id = (int)$data['item_id'];
 $quantity = isset($data['quantity']) ? (int)$data['quantity'] : 1;
 
 try {
-    // Check if item already exists for character
-    $check_sql = "SELECT id, quantity FROM character_equipment 
-                  WHERE character_id = ? AND item_id = ?";
-    $stmt = $conn->prepare($check_sql);
-    $stmt->bind_param('ii', $character_id, $item_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Start transaction for atomic equipment operation
+    mysqli_begin_transaction($conn);
     
-    if ($result->num_rows > 0) {
-        // Item exists, update quantity
-        $row = $result->fetch_assoc();
-        $new_quantity = $row['quantity'] + $quantity;
+    try {
+        // Check if item already exists for character
+        $check_sql = "SELECT id, quantity FROM character_equipment 
+                      WHERE character_id = ? AND item_id = ?";
+        $stmt = $conn->prepare($check_sql);
+        $stmt->bind_param('ii', $character_id, $item_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
         
-        $update_sql = "UPDATE character_equipment SET quantity = ? WHERE id = ?";
-        $update_stmt = $conn->prepare($update_sql);
-        $update_stmt->bind_param('ii', $new_quantity, $row['id']);
-        $update_stmt->execute();
+        if ($result->num_rows > 0) {
+            // Item exists, update quantity
+            $row = $result->fetch_assoc();
+            $new_quantity = $row['quantity'] + $quantity;
+            
+            $update_sql = "UPDATE character_equipment SET quantity = ? WHERE id = ?";
+            $update_stmt = $conn->prepare($update_sql);
+            $update_stmt->bind_param('ii', $new_quantity, $row['id']);
+            $update_stmt->execute();
+            
+            mysqli_commit($conn);
+            
+            echo json_encode([
+                'success' => true,
+                'message' => 'Item quantity updated'
+            ]);
+        } else {
+            // Add new item
+            $insert_sql = "INSERT INTO character_equipment (character_id, item_id, quantity, equipped) 
+                          VALUES (?, ?, ?, 0)";
+            $insert_stmt = $conn->prepare($insert_sql);
+            $insert_stmt->bind_param('iii', $character_id, $item_id, $quantity);
+            $insert_stmt->execute();
+            
+            mysqli_commit($conn);
+            
+            echo json_encode([
+                'success' => true,
+                'message' => 'Item added successfully'
+            ]);
+        }
         
-        echo json_encode([
-            'success' => true,
-            'message' => 'Item quantity updated'
-        ]);
-    } else {
-        // Add new item
-        $insert_sql = "INSERT INTO character_equipment (character_id, item_id, quantity, equipped) 
-                      VALUES (?, ?, ?, 0)";
-        $insert_stmt = $conn->prepare($insert_sql);
-        $insert_stmt->bind_param('iii', $character_id, $item_id, $quantity);
-        $insert_stmt->execute();
-        
-        echo json_encode([
-            'success' => true,
-            'message' => 'Item added successfully'
-        ]);
+    } catch (Exception $e) {
+        mysqli_rollback($conn);
+        throw $e;
     }
     
 } catch (Exception $e) {

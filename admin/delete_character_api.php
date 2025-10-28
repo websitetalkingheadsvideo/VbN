@@ -24,8 +24,8 @@ if ($character_id <= 0) {
     exit();
 }
 
-// Start transaction
-mysqli_begin_transaction($conn);
+// Start transaction using helper function
+db_begin_transaction($conn);
 
 try {
     // Delete from all related tables (CASCADE will handle most, but being explicit)
@@ -46,49 +46,29 @@ try {
     ];
     
     foreach ($tables as $table) {
-        $delete_query = "DELETE FROM $table WHERE character_id = ?";
-        $stmt = mysqli_prepare($conn, $delete_query);
-        if ($stmt) {
-            mysqli_stmt_bind_param($stmt, "i", $character_id);
-            mysqli_stmt_execute($stmt);
-            mysqli_stmt_close($stmt);
-        }
+        db_execute("DELETE FROM $table WHERE character_id = ?", [$character_id], 'i');
     }
     
     // Finally delete the character itself
-    $delete_char = "DELETE FROM characters WHERE id = ?";
-    $stmt = mysqli_prepare($conn, $delete_char);
-    mysqli_stmt_bind_param($stmt, "i", $character_id);
+    $affected = db_execute("DELETE FROM characters WHERE id = ?", [$character_id], 'i');
     
-    if (mysqli_stmt_execute($stmt)) {
-        $affected = mysqli_stmt_affected_rows($stmt);
-        
-        if ($affected > 0) {
-            mysqli_commit($conn);
-            echo json_encode([
-                'success' => true, 
-                'message' => 'Character deleted successfully',
-                'character_id' => $character_id
-            ]);
-        } else {
-            mysqli_rollback($conn);
-            echo json_encode([
-                'success' => false, 
-                'message' => 'Character not found'
-            ]);
-        }
+    if ($affected > 0) {
+        db_commit($conn);
+        echo json_encode([
+            'success' => true, 
+            'message' => 'Character deleted successfully',
+            'character_id' => $character_id
+        ]);
     } else {
-        mysqli_rollback($conn);
+        db_rollback($conn);
         echo json_encode([
             'success' => false, 
-            'message' => 'Database error: ' . mysqli_error($conn)
+            'message' => 'Character not found'
         ]);
     }
     
-    mysqli_stmt_close($stmt);
-    
 } catch (Exception $e) {
-    mysqli_rollback($conn);
+    db_rollback($conn);
     echo json_encode([
         'success' => false, 
         'message' => 'Error: ' . $e->getMessage()

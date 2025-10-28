@@ -12,9 +12,14 @@ if (!$conn) {
     die("Database connection failed");
 }
 
-// Find Andrei (last inserted)
-$result = mysqli_query($conn, "SELECT * FROM characters WHERE character_name = 'Andrei Radulescu' ORDER BY id DESC LIMIT 1");
-$character = mysqli_fetch_assoc($result);
+// Find Andrei (last inserted) with explicit columns
+$character = db_fetch_one($conn,
+    "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept,
+            clan, generation, sire, pc, biography, total_xp, spent_xp 
+     FROM characters WHERE character_name = ? ORDER BY id DESC LIMIT 1",
+    "s",
+    ['Andrei Radulescu']
+);
 
 if (!$character) {
     die("Character not found");
@@ -291,8 +296,13 @@ $char_id = $character['id'];
 
         <!-- Morality -->
         <?php
-        $morality_result = mysqli_query($conn, "SELECT * FROM character_morality WHERE character_id = $char_id");
-        $morality = mysqli_fetch_assoc($morality_result);
+        $morality = db_fetch_one($conn,
+            "SELECT id, path_name, path_rating, conscience, self_control, courage,
+                    willpower_permanent, willpower_current, humanity 
+             FROM character_morality WHERE character_id = ?",
+            "i",
+            [$char_id]
+        );
         ?>
         <div class="section">
             <h2>🕊️ Morality & Virtues</h2>
@@ -350,8 +360,13 @@ $char_id = $character['id'];
 
         <!-- Character Status -->
         <?php
-        $status_result = mysqli_query($conn, "SELECT * FROM character_status WHERE character_id = $char_id");
-        $status = mysqli_fetch_assoc($status_result);
+        $status = db_fetch_one($conn,
+            "SELECT id, sect_status, clan_status, city_status, health_levels,
+                    blood_pool_current, blood_pool_maximum 
+             FROM character_status WHERE character_id = ?",
+            "i",
+            [$char_id]
+        );
         ?>
         <div class="section">
             <h2>💚 Character Status</h2>

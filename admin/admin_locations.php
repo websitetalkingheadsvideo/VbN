@@ -17,8 +17,10 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once 'includes/connect.php';
 
-// Get all locations
-$locations_query = "SELECT * FROM locations ORDER BY type, name";
+// Get all locations with explicit columns
+$locations_query = "SELECT id, name, type, status, district, owner_type, faction, 
+                           security_level, created_at 
+                    FROM locations ORDER BY type, name";
 $locations = $conn->query($locations_query);
 
 define('LOTN_VERSION', '0.2.1');

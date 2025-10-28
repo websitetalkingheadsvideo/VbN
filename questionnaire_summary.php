@@ -5,9 +5,13 @@ include "includes/connect.php";
 echo "<div style='max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;'>";
 echo "<h1 style='text-align: center; color: #8B0000;'>Questionnaire Summary Report</h1>";
 
-// Get all questions
-$result = mysqli_query($conn, "SELECT * FROM questionnaire_questions ORDER BY ID");
-$questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// Get all questions with explicit columns
+$questions = db_fetch_all($conn,
+    "SELECT id, question_text, category, subcategory, created_at 
+     FROM questionnaire_questions ORDER BY id",
+    "",
+    []
+);
 
 echo "<h2 style='color: #8B0000; border-bottom: 2px solid #8B0000; padding-bottom: 5px;'>📊 Questions by Category</h2>";
 echo "<table border='1' style='border-collapse: collapse; width: 100%; margin-bottom: 30px;'>";

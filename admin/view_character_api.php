@@ -20,74 +20,72 @@ if ($character_id <= 0) {
     exit();
 }
 
-// Get character
-$char_query = "SELECT * FROM characters WHERE id = ?";
-$stmt = mysqli_prepare($conn, $char_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-$character = mysqli_fetch_assoc($result);
+// Get character with explicit columns using helper function
+$character = db_fetch_one($conn,
+    "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept,
+            clan, generation, sire, pc, biography, character_image, equipment, notes,
+            total_xp, spent_xp, created_at, updated_at
+     FROM characters WHERE id = ?",
+    "i",
+    [$character_id]
+);
 
 if (!$character) {
     echo json_encode(['success' => false, 'message' => 'Character not found']);
     exit();
 }
 
-// Get traits
-$traits_query = "SELECT * FROM character_traits WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $traits_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$traits_result = mysqli_stmt_get_result($stmt);
-$traits = mysqli_fetch_all($traits_result, MYSQLI_ASSOC);
+// Get all related data using helper functions with explicit columns
+$traits = db_fetch_all($conn,
+    "SELECT id, trait_name, trait_category, trait_type, xp_cost 
+     FROM character_traits WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
-// Get abilities
-$abilities_query = "SELECT * FROM character_abilities WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $abilities_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$abilities_result = mysqli_stmt_get_result($stmt);
-$abilities = mysqli_fetch_all($abilities_result, MYSQLI_ASSOC);
+$abilities = db_fetch_all($conn,
+    "SELECT id, ability_name, ability_category, specialization, level, xp_cost 
+     FROM character_abilities WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
-// Get disciplines
-$disciplines_query = "SELECT * FROM character_disciplines WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $disciplines_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$disciplines_result = mysqli_stmt_get_result($stmt);
-$disciplines = mysqli_fetch_all($disciplines_result, MYSQLI_ASSOC);
+$disciplines = db_fetch_all($conn,
+    "SELECT id, discipline_name, level, xp_cost 
+     FROM character_disciplines WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
-// Get backgrounds
-$backgrounds_query = "SELECT * FROM character_backgrounds WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $backgrounds_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$backgrounds_result = mysqli_stmt_get_result($stmt);
-$backgrounds = mysqli_fetch_all($backgrounds_result, MYSQLI_ASSOC);
+$backgrounds = db_fetch_all($conn,
+    "SELECT id, background_name, level, xp_cost 
+     FROM character_backgrounds WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
-// Get morality
-$morality_query = "SELECT * FROM character_morality WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $morality_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$morality_result = mysqli_stmt_get_result($stmt);
-$morality = mysqli_fetch_assoc($morality_result);
+$morality = db_fetch_one($conn,
+    "SELECT id, path_name, path_rating, conscience, self_control, courage,
+            willpower_permanent, willpower_current, humanity 
+     FROM character_morality WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
-// Get merits/flaws
-$merits_query = "SELECT * FROM character_merits_flaws WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $merits_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$merits_result = mysqli_stmt_get_result($stmt);
-$merits_flaws = mysqli_fetch_all($merits_result, MYSQLI_ASSOC);
+$merits_flaws = db_fetch_all($conn,
+    "SELECT id, name, type, category, point_value, description, xp_bonus 
+     FROM character_merits_flaws WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
-// Get status
-$status_query = "SELECT * FROM character_status WHERE character_id = ?";
-$stmt = mysqli_prepare($conn, $status_query);
-mysqli_stmt_bind_param($stmt, "i", $character_id);
-mysqli_stmt_execute($stmt);
-$status_result = mysqli_stmt_get_result($stmt);
-$status = mysqli_fetch_assoc($status_result);
+$status = db_fetch_one($conn,
+    "SELECT id, sect_status, clan_status, city_status, health_levels,
+            blood_pool_current, blood_pool_maximum 
+     FROM character_status WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
 
 echo json_encode([
     'success' => true,

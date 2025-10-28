@@ -104,37 +104,51 @@ try {
     // Log the received data for debugging
     error_log('Save character data: ' . json_encode($data));
     
-    // Simple insert like the working test_save.php
-    $character_sql = "INSERT INTO characters (user_id, character_name, player_name, chronicle) VALUES (?, ?, ?, ?)";
+    // Start transaction for atomic character creation
+    db_begin_transaction($conn);
     
-    $stmt = mysqli_prepare($conn, $character_sql);
-    if (!$stmt) {
-        throw new Exception('Failed to prepare statement: ' . mysqli_error($conn));
+    try {
+        // Simple insert like the working test_save.php
+        $character_sql = "INSERT INTO characters (user_id, character_name, player_name, chronicle) VALUES (?, ?, ?, ?)";
+        
+        $stmt = mysqli_prepare($conn, $character_sql);
+        if (!$stmt) {
+            throw new Exception('Failed to prepare statement: ' . mysqli_error($conn));
+        }
+        
+        mysqli_stmt_bind_param($stmt, 'isss',
+            $user_id,
+            $cleanData['character_name'],
+            $cleanData['player_name'],
+            $cleanData['chronicle']
+        );
+        
+        if (!mysqli_stmt_execute($stmt)) {
+            error_log('Character insert error: ' . mysqli_stmt_error($stmt));
+            throw new Exception('Failed to create character: ' . mysqli_stmt_error($stmt));
+        }
+        
+        $character_id = mysqli_insert_id($conn);
+        mysqli_stmt_close($stmt);
+        
+        // TODO: Add traits, abilities, disciplines, backgrounds, merits_flaws saving later
+        // When adding these, they will be part of this transaction
+        error_log('Character saved with ID: ' . $character_id . ' - Additional data saving skipped for now');
+        
+        // Commit transaction if all operations succeed
+        db_commit($conn);
+        
+        echo json_encode([
+            'success' => true, 
+            'message' => 'Character saved successfully!',
+            'character_id' => $character_id
+        ]);
+        
+    } catch (Exception $e) {
+        // Rollback transaction on any error
+        db_rollback($conn);
+        throw $e;
     }
-    
-    mysqli_stmt_bind_param($stmt, 'isss',
-        $user_id,
-        $cleanData['character_name'],
-        $cleanData['player_name'],
-        $cleanData['chronicle']
-    );
-    
-    if (!mysqli_stmt_execute($stmt)) {
-        error_log('Character insert error: ' . mysqli_stmt_error($stmt));
-        throw new Exception('Failed to create character: ' . mysqli_stmt_error($stmt));
-    }
-    
-    $character_id = mysqli_insert_id($conn);
-    mysqli_stmt_close($stmt);
-    
-    // TODO: Add traits, abilities, disciplines, backgrounds, merits_flaws saving later
-    error_log('Character saved with ID: ' . $character_id . ' - Additional data saving skipped for now');
-    
-    echo json_encode([
-        'success' => true, 
-        'message' => 'Character saved successfully!',
-        'character_id' => $character_id
-    ]);
     
 } catch (Exception $e) {
     http_response_code(500);

@@ -58,9 +58,13 @@ if ($_POST) {
     }
 }
 
-// Get all questions
-$result = mysqli_query($conn, "SELECT * FROM questionnaire_questions ORDER BY ID");
-$questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// Get all questions with explicit columns
+$questions = db_fetch_all($conn,
+    "SELECT id, question_text, category, subcategory, created_at 
+     FROM questionnaire_questions ORDER BY id",
+    "",
+    []
+);
 ?>
 <!DOCTYPE html>
 <html lang="en">

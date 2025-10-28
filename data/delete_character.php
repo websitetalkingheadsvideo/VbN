@@ -13,8 +13,8 @@ if (!$character_id) {
     die("ERROR: No character ID provided");
 }
 
-// Get character info
-$char = $conn->query("SELECT character_name, clan, id FROM characters WHERE id = $character_id")->fetch_assoc();
+// Get character info using prepared statement
+$char = db_fetch_one("SELECT character_name, clan, id FROM characters WHERE id = ?", [$character_id], 'i');
 
 if (!$char) {
     die("ERROR: Character ID $character_id not found");
@@ -158,7 +158,7 @@ echo "=================================================================\n";
 echo "Deleting Character\n";
 echo "=================================================================\n\n";
 
-$conn->begin_transaction();
+db_begin_transaction($conn);
 
 try {
     echo "📝 Deleting character: {$char['character_name']} (ID: {$char['id']})\n\n";
@@ -175,16 +175,16 @@ try {
     ];
     
     foreach ($tables as $table) {
-        $result = $conn->query("DELETE FROM $table WHERE character_id = $character_id");
-        $affected = $conn->affected_rows;
+        // Use prepared statement for safety
+        $affected = db_execute("DELETE FROM $table WHERE character_id = ?", [$character_id], 'i');
         echo "✅ Deleted from $table: $affected rows\n";
     }
     
     // Finally delete the character itself
-    $conn->query("DELETE FROM characters WHERE id = $character_id");
+    db_execute("DELETE FROM characters WHERE id = ?", [$character_id], 'i');
     echo "\n✅ Character record deleted\n";
     
-    $conn->commit();
+    db_commit($conn);
     
     echo "\n=================================================================\n";
     echo "Deletion Complete!\n";
@@ -196,7 +196,7 @@ try {
     echo "<p style='color: #4a90e2;'>Redirecting to character list...</p>\n";
     
 } catch (Exception $e) {
-    $conn->rollback();
+    db_rollback($conn);
     echo "\n=================================================================\n";
     echo "❌ ERROR: Deletion failed\n";
     echo "=================================================================\n";

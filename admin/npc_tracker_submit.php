@@ -2,6 +2,7 @@
 /**
  * NPC Tracker - Submit/Edit Page
  * Form for adding or editing NPC tracker entries
+ * MySQL Compliance: Uses mysqli with prepared statements
  */
 
 session_start();
@@ -21,9 +22,18 @@ $error = '';
 // Check if editing existing NPC
 if (isset($_GET['edit'])) {
     $edit_mode = true;
-    $stmt = $pdo->prepare("SELECT * FROM npc_tracker WHERE id = ?");
-    $stmt->execute([$_GET['edit']]);
-    $npc_data = $stmt->fetch(PDO::FETCH_ASSOC);
+    $edit_id = (int)$_GET['edit'];
+    
+    // Use helper function to fetch NPC data
+    $npc_data = db_fetch_one($conn,
+        "SELECT id, character_name, clan, linked_to, introduced_in, status, 
+                summary, plot_hooks, mentioned_details, npc_briefing, 
+                npc_briefing_visible, submitted_by, created_at, updated_at 
+         FROM npc_tracker 
+         WHERE id = ?",
+        "i",
+        [$edit_id]
+    );
     
     if (!$npc_data) {
         $error = "NPC not found.";
@@ -33,14 +43,14 @@ if (isset($_GET['edit'])) {
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $character_name = trim($_POST['character_name']);
-    $clan = trim($_POST['clan']);
-    $linked_to = trim($_POST['linked_to']);
-    $introduced_in = trim($_POST['introduced_in']);
-    $status = $_POST['status'];
-    $summary = trim($_POST['summary']);
-    $plot_hooks = trim($_POST['plot_hooks']);
-    $mentioned_details = trim($_POST['mentioned_details']);
+    $character_name = trim($_POST['character_name'] ?? '');
+    $clan = trim($_POST['clan'] ?? '');
+    $linked_to = trim($_POST['linked_to'] ?? '');
+    $introduced_in = trim($_POST['introduced_in'] ?? '');
+    $status = $_POST['status'] ?? '💡 Concept Only';
+    $summary = trim($_POST['summary'] ?? '');
+    $plot_hooks = trim($_POST['plot_hooks'] ?? '');
+    $mentioned_details = trim($_POST['mentioned_details'] ?? '');
     
     // Validation
     if (empty($character_name) || empty($linked_to)) {
@@ -48,43 +58,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             if (isset($_POST['update']) && isset($_POST['npc_id'])) {
-                // Update existing
-                $stmt = $pdo->prepare("UPDATE npc_tracker SET 
-                    character_name = ?, clan = ?, linked_to = ?, introduced_in = ?, 
-                    status = ?, summary = ?, plot_hooks = ?, mentioned_details = ?
-                    WHERE id = ?");
+                // Update existing NPC
+                $npc_id = (int)$_POST['npc_id'];
                 
-                $stmt->execute([
-                    $character_name, $clan, $linked_to, $introduced_in,
-                    $status, $summary, $plot_hooks, $mentioned_details,
-                    $_POST['npc_id']
-                ]);
+                $affected = db_execute($conn,
+                    "UPDATE npc_tracker SET 
+                        character_name = ?, clan = ?, linked_to = ?, introduced_in = ?, 
+                        status = ?, summary = ?, plot_hooks = ?, mentioned_details = ?
+                     WHERE id = ?",
+                    "ssssssssi",
+                    [$character_name, $clan, $linked_to, $introduced_in,
+                     $status, $summary, $plot_hooks, $mentioned_details, $npc_id]
+                );
                 
-                $success = "NPC updated successfully!";
-                
-                // Refresh data
-                $stmt = $pdo->prepare("SELECT * FROM npc_tracker WHERE id = ?");
-                $stmt->execute([$_POST['npc_id']]);
-                $npc_data = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($affected !== false) {
+                    $success = "NPC updated successfully!";
+                    
+                    // Refresh data
+                    $npc_data = db_fetch_one($conn,
+                        "SELECT id, character_name, clan, linked_to, introduced_in, status, 
+                                summary, plot_hooks, mentioned_details, npc_briefing, 
+                                npc_briefing_visible, submitted_by, created_at, updated_at 
+                         FROM npc_tracker 
+                         WHERE id = ?",
+                        "i",
+                        [$npc_id]
+                    );
+                } else {
+                    $error = "Failed to update NPC.";
+                }
                 
             } else {
-                // Insert new
-                $stmt = $pdo->prepare("INSERT INTO npc_tracker 
-                    (character_name, clan, linked_to, introduced_in, status, summary, plot_hooks, mentioned_details, submitted_by) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                // Insert new NPC
+                $new_id = db_execute($conn,
+                    "INSERT INTO npc_tracker 
+                        (character_name, clan, linked_to, introduced_in, status, 
+                         summary, plot_hooks, mentioned_details, submitted_by) 
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    "ssssssssi",
+                    [$character_name, $clan, $linked_to, $introduced_in,
+                     $status, $summary, $plot_hooks, $mentioned_details,
+                     $_SESSION['user_id']]
+                );
                 
-                $stmt->execute([
-                    $character_name, $clan, $linked_to, $introduced_in,
-                    $status, $summary, $plot_hooks, $mentioned_details,
-                    $_SESSION['user_id']
-                ]);
-                
-                $success = "NPC added to tracker successfully!";
-                
-                // Clear form after successful insert
-                $_POST = [];
+                if ($new_id) {
+                    $success = "NPC added to tracker successfully!";
+                    // Clear form after successful insert
+                    $_POST = [];
+                } else {
+                    $error = "Failed to add NPC.";
+                }
             }
-        } catch (PDOException $e) {
+        } catch (Exception $e) {
             $error = "Database error: " . $e->getMessage();
         }
     }
@@ -281,11 +306,11 @@ define('LOTN_VERSION', '0.2.0');
         </div>
 
         <?php if ($success): ?>
-            <div class="alert alert-success"><?php echo $success; ?></div>
+            <div class="alert alert-success"><?php echo htmlspecialchars($success); ?></div>
         <?php endif; ?>
 
         <?php if ($error): ?>
-            <div class="alert alert-error"><?php echo $error; ?></div>
+            <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
 
         <div class="guidelines">
@@ -303,7 +328,7 @@ define('LOTN_VERSION', '0.2.0');
 
         <form method="POST">
             <?php if ($edit_mode): ?>
-                <input type="hidden" name="npc_id" value="<?php echo $npc_data['id']; ?>">
+                <input type="hidden" name="npc_id" value="<?php echo (int)$npc_data['id']; ?>">
             <?php endif; ?>
 
             <div class="form-group">
@@ -349,8 +374,8 @@ define('LOTN_VERSION', '0.2.0');
                     $current_status = $npc_data['status'] ?? $_POST['status'] ?? '💡 Concept Only';
                     foreach ($statuses as $value => $label):
                     ?>
-                        <option value="<?php echo $value; ?>" <?php echo $current_status === $value ? 'selected' : ''; ?>>
-                            <?php echo $value; ?>
+                        <option value="<?php echo htmlspecialchars($value); ?>" <?php echo $current_status === $value ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($value); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>

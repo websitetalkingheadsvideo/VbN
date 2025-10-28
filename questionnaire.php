@@ -22,10 +22,15 @@ if ($testingMode) {
     // Skip questions for testing - go directly to results
     $questions = [];
 } else {
-    // Get 20 random questions from database
-    $result = mysqli_query($conn, "SELECT * FROM questionnaire_questions ORDER BY RAND() LIMIT 20");
+    // Get 20 random questions from database with explicit columns
+    $result = db_select($conn,
+        "SELECT id, question_text, category, subcategory 
+         FROM questionnaire_questions ORDER BY RAND() LIMIT 20",
+        "",
+        []
+    );
     if (!$result) {
-        die("Database error: " . mysqli_error($conn));
+        die("Database error: Failed to load questions");
     }
     $questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
     if (empty($questions)) {

@@ -15,8 +15,10 @@ header('Content-Type: application/json');
 require_once 'includes/connect.php';
 
 try {
-    // Build base query
-    $query = "SELECT * FROM items WHERE 1=1";
+    // Build base query - specify columns explicitly (avoid SELECT *)
+    $query = "SELECT id, name, type, category, damage, `range`, requirements, description, 
+                     rarity, price, image, notes, created_at 
+              FROM items WHERE 1=1";
     $params = [];
     $types = '';
     

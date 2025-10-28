@@ -106,7 +106,7 @@ function getAllDisciplineData($pdo) {
 }
 
 function getDisciplines($pdo) {
-    $stmt = $pdo->query("SELECT * FROM disciplines ORDER BY name");
+    $stmt = $pdo->query("SELECT id, name, category, description FROM disciplines ORDER BY name");
     $disciplines = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     return [
@@ -116,7 +116,7 @@ function getDisciplines($pdo) {
 }
 
 function getClans($pdo) {
-    $stmt = $pdo->query("SELECT * FROM clans ORDER BY name");
+    $stmt = $pdo->query("SELECT id, name, nickname, description FROM clans ORDER BY name");
     $clans = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     return [

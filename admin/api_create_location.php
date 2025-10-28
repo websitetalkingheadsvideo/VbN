@@ -39,44 +39,48 @@ foreach ($required as $field) {
 }
 
 try {
-    // Prepare INSERT statement
-    $sql = "INSERT INTO locations (
-        name, type, summary, description, notes, status, status_notes,
-        district, address, latitude, longitude,
-        owner_type, owner_notes, faction, access_control, access_notes,
-        security_level, security_locks, security_alarms, security_guards,
-        security_hidden_entrance, security_sunlight_protected, security_warding_rituals,
-        security_cameras, security_reinforced, security_notes,
-        utility_blood_storage, utility_computers, utility_library, utility_medical,
-        utility_workshop, utility_hidden_caches, utility_armory, utility_communications,
-        utility_notes,
-        social_features, capacity, prestige_level,
-        has_supernatural, node_points, node_type, ritual_space,
-        magical_protection, cursed_blessed,
-        parent_location_id, relationship_type, relationship_notes,
-        image
-    ) VALUES (
-        ?, ?, ?, ?, ?, ?, ?,
-        ?, ?, ?, ?,
-        ?, ?, ?, ?, ?,
-        ?, ?, ?, ?,
-        ?, ?, ?,
-        ?, ?, ?,
-        ?, ?, ?, ?,
-        ?, ?, ?, ?,
-        ?,
-        ?, ?, ?,
-        ?, ?, ?, ?,
-        ?, ?,
-        ?, ?, ?,
-        ?
-    )";
+    // Start transaction for atomic location creation
+    mysqli_begin_transaction($conn);
     
-    $stmt = $conn->prepare($sql);
-    
-    if (!$stmt) {
-        throw new Exception('Failed to prepare statement: ' . $conn->error);
-    }
+    try {
+        // Prepare INSERT statement
+        $sql = "INSERT INTO locations (
+            name, type, summary, description, notes, status, status_notes,
+            district, address, latitude, longitude,
+            owner_type, owner_notes, faction, access_control, access_notes,
+            security_level, security_locks, security_alarms, security_guards,
+            security_hidden_entrance, security_sunlight_protected, security_warding_rituals,
+            security_cameras, security_reinforced, security_notes,
+            utility_blood_storage, utility_computers, utility_library, utility_medical,
+            utility_workshop, utility_hidden_caches, utility_armory, utility_communications,
+            utility_notes,
+            social_features, capacity, prestige_level,
+            has_supernatural, node_points, node_type, ritual_space,
+            magical_protection, cursed_blessed,
+            parent_location_id, relationship_type, relationship_notes,
+            image
+        ) VALUES (
+            ?, ?, ?, ?, ?, ?, ?,
+            ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?,
+            ?, ?, ?,
+            ?, ?, ?,
+            ?, ?, ?, ?,
+            ?, ?, ?, ?,
+            ?,
+            ?, ?, ?,
+            ?, ?, ?, ?,
+            ?, ?,
+            ?, ?, ?,
+            ?
+        )";
+        
+        $stmt = $conn->prepare($sql);
+        
+        if (!$stmt) {
+            throw new Exception('Failed to prepare statement: ' . $conn->error);
+        }
     
     // Extract variables (bind_param needs actual variables, not array values)
     $name = $data['name'];
@@ -146,18 +150,27 @@ try {
         $image
     );
     
-    if (!$stmt->execute()) {
-        throw new Exception('Failed to create location: ' . $stmt->error);
+        if (!$stmt->execute()) {
+            throw new Exception('Failed to create location: ' . $stmt->error);
+        }
+        
+        $location_id = $conn->insert_id;
+        $stmt->close();
+        
+        // Commit transaction if location creation succeeds
+        mysqli_commit($conn);
+        
+        echo json_encode([
+            'success' => true,
+            'message' => 'Location created successfully!',
+            'location_id' => $location_id
+        ]);
+        
+    } catch (Exception $e) {
+        // Rollback transaction on any error
+        mysqli_rollback($conn);
+        throw $e;
     }
-    
-    $location_id = $conn->insert_id;
-    $stmt->close();
-    
-    echo json_encode([
-        'success' => true,
-        'message' => 'Location created successfully!',
-        'location_id' => $location_id
-    ]);
     
 } catch (Exception $e) {
     http_response_code(500);

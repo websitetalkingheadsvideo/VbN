@@ -22,6 +22,7 @@ include 'includes/connect.php';
     <title>Create Character - Laws of the Night</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/character_image.css">
 </head>
 <body>
     <!-- Sidebar Tracker -->
@@ -272,22 +273,51 @@ include 'includes/connect.php';
                         </div>
                     </div>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="characterName">Character Name *</label>
-                        <input type="text" id="characterName" name="characterName" required>
+                <!-- Character Info Header (2-column layout) -->
+                <div class="character-info-header">
+                    <div class="character-info-left">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="characterName">Character Name *</label>
+                                <input type="text" id="characterName" name="characterName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="playerName">Player Name *</label>
+                                <input type="text" id="playerName" name="playerName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="chronicle">Chronicle</label>
+                            <input type="text" id="chronicle" name="chronicle" value="Valley by Night">
+                            <div class="helper-text">Name of the campaign/game</div>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="playerName">Player Name *</label>
-                        <input type="text" id="playerName" name="playerName" required>
+                    <!-- Character Image Column -->
+                    <div class="character-image-column">
+                        <label style="margin-bottom: 10px;">Character Portrait</label>
+                        <div class="character-image-container">
+                            <div class="character-image-wrapper">
+                                <img id="characterImagePreview" class="character-image-preview" alt="Character Portrait" />
+                                <div id="characterImagePlaceholder" class="character-image-placeholder">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    <span>No image</span>
+                                </div>
+                            </div>
+                            
+                            <div class="character-image-controls">
+                                <input type="file" id="characterImageInput" class="character-image-file-input" accept="image/jpeg,image/jpg,image/png,image/gif">
+                                <label for="characterImageInput" class="character-image-file-label">Choose Image</label>
+                                <button type="button" id="uploadCharacterImageBtn" class="character-image-upload-btn" style="display: none;">Upload Image</button>
+                                <button type="button" id="removeCharacterImageBtn" class="character-image-remove-btn">Remove Image</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="chronicle">Chronicle</label>
-                    <input type="text" id="chronicle" name="chronicle" value="Valley by Night">
-                    <div class="helper-text">Name of the campaign/game</div>
                 </div>
                 
                 <div class="form-row">
@@ -2376,5 +2406,6 @@ include 'includes/connect.php';
             }
         });
     </script>
+    <script src="js/character_image.js"></script>
 </body>
 </html>
