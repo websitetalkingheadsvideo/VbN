@@ -1,0 +1,74 @@
+{
+  "location_name": "The Neon Dreams",
+  "type": "Nightclub",
+  "summary": "Popular nightclub in the warehouse district frequented by Kindred",
+  "description": "A converted warehouse with exposed brick walls, industrial lighting, and a massive dance floor. Neon lights pulse to the beat of electronic music while fog machines create an otherworldly atmosphere. The VIP section offers privacy for Kindred business.",
+  "notes": "Opened in 1995, quickly became a favorite gathering spot for younger Kindred. Known for its discretion and excellent security.",
+  "status": "Active",
+  "status_notes": "Thriving business with regular Kindred clientele",
+  
+  "geography": {
+    "district": "Warehouse District",
+    "address": "789 Industrial Way",
+    "latitude": 34.0522,
+    "longitude": -118.2437
+  },
+  
+  "ownership": {
+    "owner_type": "Personal",
+    "owner_notes": "Marcus \"Neon\" Rodriguez, Toreador",
+    "faction": "Camarilla",
+    "access_control": "Restricted",
+    "access_notes": "Must be known to Kindred community or accompanied by a regular patron"
+  },
+  
+  "security": {
+    "security_level": 6,
+    "security_locks": true,
+    "security_alarms": true,
+    "security_guards": true,
+    "security_hidden_entrance": false,
+    "security_sunlight_protected": true,
+    "security_warding_rituals": false,
+    "security_cameras": true,
+    "security_reinforced": false,
+    "security_notes": "Professional security staff, surveillance system, and discreet emergency exits"
+  },
+  
+  "utilities": {
+    "utility_blood_storage": true,
+    "utility_computers": true,
+    "utility_library": false,
+    "utility_medical": false,
+    "utility_workshop": false,
+    "utility_hidden_caches": true,
+    "utility_armory": false,
+    "utility_communications": true,
+    "utility_notes": "Private blood storage in VIP area, computer systems for business operations"
+  },
+  
+  "social": {
+    "social_features": "Main dance floor, VIP booths, private meeting rooms, full bar, stage for live performances",
+    "capacity": 200,
+    "prestige_level": 5
+  },
+  
+  "supernatural": {
+    "has_supernatural": false,
+    "node_points": 0,
+    "node_type": "",
+    "ritual_space": "",
+    "magical_protection": "",
+    "cursed_blessed": ""
+  },
+  
+  "relationships": {
+    "parent_location_id": null,
+    "relationship_type": "",
+    "relationship_notes": ""
+  },
+  
+  "media": {
+    "image": "neon-dreams-interior.jpg"
+  }
+}

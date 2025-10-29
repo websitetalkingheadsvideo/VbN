@@ -1,0 +1,106 @@
+{
+  "location_name": "The Hole",
+  "type": "Nightclub",
+  "summary": "Upscale nightclub in Mesa serving as both profitable business and Setite temple, with hidden blasphemy-shrine beneath the dance floor.",
+  "description": "The Hole occupies a converted industrial building in Mesa, Arizona - a three-story structure with additional basement levels that most patrons never see. The exterior is modern minimalist: dark concrete, steel accents, neon signage spelling 'THE HOLE' in serpentine letters that seem to writhe at certain angles. Large windows on the ground floor (heavily tinted, reinforced) show glimpses of the club's interior.\n\nGROUND FLOOR (Public Nightclub): The main club space features a large dance floor with professional lighting and sound systems, multiple bars serving premium liquor, VIP booths along the walls, and a raised DJ platform. The décor mixes contemporary nightclub aesthetics with subtle Egyptian motifs - serpent imagery in the metalwork, hieroglyphic patterns in the floor tiles that most people think are just geometric designs, lighting that creates shifting shadow patterns. The layout, when viewed from above, forms hieroglyphs spelling 'Set lives in darkness.' A section called 'The Temple' (VIP area) features more explicit Egyptian theming - guests think it's just a name and aesthetic choice.\n\nSECOND FLOOR (Semi-Private): Accessible by staircase and elevator (requires key card). Contains Marcus's office (club operations), Jennifer's office (security center with surveillance feeds), private meeting rooms for 'business discussions,' and storage areas. More explicit Egyptian art here - authentic pieces, not replicas. The offices are soundproof and swept for bugs regularly. This level is where corruption happens - blackmail photos taken, deals struck, addictions cultivated.\n\nTHIRD FLOOR (Private Quarters): Living quarters for the three Setites. Roxanne's suite is largest, decorated with Egyptian artifacts and religious items. Marcus's space is comfortable but modest. Jennifer's is practical and minimalist. Shared kitchen (stocked with blood, not food), shared sitting room, rooftop access with excellent views of Mesa and Phoenix beyond.\n\nFIRST BASEMENT (Private Operations): Accessed through hidden door in second-floor storage room. Contains private rooms where the real vice happens - drug use, sexual activities, gambling, whatever clients desire in complete privacy. Soundproofed, no surveillance (officially - Jennifer has hidden cameras), discrete service entrance. This is where high-value corruption targets are cultivated. Also contains blood storage, emergency supplies, and Jennifer's armory.\n\nSECOND BASEMENT (The Blasphemy-Shrine / Temple of Set): Accessed through concealed entrance in first basement (requires knowledge of specific wall panel sequence). This is Roxanne's sacred space, constructed according to ancient lector-priest specifications. The chamber is approximately 40' x 60', with 12' ceilings. Walls are lined with hieroglyphic inscriptions (authentic ancient Egyptian religious texts, many blasphemous to traditional Egyptian religion). The floor is polished black stone arranged in ritual patterns. At the far end sits an altar of dark basalt carved with Set's image - a throne-like structure where Roxanne conducts rituals.\n\nThe blasphemy-shrine contains: ritual implements (knives, chalices, censers), preserved bodies and artifacts stolen from graves (required for Akhu rituals), extensive collection of Egyptian religious texts and scrolls, jars containing ritual ingredients, the brewing equipment for sacred blood beer, zones marked for specific ritual purposes, and Roxanne's personal ritual robes and regalia. The air always smells faintly of incense and something older, darker. The shadows here move wrong even when there's no light source to cast them - Set's presence, Roxanne claims.\n\nThe entire structure is built to be light-tight in emergencies - steel shutters can seal all windows, basement levels have no external access except through building, and emergency shelters exist if the building is breached during daylight.",
+  "notes": "The Hole has been operating for just over a year (opened early 2005) and has quickly become popular with Mesa's professional class and ASU students seeking edgier nightlife than Tempe offers. Most patrons have no idea it's a Setite temple - they just think it's a well-run club with great atmosphere. The few who suspect something darker is happening assume it's just organized crime, not vampires.\n\nThe building layout creates natural security zones - each level more restricted, more dangerous, more true than the one above. Ground floor is all illusion and entertainment. Second floor is where business starts. Third floor is family only. First basement is where souls are corrupted. Second basement is where a god is worshiped.\n\nRoxanne performs monthly rituals in the blasphemy-shrine, always on the new moon. Marcus and Jennifer attend when required, though Jennifer clearly finds it all theatrical. The rituals involve blood offerings, invocations in ancient Egyptian, and use of the Akhu paths Roxanne has mastered. She believes - genuinely believes - that these rituals strengthen Set's presence in the world and hasten his return.\n\nThe club is also recognized neutral ground by most Phoenix Kindred. Even enemies can meet here safely under the rules of hospitality. This makes it valuable for information gathering and diplomacy. Roxanne allows this because it serves Set's purposes - gathering intelligence and cultivating corruption opportunities among Kindred and their associates.\n\nThe Giovanni know The Hole exists but haven't identified the blasphemy-shrine yet. When they discover Roxanne practices Spirit Manipulation in a dedicated temple space beneath a nightclub, the situation will escalate rapidly.",
+  "status": "Active",
+  "status_notes": "Operating successfully as nightclub, haven, and temple. Profitable and popular. Hidden temple levels unknown to authorities and most Kindred.",
+  
+  "geography": {
+    "district": "Mesa - Industrial District (East Mesa, near Superstition Springs)",
+    "address": "2847 E Main Street, Mesa, AZ 85213",
+    "latitude": 33.4152,
+    "longitude": -111.7314
+  },
+  
+  "ownership": {
+    "owner_type": "Corporate (Shell Company)",
+    "owner_notes": "Owned by 'Serpent Holdings LLC' - shell company controlled by Roxanne Murphy. Officially managed by Marcus Webb (listed as General Manager on business licenses). Jennifer Kwan listed as Security Director.",
+    "faction": "Followers of Set (Independent)",
+    "access_control": "Tiered",
+    "access_notes": "Ground Floor: Public (anyone 21+ can enter, $20 cover charge). Second Floor: Key card access (staff and VIPs only). Third Floor: Resident access only (the three Setites). First Basement: Hidden entrance, invitation only. Second Basement: Roxanne only, or with her explicit permission (sacred space)."
+  },
+  
+  "security": {
+    "security_level": 9,
+    "security_locks": true,
+    "security_alarms": true,
+    "security_guards": true,
+    "security_hidden_entrance": true,
+    "security_sunlight_protected": true,
+    "security_warding_rituals": true,
+    "security_cameras": true,
+    "security_reinforced": true,
+    "security_notes": "GROUND FLOOR: Professional security staff (8-10 guards on busy nights, 4-6 on slow nights), metal detectors at entrance, bouncer-controlled access, security cameras covering all public areas, reinforced doors and windows.\n\nSECOND FLOOR: Key card access, biometric locks on offices, surveillance center monitors all club areas, soundproofing, anti-bug sweeps weekly, reinforced walls.\n\nTHIRD FLOOR: Biometric access only (fingerprint + retinal scan), reinforced doors, private surveillance separate from main system, emergency escape routes to roof, steel shutters for windows.\n\nFIRST BASEMENT: Hidden entrance requires knowing specific wall panel sequence, no official surveillance (Jennifer has hidden cameras anyway), soundproofing, reinforced walls, emergency exit through service tunnel.\n\nSECOND BASEMENT (Blasphemy-Shrine): Concealed entrance in first basement, multiple locks (physical and ritual), warded against scrying and supernatural intrusion by Akhu rituals, no surveillance (sacred space), reinforced walls and ceiling, no external access, emergency collapse mechanism if breach is imminent (Roxanne would rather destroy it than let it be captured).\n\nHead of security is ghouled (Marcus's blood) and extremely loyal. Security staff are carefully vetted, well-paid, and know to be discreet about what they see. Some are corrupted/compromised to ensure loyalty. Jennifer personally trains all security personnel and runs regular drills.\n\nThe building has steel shutters that can seal all windows in emergency (sunlight protection). Multiple escape routes exist. Blood reserves stored in first basement. Armory in first basement (firearms, melee weapons, body armor). Communications equipment separate from public systems."
+  },
+  
+  "utilities": {
+    "utility_blood_storage": true,
+    "utility_computers": true,
+    "utility_library": true,
+    "utility_medical": true,
+    "utility_workshop": false,
+    "utility_hidden_caches": true,
+    "utility_armory": true,
+    "utility_communications": true,
+    "utility_notes": "BLOOD STORAGE: First basement contains refrigerated storage with bagged blood (legitimate medical supply, acquired through corrupted contacts). Enough supply for all three Setites for several weeks. Also maintains list of reliable vessels on call.\n\nCOMPUTERS: Second floor offices have encrypted systems for club operations, financial records, blackmail files, intelligence databases. Separate secure network not connected to public systems. Jennifer maintains all systems personally.\n\nLIBRARY: Second basement (blasphemy-shrine) contains extensive collection of Egyptian religious texts - some authentic ancient scrolls and papyri (acquired through black market), many rare books on Set worship and Akhu sorcery, ritual instruction manuals, The Book of Going Forth by Night (Roxanne's annotated copy). Third floor has smaller library of modern occult and reference materials.\n\nMEDICAL: Third floor has medical supplies for treating Kindred injuries (limited - vampires heal fast but sometimes need emergency intervention). First aid kits throughout building.\n\nHIDDEN CACHES: Money (cash in multiple currencies), fake IDs, emergency supplies, weapons, blood reserves scattered throughout in concealed locations. Jennifer's contingency planning.\n\nARMORY: First basement contains substantial weapons cache - handguns, shotguns, rifles, body armor, melee weapons, ammunition, tactical gear. Jennifer maintains inventory personally. All legal under appropriate licenses.\n\nCOMMUNICATIONS: Encrypted phone lines, secure internet connection, satellite backup, radio communications for security staff, emergency broadcast system. Multiple redundancies."
+  },
+  
+  "social": {
+    "social_features": "Ground floor nightclub (capacity 300), VIP sections with bottle service, private meeting rooms on second floor, rooftop access for discrete gatherings, recognized neutral ground for Kindred meetings, the 'Temple' VIP area with explicit Egyptian theming, main dance floor with professional DJ setup and lighting, multiple bars, coat check, discrete service entrance for VIP arrivals",
+    "capacity": 300,
+    "prestige_level": 6
+  },
+  
+  "supernatural": {
+    "has_supernatural": true,
+    "node_points": 2,
+    "node_type": "Setite Sacred Site",
+    "ritual_space": "Second basement blasphemy-shrine constructed according to ancient lector-priest specifications. 40'x60' chamber with 12' ceilings, hieroglyphic inscriptions covering walls, polished black stone floor arranged in ritual patterns, basalt altar carved with Set's image, zones marked for specific ritual purposes. Required for Roxanne's Akhu practice - must perform monthly rituals here or lose access to Setite Sorcery temporarily. The space has been consecrated through repeated ritual use and blood offerings.",
+    "magical_protection": "Blasphemy-shrine is warded against scrying, supernatural detection, and unauthorized spiritual intrusion through Akhu rituals Roxanne performs regularly. The wards are specific to Setite sorcery and would be difficult for other practitioners to bypass. Ground floor has subtle wards that encourage revelry and loosened inhibitions (minor Corruption path effect, always active). The building's layout creates hieroglyphs that serve as passive protection when viewed from above.",
+    "cursed_blessed": "Blessed by Set (from Roxanne's perspective) - the shadows in the blasphemy-shrine move independently, always present even in complete darkness. Roxanne claims this is Set's presence confirming the temple's sanctity. To non-Setites, the space feels wrong - oppressive, ancient, dangerous. Those with high Humanity or strong faith find it deeply disturbing. The blessing makes Akhu rituals performed here more potent (+1 die to all Akhu rolls in the shrine)."
+  },
+  
+  "relationships": {
+    "parent_location_id": null,
+    "relationship_type": "Independent",
+    "relationship_notes": "The Hole is recognized by Phoenix Camarilla as independent Setite territory - neutral ground where business can be conducted safely. Not officially part of Camarilla power structure but tolerated as useful. Some elders remember when the building was industrial warehouse (pre-2004 conversion) and are curious why Setites chose this specific location. Roxanne claims it's positioned on ley lines significant to Set's return, though this might be her religious interpretation of mundane geography. Giovanni are aware of The Hole as Setite nightclub but haven't discovered the blasphemy-shrine's existence yet. When they do, recognition of neutral ground status will be tested."
+  },
+  
+  "media": {
+    "image": "the-hole-exterior-night.jpg"
+  },
+  
+  "story_hooks": {
+    "discovery_of_temple": "Someone discovers the blasphemy-shrine - maybe through investigation, accident, or betrayal. How do the Setites respond? Is it Giovanni finally confirming their suspicions? Hunters? PCs? Discovery could trigger immediate crisis.",
+    
+    "neutral_ground_violated": "The Hole's status as neutral ground is tested when violence erupts during meeting between enemies. Do the Setites enforce the peace (risking one faction's enmity) or allow violence (destroying neutral ground reputation)?",
+    
+    "ritual_interrupted": "Roxanne is performing major monthly ritual in blasphemy-shrine when something goes wrong - intruders, supernatural interference, the ritual itself going awry. PCs might be called to help or be the cause of the interruption.",
+    
+    "club_investigation": "Mortal authorities (police, ATF, health inspectors) decide to investigate The Hole for suspected illegal activities. Have to hide supernatural elements while managing legitimate investigation. Could expose basement levels if not handled carefully.",
+    
+    "giovanni_confrontation": "Giovanni discover the Spirit Manipulation practice and send representative to The Hole demanding Roxanne cease or face consequences. The confrontation happens on Setite territory - do they back down or escalate?",
+    
+    "valuable_target": "High-value corruption target frequents The Hole - maybe important mortal, maybe powerful Kindred. Multiple factions want to corrupt/control them. Competition happens on Setite neutral ground. Roxanne must decide who gets access.",
+    
+    "temple_desecration": "Someone defiles the blasphemy-shrine - destroys artifacts, damages altar, disrupts wards. Roxanne's response will be terrible and swift. Who did it and why? PCs might be hired to investigate or be suspects.",
+    
+    "jennifer_defection": "Jennifer's contingency plans are discovered - she's been building escape route in case everything falls apart. Does she defect before Roxanne destroys her? Where does Marcus stand? PCs caught in family conflict.",
+    
+    "new_setite_arrival": "Another Setite arrives in Phoenix and wants to use The Hole as base. Roxanne must decide if they're ally or threat. If threat, conflict on temple grounds would be catastrophic.",
+    
+    "masquerade_breach": "Someone records something supernatural at the club and it's about to go public/viral. Damage control needed immediately. Clean-up might require Akhu corruption magic or more brutal solutions.",
+    
+    "siege_situation": "The Hole comes under attack - maybe Sabbat raid, maybe hunter assault, maybe Giovanni making statement. Three Setites must defend their temple/haven/business with help from PCs or alone.",
+    
+    "set_manifestation": "During ritual, something happens that suggests Set actually responds - genuine divine contact or elaborate deception? Changes Roxanne's behavior dramatically. Others must deal with consequences.",
+    
+    "building_history": "PCs investigate why Setites chose this specific building. Discover previous occupant/use was significant - ancient burial ground, previous vampire haven, site of major supernatural event. Location wasn't random - what's really beneath the basement?",
+    
+    "employees_corrupted": "Multiple club employees disappear or change dramatically - the corruption work is creating obvious problems. Investigation could lead to discovery of first basement operations. How do Setites handle exposure among their own staff?",
+    
+    "competition": "New nightclub opens in Mesa, directly competing with The Hole. It's backed by rival faction (Giovanni? Toreador? Tremere?). The competition becomes proxy war. Do Setites destroy competition or coexist?"
+  }
+}

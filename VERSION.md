@@ -1,7 +1,82 @@
 # LOTN Character Creator - Version History
 
-## Version 0.7.4 (Current)
+## Version 0.7.5 (Current)
 **Date:** January 28, 2025
+
+### Location JSON Import System & Delete Function Fixes:
+- ✅ **Location JSON Template System** - Created comprehensive JSON templates for location import with all database fields
+- ✅ **Location Import Script** - Built `data/import_location.php` for importing locations from JSON files
+- ✅ **Delete Function Fix** - Resolved 500 error and "Unexpected end of JSON input" issues in location deletion
+- ✅ **Database Path Fixes** - Fixed include paths in import scripts to work from data/ directory
+- ✅ **Simplified Delete API** - Created robust `api_delete_location_simple.php` with proper error handling
+- ✅ **Example Location Import** - Successfully imported "The Hole" complex Setite location (ID: 6)
+- ✅ **Comprehensive Documentation** - Created detailed import guide with examples and troubleshooting
+
+### Location Import System Features:
+- **JSON Template Structure** - Complete template covering all database fields (basic info, geography, ownership, security, utilities, social, supernatural, relationships, media)
+- **Import Validation** - Validates required fields and provides clear error messages
+- **Database Integration** - Seamless integration with existing locations table
+- **Transaction Safety** - All imports use database transactions with rollback on error
+- **Partner Collaboration** - Easy-to-use system for remote collaborator to add locations
+
+### Delete Function Improvements:
+- **Error Handling** - Added comprehensive error handling with proper HTTP status codes
+- **Database Connection Check** - Validates database connection before proceeding
+- **Location Existence Check** - Verifies location exists before attempting deletion
+- **Assignment Safety** - Checks for character assignments (when table exists)
+- **Debug Logging** - Added error logging to identify issues
+- **Simplified API** - Created minimal, robust delete API that always returns valid JSON
+
+### Technical Improvements:
+- **File Path Resolution** - Fixed `require_once` paths to work from different directory contexts
+- **API Robustness** - Improved error handling and JSON response consistency
+- **Database Safety** - Added transaction support and proper error recovery
+- **User Experience** - Clear error messages and success notifications
+
+### Files Created:
+- `data/location-template.json` - Complete location template with all fields
+- `data/location-simple-template.json` - Simplified template for basic locations
+- `data/import_location.php` - Location import script with validation
+- `data/the-hole.json` - Example complex location (Setite nightclub/temple)
+- `data/tremere-chantry.json` - Example location (Tremere chantry)
+- `data/neon-dreams.json` - Example location (nightclub)
+- `data/LOCATION_IMPORT_GUIDE.md` - Comprehensive documentation
+- `admin/api_delete_location_simple.php` - Robust delete API
+- `admin/debug_delete_location.php` - Debug script for troubleshooting
+- `admin/test_db_connection.php` - Database connection test
+- `database/create_location_assignments_table.php` - Junction table creation
+
+### Files Modified:
+- `admin/admin_locations.php` - Updated version to 0.7.5
+- `admin/api_admin_locations_crud.php` - Enhanced error handling and debugging
+- `js/admin_locations.js` - Updated to use simplified delete API
+- `data/import_location.php` - Fixed database connection path
+
+### Location Import Success:
+- **"The Hole" Imported** - Complex multi-level Setite location successfully added to database
+- **ID: 6** - Location properly assigned database ID
+- **Complete Data** - All fields imported including security level 9, supernatural features, and detailed descriptions
+- **Template Validation** - JSON structure validated against database schema
+
+### Bug Fixes:
+- **500 Error Resolution** - Fixed server errors in delete function
+- **JSON Parsing Error** - Resolved "Unexpected end of JSON input" issues
+- **File Path Issues** - Fixed include paths for different directory contexts
+- **Database Connection** - Added connection validation and error handling
+
+### User Experience Improvements:
+- **Clear Error Messages** - Specific error messages for each failure case
+- **Success Notifications** - Clear feedback when operations complete successfully
+- **Import Validation** - Prevents invalid data from being imported
+- **Documentation** - Comprehensive guide for using the import system
+
+### Impact:
+- **Partner Collaboration** - Remote collaborator can now easily add locations via JSON files
+- **Database Management** - Professional location import system for chronicle development
+- **Error Resolution** - Robust delete functionality with proper error handling
+- **System Integration** - Seamless integration with existing admin panel and database
+
+---
 
 ### Admin Locations CRUD System - Character Assignments Display:
 - ✅ **Character Assignments Display** - Added comprehensive character assignment display in view location modal

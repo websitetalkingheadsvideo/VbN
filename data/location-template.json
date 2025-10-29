@@ -1,0 +1,74 @@
+{
+  "location_name": "The Crimson Haven",
+  "type": "Haven",
+  "summary": "A luxurious Victorian mansion serving as a private haven for the city's elite Kindred.",
+  "description": "This three-story Victorian mansion sits on a hill overlooking the downtown district. Built in 1892, it features ornate Gothic architecture with dark red brick and black ironwork. The interior boasts mahogany paneling, crystal chandeliers, and Persian rugs throughout. The basement has been converted into a secure sleeping chamber with reinforced walls and no windows.",
+  "notes": "Originally owned by a wealthy railroad baron, now serves as the primary residence for Marcus Blackwood, Ventrue Primogen. The house has been in Kindred hands for over 80 years.",
+  "status": "Active",
+  "status_notes": "Well-maintained and regularly updated with modern security systems",
+  
+  "geography": {
+    "district": "Noble Heights",
+    "address": "1237 Crimson Hill Drive",
+    "latitude": 34.0522,
+    "longitude": -118.2437
+  },
+  
+  "ownership": {
+    "owner_type": "Personal",
+    "owner_notes": "Marcus Blackwood, Ventrue Primogen",
+    "faction": "Camarilla",
+    "access_control": "Invitation Only",
+    "access_notes": "Must be personally invited by Marcus or his designated representative"
+  },
+  
+  "security": {
+    "security_level": 8,
+    "security_locks": true,
+    "security_alarms": true,
+    "security_guards": true,
+    "security_hidden_entrance": false,
+    "security_sunlight_protected": true,
+    "security_warding_rituals": true,
+    "security_cameras": true,
+    "security_reinforced": true,
+    "security_notes": "State-of-the-art security system with motion sensors, biometric locks, and 24/7 monitoring. Warded against supernatural intrusion."
+  },
+  
+  "utilities": {
+    "utility_blood_storage": true,
+    "utility_computers": true,
+    "utility_library": true,
+    "utility_medical": true,
+    "utility_workshop": false,
+    "utility_hidden_caches": true,
+    "utility_armory": true,
+    "utility_communications": true,
+    "utility_notes": "Fully equipped with modern amenities. Blood storage in temperature-controlled basement. Extensive occult library. Medical suite for treating Kindred injuries."
+  },
+  
+  "social": {
+    "social_features": "Grand ballroom for formal gatherings, private study for confidential meetings, wine cellar for entertaining guests",
+    "capacity": 50,
+    "prestige_level": 9
+  },
+  
+  "supernatural": {
+    "has_supernatural": true,
+    "node_points": 3,
+    "node_type": "Ley Line Convergence",
+    "ritual_space": "Consecrated chamber in the basement with ancient symbols carved into the walls",
+    "magical_protection": "Warded against scrying, mind reading, and unauthorized teleportation",
+    "cursed_blessed": "Blessed by the original owner's ghost, providing protection against hostile spirits"
+  },
+  
+  "relationships": {
+    "parent_location_id": null,
+    "relationship_type": "",
+    "relationship_notes": ""
+  },
+  
+  "media": {
+    "image": "crimson-haven-exterior.jpg"
+  }
+}

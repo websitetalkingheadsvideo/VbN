@@ -502,7 +502,7 @@ async function assignCharactersToLocation() {
 
 async function confirmDeleteLocation() {
     try {
-        const response = await fetch(`api_admin_locations_crud.php?id=${currentLocationId}`, {
+        const response = await fetch(`api_delete_location_simple.php?id=${currentLocationId}`, {
             method: 'DELETE'
         });
         

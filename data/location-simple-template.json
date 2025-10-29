@@ -1,0 +1,65 @@
+{
+  "location_name": "The Midnight Lounge",
+  "type": "Nightclub",
+  "summary": "Exclusive nightclub catering to Kindred clientele",
+  "description": "A dimly lit establishment with black marble floors, red velvet booths, and a stage for live performances. The atmosphere is intimate and mysterious.",
+  "notes": "Popular gathering spot for younger Kindred",
+  "status": "Active",
+  
+  "geography": {
+    "district": "Downtown",
+    "address": "456 Night Street",
+    "latitude": 34.0522,
+    "longitude": -118.2437
+  },
+  
+  "ownership": {
+    "owner_type": "Personal",
+    "faction": "Camarilla",
+    "access_control": "Restricted"
+  },
+  
+  "security": {
+    "security_level": 5,
+    "security_locks": true,
+    "security_alarms": true,
+    "security_guards": true,
+    "security_sunlight_protected": true
+  },
+  
+  "utilities": {
+    "utility_blood_storage": true,
+    "utility_computers": false,
+    "utility_library": false,
+    "utility_medical": false,
+    "utility_workshop": false,
+    "utility_hidden_caches": false,
+    "utility_armory": false,
+    "utility_communications": true
+  },
+  
+  "social": {
+    "social_features": "Live music stage, VIP booths, full bar",
+    "capacity": 100,
+    "prestige_level": 4
+  },
+  
+  "supernatural": {
+    "has_supernatural": false,
+    "node_points": 0,
+    "node_type": "",
+    "ritual_space": "",
+    "magical_protection": "",
+    "cursed_blessed": ""
+  },
+  
+  "relationships": {
+    "parent_location_id": null,
+    "relationship_type": "",
+    "relationship_notes": ""
+  },
+  
+  "media": {
+    "image": ""
+  }
+}

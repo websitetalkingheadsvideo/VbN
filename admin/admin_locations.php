@@ -7,7 +7,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.7.4');
+define('LOTN_VERSION', '0.7.5');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -377,7 +377,7 @@ while ($char = $characters_result->fetch_assoc()) {
         </p>
         <div class="modal-actions">
             <button class="modal-btn cancel-btn" onclick="closeDeleteModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="confirmDeleteBtn">Delete</button>
+            <button class="modal-btn confirm-btn" id="confirmDeleteBtn" onclick="confirmDeleteLocation()">Delete</button>
         </div>
     </div>
 </div>

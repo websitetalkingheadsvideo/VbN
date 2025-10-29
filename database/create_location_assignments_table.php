@@ -1,15 +1,15 @@
 <?php
 /**
- * Create Location Assignments Junction Table
- * Run this once to create the location_assignments table
+ * Create Location Assignments Table
+ * Junction table for character-location assignments
  */
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once '../includes/connect.php';
+require_once 'includes/connect.php';
 
-echo "<h1>🏠 Creating Location Assignments Table</h1>";
+echo "<h1>🎯 Creating Location Assignments Table</h1>";
 echo "<pre>";
 
 try {
@@ -19,9 +19,10 @@ try {
         id INT AUTO_INCREMENT PRIMARY KEY,
         location_id INT NOT NULL,
         character_id INT NOT NULL,
-        assignment_type VARCHAR(50) DEFAULT 'Resident',
-        assigned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        assignment_type VARCHAR(50) NOT NULL DEFAULT 'Resident',
         notes TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         
         -- Indexes
         INDEX idx_location (location_id),
@@ -49,9 +50,9 @@ try {
     
     echo "🎉 SUCCESS! Location assignments table is ready!\n\n";
     echo "📋 Next steps:\n";
-    echo "   1. Test location assignment functionality\n";
-    echo "   2. Build location management interface\n";
-    echo "   3. Test CRUD operations\n";
+    echo "   1. Test character assignment functionality\n";
+    echo "   2. Test location deletion with assignments\n";
+    echo "   3. Build assignment management interface\n";
     
 } catch (Exception $e) {
     echo "\n❌ ERROR: " . $e->getMessage() . "\n";
