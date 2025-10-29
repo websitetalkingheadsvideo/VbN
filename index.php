@@ -82,9 +82,9 @@ include 'includes/header.php';
                 </div>
                 
                 <div class="action-card">
-                    <div class="card-icon">🏛️</div>
-                    <h3>AI Locations Manager</h3>
-                    <p>Craft and manage chronicle locations</p>
+                    <div class="card-icon">🏠</div>
+                    <h3>Locations Database</h3>
+                    <p>Manage game locations and character assignments</p>
                     <a href="admin/admin_locations.php" class="gothic-button">Manage Locations</a>
                 </div>
                 

@@ -211,12 +211,21 @@
     background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
     border: 2px solid #8B0000;
     border-radius: 8px;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .items-table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 1200px;
+}
+
+.items-table th:last-child,
+.items-table td:last-child {
+    min-width: 150px;
+    width: 150px;
+    text-align: center;
 }
 
 .items-table thead {
@@ -309,23 +318,26 @@
 /* Actions */
 .actions {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
+    flex-wrap: nowrap;
+    min-width: 150px;
 }
 
 .action-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 4px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1em;
     cursor: pointer;
     background: rgba(139, 0, 0, 0.2);
     border: 1px solid rgba(139, 0, 0, 0.4);
     transition: all 0.2s;
+    flex-shrink: 0;
 }
 
 .action-btn:hover {
@@ -625,5 +637,67 @@
     to {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-items-container {
+        padding: 15px 10px;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .items-table {
+        min-width: 800px;
+    }
+    
+    .items-table th,
+    .items-table td {
+        padding: 8px 6px;
+        font-size: 0.9em;
+    }
+    
+    .actions {
+        gap: 3px;
+        min-width: 120px;
+    }
+    
+    .action-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .items-table {
+        min-width: 600px;
+    }
+    
+    .items-table th,
+    .items-table td {
+        padding: 6px 4px;
+        font-size: 0.8em;
+    }
+    
+    .actions {
+        gap: 2px;
+        min-width: 100px;
+    }
+    
+    .action-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8em;
     }
 }

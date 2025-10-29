@@ -1,69 +1,34 @@
 <?php
-// Suppress notices and start session only if not already started
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
 header('Content-Type: application/json');
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-    echo json_encode(['success' => false, 'message' => 'Not logged in']);
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    echo json_encode(['success' => false, 'error' => 'Unauthorized']);
     exit();
 }
 
-// Include database connection
-include 'includes/connect.php';
+require_once __DIR__ . '/../includes/connect.php';
+
+$response = ['success' => false, 'characters' => [], 'error' => ''];
 
 try {
-    $user_id = $_SESSION['user_id'];
-    
-    // Query to get user's characters
-    $sql = "SELECT 
-                id,
-                character_name,
-                player_name,
-                chronicle,
-                nature,
-                demeanor,
-                concept,
-                clan,
-                generation,
-                sire,
-                pc,
-                biography,
-                equipment,
-                total_xp,
-                spent_xp,
-                created_at,
-                updated_at
-            FROM characters 
-            WHERE user_id = ? 
-            ORDER BY created_at DESC";
-    
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $user_id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    
+    $query = "SELECT id, character_name, clan, player_name FROM characters ORDER BY character_name ASC";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
     $characters = [];
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = $result->fetch_assoc()) {
         $characters[] = $row;
     }
-    
-    mysqli_stmt_close($stmt);
-    
-    echo json_encode([
-        'success' => true,
-        'characters' => $characters,
-        'count' => count($characters)
-    ]);
-    
+
+    $response['success'] = true;
+    $response['characters'] = $characters;
+
 } catch (Exception $e) {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Database error: ' . $e->getMessage()
-    ]);
+    $response['error'] = $e->getMessage();
 }
 
-mysqli_close($conn);
+echo json_encode($response);
+$conn->close();
 ?>
