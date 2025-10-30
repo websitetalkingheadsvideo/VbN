@@ -1,6 +1,15 @@
 # LOTN Character Creator - Version History
 
-## Version 0.7.5 (Current)
+## Version 0.7.6 (Current)
+**Date:** October 30, 2025
+
+### Changes:
+- Auto-increment patch version
+
+---
+
+
+## Version 0.7.6 (Current)
 **Date:** January 28, 2025
 
 ### Location JSON Import System & Delete Function Fixes:
@@ -660,7 +669,7 @@
 ---
 
 
-## Version 0.6.2 (Current)
+## Version 0.7.6 (Current)
 **Date:** January 4, 2025
 
 ### Questionnaire System Enhancements:

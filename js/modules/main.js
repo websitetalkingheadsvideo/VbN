@@ -229,6 +229,47 @@ class CharacterCreationApp {
      */
     setupGlobalEventHandlers() {
         console.log('Setting up global event handlers...');
+
+		// Minimal UI logging (no noisy state-change spam)
+		document.addEventListener('click', (event) => {
+			// Buttons
+			const btn = event.target.closest('button');
+			if (btn) {
+				// Only log for Next and explicit upload buttons by id/class/text
+				const id = btn.id || '';
+				const label = (btn.textContent || '').trim().toLowerCase();
+				const cls = String(btn.className || '').toLowerCase();
+				if (btn.dataset.action === 'next' || /upload/.test(id) || /upload/.test(label) || /upload/.test(cls)) {
+					console.log('[ui] Button clicked:', { id: id || '(no-id)', label });
+				}
+			}
+			// File chooser (Choose Image)
+			const fileClickEl = event.target.closest('input[type="file"], label[for]');
+			if (fileClickEl) {
+				const el = fileClickEl;
+				const kind = el.tagName.toLowerCase();
+				const forAttr = el.getAttribute('for') || '';
+				console.log('[ui] File chooser clicked:', { kind, for: forAttr });
+			}
+			// Generic Upload Image-ish controls (covers anchors/divs used as buttons)
+			const clickable = event.target.closest('[id], [class], a, div, span');
+			if (clickable) {
+				const text = (clickable.textContent || '').toLowerCase();
+				const id2 = clickable.id || '';
+				const cls = clickable.className || '';
+				if (/upload/.test(text) || /upload/.test(id2) || /upload/.test(cls)) {
+					console.log('[ui] Upload-ish element clicked:', { id: id2, class: cls, text: text.slice(0, 80) });
+				}
+			}
+		}, { capture: true });
+
+		// Log selected files when file input changes
+		document.addEventListener('change', (event) => {
+			const input = event.target.closest('input[type="file"]');
+			if (!input || !input.files) return;
+			const names = Array.from(input.files).map(f => f.name);
+			console.log('[ui] File selected:', names);
+		}, { capture: true });
         
         // Save character
         this.modules.eventManager.onCustomEvent('saveCharacter', async (event) => {
@@ -279,7 +320,6 @@ class CharacterCreationApp {
                 await this.loadCharacter(characterId);
             } catch (error) {
                 console.error('Failed to load character:', error);
-                this.modules.notificationManager.error('Failed to load character: ' + error.message);
             }
         } else {
             // Only resume saved state if explicitly requested via ?resume=1
@@ -413,9 +453,8 @@ class CharacterCreationApp {
         if (validation.isValid) {
             // Update state with form data
             this.modules.stateManager.setState(data);
-            this.modules.notificationManager.success('Form submitted successfully');
         } else {
-            this.modules.notificationManager.error(`Form validation failed: ${validation.errors.join(', ')}`);
+            console.warn('Form validation failed:', validation.errors);
         }
     }
     
@@ -428,7 +467,6 @@ class CharacterCreationApp {
             const response = await this.modules.dataManager.saveCharacter(state);
             
             if (response.success) {
-                this.modules.notificationManager.success('Character saved successfully');
                 this.modules.stateManager.setStateProperty('isDirty', false);
                 this.modules.stateManager.setStateProperty('lastSaved', Date.now());
             } else {
@@ -436,7 +474,6 @@ class CharacterCreationApp {
             }
         } catch (error) {
             console.error('Error saving character:', error);
-            this.modules.notificationManager.error('Failed to save character: ' + error.message);
         }
     }
     
@@ -451,21 +488,27 @@ class CharacterCreationApp {
                 console.log('Character data loaded successfully:', characterData);
                 console.log('Disciplines in loaded data:', characterData.disciplines);
                 
-                // Set state with the loaded data
-                this.modules.stateManager.setState(characterData);
+				// Set state with the loaded data
+				this.modules.stateManager.setState(characterData);
+				// Ensure ID and image are explicitly tracked for updates
+				if (characterData.character && characterData.character.id) {
+					this.modules.stateManager.setStateProperty('id', characterData.character.id);
+				}
+				if (characterData.character && characterData.character.character_image) {
+					this.modules.stateManager.setStateProperty('imagePath', characterData.character.character_image);
+				}
                 
                 // Populate form fields with loaded data (with a small delay to ensure DOM is ready)
                 setTimeout(() => {
                     this.populateFormFromCharacterData(characterData);
                 }, 500); // Increased delay to ensure all modules are initialized
                 
-                this.modules.notificationManager.success('Character loaded successfully');
+                // no popup
             } else {
                 throw new Error(characterData?.message || 'Character not found');
             }
         } catch (error) {
             console.error('Error loading character:', error);
-            this.modules.notificationManager.error('Failed to load character: ' + error.message);
         }
     }
     
@@ -550,7 +593,6 @@ class CharacterCreationApp {
      */
     setFormValue(selector, value) {
         const element = document.querySelector(selector);
-        console.log(`Setting form value for ${selector}:`, value, 'Element found:', !!element);
         if (element && value !== null && value !== undefined) {
             element.value = value;
             // Trigger change event to update any dependent fields

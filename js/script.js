@@ -2049,6 +2049,20 @@ function generateCharacterSheet() {
     const chronicle = document.getElementById('chronicle').value || 'Valley by Night';
     const generation = document.getElementById('generation').value || '13th';
     const sire = document.getElementById('sire').value || 'Unknown';
+    // Resolve portrait -> prefer hidden filename, then current preview src, then app state
+    let portraitUrl = '';
+    (function resolvePortrait(){
+        const imagePathHidden = document.getElementById('imagePath');
+        const filename = imagePathHidden && imagePathHidden.value ? imagePathHidden.value : '';
+        if (filename) { portraitUrl = '/uploads/characters/' + filename; return; }
+        const previewEl = document.getElementById('characterImagePreview');
+        if (previewEl && previewEl.src) { portraitUrl = previewEl.src; return; }
+        try {
+            const state = window.characterCreationApp && window.characterCreationApp.modules && window.characterCreationApp.modules.stateManager ? window.characterCreationApp.modules.stateManager.getState() : null;
+            const stateFilename = state && state.imagePath ? state.imagePath : '';
+            if (stateFilename) { portraitUrl = '/uploads/characters/' + stateFilename; return; }
+        } catch (_) {}
+    })();
     
     const sheetHTML = `
         <div class="character-sheet-content">
@@ -2058,6 +2072,7 @@ function generateCharacterSheet() {
                     <h2>${characterName}</h2>
                     <p><strong>Player:</strong> ${playerName} | <strong>Chronicle:</strong> ${chronicle}</p>
                 </div>
+                ${portraitUrl ? `<div class="character-portrait"><img src="${portraitUrl}" alt="${characterName} portrait" style="max-width:160px;border-radius:6px;border:1px solid #444"/></div>` : ''}
             </div>
             
             <div class="sheet-section">
@@ -2070,6 +2085,7 @@ function generateCharacterSheet() {
                     <p><strong>Generation:</strong> ${generation}</p>
                     <p><strong>Sire:</strong> ${sire}</p>
                 </div>
+                ${portraitUrl ? `<div class="compact-portrait" style="margin-top:10px"><img src="${portraitUrl}" alt="${characterName} portrait" style="max-width:120px;border-radius:6px;border:1px solid #444"/></div>` : ''}
             </div>
             
             <div class="sheet-section">

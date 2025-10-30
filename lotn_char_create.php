@@ -23,6 +23,7 @@ include 'includes/connect.php';
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/character_image.css">
+    <link rel="stylesheet" href="css/exit-button.css">
 </head>
 <body>
     <!-- Sidebar Tracker -->
@@ -254,6 +255,8 @@ include 'includes/connect.php';
         </div>
         
         <form id="characterForm">
+            <input type="hidden" id="characterId" name="characterId" value="">
+            <input type="hidden" id="imagePath" name="imagePath" value="">
             <!-- Tab 1: Basic Info -->
             <div class="tab-content active" id="basicTab">
                 <div class="tab-card">
@@ -1685,11 +1688,11 @@ include 'includes/connect.php';
                     </div>
                     
                     
-                    <div class="button-group">
-                        <button type="button" class="nav-btn" data-action="previous">← Previous</button>
-                        <button type="button" class="save-btn" data-action="save">💾 Save Draft</button>
-                        <button type="button" class="finalize-btn" data-action="finalize-character">🎯 Finalize Character</button>
-                    </div>
+                <div class="button-group">
+                    <button type="button" class="nav-btn" data-action="previous">← Previous</button>
+                    <button type="button" class="save-btn" data-action="save">💾 Save Draft</button>
+                    <button type="button" class="finalize-btn" data-action="finalize-character">🎯 Finalize Character</button>
+                </div>
                 </div>
             </div>
         </form>
@@ -1699,6 +1702,7 @@ include 'includes/connect.php';
     <div class="mobile-save-container mobile-only">
         <div class="button-group">
             <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
+            <button type="button" class="exit-inline" title="Exit without saving">Exit</button>
             <button type="button" class="finalize-btn" data-action="finalize-character">🎯 Finalize</button>
         </div>
     </div>
@@ -1941,6 +1945,7 @@ include 'includes/connect.php';
     
     <!-- Main Application -->
     <script src="js/modules/main.js"></script>
+    <script src="js/exit-editor.js"></script>
     
     <!-- Simple Save Button Handler -->
     <script>
@@ -1956,6 +1961,17 @@ include 'includes/connect.php';
             });
             
             // Collect form data
+            // Extract id from hidden field first, fallback to URL param
+            const idEl = document.getElementById('characterId');
+            const urlParams = new URLSearchParams(window.location.search);
+            const idFromHidden = idEl && idEl.value ? parseInt(idEl.value, 10) : null;
+            const idFromUrl = urlParams.get('id') ? parseInt(urlParams.get('id'), 10) : null;
+            const effectiveId = idFromHidden || idFromUrl || null;
+
+            // Extract imagePath from hidden
+            const imgEl = document.getElementById('imagePath');
+            const imagePath = imgEl && imgEl.value ? imgEl.value : undefined;
+
             const formData = {
                 character_name: document.getElementById('characterName').value || '',
                 player_name: document.getElementById('playerName').value || '',
@@ -1988,7 +2004,9 @@ include 'includes/connect.php';
                     willpower_current: 5,
                     humanity: 7
                 },
-                status: {}
+                status: {},
+                ...(effectiveId ? { id: effectiveId } : {}),
+                ...(imagePath ? { imagePath } : {})
             };
             
             console.log('Sending data:', formData);
@@ -2034,6 +2052,12 @@ include 'includes/connect.php';
         // Add event listeners when page loads
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Setting up save button listeners...');
+            // If character is loaded via URL ?id=, seed hidden field so updates don't insert
+            const params = new URLSearchParams(location.search);
+            const urlId = params.get('id');
+            if (urlId && document.getElementById('characterId')) {
+                document.getElementById('characterId').value = urlId;
+            }
             
             // Add click listeners to all save buttons
             const saveButtons = document.querySelectorAll('.save-btn');
@@ -2046,6 +2070,128 @@ include 'includes/connect.php';
                     saveCharacter();
                 });
             });
+
+            // Exit button handler (local to this page)
+            const exitBtn = document.getElementById('exitEditorBtn');
+            if (exitBtn) {
+                exitBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Exit Editor button pressed');
+                    if (history.length > 1) { history.back(); } else { window.location.href = 'dashboard.php'; }
+                });
+            }
+
+            // Bind all inline Exit buttons (e.g., in mobile-save-container)
+            const exitInlineBtns = document.querySelectorAll('.exit-inline');
+            exitInlineBtns.forEach(function(btn){
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Exit Editor button pressed');
+                    if (history.length > 1) { history.back(); } else { window.location.href = 'dashboard.php'; }
+                });
+            });
+
+            // Image upload wiring for this page's IDs
+            const fileInput = document.getElementById('characterImageInput');
+            const uploadBtn = document.getElementById('uploadCharacterImageBtn');
+            const removeBtn = document.getElementById('removeCharacterImageBtn');
+            const previewImg = document.getElementById('characterImagePreview');
+            const placeholder = document.getElementById('characterImagePlaceholder');
+
+            function getEffectiveCharacterId() {
+                const hid = document.getElementById('characterId');
+                if (hid && hid.value) return parseInt(hid.value, 10);
+                const p = new URLSearchParams(location.search);
+                return p.get('id') ? parseInt(p.get('id'), 10) : null;
+            }
+
+            function showPreview(fileOrName) {
+                if (!fileOrName) return;
+                if (typeof fileOrName === 'string') {
+                    if (previewImg) previewImg.src = '/uploads/characters/' + fileOrName;
+                    if (placeholder) placeholder.style.display = 'none';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = () => {
+                    if (previewImg) previewImg.src = String(reader.result);
+                    if (placeholder) placeholder.style.display = 'none';
+                };
+                reader.readAsDataURL(fileOrName);
+            }
+
+            if (fileInput) {
+                fileInput.addEventListener('change', function() {
+                    const file = fileInput.files && fileInput.files[0];
+                    if (!file) return;
+                    console.log('[image] File selected:', file.name);
+                    uploadBtn && (uploadBtn.style.display = 'inline-block');
+                    showPreview(file);
+                });
+            }
+
+            if (uploadBtn) {
+                uploadBtn.addEventListener('click', async function() {
+                    const file = fileInput && fileInput.files && fileInput.files[0];
+                    if (!file) { alert('Select an image first.'); return; }
+                    try {
+                        const form = new FormData();
+                        form.append('image', file);
+                        const cid = getEffectiveCharacterId();
+                        if (cid) form.append('characterId', String(cid));
+                        console.log('[image] Upload request sent');
+                        const resp = await fetch('upload_character_image.php', { method: 'POST', body: form });
+                        const data = await resp.json();
+                        if (!resp.ok || !data || !data.success) throw new Error((data && data.error) || ('HTTP '+resp.status));
+                        const filename = data.filePath || data.image_path;
+                        console.log('[image] Upload successful:', filename);
+                        const hidden = document.getElementById('imagePath');
+                        if (hidden && filename) hidden.value = filename;
+                        showPreview(filename);
+                        alert('Image uploaded.');
+                    } catch (err) {
+                        console.error('[image] Upload failed:', err);
+                        alert('Image upload failed: '+ err.message);
+                    }
+                });
+            }
+
+            if (removeBtn) {
+                removeBtn.addEventListener('click', function() {
+                    if (previewImg) previewImg.src = '';
+                    if (placeholder) placeholder.style.display = '';
+                    const hidden = document.getElementById('imagePath');
+                    if (hidden) hidden.value = '';
+                    if (fileInput) fileInput.value = '';
+                    uploadBtn && (uploadBtn.style.display = 'none');
+                });
+            }
+
+            // If an image filename is already present (loaded character), show it
+            (function seedPreviewFromHidden(){
+                const hidden = document.getElementById('imagePath');
+                if (hidden && hidden.value) {
+                    showPreview(hidden.value);
+                }
+            })();
+
+            // If editing an existing character, fetch its image filename and display
+            (async function ensurePreviewFromServer(){
+                try {
+                    const p = new URLSearchParams(location.search);
+                    const id = p.get('id');
+                    if (!id) return;
+                    const resp = await fetch('load_character.php?id=' + encodeURIComponent(id));
+                    if (!resp.ok) return;
+                    const data = await resp.json();
+                    const filename = data && data.character && data.character.character_image ? data.character.character_image : '';
+                    if (filename) {
+                        const hidden = document.getElementById('imagePath');
+                        if (hidden) hidden.value = filename;
+                        showPreview(filename);
+                    }
+                } catch (_) {}
+            })();
         });
     </script>
     

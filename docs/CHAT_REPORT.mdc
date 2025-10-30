@@ -1,0 +1,18 @@
+---
+description: Session report summarizing work completed in this chat
+globs: docs/CHAT_REPORT.mdc
+alwaysApply: false
+---
+
+- **Version increment**: Bumped project version to 0.7.6 (patch) per version rules
+- **Character image UX**: Added external CSS/JS for square preview and robust Exit Editor button
+  - `css/character-image.css`, `js/character-image.js`
+  - `css/exit-button.css`, `js/exit-editor.js`
+- **Edits**: Integrated assets into `lotn_char_create.php`; adjusted `save_character.php` and `upload_character_image.php`
+- **Repo hygiene**: Removed obsolete reference character JSONs
+
+- **Rationale**: Changes are incremental UI/UX improvements and supportive plumbing, not a complete new feature → patch increment.
+
+- **Next**:
+  - Wire any remaining image upload flows to preview states and error handling
+  - Verify cross-page availability of Exit button styles/scripts

@@ -414,10 +414,44 @@ function setViewMode(mode, event) {
 function renderCharacterView(mode) {
     const char = currentViewData.character;
     let html = '';
+    function clanLogoUrl(clan) {
+        if (!clan) return '/images/clans/default.png';
+        const map = {
+            'followers of set': 'setites',
+            'assamite': 'assamite',
+            'brujah': 'brujah',
+            'caitiff': 'caitiff',
+            'gangrel': 'gangrel',
+            'giovanni': 'giovanni',
+            'lasombra': 'lasombra',
+            'malkavian': 'malkavian',
+            'nosferatu': 'nosferatu',
+            'ravnos': 'ravnos',
+            'toreador': 'toreador',
+            'tremere': 'tremere',
+            'tzimisce': 'tzimisce',
+            'ventrue': 'ventrue'
+        };
+        const clean = String(clan)
+            .toLowerCase()
+            .replace(/[\u{1F300}-\u{1FAFF}]/gu, '') // strip emoji
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim();
+        const key = map[clean] || clean.replace(/\s+/g, '-');
+        return '/images/clans/' + key + '.png';
+    }
     
     if (mode === 'compact') {
         // Compact view - essential info only
         html = '<div class="character-details compact">';
+        (function addPortrait(){
+            const hasPortrait = !!char.character_image;
+            const url = hasPortrait ? ('/uploads/characters/' + char.character_image) : clanLogoUrl(char.clan);
+            html += '<div class="portrait-box" style="width:160px;height:160px;border:2px dashed #666;display:flex;align-items:center;justify-content:center;background:#111;margin-bottom:10px;border-radius:6px">';
+            html += '<img src="' + url + '" alt="portrait" style="max-width:100%;max-height:100%;object-fit:contain;border:1px solid #444;border-radius:4px" onload="this.nextElementSibling && (this.nextElementSibling.style.display=\'none\')" onerror="this.onerror=null;this.src=\'/images/clans/default.png\'"/>';
+            html += '<span class="portrait-placeholder" style="color:#888;font-size:12px;text-align:center;padding:4px">No Image</span>';
+            html += '</div>';
+        })();
         html += '<div class="info-grid">';
         html += '<p><strong>Player:</strong> ' + char.player_name + '</p>';
         html += '<p><strong>Clan:</strong> ' + char.clan + '</p>';
@@ -447,6 +481,14 @@ function renderCharacterView(mode) {
     } else {
         // Full view - all details
         html = '<div class="character-details full">';
+        (function addPortrait(){
+            const hasPortrait = !!char.character_image;
+            const url = hasPortrait ? ('/uploads/characters/' + char.character_image) : clanLogoUrl(char.clan);
+            html += '<div class="portrait-box" style="width:200px;height:200px;border:2px dashed #666;display:flex;align-items:center;justify-content:center;background:#111;margin-bottom:12px;border-radius:6px">';
+            html += '<img src="' + url + '" alt="portrait" style="max-width:100%;max-height:100%;object-fit:contain;border:1px solid #444;border-radius:4px" onload="this.nextElementSibling && (this.nextElementSibling.style.display=\'none\')" onerror="this.onerror=null;this.src=\'/images/clans/default.png\'"/>';
+            html += '<span class="portrait-placeholder" style="color:#888;font-size:12px;text-align:center;padding:4px">No Image</span>';
+            html += '</div>';
+        })();
         
         html += '<h3>Basic Information</h3>';
         html += '<div class="info-grid">';

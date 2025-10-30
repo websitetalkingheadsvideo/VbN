@@ -304,7 +304,8 @@ class TabManager {
      * Check if can proceed to next tab
      */
     canProceedToNext() {
-        return this.isTabCompleted(this.currentTab);
+        // Relaxed: always allow proceeding to next tab (especially important for editing existing characters)
+        return true;
     }
     
     /**
