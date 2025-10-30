@@ -1,10 +1,14 @@
 # LOTN Character Creator - Version History
 
-## Version 0.7.6 (Current)
+## Version 0.7.7 (Current)
 **Date:** October 30, 2025
 
-### Changes:
-- Auto-increment patch version
+### Patch Changes:
+- Admin view: clan logo fallback when portrait missing (admin eye modal only)
+- Database-backed clan logo mapping (`clans` table seeded)
+- Absolute URL policy: canonical host rule added; APIs return absolute `clan_logo_url`
+- Admin portrait styling: removed inline borders in `.portrait-box` images
+- Utility pages: clans table viewer with checkerboard background; reseed script
 
 ---
 

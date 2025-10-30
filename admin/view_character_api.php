@@ -12,6 +12,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 }
 
 require_once __DIR__ . '/../includes/connect.php';
+require_once __DIR__ . '/../includes/urls.php';
 
 $character_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
@@ -33,6 +34,19 @@ $character = db_fetch_one($conn,
 if (!$character) {
     echo json_encode(['success' => false, 'message' => 'Character not found']);
     exit();
+}
+
+// Resolve clan logo URL from DB mapping (relative to admin path)
+$clan_logo_url = null;
+if (!empty($character['clan'])) {
+    $clanRow = db_fetch_one($conn,
+        "SELECT logo_filename FROM clans WHERE LOWER(name) = LOWER(?) LIMIT 1",
+        "s",
+        [$character['clan']]
+    );
+    if ($clanRow && !empty($clanRow['logo_filename'])) {
+        $clan_logo_url = rtrim(VBN_BASE_URL, '/') . '/images/Clan%20Logos/' . $clanRow['logo_filename'];
+    }
 }
 
 // Get all related data using helper functions with explicit columns
@@ -89,7 +103,7 @@ $status = db_fetch_one($conn,
 
 echo json_encode([
     'success' => true,
-    'character' => $character,
+    'character' => array_merge($character, [ 'clan_logo_url' => $clan_logo_url ]),
     'traits' => $traits,
     'abilities' => $abilities,
     'disciplines' => $disciplines,

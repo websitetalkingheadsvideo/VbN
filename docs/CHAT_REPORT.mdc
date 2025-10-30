@@ -16,3 +16,18 @@ alwaysApply: false
 - **Next**:
   - Wire any remaining image upload flows to preview states and error handling
   - Verify cross-page availability of Exit button styles/scripts
+
+---
+
+- **Version increment**: Bumped project version to 0.7.7 (patch)
+- **Admin view fallback**: Clan logo used when character portrait is missing (admin eye modal only)
+  - DB-backed mapping via `clans` table; API returns `clan_logo_url`
+  - Exact LOTN Revised clan names; Caitiff uses bloodline logo
+- **New scripts**:
+  - `database/create_clans_table.php` (seed)
+  - `database/reseed_clans_table.php` (force reseed)
+  - `database/show_clans_table.php` (viewer with absolute URLs and high-contrast logo well)
+- **Canonical host rule**: Added `.cursor/rules/hosting.mdc`; absolute links use `https://vbn.talkingheads.video/`
+- **Admin modal image**: Removed portrait border in `.portrait-box` images
+
+- **Rationale**: Bugfix + quality-of-life improvements; no new complete feature → patch.
