@@ -5,10 +5,18 @@ require_once __DIR__ . '/includes/version.php';
 
 session_start();
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
+// Check for authentication bypass
+require_once 'includes/auth_bypass.php';
+
+// Check if user is logged in (or bypass is enabled)
+if (!isset($_SESSION['user_id']) && !isAuthBypassEnabled()) {
     header("Location: login.php");
     exit();
+}
+
+// If bypass is enabled, set up guest session
+if (isAuthBypassEnabled() && !isset($_SESSION['user_id'])) {
+    setupBypassSession();
 }
 
 // Database connection
@@ -427,6 +435,7 @@ include 'includes/connect.php';
                             <option value="Tzimisce">🧬 Tzimisce</option>
                             <option value="Ventrue">👑 Ventrue</option>
                             <option value="Caitiff">❓ Caitiff</option>
+                            <option value="Ghoul">🩸 Ghoul</option>
                         </select>
                     </div>
                     

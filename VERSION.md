@@ -1,6 +1,48 @@
 # LOTN Character Creator - Version History
 
-## Version 0.7.8 (Current)
+## Version 0.7.9 (Current)
+**Date:** January 30, 2025
+
+### Authentication Bypass System for Site Analysis:
+- ✅ **Temporary Authentication Bypass** - Created system to allow site access without login for specified duration (1-24 hours)
+- ✅ **Guest Session Support** - Automatic guest session setup when bypass is enabled
+- ✅ **Admin Control Interface** - Admin page to enable/disable authentication bypass with time-based expiration
+- ✅ **Multi-Page Integration** - Updated key pages (index.php, questionnaire.php, lotn_char_create.php, cc.php) to respect bypass
+- ✅ **Auto-Expiration** - Bypass automatically expires after set duration and re-enables authentication requirement
+- ✅ **Helper Functions** - Created centralized auth_bypass.php with isAuthBypassEnabled() and setupBypassSession() functions
+
+### Authentication Bypass Features:
+- **Time-Based Control** - Set bypass duration from 1 to 24 hours
+- **Guest Access** - Users can browse site as "Guest" when bypass is enabled
+- **Centralized Management** - Single admin interface to control bypass status
+- **Config-Based** - Uses JSON config file for persistence (config/auth_bypass.json)
+- **Seamless Integration** - Works with existing authentication checks across all protected pages
+
+### Technical Implementation:
+- **New Files Created:**
+  - `includes/auth_bypass.php` - Helper functions for bypass checking and guest session setup
+  - `config/auth_bypass.json` - Stores bypass status and expiration time
+  - `admin/disable_login.php` - Updated with bypass control interface
+- **Files Modified:**
+  - `index.php` - Added bypass check before authentication requirement
+  - `questionnaire.php` - Added bypass check before authentication requirement
+  - `lotn_char_create.php` - Added bypass check before authentication requirement
+  - `cc.php` - Added bypass check before authentication requirement
+
+### User Experience:
+- **Site Analysis Ready** - Allows external tools/apps to analyze site without login requirements
+- **Easy Admin Control** - Simple interface to enable/disable bypass
+- **Time-Limited Access** - Automatic expiration ensures security
+- **Guest Experience** - Users see "Guest" username when browsing with bypass enabled
+
+### Impact:
+- **Testing & Analysis** - Enables automated site analysis tools to access protected pages
+- **Security** - Time-limited bypass ensures temporary access doesn't become permanent
+- **Flexibility** - Easy to enable/disable as needed for development or analysis purposes
+
+---
+
+## Version 0.7.8
 **Date:** January 28, 2025
 
 ### Admin Panel - View Character Modal Redesign:

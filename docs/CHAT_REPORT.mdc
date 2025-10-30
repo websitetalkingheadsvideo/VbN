@@ -1,33 +1,93 @@
----
-description: Session report summarizing work completed in this chat
-globs: docs/CHAT_REPORT.mdc
-alwaysApply: false
----
+# Chat Session Report - January 30, 2025
 
-- **Version increment**: Bumped project version to 0.7.6 (patch) per version rules
-- **Character image UX**: Added external CSS/JS for square preview and robust Exit Editor button
-  - `css/character-image.css`, `js/character-image.js`
-  - `css/exit-button.css`, `js/exit-editor.js`
-- **Edits**: Integrated assets into `lotn_char_create.php`; adjusted `save_character.php` and `upload_character_image.php`
-- **Repo hygiene**: Removed obsolete reference character JSONs
+### Session Summary
+- **Date:** January 30, 2025
+- **Version:** 0.7.8 → 0.7.9 (Patch Increment)
+- **Work Type:** Feature Development - Authentication Bypass System
 
-- **Rationale**: Changes are incremental UI/UX improvements and supportive plumbing, not a complete new feature → patch increment.
+### What We Accomplished
 
-- **Next**:
-  - Wire any remaining image upload flows to preview states and error handling
-  - Verify cross-page availability of Exit button styles/scripts
+#### 1. Authentication Bypass System
+- **Created temporary authentication bypass system** for site analysis and testing
+- **Built admin control interface** at `admin/disable_login.php` for managing bypass
+- **Integrated bypass checks** into key protected pages (index.php, questionnaire.php, lotn_char_create.php, cc.php)
+- **Implemented guest session support** - automatically sets up guest user when bypass is enabled
+- **Added time-based expiration** - bypass automatically expires after set duration (1-24 hours)
 
----
+#### 2. Browser Functionality Testing
+- **Tested Cursor 2.0 external browser feature** - verified browser navigation and screenshot capabilities
+- **Started PHP development server** on localhost:3000 to test browser integration
 
-- **Version increment**: Bumped project version to 0.7.7 (patch)
-- **Admin view fallback**: Clan logo used when character portrait is missing (admin eye modal only)
-  - DB-backed mapping via `clans` table; API returns `clan_logo_url`
-  - Exact LOTN Revised clan names; Caitiff uses bloodline logo
-- **New scripts**:
-  - `database/create_clans_table.php` (seed)
-  - `database/reseed_clans_table.php` (force reseed)
-  - `database/show_clans_table.php` (viewer with absolute URLs and high-contrast logo well)
-- **Canonical host rule**: Added `.cursor/rules/hosting.mdc`; absolute links use `https://vbn.talkingheads.video/`
-- **Admin modal image**: Removed portrait border in `.portrait-box` images
+### Key Features Implemented
 
-- **Rationale**: Bugfix + quality-of-life improvements; no new complete feature → patch.
+#### Authentication Bypass System
+- **Helper Functions** (`includes/auth_bypass.php`):
+  - `isAuthBypassEnabled()` - Checks if bypass is active and not expired
+  - `setupBypassSession()` - Sets up guest session variables when bypass is active
+  
+- **Admin Interface** (`admin/disable_login.php`):
+  - Enable bypass for 1-24 hours
+  - View current bypass status
+  - Disable bypass immediately
+  - Shows expiration time
+  
+- **Config Management**:
+  - JSON-based config file (`config/auth_bypass.json`)
+  - Stores bypass status and expiration timestamp
+  - Auto-expires when time limit reached
+
+### Files Created
+- `includes/auth_bypass.php` - Bypass helper functions
+- `config/auth_bypass.json` - Bypass status configuration
+- `admin/disable_login.php` - Updated with bypass controls (previously login disable only)
+
+### Files Modified
+- `index.php` - Added bypass check before authentication requirement
+- `questionnaire.php` - Added bypass check before authentication requirement  
+- `lotn_char_create.php` - Added bypass check before authentication requirement
+- `cc.php` - Added bypass check before authentication requirement
+
+### Technical Details
+
+#### Authentication Flow
+1. Pages check `isAuthBypassEnabled()` before requiring login
+2. If bypass is enabled and not expired:
+   - Guest session variables are set (`user_id = 0`, `username = 'Guest'`, `role = 'player'`)
+   - User can access protected pages without login
+3. If bypass is expired:
+   - Config is automatically updated to disable bypass
+   - Normal authentication is required
+
+#### Time Management
+- Bypass expiration times are stored as ISO datetime strings
+- Automatic expiration checking on each page load
+- Config file is updated when bypass expires
+
+### User Experience Improvements
+- **Site Analysis Support** - External tools can now analyze the site without authentication
+- **Simple Admin Control** - Easy interface to enable/disable bypass
+- **Time-Limited Security** - Automatic expiration prevents permanent bypass
+- **Guest Experience** - Clear indication of guest access mode
+
+### Testing Performed
+- Verified bypass can be enabled/disabled via admin interface
+- Confirmed guest session setup works correctly
+- Tested automatic expiration functionality
+- Verified all protected pages respect bypass status
+
+### Browser Testing
+- Successfully tested Cursor 2.0 browser navigation feature
+- Confirmed browser tools can access and interact with web pages
+- Started PHP dev server on localhost:3000 for testing
+
+### Next Steps / Recommendations
+1. Test bypass functionality with actual site analysis tools
+2. Consider adding bypass logging for security audit trails
+3. May want to add notification when bypass is active (visual indicator)
+4. Consider adding IP whitelist option for bypass (only allow specific IPs)
+
+### Impact Summary
+- **Development:** Enables automated testing and site analysis tools
+- **Security:** Time-limited bypass with automatic expiration
+- **Flexibility:** Easy to enable/disable as needed
+- **User Experience:** Seamless guest browsing when bypass is active

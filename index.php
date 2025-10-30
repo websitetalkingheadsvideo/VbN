@@ -14,15 +14,23 @@ session_start();
 // Include database connection
 require_once 'includes/connect.php';
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
+// Check for authentication bypass
+require_once 'includes/auth_bypass.php';
+
+// Check if user is logged in (or bypass is enabled)
+if (!isset($_SESSION['user_id']) && !isAuthBypassEnabled()) {
     header('Location: login.php');
     exit;
 }
 
+// If bypass is enabled, set up guest session
+if (isAuthBypassEnabled() && !isset($_SESSION['user_id'])) {
+    setupBypassSession();
+}
+
 // Get user information
-$user_id = $_SESSION['user_id'];
-$username = $_SESSION['username'] ?? 'Kindred';
+$user_id = $_SESSION['user_id'] ?? 0;
+$username = $_SESSION['username'] ?? 'Guest';
 $user_role = $_SESSION['role'] ?? 'player';
 
 // Determine if user is admin/storyteller
