@@ -1,6 +1,49 @@
 # LOTN Character Creator - Version History
 
-## Version 0.7.7 (Current)
+## Version 0.7.8 (Current)
+**Date:** January 28, 2025
+
+### Admin Panel - View Character Modal Redesign:
+- ✅ **Two-Column Header Layout** - Redesigned View Character modal with organized header showing character info and image side-by-side
+- ✅ **Questionnaire Styling Applied** - Applied clan symbol styling from questionnaire (radial gradient background, gold border, drop shadow) to character images
+- ✅ **Compact Mode Optimization** - Compact view now fills available vertical space without scrollbar using flexbox layout
+- ✅ **Header Button Reorganization** - Moved Compact/Full Details toggle buttons to modal header between character name and close button
+- ✅ **UI Cleanup** - Removed bottom close button, removed margin-bottom from character header for better spacing
+
+### View Character Modal Features:
+- **Two-Column Layout** - Character information on left (Player, Chronicle, Clan, Generation, Nature, Demeanor, Sire, Concept), character image on right
+- **Styled Character Image** - 400px container with radial gradient background (#a00000 to #600000), gold border (#c9a96e), 20px rounded corners, drop shadows
+- **Responsive Design** - Layout adapts to mobile with single-column layout
+- **Compact Mode** - Flexbox layout ensures no scrollbar, fills available viewport height
+- **Full Details Mode** - Comprehensive character information with all traits, abilities, disciplines, backgrounds, morality, merits/flaws, and status
+
+### Technical Improvements:
+- **Modal Layout** - Flexbox-based layout for compact mode with proper overflow handling
+- **Image Styling** - Applied questionnaire.css clan-logo-container and clan-logo styles to character images
+- **Header Integration** - View mode toggle integrated into modal header with proper spacing
+- **JavaScript Updates** - Updated renderCharacterView() to generate two-column header structure
+- **CSS Enhancements** - Added compact-mode specific styles for optimal space usage
+
+### User Experience Improvements:
+- Cleaner, more organized character view with professional two-column layout
+- Character images now match questionnaire styling for visual consistency
+- Compact mode provides better use of screen space without scrolling
+- Header controls are more accessible and intuitive
+- Reduced visual clutter with removed redundant close button
+
+### Files Modified:
+- `admin/admin_panel.php` - Modal HTML structure, CSS styling for header and image
+- `js/admin_panel.js` - Updated renderCharacterView() for two-column header generation
+
+### Impact:
+- **Visual Consistency** - Character images now match questionnaire clan symbol styling
+- **Better Space Usage** - Compact mode efficiently uses available viewport
+- **Improved UX** - More intuitive header layout with integrated controls
+- **Professional Appearance** - Two-column layout provides organized character information display
+
+---
+
+## Version 0.7.7
 **Date:** October 30, 2025
 
 ### Patch Changes:

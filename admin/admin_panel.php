@@ -210,20 +210,24 @@ include __DIR__ . '/../includes/header.php';
 <!-- View Character Modal -->
 <div id="viewModal" class="modal">
     <div class="modal-content large-modal">
-        <h2 class="modal-title">📄 <span id="viewCharacterName">Character Details</span></h2>
-        <button class="modal-close" onclick="closeViewModal()">×</button>
-        
-        <!-- View Mode Toggle -->
-        <div class="view-mode-toggle">
-            <button class="mode-btn active" onclick="setViewMode('compact', event)">Compact</button>
-            <button class="mode-btn" onclick="setViewMode('full', event)">Full Details</button>
+        <div class="modal-header-section">
+            <h2 class="modal-title">📄 <span id="viewCharacterName">Character Details</span></h2>
+            <!-- View Mode Toggle -->
+            <div class="view-mode-toggle">
+                <button class="mode-btn active" onclick="setViewMode('compact', event)">Compact</button>
+                <button class="mode-btn" onclick="setViewMode('full', event)">Full Details</button>
+            </div>
+            <button class="modal-close" onclick="closeViewModal()">×</button>
         </div>
         
+        <!-- Character Header - Two Column Layout -->
+        <div id="characterHeader" class="character-header-section">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+        
+        <!-- Character Details Content -->
         <div id="viewCharacterContent" class="view-content">
             Loading...
-        </div>
-        <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeViewModal()">Close</button>
         </div>
     </div>
 </div>
@@ -324,21 +328,251 @@ include __DIR__ . '/../includes/header.php';
 .modal.active { display: flex; }
 .modal-content { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 3px solid #8B0000; border-radius: 10px; padding: 30px; max-width: 500px; position: relative; }
 .modal-content.large-modal { max-width: 900px; max-height: 90vh; overflow-y: auto; }
-.modal-close { position: absolute; top: 15px; right: 15px; background: rgba(139, 0, 0, 0.3); border: 1px solid #8B0000; border-radius: 50%; width: 35px; height: 35px; font-size: 1.5em; color: #f5e6d3; cursor: pointer; transition: all 0.2s; }
+.modal-content.large-modal.compact-mode { 
+    max-height: 95vh; 
+    overflow-y: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content.large-modal.compact-mode .view-content { 
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+.modal-header-section { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    padding-bottom: 15px; 
+    border-bottom: 2px solid rgba(139, 0, 0, 0.3); 
+    gap: 15px;
+}
+
+.modal-title { 
+    font-family: var(--font-brand), 'IM Fell English', serif; 
+    color: #f5e6d3; 
+    font-size: 2em; 
+    margin: 0; 
+    flex: 1;
+}
+
+.view-mode-toggle { 
+    display: flex; 
+    gap: 8px; 
+    justify-content: center; 
+    margin: 0;
+}
+
+.modal-close { 
+    background: rgba(139, 0, 0, 0.3); 
+    border: 1px solid #8B0000; 
+    border-radius: 50%; 
+    width: 35px; 
+    height: 35px; 
+    font-size: 1.5em; 
+    color: #f5e6d3; 
+    cursor: pointer; 
+    transition: all 0.2s; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-shrink: 0;
+}
+
 .modal-close:hover { background: rgba(139, 0, 0, 0.6); transform: scale(1.1); }
-.view-mode-toggle { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
 .mode-btn { padding: 8px 20px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; cursor: pointer; transition: all 0.3s; }
 .mode-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
 .mode-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
 
-.view-content { color: #d4c4b0; font-family: var(--font-body), 'Source Serif Pro', serif; line-height: 1.6; }
-.view-content h3 { color: #f5e6d3; font-family: var(--font-title), 'Libre Baskerville', serif; margin-top: 20px; margin-bottom: 10px; border-bottom: 1px solid rgba(139, 0, 0, 0.3); padding-bottom: 5px; }
-.view-content p { margin: 8px 0; }
+/* Character Header Section - Two Column Layout */
+.character-header-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 0;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(42, 21, 21, 0.6) 0%, rgba(26, 15, 15, 0.6) 100%);
+    border: 2px solid rgba(139, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.compact-mode .character-header-section {
+    gap: 20px;
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+.compact-mode .character-image-wrapper {
+    max-width: 320px;
+    height: 320px;
+}
+
+.compact-mode .character-image-wrapper img {
+    width: 280px;
+    height: 280px;
+    padding: 20px;
+}
+
+.character-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.character-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.character-info-label {
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-size: 0.85em;
+    color: #b8a090;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.character-info-value {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    font-size: 1.1em;
+    color: #f5e6d3;
+    font-weight: 500;
+}
+
+.character-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-image-wrapper {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #a00000, #8b0000, #600000);
+    border: 3px solid #c9a96e;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.8), inset 0 4px 8px rgba(0,0,0,0.6);
+    margin: 0 auto;
+}
+
+.character-image-wrapper img {
+    width: 350px;
+    height: 350px;
+    padding: 25px;
+    object-fit: fill;
+    object-position: center;
+    border: none !important;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.8));
+}
+
+.character-image-placeholder {
+    color: #888;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 20px;
+}
+
+.view-content { 
+    color: #d4c4b0; 
+    font-family: var(--font-body), 'Source Serif Pro', serif; 
+    line-height: 1.6; 
+    margin-top: 20px;
+}
+
+.compact-mode .view-content {
+    margin-top: 10px;
+}
+
+.compact-mode .view-content h3 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+}
+
+.compact-mode .view-content p {
+    margin: 6px 0;
+    font-size: 0.95em;
+}
+
+.view-content h3 { 
+    color: #f5e6d3; 
+    font-family: var(--font-title), 'Libre Baskerville', serif; 
+    margin-top: 25px; 
+    margin-bottom: 12px; 
+    border-bottom: 2px solid rgba(139, 0, 0, 0.4); 
+    padding-bottom: 8px;
+    font-size: 1.3em;
+}
+
+.view-content p { margin: 10px 0; }
+
 .view-content strong { color: #b8a090; }
-.view-content .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.view-content .trait-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.view-content .trait-badge { background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); padding: 4px 10px; border-radius: 4px; font-size: 0.9em; }
-.modal-title { font-family: var(--font-brand), 'IM Fell English', serif; color: #f5e6d3; font-size: 2em; margin-bottom: 20px; text-align: center; }
+
+.view-content .info-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.view-content .trait-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-top: 12px; 
+}
+
+.view-content .trait-badge { 
+    background: rgba(139, 0, 0, 0.25); 
+    border: 1px solid rgba(139, 0, 0, 0.5); 
+    padding: 6px 12px; 
+    border-radius: 5px; 
+    font-size: 0.9em;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #d4c4b0;
+    transition: all 0.2s ease;
+}
+
+.view-content .trait-badge:hover {
+    background: rgba(139, 0, 0, 0.4);
+    border-color: rgba(139, 0, 0, 0.7);
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .character-header-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .character-image-wrapper {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+    
+    .character-image-wrapper img {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+        max-height: 350px;
+    }
+    
+    .view-content .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .modal-message { font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; font-size: 1.1em; margin-bottom: 10px; }
 .modal-character-name { font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-size: 1.4em; text-align: center; margin: 20px 0; font-weight: bold; }
 .modal-warning { background: rgba(139, 0, 0, 0.3); border-left: 4px solid #8B0000; padding: 15px; margin: 20px 0; color: #f5e6d3; }
