@@ -1,0 +1,12 @@
+{
+  "name": "json-analysis-coterie-relationships",
+  "version": "1.0.0",
+  "description": "Analysis tool for extracting Coterie and Relationships data from character JSON files",
+  "main": "main-analyzer.js",
+  "scripts": {
+    "analyze": "node main-analyzer.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+

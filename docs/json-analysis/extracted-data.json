@@ -1,0 +1,959 @@
+{
+  "characters": [
+    {
+      "filename": "Bayside Bob.json",
+      "character_name": "Bayside Bob",
+      "coteries": [
+        {
+          "name": "Camelback Road",
+          "type": "faction",
+          "role": null,
+          "description": "staurant on Camelback Road, serves as a front for Anarch meetings and is the de facto gathering place for",
+          "source": "biography"
+        },
+        {
+          "name": "Polynesian",
+          "type": "role",
+          "role": null,
+          "description": "ki-style Polynesian restaurant on Camelback Road, serves as a front for Anarch meetings and is the de facto g",
+          "source": "biography"
+        },
+        {
+          "name": "Phoenix",
+          "type": "membership",
+          "role": null,
+          "description": "b arrived in Phoenix early in 1981 and has been a part of the city's undead scene ever since. By 1994, he h",
+          "source": "biography"
+        },
+        {
+          "name": "Anarch",
+          "type": "informal_group",
+          "role": null,
+          "description": "serves as a front for Anarch meetings and is the de facto gathering place for Anarchs in Phoenix. Despite t",
+          "source": "biography"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "His",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "His mentor is an older Toreador who introduced him to the arts and social scene.",
+          "source": "backgroundDetails.Mentor"
+        }
+      ],
+      "coterie_count": 4,
+      "relationship_count": 1
+    },
+    {
+      "filename": "Betty.json",
+      "character_name": "Betty",
+      "coteries": [],
+      "relationships": [
+        {
+          "character_name": "Alistaire",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Alistaire",
+          "source": "sire"
+        },
+        {
+          "character_name": "Alistaire",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "Alistaire (sire) - Provides guidance",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "resources",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "resources",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "protection",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "protection",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "Shrecknet",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "and vision for Shrecknet development. Trusts Betty with massive responsibilities despite her youth.",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "Nosferatu",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "Nosferatu #3 and #4 (her tech team)",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Terry",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "Terry (fellow childe of Alistaire)",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Tech",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Tech industry contacts from mortal life",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "underground hacker networks",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "underground hacker networks",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "BBS operators",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "BBS operators",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "computer science academics.",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "computer science academics.",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 0,
+      "relationship_count": 11
+    },
+    {
+      "filename": "Cordelia Fairchild.json",
+      "character_name": "Cordelia Fairchild",
+      "coteries": [
+        {
+          "name": "Harpy",
+          "type": "role",
+          "role": null,
+          "description": "nevitable: by the 1950s she was recognized as the Harpy of the domain, her wit and cruelty wrapped in hon",
+          "source": "biography"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "Unknown",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Unknown — rumored to have been an art patron in 1910s San Francisco",
+          "source": "sire"
+        },
+        {
+          "character_name": "Private",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Private investigator network",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "gossip columnists",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "gossip columnists",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "social secretaries",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "social secretaries",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "and art dealers.",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "and art dealers.",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 1,
+      "relationship_count": 5
+    },
+    {
+      "filename": "Duke Tiki.json",
+      "character_name": "Duke Tiki",
+      "coteries": [],
+      "relationships": [
+        {
+          "character_name": "He",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "He is a mentor to Bob and occasionally to other Kindred artists",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "offering wisdom and encouragement.",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "offering wisdom and encouragement.",
+          "source": "backgroundDetails.Mentor"
+        }
+      ],
+      "coterie_count": 0,
+      "relationship_count": 2
+    },
+    {
+      "filename": "Jax.json",
+      "character_name": "Jax 'The Ghost Dealer'",
+      "coteries": [],
+      "relationships": [
+        {
+          "character_name": "None",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "None; mostly works alone.",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Street",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Street psychics",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "pawnshop mystics",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "pawnshop mystics",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "and superstitious mortals provide intel or customers.",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "and superstitious mortals provide intel or customers.",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 0,
+      "relationship_count": 4
+    },
+    {
+      "filename": "Leo.json",
+      "character_name": "Leo",
+      "coteries": [],
+      "relationships": [],
+      "coterie_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "filename": "Lucien Marchand.json",
+      "character_name": "Lucien Marchand",
+      "coteries": [],
+      "relationships": [
+        {
+          "character_name": "Ghouled",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "N/A - Ghouled by Étienne Duvalier in 1927",
+          "source": "sire"
+        }
+      ],
+      "coterie_count": 0,
+      "relationship_count": 1
+    },
+    {
+      "filename": "Pistol Pete.json",
+      "character_name": "Pistol Pete",
+      "coteries": [],
+      "relationships": [],
+      "coterie_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "filename": "Piston.json",
+      "character_name": "Piston",
+      "coteries": [
+        {
+          "name": "Butch Reed (burglary specialist) and Basher (street enforcer), both former Hell's Angels",
+          "type": "coterie",
+          "role": null,
+          "description": null,
+          "source": "research_notes.coterie"
+        },
+        {
+          "name": "Gangrel",
+          "type": "faction",
+          "role": null,
+          "description": "ted diablerie on a Gangrel during the Los Angeles Anarch faction wars (late 1980s/early 1990s). A former H",
+          "source": "biography"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "Fred Osmond",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Fred Osmond",
+          "source": "sire"
+        },
+        {
+          "character_name": "His",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "His two childer",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Butch Reed",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "Butch Reed and Basher",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Phoenix Anarch",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "plus some Phoenix Anarch connections",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Street",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Street contacts from Hell's Angels days and current criminal operations",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 2,
+      "relationship_count": 5
+    },
+    {
+      "filename": "Rembrandt Jones.json",
+      "character_name": "Rembrandt Jones",
+      "coteries": [
+        {
+          "name": "Marginal",
+          "type": "role",
+          "role": "Primogen",
+          "description": "Marginal within Toreador circles. Comic relief to most. Some pretentious theorists write papers about him. Trying desperately to impress the Toreador Primogen.",
+          "source": "backgroundDetails"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "Las Vegas Toreador",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Las Vegas Toreador (gaudy casino strip artist)",
+          "source": "sire"
+        },
+        {
+          "character_name": "Deep",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Deep connections in Roadside Americana/kitschy nostalgia subculture: Muffler Men collectors",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "vintage motel sign preservationists",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "vintage motel sign preservationists",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "Route",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Route 66 nostalgists",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "Googie",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Googie architecture enthusiasts",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "Vegas",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "vintage Vegas memorabilia dealers",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "neon sign restoration communities",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "neon sign restoration communities",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "He",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "photographers of abandoned roadside attractions. He doesn't fully realize this is where he's successful.",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 1,
+      "relationship_count": 8
+    },
+    {
+      "filename": "Sabine.json",
+      "character_name": "Sabine",
+      "coteries": [
+        {
+          "name": "Embrace",
+          "type": "membership",
+          "role": null,
+          "description": "since Embrace, learning Kindred social politics. Part of Primogen's long-term plan to eventually take over",
+          "source": "biography"
+        },
+        {
+          "name": "Embraced",
+          "type": "role",
+          "role": null,
+          "description": "arated. Embraced both in 1992 (age 22). Served as Talons to Harpy Cordelia Prescott since Embrace, learni",
+          "source": "biography"
+        },
+        {
+          "name": "Served",
+          "type": "role",
+          "role": null,
+          "description": "braced both in 1992 (age 22). Served as Talons to Harpy Cordelia Prescott since Embrace, learning Kindred",
+          "source": "biography"
+        },
+        {
+          "name": "Talon",
+          "type": "role",
+          "role": "Talon",
+          "description": "Talon to the Harpy Cordelia Prescott, childer of Toreador Primogen",
+          "source": "backgroundDetails"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "Toreador Primogen",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Toreador Primogen (Phoenix)",
+          "source": "sire"
+        },
+        {
+          "character_name": "Being",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "Being trained by Cordelia Prescott in Kindred social politics",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "Toreador Primogen",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "also guided by Toreador Primogen",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "Twin",
+          "character_id": null,
+          "type": "twin",
+          "subtype": "brother",
+          "strength": "inseparable",
+          "description": "Twin brother Sebastian (inseparable)",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Toreador Primogen",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "Toreador Primogen (sire)",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "High",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "High society connections from Ontario and Phoenix",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "art gallery world",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "art gallery world",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "modeling industry",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "modeling industry",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "Sebastian",
+          "character_id": null,
+          "type": "special_rapport",
+          "subtype": null,
+          "strength": "special",
+          "description": "Supernatural bond with twin brother Sebastian. Can sense his emotions even at distance, feel his physical pain or peril, know when he's in trouble or lying. He knows the same about her. They are inseparable.",
+          "source": "merits_flaws"
+        }
+      ],
+      "coterie_count": 4,
+      "relationship_count": 9
+    },
+    {
+      "filename": "Sasha.json",
+      "character_name": "Sasha",
+      "coteries": [],
+      "relationships": [],
+      "coterie_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "filename": "Sebastian.json",
+      "character_name": "Sebastian",
+      "coteries": [
+        {
+          "name": "Embrace",
+          "type": "membership",
+          "role": null,
+          "description": "since Embrace, learning Kindred social politics. Part of Primogen's long-term plan to eventually take over",
+          "source": "biography"
+        },
+        {
+          "name": "Embraced",
+          "type": "role",
+          "role": null,
+          "description": "arated. Embraced both in 1992 (age 22). Served as Talons to Harpy Cordelia Prescott since Embrace, learni",
+          "source": "biography"
+        },
+        {
+          "name": "Served",
+          "type": "role",
+          "role": null,
+          "description": "braced both in 1992 (age 22). Served as Talons to Harpy Cordelia Prescott since Embrace, learning Kindred",
+          "source": "biography"
+        },
+        {
+          "name": "Talon",
+          "type": "role",
+          "role": "Talon",
+          "description": "Talon to the Harpy Cordelia Prescott, childer of Toreador Primogen",
+          "source": "backgroundDetails"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "Toreador Primogen",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Toreador Primogen (Phoenix)",
+          "source": "sire"
+        },
+        {
+          "character_name": "Being",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "Being trained by Cordelia Prescott in Kindred social politics",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "Toreador Primogen",
+          "character_id": null,
+          "type": "mentor",
+          "subtype": null,
+          "strength": null,
+          "description": "also guided by Toreador Primogen",
+          "source": "backgroundDetails.Mentor"
+        },
+        {
+          "character_name": "Twin",
+          "character_id": null,
+          "type": "twin",
+          "subtype": "sister",
+          "strength": "inseparable",
+          "description": "Twin sister Sabine (inseparable)",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Toreador Primogen",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "Toreador Primogen (sire)",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "High",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "High society connections from Ontario and Phoenix",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "art gallery world",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "art gallery world",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "modeling industry",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "modeling industry",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "Sabine",
+          "character_id": null,
+          "type": "special_rapport",
+          "subtype": null,
+          "strength": "special",
+          "description": "Supernatural bond with twin sister Sabine. Can sense her emotions even at distance, feel her physical pain or peril, know when she's in trouble or lying. She knows the same about him. They are inseparable.",
+          "source": "merits_flaws"
+        }
+      ],
+      "coterie_count": 4,
+      "relationship_count": 9
+    },
+    {
+      "filename": "Sofia Alvarez.json",
+      "character_name": "Sofia Alvarez",
+      "coteries": [],
+      "relationships": [
+        {
+          "character_name": "Ghouled",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "N/A - Ghouled by Étienne Duvalier in 2006",
+          "source": "sire"
+        },
+        {
+          "character_name": "Art",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Art world connections",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "gallery staff",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "gallery staff",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "architectural firms",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "architectural firms",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "event planners",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "event planners",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 0,
+      "relationship_count": 5
+    },
+    {
+      "filename": "Tremere.json",
+      "character_name": "Tremere",
+      "coteries": [],
+      "relationships": [],
+      "coterie_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "filename": "Violet.json",
+      "character_name": "Violet 'The Confidence Queen'",
+      "coteries": [],
+      "relationships": [
+        {
+          "character_name": "Nosferatu",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "A Nosferatu 'nephew' named Buster handles her errands and protection during daylight.",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "A crooked beat cop",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "A crooked beat cop",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "a paramedic",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "a paramedic",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "and a pawnshop owner feed her street intel.",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "and a pawnshop owner feed her street intel.",
+          "source": "backgroundDetails.Contacts"
+        }
+      ],
+      "coterie_count": 0,
+      "relationship_count": 4
+    },
+    {
+      "filename": "Étienne.json",
+      "character_name": "Étienne Duvalier",
+      "coteries": [
+        {
+          "name": "Sabine",
+          "type": "membership",
+          "role": null,
+          "description": "Sabine (the twins) alongside Cordelia Prescott as part of his grand plan to eventually take over New York K",
+          "source": "biography"
+        },
+        {
+          "name": "Toreador Primogen",
+          "type": "role",
+          "role": "Primogen",
+          "description": "Toreador Primogen of Phoenix, elder of elegance and taste, his approval is sought by all Toreador neonates. To disappoint him is social death",
+          "source": "backgroundDetails"
+        }
+      ],
+      "relationships": [
+        {
+          "character_name": "Prestigious Parisian Toreador",
+          "character_id": null,
+          "type": "sire",
+          "subtype": null,
+          "strength": null,
+          "description": "Prestigious Parisian Toreador elder",
+          "source": "sire"
+        },
+        {
+          "character_name": "Network",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "Network of artists",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "curators",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "curators",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "and high society figures across multiple cities who owe him favors or genuinely admire his patronage",
+          "character_id": null,
+          "type": "ally",
+          "subtype": null,
+          "strength": null,
+          "description": "and high society figures across multiple cities who owe him favors or genuinely admire his patronage",
+          "source": "backgroundDetails.Allies"
+        },
+        {
+          "character_name": "Museum",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "Museum directors",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "art critics",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "art critics",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "private collectors",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "private collectors",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "cultural institutions",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "cultural institutions",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "wealthy patrons",
+          "character_id": null,
+          "type": "contact",
+          "subtype": null,
+          "strength": null,
+          "description": "wealthy patrons",
+          "source": "backgroundDetails.Contacts"
+        },
+        {
+          "character_name": "Prince Solomon Reaves",
+          "character_id": null,
+          "type": "rival",
+          "subtype": null,
+          "strength": "special",
+          "description": "A subtle, simmering opposition to the Prince. Barely concealed contempt wrapped in perfect civility.",
+          "source": "merits_flaws"
+        }
+      ],
+      "coterie_count": 2,
+      "relationship_count": 10
+    }
+  ],
+  "summary": {
+    "totalFiles": 18,
+    "successful": 17,
+    "failed": 1,
+    "totalCoteries": 18,
+    "totalRelationships": 74
+  }
+}
