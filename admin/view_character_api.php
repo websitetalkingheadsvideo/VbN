@@ -25,7 +25,7 @@ if ($character_id <= 0) {
 $character = db_fetch_one($conn,
     "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept,
             clan, generation, sire, pc, biography, character_image, equipment, notes,
-            total_xp, spent_xp, created_at, updated_at
+            total_xp, spent_xp, custom_data, created_at, updated_at
      FROM characters WHERE id = ?",
     "i",
     [$character_id]
@@ -101,6 +101,35 @@ $status = db_fetch_one($conn,
     [$character_id]
 );
 
+$coteries = db_fetch_all($conn,
+    "SELECT id, coterie_name, coterie_type, role, description, notes
+     FROM character_coteries WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
+
+$relationships = db_fetch_all($conn,
+    "SELECT id, related_character_id, related_character_name, relationship_type, 
+            relationship_subtype, strength, description
+     FROM character_relationships WHERE character_id = ?",
+    "i",
+    [$character_id]
+);
+
+// Get related character names if only ID is present
+$relationship_data = [];
+foreach ($relationships as $rel) {
+    if ($rel['related_character_id'] && empty($rel['related_character_name'])) {
+        $target_char = db_fetch_one($conn,
+            "SELECT character_name FROM characters WHERE id = ?",
+            "i",
+            [$rel['related_character_id']]
+        );
+        $rel['related_character_name'] = $target_char ? $target_char['character_name'] : 'Unknown';
+    }
+    $relationship_data[] = $rel;
+}
+
 echo json_encode([
     'success' => true,
     'character' => array_merge($character, [ 'clan_logo_url' => $clan_logo_url ]),
@@ -110,7 +139,9 @@ echo json_encode([
     'backgrounds' => $backgrounds,
     'morality' => $morality,
     'merits_flaws' => $merits_flaws,
-    'status' => $status
+    'status' => $status,
+    'coteries' => $coteries,
+    'relationships' => $relationship_data
 ]);
 
 mysqli_close($conn);

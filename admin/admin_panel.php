@@ -5,7 +5,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.6.1');
+define('LOTN_VERSION', '0.9.0');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -518,11 +518,92 @@ include __DIR__ . '/../includes/header.php';
 
 .view-content strong { color: #b8a090; }
 
-.view-content .info-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px;
+/* Bootstrap grid used instead - custom styles removed */
+
+.view-content h4 {
+    color: #d4c4b0;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+    padding-bottom: 5px;
+}
+
+.view-content .text-content {
+    background: rgba(26, 15, 15, 0.4);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 15px;
     margin-top: 10px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: #d4c4b0;
+}
+
+.view-content .merit-flaw-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.view-content .merit-flaw-item:last-child {
+    border-bottom: none;
+}
+
+.view-content .item-category {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.85em;
+    color: #b8a090;
+    font-style: italic;
+}
+
+.view-content .item-description {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 0.9em;
+    color: #b8a090;
+    line-height: 1.5;
+    padding-left: 10px;
+    border-left: 2px solid rgba(139, 0, 0, 0.3);
+}
+
+.view-content .empty-state {
+    color: #8B0000;
+    font-style: italic;
+}
+
+.view-content .coterie-card,
+.view-content .relationship-card {
+    background: rgba(26, 15, 15, 0.4);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.view-content .coterie-card h4,
+.view-content .relationship-card h4 {
+    color: #f5e6d3;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-size: 1.1em;
+}
+
+.view-content .custom-data-json {
+    color: #d4c4b0;
+    white-space: pre-wrap;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+}
+
+@media (max-width: 768px) {
+    .view-content .two-column-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .view-content .trait-list { 
@@ -569,9 +650,7 @@ include __DIR__ . '/../includes/header.php';
         max-height: 350px;
     }
     
-    .view-content .info-grid {
-        grid-template-columns: 1fr;
-    }
+/* Bootstrap handles responsive columns automatically */
 }
 .modal-message { font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; font-size: 1.1em; margin-bottom: 10px; }
 .modal-character-name { font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-size: 1.4em; text-align: center; margin: 20px 0; font-weight: bold; }

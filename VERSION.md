@@ -1,6 +1,66 @@
 # LOTN Character Creator - Version History
 
-## Version 0.8.0 (Current)
+## Version 0.9.0 (Current)
+**Date:** January 31, 2025
+
+### Admin Panel Character Details Modal Enhancement:
+- ✅ **Complete Character Data Display** - All character data now displayed in Full Details view including all previously missing sections
+- ✅ **Bootstrap Grid Integration** - Replaced custom CSS grid with Bootstrap 5.3.2 column system for responsive layouts
+- ✅ **Missing Sections Added** - Custom Data, Status & Resources, Coterie, and Relationships sections now fully implemented
+- ✅ **Empty State Styling** - Changed empty state messages to dark red (#8B0000) for better visual consistency
+- ✅ **Click-Outside-to-Close** - Added modal backdrop click handler to close modal when clicking outside content area
+- ✅ **API Enhancements** - Updated view_character_api.php to fetch custom_data, coteries, and relationships from database
+
+### Character Details Modal Features:
+- **Experience Points Section** - 3-column Bootstrap layout showing Total XP, Spent XP, Available XP
+- **Morality & Virtues Section** - 3-column Bootstrap layout showing Path, Humanity, Willpower, Conscience, Self-Control, Courage
+- **Traits Display** - 2-column layout for Physical and Social traits, Mental traits below
+- **Abilities Display** - Grouped by category (Talents, Skills, Knowledges, Other) with 2-column layout
+- **Disciplines Display** - Complete discipline list with levels and XP costs
+- **Backgrounds Display** - All backgrounds with levels
+- **Merits & Flaws** - 2-column layout separating merits and flaws
+- **Status & Resources** - Health levels, blood pool, sect/clan/city status
+- **Custom Data** - JSON display with proper formatting and fallback to plain text
+- **Coterie** - Card-based display showing coterie name, type, role, description, and notes
+- **Relationships** - Card-based display showing related character, type, subtype, strength, and description
+
+### Technical Improvements:
+- **Bootstrap Grid System** - All sections use Bootstrap row/col classes for responsive layouts
+- **HTML Escaping** - Comprehensive XSS prevention with proper HTML entity encoding
+- **CSS Organization** - Moved inline styles to external CSS classes following project rules
+- **Modal UX** - Click-outside-to-close improves user experience
+- **API Data Structure** - Enhanced API responses to include coterie and relationship data with character name resolution
+- **Empty State Handling** - All sections now show headers even when empty, with styled empty state messages
+
+### User Experience Improvements:
+- **Complete Data View** - All character information accessible in single modal
+- **Better Organization** - Multi-column layouts make better use of screen space
+- **Visual Consistency** - Dark red empty states match site theme
+- **Improved Navigation** - Click outside modal to close is more intuitive
+- **Responsive Design** - Bootstrap columns automatically adapt to screen size
+- **Data Completeness** - No missing sections, all character data is displayed
+
+### Files Modified:
+- `admin/admin_panel.php` - Updated CSS for empty states, coterie cards, relationship cards, custom data display
+- `js/admin_panel.js` - Complete rewrite of renderCharacterView() with all sections, Bootstrap grids, HTML escaping, click-outside handler
+- `admin/view_character_api.php` - Added custom_data to SELECT, added coteries and relationships queries with character name resolution
+
+### Bug Fixes:
+- **Abilities Not Showing** - Fixed category filtering to use case-insensitive matching and added "Other Abilities" section
+- **Disciplines Not Showing** - Added proper null checks and empty state handling
+- **Missing Sections** - Added Custom Data, Status, Coterie, and Relationships sections
+- **Empty State Color** - Changed from light gray to dark red (#8B0000) for consistency
+
+### Impact:
+- **Data Visibility** - Complete character information now accessible in admin panel
+- **User Experience** - Better organized multi-column layouts and intuitive modal interactions
+- **Code Quality** - Bootstrap grid integration follows project standards
+- **Security** - HTML escaping prevents XSS vulnerabilities
+- **Maintainability** - External CSS classes instead of inline styles
+
+---
+
+## Version 0.8.0
 **Date:** January 30, 2025
 
 ### JSON Analysis & Coterie/Relationships Database Migration System:
