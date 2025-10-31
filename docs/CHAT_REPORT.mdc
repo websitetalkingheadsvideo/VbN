@@ -1,4 +1,64 @@
-# Chat Session Report - January 31, 2025
+# Chat Session Report - January 31, 2025 (Evening Session)
+
+### Session Summary
+- **Date:** January 31, 2025 (Evening)
+- **Version:** 0.9.0 → 0.9.1 (Patch Increment)
+- **Work Type:** Bug Investigation - Character Image Upload File Dialog Not Opening
+
+### What We Worked On
+
+#### File Input Dialog Investigation
+- **Issue:** "Choose Image" button on character creation page (`lotn_char_create.php`) not opening file dialog
+- **Symptom:** Click events logged, but browser file dialog never appears after clicking label
+- **Investigation Steps:**
+  - Added extensive debug logging to trace event flow
+  - Verified label-input connection (`for` attribute matching)
+  - Tested programmatic file input clicks (browsers block non-trusted events)
+  - Removed event handler interference (preventDefault/stopPropagation)
+  - Checked CSS properties (pointer-events, z-index, display)
+  - Added diagnostics to verify DOM element states
+
+#### Code Changes Made
+- **`lotn_char_create.php`** - Added diagnostic logging and removed interfering click handlers
+- **`js/character_image.js`** - Added extensive debug logging, removed programmatic click attempts
+- **`js/modules/main.js`** - Enhanced global file input change event logging
+
+#### Root Cause Analysis (Incomplete)
+- Label's native `for` attribute behavior should work automatically
+- Programmatic clicks (`isTrusted: false`) are blocked by browser security policies
+- No preventDefault/stopPropagation found that would block native behavior
+- CSS properties verified as not blocking interactions
+- File input confirmed as accessible and not disabled
+
+### Current Status
+- **Status:** Investigation incomplete, issue unresolved
+- **Next Steps:** 
+  - Verify if file dialog opens in different browser
+  - Check for JavaScript errors that might be silently failing
+  - Investigate if CharacterImageManager initialization is interfering
+  - Test with minimal HTML to isolate the issue
+
+### Technical Details
+- File input uses standard `type="file"` with `display: none`
+- Label uses `for="characterImageInput"` attribute (standard HTML pattern)
+- CharacterImageManager class handles file upload logic
+- Multiple event listeners attached to both label and input
+- Capture phase logging added to trace event flow
+
+### Files Modified
+- `lotn_char_create.php` - Diagnostic logging and handler cleanup
+- `js/character_image.js` - Debug logging additions
+- `js/modules/main.js` - Enhanced file input change detection
+
+### Notes
+- Issue persists despite removing all programmatic interference
+- Native label behavior should work without JavaScript
+- May be browser-specific or related to security settings
+- Will resume investigation tomorrow
+
+---
+
+# Chat Session Report - January 31, 2025 (Morning Session)
 
 ### Session Summary
 - **Date:** January 31, 2025

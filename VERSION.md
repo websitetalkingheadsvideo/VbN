@@ -1,6 +1,36 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.0 (Current)
+## Version 0.9.1 (Current)
+**Date:** January 31, 2025
+
+### Character Image Upload Bug Investigation:
+- 🔍 **File Dialog Investigation** - Debugged "Choose Image" button not opening file dialog on character creation page
+- 🔍 **Event Handler Analysis** - Added extensive logging to trace click and change events
+- 🔍 **Browser Security Research** - Discovered programmatic file input clicks are blocked (isTrusted: false)
+- 🔍 **Code Cleanup** - Removed interfering event handlers that might prevent native label behavior
+- ⚠️ **Status:** Issue unresolved, investigation incomplete - will resume tomorrow
+
+### Technical Investigation:
+- **Diagnostic Logging** - Added comprehensive console logging to trace event flow
+- **Native Behavior Verification** - Verified label `for` attribute connection to file input
+- **Security Policy Discovery** - Learned browsers block non-trusted file dialog triggers
+- **Event Handler Cleanup** - Removed preventDefault/stopPropagation that could interfere
+- **CSS Verification** - Confirmed no CSS properties blocking interactions
+
+### Files Modified:
+- `lotn_char_create.php` - Added diagnostic logging, removed interfering handlers
+- `js/character_image.js` - Added debug logging throughout file selection handlers
+- `js/modules/main.js` - Enhanced global file input change event detection
+
+### Next Steps:
+- Test file dialog in different browsers
+- Check for silent JavaScript errors
+- Investigate CharacterImageManager initialization timing
+- Create minimal test case to isolate issue
+
+---
+
+## Version 0.9.0
 **Date:** January 31, 2025
 
 ### Admin Panel Character Details Modal Enhancement:

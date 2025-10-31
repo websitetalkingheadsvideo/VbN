@@ -243,13 +243,14 @@ class CharacterCreationApp {
 					console.log('[ui] Button clicked:', { id: id || '(no-id)', label });
 				}
 			}
-			// File chooser (Choose Image)
+			// File chooser (Choose Image) - only log, don't interfere
 			const fileClickEl = event.target.closest('input[type="file"], label[for]');
 			if (fileClickEl) {
 				const el = fileClickEl;
 				const kind = el.tagName.toLowerCase();
 				const forAttr = el.getAttribute('for') || '';
 				console.log('[ui] File chooser clicked:', { kind, for: forAttr });
+				// Don't preventDefault or stopPropagation - let native behavior work
 			}
 			// Generic Upload Image-ish controls (covers anchors/divs used as buttons)
 			const clickable = event.target.closest('[id], [class], a, div, span');
@@ -265,10 +266,16 @@ class CharacterCreationApp {
 
 		// Log selected files when file input changes
 		document.addEventListener('change', (event) => {
-			const input = event.target.closest('input[type="file"]');
-			if (!input || !input.files) return;
-			const names = Array.from(input.files).map(f => f.name);
-			console.log('[ui] File selected:', names);
+			const input = event.target;
+			if (input && input.type === 'file') {
+				console.log('[main.js] File input change detected on:', input.id || 'unnamed input');
+				if (input.files && input.files.length > 0) {
+					const names = Array.from(input.files).map(f => f.name);
+					console.log('[main.js] File selected:', names);
+				} else {
+					console.log('[main.js] File input change but no files - user may have canceled');
+				}
+			}
 		}, { capture: true });
         
         // Save character

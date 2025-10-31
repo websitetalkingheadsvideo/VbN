@@ -17,8 +17,29 @@ class CharacterImageManager {
         // Set up file input change handler
         const fileInput = document.getElementById('characterImageInput');
         if (fileInput) {
-            fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
+            console.log('[CharacterImageManager] Setting up file input change listener');
+            console.log('[CharacterImageManager] File input element:', fileInput);
+            console.log('[CharacterImageManager] File input in DOM?', document.contains(fileInput));
+            
+            // Add listener in bubble phase (standard)
+            fileInput.addEventListener('change', (e) => {
+                console.log('[CharacterImageManager] Change event received on file input (bubble)');
+                console.log('[CharacterImageManager] Event target:', e.target);
+                console.log('[CharacterImageManager] Files:', e.target.files);
+                this.handleFileSelect(e);
+            });
+            
+            // Also add capture listener as backup
+            fileInput.addEventListener('change', (e) => {
+                console.log('[CharacterImageManager] Change event received on file input (capture)');
+                // Don't call handleFileSelect twice, just log for debugging
+            }, true);
+        } else {
+            console.warn('[CharacterImageManager] File input not found!');
         }
+        
+        // Don't add label click handler - let the label's 'for' attribute work naturally
+        // Adding a programmatic click can interfere with the native behavior
         
         // Set up upload button
         const uploadBtn = document.getElementById('uploadCharacterImageBtn');
@@ -37,12 +58,19 @@ class CharacterImageManager {
      * Handle file selection with preview
      */
     handleFileSelect(event) {
+        console.log('[CharacterImageManager] handleFileSelect called', event);
         const file = event.target.files[0];
-        if (!file) return;
+        if (!file) {
+            console.log('[CharacterImageManager] No file selected');
+            return;
+        }
+        
+        console.log('[CharacterImageManager] File selected:', file.name, file.type, file.size);
         
         // Validate file type
         const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
         if (!allowedTypes.includes(file.type)) {
+            console.log('[CharacterImageManager] Invalid file type:', file.type);
             this.showError('Invalid file type. Please select a JPG, PNG, or GIF image.');
             event.target.value = ''; // Clear selection
             return;
@@ -51,17 +79,23 @@ class CharacterImageManager {
         // Validate file size (2MB max)
         const maxSize = 2 * 1024 * 1024; // 2MB
         if (file.size > maxSize) {
+            console.log('[CharacterImageManager] File too large:', file.size);
             this.showError('File size exceeds 2MB limit. Please select a smaller image.');
             event.target.value = '';
             return;
         }
         
         // Show preview
+        console.log('[CharacterImageManager] Showing preview...');
         const reader = new FileReader();
         reader.onload = (e) => {
             this.showPreview(e.target.result);
             // Store file for later upload
             this.selectedFile = file;
+            console.log('[CharacterImageManager] Preview shown, file stored');
+        };
+        reader.onerror = (e) => {
+            console.error('[CharacterImageManager] FileReader error:', e);
         };
         reader.readAsDataURL(file);
     }
@@ -321,6 +355,63 @@ let characterImageManager = null;
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    characterImageManager = new CharacterImageManager();
+    console.log('[CharacterImageManager] Initializing on DOMContentLoaded');
+    try {
+        characterImageManager = new CharacterImageManager();
+        console.log('[CharacterImageManager] CharacterImageManager instance created');
+    } catch (error) {
+        console.error('[CharacterImageManager] Error creating instance:', error);
+    }
+    
+    // Also set up a direct listener on the file input as a backup
+    setTimeout(() => {
+        const fileInput = document.getElementById('characterImageInput');
+        if (fileInput) {
+            console.log('[CharacterImageManager] Setting up direct change listener as backup');
+            console.log('[CharacterImageManager] File input found in setTimeout:', fileInput);
+            console.log('[CharacterImageManager] File input type:', fileInput.type);
+            console.log('[CharacterImageManager] File input accept:', fileInput.accept);
+            
+            // Remove any existing listeners and add fresh one
+            const changeHandler = function(e) {
+                console.log('[CharacterImageManager] DIRECT change listener fired!', e);
+                console.log('[CharacterImageManager] Event type:', e.type);
+                console.log('[CharacterImageManager] Event target:', e.target);
+                console.log('[CharacterImageManager] Files length:', e.target.files ? e.target.files.length : 0);
+                if (e.target.files && e.target.files.length > 0) {
+                    console.log('[CharacterImageManager] First file:', e.target.files[0].name, e.target.files[0].size);
+                }
+                if (characterImageManager) {
+                    characterImageManager.handleFileSelect(e);
+                } else {
+                    console.error('[CharacterImageManager] characterImageManager is null!');
+                }
+            };
+            
+            // Add both bubble and capture listeners
+            fileInput.addEventListener('change', changeHandler, false);
+            fileInput.addEventListener('change', function(e) {
+                console.log('[CharacterImageManager] DIRECT capture listener fired!', e);
+            }, true);
+            
+            // Also log clicks on the file input itself
+            fileInput.addEventListener('click', function(e) {
+                console.log('[CharacterImageManager] File input clicked directly', e);
+            });
+            
+            // Test if we can manually trigger - this should help debug
+            console.log('[CharacterImageManager] Testing file input accessibility...');
+            console.log('[CharacterImageManager] File input disabled?', fileInput.disabled);
+            console.log('[CharacterImageManager] File input readOnly?', fileInput.readOnly);
+            
+            // Test: Add a focus listener to see if input gets focus when clicked
+            fileInput.addEventListener('focus', function(e) {
+                console.log('[CharacterImageManager] File input received focus', e);
+            });
+            
+        } else {
+            console.error('[CharacterImageManager] File input NOT FOUND in setTimeout!');
+        }
+    }, 1000); // Wait a bit for everything to load
 });
 

@@ -2101,6 +2101,8 @@ include 'includes/connect.php';
             });
 
             // Image upload wiring for this page's IDs
+            // NOTE: This inline code works alongside js/character_image.js CharacterImageManager
+            // The CharacterImageManager handles most functionality, this is a fallback
             const fileInput = document.getElementById('characterImageInput');
             const uploadBtn = document.getElementById('uploadCharacterImageBtn');
             const removeBtn = document.getElementById('removeCharacterImageBtn');
@@ -2129,16 +2131,62 @@ include 'includes/connect.php';
                 reader.readAsDataURL(fileOrName);
             }
 
-            if (fileInput) {
-                fileInput.addEventListener('change', function() {
-                    const file = fileInput.files && fileInput.files[0];
-                    if (!file) return;
-                    console.log('[image] File selected:', file.name);
-                    uploadBtn && (uploadBtn.style.display = 'inline-block');
-                    showPreview(file);
-                });
+            // Test: Verify label-input connection
+            const fileLabel = document.querySelector('label[for="characterImageInput"]');
+            if (fileLabel && fileInput) {
+                console.log('[inline] Label and input found - testing connection');
+                console.log('[inline] Label for attr:', fileLabel.getAttribute('for'));
+                console.log('[inline] Input ID:', fileInput.id);
+                console.log('[inline] Match?', fileLabel.getAttribute('for') === fileInput.id);
+                
+                // Verify they're in the DOM
+                console.log('[inline] Label in DOM?', document.contains(fileLabel));
+                console.log('[inline] Input in DOM?', document.contains(fileInput));
+                
+                // Check for any CSS that might block
+                const labelStyle = window.getComputedStyle(fileLabel);
+                const inputStyle = window.getComputedStyle(fileInput);
+                console.log('[inline] Label pointer-events:', labelStyle.pointerEvents);
+                console.log('[inline] Input pointer-events:', inputStyle.pointerEvents);
+            } else {
+                console.error('[inline] Missing elements:', { label: !!fileLabel, input: !!fileInput });
             }
 
+            // File input change handler (fallback if CharacterImageManager doesn't handle it)
+            if (fileInput) {
+                const changeHandler = function(e) {
+                    console.log('[inline] File input change event fired', e);
+                    console.log('[inline] Event target:', e.target);
+                    console.log('[inline] Event target ID:', e.target.id);
+                    console.log('[inline] Event target files:', e.target.files);
+                    console.log('[inline] Event target files length:', e.target.files ? e.target.files.length : 'null');
+                    
+                    // Check both event.target and fileInput
+                    const targetInput = e.target;
+                    const file = targetInput.files && targetInput.files[0];
+                    if (!file) {
+                        console.log('[inline] No file in input - user may have canceled dialog');
+                        return;
+                    }
+                    console.log('[inline] File selected:', file.name, file.type, file.size);
+                    if (uploadBtn) {
+                        uploadBtn.style.display = 'inline-block';
+                        console.log('[inline] Upload button shown');
+                    }
+                    showPreview(file);
+                    console.log('[inline] Preview shown');
+                };
+                
+                // Add listeners without replacing the input (that breaks label connection)
+                fileInput.addEventListener('change', changeHandler, false);
+                fileInput.addEventListener('change', changeHandler, true);
+                
+                console.log('[inline] File input change listeners attached to element:', fileInput);
+                console.log('[inline] File input ID:', fileInput.id);
+                console.log('[inline] Label for attribute:', fileLabel ? fileLabel.getAttribute('for') : 'no label found');
+            }
+
+            // Upload button handler (fallback)
             if (uploadBtn) {
                 uploadBtn.addEventListener('click', async function() {
                     const file = fileInput && fileInput.files && fileInput.files[0];
@@ -2165,6 +2213,7 @@ include 'includes/connect.php';
                 });
             }
 
+            // Remove button handler (fallback)
             if (removeBtn) {
                 removeBtn.addEventListener('click', function() {
                     if (previewImg) previewImg.src = '';
@@ -2172,7 +2221,7 @@ include 'includes/connect.php';
                     const hidden = document.getElementById('imagePath');
                     if (hidden) hidden.value = '';
                     if (fileInput) fileInput.value = '';
-                    uploadBtn && (uploadBtn.style.display = 'none');
+                    if (uploadBtn) uploadBtn.style.display = 'none';
                 });
             }
 
