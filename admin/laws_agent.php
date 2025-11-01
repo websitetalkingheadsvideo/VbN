@@ -317,7 +317,7 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="chat-header">
             <h1>🧛 Laws Agent</h1>
             <p>Ask me anything about VTM/MET rules, disciplines, clans, mechanics, or lore</p>
-            <p style="font-size: 12px; margin-top: 10px; color: #666;">Powered by AI with access to 31 official rulebooks</p>
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">Powered by AI with access to 56 official rulebooks</p>
         </div>
 
         <div class="messages-container" id="messages">
