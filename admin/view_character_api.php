@@ -13,6 +13,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 require_once __DIR__ . '/../includes/connect.php';
 require_once __DIR__ . '/../includes/urls.php';
+require_once __DIR__ . '/../includes/discipline_functions.php';
 
 $character_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
@@ -64,12 +65,22 @@ $abilities = db_fetch_all($conn,
     [$character_id]
 );
 
-$disciplines = db_fetch_all($conn,
-    "SELECT id, discipline_name, level, xp_cost 
-     FROM character_disciplines WHERE character_id = ?",
-    "i",
-    [$character_id]
-);
+// Get disciplines using helper function (includes powers)
+$all_disciplines_data = getCharacterAllDisciplines($character_id);
+
+// Convert to format expected by admin panel (simple list with powers info)
+$disciplines = [];
+foreach ($all_disciplines_data as $disc_name => $disc_data) {
+    $disciplines[] = [
+        'id' => 0, // Not needed for display
+        'discipline_name' => $disc_name,
+        'level' => $disc_data['level'],
+        'xp_cost' => 0, // Could be added to character_disciplines table later
+        'powers' => $disc_data['powers'], // Include powers for detailed display
+        'power_count' => count($disc_data['powers']),
+        'is_custom' => $disc_data['is_custom']
+    ];
+}
 
 $backgrounds = db_fetch_all($conn,
     "SELECT id, background_name, level, xp_cost 

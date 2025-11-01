@@ -1,6 +1,40 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.4 (Current)
+## Version 0.9.5 (Current)
+**Date:** February 6, 2025
+
+### Admin Panel Discipline Display Fix:
+- ✅ **Fixed Admin Panel Discipline Display** - Updated view_character_api.php to use getCharacterAllDisciplines() helper function
+- ✅ **Enhanced Discipline Display** - Admin panel now shows disciplines with powers, matching view_character.php format
+- ✅ **Power Details Display** - Displays individual powers with levels for each discipline in admin panel modal
+- ✅ **Discipline Status Diagnostic** - Created check_character_disciplines_status.php to identify characters missing disciplines
+
+### Technical Improvements:
+- **API Integration** - Admin panel API now uses same discipline helper functions as character view page
+- **Visual Consistency** - Discipline display matches between admin panel and character view pages
+- **Power Information** - Shows power counts and individual power details with levels
+- **Custom Path Support** - Gracefully handles custom paths with "Custom/Path" indicator
+
+### Bug Fixes:
+- **Admin Panel Display** - Fixed "No disciplines recorded" showing in admin panel for characters with disciplines
+- **API Data Structure** - Updated API response to include powers array and power_count for each discipline
+- **JavaScript Rendering** - Enhanced admin panel JS to display powers similar to view_character.php
+
+### Files Modified:
+- `admin/view_character_api.php` - Uses getCharacterAllDisciplines() and includes powers in response
+- `js/admin_panel.js` - Enhanced discipline rendering to show powers with levels
+
+### Files Created:
+- `database/check_character_disciplines_status.php` - Diagnostic tool to check discipline status for all characters
+
+### Impact:
+- **Admin Panel Consistency** - Admin panel now matches character view page discipline display
+- **Better Data Visibility** - Powers are now visible in admin panel character modals
+- **Diagnostic Tools** - Easy identification of characters that need discipline data fixes
+
+---
+
+## Version 0.9.4
 **Date:** February 6, 2025
 
 ### Discipline System Fixes & Thaumaturgy Path Support:

@@ -658,11 +658,37 @@ function renderCharacterView(mode) {
         // Disciplines - always show section header
         contentHtml += '<h3>Disciplines</h3>';
         if (currentViewData.disciplines && currentViewData.disciplines.length > 0) {
-            contentHtml += '<div class="trait-list">';
+            contentHtml += '<div class="discipline-list">';
             currentViewData.disciplines.forEach(d => {
-                let badge = (d.discipline_name || 'Unknown') + ' x' + (d.level || 0);
-                if (d.xp_cost) badge += ' [XP: ' + d.xp_cost + ']';
-                contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                const discName = (d.discipline_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const level = d.level || 0;
+                const xpInfo = d.xp_cost ? ' [XP: ' + d.xp_cost + ']' : '';
+                const powerCount = d.power_count || (d.powers ? d.powers.length : 0);
+                const isCustom = d.is_custom || false;
+                
+                contentHtml += '<div class="discipline-item">';
+                contentHtml += '<div style="width: 100%;">';
+                contentHtml += '<div style="display: flex; justify-content: space-between; align-items: center;">';
+                contentHtml += '<strong>' + discName + ' ' + level + '</strong>';
+                if (powerCount > 0) {
+                    contentHtml += '<span style="color: #c4a037;">' + powerCount + ' powers</span>';
+                } else if (isCustom) {
+                    contentHtml += '<span style="color: #999; font-style: italic;">Custom/Path</span>';
+                }
+                contentHtml += '</div>';
+                
+                // Show powers if available
+                if (d.powers && d.powers.length > 0) {
+                    contentHtml += '<div class="powers-list" style="margin-top: 8px; padding-left: 20px;">';
+                    d.powers.forEach(power => {
+                        const powerName = (power.power_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        contentHtml += '<div style="color: #c4a037; font-size: 0.9em;">• ' + powerName + ' <span style="color: #999; font-size: 0.85em;">(Level ' + (power.level || 0) + ')</span></div>';
+                    });
+                    contentHtml += '</div>';
+                }
+                
+                contentHtml += '</div>';
+                contentHtml += '</div>';
             });
             contentHtml += '</div>';
         } else {
