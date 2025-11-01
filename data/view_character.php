@@ -6,6 +6,7 @@
  */
 
 require_once __DIR__ . '/../includes/connect.php';
+require_once __DIR__ . '/../includes/discipline_functions.php';
 
 $character_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
@@ -51,7 +52,7 @@ $abilities_result = db_select($conn,
 
 $disciplines_result = db_select($conn,
     "SELECT id, discipline_name, level, xp_cost
-     FROM character_disciplines WHERE character_id = ? ORDER BY discipline_name, level",
+     FROM character_disciplines WHERE character_id = ? ORDER BY discipline_name",
     "i",
     [$character_id]
 );
@@ -79,29 +80,38 @@ $merits_flaws_result = db_select($conn,
 );
 
 // Convert results to arrays for iteration
-$traits = $traits_result;
-$neg_traits = $neg_traits_result;
-$abilities = $abilities_result;
-$disciplines = $disciplines_result;
-$backgrounds = $backgrounds_result;
-$merits_flaws = $merits_flaws_result;
+$traits = $traits_result ? $traits_result : null;
+$neg_traits = $neg_traits_result ? $neg_traits_result : null;
+$abilities = $abilities_result ? $abilities_result : null;
+$disciplines = $disciplines_result ? $disciplines_result : null;
+$backgrounds = $backgrounds_result ? $backgrounds_result : null;
+$merits_flaws = $merits_flaws_result ? $merits_flaws_result : null;
 
 // Organize traits by category
 $trait_categories = ['Physical' => [], 'Social' => [], 'Mental' => []];
-while ($trait = $traits->fetch_assoc()) {
-    $trait_categories[$trait['trait_category']][] = $trait['trait_name'];
+if ($traits) {
+    while ($trait = $traits->fetch_assoc()) {
+        $trait_categories[$trait['trait_category']][] = $trait['trait_name'];
+    }
 }
 
 $neg_trait_categories = ['Physical' => [], 'Social' => [], 'Mental' => []];
-while ($trait = $neg_traits->fetch_assoc()) {
-    $neg_trait_categories[$trait['trait_category']][] = $trait['trait_name'];
+if ($neg_traits) {
+    while ($trait = $neg_traits->fetch_assoc()) {
+        $neg_trait_categories[$trait['trait_category']][] = $trait['trait_name'];
+    }
 }
 
-// Group disciplines by name
-$disc_groups = [];
-$disciplines->data_seek(0);
-while ($disc = $disciplines->fetch_assoc()) {
-    $disc_groups[$disc['discipline_name']][] = $disc;
+// Get disciplines with their powers using helper function
+try {
+    $all_disciplines = getCharacterAllDisciplines($character_id);
+    if (!is_array($all_disciplines)) {
+        error_log("getCharacterAllDisciplines returned non-array for character $character_id");
+        $all_disciplines = [];
+    }
+} catch (Exception $e) {
+    error_log("Error getting character disciplines: " . $e->getMessage());
+    $all_disciplines = [];
 }
 ?>
 <!DOCTYPE html>
@@ -348,8 +358,9 @@ while ($disc = $disciplines->fetch_assoc()) {
         <h2>Abilities</h2>
         <div class="ability-list">
             <?php 
-            $abilities->data_seek(0);
-            while ($ability = $abilities->fetch_assoc()): 
+            if ($abilities):
+                $abilities->data_seek(0);
+                while ($ability = $abilities->fetch_assoc()): 
                 $dots = str_repeat('●', $ability['level']);
             ?>
                 <div class="ability-item">
@@ -361,33 +372,45 @@ while ($disc = $disciplines->fetch_assoc()) {
                     </div>
                     <span class="dots"><?= $dots ?></span>
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile; 
+            endif; ?>
         </div>
 
         <h2>Disciplines</h2>
-        <div class="discipline-list">
-            <?php foreach ($disc_groups as $disc_name => $powers): ?>
-                <div class="discipline-item">
-                    <div style="width: 100%;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <strong><?= htmlspecialchars($disc_name) ?></strong>
-                            <span style="color: #c4a037;"><?= count($powers) ?> powers</span>
-                        </div>
-                        <div class="powers-list">
-                            <?php foreach ($powers as $power): ?>
-                                <div>• <?= htmlspecialchars($power['power_name']) ?> <span style="color: #999; font-size: 0.85em;">(<?= $power['level'] ?>)</span></div>
-                            <?php endforeach; ?>
+        <?php if (empty($all_disciplines)): ?>
+            <p class="empty-state">No disciplines recorded.</p>
+        <?php else: ?>
+            <div class="discipline-list">
+                <?php foreach ($all_disciplines as $disc_name => $disc_data): ?>
+                    <div class="discipline-item">
+                        <div style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong><?= htmlspecialchars($disc_name) ?> <?= $disc_data['level'] ?></strong>
+                                <?php if (!empty($disc_data['powers'])): ?>
+                                    <span style="color: #c4a037;"><?= count($disc_data['powers']) ?> powers</span>
+                                <?php else: ?>
+                                    <span style="color: #999; font-style: italic;">Custom/Path</span>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($disc_data['powers'])): ?>
+                                <div class="powers-list">
+                                    <?php foreach ($disc_data['powers'] as $power): ?>
+                                        <div>• <?= htmlspecialchars($power['power_name']) ?> <span style="color: #999; font-size: 0.85em;">(Level <?= $power['level'] ?>)</span></div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
         <h2>Backgrounds</h2>
         <div class="background-list">
             <?php 
-            $backgrounds->data_seek(0);
-            while ($bg = $backgrounds->fetch_assoc()): 
+            if ($backgrounds):
+                $backgrounds->data_seek(0);
+                while ($bg = $backgrounds->fetch_assoc()): 
                 if ($bg['level'] > 0):
                     $dots = str_repeat('●', $bg['level']);
             ?>
@@ -404,7 +427,8 @@ while ($disc = $disciplines->fetch_assoc()) {
                 </div>
             <?php 
                 endif;
-            endwhile; ?>
+            endwhile;
+            endif; ?>
         </div>
 
         <?php if ($morality): ?>
@@ -433,12 +457,14 @@ while ($disc = $disciplines->fetch_assoc()) {
             </div>
         <?php endif; ?>
 
-        <?php if ($merits_flaws->num_rows > 0): ?>
+        <?php if ($merits_flaws && $merits_flaws->num_rows > 0): ?>
             <h2>Merits & Flaws</h2>
-            <?php while ($mf = $merits_flaws->fetch_assoc()): ?>
+            <?php 
+            $merits_flaws->data_seek(0);
+            while ($mf = $merits_flaws->fetch_assoc()): ?>
                 <div class="merit-flaw-item <?= strtolower($mf['type']) ?>">
                     <strong><?= htmlspecialchars($mf['name']) ?></strong>
-                    <span style="color: #999;"> (<?= $mf['type'] ?>, <?= $mf['point_cost'] ?> pts)</span>
+                    <span style="color: #999;"> (<?= $mf['type'] ?>, <?= $mf['point_value'] ?> pts)</span>
                     <div style="margin-top: 8px; color: #c4a037;">
                         <?= htmlspecialchars($mf['description']) ?>
                     </div>

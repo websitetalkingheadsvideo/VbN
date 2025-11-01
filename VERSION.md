@@ -1,6 +1,55 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.3 (Current)
+## Version 0.9.4 (Current)
+**Date:** February 6, 2025
+
+### Discipline System Fixes & Thaumaturgy Path Support:
+- ✅ **Fixed Discipline Display System** - Resolved "No disciplines recorded" issue affecting all characters
+- ✅ **Thaumaturgy Path Integration** - Added 7 Thaumaturgy paths as separate disciplines (Path of Blood, Path of Geomancy, Hearth Path, Path of Warding, Path of Conjuring, Path of Technomancy, Dehydrate Path)
+- ✅ **Discipline Powers Population** - Populated 35 powers (5 per path) for all Thaumaturgy paths in discipline_powers table
+- ✅ **MySQL Compatibility Fix** - Replaced mysqli_stmt_get_result() with regular queries for servers without mysqlnd driver
+- ✅ **Error Handling Improvements** - Added comprehensive null checks and error handling throughout view_character.php
+- ✅ **Field Name Fix** - Corrected point_cost → point_value mismatch in merits/flaws display
+
+### Discipline System Enhancements:
+- **Path Recognition** - Thaumaturgy paths (e.g., "Path of Blood") now properly recognized and displayed
+- **Power Lookup** - Dynamic power retrieval from discipline_powers table based on character level
+- **Custom Path Support** - System gracefully handles custom paths without matching powers
+- **Visual Display** - Enhanced discipline display showing level, power count, and individual powers with levels
+
+### Technical Improvements:
+- **Compatibility** - All discipline functions now work without mysqlnd requirement
+- **Error Recovery** - Comprehensive error handling prevents 500 errors from data issues
+- **Database Queries** - Converted prepared statements using get_result() to regular mysqli_query()
+- **Code Safety** - Added null checks for all database result sets before iteration
+- **Field Mapping** - Fixed field name consistency between database queries and display code
+
+### Bug Fixes:
+- **500 Error Resolution** - Fixed server errors in view_character.php causing complete page failures
+- **Discipline Display** - Characters now properly show all disciplines with their powers
+- **Thaumaturgy Path Support** - Paths stored in character_disciplines now properly displayed
+- **Result Set Handling** - Fixed null result set iteration causing fatal errors
+- **Field Name Mismatch** - Corrected merits/flaws point_value field reference
+
+### Files Modified:
+- `includes/discipline_functions.php` - Converted to mysqlnd-free queries, removed connect.php require
+- `data/view_character.php` - Added error handling, null checks, field name fix
+- `database/add_thaumaturgy_paths.php` - Created script to add Thaumaturgy paths and populate powers
+
+### Files Created:
+- `database/add_thaumaturgy_paths.php` - Thaumaturgy path addition script
+- `database/debug_disciplines.php` - Diagnostic script for discipline data inspection
+- `database/test_discipline_function.php` - Function testing script
+
+### Impact:
+- **Data Visibility** - All characters now properly display disciplines and powers
+- **System Completeness** - Thaumaturgy paths fully integrated into discipline system
+- **Error Prevention** - Robust error handling prevents future display issues
+- **Server Compatibility** - Works on all PHP/MySQL configurations without mysqlnd requirement
+
+---
+
+## Version 0.9.3
 **Date:** February 5, 2025
 
 ### 🎉 Complete MET Books Collection - All Missing Books Found & Imported:
