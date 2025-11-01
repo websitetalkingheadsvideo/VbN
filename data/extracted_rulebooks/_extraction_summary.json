@@ -1,6 +1,6 @@
 {
-  "total_files": 31,
-  "successful": 31,
+  "total_files": 59,
+  "successful": 59,
   "files": [
     {
       "filename": "Guide to the Camarilla.pdf",
@@ -105,6 +105,12 @@
       "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Laws of Elysium (5012).txt"
     },
     {
+      "filename": "MET - VTM - Laws of the Night (Text searchable).pdf",
+      "page_count": 273,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Laws of the Night (Text searchable).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Laws of the Night (Text searchable).txt"
+    },
+    {
       "filename": "MET - VTM - Liber des Goules (5006).pdf",
       "page_count": 113,
       "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (5006).json",
@@ -185,6 +191,168 @@
     {
       "filename": "Wraith - MET - Oblivion (5400).pdf",
       "page_count": 259,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).txt"
+    },
+    {
+      "filename": "MET Mind's Eye Theatre Discipline Deck.pdf",
+      "page_count": 300,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Discipline Deck.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Discipline Deck.txt"
+    },
+    {
+      "filename": "MET Mind's Eye Theatre Gift Deck.pdf",
+      "page_count": 25,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Gift Deck.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Gift Deck.txt"
+    },
+    {
+      "filename": "MET Mind's Eye Theatre Prop Deck.pdf",
+      "page_count": 14,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Prop Deck.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Prop Deck.txt"
+    },
+    {
+      "filename": "MET Apocalypse.pdf",
+      "page_count": 161,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Apocalypse.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Apocalypse.txt"
+    },
+    {
+      "filename": "MET Book of the Damned.pdf",
+      "page_count": 146,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Book of the Damned.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Book of the Damned.txt"
+    },
+    {
+      "filename": "MET Introductory Kit.pdf",
+      "page_count": 32,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Introductory Kit.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Introductory Kit.txt"
+    },
+    {
+      "filename": "MET Laws of the Hunt.pdf",
+      "page_count": 186,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Hunt.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Hunt.txt"
+    },
+    {
+      "filename": "MET Laws of the Reckoning.pdf",
+      "page_count": 330,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Reckoning.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Reckoning.txt"
+    },
+    {
+      "filename": "MET Laws of the Resurrection.pdf",
+      "page_count": 274,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Resurrection.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Resurrection.txt"
+    },
+    {
+      "filename": "MET Laws of the Wild Revised Edition.pdf",
+      "page_count": 290,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Wild Revised Edition.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Laws of the Wild Revised Edition.txt"
+    },
+    {
+      "filename": "MET Liber des Goules.pdf",
+      "page_count": 113,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Liber des Goules.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Liber des Goules.txt"
+    },
+    {
+      "filename": "MET Mind's Eye Theatre Book of the Wyrm.pdf",
+      "page_count": 210,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Book of the Wyrm.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Book of the Wyrm.txt"
+    },
+    {
+      "filename": "MET Mind's Eye Theatre Camarilla Guide.pdf",
+      "page_count": 101,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Camarilla Guide.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Camarilla Guide.txt"
+    },
+    {
+      "filename": "MET Mind's Eye Theatre Faith and Fire.pdf",
+      "page_count": 164,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Faith and Fire.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Faith and Fire.txt"
+    },
+    {
+      "filename": "MET Oblivion.pdf",
+      "page_count": 259,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Oblivion.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Oblivion.txt"
+    },
+    {
+      "filename": "MET Prince's Primer.pdf",
+      "page_count": 66,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Prince's Primer.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Prince's Primer.txt"
+    },
+    {
+      "filename": "MET Shining Host Player's Guide.pdf",
+      "page_count": 234,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Shining Host Player's Guide.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Shining Host Player's Guide.txt"
+    },
+    {
+      "filename": "MET Shining Host.pdf",
+      "page_count": 234,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Shining Host.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET Shining Host.txt"
+    },
+    {
+      "filename": "Minds Eye Theatre - Pickering Lythe.pdf",
+      "page_count": 125,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Minds Eye Theatre - Pickering Lythe.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Minds Eye Theatre - Pickering Lythe.txt"
+    },
+    {
+      "filename": "Victorian Age - Vampire.pdf",
+      "page_count": 224,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Victorian Age - Vampire.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Victorian Age - Vampire.txt"
+    },
+    {
+      "filename": "WoD Master Booklist.pdf",
+      "page_count": 20,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\WoD Master Booklist.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\WoD Master Booklist.txt"
+    },
+    {
+      "filename": "MET - VTM - Liber des Goules (text) (5006).docx",
+      "page_count": 59,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (text) (5006).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\MET - VTM - Liber des Goules (text) (5006).txt"
+    },
+    {
+      "filename": "VTM - Blood Magic - Secrets of Thaumaturgy (1).docx",
+      "page_count": 162,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Magic - Secrets of Thaumaturgy (1).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Magic - Secrets of Thaumaturgy (1).txt"
+    },
+    {
+      "filename": "VTM - Blood Magic - Secrets of Thaumaturgy.docx",
+      "page_count": 162,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Magic - Secrets of Thaumaturgy.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Blood Magic - Secrets of Thaumaturgy.txt"
+    },
+    {
+      "filename": "VTM - Counsel of Primogen.docx",
+      "page_count": 151,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Counsel of Primogen.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Counsel of Primogen.txt"
+    },
+    {
+      "filename": "VTM - Counsel of Primogen\u00a0(1).docx",
+      "page_count": 151,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Counsel of Primogen\u00a0(1).json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\VTM - Counsel of Primogen\u00a0(1).txt"
+    },
+    {
+      "filename": "Wraith - MET - Oblivion (5400).docx",
+      "page_count": 186,
       "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).json",
       "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).txt"
     }
