@@ -46,6 +46,25 @@ function load_anthropic_api_key(): ?string {
 }
 
 /**
+ * Load Anthropic model ID from config files
+ */
+function load_anthropic_model(): string {
+    // Try .taskmaster/config.json
+    $taskmaster_config = __DIR__ . '/../.taskmaster/config.json';
+    if (file_exists($taskmaster_config)) {
+        $config = json_decode(file_get_contents($taskmaster_config), true);
+        if (isset($config['models']['main']['provider']) && $config['models']['main']['provider'] === 'anthropic') {
+            if (isset($config['models']['main']['modelId'])) {
+                return $config['models']['main']['modelId'];
+            }
+        }
+    }
+    
+    // Default fallback
+    return 'claude-3-opus-20240229';
+}
+
+/**
  * Call Anthropic API with a prompt
  * 
  * @param string $prompt The user prompt/question
@@ -58,7 +77,7 @@ function call_anthropic(
     string $prompt, 
     string $system_prompt = '',
     int $max_tokens = 2000,
-    string $model = 'claude-3-5-sonnet-20241022'
+    string $model = null
 ): array {
     // Load API key
     $api_key = load_anthropic_api_key();
@@ -69,6 +88,11 @@ function call_anthropic(
             'error' => 'Anthropic API key not configured',
             'content' => null
         ];
+    }
+    
+    // Use provided model or load from config
+    if ($model === null) {
+        $model = load_anthropic_model();
     }
     
     // Build request payload

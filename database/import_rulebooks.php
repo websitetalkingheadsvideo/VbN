@@ -6,21 +6,24 @@
 require_once __DIR__ . '/../includes/connect.php';
 
 // Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 /**
  * Determine book category from filename
  */
 function determine_category(string $filename): string {
-    if (str_contains($filename, 'Introductory') || str_contains($filename, 'Reference')) {
+    if (strpos($filename, 'Introductory') !== false || strpos($filename, 'Reference') !== false || 
+        strpos($filename, 'Laws of the Night') !== false) {
         return 'Core';
-    } elseif (str_contains($filename, 'Camarilla') || str_contains($filename, 'Anarch') || str_contains($filename, 'Sabbat')) {
+    } elseif (strpos($filename, 'Camarilla') !== false || strpos($filename, 'Anarch') !== false || strpos($filename, 'Sabbat') !== false) {
         return 'Faction';
-    } elseif (str_contains($filename, 'Journal')) {
+    } elseif (strpos($filename, 'Journal') !== false) {
         return 'Journal';
-    } elseif (str_contains($filename, 'Blood Magic') || str_contains($filename, 'Thaumaturgy')) {
+    } elseif (strpos($filename, 'Blood Magic') !== false || strpos($filename, 'Thaumaturgy') !== false) {
         return 'Blood Magic';
-    } elseif (str_contains($filename, 'Laws of') || str_contains($filename, 'Liber des') || str_contains($filename, 'Dark Epics')) {
+    } elseif (strpos($filename, 'Laws of') !== false || strpos($filename, 'Liber des') !== false || strpos($filename, 'Dark Epics') !== false) {
         return 'Supplement';
     }
     return 'Other';
@@ -30,17 +33,17 @@ function determine_category(string $filename): string {
  * Extract system type from filename
  */
 function determine_system(string $filename): string {
-    if (str_contains($filename, 'MET - VTM')) {
+    if (strpos($filename, 'MET - VTM') !== false) {
         return 'MET-VTM';
-    } elseif (str_contains($filename, 'MET')) {
+    } elseif (strpos($filename, 'MET') !== false) {
         return 'MET';
-    } elseif (str_contains($filename, 'VTM')) {
+    } elseif (strpos($filename, 'VTM') !== false) {
         return 'VTM';
-    } elseif (str_contains($filename, 'MTA')) {
+    } elseif (strpos($filename, 'MTA') !== false) {
         return 'MTA';
-    } elseif (str_contains($filename, 'Wraith')) {
+    } elseif (strpos($filename, 'Wraith') !== false) {
         return 'Wraith';
-    } elseif (str_contains($filename, 'WOD')) {
+    } elseif (strpos($filename, 'WOD') !== false) {
         return 'WOD';
     }
     return 'Other';
@@ -78,9 +81,10 @@ function generate_title(string $filename): string {
 function import_rulebook(mysqli $conn, array $book_data, string $json_path, string $pdf_path): ?int {
     $metadata = $book_data['metadata'];
     $filename = $metadata['filename'];
+    $pdf_pages = $metadata['page_count'];
+    $extracted_pages = !empty($book_data['pages']) ? count($book_data['pages']) : 0;
     
-    echo "  Importing: {$filename} ({$metadata['page_count']} pages)\n";
-    echo "  Progress: Processing metadata...\n";
+    echo "Importing: {$filename} (PDF: {$pdf_pages} pages, Extracted: {$extracted_pages} pages)\n";
     
     // Prepare book metadata
     $title = generate_title($filename);
@@ -107,7 +111,7 @@ function import_rulebook(mysqli $conn, array $book_data, string $json_path, stri
             updated_at = CURRENT_TIMESTAMP";
     
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sssssiss ss', 
+    $stmt->bind_param('sssssissss',
         $filename, $title, $book_code, $category, $system_type, 
         $page_count, $json_path, $pdf_path, $author, $subject
     );
@@ -124,16 +128,17 @@ function import_rulebook(mysqli $conn, array $book_data, string $json_path, stri
     $stmt->close();
     
     // Import pages
-    if (!empty($book_data['pages'])) {
+    if (!empty($book_data['pages']) && count($book_data['pages']) > 0) {
         $imported_pages = import_pages($conn, $rulebook_id, $book_data['pages']);
-        echo "    [OK] Imported {$imported_pages} pages\n";
+        echo "    ✅ Imported {$imported_pages} pages\n";
     } else {
-        echo "    [WARN] No pages to import\n";
+        echo "    ⚠️  WARN: Book has {$metadata['page_count']} pages in metadata but no extractable text (likely image-based PDF)\n";
     }
     
     // Update status
     $conn->query("UPDATE rulebooks SET status = 'indexed' WHERE id = {$rulebook_id}");
     
+    echo "    ✨ Complete!\n";
     return $rulebook_id;
 }
 
@@ -169,13 +174,12 @@ function import_pages(mysqli $conn, int $rulebook_id, array $pages): int {
         }
         
         $processed_pages++;
-        if ($processed_pages % 10 == 0 || $processed_pages == $total_pages) {
-            echo "  Progress: {$processed_pages}/{$total_pages} pages imported\n";
+        if ($processed_pages % 50 == 0 || $processed_pages == $total_pages) {
+            echo "      Progress: {$processed_pages}/{$total_pages} pages...\n";
         }
     }
     
     $stmt->close();
-    echo "  ✅ Completed: {$imported} pages imported\n";
     return $imported;
 }
 
@@ -202,22 +206,27 @@ function import_all_rulebooks(mysqli $conn, string $data_dir): void {
     
     echo "Importing {$total} rulebooks...\n";
     echo "=" . str_repeat("=", 59) . "\n";
+    flush();
     
+    $current = 0;
     foreach ($summary['files'] as $file_info) {
+        $current++;
+        echo "\n[{$current}/{$total}] ";
+        flush();
         // Convert Windows paths to server paths
         $json_path = str_replace('G:\\VbN\\data\\extracted_rulebooks\\', $data_dir . '/', $file_info['output_json']);
         $json_path = str_replace('\\', '/', $json_path);
         
         // Skip books with no pages
         if ($file_info['page_count'] == 0) {
-            echo "  Skipping (no pages): {$file_info['filename']}\n";
+            echo "⏭️  Skipping (no pages in PDF): {$file_info['filename']}\n";
             $skipped++;
             continue;
         }
         
         // Load JSON data
         if (!file_exists($json_path)) {
-            echo "  [ERROR] JSON not found: {$json_path}\n";
+            echo "❌ ERROR: JSON not found: {$json_path}\n";
             $skipped++;
             continue;
         }
@@ -225,7 +234,7 @@ function import_all_rulebooks(mysqli $conn, string $data_dir): void {
         $book_data = json_decode(file_get_contents($json_path), true);
         
         if (!$book_data) {
-            echo "  [ERROR] Failed to parse JSON: {$json_path}\n";
+            echo "❌ ERROR: Failed to parse JSON: {$json_path}\n";
             $skipped++;
             continue;
         }
@@ -240,25 +249,53 @@ function import_all_rulebooks(mysqli $conn, string $data_dir): void {
         if ($rulebook_id) {
             $imported++;
         } else {
+            echo "    ❌ Failed to import\n";
             $skipped++;
         }
     }
     
-    echo "=" . str_repeat("=", 59) . "\n";
-    echo "[SUCCESS] Import complete!\n";
-    echo "  Total: {$total}\n";
-    echo "  Imported: {$imported}\n";
-    echo "  Skipped: {$skipped}\n";
+    echo "\n" . str_repeat("=", 59) . "\n";
+    echo "🎉 IMPORT COMPLETE!\n";
+    echo "  📚 Total books: {$total}\n";
+    echo "  ✅ Successfully imported: {$imported}\n";
+    echo "  ⏭️  Skipped: {$skipped}\n";
 }
 
 // Main execution
 try {
+    // Check if running via web browser or CLI
+    $is_web = php_sapi_name() !== 'cli';
+    
+    if ($is_web) {
+        header('Content-Type: text/html; charset=utf-8');
+        // Disable output buffering for real-time progress
+        ob_implicit_flush(1);
+        if (ob_get_level() > 0) {
+            ob_end_flush();
+        }
+        echo "<!DOCTYPE html><html><head><title>Importing Rulebooks</title><style>
+            body { font-family: monospace; background: #1a0f0f; color: #d4c4b0; padding: 20px; }
+            pre { white-space: pre-wrap; word-wrap: break-word; }
+            .error { color: #ff6b6b; }
+            .success { color: #51cf66; }
+            .warning { color: #ffd43b; }
+        </style></head><body>";
+        echo "<h1>🦇 Importing Rulebooks to Database</h1><pre>";
+        flush();
+    }
+    
     $data_dir = __DIR__ . '/../data/extracted_rulebooks';
     
     echo "Starting rulebook import...\n";
     echo "Data directory: {$data_dir}\n\n";
     
     import_all_rulebooks($conn, $data_dir);
+    
+    if ($is_web) {
+        echo "</pre>";
+        echo "<p style='margin-top: 20px;'><strong>Import complete! <a href='../admin/rulebooks_search.php'>View Rulebooks Search</a></strong></p>";
+        echo "</body></html>";
+    }
     
 } catch (Exception $e) {
     echo "\n[FATAL ERROR] " . $e->getMessage() . "\n";

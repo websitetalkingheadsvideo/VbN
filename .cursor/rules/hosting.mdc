@@ -1,0 +1,45 @@
+---
+description: Enforce canonical host and URL generation; never use localhost or XAMPP
+globs: "**/*"
+alwaysApply: true
+---
+
+- **Canonical Host Only**
+  - All absolute URLs MUST use `https://vbn.talkingheads.video/`.
+  - `localhost`, `127.0.0.1`, and environment-dependent hostnames are prohibited in code, docs, and messages.
+
+- **NEVER Use XAMPP**
+  - This project does NOT use XAMPP for hosting.
+  - **DO NOT** reference XAMPP in any code, commands, documentation, or instructions.
+  - **DO NOT** use `C:\xampp\php\php.exe` or any XAMPP paths.
+  - **DO NOT** reference XAMPP Control Panel, Apache, or MySQL services.
+  - The database is hosted at `vdb5.pit.pair.com` (Pair Networks).
+  - For PHP execution locally, use system PHP if available, otherwise run via web interface.
+
+- **URL Construction**
+  - **Backend (PHP)**: Build absolute URLs via a single constant or helper.
+    - Define once in `includes/version.php` or a new `includes/urls.php`:
+      - `define('VBN_BASE_URL', 'https://vbn.talkingheads.video/');`
+    - Concatenate routes: `VBN_BASE_URL . 'database/create_clans_table.php'`.
+  - **Frontend (JS)**: Prefer relative paths for same-origin fetches (e.g., `/admin/view_character_api.php`).
+    - When an absolute link is required (copy/share), prefix with `https://vbn.talkingheads.video/`.
+
+- **DO / DON'T**
+  - DO: `https://vbn.talkingheads.video/database/create_clans_table.php`
+  - DON'T: `http://localhost/database/create_clans_table.php`
+  - DO: `fetch('/admin/view_character_api.php')`
+  - DON'T: `fetch('http://127.0.0.1/admin/view_character_api.php')`
+  - DON'T: `C:\xampp\php\php.exe database/import_rulebooks.php` ❌
+  - DON'T: Use XAMPP Control Panel or any XAMPP references ❌
+
+- **Migrations and Scripts**
+  - Any script links provided to users must use the canonical host.
+  - Example seed script: `https://vbn.talkingheads.video/database/create_clans_table.php`.
+
+- **Testing Guidance**
+  - Local testing should still use relative paths so deployments remain host-agnostic.
+  - Never check in absolute `localhost` URLs. Use the canonical host for absolutes in code/docs.
+
+- **References**
+  - Project site: `https://vbn.talkingheads.video/`
+

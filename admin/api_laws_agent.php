@@ -164,7 +164,7 @@ function build_context_from_results(array $results): string {
  */
 function ask_laws_agent(mysqli $conn, string $question, ?string $category = null, ?string $system = null): array {
     // Search for relevant content
-    $search_results = search_rulebooks($conn, $question, $category, $system, 5);
+    $search_results = search_rulebooks($conn, $question, $category, $system, 10);
     
     if (empty($search_results)) {
         return [
