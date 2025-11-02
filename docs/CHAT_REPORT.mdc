@@ -98,11 +98,6 @@
 - **Database Queries**: More robust with proper error handling and fallbacks
 
 ---
-- **Fixed Serpentis "Unknown Power" Issue** - Resolved powers showing as "Unknown Power" by switching from hardcoded fallback data to real API data
-- **API Path Correction** - Updated DataManager to use correct API path: `admin/api_disciplines.php?action=all`
-- **Data Transformation** - Implemented proper transformation of API response format (array-based) to DisciplineSystem's expected format (object-based with level keys)
-
-#### 2. Thaumaturgy Path Display Fixes
 - **Thaumaturgy Path Visibility** - Fixed paths not appearing at all for characters who have them
 - **Dynamic Categorization** - Added logic to automatically detect and categorize Thaumaturgy paths (starting with "Path of") into BloodSorcery category
 - **Display Logic Update** - Modified display to show all disciplines even when they have 0 powers (critical for editing existing characters)
