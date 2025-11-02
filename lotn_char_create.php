@@ -1945,7 +1945,7 @@ include 'includes/connect.php';
     <!-- System Modules -->
     <script src="js/modules/systems/TraitSystem.js"></script>
     <script src="js/modules/systems/AbilitySystem.js"></script>
-    <!-- <script src="js/modules/systems/DisciplineSystem.js"></script> -->
+    <script src="js/modules/systems/DisciplineSystem.js"></script>
     <script src="js/modules/systems/MeritsFlawsSystem.js"></script>
     <script src="js/modules/systems/BackgroundSystem.js"></script>
     <script src="js/modules/systems/MoralitySystem.js"></script>
@@ -1981,6 +1981,9 @@ include 'includes/connect.php';
             const imgEl = document.getElementById('imagePath');
             const imagePath = imgEl && imgEl.value ? imgEl.value : undefined;
 
+            // Collect state from CharacterCreationApp if available, otherwise use defaults
+            const state = window.characterCreationApp ? window.characterCreationApp.modules.stateManager.getState() : null;
+            
             const formData = {
                 character_name: document.getElementById('characterName').value || '',
                 player_name: document.getElementById('playerName').value || '',
@@ -1996,13 +1999,13 @@ include 'includes/connect.php';
                 equipment: '', // Field doesn't exist in basic tab
                 total_xp: 30, // Default value
                 spent_xp: 0, // Default value
-                traits: {},
-                negativeTraits: {},
-                abilities: [],
-                disciplines: [],
-                backgrounds: {},
-                backgroundDetails: {},
-                merits_flaws: [],
+                traits: state?.traits || {},
+                negativeTraits: state?.negativeTraits || {},
+                abilities: state?.abilities || [],
+                disciplinePowers: state?.disciplinePowers || {},
+                backgrounds: state?.backgrounds || {},
+                backgroundDetails: state?.backgroundDetails || {},
+                merits_flaws: state?.selectedMeritsFlaws || [],
                 morality: {
                     path_name: 'Humanity',
                     path_rating: 7,
@@ -2276,11 +2279,11 @@ include 'includes/connect.php';
                 { level: 5, name: 'Psychic Projection', description: 'Astral projection' }
             ],
             'Celerity': [
-                { level: 1, name: 'Cat\'s Grace', description: 'Enhanced speed and reflexes' },
-                { level: 2, name: 'Rapid Reflexes', description: 'Extra actions in combat' },
-                { level: 3, name: 'Lightning Strike', description: 'Devastating speed attacks' },
-                { level: 4, name: 'Blink', description: 'Teleport short distances' },
-                { level: 5, name: 'Time Stop', description: 'Stop time briefly' }
+                { level: 1, name: 'Quickness', description: 'The vampire can move and react at superhuman speeds, allowing them to perform actions much faster than normal.' },
+                { level: 2, name: 'Sprint', description: 'The vampire can achieve incredible bursts of speed over short distances.' },
+                { level: 3, name: 'Enhanced Reflexes', description: 'The vampire\'s reaction time becomes so fast they can dodge bullets and catch arrows in flight.' },
+                { level: 4, name: 'Blur', description: 'The vampire moves so fast they become a blur, making them nearly impossible to target.' },
+                { level: 5, name: 'Accelerated Movement', description: 'The vampire can maintain superhuman speed for extended periods.' }
             ],
             'Dominate': [
                 { level: 1, name: 'Cloud Memory', description: 'Erase recent memories' },
@@ -2440,7 +2443,8 @@ include 'includes/connect.php';
             availablePowers.forEach(power => {
                 const powerOption = document.createElement('div');
                 powerOption.className = 'power-option';
-                powerOption.onclick = () => selectPower(disciplineName, power);
+                // Legacy onclick removed - DisciplineSystem handles power selection now
+                // powerOption.onclick = () => selectPower(disciplineName, power);
                 powerOption.innerHTML = `
                     <strong>Level ${power.level}:</strong> ${power.name}
                     <br><small>${power.description}</small>
@@ -2496,8 +2500,10 @@ include 'includes/connect.php';
         }
         
         // Select a power and add to discipline list
+        // DISABLED: Legacy function - DisciplineSystem now handles power selection
         function selectPower(disciplineName, power) {
-            console.log(`Selected ${disciplineName} Level ${power.level}: ${power.name}`);
+            console.log(`[Legacy] Selected ${disciplineName} Level ${power.level}: ${power.name} - Disabled, DisciplineSystem handles this now`);
+            return; // Disabled - DisciplineSystem handles this
             
             // Check if this power is already selected
             const disciplineList = document.getElementById('clanDisciplinesList');
