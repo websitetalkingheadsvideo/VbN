@@ -400,7 +400,7 @@ function viewCharacter(characterId) {
     };
     modal.addEventListener('click', modalClickHandler);
     
-    fetch('view_character_api.php?id=' + characterId)
+    fetch('view_character_api.php?id=' + characterId + '&_t=' + Date.now())
         .then(response => response.json())
         .then(data => {
             if (data.success) {

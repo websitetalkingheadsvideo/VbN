@@ -38,6 +38,13 @@ class DisciplineSystem {
             'Ventrue': ['Dominate', 'Fortitude', 'Presence']
         };
         
+        // Discipline category mapping
+        this.disciplineCategories = {
+            'Clan': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean'],
+            'BloodSorcery': ['Thaumaturgy', 'Necromancy', 'Koldunic Sorcery'],
+            'Advanced': ['Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis']
+        };
+        
         this.init();
     }
     
@@ -61,9 +68,82 @@ class DisciplineSystem {
      * Load discipline data from API
      */
     async loadDisciplineData() {
-        // Force fallback data for now
-        console.log('DisciplineSystem: Using fallback data');
-        this.loadFallbackData();
+        try {
+            // Try to load from API via DataManager
+            if (this.dataManager && typeof this.dataManager.fetchDisciplineData === 'function') {
+                console.log('DisciplineSystem: Loading discipline data from API');
+                const response = await this.dataManager.fetchDisciplineData();
+                
+                console.log('DisciplineSystem: API response received:', response);
+                
+                if (response && response.success && response.data && response.data.disciplinePowers) {
+                    // Transform API response to our expected format
+                    this.disciplineData = {};
+                    const apiPowers = response.data.disciplinePowers;
+                    
+                    // Convert array format to object format with powers indexed by level
+                    Object.keys(apiPowers).forEach(disciplineName => {
+                        const powersArray = apiPowers[disciplineName];
+                        if (Array.isArray(powersArray)) {
+                            this.disciplineData[disciplineName] = {
+                                description: '', // API doesn't provide description in this endpoint
+                                powers: {}
+                            };
+                            
+                            // Convert array of {level, name, description} to {level: {name, description, cost}}
+                            powersArray.forEach(power => {
+                                this.disciplineData[disciplineName].powers[String(power.level)] = {
+                                    name: power.name || 'Unknown Power',
+                                    description: power.description || '',
+                                    cost: '1 Willpower' // Default cost
+                                };
+                            });
+                        }
+                    });
+                    
+                    // Also load clan discipline access if available
+                    if (response.data.clanDisciplineAccess) {
+                        this.clanDisciplineAccess = { ...this.clanDisciplineAccess, ...response.data.clanDisciplineAccess };
+                    }
+                    
+                    // Add Thaumaturgy paths to BloodSorcery category dynamically
+                    // Thaumaturgy paths are disciplines with parent_discipline='Thaumaturgy' in the database
+                    // They'll be named like "Path of Blood", "Path of Geomancy", etc.
+                    Object.keys(this.disciplineData).forEach(disciplineName => {
+                        // Check if it's a Thaumaturgy path (starts with "Path of" or contains common path indicators)
+                        if (disciplineName.startsWith('Path of') || 
+                            disciplineName.includes('Path') && !this.disciplineCategories['BloodSorcery'].includes(disciplineName)) {
+                            // Add to BloodSorcery category if not already there
+                            if (!this.disciplineCategories['BloodSorcery'].includes(disciplineName)) {
+                                this.disciplineCategories['BloodSorcery'].push(disciplineName);
+                            }
+                        }
+                    });
+                    
+                    console.log('DisciplineSystem: Successfully loaded discipline data from API', Object.keys(this.disciplineData).length, 'disciplines');
+                    console.log('DisciplineSystem: BloodSorcery category now includes:', this.disciplineCategories['BloodSorcery']);
+                    
+                    // Debug: Log Thaumaturgy paths to verify they're loaded
+                    const thaumaturgyPaths = Object.keys(this.disciplineData).filter(name => name.startsWith('Path of'));
+                    console.log('DisciplineSystem: Thaumaturgy paths loaded:', thaumaturgyPaths);
+                    thaumaturgyPaths.forEach(pathName => {
+                        const pathData = this.disciplineData[pathName];
+                        console.log(`DisciplineSystem: ${pathName} has ${Object.keys(pathData.powers).length} powers:`, Object.keys(pathData.powers));
+                    });
+                    
+                    return;
+                }
+            }
+            
+            // Fallback to hardcoded data if API fails
+            console.warn('DisciplineSystem: API load failed or unavailable, using fallback data');
+            this.loadFallbackData();
+        } catch (error) {
+            console.error('DisciplineSystem: Error loading discipline data from API:', error);
+            console.error('DisciplineSystem: Error details:', error.message, error.stack);
+            // Fallback to hardcoded data
+            this.loadFallbackData();
+        }
     }
     
     /**
@@ -115,20 +195,100 @@ class DisciplineSystem {
                 "description": "The Discipline of Celerity allows vampires to move at superhuman speeds.",
                 "powers": {
                     "1": {
-                        "name": "Cat's Grace",
-                        "description": "Move with supernatural speed and agility.",
+                        "name": "Quickness",
+                        "description": "The vampire can move and react at superhuman speeds, allowing them to perform actions much faster than normal.",
                         "cost": "1 Willpower"
                     },
                     "2": {
-                        "name": "Rapid Reflexes",
-                        "description": "React to threats with lightning speed.",
+                        "name": "Sprint",
+                        "description": "The vampire can achieve incredible bursts of speed over short distances.",
                         "cost": "1 Willpower"
                     },
                     "3": {
-                        "name": "Lightning Strike",
-                        "description": "Attack multiple times in a single turn.",
+                        "name": "Enhanced Reflexes",
+                        "description": "The vampire's reaction time becomes so fast they can dodge bullets and catch arrows in flight.",
+                        "cost": "1 Willpower"
+                    },
+                    "4": {
+                        "name": "Blur",
+                        "description": "The vampire moves so fast they become a blur, making them nearly impossible to target.",
+                        "cost": "1 Willpower"
+                    },
+                    "5": {
+                        "name": "Accelerated Movement",
+                        "description": "The vampire can maintain superhuman speed for extended periods.",
                         "cost": "1 Willpower"
                     }
+                }
+            },
+            "Dominate": {
+                "description": "The Discipline of Dominate allows vampires to control the minds of others.",
+                "powers": {
+                    "1": { "name": "Command", "description": "The vampire can issue simple, direct commands that mortals and weaker vampires must obey.", "cost": "1 Willpower" },
+                    "2": { "name": "Mesmerize", "description": "The vampire can place a target in a trance-like state, making them highly suggestible.", "cost": "1 Willpower" },
+                    "3": { "name": "Memory Alteration", "description": "The vampire can modify, erase, or implant false memories in a target's mind.", "cost": "1 Willpower" },
+                    "4": { "name": "Suggestion", "description": "The vampire can plant subtle suggestions in a target's mind that they will act upon later.", "cost": "1 Willpower" },
+                    "5": { "name": "Mental Domination", "description": "The vampire gains complete control over a target's mind, able to command them to perform any action.", "cost": "1 Willpower" }
+                }
+            },
+            "Fortitude": {
+                "description": "The Discipline of Fortitude allows vampires to resist physical damage and environmental hazards.",
+                "powers": {
+                    "1": { "name": "Resistance", "description": "The vampire can resist physical damage and environmental hazards better than normal.", "cost": "1 Willpower" },
+                    "2": { "name": "Endurance", "description": "The vampire can maintain physical activity and resist fatigue for extended periods.", "cost": "1 Willpower" },
+                    "3": { "name": "Pain Tolerance", "description": "The vampire can ignore pain and continue functioning normally even when severely injured.", "cost": "1 Willpower" },
+                    "4": { "name": "Damage Reduction", "description": "The vampire can reduce the damage taken from physical attacks.", "cost": "1 Willpower" },
+                    "5": { "name": "Supernatural Stamina", "description": "The vampire gains almost supernatural levels of physical resilience.", "cost": "1 Willpower" }
+                }
+            },
+            "Obfuscate": {
+                "description": "The Discipline of Obfuscate allows vampires to hide from sight and become invisible.",
+                "powers": {
+                    "1": { "name": "Cloak of Shadows", "description": "The vampire can blend into shadows and darkness, becoming difficult to see and track.", "cost": "1 Willpower" },
+                    "2": { "name": "Vanish", "description": "The vampire can become completely invisible for short periods.", "cost": "1 Willpower" },
+                    "3": { "name": "Mask of a Thousand Faces", "description": "The vampire can change their appearance to look like anyone they have seen.", "cost": "1 Willpower" },
+                    "4": { "name": "Silent Movement", "description": "The vampire can move without making any sound, becoming completely silent.", "cost": "1 Willpower" },
+                    "5": { "name": "Unseen Presence", "description": "The vampire can make others forget they ever saw them.", "cost": "1 Willpower" }
+                }
+            },
+            "Potence": {
+                "description": "The Discipline of Potence allows vampires to possess superhuman physical strength.",
+                "powers": {
+                    "1": { "name": "Prowess", "description": "The vampire gains superhuman physical strength, allowing them to perform feats far beyond mortal capabilities.", "cost": "1 Willpower" },
+                    "2": { "name": "Shove", "description": "The vampire can deliver powerful shoves and pushes that can knock down or throw opponents great distances.", "cost": "1 Willpower" },
+                    "3": { "name": "Knockdown", "description": "The vampire can deliver devastating blows that can knock down even the strongest opponents.", "cost": "1 Willpower" },
+                    "4": { "name": "Crushing Blow", "description": "The vampire can deliver attacks so powerful they can crush through armor and break weapons.", "cost": "1 Willpower" },
+                    "5": { "name": "Leap", "description": "The vampire can jump incredible distances and heights, covering great distances with a single bound.", "cost": "1 Willpower" }
+                }
+            },
+            "Presence": {
+                "description": "The Discipline of Presence allows vampires to influence and charm others through sheer presence.",
+                "powers": {
+                    "1": { "name": "Awe", "description": "The vampire can project an aura of majesty and power that makes others feel small and insignificant.", "cost": "1 Willpower" },
+                    "2": { "name": "Dread Gaze", "description": "The vampire can project an aura of fear and intimidation that can cause others to flee or submit.", "cost": "1 Willpower" },
+                    "3": { "name": "Entrancement", "description": "The vampire can charm and captivate others, making them highly susceptible to influence.", "cost": "1 Willpower" },
+                    "4": { "name": "Majesty", "description": "The vampire can project an aura of divine authority that makes others feel compelled to worship them.", "cost": "1 Willpower" },
+                    "5": { "name": "Inspire", "description": "The vampire can use their presence to inspire others to greatness, enhancing their abilities.", "cost": "1 Willpower" }
+                }
+            },
+            "Protean": {
+                "description": "The Discipline of Protean allows vampires to change form and shape.",
+                "powers": {
+                    "1": { "name": "Shape of the Beast", "description": "The vampire can transform into a wolf or bat, gaining the abilities and instincts of the chosen animal form.", "cost": "1 Willpower" },
+                    "2": { "name": "Claws", "description": "The vampire can extend razor-sharp claws from their fingers, making their hands into deadly weapons.", "cost": "1 Willpower" },
+                    "3": { "name": "Feral Leap", "description": "The vampire can leap incredible distances and heights, covering great distances with a single bound.", "cost": "1 Willpower" },
+                    "4": { "name": "Flight (Bat Form)", "description": "The vampire can transform into a bat and gain the ability to fly.", "cost": "1 Willpower" },
+                    "5": { "name": "Natural Armor", "description": "The vampire can harden their skin to create natural armor that provides protection against physical attacks.", "cost": "1 Willpower" }
+                }
+            },
+            "Dementation": {
+                "description": "The Discipline of Dementation allows vampires to drive others to madness.",
+                "powers": {
+                    "1": { "name": "Awe of Madness", "description": "The vampire can project an aura of madness that can cause others to become confused and disoriented.", "cost": "1 Willpower" },
+                    "2": { "name": "Fear Projection", "description": "The vampire can project intense fear into the minds of others.", "cost": "1 Willpower" },
+                    "3": { "name": "Confusion", "description": "The vampire can create mental confusion in others, making them unable to distinguish between reality and illusion.", "cost": "1 Willpower" },
+                    "4": { "name": "Irrational Fear", "description": "The vampire can create specific, irrational fears in others.", "cost": "1 Willpower" },
+                    "5": { "name": "Frenzy Inducement", "description": "The vampire can cause others to enter a state of frenzy, making them lose control.", "cost": "1 Willpower" }
                 }
             }
         };
@@ -306,9 +466,12 @@ class DisciplineSystem {
             return;
         }
         
-        // Check if maximum disciplines reached
-        if (disciplines.length >= this.requirements.max) {
-            console.warn(`DisciplineSystem: Maximum ${this.requirements.max} disciplines allowed.`);
+        // Check if maximum disciplines reached (only during character creation, not editing)
+        // Check both characterId and id properties (state might use either)
+        const isEditing = (state.characterId && state.characterId > 0) || (state.id && state.id > 0);
+        if (!isEditing && disciplines.length >= this.requirements.max) {
+            console.warn(`DisciplineSystem: Maximum ${this.requirements.max} disciplines allowed during character creation.`);
+            console.warn(`DisciplineSystem: Current state - characterId: ${state.characterId}, id: ${state.id}, isEditing: ${isEditing}`);
             return;
         }
         
@@ -373,6 +536,7 @@ class DisciplineSystem {
     selectPower(disciplineName, powerLevel) {
         const state = this.stateManager.getState();
         const disciplinePowers = { ...state.disciplinePowers };
+        let disciplines = [...state.disciplines];
         
         // Initialize discipline powers if not exists
         if (!disciplinePowers[disciplineName]) {
@@ -388,8 +552,15 @@ class DisciplineSystem {
         // Add power to the discipline
         disciplinePowers[disciplineName].push(powerLevel);
         
+        // When a power is selected, ensure the discipline is in the disciplines array
+        // (it might already be there from clicking the discipline button, which is fine)
+        if (!disciplines.includes(disciplineName)) {
+            disciplines.push(disciplineName);
+        }
+        
         // Update state
         this.stateManager.setState({
+            disciplines: disciplines,
             disciplinePowers: disciplinePowers
         });
         
@@ -440,50 +611,82 @@ class DisciplineSystem {
      */
     updateDisciplineDisplay() {
         const state = this.stateManager.getState();
-        const disciplines = state.disciplines || {};
+        const disciplines = state.disciplines || [];
         const disciplinePowers = state.disciplinePowers;
         
-        // Update all discipline list elements
-        const listElements = [
-            '#clanDisciplinesList',
-            '#bloodSorceryList', 
-            '#advancedDisciplinesList'
-        ];
+        // Define category mappings
+        const categoryMappings = {
+            '#clanDisciplinesList': 'Clan',
+            '#bloodSorceryList': 'BloodSorcery',
+            '#advancedDisciplinesList': 'Advanced'
+        };
         
-        // Convert disciplines object to array for mapping
-        const disciplinesArray = Object.keys(disciplines);
-        
-        // Create display elements for each discipline
-        const disciplineHTML = disciplinesArray.map(disciplineName => {
-            const powers = disciplinePowers[disciplineName] || [];
-            const powersHTML = powers.map(level => {
-                const power = this.getPowerInfo(disciplineName, level);
+        // Helper function to create discipline HTML
+        // Show all disciplines that are in the state, even if they have no powers yet
+        const createDisciplineHTML = (disciplinesArray) => {
+            if (disciplinesArray.length === 0) return '';
+            
+            // Show all disciplines that are in the state (even with 0 powers)
+            // This is important for editing existing characters where disciplines might exist without powers
+            const disciplinesToShow = disciplinesArray.filter(disciplineName => 
+                disciplines.includes(disciplineName)
+            );
+            
+            if (disciplinesToShow.length === 0) return '';
+            
+            return disciplinesToShow.map(disciplineName => {
+                const powers = disciplinePowers[disciplineName] || [];
+                
+                // If no powers, show a placeholder indicating the discipline is selected but has no powers
+                let powersHTML = '';
+                if (powers.length > 0) {
+                    powersHTML = powers.map(level => {
+                        const power = this.getPowerInfo(disciplineName, level);
+                        return `
+                            <div class="selected-power">
+                                <span class="power-name">${disciplineName}: ${power.name}</span>
+                                <button type="button" class="remove-power-btn" 
+                                        data-discipline="${disciplineName}" 
+                                        data-power-level="${level}">×</button>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    // Show discipline name even without powers (for editing mode)
+                    powersHTML = `
+                        <div class="selected-power">
+                            <span class="power-name">${disciplineName} (no powers selected)</span>
+                        </div>
+                    `;
+                }
+                
                 return `
-                    <div class="selected-power">
-                        <span class="power-name">${power.name} (Level ${level})</span>
-                        <button type="button" class="remove-power-btn" 
-                                data-discipline="${disciplineName}" 
-                                data-power-level="${level}">×</button>
+                    <div class="selected-discipline">
+                        <div class="discipline-powers">
+                            ${powersHTML}
+                        </div>
                     </div>
                 `;
             }).join('');
-            
-            return `
-                <div class="selected-discipline">
-                    <div class="discipline-header">
-                        <span class="discipline-name">${disciplineName}</span>
-                        <button type="button" class="remove-discipline-btn" 
-                                data-discipline="${disciplineName}">×</button>
-                    </div>
-                    <div class="discipline-powers">
-                        ${powersHTML}
-                    </div>
-                </div>
-            `;
-        }).join('');
+        };
         
-        // Update all discipline list elements
-        listElements.forEach(selector => {
+        // Update each list with only its category's disciplines
+        Object.entries(categoryMappings).forEach(([selector, category]) => {
+            const categoryDisciplines = this.disciplineCategories[category] || [];
+            // Filter disciplines by category, but also include Thaumaturgy paths if in BloodSorcery
+            let filteredDisciplines = disciplines.filter(disc => categoryDisciplines.includes(disc));
+            
+            // Special handling for BloodSorcery: also include any discipline that starts with "Path of"
+            // (Thaumaturgy paths might not be in the category list yet if API hasn't loaded)
+            if (category === 'BloodSorcery') {
+                const thaumaturgyPaths = disciplines.filter(disc => 
+                    disc.startsWith('Path of') && !filteredDisciplines.includes(disc)
+                );
+                filteredDisciplines = [...filteredDisciplines, ...thaumaturgyPaths];
+            }
+            
+            const disciplineHTML = createDisciplineHTML(filteredDisciplines);
+            
             const listElement = this.uiManager.getElement(selector);
             if (listElement) {
                 this.uiManager.updateContent(listElement, disciplineHTML);
@@ -686,11 +889,23 @@ class DisciplineSystem {
      */
     getPowerInfo(disciplineName, level) {
         if (!this.disciplineData || !this.disciplineData[disciplineName]) {
+            console.warn(`DisciplineSystem: getPowerInfo - discipline '${disciplineName}' not found in disciplineData`);
+            console.warn(`DisciplineSystem: Available disciplines:`, Object.keys(this.disciplineData || {}));
             return { name: 'Unknown Power', description: 'Power not found', cost: 'Unknown' };
         }
         
         const discipline = this.disciplineData[disciplineName];
-        return discipline.powers[level] || { name: 'Unknown Power', description: 'Power not found', cost: 'Unknown' };
+        // Convert level to string since we store powers with string keys
+        const levelKey = String(level);
+        const power = discipline.powers[levelKey];
+        
+        if (!power) {
+            console.warn(`DisciplineSystem: getPowerInfo - power level ${level} (key: ${levelKey}) not found for ${disciplineName}`);
+            console.warn(`DisciplineSystem: Available power levels for ${disciplineName}:`, Object.keys(discipline.powers || {}));
+            return { name: 'Unknown Power', description: 'Power not found', cost: 'Unknown' };
+        }
+        
+        return power;
     }
     
     /**
@@ -768,7 +983,25 @@ class DisciplineSystem {
     updateClanDisciplines(selectedClan) {
         if (!selectedClan) return;
         
-        // Get allowed disciplines for the selected clan
+        // Check if this is an NPC or existing character being edited
+        const state = this.stateManager.getState();
+        const isNPC = state.playerName === 'NPC';
+        const isEditing = (state.characterId && state.characterId > 0) || (state.id && state.id > 0);
+        
+        // Don't apply clan restrictions for NPCs or when editing existing characters
+        if (isNPC || isEditing) {
+            // Enable all discipline buttons
+            const allDisciplineButtons = document.querySelectorAll('.discipline-option-btn');
+            allDisciplineButtons.forEach(button => {
+                button.disabled = false;
+                button.style.opacity = '1';
+                button.style.cursor = 'pointer';
+                button.title = '';
+            });
+            return;
+        }
+        
+        // Original clan restriction logic for new PC characters
         const allowedDisciplines = this.clanDisciplineAccess[selectedClan] || [];
         
         // Get all discipline option buttons
@@ -803,6 +1036,14 @@ class DisciplineSystem {
      */
     clearInvalidDisciplines(selectedClan, allowedDisciplines) {
         const state = this.stateManager.getState();
+        const isNPC = state.playerName === 'NPC';
+        const isEditing = (state.characterId && state.characterId > 0) || (state.id && state.id > 0);
+        
+        // Don't clear disciplines for NPCs or when editing
+        if (isNPC || isEditing) {
+            return;
+        }
+        
         const disciplines = [...state.disciplines];
         const disciplinePowers = { ...state.disciplinePowers };
         

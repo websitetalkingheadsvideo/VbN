@@ -275,7 +275,7 @@ class DataManager {
      */
     async fetchDisciplineData() {
         try {
-            const data = await this.fetchData('api_disciplines.php', {
+            const data = await this.fetchData('admin/api_disciplines.php?action=all', {
                 method: 'GET',
                 useCache: true,
                 cacheTimeout: 10 * 60 * 1000 // 10 minutes

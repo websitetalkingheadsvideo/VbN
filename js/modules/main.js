@@ -122,13 +122,12 @@ class CharacterCreationApp {
         );
         
         // DisciplineSystem - Using simple script version instead
-        // this.modules.disciplineSystem = new DisciplineSystem(
-        //     this.modules.stateManager,
-        //     this.modules.uiManager,
-        //     this.modules.eventManager,
-        //     this.modules.notificationManager,
-        //     this.modules.dataManager
-        // );
+        this.modules.disciplineSystem = new DisciplineSystem(
+            this.modules.stateManager,
+            this.modules.uiManager,
+            this.modules.eventManager,
+            this.modules.dataManager
+        );
         
         // MeritsFlawsSystem
         this.modules.meritsFlawsSystem = new MeritsFlawsSystem(
@@ -495,14 +494,31 @@ class CharacterCreationApp {
                 console.log('Character data loaded successfully:', characterData);
                 console.log('Disciplines in loaded data:', characterData.disciplines);
                 
+				// Prepare characterData with explicit characterId and playerName
+				const characterId = characterData.character?.id || null;
+				const characterDataWithIds = {
+					...characterData,
+					characterId: characterId,
+					id: characterId, // Set both characterId and id for compatibility
+					playerName: characterData.character?.player_name || ''
+				};
+				
+				console.log('Setting character state with characterId:', characterId);
+				
 				// Set state with the loaded data
-				this.modules.stateManager.setState(characterData);
+				this.modules.stateManager.setState(characterDataWithIds);
 				// Ensure ID and image are explicitly tracked for updates
 				if (characterData.character && characterData.character.id) {
 					this.modules.stateManager.setStateProperty('id', characterData.character.id);
+					this.modules.stateManager.setStateProperty('characterId', characterData.character.id);
 				}
 				if (characterData.character && characterData.character.character_image) {
 					this.modules.stateManager.setStateProperty('imagePath', characterData.character.character_image);
+				}
+				
+				// Update discipline displays to reflect loaded state
+				if (this.modules.disciplineSystem && characterData.disciplines) {
+					this.modules.disciplineSystem.updateAllDisplays();
 				}
                 
                 // Populate form fields with loaded data (with a small delay to ensure DOM is ready)
@@ -574,9 +590,9 @@ class CharacterCreationApp {
             this.populateAbilitiesFromData(data.abilities);
         }
         
-        // Populate disciplines
-        if (data.disciplines) {
-            this.populateDisciplinesFromData(data.disciplines);
+        // Populate disciplines - use disciplinePowers for the UI mapping
+        if (data.disciplinePowers) {
+            this.populateDisciplinesFromData(data.disciplinePowers);
         }
         
         // Populate backgrounds
@@ -680,25 +696,11 @@ class CharacterCreationApp {
     populateDisciplinesFromData(disciplines) {
         console.log('Populating disciplines from data:', disciplines);
         
-        Object.entries(disciplines).forEach(([disciplineName, levels]) => {
-            console.log(`Processing discipline: ${disciplineName}, levels:`, levels);
-            
-            if (Array.isArray(levels)) {
-                levels.forEach(levelData => {
-                    const level = typeof levelData === 'object' ? levelData.level : levelData;
-                    console.log(`Looking for button: discipline="${disciplineName}", level="${level}"`);
-                    
-                    const button = document.querySelector(`button[data-discipline="${disciplineName}"][data-level="${level}"]`);
-                    if (button) {
-                        console.log('Found button, selecting:', button);
-                        button.classList.add('selected');
-                        button.dispatchEvent(new Event('click', { bubbles: true }));
-                    } else {
-                        console.log('Button not found for discipline:', disciplineName, 'level:', level);
-                    }
-                });
-            }
-        });
+        // Disciplines are already in state via setState()
+        // Just need to trigger display update
+        if (this.modules.disciplineSystem) {
+            this.modules.disciplineSystem.updateAllDisplays();
+        }
     }
     
     /**

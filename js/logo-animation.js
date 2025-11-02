@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoSvg = document.querySelector('.logo-svg');
     
     if (!logoLink || !logoSvg) {
-        console.log('Logo elements not found');
         return;
     }
     
@@ -16,15 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const border = logoSvg.querySelector('.logo-border');
     const text = logoSvg.querySelector('.logo-text');
     
-    console.log('Logo animation initialized', {
-        border: !!border,
-        text: !!text
-    });
-    
     // Mouse enter - activate animations
     logoLink.addEventListener('mouseenter', function() {
-        console.log('Logo hover START');
-        
         // Scale and glow entire SVG
         logoSvg.style.transform = 'scale(1.1)';
         logoSvg.style.filter = 'drop-shadow(0 0 20px rgba(139, 0, 0, 0.9))';
@@ -44,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mouse leave - reset animations
     logoLink.addEventListener('mouseleave', function() {
-        console.log('Logo hover END');
-        
         // Reset SVG
         logoSvg.style.transform = 'scale(1)';
         logoSvg.style.filter = 'none';

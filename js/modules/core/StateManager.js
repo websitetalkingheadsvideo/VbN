@@ -7,6 +7,7 @@ class StateManager {
     constructor() {
         this.state = {
             // Basic character information
+            characterId: null,
             characterName: '',
             playerName: '',
             chronicle: 'Valley by Night',
@@ -300,6 +301,7 @@ class StateManager {
         
         // Reset to initial state
         this.state = {
+            characterId: null,
             characterName: '',
             playerName: '',
             chronicle: 'Valley by Night',

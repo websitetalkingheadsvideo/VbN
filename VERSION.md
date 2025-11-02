@@ -1,6 +1,51 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.6 (Current)
+## Version 0.9.7 (Current)
+**Date:** February 6, 2025
+
+### Discipline System Fixes & Thaumaturgy Path Support:
+- ✅ **Fixed Serpentis Power Display** - Resolved "Unknown Power" issue by loading discipline data from API instead of hardcoded fallback
+- ✅ **Thaumaturgy Path Display** - Fixed Thaumaturgy paths not appearing for characters with them
+- ✅ **Edit Mode Discipline Limit** - Removed 3-discipline maximum restriction when editing existing characters (only applies during creation)
+- ✅ **API Error Handling** - Fixed API query errors for missing `category` column and `clan_disciplines` table
+- ✅ **Discipline Display Logic** - Updated to show all disciplines even with 0 powers (important for editing existing characters)
+- ✅ **Power Lookup Fix** - Fixed type conversion issues in power level lookup (string vs number)
+
+### Technical Improvements:
+- **API Data Loading** - DisciplineSystem now loads real discipline data from database via API instead of hardcoded fallback
+- **Thaumaturgy Path Categorization** - Dynamically adds Thaumaturgy paths (starting with "Path of") to BloodSorcery category
+- **State Management** - Fixed characterId/id detection for proper edit mode detection
+- **Error Logging** - Enhanced debug logging for discipline data loading and power lookup issues
+- **Graceful Degradation** - API handles missing database tables gracefully without failing completely
+
+### Bug Fixes:
+- **Serpentis Powers** - Powers now display with correct names instead of "Unknown Power"
+- **Thaumaturgy Paths Missing** - Path of Blood, Path of Geomancy, etc. now appear in BloodSorcery section
+- **Edit Mode Restrictions** - Characters can have unlimited disciplines when editing (no 3-discipline limit)
+- **API Failures** - Fixed queries that failed due to missing columns/tables
+- **Power Lookup** - Fixed string/number type mismatches in power level lookups
+- **Discipline Filtering** - Fixed display logic that was hiding disciplines with 0 powers
+
+### Files Modified:
+- `js/modules/systems/DisciplineSystem.js` - Updated to load from API, fixed edit mode limits, improved power lookup
+- `js/modules/core/DataManager.js` - Fixed API path to `admin/api_disciplines.php?action=all`
+- `js/modules/main.js` - Fixed characterId state management for edit mode detection
+- `admin/api_disciplines.php` - Fixed SQL queries to handle missing `category` column and `clan_disciplines` table
+- `admin/verify_thaumaturgy_powers.php` - Created verification script for Thaumaturgy path powers
+
+### Files Created:
+- `admin/test_thaumaturgy.php` - Test script for checking Thaumaturgy paths in database
+- `admin/verify_thaumaturgy_powers.php` - Verification tool for Thaumaturgy path powers
+
+### Impact:
+- **Discipline Display** - All disciplines now display correctly with proper power names
+- **Edit Mode** - No artificial limits when editing existing characters
+- **Thaumaturgy Support** - Complete support for Thaumaturgy paths as separate disciplines
+- **API Reliability** - More robust error handling prevents cascading failures
+
+---
+
+## Version 0.9.6
 **Date:** February 6, 2025
 
 ### Character Creation Form Attributes Tab Implementation:
