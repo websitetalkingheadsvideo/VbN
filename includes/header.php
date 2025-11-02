@@ -43,6 +43,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
     $app_root = rtrim($app_root, '/') . '/';
     ?>
     <link rel="icon" href="<?php echo $path_prefix; ?>images/favicon.svg" type="image/svg+xml">
+    <!-- Bootstrap 5.3.2 CSS - Load before custom CSS to allow overrides -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Override Layer - Neutralizes Bootstrap reset while preserving existing design -->
+    <link rel="stylesheet" href="<?php echo $path_prefix; ?>css/bootstrap-overrides.css">
     <link rel="stylesheet" href="<?php echo $path_prefix; ?>css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,20 +93,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
             
             <!-- User Info Section -->
             <div class="header-right">
-                <?php if (isset($_SESSION['user_id'])): ?>
-                <div class="quick-nav" style="margin-bottom: 10px;">
-                    <a href="<?php echo $path_prefix; ?>admin/laws_agent.php" 
-                       style="padding: 8px 15px; background: rgba(139, 0, 0, 0.3); color: #fff; text-decoration: none; border-radius: 4px; border: 1px solid #8b0000; font-size: 14px; transition: background 0.3s;"
-                       onmouseover="this.style.background='rgba(139, 0, 0, 0.5)'"
-                       onmouseout="this.style.background='rgba(139, 0, 0, 0.3)'">
-                        🧛 Laws Agent
-                    </a>
-                </div>
-                <?php endif; ?>
-                <div class="user-info">
-                    <span class="user-label">Kindred:</span>
-                    <span class="username"><?php echo htmlspecialchars($username); ?></span>
-                    <a href="<?php echo $app_root; ?>logout.php" class="logout-btn" title="Logout">Logout</a>
+                <div class="header-top-row">
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="quick-nav">
+                        <select id="agentSelect" class="agent-dropdown" 
+                                onchange="if(this.value) window.location.href=this.value; this.value='';">
+                            <option value="">Select Agent...</option>
+                            <option value="<?php echo $path_prefix; ?>admin/laws_agent.php">🧛 Laws Agent</option>
+                            <!-- Add more agents here in the future -->
+                        </select>
+                    </div>
+                    <?php endif; ?>
+                    <div class="user-info">
+                        <span class="user-label">Kindred:</span>
+                        <span class="username"><?php echo htmlspecialchars($username); ?></span>
+                        <a href="<?php echo $app_root; ?>logout.php" class="logout-btn" title="Logout">Logout</a>
+                    </div>
                 </div>
                 <div class="version-info">
                     <span class="version">v<?php echo htmlspecialchars($version); ?></span>

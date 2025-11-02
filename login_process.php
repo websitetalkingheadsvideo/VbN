@@ -18,6 +18,39 @@ error_reporting(2);
 
 include 'includes/connect.php';
 
+// Check if login is disabled
+$loginDisableFile = __DIR__ . '/config/login_disable.json';
+$loginDisabled = false;
+$disabledUntil = null;
+
+if (file_exists($loginDisableFile)) {
+    $config = json_decode(file_get_contents($loginDisableFile), true);
+    if ($config && isset($config['disabled']) && $config['disabled'] === true) {
+        $loginDisabled = true;
+        $disabledUntil = $config['disabled_until'] ?? null;
+        
+        // Check if the disable period has expired
+        if ($disabledUntil) {
+            $now = time();
+            $until = strtotime($disabledUntil);
+            if ($now >= $until) {
+                // Expired - re-enable login
+                $config['disabled'] = false;
+                $config['disabled_until'] = null;
+                file_put_contents($loginDisableFile, json_encode($config, JSON_PRETTY_PRINT));
+                $loginDisabled = false;
+            }
+        }
+    }
+}
+
+// If login is disabled, redirect back with error
+if ($loginDisabled) {
+    $_SESSION['error'] = "Login is currently disabled. Please try again later.";
+    header("Location: login.php");
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';

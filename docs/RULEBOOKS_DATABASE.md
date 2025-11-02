@@ -41,7 +41,7 @@ php database/create_rulebooks_tables.php
 
 Or via web browser:
 ```
-http://localhost/database/create_rulebooks_tables.php
+https://vbn.talkingheads.video/database/create_rulebooks_tables.php
 ```
 
 ### 4. Data Import (`database/import_rulebooks.php`)
@@ -136,7 +136,7 @@ User-friendly web interface for searching rulebooks.
 
 **Access:**
 ```
-http://localhost/admin/rulebooks_search.php
+https://vbn.talkingheads.video/admin/rulebooks_search.php
 ```
 
 ## Complete Setup Guide
@@ -145,9 +145,9 @@ http://localhost/admin/rulebooks_search.php
 
 ```bash
 # Install Python PDF libraries
-pip install pypdf pymupdf
+pip install pypdf pymupdf python-docx
 
-# Ensure PHP and MySQL are running (XAMPP)
+# Ensure PHP and MySQL are running
 ```
 
 ### Step 2: Extract PDFs
@@ -167,32 +167,39 @@ php database/create_rulebooks_tables.php
 
 Or navigate to:
 ```
-http://localhost/database/create_rulebooks_tables.php
+https://vbn.talkingheads.video/database/create_rulebooks_tables.php
 ```
 
 ### Step 4: Import Data
 
+**Via Web Browser (Recommended):**
+```
+https://vbn.talkingheads.video/database/import_rulebooks.php
+```
+
+**Or via Command Line:**
 ```bash
 php database/import_rulebooks.php
 ```
 
 This will:
 - Import all successfully extracted rulebooks
-- Create book metadata records
-- Import page-by-page content
+- Update existing books with latest content (ON DUPLICATE KEY UPDATE)
+- Import page-by-page content with real-time progress
 - Set up full-text search indexes
+- Show live progress output with flush() for web display
 
 ### Step 5: Use the System
 
 **Web Interface:**
 ```
-http://localhost/admin/rulebooks_search.php
+https://vbn.talkingheads.video/admin/rulebooks_search.php
 ```
 
 **API:**
 ```javascript
 // Search for "Celerity"
-fetch('/admin/api_rulebooks_search.php?action=search&q=Celerity')
+fetch('https://vbn.talkingheads.video/admin/api_rulebooks_search.php?action=search&q=Celerity')
   .then(r => r.json())
   .then(data => console.log(data.results));
 ```

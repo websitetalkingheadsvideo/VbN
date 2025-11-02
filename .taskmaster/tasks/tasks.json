@@ -954,11 +954,95 @@
         ],
         "priority": "medium",
         "subtasks": []
+      },
+      {
+        "id": 47,
+        "title": "Fix Ability Display and Category Mapping in Character System",
+        "description": "Resolve ability display issues in character sheets and editor by fixing category mapping between database and UI, ensuring abilities are properly loaded and formatted for saved characters.",
+        "details": "1. Database Category Mapping Fix:\n   - Create mapping function to convert database categories (Physical/Social/Mental/Optional) to UI categories (Talents/Skills/Knowledges)\n   - Update admin panel viewer to use correct category mapping\n   - Implement category translation layer: Physical→Talents, Social→Skills, Mental→Knowledges, Optional→handle separately\n   - Add validation to ensure all abilities have proper category assignments\n\n2. Character Sheet Ability Loading:\n   - Modify generateCharacterSheet() function in js/script.js to properly populate characterData.abilities\n   - Implement ability data retrieval from database when loading saved characters\n   - Add error handling for missing or corrupted ability data\n   - Ensure abilities are loaded before character sheet generation\n\n3. Ability Formatting Implementation:\n   - Create formatAbilities() function to generate comma-separated lists with \"x\" notation\n   - Group abilities by category and format as \"Ability Name x[level]\" (e.g., \"Occult x4, Academics x3\")\n   - Handle specializations in formatting: \"Ability Name (Specialization) x[level]\"\n   - Implement sorting within categories (alphabetical or by level)\n\n4. Character Editor Integration:\n   - Update abilities tab in character editor to display loaded abilities\n   - Ensure ability data is properly bound to form controls when editing\n   - Implement ability level display and editing functionality\n   - Add specialization display and editing capabilities\n   - Create visual indicators for ability levels (dots or numeric display)\n\n5. Data Flow Optimization:\n   - Ensure consistent data structure between database, server-side processing, and client-side display\n   - Implement caching mechanism for ability data to improve performance\n   - Add data validation to prevent display errors with malformed ability data",
+        "testStrategy": "1. Category Mapping Testing:\n   - Verify all database categories (Physical/Social/Mental/Optional) correctly map to UI categories\n   - Test admin panel displays abilities in correct groupings\n   - Validate category mapping with edge cases and null values\n\n2. Character Sheet Loading Tests:\n   - Test loading saved characters with various ability configurations\n   - Verify characterData.abilities is properly populated before sheet generation\n   - Test with characters having no abilities, partial abilities, and full ability sets\n   - Validate error handling when ability data is missing or corrupted\n\n3. Formatting Validation:\n   - Test ability formatting with different level combinations (1-5)\n   - Verify comma-separated output format matches specification\n   - Test specialization formatting with various specialization names\n   - Validate sorting and grouping of abilities within categories\n\n4. Character Editor Integration Testing:\n   - Test abilities tab displays correctly when loading saved characters\n   - Verify ability levels are properly shown and editable\n   - Test specialization display and editing functionality\n   - Validate form data binding between loaded abilities and editor controls\n\n5. Cross-browser and Performance Testing:\n   - Test ability display across different browsers and devices\n   - Measure performance impact of ability loading and formatting\n   - Test with characters having large numbers of abilities\n   - Verify responsive design works with ability displays",
+        "status": "pending",
+        "dependencies": [
+          4,
+          9,
+          10
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Database Category Mapping Function",
+            "description": "Implement mapping function to convert database categories to UI categories",
+            "dependencies": [],
+            "details": "Create a PHP function that maps Physical→Talents, Social→Skills, Mental→Knowledges, and handles Optional category separately. Include validation to ensure all abilities have proper category assignments and add error handling for unmapped categories.",
+            "status": "pending",
+            "testStrategy": "Test mapping with all database category types, verify correct UI category assignment, and validate error handling for invalid categories"
+          },
+          {
+            "id": 2,
+            "title": "Update Admin Panel Category Display",
+            "description": "Fix admin panel viewer to use correct category mapping for ability display",
+            "dependencies": [
+              1
+            ],
+            "details": "Modify the admin panel ability viewer to use the new category mapping function. Update the display logic to show abilities grouped under correct UI categories (Talents/Skills/Knowledges) instead of raw database categories.",
+            "status": "pending",
+            "testStrategy": "Verify admin panel displays abilities in correct groupings and test with characters having abilities in all categories"
+          },
+          {
+            "id": 3,
+            "title": "Implement Character Sheet Ability Loading",
+            "description": "Modify generateCharacterSheet() to properly load and populate ability data",
+            "dependencies": [
+              1
+            ],
+            "details": "Update the generateCharacterSheet() function in js/script.js to retrieve ability data from database when loading saved characters. Add proper error handling for missing or corrupted ability data and ensure abilities are loaded before character sheet generation.",
+            "status": "pending",
+            "testStrategy": "Test character sheet generation with saved characters, verify abilities are properly loaded, and test error handling with corrupted data"
+          },
+          {
+            "id": 4,
+            "title": "Create Ability Formatting Function",
+            "description": "Implement formatAbilities() function for consistent ability display formatting",
+            "dependencies": [
+              1
+            ],
+            "details": "Create a formatAbilities() function that generates comma-separated lists with 'x' notation (e.g., 'Occult x4, Academics x3'). Handle specializations as 'Ability Name (Specialization) x[level]' and implement sorting within categories alphabetically or by level.",
+            "status": "pending",
+            "testStrategy": "Test formatting with various ability configurations including specializations, different levels, and edge cases like zero-level abilities"
+          },
+          {
+            "id": 5,
+            "title": "Update Character Editor Ability Integration",
+            "description": "Ensure character editor properly displays and handles loaded ability data",
+            "dependencies": [
+              3,
+              4
+            ],
+            "details": "Update the abilities tab in character editor to display loaded abilities using the new formatting function. Ensure ability data is properly bound to form controls, implement ability level display/editing, and add specialization display and editing capabilities with visual indicators.",
+            "status": "pending",
+            "testStrategy": "Test character editor with loaded characters, verify ability data binding, test editing functionality, and validate specialization handling"
+          },
+          {
+            "id": 6,
+            "title": "Handle Edge Cases and Data Validation",
+            "description": "Implement comprehensive edge case handling and data validation for ability system",
+            "dependencies": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "details": "Add handling for edge cases including characters with no abilities, abilities with specializations, abilities with XP costs, and malformed ability data. Implement data validation to prevent display errors and add caching mechanism for improved performance.",
+            "status": "pending",
+            "testStrategy": "Test with characters having no abilities, abilities with various specializations, XP-purchased abilities, and corrupted data to ensure robust error handling"
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-10-07T00:02:45.247Z",
-      "updated": "2025-10-20T09:12:58.956Z",
+      "updated": "2025-11-02T07:40:06.523Z",
       "description": "Tasks for master context"
     }
   },

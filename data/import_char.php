@@ -160,40 +160,65 @@ try {
     }
     echo "✅ " . count($character['abilities']) . " abilities added\n\n";
 
-    // 5. Insert disciplines
+    // 5. Insert disciplines (new normalized structure: one row per discipline with max level)
     echo "📝 Inserting disciplines...\n";
     
-    $level_map = [
-        1 => 'Basic',
-        2 => 'Basic',
-        3 => 'Intermediate',
-        4 => 'Advanced',
-        5 => 'Advanced'
-    ];
-    
     $disc_stmt = $conn->prepare("
-        INSERT INTO character_disciplines (character_id, discipline_name, level, power_name)
+        INSERT INTO character_disciplines (character_id, discipline_name, level, xp_cost)
         VALUES (?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE 
+        level = VALUES(level),
+        xp_cost = VALUES(xp_cost)
     ");
     
-    $power_count = 0;
+    if (!$disc_stmt) {
+        throw new Exception("Disciplines prepare failed: " . $conn->error);
+    }
+    
+    $discipline_levels = [];
+    
+    // First pass: collect all power levels per discipline
     foreach ($character['disciplines'] as $discipline) {
+        $discipline_name = $discipline['name'];
+        
+        if (!isset($discipline_levels[$discipline_name])) {
+            $discipline_levels[$discipline_name] = [];
+        }
+        
         if (!empty($discipline['powers'])) {
             foreach ($discipline['powers'] as $power) {
-                $level_enum = $level_map[$power['level']] ?? 'Basic';
-                
-                $disc_stmt->bind_param("isss",
-                    $character_id,
-                    $discipline['name'],
-                    $level_enum,
-                    $power['power']
-                );
-                $disc_stmt->execute();
-                $power_count++;
+                $level = (int)($power['level'] ?? 1);
+                if ($level >= 1 && $level <= 5) {
+                    $discipline_levels[$discipline_name][] = $level;
+                }
             }
         }
     }
-    echo "✅ {$power_count} discipline powers added\n\n";
+    
+    // Second pass: insert one row per discipline with max level
+    $discipline_count = 0;
+    foreach ($discipline_levels as $discipline_name => $levels) {
+        if (empty($levels)) {
+            continue;
+        }
+        
+        $max_level = max($levels);
+        $xp_cost = 0;
+        
+        $disc_stmt->bind_param("isii",
+            $character_id,
+            $discipline_name,
+            $max_level,
+            $xp_cost
+        );
+        
+        if (!$disc_stmt->execute()) {
+            throw new Exception("Discipline insert failed for '{$discipline_name}': " . $disc_stmt->error);
+        }
+        $discipline_count++;
+    }
+    
+    echo "✅ {$discipline_count} disciplines added (with max levels)\n\n";
 
     // 6. Insert backgrounds
     echo "📝 Inserting backgrounds...\n";

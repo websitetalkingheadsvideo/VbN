@@ -14,7 +14,11 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  * Determine book category from filename
  */
 function determine_category(string $filename): string {
-    if (strpos($filename, 'Introductory') !== false || strpos($filename, 'Reference') !== false || 
+    // Check for clan books first
+    if (strpos($filename, 'Clanbook') !== false || strpos($filename, 'Clan Books') !== false || 
+        preg_match('/\b(Assamite|Brujah|Followers of Set|Gangrel|Giovanni|Lasombra|Malkavian|Nosferatu|Ravnos|Toreador|Tremere|Tzimisce|Ventrue)\b/i', $filename)) {
+        return 'Clan Books';
+    } elseif (strpos($filename, 'Introductory') !== false || strpos($filename, 'Reference') !== false || 
         strpos($filename, 'Laws of the Night') !== false) {
         return 'Core';
     } elseif (strpos($filename, 'Camarilla') !== false || strpos($filename, 'Anarch') !== false || strpos($filename, 'Sabbat') !== false) {

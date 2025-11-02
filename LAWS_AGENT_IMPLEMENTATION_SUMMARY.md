@@ -84,12 +84,12 @@ The Laws Agent has been fully implemented with all planned features.
 
 ### Web Interface
 ```
-http://localhost/admin/laws_agent.php
+https://vbn.talkingheads.video/admin/laws_agent.php
 ```
 
 ### API Endpoint
 ```
-http://localhost/admin/api_laws_agent.php?action=ask&question=YOUR_QUESTION
+https://vbn.talkingheads.video/admin/api_laws_agent.php?action=ask&question=YOUR_QUESTION
 ```
 
 ### MCP Tool

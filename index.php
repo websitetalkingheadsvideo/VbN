@@ -61,7 +61,7 @@ include 'includes/header.php';
                 $stats_query = "SELECT 
                     COUNT(*) as total,
                     SUM(CASE WHEN player_name = 'NPC' THEN 1 ELSE 0 END) as npcs,
-                    SUM(CASE WHEN player_name != 'NPC' THEN 1 ELSE 0 END) as pcs
+                    SUM(CASE WHEN player_name IS NOT NULL AND player_name != '' AND player_name != 'NPC' THEN 1 ELSE 0 END) as pcs
                     FROM characters";
                 $stats_result = mysqli_query($conn, $stats_query);
                 $stats = mysqli_fetch_assoc($stats_result);

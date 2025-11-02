@@ -39,6 +39,7 @@ try {
         ['Tzimisce', 'LogoClanTzimisce.webp'],
         ['Ventrue', 'LogoClanVentrue.webp'],
         ['Caitiff', 'LogoBloodlineCaitiff.webp'],
+        ['Ghoul', 'Ghoul_Symbol.webp'],
     ];
 
     $stmt = mysqli_prepare($conn, 'INSERT INTO clans (name, logo_filename) VALUES (?, ?)');

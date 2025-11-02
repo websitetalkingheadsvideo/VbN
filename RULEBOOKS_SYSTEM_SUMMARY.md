@@ -75,7 +75,7 @@ Beautiful, user-friendly search interface:
 - Responsive design
 - VbN-themed styling
 
-**Access:** http://localhost/admin/rulebooks_search.php
+**Access:** https://vbn.talkingheads.video/admin/rulebooks_search.php
 
 ### 6. Complete Documentation ✅
 **File:** `docs/RULEBOOKS_DATABASE.md`
@@ -95,7 +95,7 @@ Comprehensive documentation including:
 
 1. **Access the Web Interface:**
    ```
-   http://localhost/admin/rulebooks_search.php
+   https://vbn.talkingheads.video/admin/rulebooks_search.php
    ```
 
 2. **Search for anything:**
@@ -210,7 +210,7 @@ python scripts/extract_pdfs.py
 C:\xampp\php\php.exe database/create_rulebooks_tables.php
 
 # Or via web browser:
-http://localhost/database/create_rulebooks_tables.php
+https://vbn.talkingheads.video/database/create_rulebooks_tables.php
 ```
 
 ### 3. Import Data
@@ -219,12 +219,12 @@ http://localhost/database/create_rulebooks_tables.php
 C:\xampp\php\php.exe database/import_rulebooks.php
 
 # Or via web browser:
-http://localhost/database/import_rulebooks.php
+https://vbn.talkingheads.video/database/import_rulebooks.php
 ```
 
 ### 4. Access the System
 ```
-http://localhost/admin/rulebooks_search.php
+https://vbn.talkingheads.video/admin/rulebooks_search.php
 ```
 
 ## Future Enhancements
@@ -275,8 +275,8 @@ php database/import_rulebooks.php
 
 ## Quick Reference
 
-**Web Interface:** http://localhost/admin/rulebooks_search.php  
-**API Endpoint:** http://localhost/admin/api_rulebooks_search.php  
+**Web Interface:** https://vbn.talkingheads.video/admin/rulebooks_search.php  
+**API Endpoint:** https://vbn.talkingheads.video/admin/api_rulebooks_search.php  
 **Documentation:** `docs/RULEBOOKS_DATABASE.md`  
 **Schema Details:** `database/RULEBOOKS_SCHEMA.md`  
 **Extracted Data:** `data/extracted_rulebooks/`  

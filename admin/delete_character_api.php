@@ -42,15 +42,24 @@ try {
         'character_equipment',
         'character_influences',
         'character_rituals',
-        'character_status'
+        'character_status',
+        'character_coteries',
+        'character_relationships'
     ];
     
     foreach ($tables as $table) {
-        db_execute("DELETE FROM $table WHERE character_id = ?", [$character_id], 'i');
+        $result = db_execute($conn, "DELETE FROM $table WHERE character_id = ?", 'i', [$character_id]);
+        if ($result === false) {
+            throw new Exception("Failed to delete from $table");
+        }
     }
     
     // Finally delete the character itself
-    $affected = db_execute("DELETE FROM characters WHERE id = ?", [$character_id], 'i');
+    $affected = db_execute($conn, "DELETE FROM characters WHERE id = ?", 'i', [$character_id]);
+    
+    if ($affected === false) {
+        throw new Exception("Failed to delete character");
+    }
     
     if ($affected > 0) {
         db_commit($conn);

@@ -189,7 +189,7 @@ session_start();
 // Assuming user is logged in
 
 $question = urlencode('How does Celerity work?');
-$url = "http://localhost/admin/api_laws_agent.php?action=ask&question={$question}";
+$url = "https://vbn.talkingheads.video/admin/api_laws_agent.php?action=ask&question={$question}";
 
 $response = file_get_contents($url);
 $data = json_decode($response, true);
@@ -237,7 +237,7 @@ node scripts/mcp_laws_agent.js
 ```
 
 **Environment Variables**:
-- `LAWS_AGENT_URL`: Base URL of your VbN installation (default: `http://localhost`)
+- `LAWS_AGENT_URL`: Base URL of your VbN installation (default: `https://vbn.talkingheads.video`)
 - `PROJECT_PATH`: Path to VbN project (default: `G:\VbN`)
 
 ### Example MCP Response

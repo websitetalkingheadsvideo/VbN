@@ -145,39 +145,29 @@ require_once __DIR__ . '/../includes/header.php';
             padding-top: 15px;
             border-top: 1px solid #444;
             font-size: 13px;
+            line-height: 1.8;
         }
 
         .sources-title {
             color: #8b0000;
             font-weight: bold;
-            margin-bottom: 8px;
         }
 
-        .source-item {
-            color: #999;
-            margin: 5px 0;
-            padding: 8px 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-left: 3px solid #8b0000;
-        }
-
-        .source-item:hover {
-            background: rgba(139, 0, 0, 0.2);
-            transform: translateX(3px);
-        }
-
-        .source-item .book-name {
+        .source-link {
             color: #8b0000;
             font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: rgba(139, 0, 0, 0.5);
+            transition: all 0.3s;
         }
 
-        .source-item .source-meta {
-            color: #666;
-            font-size: 11px;
-            margin-top: 2px;
+        .source-link:hover {
+            color: #ff0000;
+            text-decoration-color: #ff0000;
+            background: rgba(139, 0, 0, 0.15);
+            padding: 2px 4px;
+            border-radius: 3px;
         }
 
         .input-container {
@@ -434,19 +424,23 @@ function askQuestion(predefinedQuestion = null) {
                 
                 if (data.sources && data.sources.length > 0) {
                     answer += '<div class="sources">';
-                    answer += '<div class="sources-title">Sources:</div>';
-                    data.sources.forEach((source, index) => {
-                        answer += `
-                            <div class="source-item" onclick="viewSource(${index}, ${JSON.stringify(source).replace(/"/g, '&quot;')})">
-                                <div class="book-name">${escapeHtml(source.book)}</div>
-                                <div class="source-meta">Page ${source.page} • ${source.category} • ${source.system}</div>
-                            </div>
-                        `;
+                    answer += '<span class="sources-title">Sources: </span>';
+                    const sourceLinks = data.sources.map((source, index) => {
+                        const sourceData = JSON.stringify(source).replace(/"/g, '&quot;');
+                        return `<span class="source-link" onclick="viewSource(${index}, ${sourceData})" title="Page ${source.page} • ${source.category} • ${source.system}">${escapeHtml(source.book)}</span>`;
                     });
+                    answer += sourceLinks.join(', ');
                     answer += '</div>';
                 }
                 
                 addMessage('assistant', answer);
+                
+                // Ensure scroll happens after all content is rendered
+                setTimeout(() => {
+                    const messagesContainer = document.getElementById('messages');
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, 100);
+                
                 conversationHistory.push({ 
                     question, 
                     answer: data.answer,
@@ -463,6 +457,12 @@ function askQuestion(predefinedQuestion = null) {
         .finally(() => {
             setInputEnabled(true);
             input.focus();
+            
+            // Final scroll to ensure we're at the bottom
+            setTimeout(() => {
+                const messagesContainer = document.getElementById('messages');
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 50);
         });
 }
 
@@ -476,7 +476,13 @@ function addMessage(type, content, isTemporary = false) {
     messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
     
     messagesContainer.appendChild(messageDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Scroll to bottom with a slight delay to ensure DOM is updated
+    setTimeout(() => {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        // Also use scrollIntoView as a fallback
+        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 10);
     
     return messageId;
 }

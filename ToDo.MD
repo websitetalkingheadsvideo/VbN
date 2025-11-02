@@ -30,6 +30,7 @@
 - **Complete 8-tab character creation form** - Currently only Basic Info and partial Traits are implemented
 - **Fix character loading/editing functionality** - Allow users to modify existing characters
 - **Implement missing character creation tabs** - Abilities, Disciplines, Backgrounds, Morality, Merits & Flaws, Final Details
+- **Fix Finalize Character button** - The Finalize button on `lotn_char_create.php` doesn't work. The button click handler (`handleFinalizeCharacter()` in `js/main.js`) only logs "coming soon!" instead of calling `showFinalizePopup()`. The actual functionality exists in `js/script.js` but isn't connected.
 - **Fix rituals database** - `rituals_master` table is empty, needs LoTN ritual data
 - **Complete XP tracking system** - Real-time XP validation and cost calculations
 

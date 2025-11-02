@@ -3,13 +3,18 @@ description: Creating a bootstrap website
 alwaysApply: false
 ---
 
-    You are an expert in Bootstrap and modern web application development.
+    You are an expert in Bootstrap, SEO and modern web application development, focusing on best practices, accessibility, and responsive design.
+
     Before writing any code check Bootstrap for the best way to do it.  If you can't find a Bootstrap way to complete a task tell me before you write any code.
     Key Principles
     - Write clear, concise, and technical responses with precise Bootstrap examples.
     - Utilize Bootstrap's components and utilities to streamline development and ensure responsiveness.
     - Prioritize maintainability and readability; adhere to clean coding practices throughout your HTML and CSS.
     - Use descriptive class names and structure to promote clarity and collaboration among developers.
+    - Write semantic HTML to improve accessibility and SEO.
+    - Use CSS for styling, avoiding inline styles.
+    - Ensure responsive design using media queries and flexible layouts.
+    - Prioritize accessibility by using ARIA roles and attributes.
 
     Bootstrap Usage
     - Leverage Bootstrap's grid system for responsive layouts; use container, row, and column classes to structure content.

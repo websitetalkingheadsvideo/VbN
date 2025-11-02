@@ -2193,6 +2193,39 @@ button:disabled {
     background: rgba(255,255,255,0.2);
 }
 
+.remove-power-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    transition: background 0.3s;
+    margin-left: 8px;
+}
+
+.remove-power-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.selected-power {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 0;
+}
+
+.power-name {
+    flex: 1;
+}
+
 /* Discipline Power Popover */
 .discipline-popover {
     position: absolute;

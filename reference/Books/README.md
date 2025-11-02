@@ -7,9 +7,9 @@ This directory contains complete PDF books and reference materials for the Vampi
 **All rulebooks are now available in a searchable database!**
 
 ### Quick Access
-- **🧛 Laws Agent (AI-Powered):** http://localhost/admin/laws_agent.php
-- **Web Interface:** http://localhost/admin/rulebooks_search.php
-- **API:** http://localhost/admin/api_rulebooks_search.php
+- **🧛 Laws Agent (AI-Powered):** https://vbn.talkingheads.video/admin/laws_agent.php
+- **Web Interface:** https://vbn.talkingheads.video/admin/rulebooks_search.php
+- **API:** https://vbn.talkingheads.video/admin/api_rulebooks_search.php
 - **Documentation:** See `docs/RULEBOOKS_DATABASE.md` and `docs/LAWS_AGENT.md`
 
 ### Features

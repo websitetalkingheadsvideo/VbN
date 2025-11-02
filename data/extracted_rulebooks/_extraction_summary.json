@@ -1,6 +1,6 @@
 {
-  "total_files": 59,
-  "successful": 59,
+  "total_files": 74,
+  "successful": 74,
   "files": [
     {
       "filename": "Guide to the Camarilla.pdf",
@@ -195,6 +195,84 @@
       "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).txt"
     },
     {
+      "filename": "Lasombra.pdf",
+      "page_count": 74,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Lasombra.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Lasombra.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Assamite.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Assamite.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Assamite.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Brujah.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Brujah.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Brujah.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Followers of Set.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Followers of Set.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Followers of Set.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Gangrel.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Gangrel.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Gangrel.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Giovanni.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Giovanni.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Giovanni.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Malkavian.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Malkavian.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Malkavian.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Nosferatu.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Nosferatu.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Nosferatu.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Ravnos.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Ravnos.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Ravnos.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Tremere.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Tremere.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Tremere.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Tzimisce.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Tzimisce.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Tzimisce.txt"
+    },
+    {
+      "filename": "Revised - Clanbook Ventrue.pdf",
+      "page_count": 106,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Ventrue.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Revised - Clanbook Ventrue.txt"
+    },
+    {
+      "filename": "Toreador.pdf",
+      "page_count": 69,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Toreador.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Toreador.txt"
+    },
+    {
       "filename": "MET Mind's Eye Theatre Discipline Deck.pdf",
       "page_count": 300,
       "output_json": "G:\\VbN\\data\\extracted_rulebooks\\MET Mind's Eye Theatre Discipline Deck.json",
@@ -355,6 +433,18 @@
       "page_count": 186,
       "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).json",
       "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Wraith - MET - Oblivion (5400).txt"
+    },
+    {
+      "filename": "Toreador.docx",
+      "page_count": 48,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Toreador.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Toreador.txt"
+    },
+    {
+      "filename": "Lasombra.docx",
+      "page_count": 4,
+      "output_json": "G:\\VbN\\data\\extracted_rulebooks\\Lasombra.json",
+      "output_text": "G:\\VbN\\data\\extracted_rulebooks\\Lasombra.txt"
     }
   ]
 }

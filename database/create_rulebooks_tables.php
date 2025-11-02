@@ -169,6 +169,20 @@ function create_rulebooks_tables(mysqli $conn): void {
 
 // Main execution
 try {
+    // Check if running via web browser or CLI
+    $is_web = php_sapi_name() !== 'cli';
+    
+    if ($is_web) {
+        header('Content-Type: text/html; charset=utf-8');
+        echo "<!DOCTYPE html><html><head><title>Creating Rulebooks Tables</title><style>
+            body { font-family: monospace; background: #1a0f0f; color: #d4c4b0; padding: 20px; }
+            pre { white-space: pre-wrap; word-wrap: break-word; }
+            .error { color: #ff6b6b; }
+            .success { color: #51cf66; }
+        </style></head><body>";
+        echo "<h1>🦇 Creating Rulebooks Database Tables</h1><pre>";
+    }
+    
     echo "Creating rulebook database tables...\n";
     echo "=" . str_repeat("=", 59) . "\n";
     
@@ -176,6 +190,12 @@ try {
     
     echo "=" . str_repeat("=", 59) . "\n";
     echo "[SUCCESS] All rulebook tables created successfully!\n";
+    
+    if ($is_web) {
+        echo "</pre>";
+        echo "<p style='margin-top: 20px;'><strong>Tables created! <a href='import_rulebooks.php'>Import Data</a></strong></p>";
+        echo "</body></html>";
+    }
     
 } catch (Exception $e) {
     echo "\n[FATAL ERROR] " . $e->getMessage() . "\n";
