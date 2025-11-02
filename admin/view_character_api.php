@@ -58,12 +58,74 @@ $traits = db_fetch_all($conn,
     [$character_id]
 );
 
-$abilities = db_fetch_all($conn,
-    "SELECT id, ability_name, ability_category, specialization, level, xp_cost 
-     FROM character_abilities WHERE character_id = ?",
+// Get abilities and look up their categories from abilities_master table
+// First check if abilities exist directly (no join, simpler query)
+$abilities_raw = db_fetch_all($conn,
+    "SELECT ca.id, ca.ability_name, ca.specialization, ca.level 
+     FROM character_abilities ca 
+     WHERE ca.character_id = ?",
     "i",
     [$character_id]
 );
+
+// Debug: Check if query returned results
+if (empty($abilities_raw)) {
+    // Try a direct query to see if abilities exist at all for this character
+    $direct_check = mysqli_query($conn, 
+        "SELECT COUNT(*) as count FROM character_abilities WHERE character_id = " . intval($character_id)
+    );
+    if ($direct_check) {
+        $count_row = mysqli_fetch_assoc($direct_check);
+        if ($count_row['count'] > 0) {
+            // Abilities exist but db_fetch_all returned empty - likely a query issue
+            error_log("WARNING: Character {$character_id} has {$count_row['count']} abilities but db_fetch_all returned empty");
+            // Try fetching without prepared statement
+            $direct_result = mysqli_query($conn,
+                "SELECT id, ability_name, specialization, level, xp_cost 
+                 FROM character_abilities 
+                 WHERE character_id = " . intval($character_id)
+            );
+            if ($direct_result) {
+                $abilities_raw = [];
+                while ($row = mysqli_fetch_assoc($direct_result)) {
+                    $abilities_raw[] = $row;
+                }
+                mysqli_free_result($direct_result);
+            }
+        }
+    }
+}
+
+// Look up categories from abilities_master table
+$abilities = [];
+foreach ($abilities_raw as $ability) {
+    if (!isset($ability['ability_name'])) {
+        continue;
+    }
+    
+    // Look up category from abilities_master
+    $category = db_fetch_one($conn,
+        "SELECT category FROM abilities_master WHERE name = ? LIMIT 1",
+        "s",
+        [$ability['ability_name']]
+    );
+    
+    // If not in abilities_master, try to infer from common patterns or default to Optional
+    $resolved_category = 'Optional';
+    if ($category && isset($category['category'])) {
+        $resolved_category = $category['category'];
+    }
+    
+    $abilities[] = [
+        'id' => $ability['id'],
+        'ability_name' => $ability['ability_name'],
+        'ability_category' => $resolved_category,
+        'specialization' => $ability['specialization'] ?? null,
+        'level' => isset($ability['level']) ? intval($ability['level']) : 1,
+        'xp_cost' => 0 // xp_cost column doesn't exist in character_abilities table
+    ];
+}
+
 
 // Get disciplines using helper function (includes powers)
 $all_disciplines_data = getCharacterAllDisciplines($character_id);

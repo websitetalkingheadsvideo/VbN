@@ -406,9 +406,11 @@ function viewCharacter(characterId) {
             if (data.success) {
                 currentViewData = data;
                 document.getElementById('viewCharacterName').textContent = data.character.character_name;
-                // Debug: log abilities and disciplines
-                console.log('Abilities:', data.abilities);
-                console.log('Disciplines:', data.disciplines);
+                // Debug: log abilities and disciplines (only if abilities are present)
+                if (data.abilities && data.abilities.length > 0) {
+                    console.log('Abilities loaded:', data.abilities.length);
+                }
+                
                 renderCharacterView(currentViewMode);
             } else {
                 document.getElementById('characterHeader').innerHTML = '';
@@ -520,10 +522,7 @@ function renderCharacterView(mode) {
             if (mental.length > 0) contentHtml += '<p><strong>Mental:</strong> ' + mental.map(t => t.trait_name).join(', ') + '</p>';
         }
         
-        if (currentViewData.disciplines && currentViewData.disciplines.length > 0) {
-            contentHtml += '<h3>Disciplines</h3>';
-            contentHtml += '<p>' + currentViewData.disciplines.map(d => d.discipline_name + ' ' + d.level).join(', ') + '</p>';
-        }
+        // Disciplines removed from compact view
         
         contentHtml += '</div>';
     } else {
@@ -584,24 +583,28 @@ function renderCharacterView(mode) {
         // Abilities - always show section header
         contentHtml += '<h3>Abilities</h3>';
         if (currentViewData.abilities && currentViewData.abilities.length > 0) {
-            // Group by category (case-insensitive matching)
-            const talents = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'talents');
-            const skills = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'skills');
-            const knowledges = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'knowledges');
+            // Group by database category (Physical/Social/Mental/Optional)
+            const physical = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'physical');
+            const social = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'social');
+            const mental = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'mental');
+            const optional = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'optional');
             const uncategorized = currentViewData.abilities.filter(a => !a.ability_category || 
-                (a.ability_category.toLowerCase() !== 'talents' && 
-                 a.ability_category.toLowerCase() !== 'skills' && 
-                 a.ability_category.toLowerCase() !== 'knowledges'));
+                (a.ability_category.toLowerCase() !== 'physical' && 
+                 a.ability_category.toLowerCase() !== 'social' && 
+                 a.ability_category.toLowerCase() !== 'mental' &&
+                 a.ability_category.toLowerCase() !== 'optional'));
             
-            if (talents.length > 0 || skills.length > 0 || knowledges.length > 0 || uncategorized.length > 0) {
+            if (physical.length > 0 || social.length > 0 || mental.length > 0 || optional.length > 0 || uncategorized.length > 0) {
                 contentHtml += '<div class="row g-4 mb-4">';
-                if (talents.length > 0) {
+                if (physical.length > 0) {
                     contentHtml += '<div class="col-md-6">';
-                    contentHtml += '<h4>Talents</h4>';
+                    contentHtml += '<h4>Physical</h4>';
                     contentHtml += '<div class="trait-list">';
-                    talents.forEach(a => {
-                        let badge = a.ability_name + ' x' + a.level;
-                        if (a.specialization) badge += ' (' + a.specialization + ')';
+                    physical.forEach(a => {
+                        if (!a || !a.ability_name) return; // Skip invalid abilities
+                        let badge = a.ability_name;
+                        if (a.level && a.level > 0) badge += ' x' + a.level;
+                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
                         if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
@@ -609,13 +612,15 @@ function renderCharacterView(mode) {
                     contentHtml += '</div>';
                 }
                 
-                if (skills.length > 0) {
+                if (social.length > 0) {
                     contentHtml += '<div class="col-md-6">';
-                    contentHtml += '<h4>Skills</h4>';
+                    contentHtml += '<h4>Social</h4>';
                     contentHtml += '<div class="trait-list">';
-                    skills.forEach(a => {
-                        let badge = a.ability_name + ' x' + a.level;
-                        if (a.specialization) badge += ' (' + a.specialization + ')';
+                    social.forEach(a => {
+                        if (!a || !a.ability_name) return; // Skip invalid abilities
+                        let badge = a.ability_name;
+                        if (a.level && a.level > 0) badge += ' x' + a.level;
+                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
                         if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
@@ -624,12 +629,28 @@ function renderCharacterView(mode) {
                 }
                 contentHtml += '</div>';
                 
-                if (knowledges.length > 0) {
-                    contentHtml += '<h4>Knowledges</h4>';
+                if (mental.length > 0) {
+                    contentHtml += '<h4>Mental</h4>';
                     contentHtml += '<div class="trait-list">';
-                    knowledges.forEach(a => {
-                        let badge = a.ability_name + ' x' + a.level;
-                        if (a.specialization) badge += ' (' + a.specialization + ')';
+                    mental.forEach(a => {
+                        if (!a || !a.ability_name) return; // Skip invalid abilities
+                        let badge = a.ability_name;
+                        if (a.level && a.level > 0) badge += ' x' + a.level;
+                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
+                        if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
+                        contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                    });
+                    contentHtml += '</div>';
+                }
+                
+                if (optional.length > 0) {
+                    contentHtml += '<h4>Optional</h4>';
+                    contentHtml += '<div class="trait-list">';
+                    optional.forEach(a => {
+                        if (!a || !a.ability_name) return; // Skip invalid abilities
+                        let badge = a.ability_name;
+                        if (a.level && a.level > 0) badge += ' x' + a.level;
+                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
                         if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
@@ -640,8 +661,10 @@ function renderCharacterView(mode) {
                     contentHtml += '<h4>Other Abilities</h4>';
                     contentHtml += '<div class="trait-list">';
                     uncategorized.forEach(a => {
-                        let badge = a.ability_name + ' x' + a.level;
-                        if (a.specialization) badge += ' (' + a.specialization + ')';
+                        if (!a || !a.ability_name) return; // Skip invalid abilities
+                        let badge = a.ability_name;
+                        if (a.level && a.level > 0) badge += ' x' + a.level;
+                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
                         if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         if (a.ability_category) badge += ' [' + a.ability_category + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';

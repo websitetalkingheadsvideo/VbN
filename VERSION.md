@@ -1,6 +1,52 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.7 (Current)
+## Version 0.9.8 (Current)
+**Date:** January 2025
+
+### Abilities Display Fixes & UI Improvements:
+- ✅ **Fixed Abilities Not Displaying** - Resolved SQL query failures by removing non-existent `xp_cost` column from all SELECT queries
+- ✅ **Character Sheet Abilities** - Fixed abilities display in admin panel, character editor, and static character sheet pages
+- ✅ **Compact View Update** - Removed disciplines section from compact character sheet view (user requested)
+- ✅ **Query Fallback System** - Added direct query fallback when prepared statements fail silently
+- ✅ **Category Lookup** - Implemented proper ability category lookup from `abilities_master` table
+- ✅ **Data Flow Fixes** - Enhanced ability data flow from database → API → state manager → character sheet
+
+### Technical Improvements:
+- **Database Query Fix** - All ability queries now exclude `xp_cost` column (doesn't exist in table)
+- **Fallback Query System** - Primary direct queries with prepared statement fallback for reliability
+- **State Manager Integration** - Character sheet now checks multiple data sources for abilities
+- **Error Detection** - Added comprehensive logging to detect when abilities exist but queries fail
+- **Response Structure** - Returns both `abilities` (category-grouped) and `abilities_full` (complete data) for compatibility
+
+### Bug Fixes:
+- **Abilities Empty Arrays** - Fixed queries that were silently failing due to missing column
+- **Abilities Not on Sheet** - Fixed `characterData.abilities` not being populated for loaded characters
+- **Category Grouping** - Fixed abilities not being grouped by category (Physical/Social/Mental/Optional)
+- **Character Sheet Display** - Fixed abilities not appearing in `generateCharacterSheet()` function
+- **Save Functionality** - Fixed ability saving to properly store levels and specializations
+
+### Files Modified:
+- `load_character.php` - Fixed queries, removed xp_cost, added fallback query system
+- `admin/view_character_api.php` - Fixed queries, improved error handling
+- `data/view_character.php` - Fixed queries, improved display logic for static pages
+- `js/modules/main.js` - Enhanced ability data population and state management
+- `js/script.js` - Improved character sheet ability formatting with fallback checks
+- `js/admin_panel.js` - Removed disciplines from compact view
+- `save_character.php` - Fixed ability saving with proper parameter binding
+
+### Files Created:
+- `admin/test_abilities.php` - Diagnostic script for checking abilities in database
+- `data/test_load_character.php` - Test script for verifying load_character.php functionality
+
+### Impact:
+- **Abilities Display** - All abilities now display correctly everywhere (admin panel, editor, character sheet)
+- **Data Integrity** - Characters like Roland Cross (18 abilities) now show all abilities properly
+- **User Experience** - Complete ability information visible with levels and specializations
+- **Database Reliability** - More robust query system handles edge cases gracefully
+
+---
+
+## Version 0.9.7
 **Date:** February 6, 2025
 
 ### Discipline System Fixes & Thaumaturgy Path Support:

@@ -2036,6 +2036,130 @@ function closeCharacterSheetModal() {
     document.getElementById('characterSheetModal').style.display = 'none';
 }
 
+/**
+ * Format abilities for character sheet display
+ * Handles both old format (arrays of names) and new format (full ability objects with levels)
+ */
+function formatAbilitiesForCharacterSheet(characterData) {
+    // Use the global characterData if available, otherwise use the passed parameter
+    const charData = window.characterData || characterData;
+    
+    // Group abilities by category
+    const categories = ['Physical', 'Social', 'Mental', 'Optional'];
+    const categoryAbilities = {
+        Physical: [],
+        Social: [],
+        Mental: [],
+        Optional: []
+    };
+    
+    // First try to use characterData.abilities (populated by populateAbilitiesFromData)
+    let foundAbilities = false;
+    if (charData && charData.abilities) {
+        categories.forEach(cat => {
+            if (charData.abilities[cat] && Array.isArray(charData.abilities[cat]) && charData.abilities[cat].length > 0) {
+                categoryAbilities[cat] = charData.abilities[cat];
+                foundAbilities = true;
+            }
+        });
+    }
+    
+    // If no abilities found in characterData, try state manager
+    if (!foundAbilities) {
+        if (window.characterCreationApp && window.characterCreationApp.modules && 
+            window.characterCreationApp.modules.stateManager) {
+            const state = window.characterCreationApp.modules.stateManager.getState();
+            if (state && state.abilities_full && Array.isArray(state.abilities_full) && state.abilities_full.length > 0) {
+                // Use full ability data from loaded character
+                state.abilities_full.forEach(ability => {
+                    // Skip if ability name is missing
+                    if (!ability || !ability.ability_name) return;
+                    
+                    // Handle category - default to Optional if missing or invalid
+                    let category = ability.ability_category;
+                    if (!category || typeof category !== 'string') {
+                        category = 'Optional';
+                    } else {
+                        // Normalize category to match expected format (capitalize first letter)
+                        category = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                        if (!categoryAbilities.hasOwnProperty(category)) {
+                            category = 'Optional';
+                        }
+                    }
+                    
+                    // Build display name
+                    let displayName = ability.ability_name;
+                    
+                    // Add level if > 0
+                    if (ability.level && ability.level > 0) {
+                        displayName += ' x' + ability.level;
+                    }
+                    
+                    // Add specialization if present
+                    if (ability.specialization && ability.specialization.trim()) {
+                        displayName += ' (' + ability.specialization.trim() + ')';
+                    }
+                    
+                    categoryAbilities[category].push(displayName);
+                });
+                foundAbilities = true;
+            }
+        }
+    }
+    
+    // If still no abilities, try to populate from state manager into characterData for future use
+    if (!foundAbilities && window.characterCreationApp && window.characterCreationApp.modules && 
+        window.characterCreationApp.modules.stateManager) {
+        const state = window.characterCreationApp.modules.stateManager.getState();
+        if (state && state.abilities_full && Array.isArray(state.abilities_full) && state.abilities_full.length > 0) {
+            // Populate characterData.abilities for future character sheet views
+            if (!window.characterData) {
+                window.characterData = { abilities: { Physical: [], Social: [], Mental: [], Optional: [] } };
+            }
+            if (!window.characterData.abilities) {
+                window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
+            }
+            
+            state.abilities_full.forEach(ability => {
+                if (!ability || !ability.ability_name) return;
+                
+                let category = ability.ability_category || 'Optional';
+                category = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                if (!window.characterData.abilities.hasOwnProperty(category)) {
+                    category = 'Optional';
+                }
+                
+                let displayName = ability.ability_name;
+                if (ability.level && ability.level > 0) {
+                    displayName += ' x' + ability.level;
+                }
+                if (ability.specialization && ability.specialization.trim()) {
+                    displayName += ' (' + ability.specialization.trim() + ')';
+                }
+                
+                categoryAbilities[category].push(displayName);
+                window.characterData.abilities[category].push(displayName);
+            });
+            foundAbilities = true;
+        }
+    }
+    
+    // Generate HTML for each category
+    let html = '';
+    categories.forEach(cat => {
+        if (categoryAbilities[cat] && categoryAbilities[cat].length > 0) {
+            html += `<div class="ability-category">
+                <h4>${cat}</h4>
+                <div class="ability-list">
+                    ${categoryAbilities[cat].map(ability => `<div class="ability-item">${ability}</div>`).join('')}
+                </div>
+            </div>`;
+        }
+    });
+    
+    return html || '<div class="ability-category"><p>No abilities recorded</p></div>';
+}
+
 function generateCharacterSheet() {
     const sheetDiv = document.getElementById('characterSheetContent');
     
@@ -2115,24 +2239,7 @@ function generateCharacterSheet() {
             <div class="sheet-section">
                 <h3>Abilities</h3>
                 <div class="abilities-grid">
-                    <div class="ability-category">
-                        <h4>Physical</h4>
-                        <div class="ability-list">
-                            ${characterData.abilities.Physical ? characterData.abilities.Physical.map(ability => `<div class="ability-item">${ability}</div>`).join('') : ''}
-                        </div>
-                    </div>
-                    <div class="ability-category">
-                        <h4>Social</h4>
-                        <div class="ability-list">
-                            ${characterData.abilities.Social ? characterData.abilities.Social.map(ability => `<div class="ability-item">${ability}</div>`).join('') : ''}
-                        </div>
-                    </div>
-                    <div class="ability-category">
-                        <h4>Mental</h4>
-                        <div class="ability-list">
-                            ${characterData.abilities.Mental ? characterData.abilities.Mental.map(ability => `<div class="ability-item">${ability}</div>`).join('') : ''}
-                        </div>
-                    </div>
+                    ${formatAbilitiesForCharacterSheet(characterData)}
                 </div>
             </div>
             

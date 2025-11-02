@@ -516,6 +516,11 @@ class CharacterCreationApp {
 					this.modules.stateManager.setStateProperty('imagePath', characterData.character.character_image);
 				}
 				
+				// Store full ability data for character sheet display
+				if (characterData.abilities_full && Array.isArray(characterData.abilities_full)) {
+					this.modules.stateManager.setStateProperty('abilities_full', characterData.abilities_full);
+				}
+				
 				// Update discipline displays to reflect loaded state
 				if (this.modules.disciplineSystem && characterData.disciplines) {
 					this.modules.disciplineSystem.updateAllDisplays();
@@ -585,9 +590,29 @@ class CharacterCreationApp {
             this.populateNegativeTraitsFromData(data.negative_traits);
         }
         
-        // Populate abilities
-        if (data.abilities) {
-            this.populateAbilitiesFromData(data.abilities);
+        // Populate abilities - prefer abilities_full if available (has levels), otherwise use abilities (category-based)
+        console.log('populateFormFromCharacterData - data.abilities_full:', data.abilities_full);
+        console.log('populateFormFromCharacterData - data.abilities:', data.abilities);
+        
+        if (data.abilities_full && Array.isArray(data.abilities_full) && data.abilities_full.length > 0) {
+            console.log('Using abilities_full, count:', data.abilities_full.length);
+            // Store in state if not already there
+            if (this.modules.stateManager) {
+                this.modules.stateManager.setStateProperty('abilities_full', data.abilities_full);
+            }
+            // populateAbilitiesFromData will use abilities_full from state
+            this.populateAbilitiesFromData(data.abilities_full);
+        } else if (data.abilities) {
+            console.log('Using abilities (category-based), checking for content...');
+            // Check if abilities object has any actual content
+            const hasAbilities = Object.values(data.abilities).some(arr => Array.isArray(arr) && arr.length > 0);
+            if (hasAbilities) {
+                this.populateAbilitiesFromData(data.abilities);
+            } else {
+                console.warn('Both abilities_full and abilities are empty or have no content');
+            }
+        } else {
+            console.warn('No abilities data found in response');
         }
         
         // Populate disciplines - use disciplinePowers for the UI mapping
@@ -665,27 +690,97 @@ class CharacterCreationApp {
      */
     populateAbilitiesFromData(abilities) {
         console.log('Populating abilities from data:', abilities);
+        console.log('abilities type:', typeof abilities, 'isArray:', Array.isArray(abilities));
+        
+        // Also update global characterData for character sheet
+        if (typeof window.characterData === 'undefined') {
+            window.characterData = {
+                abilities: { Physical: [], Social: [], Mental: [], Optional: [] }
+            };
+        }
+        if (!window.characterData.abilities) {
+            window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
+        }
+        
+        // Check if we have full ability data with levels (from load_character.php)
+        if (this.modules.stateManager) {
+            const state = this.modules.stateManager.getState();
+            if (state && state.abilities_full && Array.isArray(state.abilities_full) && state.abilities_full.length > 0) {
+                // Use full ability data with levels and specializations
+                // Clear existing abilities in characterData
+                window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
+                
+                state.abilities_full.forEach(ability => {
+                    // Populate form inputs
+                    const input = document.querySelector(`input[name="ability_${ability.ability_name}"]`);
+                    if (input) {
+                        input.value = ability.level || 1;
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                    
+                    // Also populate characterData.abilities for character sheet
+                    const category = ability.ability_category || 'Optional';
+                    const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                    if (window.characterData.abilities.hasOwnProperty(normalizedCategory)) {
+                        let displayName = ability.ability_name;
+                        if (ability.level && ability.level > 0) {
+                            displayName += ' x' + ability.level;
+                        }
+                        if (ability.specialization && ability.specialization.trim()) {
+                            displayName += ' (' + ability.specialization.trim() + ')';
+                        }
+                        window.characterData.abilities[normalizedCategory].push(displayName);
+                    }
+                });
+                return;
+            }
+        }
         
         // Handle both array and object formats
         if (Array.isArray(abilities)) {
-            // Old format - array of ability objects
+            // Old format - array of ability objects with level info
+            // Clear existing abilities in characterData
+            window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
+            
             abilities.forEach(ability => {
                 const input = document.querySelector(`input[name="ability_${ability.ability_name}"]`);
                 if (input) {
-                    input.value = ability.level;
+                    input.value = ability.level || 1;
                     input.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+                
+                // Populate characterData.abilities
+                const category = ability.ability_category || 'Optional';
+                const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                if (window.characterData.abilities.hasOwnProperty(normalizedCategory)) {
+                    let displayName = ability.ability_name;
+                    if (ability.level && ability.level > 0) {
+                        displayName += ' x' + ability.level;
+                    }
+                    if (ability.specialization && ability.specialization.trim()) {
+                        displayName += ' (' + ability.specialization.trim() + ')';
+                    }
+                    window.characterData.abilities[normalizedCategory].push(displayName);
                 }
             });
         } else if (typeof abilities === 'object' && abilities !== null) {
-            // New format - object with categories as keys
+            // New format - object with categories as keys (array of ability names only)
+            // Clear and populate characterData.abilities
+            window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
+            
             Object.entries(abilities).forEach(([category, abilityNames]) => {
-                abilityNames.forEach(abilityName => {
-                    const input = document.querySelector(`input[name="ability_${abilityName}"]`);
-                    if (input) {
-                        input.value = 1; // Default level for loaded abilities
-                        input.dispatchEvent(new Event('change', { bubbles: true }));
-                    }
-                });
+                const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                if (window.characterData.abilities.hasOwnProperty(normalizedCategory)) {
+                    abilityNames.forEach(abilityName => {
+                        const input = document.querySelector(`input[name="ability_${abilityName}"]`);
+                        if (input) {
+                            input.value = 1; // Default level for loaded abilities when only names are provided
+                            input.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                        // Add to characterData for sheet display
+                        window.characterData.abilities[normalizedCategory].push(abilityName);
+                    });
+                }
             });
         }
     }

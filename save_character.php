@@ -198,9 +198,147 @@ try {
             mysqli_stmt_close($stmt);
         }
         
-        // TODO: Add traits, abilities, disciplines, backgrounds, merits_flaws saving later
-        // When adding these, they will be part of this transaction
-        error_log('Character saved with ID: ' . $character_id . ' - Additional data saving skipped for now');
+        // Save disciplines (new normalized structure: one row per discipline with max level)
+        if (isset($data['disciplinePowers']) && is_array($data['disciplinePowers'])) {
+            error_log('Saving disciplines for character: ' . $character_id);
+            
+            // Delete existing disciplines for this character
+            $delete_sql = "DELETE FROM character_disciplines WHERE character_id = ?";
+            $delete_stmt = mysqli_prepare($conn, $delete_sql);
+            if ($delete_stmt) {
+                mysqli_stmt_bind_param($delete_stmt, 'i', $character_id);
+                mysqli_stmt_execute($delete_stmt);
+                mysqli_stmt_close($delete_stmt);
+            }
+            
+            // Insert disciplines with their max level
+            $insert_sql = "INSERT INTO character_disciplines (character_id, discipline_name, level, xp_cost) 
+                          VALUES (?, ?, ?, ?)
+                          ON DUPLICATE KEY UPDATE 
+                          level = VALUES(level),
+                          xp_cost = VALUES(xp_cost)";
+            $disc_stmt = mysqli_prepare($conn, $insert_sql);
+            
+            if ($disc_stmt) {
+                $discipline_count = 0;
+                foreach ($data['disciplinePowers'] as $discipline_name => $power_levels) {
+                    if (!is_array($power_levels) || empty($power_levels)) {
+                        continue;
+                    }
+                    
+                    // Get max level from the array of power levels
+                    $max_level = max($power_levels);
+                    
+                    // Ensure level is between 1 and 5
+                    $max_level = max(1, min(5, (int)$max_level));
+                    
+                    $xp_cost = 0; // Can be extended later if XP tracking is needed
+                    
+                    mysqli_stmt_bind_param($disc_stmt, 'isii', 
+                        $character_id,
+                        $discipline_name,
+                        $max_level,
+                        $xp_cost
+                    );
+                    
+                    if (mysqli_stmt_execute($disc_stmt)) {
+                        $discipline_count++;
+                    } else {
+                        error_log('Failed to save discipline ' . $discipline_name . ': ' . mysqli_stmt_error($disc_stmt));
+                    }
+                }
+                
+                mysqli_stmt_close($disc_stmt);
+                error_log("Saved {$discipline_count} disciplines for character {$character_id}");
+            } else {
+                error_log('Failed to prepare discipline insert statement: ' . mysqli_error($conn));
+            }
+        }
+        
+        // Save abilities
+        if (isset($data['abilities']) && is_array($data['abilities'])) {
+            error_log('Saving abilities for character: ' . $character_id);
+            
+            // Delete existing abilities for this character
+            $delete_sql = "DELETE FROM character_abilities WHERE character_id = ?";
+            $delete_stmt = mysqli_prepare($conn, $delete_sql);
+            if ($delete_stmt) {
+                mysqli_stmt_bind_param($delete_stmt, 'i', $character_id);
+                mysqli_stmt_execute($delete_stmt);
+                mysqli_stmt_close($delete_stmt);
+            }
+            
+            // Insert abilities
+            // Data format: { Physical: ['Athletics', 'Athletics', 'Brawl'], Social: [...], Mental: [...] }
+            // Count occurrences to get level
+            $insert_sql = "INSERT INTO character_abilities (character_id, ability_name, level, specialization, xp_cost) 
+                         VALUES (?, ?, ?, ?, ?)";
+            $ability_stmt = mysqli_prepare($conn, $insert_sql);
+            
+            if ($ability_stmt) {
+                $ability_count = 0;
+                foreach ($data['abilities'] as $category => $abilityNames) {
+                    if (!is_array($abilityNames)) {
+                        continue;
+                    }
+                    
+                    // Count occurrences of each ability name to get level
+                    $abilityCounts = [];
+                    foreach ($abilityNames as $abilityName) {
+                        // Clean the ability name (remove specialization if present, e.g., "Athletics (Running)" -> "Athletics")
+                        $cleanName = trim($abilityName);
+                        if (strpos($cleanName, ' (') !== false) {
+                            $cleanName = substr($cleanName, 0, strpos($cleanName, ' ('));
+                        }
+                        
+                        $abilityCounts[$cleanName] = ($abilityCounts[$cleanName] ?? 0) + 1;
+                    }
+                    
+                    // Insert each unique ability with its level
+                    foreach ($abilityCounts as $abilityName => $level) {
+                        // Ensure level is between 1 and 5
+                        $level = max(1, min(5, (int)$level));
+                        
+                        // Check for specialization in the original name
+                        $specialization = null;
+                        foreach ($abilityNames as $origName) {
+                            if (strpos($origName, $abilityName . ' (') === 0) {
+                                // Extract specialization from "AbilityName (Specialization)"
+                                $specStart = strpos($origName, ' (') + 2;
+                                $specEnd = strrpos($origName, ')');
+                                if ($specEnd > $specStart) {
+                                    $specialization = substr($origName, $specStart, $specEnd - $specStart);
+                                }
+                                break; // Use first specialization found
+                            }
+                        }
+                        
+                        $xp_cost = 0; // Can be extended later if XP tracking is needed
+                        
+                        mysqli_stmt_bind_param($ability_stmt, 'isisi', 
+                            $character_id,
+                            $abilityName,
+                            $level,
+                            $specialization,
+                            $xp_cost
+                        );
+                        
+                        if (mysqli_stmt_execute($ability_stmt)) {
+                            $ability_count++;
+                        } else {
+                            error_log('Failed to save ability ' . $abilityName . ': ' . mysqli_stmt_error($ability_stmt));
+                        }
+                    }
+                }
+                
+                mysqli_stmt_close($ability_stmt);
+                error_log("Saved {$ability_count} abilities for character {$character_id}");
+            } else {
+                error_log('Failed to prepare ability insert statement: ' . mysqli_error($conn));
+            }
+        }
+        
+        // TODO: Add traits, backgrounds, merits_flaws saving later
         
         // Commit transaction if all operations succeed
         db_commit($conn);

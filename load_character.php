@@ -7,6 +7,7 @@
 
 header('Content-Type: application/json');
 require_once __DIR__ . '/includes/connect.php';
+require_once __DIR__ . '/includes/discipline_functions.php';
 
 $character_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
@@ -52,23 +53,77 @@ try {
         [$character_id]
     );
     
-    $abilities = db_fetch_all($conn,
-        "SELECT id, ability_name, ability_category, specialization, level, xp_cost 
-         FROM character_abilities 
-         WHERE character_id = ? 
-         ORDER BY level DESC, ability_name",
-        "i",
-        [$character_id]
-    );
+    // Get abilities and look up their categories from abilities_master table
+    // Use direct query as primary method since prepared statements may have issues
+    $abilities_raw = [];
+    $sanitized_id = intval($character_id);
     
-    $disciplines = db_fetch_all($conn,
-        "SELECT id, discipline_name, level, xp_cost 
-         FROM character_disciplines 
-         WHERE character_id = ? 
-         ORDER BY discipline_name, level",
-        "i",
-        [$character_id]
-    );
+    $direct_query = "SELECT id, ability_name, specialization, level 
+                     FROM character_abilities 
+                     WHERE character_id = $sanitized_id
+                     ORDER BY level DESC, ability_name";
+    
+    $direct_result = mysqli_query($conn, $direct_query);
+    
+    if (!$direct_result) {
+        error_log("load_character.php - Direct query FAILED: " . mysqli_error($conn));
+        error_log("load_character.php - Query was: " . $direct_query);
+    } else {
+        $row_count = mysqli_num_rows($direct_result);
+        error_log("load_character.php - Direct query returned $row_count rows for character {$character_id}");
+        
+        if ($row_count > 0) {
+            while ($row = mysqli_fetch_assoc($direct_result)) {
+                $abilities_raw[] = $row;
+            }
+            mysqli_free_result($direct_result);
+            error_log("load_character.php - Direct query SUCCESS: Found " . count($abilities_raw) . " abilities");
+        } else {
+            mysqli_free_result($direct_result);
+            error_log("load_character.php - Direct query returned 0 rows (abilities may not exist for this character)");
+        }
+    }
+    
+    if (empty($abilities_raw)) {
+        // Fallback to prepared statement if direct query fails
+        error_log("load_character.php - Direct query returned 0 rows, trying prepared statement");
+        $abilities_raw = db_fetch_all($conn,
+            "SELECT ca.id, ca.ability_name, ca.specialization, ca.level 
+             FROM character_abilities ca 
+             WHERE ca.character_id = ? 
+             ORDER BY ca.level DESC, ca.ability_name",
+            "i",
+            [$character_id]
+        );
+        
+        if (!empty($abilities_raw)) {
+            error_log("load_character.php - Prepared statement SUCCESS: Found " . count($abilities_raw) . " abilities");
+        } else {
+            error_log("load_character.php - Both queries returned empty for character {$character_id}");
+        }
+    }
+    
+    // Look up categories from abilities_master table
+    $abilities = [];
+    foreach ($abilities_raw as $ability) {
+        $category = db_fetch_one($conn,
+            "SELECT category FROM abilities_master WHERE name = ? LIMIT 1",
+            "s",
+            [$ability['ability_name']]
+        );
+        
+        $abilities[] = [
+            'id' => $ability['id'],
+            'ability_name' => $ability['ability_name'],
+            'ability_category' => $category ? $category['category'] : 'Optional',
+            'specialization' => $ability['specialization'] ?? null,
+            'level' => isset($ability['level']) ? intval($ability['level']) : 1,
+            'xp_cost' => 0 // xp_cost column doesn't exist in character_abilities table
+        ];
+    }
+    
+    // Get disciplines using helper function (already normalized structure)
+    $all_disciplines_data = getCharacterAllDisciplines($character_id);
     
     $backgrounds = db_fetch_all($conn,
         "SELECT id, background_name, level, xp_cost 
@@ -108,34 +163,92 @@ try {
         $neg_trait_categories[$trait['trait_category']][] = $trait['trait_name'];
     }
     
-    // Organize abilities by category
+    // Organize abilities by category for backward compatibility (ability names only)
     $ability_categories = ['Physical' => [], 'Social' => [], 'Mental' => [], 'Optional' => []];
-    foreach ($abilities as $ability) {
-        $category = $ability['ability_category'] ?? 'Optional';
-        $ability_categories[$category][] = $ability['ability_name'];
+    
+    // Debug: Check if abilities were found
+    error_log("load_character.php - Character ID: $character_id");
+    error_log("load_character.php - abilities_raw count: " . count($abilities_raw));
+    error_log("load_character.php - abilities count after category lookup: " . count($abilities));
+    
+    if (count($abilities) > 0) {
+        error_log("load_character.php - First ability: " . json_encode($abilities[0]));
+        
+        foreach ($abilities as $ability) {
+            $category = $ability['ability_category'] ?? 'Optional';
+            $ability_categories[$category][] = $ability['ability_name'];
+        }
+        
+        // Also provide full ability data with levels, specializations, etc. for character sheet
+        $abilities_full = [];
+        foreach ($abilities as $ability) {
+            $abilities_full[] = [
+                'ability_name' => $ability['ability_name'],
+                'ability_category' => $ability['ability_category'] ?? 'Optional',
+                'specialization' => $ability['specialization'] ?? null,
+                'level' => isset($ability['level']) ? intval($ability['level']) : 1,
+                'xp_cost' => 0 // xp_cost column doesn't exist in character_abilities table
+            ];
+        }
+        error_log("load_character.php - abilities_full count: " . count($abilities_full));
+        error_log("load_character.php - abilities_full sample: " . json_encode($abilities_full[0] ?? null));
+    } else {
+        // No abilities found - but check if they exist in database
+        $check_query = "SELECT COUNT(*) as count FROM character_abilities WHERE character_id = ?";
+        $check_result = db_fetch_one($conn, $check_query, "i", [$character_id]);
+        if ($check_result && $check_result['count'] > 0) {
+            error_log("load_character.php - ERROR: Database has {$check_result['count']} abilities but processing returned 0");
+            error_log("load_character.php - abilities_raw was: " . json_encode($abilities_raw));
+        } else {
+            error_log("load_character.php - Character {$character_id} truly has no abilities in database");
+        }
+        $abilities_full = [];
     }
     
-    // Group disciplines by name
-    $discipline_groups = [];
-    foreach ($disciplines as $disc) {
-        $discipline_groups[$disc['discipline_name']][] = $disc;
+    // Format disciplines for frontend: 
+    // - disciplines: array of discipline names
+    // - disciplinePowers: object with discipline names as keys, arrays of power levels (1 through level) as values
+    $discipline_names = [];
+    $discipline_powers_obj = [];
+    
+    foreach ($all_disciplines_data as $disc_name => $disc_data) {
+        $discipline_names[] = $disc_name;
+        // Build array of power levels from 1 to character's level
+        $power_levels = [];
+        for ($i = 1; $i <= $disc_data['level']; $i++) {
+            $power_levels[] = $i;
+        }
+        $discipline_powers_obj[$disc_name] = $power_levels;
     }
     
     // Determine if character is PC or NPC based on player_name
     $character['is_pc'] = ($character['player_name'] !== 'NPC');
     
     // Prepare response
+    // Debug: Log what we're about to return
+    error_log("load_character.php - FINAL: abilities_full count = " . count($abilities_full));
+    error_log("load_character.php - FINAL: abilities (categories) = Physical:" . count($ability_categories['Physical']) . 
+        ", Social:" . count($ability_categories['Social']) . 
+        ", Mental:" . count($ability_categories['Mental']) . 
+        ", Optional:" . count($ability_categories['Optional']));
+    
     $response = [
         'success' => true,
         'character' => $character,
         'traits' => $trait_categories,
         'negative_traits' => $neg_trait_categories,
-        'abilities' => $ability_categories,
-        'disciplines' => $discipline_groups,
+        'abilities' => $ability_categories, // Backward compatibility: category-based arrays
+        'abilities_full' => $abilities_full, // Full ability data with levels, specializations, etc.
+        'disciplines' => $discipline_names,
+        'disciplinePowers' => $discipline_powers_obj,
         'backgrounds' => $backgrounds,
         'morality' => $morality,
         'merits_flaws' => $merits_flaws
     ];
+    
+    error_log("load_character.php - Response includes abilities_full: " . (isset($response['abilities_full']) ? 'YES' : 'NO'));
+    error_log("load_character.php - abilities_full is array: " . (is_array($response['abilities_full']) ? 'YES' : 'NO'));
+    error_log("load_character.php - abilities_full length: " . (is_array($response['abilities_full']) ? count($response['abilities_full']) : 'N/A'));
     
     echo json_encode($response, JSON_PRETTY_PRINT);
     

@@ -43,12 +43,40 @@ $neg_traits_result = db_select($conn,
     [$character_id]
 );
 
-$abilities_result = db_select($conn,
-    "SELECT id, ability_name, ability_category, specialization, level, xp_cost
-     FROM character_abilities WHERE character_id = ? ORDER BY level DESC, ability_name",
+// Get abilities and look up categories from abilities_master
+$abilities_raw = db_fetch_all($conn,
+    "SELECT ca.id, ca.ability_name, ca.specialization, ca.level, ca.xp_cost
+     FROM character_abilities ca
+     WHERE ca.character_id = ?
+     ORDER BY ca.level DESC, ca.ability_name",
     "i",
     [$character_id]
 );
+
+// Convert to format expected by view page (with categories)
+$abilities_result_array = [];
+foreach ($abilities_raw as $ability) {
+    // Look up category from abilities_master
+    $category = db_fetch_one($conn,
+        "SELECT category FROM abilities_master WHERE name = ? LIMIT 1",
+        "s",
+        [$ability['ability_name']]
+    );
+    
+    $resolved_category = $category ? $category['category'] : 'Optional';
+    
+    $abilities_result_array[] = [
+        'id' => $ability['id'],
+        'ability_name' => $ability['ability_name'],
+        'ability_category' => $resolved_category,
+        'specialization' => $ability['specialization'],
+        'level' => $ability['level'] ?? 1,
+        'xp_cost' => $ability['xp_cost'] ?? 0
+    ];
+}
+
+// Create a mock result object for compatibility
+$abilities_result = $abilities_result_array;
 
 $disciplines_result = db_select($conn,
     "SELECT id, discipline_name, level, xp_cost
@@ -358,22 +386,41 @@ try {
         <h2>Abilities</h2>
         <div class="ability-list">
             <?php 
-            if ($abilities):
-                $abilities->data_seek(0);
-                while ($ability = $abilities->fetch_assoc()): 
-                $dots = str_repeat('●', $ability['level']);
+            if ($abilities && is_array($abilities) && count($abilities) > 0):
+                // Group abilities by category
+                $ability_categories = ['Physical' => [], 'Social' => [], 'Mental' => [], 'Optional' => []];
+                foreach ($abilities as $ability):
+                    $cat = $ability['ability_category'] ?? 'Optional';
+                    if (isset($ability_categories[$cat])) {
+                        $ability_categories[$cat][] = $ability;
+                    } else {
+                        $ability_categories['Optional'][] = $ability;
+                    }
+                endforeach;
+                
+                // Display by category
+                foreach (['Physical', 'Social', 'Mental', 'Optional'] as $category):
+                    if (!empty($ability_categories[$category])):
             ?>
-                <div class="ability-item">
-                    <div>
-                        <strong><?= htmlspecialchars($ability['ability_name']) ?></strong>
-                        <?php if ($ability['specialization']): ?>
-                            <div class="specialization">(<?= htmlspecialchars($ability['specialization']) ?>)</div>
-                        <?php endif; ?>
-                    </div>
-                    <span class="dots"><?= $dots ?></span>
-                </div>
-            <?php endwhile; 
-            endif; ?>
+                        <h3><?= $category ?> Abilities</h3>
+                        <?php foreach ($ability_categories[$category] as $ability): 
+                            $dots = str_repeat('●', $ability['level'] ?? 1);
+                        ?>
+                            <div class="ability-item">
+                                <div>
+                                    <strong><?= htmlspecialchars($ability['ability_name']) ?></strong>
+                                    <?php if (!empty($ability['specialization'])): ?>
+                                        <div class="specialization">(<?= htmlspecialchars($ability['specialization']) ?>)</div>
+                                    <?php endif; ?>
+                                </div>
+                                <span class="dots"><?= $dots ?></span>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="empty-state">No abilities recorded.</p>
+            <?php endif; ?>
         </div>
 
         <h2>Disciplines</h2>
