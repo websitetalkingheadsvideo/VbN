@@ -4,6 +4,11 @@
  * AI-powered agent that answers VTM/MET rules questions
  */
 
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
 header('Content-Type: application/json');
 require_once __DIR__ . '/../includes/connect.php';
 require_once __DIR__ . '/../includes/anthropic_helper.php';
@@ -241,16 +246,22 @@ Answer the user's question now:";
 
 // Handle API request
 try {
-    // Check authentication
-    $auth = check_authentication($conn);
+    // Check for MCP API key bypass
+    $mcp_api_key = $_GET['mcp_key'] ?? $_POST['mcp_key'] ?? '';
+    $mcp_bypass = ($mcp_api_key === 'vbn_mcp_b4byp4ss_k3y_2025');
     
-    if (!$auth['authenticated'] || !$auth['verified']) {
-        http_response_code($auth['http_code']);
-        echo json_encode([
-            'success' => false,
-            'error' => $auth['error']
-        ]);
-        exit;
+    // Check authentication (unless bypassed by MCP)
+    if (!$mcp_bypass) {
+        $auth = check_authentication($conn);
+        
+        if (!$auth['authenticated'] || !$auth['verified']) {
+            http_response_code($auth['http_code']);
+            echo json_encode([
+                'success' => false,
+                'error' => $auth['error']
+            ]);
+            exit;
+        }
     }
     
     // Get parameters

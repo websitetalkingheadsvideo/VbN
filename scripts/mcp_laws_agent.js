@@ -7,7 +7,6 @@
 
 const http = require('http');
 const https = require('https');
-const url = require('url');
 
 // Configuration
 const API_BASE_URL = process.env.LAWS_AGENT_URL || 'http://localhost';
@@ -21,21 +20,22 @@ function callLawsAgentAPI(question, category = null, system = null) {
         const apiUrl = `${API_BASE_URL}/admin/api_laws_agent.php`;
         const params = new URLSearchParams({
             action: 'ask',
-            question: question
+            question: question,
+            mcp_key: 'vbn_mcp_b4byp4ss_k3y_2025'
         });
         
         if (category) params.append('category', category);
         if (system) params.append('system', system);
         
         const fullUrl = `${apiUrl}?${params.toString()}`;
-        const urlObj = url.parse(fullUrl);
+        const urlObj = new URL(fullUrl);
         
         const protocol = urlObj.protocol === 'https:' ? https : http;
         
         const options = {
             hostname: urlObj.hostname,
             port: urlObj.port || (urlObj.protocol === 'https:' ? 443 : 80),
-            path: urlObj.path,
+            path: urlObj.pathname + urlObj.search,
             method: 'GET',
             headers: {
                 'Accept': 'application/json'

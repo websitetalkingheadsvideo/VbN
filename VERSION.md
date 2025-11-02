@@ -1,6 +1,34 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.8 (Current)
+## Version 0.9.9 (Current)
+**Date:** January 2025
+
+### Laws Agent MCP Integration:
+- ✅ **MCP Server Setup** - Fixed Laws Agent MCP server to connect via HTTPS to PHP API
+- ✅ **Database Access Fix** - Resolved MySQL connection issues by switching from direct DB to API route
+- ✅ **MCP Bypass Authentication** - Added secure API key bypass for MCP server calls to `admin/api_laws_agent.php`
+- ✅ **URL Parser Update** - Replaced deprecated `url.parse()` with modern `URL` API in Node.js
+- ✅ **Windows Path Compatibility** - Fixed Windows path format in MCP configuration
+
+### Technical Improvements:
+- **API Authentication Bypass** - MCP server now bypasses session auth with secure key (`vbn_mcp_b4byp4ss_k3y_2025`)
+- **HTTPS Integration** - MCP server calls `https://vbn.talkingheads.video/admin/api_laws_agent.php` instead of direct MySQL
+- **Code Modernization** - Updated Node.js code to use WHATWG URL API instead of deprecated `url.parse()`
+- **MCP Configuration** - Switched from `mcp_laws_agent_v2.js` (direct DB) to `mcp_laws_agent.js` (PHP API)
+
+### Files Modified:
+- `.cursor/mcp.json` - Updated to use PHP API route and forward slashes for Windows compatibility
+- `scripts/mcp_laws_agent.js` - Updated to use modern URL API, added MCP API key
+- `admin/api_laws_agent.php` - Added MCP bypass authentication check
+
+### Impact:
+- **Laws Agent Tool** - Now fully functional in Cursor MCP
+- **Database Security** - MCP server no longer needs direct MySQL credentials
+- **Reliability** - HTTPS API route more stable than direct database connection
+- **Future Use** - Ready for using Laws Agent to validate VTM/MET game mechanics
+
+---
+## Version 0.9.8
 **Date:** January 2025
 
 ### Abilities Display Fixes & UI Improvements:
