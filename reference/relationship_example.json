@@ -1,0 +1,32 @@
+"quick_add_examples": [
+  {
+    "example_id": "new_rivalry_example",
+    "based_on_template": "rivalry_aesthetic",
+    "entities": ["New Toreador Club", "Brujah Underground Venue"],
+    "summary": "Artistic clash between a refined Toreador gallery and a Brujah punk collective in downtown Phoenix.",
+    "adjusted_values": {
+      "intensity": 6,
+      "respect": 4,
+      "hostility": 7,
+      "cooperation": 2,
+      "dominance_balance": "Shifting toward Brujah",
+      "last_update": "1994-04-02"
+    },
+    "notes": "Begun as friendly competition for attention among mortal patrons, but escalating after a vandalized exhibition. Could draw Sarah Hansen or Adrian Leclair into mediating the dispute."
+  },
+  {
+    "example_id": "new_secret_alliance_example",
+    "based_on_template": "secret_alliance",
+    "entities": ["Giovanni", "Setites"],
+    "summary": "Covert trade of necromantic texts and relics between Giovanni in Scottsdale and Setites in Mesa.",
+    "adjusted_values": {
+      "intensity": 8,
+      "respect": 5,
+      "hostility": 2,
+      "cooperation": 9,
+      "dominance_balance": "Even but unstable",
+      "last_update": "1994-03-27"
+    },
+    "notes": "Maintained in deep secrecy to avoid Camarilla notice. High volatility — either side might betray the other once their goals are met."
+  }
+]
