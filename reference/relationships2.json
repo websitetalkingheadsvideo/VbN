@@ -1,73 +1,126 @@
-{
-  "file_name": "relationships.json",
-  "file_purpose": "Tracks evolving relationships, rivalries, alliances, and influence balances among Kindred, factions, and locations within the Valley by Night chronicle.",
-
-  "schema_notes": {
-    "intensity": "1–10 scale indicating importance or volatility.",
-    "respect": "0–10 scale for mutual admiration.",
-    "hostility": "0–10 scale for direct or emotional enmity.",
-    "cooperation": "0–10 scale for active collaboration.",
-    "dominance_balance": "Textual indicator: 'Even', 'Shifting', 'One-sided'.",
-    "influence_overlap": "Optional array listing shared domains: ['Art', 'Politics', 'Mortals', 'Occult', 'Territory']."
-  },
-
-  "relationships": [
-
-    {
-      "relationship_id": "velvetdoor_hole_001",
-      "entities": ["The Velvet Door", "The Hole"],
-      "type": "Artistic / Ideological Conflict",
-      "summary": "Ongoing aesthetic and moral war between Sarah Hansen (Daughter of Cacophony) and Roxanne Murphy (Setite Priestess). Both use art and emotion to shape influence in the Valley nightlife scene.",
-      "intensity": 7,
-      "respect": 3,
-      "hostility": 8,
-      "cooperation": 1,
-      "dominance_balance": "Even — Setites stronger politically, Sarah stronger emotionally.",
-      "influence_overlap": ["Art", "Mortals", "Occult"],
-      "last_update": "1994-03-15",
-      "related_events": [
-        "The Velvet War",
-        "Sarah Hansen sends Toreador neonate to investigate Setite corruption",
-        "The Hole’s cultural expansion into Tempe"
-      ],
-      "notes": "Sarah views The Hole’s Setite owners as blasphemers turning art into corruption. Roxanne sees Sarah’s performances as dangerously idealistic, a threat to Set’s influence among mortals. Their clubs compete for the same crowd — spiritually and literally."
+"rating_templates": [
+  {
+    "template_id": "alliance_standard",
+    "type": "Alliance",
+    "defaults": {
+      "intensity": 6,
+      "respect": 7,
+      "hostility": 1,
+      "cooperation": 8,
+      "secrecy": 2,
+      "volatility": 3,
+      "dominance_balance": "Even",
+      "influence_overlap": ["Politics", "Art", "Mortals"]
     },
-
-    {
-      "relationship_id": "leclair_hansen_001",
-      "entities": ["Adrian Leclair", "Sarah Hansen"],
-      "type": "Artistic Philosophy / Mutual Respect",
-      "summary": "Two artists with opposing creative philosophies — Adrian values structure and control, Sarah values emotion and resonance — yet they respect one another deeply.",
+    "notes_hint": "Shared goals; occasional friction. Define joint objectives and boon history."
+  },
+  {
+    "template_id": "rivalry_aesthetic",
+    "type": "Rivalry (Aesthetic/Ideological)",
+    "defaults": {
+      "intensity": 7,
+      "respect": 5,
+      "hostility": 6,
+      "cooperation": 2,
+      "secrecy": 3,
+      "volatility": 6,
+      "dominance_balance": "Shifting",
+      "influence_overlap": ["Art", "Mortals"]
+    },
+    "notes_hint": "Competing visions; snipe via patrons/press. Define flashpoints and red lines."
+  },
+  {
+    "template_id": "cold_war_political",
+    "type": "Cold War (Political)",
+    "defaults": {
+      "intensity": 8,
+      "respect": 2,
+      "hostility": 7,
+      "cooperation": 1,
+      "secrecy": 5,
+      "volatility": 4,
+      "dominance_balance": "One-sided",
+      "influence_overlap": ["Politics", "Territory", "Mortals"]
+    },
+    "notes_hint": "Proxy moves, deniable ops. Add tripwires that escalate to open conflict."
+  },
+  {
+    "template_id": "mentorship_patronage",
+    "type": "Mentorship / Patronage",
+    "defaults": {
       "intensity": 5,
       "respect": 8,
-      "hostility": 2,
+      "hostility": 1,
       "cooperation": 7,
-      "dominance_balance": "Balanced — alternating between mentor-like alliance and creative rivalry.",
-      "influence_overlap": ["Art", "Mortals"],
-      "related_events": [
-        "Lighting design collaboration for The Velvet Door",
-        "Sarah’s performance at Adrian’s 'Symmetry of Desire' exhibit"
-      ],
-      "notes": "They exchange boons and advice frequently. Adrian occasionally speaks of Sarah as 'the voice of chaos that gives structure meaning.' If the Setite threat escalates, their bond may evolve into full partnership or collapse over artistic control."
+      "secrecy": 3,
+      "volatility": 2,
+      "dominance_balance": "One-sided",
+      "influence_overlap": ["Art", "Politics"]
     },
-
-    {
-      "relationship_id": "camarilla_setite_001",
-      "entities": ["Phoenix Camarilla", "Followers of Set (Mesa)"],
-      "type": "Political Hostility",
-      "summary": "Tense recognition between Camarilla authority and Setite independence. Official neutrality masks growing distrust.",
-      "intensity": 8,
-      "respect": 1,
-      "hostility": 9,
+    "notes_hint": "Power imbalance accepted. Track boons, lessons, and boundaries."
+  },
+  {
+    "template_id": "vendetta_blood",
+    "type": "Vendetta (Blood Feud)",
+    "defaults": {
+      "intensity": 9,
+      "respect": 0,
+      "hostility": 10,
       "cooperation": 0,
-      "dominance_balance": "Camarilla-dominant but eroding; Setites expanding influence through mortal corruption.",
-      "influence_overlap": ["Politics", "Mortals", "Territory"],
-      "related_events": [
-        "Neutral Ground status of The Hole established",
-        "Giovanni awareness of Setite activity",
-        "Possible Masquerade breaches tied to Mesa nightlife"
-      ],
-      "notes": "Camarilla leaders permit The Hole to operate as neutral ground for convenience, but discontent brews among Toreador and Ventrue who see Setite manipulation as an existential threat to the Masquerade."
-    }
-  ]
+      "secrecy": 4,
+      "volatility": 9,
+      "dominance_balance": "Shifting",
+      "influence_overlap": ["Politics", "Territory", "Occult", "Mortals"]
+    },
+    "notes_hint": "Irreconcilable. Define targets, taboo lines, and likely collateral."
+  },
+  {
+    "template_id": "neutral_transactional",
+    "type": "Neutral / Transactional",
+    "defaults": {
+      "intensity": 4,
+      "respect": 5,
+      "hostility": 2,
+      "cooperation": 5,
+      "secrecy": 2,
+      "volatility": 2,
+      "dominance_balance": "Even",
+      "influence_overlap": ["Mortals", "Politics"]
+    },
+    "notes_hint": "Pay-for-favors. Track price shifts and recent deals."
+  },
+  {
+    "template_id": "secret_alliance",
+    "type": "Secret Alliance",
+    "defaults": {
+      "intensity": 7,
+      "respect": 6,
+      "hostility": 1,
+      "cooperation": 8,
+      "secrecy": 9,
+      "volatility": 7,
+      "dominance_balance": "Even",
+      "influence_overlap": ["Politics", "Occult"]
+    },
+    "notes_hint": "Hidden cooperation. Add exposure risks and blackmail levers."
+  },
+  {
+    "template_id": "ceasefire_tense",
+    "type": "Ceasefire (Tense)",
+    "defaults": {
+      "intensity": 6,
+      "respect": 3,
+      "hostility": 6,
+      "cooperation": 3,
+      "secrecy": 4,
+      "volatility": 6,
+      "dominance_balance": "Even",
+      "influence_overlap": ["Territory", "Politics"]
+    },
+    "notes_hint": "Temporary halt. List conditions that would break the truce."
+  }
+],
+"schema_extensions": {
+  "secrecy": "0–10 (how hidden the relationship is).",
+  "volatility": "0–10 (how easily it swings or escalates)."
 }
