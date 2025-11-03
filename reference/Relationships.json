@@ -1,0 +1,17 @@
+{
+  "relationship_id": "velvetdoor_hole_001",
+  "entities": ["The Velvet Door", "The Hole"],
+  "type": "Artistic / Ideological Conflict",
+  "summary": "Ongoing rivalry between Sarah Hansen (Daughter of Cacophony) and Roxanne Murphy (Setite priestess) over artistic integrity and moral influence in the Valley nightlife scene.",
+  "intensity": 7,
+  "respect": 3,
+  "hostility": 8,
+  "cooperation": 1,
+  "dominance_balance": "Even — influence spreading in different demographics.",
+  "last_update": "1994-03-15",
+  "related_events": [
+    "Velvet War (Sarah sends Toreador PC to investigate The Hole)",
+    "Setite expansion into Tempe art scene"
+  ],
+  "notes": "Sarah sees Roxanne’s club as corruption disguised as beauty; Roxanne views Sarah as naïve and dangerous for opposing Set’s work through emotional art. Tension expected to escalate to open conflict."
+}
