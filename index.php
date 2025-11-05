@@ -47,7 +47,7 @@ $chronicle_summary = "Phoenix, 1994. On the very night you're introduced to Kind
 include 'includes/header.php';
 ?>
 
-<div class="dashboard-container">
+<div class="dashboard-container container">
     <?php if ($is_admin): ?>
         <!-- ADMIN/STORYTELLER VIEW -->
         <div class="dashboard-admin">
@@ -55,7 +55,7 @@ include 'includes/header.php';
             <p class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>. The chronicle awaits your guidance.</p>
             
             <!-- Statistics Panel -->
-            <div class="stats-panel">
+            <div class="stats-panel row g-4 mb-5">
                 <?php
                 // Get character statistics
                 $stats_query = "SELECT 
@@ -66,65 +66,65 @@ include 'includes/header.php';
                 $stats_result = mysqli_query($conn, $stats_query);
                 $stats = mysqli_fetch_assoc($stats_result);
                 ?>
-                <div class="stat-card">
+                <div class="stat-card col-md-4 col-sm-6">
                     <div class="stat-number"><?php echo $stats['total'] ?? 0; ?></div>
                     <div class="stat-label">Total Characters</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card col-md-4 col-sm-6">
                     <div class="stat-number"><?php echo $stats['pcs'] ?? 0; ?></div>
                     <div class="stat-label">Player Characters</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card col-md-4 col-sm-6">
                     <div class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></div>
                     <div class="stat-label">NPCs</div>
                 </div>
             </div>
             
             <!-- Admin Actions -->
-            <div class="action-grid">
-                <div class="action-card">
+            <div class="action-grid row g-4 mb-5">
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">✏️</div>
                     <h3>Create Character</h3>
                     <p>Bring a new kindred into the world</p>
                     <a href="lotn_char_create.php" class="gothic-button">Create New</a>
                 </div>
                 
-                <div class="action-card">
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">🏠</div>
                     <h3>Locations Database</h3>
                     <p>Manage game locations and character assignments</p>
                     <a href="admin/admin_locations.php" class="gothic-button">Manage Locations</a>
                 </div>
                 
-                <div class="action-card">
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">⚔️</div>
                     <h3>Items Database</h3>
                     <p>Manage equipment and artifacts</p>
                     <a href="admin/admin_items.php" class="gothic-button">Manage Items</a>
                 </div>
                 
-                <div class="action-card">
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">📋</div>
                     <h3>Character List</h3>
                     <p>View, edit, and delete characters</p>
                     <a href="admin/admin_panel.php" class="gothic-button">View Characters</a>
                 </div>
                 
-                <div class="action-card">
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">🌟</div>
                     <h3>Clan Discovery Quiz</h3>
                     <p>Test the character creation questionnaire</p>
                     <a href="questionnaire.php" class="gothic-button">Take Quiz</a>
                 </div>
                 
-                <div class="action-card">
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">🧛</div>
                     <h3>Laws Agent</h3>
                     <p>Ask AI about VTM/MET rules and lore</p>
                     <a href="admin/laws_agent.php" class="gothic-button">Ask Questions</a>
                 </div>
                 
-                <div class="action-card disabled">
+                <div class="action-card disabled col-md-4 col-sm-6">
                     <div class="card-icon">📖</div>
                     <h3>AI Plots Manager</h3>
                     <p>Coming soon: Weave storylines with AI</p>
@@ -186,8 +186,8 @@ include 'includes/header.php';
                     while ($character = mysqli_fetch_assoc($char_result)):
                 ?>
                     <div class="character-card">
-                        <div class="character-header">
-                            <h4 class="character-name">
+                        <div class="character-header d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                            <h4 class="character-name d-flex align-items-center gap-2">
                                 <?php echo htmlspecialchars($character['character_name']); ?>
                                 <?php if ($character['status'] == 'draft'): ?>
                                     <span class="badge-draft">DRAFT</span>

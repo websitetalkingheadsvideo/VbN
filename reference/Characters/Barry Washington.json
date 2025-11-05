@@ -1,0 +1,369 @@
+{
+  "character_name": "Barry Washington",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Visionary",
+  "demeanor": "Confidant",
+  "concept": "Ambitious Ventrue Protégé with Secret Prince Aspirations",
+  "clan": "Ventrue",
+  "generation": 10,
+  "sire": "Warner Jefferson",
+  "pc": 0,
+  "biography": "Barry Washington was born to older parents in Phoenix, showing exceptional business acumen from a young age. Unbeknownst to him, Warner Jefferson began observing him in high school, subtly manipulating his path. Barry excelled at ASU, completing his MBA two years early at age 23. He was hired by Warner's venture capital firm, proved his value for a year, then spent two years as Warner's ghoul before being Embraced six months ago. His parents in Sun City believe he died in a car accident. Within days of his Embrace, Barry decided he wanted to become Prince someday - an ambition he keeps secret from Warner. He lives in a small room in Warner's penthouse, serving as his sire's eyes and ears in Kindred society while secretly planning to eventually surpass him. Barry is thoughtful, intelligent, and charismatic, deliberately avoiding making enemies while building a power base across Camarilla factions.",
+  "character_image": "Barry Washington.webp",
+  "equipment": "Designer three-piece suits (charcoal, navy, grey), luxury watch, diamond stud earring, designer bracelet and rings, leather portfolio, high-end smartphone, business cards for venture capital firm",
+  "notes": "PLOT HOOK: One of Barry's parents will become a victim of the Malkavian serial killer, forcing him to confront his faked death and lost mortal connections. Barry is completely unaware that Warner has been manipulating his entire life since high school. The blood bond heavily influences his loyalty to Warner, though he doesn't recognize this. His ambition to become Prince puts him on a collision course with his sire - either Warner planned this all along, or it's the one thing he didn't anticipate. Barry has an unusually strong connection with the Nosferatu Primogen despite being Ventrue.",
+  "agentNotes": "When roleplaying Barry: He is genuinely likable and charismatic, not fake. Show thoughtfulness before responding - he processes carefully. Display eagerness for Warner's approval while harboring secret ambitions. Be diplomatic and bridge-building, never confrontational. Show respect for information and intelligence networks (especially Nosferatu). Express disdain for non-Camarilla kindred. Remember he's only 6 months into unlife - still learning but incredibly intelligent. Physical presence is polished professional, never intimidating.",
+  "actingNotes": "Barry speaks with confident, professional tone. Uses business metaphors naturally. Genuinely warm with most Kindred. Shows vulnerability only around Warner or when mortal past is mentioned. Body language: assured but not arrogant, open and approachable. Dressed impeccably at all times. Carries himself like he belongs in any room. Quick smile that reaches his eyes. Active listener - remembers details about people.",
+  "status": "active",
+  "total_xp": 0,
+  "spent_xp": 0,
+  "custom_data": {
+    "feeding_restriction": "Business Professionals/Executives Only",
+    "time_as_ghoul": "2 years",
+    "time_as_kindred": "6 months",
+    "age_at_embrace": 25,
+    "haven_details": "Small room in Warner Jefferson's penthouse - symbolizes both mentorship and subordination",
+    "mortal_cover": "Junior board member at Warner's venture capital firm",
+    "death_cover_story": "Car accident",
+    "secret_ambition": "Wants to become Prince someday - plans to eventually surpass Warner",
+    "parent_location": "Sun City, Arizona",
+    "parent_plot_hook": "One parent will be murdered by Malkavian serial killer",
+    "key_faction_connections": "Toreador (excellent rapport), Nosferatu Primogen (surprisingly strong connection)",
+    "business_specialty": "Venture capital, acquisitions, asset liquidation"
+  },
+  
+  "traits": {
+    "Physical": ["Lithe", "Dexterous", "Graceful"],
+    "Social": ["Charismatic", "Charismatic", "Charismatic", "Charismatic", "Charismatic", "Empathetic", "Diplomatic"],
+    "Mental": ["Intelligent", "Intelligent", "Intelligent", "Intelligent", "Observant", "Perceptive", "Analytical"]
+  },
+  
+  "negativeTraits": {
+    "Physical": ["Delicate"],
+    "Social": ["Naive"],
+    "Mental": ["Oblivious"]
+  },
+  
+  "abilities": [
+    {
+      "name": "Alertness",
+      "category": "Talents",
+      "level": 3,
+      "specialization": "Social Dynamics",
+      "xp_cost": 0
+    },
+    {
+      "name": "Empathy",
+      "category": "Talents",
+      "level": 4,
+      "specialization": "Reading Motivations",
+      "xp_cost": 0
+    },
+    {
+      "name": "Expression",
+      "category": "Talents",
+      "level": 3,
+      "specialization": "Business Presentations",
+      "xp_cost": 0
+    },
+    {
+      "name": "Leadership",
+      "category": "Talents",
+      "level": 3,
+      "specialization": null,
+      "xp_cost": 0
+    },
+    {
+      "name": "Streetwise",
+      "category": "Talents",
+      "level": 2,
+      "specialization": null,
+      "xp_cost": 0
+    },
+    {
+      "name": "Subterfuge",
+      "category": "Talents",
+      "level": 3,
+      "specialization": "Corporate Politics",
+      "xp_cost": 0
+    },
+    {
+      "name": "Etiquette",
+      "category": "Skills",
+      "level": 4,
+      "specialization": "Kindred Society",
+      "xp_cost": 0
+    },
+    {
+      "name": "Performance",
+      "category": "Skills",
+      "level": 2,
+      "specialization": "Public Speaking",
+      "xp_cost": 0
+    },
+    {
+      "name": "Academics",
+      "category": "Knowledges",
+      "level": 3,
+      "specialization": "Business",
+      "xp_cost": 0
+    },
+    {
+      "name": "Finance",
+      "category": "Knowledges",
+      "level": 4,
+      "specialization": "Venture Capital",
+      "xp_cost": 0
+    },
+    {
+      "name": "Investigation",
+      "category": "Knowledges",
+      "level": 2,
+      "specialization": null,
+      "xp_cost": 0
+    },
+    {
+      "name": "Law",
+      "category": "Knowledges",
+      "level": 2,
+      "specialization": "Corporate Law",
+      "xp_cost": 0
+    },
+    {
+      "name": "Politics",
+      "category": "Knowledges",
+      "level": 3,
+      "specialization": "Camarilla Structure",
+      "xp_cost": 0
+    }
+  ],
+  
+  "ability_specializations": [
+    {
+      "ability_name": "Empathy",
+      "specialization": "Reading Motivations",
+      "is_primary": true,
+      "xp_cost": 0,
+      "grants_bonus": true
+    },
+    {
+      "ability_name": "Finance",
+      "specialization": "Venture Capital",
+      "is_primary": true,
+      "xp_cost": 0,
+      "grants_bonus": true
+    },
+    {
+      "ability_name": "Etiquette",
+      "specialization": "Kindred Society",
+      "is_primary": true,
+      "xp_cost": 0,
+      "grants_bonus": true
+    }
+  ],
+  
+  "disciplines": [
+    {
+      "name": "Dominate",
+      "level": 1,
+      "xp_cost": 0,
+      "parent_discipline": null,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Command"
+        }
+      ]
+    },
+    {
+      "name": "Fortitude",
+      "level": 1,
+      "xp_cost": 0,
+      "parent_discipline": null,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Fortitude"
+        }
+      ]
+    },
+    {
+      "name": "Presence",
+      "level": 2,
+      "xp_cost": 0,
+      "parent_discipline": null,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Awe"
+        },
+        {
+          "level": 2,
+          "power": "Dread Gaze"
+        }
+      ]
+    }
+  ],
+  
+  "backgrounds": {
+    "Resources": 4,
+    "Generation": 3,
+    "Status": 2,
+    "Contacts": 3,
+    "Allies": 2,
+    "Mentor": 5
+  },
+  
+  "backgroundDetails": {
+    "Resources": "Junior board member of Warner's highly profitable venture capital firm. Access to significant corporate assets and executive-level professionals for feeding. High-end penthouse living (in Warner's home). Designer wardrobe and luxury accessories.",
+    "Generation": "10th generation - one step removed from ancilla power level through Warner",
+    "Status": "Respected neonate in Phoenix Camarilla. Known as Warner Jefferson's protégé and childe. Building reputation as reliable information source and diplomatic connector. Junior board position adds mortal world status.",
+    "Contacts": "Business executives across Phoenix, Toreador salon members, information brokers in Nosferatu network, corporate lawyers, financial analysts, other venture capital professionals",
+    "Allies": "Key contacts within Toreador faction, developing relationship with Nosferatu Primogen, several business world ghouls, fellow board members at venture capital firm",
+    "Mentor": "Warner Jefferson - extremely powerful and influential Ventrue. Provides guidance, protection, connections, and opportunities. Lives in his haven. Reports directly to him. Warner's reputation opens doors throughout Camarilla."
+  },
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 4,
+    "self_control": 4,
+    "courage": 3,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 7
+  },
+  
+  "merits_flaws": [
+    {
+      "name": "Natural Leader",
+      "type": "merit",
+      "category": "Social",
+      "point_value": 1,
+      "description": "Barry has an innate ability to inspire confidence and coordinate group efforts. People naturally look to him for guidance.",
+      "xp_bonus": 0
+    },
+    {
+      "name": "Prestigious Sire",
+      "type": "merit",
+      "category": "Social",
+      "point_value": 1,
+      "description": "Warner Jefferson is highly respected in Phoenix Camarilla. Barry benefits from association with his sire's reputation.",
+      "xp_bonus": 0
+    },
+    {
+      "name": "Blood Bond (to Warner Jefferson)",
+      "type": "flaw",
+      "category": "Supernatural",
+      "point_value": 2,
+      "description": "Barry is blood bound to his sire Warner Jefferson. This heavily influences his loyalty and emotions, though he doesn't recognize the bond's effect on his feelings. Complicates his secret ambition to eventually surpass Warner.",
+      "xp_bonus": 0
+    },
+    {
+      "name": "Dark Secret",
+      "type": "flaw",
+      "category": "Social",
+      "point_value": 1,
+      "description": "Barry secretly plans to become Prince someday, which would require eventually surpassing his sire Warner. If Warner discovered this ambition prematurely, it could destroy their relationship or worse.",
+      "xp_bonus": 0
+    },
+    {
+      "name": "Prey Exclusion (Non-Business Professionals)",
+      "type": "flaw",
+      "category": "Supernatural",
+      "point_value": 2,
+      "description": "Ventrue feeding restriction - can only feed from business professionals and executives. Limits feeding opportunities and requires maintaining business world connections.",
+      "xp_bonus": 0
+    }
+  ],
+  
+  "status": {
+    "sect_status": "Neonate",
+    "clan_status": "Childe of Warner Jefferson",
+    "city_status": "Respected Information Broker",
+    "health_levels": 7,
+    "blood_pool_current": 11,
+    "blood_pool_maximum": 11
+  },
+  
+  "coteries": [
+    {
+      "coterie_name": "Warner's Network",
+      "coterie_type": "informal",
+      "role": "Protégé and Information Gatherer",
+      "description": "Barry serves as Warner's eyes and ears in Kindred society, attending gatherings and making connections his sire cannot or will not pursue directly.",
+      "notes": "Barry lives in Warner's penthouse and reports all findings to his sire. This is his primary allegiance, though he secretly harbors ambitions beyond this role."
+    }
+  ],
+  
+  "relationships": [
+    {
+      "related_character_id": null,
+      "related_character_name": "Warner Jefferson",
+      "relationship_type": "sire",
+      "relationship_subtype": "mentor",
+      "strength": 5,
+      "description": "Sire, mentor, and de facto master. Barry is blood bound to Warner and deeply loyal (though he doesn't recognize the bond's influence). Seeks Warner's approval constantly. Lives in his penthouse. Reports everything to him. Secretly plans to eventually surpass Warner and become Prince, an ambition he has not revealed. Complex dynamic of genuine respect, manipulated loyalty, and hidden ambition."
+    },
+    {
+      "related_character_id": null,
+      "related_character_name": "Nosferatu Primogen [Name TBD]",
+      "relationship_type": "ally",
+      "relationship_subtype": "professional",
+      "strength": 3,
+      "description": "Unusually strong connection between Ventrue neonate and Nosferatu Primogen. Barry respects information networks and intelligence gathering. Recognizes Nosferatu power despite typical clan prejudices. May be cultivating for future political support. Primogen may see potential in him or find him useful."
+    },
+    {
+      "related_character_id": null,
+      "related_character_name": "Toreador Faction",
+      "relationship_type": "ally",
+      "relationship_subtype": "social",
+      "strength": 3,
+      "description": "Excellent rapport with Toreador. Appreciates their culture and social grace. Natural fit for salon politics. Uses these connections for Warner while building his own network. Particularly connected to Madame Sinclair regarding art gallery preservation."
+    },
+    {
+      "related_character_id": null,
+      "related_character_name": "Parents (Sun City)",
+      "relationship_type": "family",
+      "relationship_subtype": "lost",
+      "strength": 4,
+      "description": "Elderly parents (now in their 60s) who believe Barry died in a car accident. Barry cannot contact them but still cares deeply. One parent will become victim of Malkavian serial killer, forcing confrontation with his faked death and lost mortal life. Major emotional vulnerability."
+    },
+    {
+      "related_character_id": null,
+      "related_character_name": "Victoria [Prince]",
+      "relationship_type": "authority",
+      "relationship_subtype": "political",
+      "strength": 2,
+      "description": "Current Prince of Phoenix. Barry knows Warner reports to her. Treats her with appropriate respect and deference. Secretly desires her position someday, but this is very long-term thinking. Currently focused on learning from observing her rule."
+    }
+  ],
+  
+  "rituals": [],
+  
+  "specializations": {
+    "Alertness": "Social Dynamics",
+    "Empathy": "Reading Motivations",
+    "Expression": "Business Presentations",
+    "Subterfuge": "Corporate Politics",
+    "Etiquette": "Kindred Society",
+    "Performance": "Public Speaking",
+    "Academics": "Business",
+    "Finance": "Venture Capital",
+    "Law": "Corporate Law",
+    "Politics": "Camarilla Structure"
+  },
+  
+  "research_notes": {
+    "manipulation_timeline": "Warner began observing Barry in high school. Subtly guided his education and career path. Barry believes he earned everything through merit and has no idea his entire life was engineered.",
+    "blood_bond_notes": "Barry is fully blood bound to Warner from his time as a ghoul. This heavily influences his loyalty and emotions toward Warner. He does not recognize the bond's effect. This creates tension with his secret ambition to eventually surpass Warner as Prince.",
+    "prince_ambition_timeline": "Within DAYS of Embrace, Barry decided he wanted to become Prince someday. This is secret - Warner doesn't know yet. Plans are very long-term (not anytime soon). Incredibly ambitious for a 6-month neonate.",
+    "political_strategy": "Deliberately avoiding making enemies. Building bridges instead of burning them. Cultivating connections across multiple Camarilla factions. Patient, long-term approach to power accumulation. Learning from Warner while secretly planning to surpass him.",
+    "nosferatu_connection": "Unusually strong rapport with Nosferatu Primogen for a Ventrue. Respects information and intelligence gathering. May be part of political strategy to build diverse power base.",
+    "parent_murder_plot": "One parent in Sun City will become victim of Malkavian serial killer. This will force Barry to confront his faked death, deal with grief while maintaining cover, and possibly seek revenge. PC may be investigating same murders. Major character development opportunity.",
+    "story_potential": "What happens when Barry learns truth about Warner's manipulation? Can he overcome blood bond when time comes to challenge Warner? Is Warner aware of Barry's ambition? Did Warner plan this all along? What will Barry sacrifice for power?"
+  },
+  
+  "artifacts": []
+}

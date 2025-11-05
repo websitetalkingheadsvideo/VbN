@@ -56,9 +56,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body>
 <div class="page-wrapper">
     <header class="valley-header">
-        <div class="header-container">
+        <div class="header-container container d-flex justify-content-between align-items-center gap-4">
             <!-- Logo and Title Section -->
-            <div class="header-left">
+            <div class="header-left d-flex align-items-center gap-4">
                 <div class="logo-placeholder" title="Valley by Night Logo">
                     <!-- SVG Logo with hover effects (inline for animation support) -->
                     <a href="<?php echo $app_root; ?>index.php" class="logo-link">
@@ -92,8 +92,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </div>
             
             <!-- User Info Section -->
-            <div class="header-right">
-                <div class="header-top-row">
+            <div class="header-right d-flex flex-column align-items-end gap-1">
+                <div class="header-top-row d-flex align-items-center gap-2 flex-wrap">
                     <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="quick-nav">
                         <select id="agentSelect" class="agent-dropdown" 

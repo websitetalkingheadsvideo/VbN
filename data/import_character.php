@@ -59,6 +59,18 @@ $char_name = $character['character_name'] ?? $character['name'] ?? 'Unknown';
 echo "   Character: $char_name\n";
 echo "   Clan: {$character['clan']}\n\n";
 
+// Helper to ensure ASCII-only strings for DB
+if (!function_exists('vbn_ascii_clean')) {
+    function vbn_ascii_clean($s) {
+        if ($s === null) return null;
+        $out = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', (string)$s);
+        if ($out === false) {
+            $out = preg_replace('/[^\x20-\x7E]/', '', (string)$s);
+        }
+        return $out;
+    }
+}
+
 // Start transaction
 echo "🚀 Starting import transaction...\n\n";
 $conn->begin_transaction();
@@ -82,24 +94,49 @@ try {
         throw new Exception("Prepare failed: " . $conn->error);
     }
     
+    // Build sanitized values and move freeform status text into notes
+    $player_name = vbn_ascii_clean($character['player_name'] ?? 'NPC');
+    $chronicle = vbn_ascii_clean($character['chronicle'] ?? '');
+    $nature = vbn_ascii_clean($character['nature'] ?? '');
+    $demeanor = vbn_ascii_clean($character['demeanor'] ?? '');
+    $concept = vbn_ascii_clean($character['concept'] ?? '');
+    $clan = vbn_ascii_clean($character['clan'] ?? '');
+    $generation = (int)($character['generation'] ?? 0);
+    $sire = vbn_ascii_clean($character['sire'] ?? '');
+    $pc = (int)($character['pc'] ?? 0);
+    $biography = vbn_ascii_clean($character['biography'] ?? '');
+    $equipment = vbn_ascii_clean($character['equipment'] ?? '');
+
+    $xp_total = (int)($character['total_xp'] ?? ($character['status']['xp_total'] ?? 0));
+    $spent_xp = (int)($character['spent_xp'] ?? 0);
+    $xp_unspent = (int)($character['status']['xp_available'] ?? max(0, $xp_total - $spent_xp));
+
+    $blood_pool_current = (int)($character['status']['blood_pool_current'] ?? ($character['status']['blood_pool'] ?? 10));
+
+    $notes_parts = [];
+    if (!empty($character['notes']) && is_string($character['notes'])) { $notes_parts[] = $character['notes']; }
+    if (isset($character['status']) && is_string($character['status'])) { $notes_parts[] = $character['status']; }
+    if (!empty($character['status']['notes']) && is_string($character['status']['notes'])) { $notes_parts[] = $character['status']['notes']; }
+    $notes = vbn_ascii_clean(implode(' | ', $notes_parts));
+
     $stmt->bind_param("isssssssisissiiis",
         $user_id,
-        $char_name,
-        $character['player_name'],
-        $character['chronicle'],
-        $character['nature'],
-        $character['demeanor'],
-        $character['concept'],
-        $character['clan'],
-        $character['generation'],
-        $character['sire'],
-        $character['pc'],
-        $character['biography'],
-        $character['equipment'],
-        $character['status']['xp_total'],
-        $character['status']['xp_available'],
-        $character['status']['blood_pool'],
-        $character['status']['notes']
+        vbn_ascii_clean($char_name),
+        $player_name,
+        $chronicle,
+        $nature,
+        $demeanor,
+        $concept,
+        $clan,
+        $generation,
+        $sire,
+        $pc,
+        $biography,
+        $equipment,
+        $xp_total,
+        $xp_unspent,
+        $blood_pool_current,
+        $notes
     );
     
     if (!$stmt->execute()) {
@@ -341,4 +378,3 @@ try {
 
 mysqli_close($conn);
 ?>
-

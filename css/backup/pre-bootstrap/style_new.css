@@ -1,0 +1,419 @@
+/* ========================================
+   LAWS OF THE NIGHT CHARACTER CREATOR
+   CSS Styles - Reorganized Version
+   ======================================== */
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Serif Pro', serif;
+    background: linear-gradient(135deg, #000713, #2E5740, #17212D, #1D2523);
+    color: #e0e0e0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* ========================================
+   TYPOGRAPHY HIERARCHY
+   ======================================== */
+h1, .main-title {
+    font-family: 'IM Fell English', serif;
+    color: #5a0202;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+h2, .section-title {
+    font-family: 'Libre Baskerville', serif;
+    color: #780606;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+h3, .tab-title {
+    font-family: 'Libre Baskerville', serif;
+    color: #780606;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+h4, .subsection-title {
+    font-family: 'Libre Baskerville', serif;
+    color: #780606;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.warning, .error, .nosifer {
+    font-family: 'Nosifer', fantasy;
+    color: #ff0000;
+    font-weight: normal;
+}
+
+.brand {
+    font-family: 'IM Fell English', serif;
+    color: #5a0202;
+}
+
+/* ========================================
+   LAYOUT COMPONENTS
+   ======================================== */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a, #0a0a0a);
+    border: 2px solid #780606;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(120, 6, 6, 0.2);
+}
+
+.sidebar {
+    width: 280px;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a, #0a0a0a);
+    border: 2px solid #780606;
+    border-radius: 8px;
+    padding: 15px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(120, 6, 6, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet Responsive Design */
+@media (max-width: 1024px) and (min-width: 769px) {
+    body {
+        gap: 15px;
+        padding: 12px;
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+    
+    .sidebar {
+        width: 300px;
+    }
+    
+    .tab {
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+    
+    .tab-card {
+        padding: 25px 20px;
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* Mobile Layout */
+    body {
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .sidebar {
+        order: 2;
+        position: static;
+        margin-top: 20px;
+        padding: 15px;
+    }
+    
+    #sheet {
+        order: 1;
+    }
+    
+    /* Mobile Header */
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .header-right {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    /* Mobile Tabs */
+    .tabs {
+        margin-bottom: 15px;
+    }
+    
+    .tab {
+        padding: 12px 15px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+    
+    /* Mobile Tab Content - CRITICAL FOR TAB FUNCTIONALITY */
+    .tab-content {
+        display: none !important;
+        min-height: 400px;
+    }
+    
+    .tab-content.active {
+        display: block !important;
+    }
+    
+    .tab-card {
+        padding: 20px 15px;
+    }
+    
+    .card-header {
+        margin-bottom: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.5em;
+    }
+    
+    /* Mobile Form Elements */
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .tab-card input,
+    .tab-card select,
+    .tab-card textarea {
+        padding: 10px 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Mobile Buttons */
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .button-group button {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-height: 44px; /* Touch-friendly minimum */
+    }
+    
+    /* Mobile Trait/Ability Buttons */
+    .trait-btn,
+    .ability-btn,
+    .discipline-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mobile Character Preview */
+    .character-preview {
+        margin-top: 20px;
+        padding: 15px;
+    }
+    
+    .character-preview .preview-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .sheet-mode-toggle {
+        align-self: center;
+        font-size: 0.8em;
+    }
+    
+    .preview-card {
+        padding: 12px;
+    }
+    
+    .preview-name {
+        font-size: 1.1em;
+    }
+    
+    .preview-traits {
+        gap: 6px;
+    }
+    
+    .preview-trait {
+        padding: 4px 8px;
+        font-size: 0.75em;
+    }
+    
+    /* Mobile Sidebar Stats */
+    .sidebar h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    
+    .sidebar h4 {
+        font-size: 1em;
+        margin: 15px 0 10px 0;
+    }
+    
+    .stat-line {
+        padding: 8px 0;
+        font-size: 0.9em;
+    }
+    
+    /* Mobile Progress Bar */
+    .tab-progress {
+        margin-bottom: 15px;
+    }
+    
+    /* Mobile Collapsible Sections */
+    .collapsible-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 0;
+        border-bottom: 1px solid #444;
+        margin-bottom: 10px;
+    }
+    
+    .collapsible-header::after {
+        content: '▼';
+        transition: transform 0.3s ease;
+        color: #780606;
+    }
+    
+    .collapsible-header.collapsed::after {
+        transform: rotate(-90deg);
+    }
+    
+    .collapsible-content {
+        max-height: 1000px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .collapsible-content.collapsed {
+        max-height: 0;
+    }
+    
+    /* Mobile Touch Improvements */
+    .trait-category,
+    .ability-category,
+    .discipline-category {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    .trait-category h3,
+    .ability-category h3,
+    .discipline-category h3 {
+        font-size: 1.2em;
+        margin-bottom: 12px;
+    }
+    
+    /* Mobile Info Box */
+    .info-box {
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 0.9em;
+    }
+    
+    /* Mobile XP Tracker */
+    .xp-tracker {
+        padding: 10px;
+        margin: 10px 0;
+    }
+    
+    .xp-display {
+        font-size: 1.5em;
+    }
+    
+    /* Mobile Morality */
+    .virtue-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .humanity-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stat-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .sin-level {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    /* Mobile Merits & Flaws */
+    .merits-flaws-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    .filter-group input {
+        min-width: 100%;
+    }
+    
+    .merits-flaws-summary {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Mobile Health & Willpower */
+    .health-willpower-display .virtue-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .health-willpower-display .virtue-label {
+        min-width: auto;
+    }
+    
+    .health-willpower-display .virtue-bars {
+        width: 100%;
+    }
+}

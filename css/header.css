@@ -16,18 +16,13 @@
 
 .header-container {
     max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+    /* Bootstrap .container class now handles margin: 0 auto */
+    /* Bootstrap utilities handle: display: flex, justify-content: space-between, align-items: center, gap */
 }
 
 /* ===== LEFT SECTION: Logo + Title ===== */
 .header-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    /* Bootstrap utilities handle: display: flex, align-items: center, gap */
     flex: 1;
 }
 
@@ -140,17 +135,11 @@
 
 /* ===== RIGHT SECTION: User Info + Version ===== */
 .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 5px;
+    /* Bootstrap utilities handle: display: flex, flex-direction: column, align-items: flex-end, gap */
 }
 
 .header-top-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    /* Bootstrap utilities handle: display: flex, align-items: center, gap, flex-wrap */
 }
 
 .user-info {
@@ -325,11 +314,8 @@
 
 .footer-container {
     max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    /* Bootstrap .container class now handles margin: 0 auto */
+    /* Bootstrap utilities handle: display: flex, flex-direction: column, align-items: center, gap */
 }
 
 .footer-content {

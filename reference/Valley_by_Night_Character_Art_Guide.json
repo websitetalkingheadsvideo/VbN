@@ -1,0 +1,73 @@
+{
+  "file_name": "Valley_by_Night_Character_Art_Guide.json",
+  "file_purpose": "Defines visual and stylistic parameters for generating character portraits in the Valley by Night chronicle. Ensures consistent tone, lighting, and atmosphere for all NPC and PC images.",
+  "visual_style": {
+    "genre": "World of Darkness cinematic realism",
+    "mood": "Noir-inspired, elegant, emotional, subdued",
+    "composition": "Square 1:1 aspect ratio, portrait framing, film-still atmosphere",
+    "lighting": {
+      "type": "volumetric or directional",
+      "contrast": "medium-high",
+      "key_light": "single warm or cool source, soft fill, minimal rim",
+      "environmental_effects": [
+        "smoke",
+        "neon haze",
+        "candlelight",
+        "dust particles"
+      ]
+    },
+    "color_palette": {
+      "tones": [
+        "amber",
+        "crimson",
+        "violet",
+        "cool teal shadows"
+      ],
+      "saturation": "low to medium",
+      "grading": "cinematic warm-cool balance"
+    },
+    "texture": {
+      "finish": "semi-realistic digital painting",
+      "detail": "slightly softened for painterly realism",
+      "focus": "eyes and face remain sharp focal point"
+    }
+  },
+  "aesthetic_rules": {
+    "shared_elements": [
+      "moody and elegant composition",
+      "realistic but atmospheric lighting",
+      "emotional restraint with visible humanity",
+      "backgrounds implying personal environment (stage, studio, desert, city)"
+    ],
+    "avoid": [
+      "flat lighting",
+      "excessive sharpness",
+      "overly bright or saturated scenes",
+      "comedic or cartoon tones"
+    ]
+  },
+  "prompt_template": "Square portrait of [Character Name], a [Clan or Role] from Valley by Night, depicted in a cinematic World of Darkness style. [Brief physical traits and attire]. Lighting is moody and dramatic, with [color accent or environment]. The image feels intimate and realistic, like a film still, with subtle haze and emotional tension.",
+  "color_and_lighting_reference": {
+    "primary_colors": [
+      "teal",
+      "amber",
+      "crimson",
+      "violet"
+    ],
+    "ambient_sources": [
+      "stage lighting",
+      "candlelight",
+      "city neon",
+      "desert moonlight"
+    ],
+    "contrast_level": "medium-high",
+    "depth": "shallow depth of field, blurred backgrounds"
+  },
+  "archetype_variants": {
+    "Toreador": "Glamour and restraint \u2014 satin, glass, and poised elegance.",
+    "Gangrel": "Natural grit \u2014 desert hues, windblown textures, feral calm.",
+    "Malkavian": "Uneven lighting, reflections, surreal dream tone.",
+    "Setite": "Candlelight, gold accents, deep shadows, serpentine patterns.",
+    "Giovanni": "Muted luxury \u2014 marble, grayscale warmth, Italian refinement."
+  }
+}

@@ -1,7 +1,7 @@
     </main> <!-- End main-wrapper from header.php -->
     
     <footer class="valley-footer">
-        <div class="footer-container">
+        <div class="footer-container container d-flex flex-column align-items-center gap-3">
             <div class="footer-content">
                 <p class="footer-title">
                     <?php

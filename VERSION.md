@@ -1,6 +1,29 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.12 (Current)
+## Version 0.9.13 (Current)
+**Date:** January 2025
+
+### Character Data Updates & Refinements:
+- ✅ **Character JSON Updates** - Updated Warner Jefferson and Barry Washington character data
+- ✅ **Character Import Script** - Enhanced import_character.php functionality
+- ✅ **New Character Files** - Added Core, Phreak, and other character JSON files
+- ✅ **Character Scene Teasers** - Added character introduction scenes and cinematic guides
+- ✅ **Character Images** - Added character portrait images
+
+### Files Modified:
+- `reference/Characters/Added to Database/Warner Jefferson.json` - Character data updates
+- `reference/Characters/Barry Washington.json` - Character data updates
+- `data/import_character.php` - Import functionality enhancements
+- Multiple new character JSON files and scene teasers
+
+### Impact:
+- **Character Database** - Enhanced character data and import capabilities
+- **Content Creation** - Added character scene teasers and cinematic guides
+- **Data Management** - Improved character import and data handling
+
+---
+
+## Version 0.9.12
 **Date:** January 2025
 
 ### Admin Panel Actions Column Alignment:

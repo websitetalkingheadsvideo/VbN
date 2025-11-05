@@ -1,4 +1,4 @@
-
+{
   "current_operations": {
     "primary_assignment": {
       "task": "Map and investigate all financial and business holdings of Tremere and Giovanni in Phoenix",
@@ -49,14 +49,17 @@
     "racial_dynamics": "Navigates predominantly white corporate and Ventrue worlds with strategic precision. Uses his Ivy League credentials and financial acumen as armor. Neither apologizes for his success nor tolerates discrimination - responds with economic and political pressure.",
     "code": "Honor contracts. Maintain appearances. Power respects power. Never show weakness. Document everything.",
     "victoria_influence": "His sire's mentorship refined his natural talents but also added pressure - he's not just succeeding for himself, he's proving her entire philosophy correct."
-  },{
+  },
   "name": "Warner Jefferson",
+  "character_image": "Warner Jefferson.webp",
   "clan": "Ventrue",
   "generation": 11,
+  "sire": "Victoria Ashford-Sterling",
   "concept": "Vulture Finance Specialist / Corporate Predator",
   "nature": "Capitalist",
   "demeanor": "Director",
   "affiliation": "Camarilla",
+  "chronicle": "Valley by Night",
   "embrace_info": {
     "date": "1988",
     "location": "New York City",
@@ -104,8 +107,7 @@
   "disciplines": {
     "dominate": 2,
     "fortitude": 1,
-    "presence": 2,
-    "notes": "Dominate 2 allows mental control in negotiations and information gathering. Presence 2 provides Awe and Dread Gaze for business intimidation and persuasion. Fortitude 1 provides basic resilience."
+    "presence": 2
   },
   
   "backgrounds": {

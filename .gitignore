@@ -1,8 +1,7 @@
-# Large reference files that shouldn't be in git
-reference/Books/
-reference/Scenes/
+# Large PDF files (too large for git, but track other files in these folders)
 *.pdf
 *.PDF
+# Note: reference/Books/ and reference/Scenes/ folders themselves can contain tracked files (just not PDFs)
 
 # Character images
 reference/Characters/Images/
@@ -10,6 +9,10 @@ reference/Characters/Images/
 *.jpg
 *.jpeg
 *.png
+
+# Always track JSON files in Characters folder (even if *.json is ignored elsewhere)
+!reference/Characters/*.json
+!reference/Characters/**/*.json
 
 # Temporary files
 *.tmp
@@ -22,6 +25,7 @@ reference/Characters/Images/
 *.swp
 *.swo
 .cursor/
+_notes/
 
 # OS files
 .DS_Store
@@ -31,3 +35,4 @@ sync_config.jsonc
 # Environment files with API keys
 .env
 config.env
+node_modules

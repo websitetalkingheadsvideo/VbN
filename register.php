@@ -18,6 +18,9 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Valley by Night</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-overrides.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +28,7 @@ if (isset($_SESSION['user_id'])) {
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nosifer&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-container d-flex align-items-center justify-content-center min-vh-100">
         <div class="login-box">
             <h1 class="login-title">🦇 Join the Chronicle</h1>
             <p class="login-subtitle">Create your account to enter the night</p>
@@ -41,29 +44,29 @@ if (isset($_SESSION['user_id'])) {
             }
             ?>
             
-            <form action="register_process.php" method="POST" class="login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
+            <form action="register_process.php" method="POST" class="login-form d-flex flex-column gap-4">
+                <div class="form-group mb-3">
+                    <label for="username" class="form-label">Username</label>
                     <input type="text" id="username" name="username" required autofocus 
                            minlength="3" maxlength="50"
                            pattern="[a-zA-Z0-9_]+"
                            title="Username must be 3-50 characters, letters, numbers, and underscores only">
                 </div>
                 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
+                <div class="form-group mb-3">
+                    <label for="email" class="form-label">Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 
-                <div class="form-group">
-                    <label for="password">Password</label>
+                <div class="form-group mb-3">
+                    <label for="password" class="form-label">Password</label>
                     <input type="password" id="password" name="password" required 
                            minlength="8"
                            title="Password must be at least 8 characters">
                 </div>
                 
-                <div class="form-group">
-                    <label for="confirm_password">Confirm Password</label>
+                <div class="form-group mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password</label>
                     <input type="password" id="confirm_password" name="confirm_password" required>
                 </div>
                 

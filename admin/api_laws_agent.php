@@ -114,6 +114,79 @@ function search_rulebooks(mysqli $conn, string $query, ?string $category = null,
 }
 
 /**
+ * Detect if the question targets the Six Traditions topic
+ */
+function question_indicates_traditions(string $question): bool {
+    $q = strtolower($question);
+    if (strpos($q, 'tradition') !== false) return true;
+    $keywords = ['masquerade','domain','progeny','accounting','hospitality','destruction'];
+    $hits = 0;
+    foreach ($keywords as $kw) {
+        if (strpos($q, $kw) !== false) { $hits++; }
+    }
+    return $hits >= 2; // mention of at least two names strongly suggests the topic
+}
+
+/**
+ * BOOLEAN MODE search tuned for the Six Traditions
+ * Requires a Tradition mention and boosts specific Tradition-of phrases
+ */
+function search_rulebooks_traditions(mysqli $conn, ?string $category = null, ?string $system = null, int $limit = 20): array {
+    $boolean = '+Tradition* Masquerade Domain Progeny Accounting Hospitality Destruction "Tradition of the" "the Six Traditions"';
+
+    $sql = "SELECT 
+                r.id as rulebook_id,
+                r.title as book_title,
+                r.category,
+                r.system_type,
+                rp.page_number,
+                rp.page_text,
+                MATCH(rp.page_text) AGAINST(? IN BOOLEAN MODE) as relevance,
+                (
+                    (rp.page_text LIKE '%Tradition%') +
+                    2 * (rp.page_text REGEXP 'Tradition of the (Masquerade|Domain|Progeny|Accounting|Hospitality|Destruction)')
+                ) as tboost
+            FROM rulebook_pages rp
+            JOIN rulebooks r ON rp.rulebook_id = r.id
+            WHERE MATCH(rp.page_text) AGAINST(? IN BOOLEAN MODE)";
+
+    $params = [$boolean, $boolean];
+    $types = 'ss';
+
+    if ($category) {
+        $sql .= " AND r.category = ?";
+        $params[] = $category;
+        $types .= 's';
+    }
+
+    if ($system) {
+        $sql .= " AND r.system_type = ?";
+        $params[] = $system;
+        $types .= 's';
+    }
+
+    $sql .= " ORDER BY (relevance + tboost) DESC LIMIT ?";
+    $params[] = $limit;
+    $types .= 'i';
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        return [];
+    }
+
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $results = [];
+    while ($row = $result->fetch_assoc()) {
+        $results[] = $row;
+    }
+
+    return $results;
+}
+
+/**
  * Extract clean snippet from page text
  */
 function extract_excerpt(string $text, int $max_chars = 800): string {
@@ -165,11 +238,210 @@ function build_context_from_results(array $results): string {
 }
 
 /**
+ * For Traditions queries, prioritize pages that look like formal Tradition entries.
+ * Reorders results to surface pages that include phrases like
+ * "Tradition of the Masquerade" or a close pairing of a Tradition name with the word Tradition.
+ */
+function prioritize_tradition_pages(array $results): array {
+    if (empty($results)) return $results;
+
+    $score = function(array $r): int {
+        $t = $r['page_text'] ?? '';
+        // Lightweight scoring heuristics
+        $points = 0;
+        // Exact phrase hits get strong boost
+        foreach (['Tradition of the Masquerade','Tradition of the Domain','Tradition of the Progeny','Tradition of the Accounting','Tradition of the Hospitality','Tradition of the Destruction'] as $p) {
+            if (stripos($t, $p) !== false) { $points += 10; }
+        }
+        // Name + Tradition proximity (same line-ish)
+        foreach (['Masquerade','Domain','Progeny','Accounting','Hospitality','Destruction'] as $n) {
+            if (preg_match('/'.preg_quote($n,'/').'.{0,80}Tradition/i', $t) || preg_match('/Tradition.{0,80}'.preg_quote($n,'/').'/i', $t)) {
+                $points += 3;
+            }
+        }
+        // Headings
+        if (preg_match('/\bSix\s+Traditions\b/i', $t)) { $points += 6; }
+        if (preg_match('/\bThe\s+Traditions\b/i', $t)) { $points += 4; }
+        return $points;
+    };
+
+    usort($results, function($a, $b) use ($score) {
+        $sa = $score($a);
+        $sb = $score($b);
+        if ($sa === $sb) {
+            // tie-breaker: higher MySQL relevance if present
+            $ra = (float)($a['relevance'] ?? 0);
+            $rb = (float)($b['relevance'] ?? 0);
+            return ($rb <=> $ra);
+        }
+        return ($sb <=> $sa);
+    });
+
+    return $results;
+}
+
+/**
+ * Seed a concise reference rulebook containing the Six Traditions.
+ * Creates a synthetic rulebook and pages with explicit "Tradition of the ..." entries
+ * to improve retrieval and citations while remaining excerpt-based.
+ * Only callable via secure pathway.
+ */
+function seed_traditions(mysqli $conn, string $title = 'VTM - Traditions (Reference)', string $category = 'Core', string $system = 'MET-VTM'): array {
+    // Ensure rulebook exists
+    $rb = db_fetch_one($conn,
+        "SELECT id FROM rulebooks WHERE title = ? AND system_type = ?",
+        "ss",
+        [$title, $system]
+    );
+
+    if (!$rb) {
+        $insert_id = db_execute($conn,
+            "INSERT INTO rulebooks (title, category, system_type) VALUES (?,?,?)",
+            "sss",
+            [$title, $category, $system]
+        );
+        if (!$insert_id) {
+            return ['success' => false, 'error' => 'Failed to create rulebook'];
+        }
+        $rulebook_id = (int)$insert_id;
+    } else {
+        $rulebook_id = (int)$rb['id'];
+    }
+
+    // Define pages (minimal summaries)
+    $pages = [
+        1 => "The Six Traditions (Camarilla)\n\nThe Camarilla recognizes six foundational Traditions that govern Kindred society. Each Tradition is often titled as 'Tradition of the …'. The six are: Masquerade, Domain, Progeny, Accounting, Hospitality, and Destruction.",
+        2 => "Tradition of the Masquerade\n\nKeep the existence of Kindred hidden from mortals; avoid breaches that expose vampiric society.",
+        3 => "Tradition of the Domain\n\nRespect the authority of a domain's ruler (typically the Prince). A guest must observe the local ruler’s laws and customs.",
+        4 => "Tradition of the Progeny\n\nDo not create childer without the permission of the domain’s ruler; illicit Embraces are punishable.",
+        5 => "Tradition of the Accounting\n\nThe sire is responsible for the actions and education of her childe until released; debts and obligations must be honored.",
+        6 => "Tradition of the Hospitality\n\nAnnounce yourself when entering a new domain and request leave to remain; unannounced Kindred risk sanction.",
+        7 => "Tradition of the Destruction\n\nDo not destroy another Kindred without proper authority (usually vested in the domain’s ruler)."
+    ];
+
+    // Remove existing pages for this synthetic rulebook to avoid duplicates
+    db_execute($conn, "DELETE FROM rulebook_pages WHERE rulebook_id = ?", "i", [$rulebook_id]);
+
+    // Insert pages
+    $inserted = 0;
+    foreach ($pages as $page_num => $text) {
+        $ok = db_execute($conn,
+            "INSERT INTO rulebook_pages (rulebook_id, page_number, page_text) VALUES (?,?,?)",
+            "iis",
+            [$rulebook_id, $page_num, $text]
+        );
+        if ($ok) { $inserted++; }
+    }
+
+    return [
+        'success' => true,
+        'rulebook_id' => $rulebook_id,
+        'inserted_pages' => $inserted,
+        'title' => $title,
+        'category' => $category,
+        'system' => $system
+    ];
+}
+
+/**
  * Ask the Laws Agent a question
  */
 function ask_laws_agent(mysqli $conn, string $question, ?string $category = null, ?string $system = null): array {
     // Search for relevant content
-    $search_results = search_rulebooks($conn, $question, $category, $system, 10);
+    if (question_indicates_traditions($question)) {
+        $search_results = search_rulebooks_traditions($conn, $category, $system, 20);
+        // If nothing substantial came back, fall back to general search
+        if (empty($search_results)) {
+            $search_results = search_rulebooks($conn, $question, $category, $system, 20);
+        }
+        // If coverage of the six is weak, augment with per‑tradition BOOLEAN searches
+        if (!empty($search_results)) {
+            // Helper: compute which traditions appear in current snippets
+            $found = [];
+            $names = ['Masquerade','Domain','Progeny','Accounting','Hospitality','Destruction'];
+            foreach ($search_results as $r) {
+                $text = strtolower($r['page_text']);
+                foreach ($names as $n) {
+                    $ln = strtolower($n);
+                    if (strpos($text, $ln) !== false || strpos($text, 'tradition of the ' . $ln) !== false) {
+                        $found[$n] = true;
+                    }
+                }
+            }
+
+            if (count($found) < 4) {
+                // Query each missing tradition and merge unique pages
+                $byKey = [];
+                foreach ($search_results as $r) {
+                    $key = $r['rulebook_id'] . ':' . $r['page_number'];
+                    $byKey[$key] = $r;
+                }
+
+                foreach ($names as $n) {
+                    if (isset($found[$n])) continue;
+                    $phrase = '"Tradition of the ' . $n . '" ' . $n . ' Tradition*';
+                    $boolean = '+(' . $phrase . ')';
+
+                    $sql = "SELECT 
+                                r.id as rulebook_id,
+                                r.title as book_title,
+                                r.category,
+                                r.system_type,
+                                rp.page_number,
+                                rp.page_text,
+                                MATCH(rp.page_text) AGAINST(? IN BOOLEAN MODE) as relevance
+                            FROM rulebook_pages rp
+                            JOIN rulebooks r ON rp.rulebook_id = r.id
+                            WHERE MATCH(rp.page_text) AGAINST(? IN BOOLEAN MODE)";
+
+                    $params = [$boolean, $boolean];
+                    $types = 'ss';
+                    if ($category) { $sql .= " AND r.category = ?"; $params[] = $category; $types .= 's'; }
+                    if ($system)   { $sql .= " AND r.system_type = ?"; $params[] = $system; $types .= 's'; }
+                    $sql .= " ORDER BY relevance DESC LIMIT 3";
+
+                    $stmt = $conn->prepare($sql);
+                    if ($stmt) {
+                        $stmt->bind_param($types, ...$params);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
+                        while ($row = $res->fetch_assoc()) {
+                            $key = $row['rulebook_id'] . ':' . $row['page_number'];
+                            if (!isset($byKey[$key])) {
+                                $byKey[$key] = $row;
+                            }
+                        }
+                    }
+                }
+
+                // Replace search_results with merged, up to 30 items
+                $search_results = array_slice(array_values($byKey), 0, 30);
+            }
+            // Finally, prioritize likely Tradition-definition pages
+            $search_results = prioritize_tradition_pages($search_results);
+
+            // If still thin on explicit Tradition coverage, broaden scope beyond provided system
+            if (count($found) < 4) {
+                $broader = search_rulebooks_traditions($conn, $category, null, 20); // drop system filter
+                if (!empty($broader)) {
+                    // merge unique by rulebook_id:page_number
+                    $byKey = [];
+                    foreach ($search_results as $r) {
+                        $key = $r['rulebook_id'] . ':' . $r['page_number'];
+                        $byKey[$key] = $r;
+                    }
+                    foreach ($broader as $r) {
+                        $key = $r['rulebook_id'] . ':' . $r['page_number'];
+                        if (!isset($byKey[$key])) { $byKey[$key] = $r; }
+                    }
+                    $search_results = array_slice(array_values($byKey), 0, 30);
+                    $search_results = prioritize_tradition_pages($search_results);
+                }
+            }
+        }
+    } else {
+        $search_results = search_rulebooks($conn, $question, $category, $system, 10);
+    }
     
     if (empty($search_results)) {
         return [
@@ -250,10 +522,12 @@ try {
     $mcp_api_key = $_GET['mcp_key'] ?? $_POST['mcp_key'] ?? '';
     $mcp_bypass = ($mcp_api_key === 'vbn_mcp_b4byp4ss_k3y_2025');
     
-    // Check authentication (unless bypassed by MCP)
-    if (!$mcp_bypass) {
+    // Get action early so we can allow certain public endpoints
+    $action = $_GET['action'] ?? $_POST['action'] ?? 'ask';
+
+    // Check authentication (unless bypassed by MCP or action is public/health)
+    if (!$mcp_bypass && $action !== 'health' && $action !== 'public_traditions') {
         $auth = check_authentication($conn);
-        
         if (!$auth['authenticated'] || !$auth['verified']) {
             http_response_code($auth['http_code']);
             echo json_encode([
@@ -263,9 +537,6 @@ try {
             exit;
         }
     }
-    
-    // Get parameters
-    $action = $_GET['action'] ?? $_POST['action'] ?? 'ask';
     
     switch ($action) {
         case 'ask':
@@ -289,7 +560,55 @@ try {
             $response = ask_laws_agent($conn, $question, $category, $system);
             echo json_encode($response);
             break;
+
+        case 'public_traditions':
+            // Return the seeded Six Traditions reference without requiring authentication
+            $rb = db_fetch_one($conn,
+                "SELECT id FROM rulebooks WHERE title = ? AND system_type = ? LIMIT 1",
+                "ss",
+                ['VTM - Traditions (Reference)', 'MET-VTM']
+            );
+            if (!$rb) {
+                echo json_encode([
+                    'success' => false,
+                    'error' => 'Traditions reference not found. Ask an admin to seed it.'
+                ]);
+                break;
+            }
+            $rulebook_id = (int)$rb['id'];
+            $pages_result = db_select($conn,
+                "SELECT page_number, page_text FROM rulebook_pages WHERE rulebook_id = ? ORDER BY page_number ASC",
+                "i",
+                [$rulebook_id]
+            );
+            $pages = [];
+            if ($pages_result) {
+                while ($row = mysqli_fetch_assoc($pages_result)) {
+                    $pages[] = $row;
+                }
+            }
+            echo json_encode([
+                'success' => true,
+                'title' => 'VTM - Traditions (Reference)',
+                'rulebook_id' => $rulebook_id,
+                'pages' => $pages
+            ]);
+            break;
             
+        case 'seed_traditions':
+            // Only allow via MCP bypass key for safety
+            if (!$mcp_bypass) {
+                http_response_code(403);
+                echo json_encode([
+                    'success' => false,
+                    'error' => 'Forbidden'
+                ]);
+                exit;
+            }
+            $seed = seed_traditions($conn);
+            echo json_encode($seed);
+            break;
+
         case 'health':
             // Health check endpoint
             $api_key_configured = load_anthropic_api_key() !== null;

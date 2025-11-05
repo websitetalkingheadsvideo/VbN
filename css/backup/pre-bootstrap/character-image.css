@@ -1,0 +1,25 @@
+/* Square preview container per external CSS rule */
+.image-preview-container {
+	position: relative;
+	width: 200px;
+	height: 200px; /* 1:1 square */
+	overflow: hidden;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.image-preview-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* maintain square crop */
+	display: block;
+}
+
+.image-actions {
+	display: flex;
+	gap: 8px;
+	margin-top: 8px;
+	flex-wrap: wrap;
+}
+
+

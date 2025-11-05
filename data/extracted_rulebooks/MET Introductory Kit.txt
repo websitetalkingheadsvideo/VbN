@@ -1,0 +1,2955 @@
+1
+Rendezvous
+Rendezvous
+TH E
+H E
+H E
+H E
+H E M
+ M
+ M
+ M
+ MIND
+IND
+IND
+IND
+IND’S E E E E EY E
+Y E
+Y E
+Y E
+Y E T T T T THEATRE
+HEATRE
+HEATRE
+HEATRE
+HEATRE I I I I INTRODUCTORY
+NTRODUCTORY
+NTRODUCTORY
+NTRODUCTORY
+NTRODUCTORY K
+ K K
+ K KI T
+I T
+I T
+I T
+I T
+© 1999 White Wolf,
+Inc. All rights reserved.
+Reproduction without
+the written permission of
+the publisher is expressly
+forbidden, except for the
+purposes of reviews.
+White Wolf and Vam-
+pire the Masquerade are
+registered trademarks of
+White Wolf, Inc. Mind’s Eye Theatre and Laws of the Night are trade-
+marks of White Wolf, Inc. All characters, names, places and text herein
+are copyrighted by White Wolf, Inc. The mention of or reference to any
+company or product in these pages is not a challenge to the trademark or
+copyright concerned.  Check out White Wolf online at http://www.white-
+wolf.com, alt.games.whitewolf and rec.games.frp.storyteller.
+Printed in U.S.A.
+DU E
+U E
+U E
+U E
+U E T O
+T O
+T O
+T O
+T O MATURE
+MATURE
+MATURE
+MATURE
+MATURE THEMES
+THEMES
+THEMES
+THEMES
+THEMES,  ,  ,  ,  ,  READER
+READER
+READER
+READER
+READER DISCRETION
+DISCRETION
+DISCRETION
+DISCRETION
+DISCRETION I S
+I S
+I S
+I S
+I S ADVISED
+ADVISED
+ADVISED
+ADVISED
+ADVISED.
+
+
+2
+Laws of the Night
+Laws of the Night
+Welcome to Mind’s Eye Theatre. Mind’s Eye Theatre is a roleplaying
+game based on Vampire: The Masquerade. It is a game in which you play
+the part of a vampire, much as if you were acting in a movie. Vampire: The
+Masquerade describes the dark, compelling world in which your vampire
+exists. What happens next is up to you.
+This booklet is a simplified version of the live-action rules for Vampire:
+The Masquerade. It gives you just the highlights of the vampire’s world, but
+enough to start experimenting with play. Try it out. If you like it, look for
+Laws of the Night, available in most book, hobby and comic shops.
+When you’re ready, we’ll be waiting for you.
+WHAT
+HAT
+HAT
+HAT
+HAT I S
+I S
+I S
+I S
+I S M
+ M
+ M
+ M
+ MIND
+IND
+IND
+IND
+IND’S E E E E EY E
+Y E
+Y E
+Y E
+Y E T T T T THEATRE
+HEATRE
+HEATRE
+HEATRE
+HEATRE?
+This game is probably unlike anything you have played before. I t doesn’t
+have a lot of the usual trappings of games, such as cards, dice or a playing board.
+It’s far more like the make-believe of childhood or the popular “How to Host
+a Murder” than what most people think of when they imagine “games.” We call
+this style of game Mind’s Eye Theatre at White Wolf. Other groups and games
+have called it live-action roleplaying (or LARP).
+Playing Mind’s Eye Theatre is like being in a movie. You and your friends
+are the characters, but there is no script. You don’t sit around a table describing
+your actions — you get up and do them. There may be a framework or setting
+that determines the parameters of the world around you, but you and the others
+around you are creating the story as you play. The “director” of this movie is
+the Storyteller. The Storyteller creates the stage and the minor characters that
+the players interact with to tell this story.
+CHARACTERS
+HARACTERS
+HARACTERS
+HARACTERS
+HARACTERS
+When you play this game, you take on another persona, a character —  in
+this case, a vampire. Your character can be from any walk of life, age, creed, race
+or sex. The only limit is your imagination. When you create your character, you
+decide what she says or does. You decide where she goes and what choices she
+makes. During the game, you speak and act as your character, unless you’re
+resolving a rules dispute or talking to the Storyteller. Because most of what a
+Mind’s Eye Theatre player perceives around him depends on the other
+players, all players must be vivid and expressive.
+While the characters may direct the story through their actions, the story
+can react in ways that direct the characters. For example, a character decides
+she wants to create a coffeehouse with space for people to perform, and she
+invites another vampire to sing for an evening — here, the characters are
+directing the story through their actions. However, the story reacts — the
+Storyteller tells the characters that the performance has aroused some suspi-
+cious attention. It seems that the performer reminds a reporter of another
+famous human singer, who just happened to die at the same time the character
+became a vampire. Thus is a story built in Mind’s Eye Theatre.
+Creating a character for Masquerade is easy, and it takes just a few
+minutes. Only a few things are necessary to define the basic capabilities of a
+character, and when they’re done, you can start playing. There’s another phase
+to creating a character, though. A character is, by and large, like a person, and
+
+
+3
+Rendezvous
+Rendezvous
+people aren’t just flat cardboard cutouts with a few numbers to represent what
+they can do. People have pasts, likes and dislikes, goals and dreams — all the
+intangible things that make a person into what other people see when he walks
+into a room or talks to them. It’s not much different from all the care that an
+actor takes when creating a character for a movie.
+Characters are the heart and soul of the story. Without them, all the efforts
+of the Storyteller would be for nothing, and there would be no stories to tell.
+TH E
+H E
+H E
+H E
+H E S S S S STORYTELLER
+TORYTELLER
+TORYTELLER
+TORYTELLER
+TORYTELLER
+The Storyteller is the one who creates the world that the players move
+through. She creates a skeletal framework of setting and plot, then turns the
+characters loose to put flesh on its bones. More than that, she acts as an
+impartial judge when the rules are questioned, describes scenes that can’t be
+staged and even plays the parts of antagonists or other people with whom the
+characters interact. A Storyteller’s word is law in the game.
+Storytelling is a demanding task. A Storyteller must oversee the events to
+be certain that people have a good time, that the rules are being followed and that
+the story is running smoothly. Sometimes she must create new elements for the
+story on the spur of the moment or adjudicate between several quarreling players.
+In spite of all this responsibility, it can be very satisfying to watch the players
+create something remarkable with the plot elements given them.
+Example: Matt, Chris, Allison and Cynthia have gathered to play Mas-
+querade. Matt, Chris and Allison are players — Matt plays Rick, a Nosferatu
+smuggler; Chris is playing Marcus, a Ventrue computer hacker; and Allison
+plays Dana, a Toreador art dealer. Cynthia is the Storyteller, and has set a scene
+in motion for the characters. The characters are confronting a mortal antique
+dealer who has been selling pieces once owned by Dana’s missing sire. Allison,
+as Dana, struggles to cover her rage long enough to get some information from
+the man. Chris, playing Marcus, finds it better to hang back in the shadows in
+case his companions need help; while Matt, speaking as Rick, tries to appeal
+to the mortal’s greed first and then his fear of the law if that doesn’t work.
+Ultimately, though, it is Cynthia (who is playing the mortal) who decides how
+the dealer reacts to the characters, what information will or won’t be gained,
+and if the characters’ actions succeed or fail.
+ELEGANTLY
+LEGANTLY
+LEGANTLY
+LEGANTLY
+LEGANTLY S S S S SIMPLE
+IMPLE
+IMPLE
+IMPLE
+IMPLE
+This game was designed to be easy to play and easier to start. Character
+creation takes only a few minutes. The basic rules are simple, and they cover
+most of the encounters a new player will enter. Even very new players who have
+never played Masquerade or LARP before will find that this game takes little
+effort to pick up.
+TH E
+H E
+H E
+H E
+H E O
+ O O
+ O ONLY
+NLY
+NLY
+NLY
+NLY R R R R RULES
+ULES
+ULES
+ULES
+ULES T T T T THAT
+HAT
+HAT
+HAT
+HAT M
+ M
+ M
+ M
+ MATTER
+ATTER
+ATTER
+ATTER
+ATTER
+These are the most important and immutable rules of MET, the ones that
+keep your game and your players safe from folks who either don’t care that
+you’re playing a game, or who take the game way too seriously. Always
+adhering to these rules will also keep your game amenable to law enforcement
+and other non-players.
+
+
+4
+Laws of the Night
+Laws of the Night
+NO T
+ T T
+ T TOUCHING
+OUCHING
+OUCHING
+OUCHING
+OUCHING. N
+. N
+. N
+. N
+. NO S S S S STUNTS
+TUNTS
+TUNTS
+TUNTS
+TUNTS.
+That means none whatsoever. You never actually strike or grapple with
+another player. It’s far too easy for things to get out hand in the heat of the
+moment. Save the stunts for your imagination. If you can imagine you’re a
+centuries-old vampire, then you can sure imagine you’re swinging on a
+chandelier or leaping across rooftops.
+NO W
+ W
+ W
+ W
+ WEAPONS
+EAPONS
+EAPONS
+EAPONS
+EAPONS.
+No matter how careful you are. Whether it’s to prevent some fool from
+skewering himself on your new dagger, or to make sure the police don’t think
+you’re a threat, weapons of any sort are forbidden. Even fake or toy weapons
+(lightsabers, laser pens, squirt guns) are not allowed. Use item cards instead.
+NO D
+ D
+ D
+ D
+ DRUGS
+RUGS
+RUGS
+RUGS
+RUGS O R
+O R
+O R
+O R
+O R D
+ D
+ D
+ D
+ DRINKING
+RINKING
+RINKING
+RINKING
+RINKING
+Drinking and drugs do not inspire peak performance, and players who
+are so impaired are a threat to other players and the game. It’s one thing to
+play a character who is drunk or stoned, but another thing entirely to actually
+come to a game under the influence. At best it’s tasteless; at worst it’s illegal.
+Don’t do it.
+IT’S O
+ O O
+ O
+ ON L Y
+N L Y
+N L Y
+N L Y
+N L Y A G
+ G G
+ G GA M E
+A M E
+A M E
+A M E
+A M E
+If a character dies, if a rival gets the upper hand, it’s just a game. You and
+the rest of the players are doing this for fun. Taking things too seriously, or
+taking character issues into real life, will only spoil everyone’s enjoyment.
+Remember, playing a game should be fun — if you’re not having fun, it’s time
+for a reassessment.
+Leave the game behind when the session’s over. This is only a character
+you are playing, not a real person. When the game is over for the night, it’s over.
+Take out your fangs and go back to the real world.
+BE M
+ M
+ M
+ M
+ MINDFUL
+INDFUL
+INDFUL
+INDFUL
+INDFUL O F
+O F
+O F
+O F
+O F O
+ O O
+ O
+ OTHERS
+THERS
+THERS
+THERS
+THERS
+Not everyone around you is playing the game. You want to ensure that
+your game and your players are welcomed. Frightening people and getting the
+local law enforcement called on you is not the way to do it. Behave yourself and
+don’t get carried away so everyone can continue to have fun.
+HA V E
+A V E
+A V E
+A V E
+A V E F F F F FU N
+U N
+U N
+U N
+U N
+Not “Win.” Not “Go out and conquer everyone else.” Just have fun,
+because in MET, it’s not about how the game ends, but what happens along
+the way.
+TH E
+H E
+H E
+H E
+H E W
+ W
+ W
+ W
+ WORLD
+ORLD
+ORLD
+ORLD
+ORLD O F
+O F
+O F
+O F
+O F D
+ D D
+ D
+ DARKNESS
+ARKNESS
+ARKNESS
+ARKNESS
+ARKNESS
+On the surface, the World of Darkness is not too much different from our
+own. People are born, grow up, work and die every day. Plants grow, as do
+skyscrapers. The same newspapers are sold on the street corner, and television
+is the same vast wasteland. Below the surface, however, is a much darker
+element, one that is fed by the violence and despair which the monsters need
+to fuel themselves. It is far less simple than throwing a coat of black paint over
+the veneer of our world. The monsters in the World of Darkness are all too real.
+This is the world that the vampires call home.
+
+
+5
+Rendezvous
+Rendezvous
+WHAT
+HAT
+HAT
+HAT
+HAT I S
+I S
+I S
+I S
+I S A V V V V VAMPIRE
+AMPIRE
+AMPIRE
+AMPIRE
+AMPIRE?
+Vampires have been fixtures in myth and legend since time immemorial.
+Sometimes they’ve been monstrous creatures that swooped out of the darkness
+to ravish innocent virgins and steal babies from their cradles. Other times
+they’ve been predators of incredible beauty and sensuality, enchanting men
+and women offering seductive death in return for a little nip. The vampires of
+the World of Darkness are all these things and more. There is enough about
+them that is similar to the vampires of myth and cinema, but more than enough
+that is different to cause some fatal errors for would-be hunters. The Kindred,
+as many call themselves, are sentient, with some faint similarities to their
+mortal selves, but as different from mortals and myth as night from day.
+• Vampires are immortal. While it is possible to kill a vampire, he will not
+age or die of natural causes. He does not need water, food or air. For all intents
+and purposes, he is a corpse.
+• Vampires require the blood of the living to survive. While vampires
+are corpses, they still require nourishment to sustain themselves, and as the
+stories say, the blood is the life. Not only does it preserve their bodies, blood
+allows vampires to perform amazing supernatural feats of healing, strength or
+speed. A vampire need not kill her prey; some take only a little blood, then hide
+the evidence of their feeding. A vampire may close any wounds she makes with
+her fangs by simply licking the wounds. By and large, most vampires seek
+human blood, although some choose to drink animal blood. Some whisper
+fearfully that elder vampires must hunt their younger brethren for feeding,
+unable to gain sustenance from human blood any longer.
+• Anyone who dies from a vampire’s bite will become a vampire. The
+world would be overrun with vampires if this statement were true. Those bitten
+and drained by vampires in the course of feeding simply die. It takes a very
+special process, known as the Embrace, to create a vampire. To be Embraced,
+the victim is drained of blood to the point of death and then fed a bit of vampire
+blood, which brings about the transformation.
+• Vampires are burned by sunlight. True. Vampires must avoid sunlight
+or risk death. Vampires are nocturnal creatures, and most find it difficult to stay
+awake during the day, even out of the sunlight.
+• Vampires are repelled by garlic and running water. False. Myths and
+nothing more.
+• A cross or other holy symbol can burn or repel a vampire. Generally
+untrue. The symbol itself is of little power. It is the faith of the person who
+wields the symbol that the vampire must fear.
+• Vampires will die from a stake through the heart. While they cannot
+die from such wounds, vampires are immobilized by wooden stakes, arrows and
+the like that pierce the heart until the item is removed.
+• Vampire are monsters, demonic sprits possessing walking corpses.
+False… and true. Vampires are not demons in the classic sense of the word. They
+begin as mortals, and receive the Embrace, which turns them into vampires. At
+first, most new vampires think and act much as they did when they were mortal.
+The Embrace does not immediately change them into sadistic monsters. The
+
+
+6
+Laws of the Night
+Laws of the Night
+hunger for blood, however, soon starts to impress itself on a vampire’s thoughts
+and actions. She must become a predator to satisfy the predator within her
+(called the Beast), and to do so, she must feed on her former species.
+Over time, the vampire adopts a new set of attitudes and behaviors — she
+is thinking as a predator, a hunter. She is now different from mortals around
+her, so she avoids them or walls herself away from them. She finds her existence
+depends on secrecy and control, so she learns how to conceal and manipulate.
+She knows her fellow Kindred must be the same as she, so her trust in them
+diminishes or fades altogether. As she watches the mortal world move on and
+change around her while she remains unchanging, as the things and people she
+loved grow old and fade to dust, she slowly ceases to care. Feeding becomes
+easier, routine. Human life loses value until mortals simply become annoying
+insects, useful as food or servants, but of little other value.
+Such a change does not happen overnight or even in a few years. Some
+vampires struggle to maintain some semblance of their human morality, to the
+scorn of other Kindred. In the end, however, it does happen, as the decades roll
+by. Vampire elders, centuries old, are some of the most jaded, paranoid and
+thoroughly unfeeling creatures imaginable — in short, monstrous. Perhaps
+still not classic demons, but at point, who can tell the difference?
+TH E
+H E
+H E
+H E
+H E E E E E EMBRACE
+MBRACE
+MBRACE
+MBRACE
+MBRACE
+The Embrace is the process by which a new vampire is sired, or created. It
+is almost never given lightly. Some vampires Embrace to find companionship,
+others to have conspirators or dupes for schemes, others to “give back” something
+to Kindred society. Potential childer may be watched for weeks, months, even
+years, without ever realizing that they are being evaluated for immortality.
+To Embrace a new vampire, the sire drains her chosen victim of blood,
+similar to a normal feeding. However, when the victim has been drained to the
+point of death, the sire places a small amount of her own vampiric blood in the
+victim’s mouth. Even a drop or two can finish the process. The Embrace can
+even be given to a dead mortal, provided the body is still warm.
+The new childe reawakens, but his heart does not beat nor does his blood
+circulate. He is now one of the living dead. He wakes suffering a ravenous
+Hunger, his first acquaintance with the monster (or the Beast) that has also
+been awakened in him. Over the next few weeks, the young vampire, usually
+under the tutelage of his sire, undergoes a series of subtle (and not-so-subtle)
+transformations. He learns to use the powers granted by his blood, such as
+speed or how to understand animals. He learns of the raging Hunger inside
+him and how to rein it in. He learns to hunt, often a difficult proposition, as
+need begins to force him to prey on his former species. He is now a vampire,
+and a much larger world awaits him.
+ORIGINS
+RIGINS
+RIGINS
+RIGINS
+RIGINS O F
+O F
+O F
+O F
+O F THE
+THE
+THE
+THE
+THE V V V V VAMPIRES
+AMPIRES
+AMPIRES
+AMPIRES
+AMPIRES
+Vampires believe themselves descended from Caine, the first murderer.
+Caine was cursed by God with vampirism and exiled from his people, forced
+to wander in search of blood. During his wanderings, he was said to have
+encountered a mighty sorceress named Lilith, who had been Adam’s first wife.
+
+
+7
+Rendezvous
+Rendezvous
+She taught him many secrets — most particularly, how to use the blood in his
+veins to work magical power, and how to create others like him.
+TH E
+H E
+H E
+H E
+H E A A A A ANTEDILUVIANS
+NTEDILUVIANS
+NTEDILUVIANS
+NTEDILUVIANS
+NTEDILUVIANS A N D
+A N D
+A N D
+A N D
+A N D T H E
+T H E
+T H E
+T H E
+T H E C C C C CLANS
+LANS
+LANS
+LANS
+LANS
+At first, Caine refused to create others, believing they would be a plague
+upon the world. In time, however, he grew lonely and created three childer.
+These childer then created 13 vampires, who quarreled no differently than
+mortal children in sibling rivalry. The young vampires fed carelessly and used
+mortals as puppets. The outraged Caine forbade any further creation and
+gathered his brood into a great city of his own making, where vampires and
+mortals coexisted in peace.
+Soon, however, the vampires were squabbling among themselves again, and
+again used mortals as their pawns. Finally a great cataclysm destroyed the city —
+some claim it was the Great Flood of Biblical fame which destroyed the place.
+Caine and his first childer vanished into the wastes, never to be heard from again.
+Caine’s grandchilder, now free from any restraint, began to create with abandon.
+The 13 became known as Antediluvians, and their childer, created in their
+images, inherited their magical gifts and curses. Thus were formed the clans.
+TH E
+H E
+H E
+H E
+H E D
+ D
+ D
+ D
+ DA R K
+A R K
+A R K
+A R K
+A R K A A A A AGES
+GES
+GES
+GES
+GES
+The clans spread across the world, sowing discord in their wake. Though
+each successive generation was weaker than the last, they made up for it in
+numbers. In Babylon, Crete, Greece, Rome and Egypt they ruled from the
+shadows, with the unwitting mortals as food and foot soldiers in their endless
+petty wars with each other. In these fights of vampire against vampire, clan
+against clan, was born the great Jyhad of the modern era.
+The Kindred reached their worst excesses in the Middle Ages. Many
+ruled church and crown openly, not bothering to hide themselves or their
+natures from mortals. King, churchman or peasant — none was safe from the
+notice of the vampires. Finally, humanity had had more than enough. The
+Church began a great Inquisition to root out the horrors in their midst. Even
+the mightiest vampire lord found himself at the mercy of their hunters when
+the sun was high. It was during this tide of blood and fire that the Masquerade
+was born, and a sect calling itself the Camarilla came to pass, seeking to hide
+and thus protect vampires from human notice.
+As time passed, the New World was discovered and science had its great
+awakening. Mortals slowly turned away from superstition, relegating vampires to
+tales of childhood myth. But though hidden, the vampires were still quite real.
+Nights of open battle were replaced with subtle maneuverings of mortal pawns
+and sudden ambushes. The expanding cities became the new battlefields, and
+webs of intrigue were methodically woven by the players of the Jyhad. The games
+had changed — subtle, methodic, but certainly no less deadly.
+TH E
+H E
+H E
+H E
+H E M
+ M
+ M
+ M
+ MODERN
+ODERN
+ODERN
+ODERN
+ODERN N
+ N
+ N
+ N
+ NIGHTS
+IGHTS
+IGHTS
+IGHTS
+IGHTS
+In these nights, the Jyhad continues still — Kindred against Kindred, clan
+against clan, sect against sect. Skyscrapers stand in for castles, swords are traded
+in for guns, and stockbrokers, police officers and rock stars replace soldiers and
+priests. Insults traded in the streets of Florence during the Renaissance may
+come to an explosive end in a corporate takeover. The murder of a favorite
+childe during the French Revolution might finally be avenged in the streets of
+
+
+8
+Laws of the Night
+Laws of the Night
+Los Angeles. The modern cities, swelling with their mortal populations, are
+the battlegrounds of choice for feeding and powermongering.
+As the millennium approaches, many vampires speak of Gehenna, a night
+equivalent with the Biblical Apocalypse. On this terrible night, the Antediluvians
+will rouse themselves from wherever they’ve slumbered away the centuries and
+devour all the younger vampires. Some Kindred claim this presages the end of the
+world. Some vampires strive to learn about Gehenna so they can prevent it, some
+simply await it, some consider it only a myth to frighten the young, and some go
+wild, thinking that they might as well go out with a bang. Those who do believe
+in Gehenna think that the day is not so far away — perhaps only a matter of years.
+TH E
+H E
+H E
+H E
+H E C C C C CAMARILLA
+AMARILLA
+AMARILLA
+AMARILLA
+AMARILLA
+The Camarilla dates back to the years of the Inquisition, as humanity
+turned its collective eye on all things suspicious, including vampires, during
+the Middle Ages. A sort of vampiric United Nations, which claims every
+vampire under its aegis, the sect was created to protect vampires from the
+Inquisition and uphold the Traditions of Caine. Its greatest work was the
+principle of the Masquerade — a massive, global conspiracy of sorts, meant to
+deceive humanity about the monsters in its midst, and thus avert another
+purging. In these times of nuclear devices, powerful governments and enor-
+mous populations, the Masquerade has become both guiding principle and
+ironclad policy. Today, the Camarilla concerns itself with the Masquerade,
+maintaining harmonious relations between Kindred and kine, and thwarting
+the Sabbat, a rival sect.
+The Camarilla is the most populous sect, and thereby the most powerful.
+It is comprised of six clans, each with its own culture and agenda hold full
+membership in the sect: Brujah, Malkavian, Nosferatu, Toreador, Tremere
+and Ventrue. The Gangrel were once of the sect, but left in recent months for
+reasons they do not discuss. Vampires from the other clans may join, but they
+are often suspect, and largely powerless.
+Beginning characters are assumed to be Camarilla vampires and one of the
+sect’s major clans:
+Brujah — Once warrior-scholars, now a loose collection of anti-social
+rabble who fight anything that could interfere with their freedom.
+Malkavian — These bizarre vampires, all warped by insanity, are feared
+for their strange insights.
+Nosferatu — A loathsome collection of misshapen monsters who hide in
+the sewers and subterranean warrens.
+Toreador — Artists and art-lovers, this clan seeks beauty and passion
+from unlife.
+Tremere — The secretive, insular clan of vampire warlocks who practice
+blood magic of their own creation.
+Ventrue — A clan of aristocrats and business leaders who consider it their
+duty to lead the Camarilla.
+…and one more
+Gangrel — The solitary, nomadic shapeshifters who prefer the wilder
+lands to the cities.
+
+
+9
+Rendezvous
+Rendezvous
+TH E
+H E
+H E
+H E
+H E S S S S SABBAT
+ABBAT
+ABBAT
+ABBAT
+ABBAT
+The Camarilla’s bitter rival is the dread sect called the Sabbat. Created
+during the Inquisition by angry youth who refused to submit to their sires’ wills,
+it has changed into something much deadlier over the years. The Sabbat
+believes quite firmly in the doctrine of social Darwinism, with its own unique
+additions. Vampires are the highest creatures on the food chain, the ultimate
+predators, and as such, they should lord outright over the humans, not attempt
+to hide behind some pitiful Masquerade. They hold human life in little value,
+and this attitude spawns actions that are considered monstrous and horrific by
+human standards. Many outraged Camarilla vampires consider the Sabbat the
+personification of everything evil in vampires, and hunt them accordingly.
+The Sabbat claims two clans — the shadowy Lasombra and the twisted
+Tzimisce. The Lasombra, a clan of kings which claims nobility of Spain and
+Italy as some of its best children, are feared for their control over shadows and
+their supreme abilities as manipulators. The Tzimisce, scholars and sorcerers
+hailing from Eastern Europe, are feared for their infamous cruelty. They
+rumored to have the power to shape and mold flesh and bone, whether their
+own or others.
+TH E
+H E
+H E
+H E
+H E T T T T TRADITIONS
+RADITIONS
+RADITIONS
+RADITIONS
+RADITIONS
+The Traditions are considered the inviolate rules of Kindred existence, and
+they have been the basis of all vampiric laws since the time of Caine. Most
+vampires follow them out of habit, whether because they are common sense
+suggestions or necessary for survival. For Camarilla vampires, these are ironclad
+laws, and to flout them risks death.
+TH E
+H E
+H E
+H E
+H E F F F F FIRST
+IRST
+IRST
+IRST
+IRST T
+ T T
+ T TRADITION
+RADITION
+RADITION
+RADITION
+RADITION:  T
+:  T
+:  T
+:  T
+:  TH E
+H E
+H E
+H E
+H E M
+ M
+ M
+ M
+ MASQUERADE
+ASQUERADE
+ASQUERADE
+ASQUERADE
+ASQUERADE
+Thou shalt not reveal thy true nature to those not of the Blood. Doing so
+shall renounce thy claims of Blood.
+TH E
+H E
+H E
+H E
+H E S S S S SECOND
+ECOND
+ECOND
+ECOND
+ECOND T
+ T T
+ T TRADITION
+RADITION
+RADITION
+RADITION
+RADITION:  T
+:  T
+:  T
+:  T
+:  TH E
+H E
+H E
+H E
+H E D
+ D
+ D
+ D
+ DOMAIN
+OMAIN
+OMAIN
+OMAIN
+OMAIN
+Thy domain is thy concern. All others owe thee respect while in it. None
+may challenge thy word in thy domain.
+TH E
+H E
+H E
+H E
+H E T
+ T T
+ T THIRD
+HIRD
+HIRD
+HIRD
+HIRD T
+ T T
+ T TRADITION
+RADITION
+RADITION
+RADITION
+RADITION:  T
+:  T
+:  T
+:  T
+:  TH E
+H E
+H E
+H E
+H E P
+ P
+ P
+ P
+ PROGENY
+ROGENY
+ROGENY
+ROGENY
+ROGENY
+Thou shalt sire another one with permission of thine elder. If thou createst
+another without thine elder’s leave, both thou and thy progeny shall be slain.
+TH E
+H E
+H E
+H E
+H E F F F F FOURTH
+OURTH
+OURTH
+OURTH
+OURTH T
+ T T
+ T TRADITION
+RADITION
+RADITION
+RADITION
+RADITION:  T
+:  T
+:  T
+:  T
+:  TH E
+H E
+H E
+H E
+H E A A A A ACCOUNTING
+CCOUNTING
+CCOUNTING
+CCOUNTING
+CCOUNTING
+Those thou create are thine own childer. Until thy progeny shall be released,
+thou shalt command them in all things. Their sins are thine to endure.
+TH E
+H E
+H E
+H E
+H E F F F F FIFTH
+IFTH
+IFTH
+IFTH
+IFTH T
+ T T
+ T TRADITION
+RADITION
+RADITION
+RADITION
+RADITION: H
+: H
+: H
+: H
+: HOSPITALITY
+OSPITALITY
+OSPITALITY
+OSPITALITY
+OSPITALITY
+Honor one another’s domain. When thou comest to a foreign city, thou
+shalt present thyself to the one who ruleth there. Without the word of accep-
+tance, thou art nothing.
+TH E
+H E
+H E
+H E
+H E S S S S SIXTH
+IXTH
+IXTH
+IXTH
+IXTH T
+ T T
+ T TRADITION
+RADITION
+RADITION
+RADITION
+RADITION: D
+: D
+: D
+: D
+: DESTRUCTION
+ESTRUCTION
+ESTRUCTION
+ESTRUCTION
+ESTRUCTION
+Thou art forbidden to destroy another of thy kind. The right of destruction
+belongeth only to thine elder. Only the eldest among thee shall call the blood hunt.
+
+
+10
+Laws of the Night
+Laws of the Night
+AL L
+L L
+L L
+L L
+L L T H E
+T H E
+T H E
+T H E
+T H E R
+ R R
+ R REST
+EST
+EST
+EST
+EST
+There are other clans who prefer to stay out of the way of sect politics.
+They may barter their services to the Camarilla and Sabbat, or find it
+convenient to do business with them, but by and large, they keep their own
+counsel.
+Assamites — A deadly clan of vampire assassins which lairs in the Middle
+East.
+Giovanni — An insular, and incestuous, family of financiers and necro-
+mancers dating back to the Renaissance.
+Followers of Set — This dark clan believes itself to be descended from the
+Egyptian god Set.
+Ravnos — Deceivers, charlatans and tricksters, with Gypsy blood in their
+veins.
+STATUS
+TATUS
+TATUS
+TATUS
+TATUS
+Vampires are very traditional and hierarchical creatures. The Camarilla
+in  particular has a number of positions ensconced by tradition and Tradition.
+Predators always maintain an elaborate system of etiquette to keep them from
+tearing each other apart on sight, and the Kindred are very polite to each other.
+Vampires define territory, or turf, as domains, which usually consist of cities
+and outlying suburbs. Each domain is ruled at a single mighty elder, a prince.
+The Prince — The ruling vampire of Camarilla-held territory is called the
+prince. A prince may be of any Camarilla clan; the only true requirements for
+the job is that one be able to seize power and fend off all other claimants. Such
+power is usually the province of the elders. The prince has the power to
+establish, grant or strip domains, to declare certain areas off-limits for hunting,
+or to call a blood hunt on those who violate the Traditions. The prince (the
+title is used for both male and female leaders) is the guardian of the Traditions
+in a Camarilla city, and all who wish to continue make this a high priority.
+Princes tend to control city-sized domains; thus there is a Prince of
+Chicago, a Prince of Atlanta, or a Prince of London. Many times she has lived
+in the area for decades, giving her ample time to build a solid power structure
+and to know the city’s workings inside and out.
+TH E
+H E
+H E
+H E
+H E J J J J JYHAD
+YHAD
+YHAD
+YHAD
+YHAD
+For untold centuries, vampires have struggled against each
+other for power. Leaders, nations and armies have all been used
+as pawns in the secret war, and vampire talons can be found
+touching history in many places. Such struggles take place under
+veils of secrecy, as demanded by the Masquerade, but occasion-
+ally cause ripples in the mortal world. A political coup, a family’s
+“bad luck” or a social trend may be the most visible sign of a
+titanic struggle between two quarreling elder vampires. Few
+things are safe when the elders use mortals and young vampires
+as chess pieces. Indeed, such pawns may be completely unaware
+that they are so manipulated.
+
+
+11
+Rendezvous
+Rendezvous
+Princes often hold “court” or at least support islands of calm in the midst
+of the Jyhad’s seas. Such places are called Elysium, and they are frequently held
+in places of art or culture, such as museums, nightclubs, hotels or colleges. Here
+the Kindred may discuss art or philosophy, speak with the prince or their clan’s
+representative to the primogen, or simply find some respite from the nightly
+struggles. No violence may be visited upon Elysium, nor may any art be
+destroyed. However, in these halls, bullets are exchanged for cutting insults
+and Kindred broker for influence in the city, discussing their holdings among
+mortals no differently than collectors talking of their prizes.
+The Primogen — The prince is often served by a council of advisors made
+up of powerful elders of the various clans, collectively called the primogen.
+While a prince’s rule in theory is absolute, in practice a prince who does not
+heed her primogen often finds herself deposed in short order. The primogen are
+formidable forces in their own right.
+The Elders — These are vampires who have existed for 300 years or more.
+Many have mastered a number of powers and have extensive holdings built
+through centuries of schemings. Ruthless, deadly and paranoid, the elders
+would do anything to hold onto their gains, including crushing younger
+“upstart” vampires and destroying their rivals. Few things are more dangerous
+than an elder on the warpath.
+The Ancillae — Between the inexperienced neonates and the jaded
+elders stand the ancillae. Between 100 to 300 years old, most serve as aides and
+agents for the courts or elders. They are often just getting a taste of the power
+wielded by the elders, and like mortal adolescents, are quite ready to take on
+the night on their terms. They walk a perilous line, however — the elders stand
+quite ready to crush them if they reach too high, and being mistaken for
+neonates relegates them to the lower strata.
+The Neonates — These are the lowest in rank, young vampires often just
+released from their sires’ care, ready to make their way in the world. Most are
+misused as pawns in the schemes of the elders. Such callous treatment,
+combined with the modern world’s emphasis on individuality, causes great
+friction between the generations. A young vampire who grew up during the
+‘80s is unlikely to empathize with an elder prince who still believes in the
+divine right of kings.
+Most beginning characters are presumed to be neonates. Vampire elders
+are far more powerful than characters created here, and are beyond the scope
+of this book.
+CHARACTER
+HARACTER
+HARACTER
+HARACTER
+HARACTER C C C C CREATION
+REATION
+REATION
+REATION
+REATION
+Now that  you’ve been introduced to the Kindred and their world, it’s time
+to enter in. It’s time for you to create a character, your means of walking in the
+world of the vampire.
+Character creation consists of a few basic choices — clan, ranking of
+Traits and Disciplines. Every vampire also starts with 10 Blood Traits and five
+health levels. These can fluctuate as a vampire becomes hungry, feeds, is
+injured or heals herself.
+
+
+12
+Laws of the Night
+Laws of the Night
+When you create your character, the choices are quite easy. Start with
+thinking a little bit about what might be fun and interesting to play, and find
+a general concept of what you want your vampire to be like. Who was your
+character before he or she was Embraced, and why did it happen? Was she a
+coroner who learned too much and was Embraced to protect the Masquerade?
+A debutante picked by a smitten vampire? A gang member saved from death
+by his leader? What about an accountant or computer whiz tapped by an elder
+who can’t understand the modern world?
+Now consider your character’s clan; this gives a lot of detail about the
+character’s strengths, weaknesses and general outlook on unlife. Would your
+character be a secretive, traditional Tremere? A skulking Nosferatu? A sullen,
+solitary Gangrel? After choosing the clan, write down the clan’s Aptitude,
+Advantage and Weakness. They’ll be good to have handy while you play. Note
+the Disciplines as well.
+Now you get to choose the character’s Traits. Characters in Mind’s Eye
+Theatre have three Trait categories — Physical, Social and Mental — which
+define their strong and weak points. Prioritize the categories as Primary (seven
+Traits), Secondary (five Traits) or Tertiary (three Traits). Each category can
+only have one rating. So, if you think your character would be intelligent and
+fairly able to take care of herself but not a social butterfly, your Traits would
+be Mental (Primary), Physical (Secondary) and Social (Tertiary).
+Next you choose your character’s Disciplines. Each clan teaches three
+Disciplines to its members, but some vampires may prefer to specialize in one
+over another. Disciplines come in two levels — Beginning and Intermediate.
+A starting character may choose one of three Discipline schemes:
+• All three clan Disciplines, taking three Basic-level powers, one for each
+Discipline.
+• Two clan Disciplines, taking one Basic level and one Intermediate level
+in each.
+• Two clan Disciplines, taking one at the Basic level for each Discipline,
+with two Traits left over to apply to your Trait categories.
+You’re just about done. Write down your Blood Traits (10) and health
+levels (five), and make up some details about the character. What is her name?
+How does she dress and act? Does she dislike another clan? Does she still have
+ties to her mortal life? In Mind’s Eye Theatre, the players depend on each
+other’s actions to perceive the setting around them, so take some time to think
+about how you’ll portray your character to others. When your character is
+finished, you’re ready to step out into the world of eternal night.
+TH E
+H E
+H E
+H E
+H E C C C C CLANS
+LANS
+LANS
+LANS
+LANS
+As the stories tell it, Caine had 13 grandchilder, who went on to Embrace
+in abandon, creating vast broods of Kindred in their image. These Kindred bore
+the magical gifts — and curses — of their foreparents. Thus the Nosferatu pass
+on the curse of their disfigurement, or the Ventrue their extreme tastes in blood.
+Clans are a combination of family, social group and school. The Brujah
+teach their childer to fight and the Disciplines that gift them with inhuman
+
+
+13
+Rendezvous
+Rendezvous
+speed and strength, while the Tremere schools its young in sorcery, mind
+control and scholarship. Some clans are tightly bound, with a distinct
+hierarchy that brooks no outside influence, while others are loose confedera-
+tions bound only by their common blood. Some hold to solidarity, while others
+will happily stab each other in the back as readily as any other Kindred.
+When creating a character, the player must choose one of the Camarilla
+clans. Each clan’s description provides an Aptitude (a particular task at which
+the clan excels), an Advantage (an area of supernatural or societal influence)
+and a Weakness (a curse the clan has borne through the ages). Each clan’s
+blood is predisposed to three Disciplines, which it teaches its members.
+CHARACTER
+HARACTER
+HARACTER
+HARACTER
+HARACTER C C C C CREATION
+REATION
+REATION
+REATION
+REATION Q
+ Q Q
+ Q
+ QUICK
+UICK
+UICK
+UICK
+UICK C C C C CHART
+HART
+HART
+HART
+HART
+• C
+• C
+• C
+• C
+• CHOOSE
+HOOSE
+HOOSE
+HOOSE
+HOOSE A CLAN
+CLAN
+CLAN
+CLAN
+CLAN — W
+ — W
+ — W
+ — W
+ — WRITE
+RITE
+RITE
+RITE
+RITE DOWN
+DOWN
+DOWN
+DOWN
+DOWN THE
+THE
+THE
+THE
+THE A A A A APTITUDE
+PTITUDE
+PTITUDE
+PTITUDE
+PTITUDE,
+ADVANTAGE
+DVANTAGE
+DVANTAGE
+DVANTAGE
+DVANTAGE AND
+AND
+AND
+AND
+AND W
+ W
+ W
+ W
+ WEAKNESS
+EAKNESS
+EAKNESS
+EAKNESS
+EAKNESS.
+• C
+• C
+• C
+• C
+• CHOOSE
+HOOSE
+HOOSE
+HOOSE
+HOOSE AND
+AND
+AND
+AND
+AND PRIORITIZE
+PRIORITIZE
+PRIORITIZE
+PRIORITIZE
+PRIORITIZE T T T T TRAITS
+RAITS
+RAITS
+RAITS
+RAITS — R
+ — R
+ — R
+ — R
+ — RANK
+ANK
+ANK
+ANK
+ANK YOUR
+YOUR
+YOUR
+YOUR
+YOUR T T T T TRAIT
+RAIT
+RAIT
+RAIT
+RAIT
+CATEGORIES
+CATEGORIES
+CATEGORIES
+CATEGORIES
+CATEGORIES (P
+ (P
+ (P
+ (P
+ (PHYSICAL
+HYSICAL
+HYSICAL
+HYSICAL
+HYSICAL, S
+, S
+, S
+, S
+, SOCIAL
+OCIAL
+OCIAL
+OCIAL
+OCIAL, M
+, M
+, M
+, M
+, MENTAL
+ENTAL
+ENTAL
+ENTAL
+ENTAL)  )  )  )  )  AND
+AND
+AND
+AND
+AND
+PRIORITIZE
+PRIORITIZE
+PRIORITIZE
+PRIORITIZE
+PRIORITIZE THEM
+THEM
+THEM
+THEM
+THEM A S
+A S
+A S
+A S
+A S P
+ P P
+ P PRIMARY
+RIMARY
+RIMARY
+RIMARY
+RIMARY (7), S
+ (7), S
+ (7), S
+ (7), S
+ (7), SECONDARY
+ECONDARY
+ECONDARY
+ECONDARY
+ECONDARY (5) 
+ (5) 
+ (5) 
+ (5) 
+ (5) O R
+O R
+O R
+O R
+O R
+TERTIARY
+ERTIARY
+ERTIARY
+ERTIARY
+ERTIARY (3).
+ (3).
+ (3).
+ (3).
+ (3).
+• C
+• C
+• C
+• C
+• CHOOSE
+HOOSE
+HOOSE
+HOOSE
+HOOSE D
+ D D
+ D DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES — E
+ — E
+ — E
+ — E
+ — EACH
+ACH
+ACH
+ACH
+ACH CLAN
+CLAN
+CLAN
+CLAN
+CLAN GIFTS
+GIFTS
+GIFTS
+GIFTS
+GIFTS ITS
+ITS
+ITS
+ITS
+ITS
+MEMBERS
+MEMBERS
+MEMBERS
+MEMBERS
+MEMBERS WITH
+WITH
+WITH
+WITH
+WITH THREE
+THREE
+THREE
+THREE
+THREE D
+ D D
+ D DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES;  ;  ;  ;  ;  YOU
+YOU
+YOU
+YOU
+YOU MAY
+MAY
+MAY
+MAY
+MAY CHOOSE
+CHOOSE
+CHOOSE
+CHOOSE
+CHOOSE FROM
+FROM
+FROM
+FROM
+FROM
+YOUR
+YOUR
+YOUR
+YOUR
+YOUR CLAN
+CLAN
+CLAN
+CLAN
+CLAN’S D
+ D D
+ D DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES B Y
+B Y
+B Y
+B Y
+B Y ONE
+ONE
+ONE
+ONE
+ONE O F
+O F
+O F
+O F
+O F THE
+THE
+THE
+THE
+THE FOLLOWING
+FOLLOWING
+FOLLOWING
+FOLLOWING
+FOLLOWING
+METHODS
+METHODS
+METHODS
+METHODS
+METHODS:
+• A
+• A
+• A
+• A
+• AL L
+L L
+L L
+L L
+L L THREE
+THREE
+THREE
+THREE
+THREE CLAN
+CLAN
+CLAN
+CLAN
+CLAN D
+ D D
+ D DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES,  ,  ,  ,  ,  TAKING
+TAKING
+TAKING
+TAKING
+TAKING THREE
+THREE
+THREE
+THREE
+THREE B B B B BASIC
+ASIC
+ASIC
+ASIC
+ASIC-
+LEVEL
+LEVEL
+LEVEL
+LEVEL
+LEVEL POWERS
+POWERS
+POWERS
+POWERS
+POWERS,  ,  ,  ,  ,  ONE
+ONE
+ONE
+ONE
+ONE FOR
+FOR
+FOR
+FOR
+FOR EACH
+EACH
+EACH
+EACH
+EACH D
+ D D
+ D DISCIPLINE
+ISCIPLINE
+ISCIPLINE
+ISCIPLINE
+ISCIPLINE.
+• T
+• T
+• T
+• T
+• TW O
+W O
+W O
+W O
+W O CLAN
+CLAN
+CLAN
+CLAN
+CLAN D
+ D D
+ D DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES,  ,  ,  ,  ,  TAKING
+TAKING
+TAKING
+TAKING
+TAKING ONE
+ONE
+ONE
+ONE
+ONE B B B B BASIC
+ASIC
+ASIC
+ASIC
+ASIC-LEVEL
+LEVEL
+LEVEL
+LEVEL
+LEVEL
+POWER
+POWER
+POWER
+POWER
+POWER AND
+AND
+AND
+AND
+AND ONE
+ONE
+ONE
+ONE
+ONE I I I I INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE-LEVEL
+LEVEL
+LEVEL
+LEVEL
+LEVEL POWER
+POWER
+POWER
+POWER
+POWER I N
+I N
+I N
+I N
+I N EACH
+EACH
+EACH
+EACH
+EACH.
+• T
+• T
+• T
+• T
+• TW O
+W O
+W O
+W O
+W O CLAN
+CLAN
+CLAN
+CLAN
+CLAN D
+ D D
+ D DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES,  ,  ,  ,  ,  TAKING
+TAKING
+TAKING
+TAKING
+TAKING TWO
+TWO
+TWO
+TWO
+TWO B B B B BASIC
+ASIC
+ASIC
+ASIC
+ASIC-LEVEL
+LEVEL
+LEVEL
+LEVEL
+LEVEL
+POWERS
+POWERS
+POWERS
+POWERS
+POWERS,  ,  ,  ,  ,  WITH
+WITH
+WITH
+WITH
+WITH TWO
+TWO
+TWO
+TWO
+TWO T T T T TRAITS
+RAITS
+RAITS
+RAITS
+RAITS LEFT
+LEFT
+LEFT
+LEFT
+LEFT OVER
+OVER
+OVER
+OVER
+OVER T O
+T O
+T O
+T O
+T O APPLY
+APPLY
+APPLY
+APPLY
+APPLY T O
+T O
+T O
+T O
+T O YOUR
+YOUR
+YOUR
+YOUR
+YOUR
+TRAIT
+RAIT
+RAIT
+RAIT
+RAIT CATEGORIES
+CATEGORIES
+CATEGORIES
+CATEGORIES
+CATEGORIES.
+• W
+• W
+• W
+• W
+• WRITE
+RITE
+RITE
+RITE
+RITE DOWN
+DOWN
+DOWN
+DOWN
+DOWN HEALTH
+HEALTH
+HEALTH
+HEALTH
+HEALTH LEVELS
+LEVELS
+LEVELS
+LEVELS
+LEVELS (5) 
+ (5) 
+ (5) 
+ (5) 
+ (5) AND
+AND
+AND
+AND
+AND B B B B BLOOD
+LOOD
+LOOD
+LOOD
+LOOD T T T T TRAITS
+RAITS
+RAITS
+RAITS
+RAITS (10).
+ (10).
+ (10).
+ (10).
+ (10).
+• G
+• G
+• G
+• G
+• GIVE
+IVE
+IVE
+IVE
+IVE YOUR
+YOUR
+YOUR
+YOUR
+YOUR CHARACTER
+CHARACTER
+CHARACTER
+CHARACTER
+CHARACTER A NAME
+NAME
+NAME
+NAME
+NAME AND
+AND
+AND
+AND
+AND THINK
+THINK
+THINK
+THINK
+THINK ABOUT
+ABOUT
+ABOUT
+ABOUT
+ABOUT THE
+THE
+THE
+THE
+THE
+DETAILS
+DETAILS
+DETAILS
+DETAILS
+DETAILS O F
+O F
+O F
+O F
+O F HOW
+HOW
+HOW
+HOW
+HOW SHE
+SHE
+SHE
+SHE
+SHE DRESSES
+DRESSES
+DRESSES
+DRESSES
+DRESSES O R
+O R
+O R
+O R
+O R WALKS
+WALKS
+WALKS
+WALKS
+WALKS,  ,  ,  ,  ,  O R
+O R
+O R
+O R
+O R ANY
+ANY
+ANY
+ANY
+ANY
+MANNERISMS
+MANNERISMS
+MANNERISMS
+MANNERISMS
+MANNERISMS O R
+O R
+O R
+O R
+O R QUIRKS
+QUIRKS
+QUIRKS
+QUIRKS
+QUIRKS SHE
+SHE
+SHE
+SHE
+SHE HAS
+HAS
+HAS
+HAS
+HAS.
+BRUJAH
+RUJAH
+RUJAH
+RUJAH
+RUJAH
+The Brujah clan traces a proud lineage back to the Golden Age of Greece,
+and claims that once their line boasted scholars, philosophers and warriors.
+That said, the clan today seems very far-flung from its heritage, more like a mob
+than an organized clan. While their elders still seek study and thought, the
+
+
+14
+Laws of the Night
+Laws of the Night
+youth are by and large rabble more interested in destruction. Punks, gangbangers,
+revolutionaries, criminals, idealists and loose cannons of all kinds fill the
+ranks. Their passion for their causes and the fury of battle also provokes their
+tempers to fine hair-triggers, and many’s the poor fool who has insulted a
+Brujah at the wrong moment and released a frenzy like a whirlwind.
+The Brujah remain in the Camarilla tenuously at best. Many of the youth
+defect to the anarchs on a regular basis to strike at the elders ensconced in the
+halls of power. Even those squarely in the Camarilla’s camp routinely test the
+limits of a prince’s patience with their rebellious acts. Still, the clan’s reputa-
+tion allows them to get away with a great deal more than more “civilized” clans
+might be permitted. They remain warriors unequalled, with anger that only the
+suicidal rouse.
+Aptitude: One Trait they may use in challenges of combat. While they
+may have mostly forgotten their scholar sides, the Brujah are still warriors
+without peer.
+Advantage: Brujah, no matter where they are from, gravitate toward the
+street and the disenfranchised of society. Once per story, a Brujah wanting “the
+word on the street” may spend a Social Trait and ask the Storyteller a yes-or-
+no question about the current situation, which must be answered truthfully.
+Weakness: The Brujah have a propensity for hot tempers. They lose two
+Traits when attempting to resist frenzy.
+Clan Disciplines: Celerity, Fortitude, Presence
+GANGREL
+ANGREL
+ANGREL
+ANGREL
+ANGREL
+If vampires are the ultimate predators, then the Gangrel are perhaps the
+closest to that nature. They reject the conventions and barriers of society,
+preferring more solitary existences in the forests and mountains. How they
+manage to avoid the werewolves who also share that territory remains a
+mystery. Some whisper that there is some sympathy between the two groups,
+as both are shapeshifters of one sort or another. As in mortal legends, Gangrel
+have the ability to shift form into a wolf or bat.
+Like the Brujah, Gangrel are some of the fiercest warriors seen among
+vampires. Their battle rage, however, stems from animalistic instinct, making
+them ferocious in battle and a tide of horror to their enemies. Most find even
+the company of other Cainites tedious and prefer that of animals. Although
+the Gangrel recently chose to break away from the Camarilla, they still attend
+courts and maintain interests in the sect.
+Aptitude: One Trait they may use in challenges relating to the outdoors
+(a park counts, a street doesn’t).
+Advantage: Gangrel are natural hunters; by spending a Mental Trait
+when hunting, they will automatically succeed, unless there is absolutely no
+prey to be found.
+Weakness: Gangrel develop animals features over time, such as tufts of
+fur, slitted eyes, batlike ears, even talons and beastlike teeth.
+Clan Disciplines: Animalism, Fortitude, Protean
+
+
+15
+Rendezvous
+Rendezvous
+MALKAVIAN
+ALKAVIAN
+ALKAVIAN
+ALKAVIAN
+ALKAVIAN
+Unpredictable, seemingly without rhyme or reason, often terrifying —
+this sums up the Malkavians. The clan’s members range in age from children
+to the elderly, may be of any race or creed, and have come from all strata of
+society. There is only one constant — all are without exception incurably
+insane. Some were deranged prior to their Embraces, while those who were not
+are quickly “fixed” soon after. Such madness might be anything from homi-
+cidal rage to delusions of grandeur to a quiet, insidious bent that manifests as
+unnervingly bright eyes and bizarre snippets of wisdom.
+Many Kindred shun the madmen, fearful of their whims and the strange
+events their presence seems to inspire. Others, however, suspect that behind
+the rantings and fits are eyes that have become exceptionally clear through
+madness — and some fear that the truth is more disturbing.
+Aptitude: One Trait they may use in challenges involving trickery. This
+may be to see through another’s attempt to trick them, or their own efforts to
+deceive others.
+Advantage: Even in madness, there may be found insight. Once per story,
+a Malkavian may make a Mental Challenge. If she wins, she may ask the
+Storyteller one yes-or-no question for insight regarding the current situation,
+which must be answered truthfully.
+Weakness: Every Malkavian is incurably insane. Before the night
+begins, the Storyteller has the player choose a number from one to six,
+using any favorite method. The number chosen represents how often the
+Malkavian risks falling into a fit brought on by her derangement. While in
+the fit, the Malkavian may do nothing except writhe and babble, not even
+to defend herself.
+Clan Disciplines: Auspex, Dementation, Obfsucate
+NOSFERATU
+OSFERATU
+OSFERATU
+OSFERATU
+OSFERATU
+Vampires are called “the Damned,” and nowhere is this more reflected
+than in the loathsome visages of the Nosferatu. Unlike other vampires, the
+Embrace somehow warps these unfortunate wretches, leaving them with all
+manner of disfigurements. Shunned by their “fairer” brethren, unable to
+interact with mortals, the Nosferatu prefer the safety of the sewers and hidden
+places, finding companionship with each other.
+However, talent develops in adversity — the Nosferatu are survivors bar
+none. Few know the secret ways of a city like they, and fewer still know the
+secrets. Refining the talents of skulking and eavesdropping to fine arts, the
+Nosferatu barter what they learn to those not too proud to deal with them.
+Lastly, centuries of shared abused and stigma have produced tight bonds
+among the clan. Not for them the petty bickering and one-upmanship of the
+other clans. To mess with one is to take on the entire clan, and the Nosferatu
+know where the bodies are buried….
+Aptitude: One Trait they may use in challenges involving stealth. The
+Nosferatu are natural sneaks, and add this bonus Trait to their total on any
+challenge involving hiding, moving silently and other forms of sneakery.
+
+
+16
+Laws of the Night
+Laws of the Night
+Advantage: Nosferatu are masters at finding information and uncovering
+secrets. Once per story, a Nosferatu may make a Mental Challenge. If she wins,
+the Storyteller may bestow a piece of information relating to a single subject.
+Weakness: Whether due to a curse placed on the clan by Caine himself,
+or by some other reason now lost to antiquity, every last Nosferatu is loathsome
+to look upon. Any Social Traits they have are only useful during challenges
+involving intimidation.
+Clan Disciplines: Animalism, Obfuscate, Potence
+TOREADOR
+OREADOR
+OREADOR
+OREADOR
+OREADOR
+Hedonists. Artistes. Poseurs. Degenerates. All of these have been used to
+describe the Toreador at one time, but these barely scratch the surface.
+Toreador can be elegant or flamboyant, ludicrous or genius, visionary or jaded,
+depending on their moods. Whatever they are, be certain that they aren’t
+anything by halves. A Toreador is defined by her passion — whatever she is,
+whatever she does, it is marked by her aesthetic zeal.
+Eternal life is a gift to be savored and treasured. Many Toreador were artists
+in life — poets, sculptors, musicians, performers — while some were preserved
+for their beauty, but with little else to mark them. They love their high society,
+but let others worry about the business aspect of court. Whether as a hostess
+with the mostest, an opera singer capping 70 years of rehearsal, a composer, a
+writer or a witty debutante, every Toreador knows her place in Kindred society
+is to inspire culture, grace and, of course, passion.
+Aptitude: One Trait they may use in perception challenges. Toreador are
+naturally detail-oriented, whether to create or to criticize, and may use that
+talent to spot a hidden wall safe or hear leaves rustling outside.
+Advantage: The Toreador glide through the night, attracting a following
+of friends, lovers, hangers-on and groupies wherever they go. Many of these
+mortals are unaware that their patron, or muse, or friend is a vampire. Some
+may occasionally have useful information, but most will not. If nothing else,
+though, they are handy sources of blood. Once per story, a Toreador may
+completely replenish her Blood Traits if she has access to her herd.
+Weakness: These artists and art-lovers can become entranced with the
+beauty around them, to the point of insensibility. When a Toreador encoun-
+ters something truly beautiful (which might be a single perfect rose, a lovely
+face or sunrise on a clear summer morning), he must win a Mental Challenge
+with the Storyteller or become enraptured. He will remain entranced with the
+thing for one scene or until it withdraws. Only severe distractions can rouse the
+entranced vampire, such as being elbowed by a neighbor or being attacked.
+Clan Disciplines: Auspex, Celerity, Presence
+TREMERE
+REMERE
+REMERE
+REMERE
+REMERE
+The insular, secretive Tremere are neither particularly liked nor trusted,
+but that’s exactly how they like it. Even among vampires, the Tremere name
+is synonymous with treachery. Rumor has it that the Tremere were once a cabal
+of mortal wizards who wrested the secret to immortality from unwilling
+Kindred. Such deeds sealed the clan’s reputation; even today, many vampires
+would like nothing better than to wipe the Tremere from the earth.
+
+
+17
+Rendezvous
+Rendezvous
+Whatever their past, the Tremere continue to hold a place in the Camarilla
+for their instrumental work in supporting the Masquerade and battling the
+Inquisition. They have proven themselves as both dangerous enemies and
+potent allies. The Tremere still practice a version of the arcane arts they knew
+in life, and the “warlocks” offer their magical services to the Camarilla. One
+might well wonder if the Camarilla serves the Tremere equally well….
+Aptitude: One Trait they may use in challenges of scholarship.
+Advantage: Childer are taught early on to depend upon the clan and
+themselves, and to trust no outsiders. Once per story, a Tremere may call upon
+her clan superiors for aid and expect to receive some kind of answer or assistance.
+The Storyteller has final word on what aid will come from the Tremere.
+Weakness: Every Tremere is loyal to the clan through tightly controlled
+bonds of blood. Early in her Embrace, a Tremere is forced to drink the mixed
+blood of seven clan elders, creating mystic links between all the clan members,
+especially the elders and the younger Kindred. If she is ordered by a superior to
+do something, she is down two Traits in any challenges to refuse it.
+Clan Disciplines: Auspex, Dominate, Thaumaturgy
+VENTRUE
+ENTRUE
+ENTRUE
+ENTRUE
+ENTRUE
+Regal to the core, the Ventrue are the lords of the Camarilla. It was Clan
+Ventrue who first conceived of the Camarilla, who founded and led the sect
+during its first perilous days, and who now leads the most populous vampire sect
+on earth through its darkest nights. Since time immemorial, the majority of
+princes have been Ventrue. The Ventrue would have it no other way, of course.
+After all, in the fine tradition of noblesse oblige, the Ventrue believe it their
+duty to lead the other clans.
+In nights past, Ventrue were chosen from nobles, merchant princes or
+other powerful people. In these more modern nights, the clan seeks its newest
+from old-money families, politicians and the corporate movers and shakers.
+Like the Toreador, they enjoy eternal life and its fruits, but prefer not to waste
+it in “idle hedonism.” The burdens and privileges of leadership are theirs alone.
+So it has been, so it shall always be.
+Aptitude: One bonus Trait they may use in challenges to lead or command
+others. Whether they were former nobility or corporate giants, all Ventrue are
+used to giving orders and seeing them obeyed.
+Advantage: Most Ventrue are well-off, if not wealthy. Even those who
+aren’t can call on their clanmates for assistance. Once per story, the character
+may access a large amount funds (such as from a trust fund, laundered money,
+Swiss bank account or corporate ownership). The Storyteller has final word on
+how much money the character may acquire.
+Weakness: Coming from royalty, wealthy families or financial kingpins, the
+Ventrue have simple tastes — only the best, including the blood they drink. A
+player must choose a specific type of blood that her character feeds on exclu-
+sively, such as virgins, blond men, children, clergy, etc. Only this specific blood
+type will satisfy her; the character will drink nothing else, even if starving or in
+desperate need. If she tries, her body reflexively vomits it back up.
+Clan Disciplines: Dominate, Fortitude, Presence
+
+
+18
+Laws of the Night
+Laws of the Night
+TRAITS
+RAITS
+RAITS
+RAITS
+RAITS
+Traits measure the raw potential of a character, and are possessed in some
+measure by every living thing. Traits in Mind’s Eye Theatre are measured in
+the following categories:
+Physical — This measures a character’s physical prowess, such as her
+stamina, dexterity or sheer strength. A Physical Primary indicates a strong,
+sturdy or very nimble character, while Physical Tertiary might mean the
+character is weak, willowy or even clumsy. This Trait is used in challenges of
+combat, lifting, running, skill with the hands, etc.
+Social — Social Traits describe a character’s charm and presence. A
+Social Primary character is charming, expressive or is just a good people person.
+A Social Tertiary might mean someone who is introverted, shy or doesn’t
+enjoy being around other people. This Trait is used in challenges of command,
+seduction, performance or coercion.
+Mental — This Trait is the measure of the character’s mental strength in
+wits, cunning, reasoning and general brains. A Mental Primary is a likely a
+studious sort, or one with a great deal of instinctive thought and quick wits. A
+Mental Tertiary is more likely to be less concerned with thought, have a bad
+memory or just never went to school. This Trait is used in challenges of
+perception, trying to remember information or puzzling out clues.
+Trait categories are prioritized Primary, Secondary and Tertiary. A
+Primary rating gets 7 Traits, a Secondary receives 5, while Tertiary has 3.
+Traits can be spent in order to gain certain benefits or powers. A Trait
+spent is considered gone for the rest of the night. Think of it as using up some
+of your energy to get a task done.
+DISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+ISCIPLINES
+Disciplines are the gifts of the blood, the supernatural powers which mark
+a vampire for what she truly is. These are the legendary abilities from myth and
+cinema — mind control, shocking strength and speed, transforming into a wolf
+or bat, otherworldly charisma. It is these gifts that give vampires their truest
+edge in the world of the night. When performed, though, many of these
+Disciplines create effects that are obviously out of the ordinary. Such things
+can risk the Masquerade, if they are witnessed by mortals, and many princes
+take great exception with those vampires who are so careless.
+Each Discipline is given at two levels — Basic and Intermediate, what
+most vampires know. The powers of the elders exceed what is described here,
+making them truly potent, as well as truly terrifying, to their younger brethren.
+ANIMALISM
+NIMALISM
+NIMALISM
+NIMALISM
+NIMALISM
+This Discipline allows vampires to control animals, whether the beasts of
+field and forest or the ones that lurk in all their hearts.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Feral Whispers — By looking into the eyes of any animal larger than an
+insect and making some related sound (like growling or hissing), the vampire
+
+
+19
+Rendezvous
+Rendezvous
+is capable of communicating with the creature and understanding what it
+replies to him.
+The Beckoning — By uttering a howl or other animal noise, a vampire
+can summon animals to his side. The animal must exist in the area (summon-
+ing cobras in the Midwest is rather futile), and it will respond as fast as its
+mobility will allow (a caged animal may not be able to come immediately). A
+Social Trait must be spent for each type of animal summoned (one Trait for all
+the rats in an area, another Trait for all the dogs). When the animals arrive,
+they will obey the vampire’s commands as long as they are not too dangerous.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Quell the Beast — The vampire touches his subject or gazes into her eyes,
+and calms the inner fire of emotion. Without this fire, the subject is lethargic.
+A Physical Challenge is required if the victim is unwilling. Once the challenge
+is won, the player must engage in a Social Challenge in order to use this power.
+Whether the vampire chooses to intimidate the subject or soothe him, the
+victim is apathetic for the rest of the evening, unwilling to exert himself or be
+socially forward. This power lasts for the rest of the evening. Alternately, a
+vampire may use this on another Kindred who is frenzying to calm him. A
+Physical Challenge is necessary for the unwilling target, plus the Social
+Challenge. If the challenge is successful, the frenzying vampire simply snaps
+back to normal lucidity.
+Shape of the Beast — With this power, a vampire’s spirit may possess the
+body of any animal larger than an insect. To do so, the vampire must gaze into
+the eyes of the animal and spend two Social Traits to move into the animal
+body. While in the body of the animal, he may not use any other vampiric
+powers, but he may use the animal’s natural abilities, like claws, poison or
+wings. Once in the animal, the vampire may move freely about until daylight,
+when his spirit returns to his own body. If the animal is injured during
+possession, the vampire body suffers equal injury. If the animal dies, the
+vampire is thrust back into his own body and falls into torpor. At any time
+before daylight, the vampire may choose to leave the animal body for his own.
+Few know what happens to the spirit of a vampire if his body dies while he
+possesses an animal.
+AUSPEX
+USPEX
+USPEX
+USPEX
+USPEX
+Vampires with this power enjoy perception and sensory ability far beyond
+that of normal ken.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Heightened Senses — The vampire’s senses become razor-sharp, even
+superhuman. She may hear sounds beyond normal ken (such as a dog whistle),
+and her sight acuity is doubled. She may be able to identify scents like a wild
+animal, or she can read print on a page by touch. This power lasts as long as the
+vampire chooses. However, if she is subjected to sudden sensory overload
+(blinding light, deafening music, strong smells), she loses the sense in question
+for the rest of the game.
+Aura Perception — The vampire can see the invisible rainbow “aura”
+that surrounds all living things. To use this power, the vampire spends five
+
+
+20
+Laws of the Night
+Laws of the Night
+minutes studying his target, then the players engage in a Mental Challenge
+(which may not be retested or relented). For each success, the player may ask
+his target one yes-or-no question relating to the target’s physical or emotional
+state, which must be answered truthfully. Permissible questions include: “Is she
+a vampire?” “Is he lying?” “Is he insane?” “Is she injured?”
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+The Spirit’s Touch — With this power, the vampire can read the psychic
+and emotional impressions left on objects or places. A simple touch can unlock
+a flood of memories, sensations and emotions. To use Spirit’s Touch, the
+player touches the object and spends a Mental Trait for a turn of concentra-
+tion. Each time this power is used, the vampire receives several moments of
+images and impressions, which may include distorted pictures, sudden flashes
+of passion, voices, or insights into emotionally stressful events that included
+the object (such as murder, childbirth or a passionate affair). What informa-
+tion has been passed on is up to the vampire to interpret; the Spirit’s Touch
+does not give lists of names and dates.
+Telepathy — The vampire may attempt to read others’ minds or commu-
+nicate without speaking. To read the minds of others, the vampire must be able
+to see her target, while the player engages him in a Mental Challenge (a willing
+target may choose to relent). If she wins, the vampire establishes a mental link,
+which allows her to scan the target’s surface thoughts if she chooses or speak
+to him mentally. If the vampire wishes merely to communicate she need only
+spend a Mental Trait. In order for two-way communication, the other vampire
+must have Telepathy and spend a Mental Trait as well; the open link lasts for
+as long as both parties wish.
+CELERITY
+ELERITY
+ELERITY
+ELERITY
+ELERITY
+This is the legendary supernatural swiftness that all vampires are said
+to possess.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Alacrity — The vampire gains an extra action per turn, and her rate of
+movement is considered doubled.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Rapidity — The vampire’s rate of speed is tripled, and she receives two
+extra actions in a turn. In challenges of speed, you may use a new symbol, called
+the Bomb. The Bomb is made with a closed fist, the thumb sticking up. The
+Bomb defeats Rock and Paper, but is defeated by Scissors (the fuse is cut).
+DEMENTATION
+EMENTATION
+EMENTATION
+EMENTATION
+EMENTATION
+This Discipline, the gift of madness’ insight, seems to work best among the
+twisted Malkavians. Others have learned it, but it seems to do strange things
+to the mind. Whether one must be insane to learn it, or it causes insanity to
+those who learn it has not been determined, and few wish to experiment.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Passion — With this power, the vampire can manipulate his target’s
+emotions, either driving her to fever pitch or dulling even her greatest passions
+
+
+21
+Rendezvous
+Rendezvous
+to mere whispers. The player engages his target in a Social Challenge; with a
+success, he may enhance or dull the target’s emotions as he pleases. With
+heightened emotions, the target becomes jittery, manic, full of wild energy
+that she has trouble controlling. If her passions are dulled, she becomes listless,
+apathetic, and unable to motivate herself. The target should roleplay the
+changes for the next full hour. This power is not cumulative, nor can a target
+have both dulled and enhanced emotions at the same time.
+The Haunting — The vampire may slowly drive his target to madness
+with strange waking nightmares that are invisible to all but her. This power is
+enacted by spending a Blood Trait and engaging in a Social Challenge with the
+victim. If successful, the victim sees bizarre images out of the corner of her eye,
+hears voices, suffers sensations such as heat and cold with no visible source.
+These may stem from her own inner fears, or may simply be monstrosities
+without rhyme or reason. The Storyteller should describe the effects to the
+victim. The Haunting lasts for one hour, during which the victim should
+roleplay the effects.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Eyes of Chaos — The Malkavian can discern knowledge from watching
+the seemingly random fall of events. By sitting quietly and studying events as
+they unfold around him, he may see patterns that others cannot, and by these
+patterns gain insight into what may happen next. To use this power, the player
+sits by himself for 10 minutes, considering the events and circumstances
+around him, not speaking to anyone. At the end of 10 minutes, he finds the
+Storyteller and makes a Mental Challenge. If he succeeds, the vampire gains
+insight into the current situation and can predict some possibilities of what
+might happen next. For the next hour, he cannot be surprised.
+Voice of Madness — Madness is a gift, and the Malkavians want to share
+it with everyone around them. This power, which brings the inner demons
+howling to the fore, is one way to do so. The Malkavian spends a Blood Trait,
+then spends five minutes talking to the victim, attempting to drive her into
+frenzy. After five minutes of talking, the player makes a Social Challenge with
+his target. If his target loses, she falls to a blind, panicked frenzy for the next
+10 minutes. This frenzy may be curbed by spending two Mental Traits or with
+other abilities.
+DOMINATE
+OMINATE
+OMINATE
+OMINATE
+OMINATE
+With this power, a vampire may sway others to his bidding, or even
+control their minds outright. Using this power requires eye contact (thus the
+blind are unaffected).
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Command — The vampire may issue a single one-word command (“Go!”
+“Stay” “Silence!” and the like are acceptable; “Die!” is not) to another being.
+Unless the victim can succeed in a Mental Challenge against the vampire, he
+must obey the command. The victim must understand the vampire’s language.
+Mesmerism — The vampire may make hypnotic suggestions to her
+victim. These suggestions may take effect immediately (“Follow that car!”) or
+may be triggered to certain events (“Start crying when Donata enters”). The
+
+
+22
+Laws of the Night
+Laws of the Night
+command may not be blatantly self-destructive. After making the suggestion,
+she makes a Mental Challenge with her victim. If she succeeds, the victim must
+obey. Both the trigger and the suggestion must be clear and easily understand-
+able, and the vampire and victim must speak the same language.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Forgetful Mind — The vampire may “wipe out” pieces of the target’s
+memory (such as that the vampire fed from her). After meeting her victim’s
+gaze and declaring which memory she wishes to erase, the vampire’s player
+makes a Mental Challenge. If she succeeds, the target “forgets” the vampire for
+one hour. To make the forgetfulness permanent, the vampire must spend a
+Mental Trait. The victim, however, will have a gap in her memories from the
+mind-wipe.
+Possession — With this power, the vampire may completely move her
+consciousness into another’s mind. This power works only on mortals. The
+vampire spends three Blood Traits and goes to a Mental Challenge with her
+victim. If the challenge succeeds, the vampire’s body falls comatose, and the
+consciousness is now in the mortal’s body. While possessing the body, the
+vampire may make the victim do anything, including harm himself. Should
+the mortal die, the vampire is immediately ejected back into his own body.
+FORTITUDE
+ORTITUDE
+ORTITUDE
+ORTITUDE
+ORTITUDE
+Vampires with this power develop remarkable resiliency to wounds and
+damage, to the point that they must be hacked apart if they are to be killed. This
+power is always considered to be “on.”
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Endurance — The vampire’s resistance to pain and injury is remarkable.
+With this power, he can ignore one wound per scene.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Resilience — The vampire may even shrug off the pain and damage from
+aggravated wounds, such as fire and sunlight. By spending a Physical Trait, he
+may reduce aggravated damage to simple damage.
+OBFUSCATE
+BFUSCATE
+BFUSCATE
+BFUSCATE
+BFUSCATE
+This is the power to mystically conceal and disguise oneself, whether with
+illusions or shadows.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Cloak of Shadows — By remaining still and relying on available shadows,
+the vampire can blur the lines of his form and make it difficult for people to
+
+
+23
+Rendezvous
+Rendezvous
+notice him. When no one is watching him, he can use the natural cover and
+shadows to fade away. As long as he remains completely silent and unmoving
+in a shadowed place or behind some sort of cover, nobody can spot him. Players
+should cross their arms across their chests to indicate that no one can see them.
+This concealment vanishes immediately if the vampire moves, speaks or
+interacts with his environment in any way.
+Unseen Presence — The vampire can not only fade out of sight, but may
+now wander in his invisible form. When a vampire wishes to use this power,
+he must step out of the sight of others, whereupon the player may use the sign
+for Obfuscate to show his character is not visible. Once concealed, the vampire
+may move about at a walking pace and be unnoticed. As long as the vampire
+does not speak, make loud noises or interact with the environment, he can
+remain unnoticed. Should he knock over a vase, attack someone, open a door
+or talk aloud (even a whisper), he automatically becomes visible.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Mask of a Thousand Faces — With this power, the vampire can cause
+others to see him not as he truly is, but as someone different from his true
+physical appearance. A simple Mask is bland and unassuming; few people
+could recognize him later. By spending a Mental Trait, the character may tailor
+his features and other things, such as voice or even scent. A Mask of a Thousand
+Faces remains until the character falls asleep, is knocked torpid or is killed.
+Vanish From the Mind’s Eye — A vampire may fade completely from
+view, even if in full view of others. The player announces his intention, then
+makes a Mental Challenge against each onlooker. If he succeeds, the vampire
+vanishes, as if he had never been there. Any losses the player may rebid against
+in the next turn. This power works much like Unseen Presence with a few
+extras — the vampire may move about unseen, but may also speak and still
+remain hidden. Interacting physically with the environment, screaming or
+attacking someone will cause this power to fail. The player should cross his
+arms over his chest to indicate his character cannot be seen.
+POTENCE
+OTENCE
+OTENCE
+OTENCE
+OTENCE
+Vampires with Potence are feared in combat, and with good reason. This
+is the “strength of 10 men” that vampires of legend are said to possess.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Might — The character gains two bonus Traits for any strength-related
+Physical Challenges.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Vigor — The character gains four bonus Traits for any strength-related
+Physical Challenges, and may also use the Bomb during challenges. The Bomb
+symbol is made with a closed fist, the thumb sticking up. The Bomb beats Rock
+and Paper, but is defeated by Scissors. If a vampire uses Vigor to strike another
+character in combat, the damage is aggravated.
+
+
+24
+Laws of the Night
+Laws of the Night
+PRESENCE
+RESENCE
+RESENCE
+RESENCE
+RESENCE
+All vampires radiate a strange charisma that makes them fascinating to
+mortals. Vampires with Presence are more charismatic, drawing others to their
+sides without effort. They may even manipulate the emotions of others,
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Awe — The vampire lets her natural charisma shine, drawing attention
+everywhere she goes. All wish to be close to her and hear what she has to say.
+To use this power, a vampire must be in a Social Challenge. The player gains
+a bonus Social Trait to use in the event of ties. This power may be used only
+once during a challenge.
+Dread Gaze — By hissing, baring her fangs and allowing her more
+vampiric features to rise to the fore, the vampire can terrify mortals and even
+shake the resolve of other vampires. By making a Social Challenge against her
+foe, the vampire can strike terror into her victim. If she succeeds, the subject
+flees the vampire’s presence and tries to avoid her for the rest of the scene or
+hour. If cornered, the victim will still defend himself, but he will do his best to
+escape. Using this Discipline actually requires the player (in character) to hiss,
+bare her teeth and otherwise make her vampiric countenance known, so it is
+a rather obvious breach of the Masquerade.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Entrancement — Using this power, the vampire can make others feel
+friendly to her. They want to be near her, aid her and act as her friend. To
+use this power, the player makes a Social Challenge against her target. On
+a success the target is favorably disposed to the vampire for an hour. If the
+vampire takes a hostile action against the target, the Entrancement is broken
+immediately. The vampire may not use the power against the same subject
+for the rest of the evening.
+Summon — The vampire can call others to her location by simply
+thinking about them. She need not even see her victim; as long as she knows
+the person, he can be Summoned. To use this power, the vampire’s player goes
+to the Storyteller and tells him which person she wishes to Summon,
+informing him or any Trait bonuses she has for ties. The Storyteller then finds
+the target and performs the challenge in the player’s stead. If the challenge
+succeeds, the subject comes to the vampire. If the challenge fails, the subject
+manages to resist the call. In either case, the vampire has no way of knowing
+if she has succeeded until her target arrives.
+Once called, the subject tries to get to the vampire by whatever means
+possible, entirely believing that he comes of his own wishes and avoiding
+situations that would prevent him from getting to his destiny (like locked
+rooms and overprotective allies). The compulsion lasts until the victim
+manages to arrive and make his presence known to the vampire. The vampire
+can only Summon someone that she knows — at the very least, someone she
+has spoken with for five minutes. to
+
+
+25
+Rendezvous
+Rendezvous
+PROTEAN
+ROTEAN
+ROTEAN
+ROTEAN
+ROTEAN
+This power is proprietary to the solitary Gangrel, and they teach it very
+rarely to outsiders. When someone speaks of a vampire changing into a wolf
+or bat, she is most likely talking about a Gangrel.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+Eyes of the Beast — The vampire can make his eyes able to see in absolute
+darkness. To use this power, the player need only declare his intent to use Eyes
+of the Beast, and at the end of the turn, the change is complete. However, the
+power causes the vampire’s eyes to glow an eerie (and very obvious) red, unless
+he takes steps to conceal them (most commonly with sunglasses). Using this
+power is also a rather obvious breach of the Masquerade.
+Feral Claws — Like a wolf or bear, the vampire has powerful claws capable
+of rending flesh. You can grow these claws at will with a simple effort; they
+sprout mystically from your otherwise normal hands and similarly retract when
+you desire. To grow these claws, the vampire must spend a Blood Trait and wait
+a turn as they sprout. These claws inflict aggravated damage.
+INTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+NTERMEDIATE
+Earth Meld — Using this gift, the Gangrel can mystically sink into the
+earth and sleep within the ground. The vampire must spend a Blood Trait and
+be touching raw soil to Earth Meld — he cannot sink through stone, wood,
+concrete or other substances. Immediately he begins sinking eerily into the
+earth itself, taking only clothing and small personal possessions (such as a
+cellular phone). Sinking into the ground takes a full turn, during which the
+vampire may do nothing but descend. The power protects the vampire
+completely from daylight and allows him to sleep undisturbed. He remains
+unaware of what transpires around him, and while in this state, he cannot
+move, except to rise at will. If the patch of soil is disrupted in any fashion, the
+vampire immediately returns to complete wakefulness, shooting up to the
+surface and showering dirt in all directions.
+Shape of the Beast — The vampire may shift his physical body into that
+of a wolf or a bat, which looks like a normal animal but is actually undead.
+Shifting into animal form costs one Blood Trait and takes three full turns. The
+vampire remains in beast form until the next dawn, or until he decides to
+change back. Clothing and small personal possessions change with him. In this
+form, he is for all intents and purposes an animal with a vampire’s mind. He
+may speak to animals and be understood, but he cannot speak to other
+vampires unless they possess some form of understanding animals.
+THAUMATURGY
+HAUMATURGY
+HAUMATURGY
+HAUMATURGY
+HAUMATURGY
+Thaumaturgy is vampire sorcery — rituals, spellcasting and blood magic
+— exclusive to the Tremere, who created and perfected it over centuries of trial
+and error. Rumor has it they hunt and slay those who attempt to steal their
+secrets.
+Thaumaturgy, by its nature, requires more to work than simple effort.
+Every thaumaturgical ritual requires the Tremere to spend time preparing the
+
+
+26
+Laws of the Night
+Laws of the Night
+casting and spend a Blood Trait. Five minutes of preparation is needed for Basic
+rituals, while 10 minutes are required for Intermediate rituals.
+BASIC
+ASIC
+ASIC
+ASIC
+ASIC
+• Taste of Blood — By tasting the blood of another vampire, the Tremere
+may learn things such as the vampire’s generation, sire, or if his blood is tainted
+with drugs or alcohol.
+• Defense of the Haven — The vampire casts this ritual on his resting
+place before going to sleep for the day. His haven mystically darkens, prevent-
+ing any sunlight from entering.
+• Hand of Flame — The Tremere may light a mystical flame in his
+hand. While in his hand, this fire cannot be use to set anything alight, not
+even a candle or a book-page. It creates a pool of light by which to see, and
+may be quite useful for disturbing others. The caster is not burned by his
+own fire. A caster may “release” the fire to spark small fires (such as a
+candle; the fire is too small to set people ablaze), but must recast the spell
+if he wishes to re-light his hand.
+ADVANCED
+DVANCED
+DVANCED
+DVANCED
+DVANCED
+• Flame Bolt — The Tremere may throw gouts of mystical fire. Each
+fireball costs one Blood Trait to create in addition to the first Trait spent, and
+inflicts two levels of aggravated damage on the target.
+• Telekinesis — The vampire may levitate and move objects with the
+power of his mind. The amount of weight he can lift (in pounds) is five times
+his total Mental Traits. Living beings may attempt to resist being lifted by
+making a Mental test against the vampire.
+• Cauldron of Blood — With this frightening power, the vampire may boil
+his target’s blood inside his veins. Mortals attacked with this power die
+immediately in tremendous agony. Vampires lose take three health levels of
+aggravated damage and lose three Blood Traits each time this power is cast.
+BLOOD
+LOOD
+LOOD
+LOOD
+LOOD
+Vampires can use the blood in their bodies to perform a number of
+remarkable feats.
+Characters have 10 Blood Traits, representing how “full” they feel.
+Vampires spend Blood Traits to power Disciplines, boost their Physical Traits
+or heal wounds. They can replenish their lost blood by feeding on mortals.
+• Each night, when a vampire awakens, she spends a Blood Trait.
+• A vampire may spend blood to heal wounds. Each level of simple
+damage costs one Blood Trait, and takes one full turn of concentration to
+perform. Aggravated damage may be healed by spending three Blood Traits
+and taking a full day to rest.
+• Certain Disciplines require blood use.
+• A vampire may spend blood to give herself superhuman strength. By
+spending a single Blood Trait, she may add a bonus Physical Trait to her pool
+for the rest of the scene. If she wishes to add more, each additional Trait will
+cost her another cumulative Blood Trait (thus the second Physical Trait costs
+two blood, the third is three, etc.).
+
+
+27
+Rendezvous
+Rendezvous
+A vampire with no more blood in her body enters torpor.
+Vampires can regain blood by feeding on humans. Humans are considered
+to have 10 Blood Traits in their bodies. If a human is reduced to five or fewer
+Blood Traits, he is in dire need of hospitalization. If all the blood is drained from
+him, the mortal dies. More merciful vampires try to avoid killing their vessels
+by taking only one or two Traits from a victim.
+If a vampire has four or fewer Blood Traits in her system, she feels hungry.
+If she sees or smells blood, she must make a test against frenzy to maintain self-
+control. A vampire at two or fewer Blood Traits is ravenous; merely being in
+the proximity of a potential blood source is cause for a frenzy check. If she loses
+either frenzy test, she goes into a fit of hunger, where her only goal is to feed
+until she is sated.
+Vampires may feed from animals, but find such blood unsatisfying, and not
+nearly as nourishing. A cow or similar-sized creature has approximately five
+Blood Traits in its system.
+HEALTH
+EALTH
+EALTH
+EALTH
+EALTH
+Characters have five levels of health to represent how hearty they are —
+Healthy, Bruised, Wounded, Mauled, and Incapacitated. As wounds are
+accumulated, check the levels off on your character sheet. Be sure to note if the
+wounds are aggravated. Blood may be spent to heal wounds and thus gain back
+levels of health. When a character’s wounds sink below the health levels, she
+slips into torpor (see below).
+DAMAGE
+AMAGE
+AMAGE
+AMAGE
+AMAGE
+There are two kinds of damage a vampire can suffer — simple and
+aggravated.
+Simple damage occurs through such means as a punch, a knife wound
+or being shot. For vampires, such things are no longer the life-threatening
+injuries as they were in mortal days. While such wounds certainly hurt,
+they can be healed fairly easily by spending a Blood Trait and taking a full
+turn to concentrate.
+Aggravated damage is far more serious. These are the wounds that can
+eventually kill a vampire, and are caused by fire, sunlight or the teeth and claws
+of other supernatural creatures. A Storyteller may also deem other means cause
+aggravated damage, such as certain types of bullets, an explosion or particular
+Disciplines. Healing aggravated wounds requires spending three Blood Traits
+and a full day’s rest to recover.
+Unless the character is confronting something that causes aggravated
+damage, any damage done is considered to be simple.
+TORPOR
+ORPOR
+ORPOR
+ORPOR
+ORPOR A N D
+A N D
+A N D
+A N D
+A N D F F F F FINAL
+INAL
+INAL
+INAL
+INAL D
+ D
+ D
+ D
+ DEATH
+EATH
+EATH
+EATH
+EATH
+When a vampire loses all her health levels and/or Blood Traits, she enters
+a deep sleep called torpor. She is still “alive,” but is effectively comatose,
+incapable of moving or acting. To recover from torpor, the vampire must be fed
+at least one Blood Trait.
+If a vampire falls to torpor and takes one more aggravated wound, she
+dies again — permanently. This is called the Final Death, and there is no
+coming back from it; the vampire’s body crumbles to dust. A character who
+
+
+28
+Laws of the Night
+Laws of the Night
+has fallen to Final Death is gone from the game forever; the player must
+create a new character.
+RULES
+ULES
+ULES
+ULES
+ULES
+This game has often been compared to the make-believe games of
+childhood. However, when confronted with character conflict, most such
+games devolved into this:
+“Bang! I gotcha!”
+“Did not! I was hiding behind that rock!”
+“Were not!”
+“Was too!”
+So this game has rules to prevent such arguments. Rules are meant to
+resolve conflict between two characters that roleplaying can’t, or to find out
+if a character can do something.
+CHALLENGES
+HALLENGES
+HALLENGES
+HALLENGES
+HALLENGES
+When two characters come into conflict that roleplaying alone can’t
+settle (such as getting into a fight), or the Storyteller wishes to see if a character
+can do something, challenges are used to resolve the matter.
+Decide what sort of challenge is being enacted — Physical, Social or
+Mental. Once the challenge is decided, the players each bid one of the
+appropriate Trait and name the victory conditions. The players then go to a
+challenge, which is resolved using Rock-Paper-Scissors. The winner of the
+match wins the challenge and his victory condition takes hold.
+Example: Matt’s character, Rick, has just run into some trouble. A Brujah who
+thinks Rick tried to humiliate him in court has found him in an alley and thinks it’s
+payback time. Matt, speaking as Rick, tries to argue the point, but the Brujah won’t
+hear it. The Brujah’s player announces that he’s going to slug Rick. Matt says that
+Rick will dodge out of the way, and the two go to a Physical Challenge. The two shoot
+Rock-Paper-Scissors — Matt shows Rock, and the Brujah’s player shows Scissors.
+Rick casually sidesteps the Brujah’s clumsy swing and prepares for a little dirty fighting
+of his own….
+In the event of a tie, the players compare their Trait pools. Remember to
+add in any Trait bonuses you might have. The larger Trait pool prevails.
+When you lose a challenge, you also lose a Trait. This means you’ve lost
+some confidence in your abilities, and can’t call on them as fully. In combat,
+this may mean the character has suffered injury. Perhaps the character is tired,
+or becoming frustrated, or this is just out of her means to perform. Likewise, as
+you lose Traits, your pool for comparing Traits in the event of a tie gets smaller.
+All lost Traits are recovered by the beginning of the next game — consider that
+time to rest, heal and otherwise clear the head.
+Example: Rick and the Brujah are in their second round of combat. The
+Brujah’s player declares that his character intends to slam Rick into a nearby wall.
+Matt says his victory condition will be to get out of the way. The two go to a Physical
+Challenge — this time, both shoot Scissors. Now they compare Physical Trait pools.
+The Brujah is built for combat — he has seven Physical Traits, plus the bonus Trait
+
+
+29
+Rendezvous
+Rendezvous
+he receives for being in combat, for a total of eight Physical Traits However, he lost
+a challenge earlier, and is reduced to seven (including his bonus). Rick was intended
+to be more brains than brawn — he has only five, and no combat advantage. The tie
+goes to the Brujah, and Matt scratches off a Physical Trait on the character sheet, and
+marks the loss of a health level as well — the damage is considered simple. Rick isn’t
+in very deep trouble, but he is hurting and trying to find a way out of the situation.…
+You may choose to relent a test on occasion. Relenting on a challenge
+means you give up the challenge and accept the victory condition. You do not
+lose Traits by relenting in a challenge.
+Example: Rick is down to three Physical Traits after a couple more rounds of
+combat, as well as losing three health levels due to wounds (two are simple damage,
+the newest one was caused with the Potence power Vigor and is consequently
+aggravated). Now  Matt is trying to think of some way to get away as Rick can’t afford
+to take much more punishment or lose more Traits. The Brujah prepares for another
+swing, and Rick has an idea. The Brujah’s player calls for a Physical Challenge,
+saying he’s using Vigor, and Matt declares that he’s relenting, saying Rick appears
+too winded to make a concerted effort to get away. The Brujah swings and connects,
+causing Rick to take another aggravated wound (Matt marks the lost health level, but
+hasn’t lost more Traits), and Matt declares that Rick has apparently fallen back into
+the shadows with the punch. Once in the shadows, the badly wounded Rick calls on
+his Obfuscate, hoping to play dead and that the Brujah will lose interest in what he
+can’t see.
+Storytellers may also use challenges to see if a character can accomplish
+something. Sometimes, a character wants to try something a little more difficult
+than routine (such as picking a lock, hacking into a mainframe, creating a
+sculpture), and challenges are a way of measuring a character’s abilities.
+RO C K
+O C K
+O C K
+O C K
+O C K- P
+- P
+- P
+- P
+- PAPER
+APER
+APER
+APER
+APER- S
+- S
+- S
+- S
+- SCISSORS
+CISSORS
+CISSORS
+CISSORS
+CISSORS
+In case you don’t remember Rock-Paper-Scissors, or never
+played, it’s very simple. On the count of three, the contestants
+hold up one of three hand gestures — a closed fist for rock, a flat
+hand for paper, and two fingers up for scissors. Rock crushes
+scissors, scissors cuts paper, and paper covers rock.
+
+
+30
+Laws of the Night
+Laws of the Night
+Example: While Rick is having his problems, across town, Chris’ character is
+attempting to hack into a rival Ventrue’s company’s mainframe.  Cynthia, the
+Storyteller, asks Chris how he’s going about this action, and Chris describes where
+Marcus is  hacking from, what protections he’s using, etc. Cynthia asks Chris to make
+a Mental Challenge with her — Chris shoots Paper, Cynthia shoots Scissors. Chris
+asks to try again, so Cynthia has him wait five minutes, while he describes how
+Marcus is methodically checking firewalls and the like. At the end of five minutes,
+Chris and Cynthia go to a second Mental Challenge and shoot again — Rock for
+Chris, Scissors for Cynthia. Marcus apparently succeeds with flying colors this time,
+but Cynthia is making a mental note about the security that was alerted by Marcus’
+second attempt….
+TIME
+IME
+IME
+IME
+IME
+Time in Masquerade runs like regular time — an hour in Masquerade is
+still 60 minutes. The Storyteller may choose to advance time for the sake of
+gameplay, but always assume that the time shown by clock on the wall or your
+wristwatch is the same in and out of play.
+During situations like combat, however, time becomes more fluid to
+accommodate challenges or Disciplines.
+Turn — A turn usually lasts about three seconds, and is mostly used to
+adjudicate combat and dramatic situations involving split-second decisions.
+Unless a character has Celerity, he may only take one action per turn.
+Scene — A sequence of events in roughly the same time, such the above
+example of Rick in his back-alley rumble and Marcus at his corporate
+espionage. The scene will change for Rick when he leaves the fight, and for
+Marcus when he exits the mainframe.
+Session — One evening’s worth of playing Masquerade.
+Story — A story is an entire sequence of events in which the characters
+take part. It has a plot, a climax and a resolution.
+Example — In the movie Star Wars, each swing of Obi-Wan/Darth
+Vader’s lightsabers was one turn; the Death Star garbage disposal sequence was
+a scene; and the entire movie was a story.
+FIRE
+IRE
+IRE
+IRE
+IRE AND
+AND
+AND
+AND
+AND S S S S SUNLIGHT
+UNLIGHT
+UNLIGHT
+UNLIGHT
+UNLIGHT
+Fire and sunlight are the vampire’s worst enemies, the things which can
+destroy her for certain. Direct sunlight inflicts one level of aggravated damage
+every turn. Indirect sunlight (the vampire is heavily cloaked or under overcast
+skies) inflicts one level of aggravated damage every two turns. This damage
+may be soaked only with Fortitude.
+Fire inflicts damage as per sunlight. Small/weak fires (a candle flame) or
+a sudden burn (a torch) inflict one level of aggravated damage every two
+turns. Large or intensely hot fires (a burning building, a propane torch)
+inflict one level of aggravated damage per turn. Again, this damage is
+soakable only with Fortitude.
+
+
+31
+Rendezvous
+Rendezvous
+FRENZY
+RENZY
+RENZY
+RENZY
+RENZY
+All vampires carry within them an inner Beast, a manifestation of the
+predator, which arises with the Embrace. For Camarilla vampires, struggling
+against the wild bestiality of the Beast is a hallmark of their existence. The
+Beast manifests during times of great emotional stress, leading to something
+called frenzy.
+If a vampire sees or smells blood when hungry, is confronted by sunlight
+or fire, or is enraged or humiliated, she must check to see if she frenzies. She
+makes a Mental Challenge with the Storyteller to see if she can control herself.
+If she loses, she flies into a frenzy. She must immediately attack the source of
+blood or provocation (if sent into frenzy by fear, she must immediately flee the
+scene). During this time, vampires are like wild animals — they will tear apart
+anything in their way, and they may ignore wound penalties until struck into
+torpor. The frenzy lasts for a scene, or until the source of the frenzy is removed
+(the vampire feeds, the opponent is killed, etc.).
+When acting out a frenzy, remember the rules from above — never strike
+or grapple another player, don’t run around foaming and screaming, don’t
+frighten non-players.
+Frenzy is considered shameful by Camarilla vampires, and something to
+be avoided. A vampire who frenzies too frequently may be put down by his
+fellow Kindred.
+SOCIAL
+OCIAL
+OCIAL
+OCIAL
+OCIAL I I I I INTERACTION
+NTERACTION
+NTERACTION
+NTERACTION
+NTERACTION
+Mind’s Eye Theatre does not depend on cards or dice to determine results
+of a characters attempt to seduce prey or argue with a prince in court. This
+game’s most striking feature is the intense social interaction that occurs
+between players or between players and Storyteller. Consequently, there are
+very few systems for social drama. Many times, it’s up to the Storyteller
+deciding whether the player has adequately performed. So a player, playing a
+vampire, does not simply inform the Storyteller he is seducing the mortal in the
+corner for a meal — the Storyteller will most likely play the mortal and make
+the player work for his character’s supper. Likewise, if a character wishes to
+persuade another vampire to help her, the player (speaking as the character)
+must convince the other character, who is likewise being played by another
+player, who has thoughts and feelings of her own. Challenges may occasionally
+be employed, but otherwise, the characters are on their own.
+With that comes a great deal of trust. When you enter the room as your
+character to start playing, you act as your character, speak as your character,
+and  to some extent think as your character. While Matt the player might know
+that it’s a bad idea to make a deal with a certain Toreador, his character Rick
+doesn’t know that the Toreador doesn’t have Rick’s best interests at heart. It
+would be cheating for Matt to use what he knows to influence Rick’s thinking.
+So, play along. Enjoy yourself. While you’re at the game, you’re a vampire
+— clever, strong and ready to take on the night.
+
+
+32
+Laws of the Night
+Laws of the Night
+STORY
+TORY
+TORY
+TORY
+TORY I I I I IDEAS
+DEAS
+DEAS
+DEAS
+DEAS
+• Love Story — A character falls in love with a mortal or another vampire.
+If the beloved is a mortal, is the love returned, and does the vampire tell his love
+that he is undead? (Doing so would be a violation of the Masquerade, and is
+punishable by both parties’ deaths.) If the beloved is another vampire, does she
+return the love or merely see a convenient pawn? What if the romance is between
+clans, such as a hideous Nosferatu falling for a lovely Toreador? Would a Tremere
+defy clan orders to be with her beloved? What if the love is unrequited?
+• Runaway — Several key players in the city’s power structure have
+disappeared for no clear reason. Who will fill the void left behind? Will there
+be battles for power? And once someone scrambles to the top, how can he stay
+there? And what of the original holders? What drove them off in the first place?
+What if they return?
+• The Most Dangerous Game — Who hunts the hunters? There is a
+mortal in the city intent on purging the threat that he believes the characters
+represent. Perhaps he’s armed with the power of faith, perhaps he has some
+impressive weaponry or a lot of information on the characters. How do they
+avoid alerting other hunters? The characters must find a way to outwit or
+outfight this threat to their very unlives.
+• Unmasking at Midnight — The Masquerade has been seriously breached.
+The prince orders the characters to restore it before more damage is done, but
+someone is working against them, undoing their work as quickly as it’s accom-
+plished. Could it be Sabbat, attempting to thwart the Camarilla? Could it be a
+stubborn reporter with a powerful patron, intent on revealing “the truth”?

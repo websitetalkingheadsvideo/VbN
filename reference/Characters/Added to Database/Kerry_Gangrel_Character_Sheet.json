@@ -1,0 +1,216 @@
+{
+  "character_name": "Kerry, the Desert-Wandering Gangrel",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Survivor",
+  "demeanor": "Loner",
+  "concept": "Feral hermit and accidental witness to a buried secret",
+  "clan": "Gangrel",
+  "generation": 10,
+  "sire": "Old Tom",
+  "pc": 0,
+  "biography": "A wandering Gangrel who has survived decades in the desert. Kerry witnessed the 1973 Prince\u2019s staking and guards that secret with paranoia and fear.",
+  "character_image": null,
+  "equipment": "Tattered backpack, desert survival tools, knife, animal totems.",
+  "notes": "Kerry is half-mad from isolation but retains flashes of insight. He refers to the staked Prince as 'The Still One.' His paranoia and claustrophobia define his behavior.",
+  "agentNotes": null,
+  "actingNotes": null,
+  "status": {
+    "sect_status": "Outcast",
+    "clan_status": "Wanderer",
+    "city_status": "None",
+    "health_levels": 7,
+    "blood_pool_current": 6,
+    "blood_pool_maximum": 10
+  },
+  "total_xp": 0,
+  "spent_xp": 0,
+  "custom_data": {
+    "additional_info": "NPC designed for Storyteller-controlled encounters."
+  },
+  "traits": {
+    "Physical": [
+      "Tough",
+      "Rugged",
+      "Ferocious",
+      "Tireless",
+      "Quick",
+      "Resilient"
+    ],
+    "Social": [
+      "Withdrawn",
+      "Gruff",
+      "Unsettling"
+    ],
+    "Mental": [
+      "Observant",
+      "Wary",
+      "Cunning",
+      "Shrewd"
+    ]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "abilities": [
+    {
+      "name": "Alertness",
+      "category": "Talents",
+      "level": 3
+    },
+    {
+      "name": "Brawl",
+      "category": "Talents",
+      "level": 2
+    },
+    {
+      "name": "Intimidation",
+      "category": "Talents",
+      "level": 1
+    },
+    {
+      "name": "Survival",
+      "category": "Skills",
+      "level": 3
+    },
+    {
+      "name": "Stealth",
+      "category": "Skills",
+      "level": 2
+    },
+    {
+      "name": "Animal Ken",
+      "category": "Skills",
+      "level": 2
+    },
+    {
+      "name": "Area Knowledge (Desert)",
+      "category": "Knowledges",
+      "level": 3
+    }
+  ],
+  "disciplines": [
+    {
+      "name": "Protean",
+      "level": 4,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Eyes of the Beast"
+        },
+        {
+          "level": 2,
+          "power": "Feral Claws"
+        },
+        {
+          "level": 3,
+          "power": "Earth Meld"
+        },
+        {
+          "level": 4,
+          "power": "Shape of the Beast"
+        }
+      ]
+    },
+    {
+      "name": "Fortitude",
+      "level": 2,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Resilience"
+        },
+        {
+          "level": 2,
+          "power": "Inner Strength"
+        }
+      ]
+    },
+    {
+      "name": "Animalism",
+      "level": 4,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Whispers to the Wild"
+        },
+        {
+          "level": 2,
+          "power": "Beckoning"
+        },
+        {
+          "level": 3,
+          "power": "Quell the Beast"
+        },
+        {
+          "level": 4,
+          "power": "Subsume the Spirit"
+        }
+      ]
+    },
+    {
+      "name": "Auspex",
+      "level": 2,
+      "powers": [
+        {
+          "level": 1,
+          "power": "Heightened Senses"
+        },
+        {
+          "level": 2,
+          "power": "Aura Perception"
+        }
+      ]
+    }
+  ],
+  "backgrounds": {
+    "Contacts": 1,
+    "Allies": 1,
+    "Haven": 1
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 5,
+    "conscience": 2,
+    "self_control": 3,
+    "courage": 4,
+    "willpower_permanent": 7,
+    "willpower_current": 7,
+    "humanity": 5
+  },
+  "merits_flaws": [
+    {
+      "name": "Acute Senses (Hearing and Smell)",
+      "type": "merit",
+      "category": "Physical",
+      "cost": 2,
+      "description": "Kerry\u2019s animalistic senses allow him to detect Kindred scent and vibrations through soil or wind."
+    },
+    {
+      "name": "Haunted Memories",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Hears whispers from the staked Prince in dreams; sometimes speaks as though Elijah is nearby."
+    },
+    {
+      "name": "Claustrophobia",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 2,
+      "description": "Must test to remain calm in enclosed spaces or underground; failure triggers panic or frenzy."
+    },
+    {
+      "name": "Paranoia",
+      "type": "flaw",
+      "category": "Mental",
+      "cost": 1,
+      "description": "Constantly suspects others of manipulation; resists trust-building unless shown compassion."
+    }
+  ],
+  "research_notes": {
+    "custom_note_field": "Kerry is designed as a narrative NPC; if befriended, he guides PCs to the Prince\u2019s cave after two sessions of trust-building."
+  }
+}

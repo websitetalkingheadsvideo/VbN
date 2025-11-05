@@ -1,0 +1,65 @@
+{
+  "character_name": "Adrian Leclair",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Architect",
+  "demeanor": "Director",
+  "concept": "Toreador interior artist who sculpts emotional spaces",
+  "clan": "Toreador",
+  "generation": 9,
+  "sire": "",
+  "pc": 0,
+  "biography": "Embraced in post-war Europe for his precision in shaping beauty, Adrian relocated to Scottsdale to court wealthy mortal patrons and provide the Camarilla with controlled, emotionally tuned venues. He maintains a professional, boon-based relationship with Sarah Hansen of The Velvet Door and is quietly opposed to Setite cultural expansion.",
+  "character_image": null,
+  "equipment": "",
+  "notes": "",
+  "agentNotes": null,
+  "actingNotes": null,
+  "status": {
+    "sect_status": "",
+    "clan_status": "",
+    "city_status": "",
+    "health_levels": 7,
+    "blood_pool_current": 10,
+    "blood_pool_maximum": 10
+  },
+  "total_xp": 30,
+  "spent_xp": 0,
+  "custom_data": {},
+  "traits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "abilities": [],
+  "ability_specializations": [],
+  "disciplines": [
+    "Presence",
+    "Auspex",
+    "Celerity"
+  ],
+  "backgrounds": {},
+  "backgroundDetails": {},
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  "merits_flaws": [],
+  "coteries": [],
+  "relationships": [],
+  "rituals": [],
+  "specializations": {},
+  "research_notes": {},
+  "artifacts": []
+}

@@ -1,0 +1,79 @@
+{
+  "character_name": "",
+  "player_name": "",
+  "chronicle": "Valley by Night",
+  "nature": "",
+  "demeanor": "",
+  "concept": "",
+  "clan": "",
+  "generation": 13,
+  "sire": "",
+  "pc": 1,
+  "biography": "",
+  "character_image": null,
+  "equipment": "",
+  "notes": "",
+  "agentNotes": null,
+  "actingNotes": null,
+  "status": "draft",
+  "total_xp": 30,
+  "spent_xp": 0,
+  "custom_data": {},
+  
+  "traits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  
+  "abilities": [],
+  
+  "ability_specializations": [],
+  
+  "disciplines": [],
+  
+  "backgrounds": {},
+  
+  "backgroundDetails": {},
+  
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  
+  "merits_flaws": [],
+  
+  "status": {
+    "sect_status": "",
+    "clan_status": "",
+    "city_status": "",
+    "health_levels": 7,
+    "blood_pool_current": 10,
+    "blood_pool_maximum": 10
+  },
+  
+  "coteries": [],
+  
+  "relationships": [],
+  
+  "rituals": [],
+  
+  "specializations": {},
+  
+  "research_notes": {},
+  
+  "artifacts": []
+}
+

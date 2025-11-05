@@ -1,0 +1,76 @@
+/* ========================================
+   BOOTSTRAP OVERRIDE LAYER
+   This file neutralizes Bootstrap's default styles
+   to preserve the existing Valley by Night design
+   ======================================== */
+
+/* Override Bootstrap's CSS reset to preserve our custom reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Keep our box-sizing */
+}
+
+/* Preserve our body styles - Bootstrap's body reset is overridden by global.css */
+body {
+    /* All body styles are in global.css - Bootstrap's defaults won't apply */
+}
+
+/* Override Bootstrap's default font stack - preserve our custom fonts */
+body {
+    font-family: var(--font-body), 'Times New Roman', serif !important;
+}
+
+/* Preserve our CSS custom properties */
+:root {
+    /* CSS variables are defined in global.css - Bootstrap doesn't override these */
+}
+
+/* Override Bootstrap's default link colors */
+a {
+    color: inherit; /* Let our custom styles handle links */
+}
+
+a:hover {
+    color: inherit; /* Preserve our hover states */
+}
+
+/* Override Bootstrap's default button styles - preserve our gothic buttons */
+button,
+.btn {
+    /* Our custom button styles take precedence */
+    font-family: var(--font-body), 'Source Serif Pro', serif !important;
+}
+
+/* Override Bootstrap's default form styles */
+input,
+select,
+textarea {
+    /* Our custom form styles take precedence */
+}
+
+/* Preserve our custom spacing - Bootstrap's utility spacing won't interfere */
+/* Note: Bootstrap spacing utilities are available but won't override existing styles */
+
+/* Preserve our custom flex/grid layouts */
+/* Bootstrap's grid system is available but existing layouts remain unchanged */
+
+/* Override Bootstrap's default typography scales */
+h1, h2, h3, h4, h5, h6 {
+    /* Our custom heading styles take precedence */
+    font-family: var(--font-brand), 'IM Fell English', serif !important;
+}
+
+/* Preserve our gothic color scheme */
+/* Bootstrap's default colors won't apply to existing elements */
+
+/* Note: Bootstrap utilities are available for future use:
+   - .container, .container-fluid (for new layouts)
+   - .row, .col-* (for new grid layouts)
+   - .d-flex, .d-grid, .d-none (display utilities)
+   - .mt-*, .mb-*, .p-* (spacing utilities)
+   - .text-*, .bg-* (text/background utilities)
+   
+   However, existing styles take precedence and visual design remains unchanged.
+*/
+

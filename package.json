@@ -1,0 +1,29 @@
+{
+  "name": "vbn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test_mcp_init.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websitetalkingheadsvideo/VbN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/websitetalkingheadsvideo/VbN/issues"
+  },
+  "homepage": "https://github.com/websitetalkingheadsvideo/VbN#readme",
+  "devDependencies": {
+    "chrome-devtools-mcp": "^0.9.0",
+    "task-master-ai": "^0.31.1"
+  }
+}

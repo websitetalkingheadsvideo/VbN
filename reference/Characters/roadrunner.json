@@ -1,0 +1,113 @@
+{
+  "id": "roadrunner-gangrel",
+  "name": "Marisol \"Roadrunner\" Vega",
+  "clan": "Gangrel",
+  "generation": "11th",
+  "sire": "Unknown independent Gangrel",
+  "sect": "Camarilla",
+  "title": "",
+  "player_character": false,
+  "coterie": {
+    "name": "Valley Watch",
+    "role_in_coterie": "Tracker & hunter",
+    "description": "Desert guide who can cross the wastelands around Phoenix without vehicles; reads sign like scripture."
+  },
+  "relationships": [
+    {
+      "name": "Rafael \"Switchback\" Ortiz",
+      "clan": "Brujah",
+      "relationship_type": "ally",
+      "status": "prickly but loyal",
+      "notes": "Sparring partner; respects her fieldcraft."
+    },
+    {
+      "name": "Tahlia Vance",
+      "clan": "Toreador",
+      "relationship_type": "coterie-mate",
+      "status": "protective",
+      "notes": "Tahlia bankrolls gear; Roadrunner quietly runs perimeter."
+    }
+  ],
+  "description": {
+    "appearance": "Lean, sunburnt Latina in a faded trucker jacket; dust-caked boots; hawk-bright eyes.",
+    "personality": "Quiet, dry wit; patient and pragmatic; a hunter\u2019s stillness until she moves.",
+    "background": "Former long-haul driver on the Vegas\u2013Phoenix route. Embraced at a rest stop by an independent Gangrel.",
+    "goals": "Map the supernatural 'safe trails' around the Valley; keep the coterie alive.",
+    "mannerisms": "Clicks tongue softly when thinking; tastes soil like a tracker.",
+    "notable_quotes": "\u201cPaved roads are for prey.\u201d"
+  },
+  "stats": {
+    "strength": 3,
+    "dexterity": 4,
+    "stamina": 3,
+    "charisma": 2,
+    "manipulation": 2,
+    "appearance": 2,
+    "perception": 4,
+    "intelligence": 2,
+    "wits": 3
+  },
+  "disciplines": {
+    "animalism": 2,
+    "auspex": 0,
+    "celerity": 0,
+    "dominate": 0,
+    "fortitude": 2,
+    "obfuscate": 0,
+    "obtenebration": 0,
+    "potence": 0,
+    "presence": 0,
+    "protean": 3,
+    "thaumaturgy": 0,
+    "serpentis": 0
+  },
+  "abilities": {
+    "talents": [
+      "Alertness 3",
+      "Athletics 2",
+      "Brawl 2",
+      "Intimidation 1"
+    ],
+    "skills": [
+      "Animal Ken 2",
+      "Stealth 3",
+      "Survival 4",
+      "Drive 3",
+      "Firearms 2"
+    ],
+    "knowledges": [
+      "Investigation 2",
+      "Occult 1"
+    ]
+  },
+  "advantages": {
+    "backgrounds": [
+      "Allies 1 (truckers)",
+      "Contacts 2 (park rangers)",
+      "Resources 1"
+    ],
+    "virtues": {
+      "conscience": 2,
+      "self_control": 3,
+      "courage": 4
+    }
+  },
+  "blood_pool": 10,
+  "humanity": 6,
+  "willpower": 6,
+  "haven": {
+    "location": "Abandoned maintenance shed off I\u201117",
+    "description": "Buried cache, hidden culvert entrance, steel racks for gear."
+  },
+  "allies": [
+    "Jasper, coyote whisperer (mortal)"
+  ],
+  "contacts": [
+    "ADOT night crew chief",
+    "Local gas station manager"
+  ],
+  "enemies": [
+    "Sabbat border-raiders near Guadalupe (rumored)"
+  ],
+  "notes": "Knows Garou patrol patterns anecdotally; leaves coterie sigils on mile markers."
+}

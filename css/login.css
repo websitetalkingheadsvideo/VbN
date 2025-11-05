@@ -4,10 +4,7 @@
    ======================================== */
 
 .login-container {
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Bootstrap utilities handle: display: flex, align-items: center, justify-content: center, min-vh-100 */
     padding: 40px 20px;
 }
 
@@ -47,6 +44,25 @@
     border-radius: 4px;
 }
 
+/* Login disabled alert styles (replaces inline styles) */
+.login-disabled-alert {
+    background: rgba(139, 0, 0, 0.3);
+    border: 2px solid #8b0000;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.login-disabled-alert .alert-title {
+    color: #c9a96e;
+    margin: 0 0 10px 0;
+}
+
+.login-disabled-alert .alert-text {
+    margin: 0;
+    color: #f5e6d3;
+}
+
 .login-success {
     background: rgba(0, 100, 0, 0.3);
     border-left: 4px solid #228B22;
@@ -58,9 +74,7 @@
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    /* Bootstrap utilities handle: display: flex, flex-direction: column, gap */
 }
 
 .form-group {

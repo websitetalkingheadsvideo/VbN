@@ -1,0 +1,15 @@
+{
+  "name": "Barry Washington",
+  "clan": "Ventrue",
+  "generation": 10,
+  "concept": "Ambitious Ventrue Prot\u00e9g\u00e9 with Secret Prince Aspirations",
+  "nature": "Visionary",
+  "demeanor": "Confidant",
+  "chronicle": "Valley by Night",
+  "goal": "Rising venture-capital prodigy and new Ventrue plotting a careful ascent while serving his sire, Warner Jefferson.",
+  "traits": { "blood_pool": 10 },
+  "disciplines": { "dominate": 1, "fortitude": 1, "presence": 2 },
+  "haven": "Small room in Warner Jefferson's penthouse",
+  "sire": "Warner Jefferson",
+  "character_image": "Characters/Images/Barry Washington.webp"
+}

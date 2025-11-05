@@ -1,0 +1,43 @@
+/* Massive, highly visible Exit Editor button */
+.exit-editor-fixed {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	z-index: 9999;
+	background: #c1121f;
+	color: #ffffff;
+	border: none;
+	padding: 16px 28px;
+	font-size: 22px;
+	font-weight: 800;
+	letter-spacing: 0.5px;
+	border-radius: 10px;
+	box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+	cursor: pointer;
+}
+
+.exit-editor-fixed:hover {
+	background: #a20f1a;
+	box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+}
+
+.exit-editor-fixed:active {
+	transform: translateY(1px);
+}
+
+/* Inline variant to sit with Save/Finalize */
+.exit-inline {
+	background: #c1121f;
+	color: #ffffff;
+	border: none;
+	padding: 10px 18px;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.exit-inline:hover { background: #a20f1a; }
+.exit-inline:active { transform: translateY(1px); }
+
+
