@@ -125,13 +125,7 @@ include __DIR__ . '/../includes/header.php';
         <table class="character-table" id="characterTable">
             <thead>
                 <tr>
-                    <th data-sort="id">ID <span class="sort-icon">⇅</span></th>
-                    <th data-sort="character_name">Name <span class="sort-icon">⇅</span></th>
-                    <th data-sort="player_name">Player <span class="sort-icon">⇅</span></th>
-                    <th data-sort="clan">Clan <span class="sort-icon">⇅</span></th>
-                    <th data-sort="generation">Gen <span class="sort-icon">⇅</span></th>
-                    <th data-sort="status">Status <span class="sort-icon">⇅</span></th>
-                    <th data-sort="created_at">Created <span class="sort-icon">⇅</span></th>
+                    <th data-sort="character_name">Character Name <span class="sort-icon">⇅</span></th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -144,7 +138,7 @@ include __DIR__ . '/../includes/header.php';
                 $char_result = mysqli_query($conn, $char_query);
                 
                 if (!$char_result) {
-                    echo "<tr><td colspan='8'>Query Error: " . mysqli_error($conn) . "</td></tr>";
+                    echo "<tr><td colspan='2'>Query Error: " . mysqli_error($conn) . "</td></tr>";
                 } elseif (mysqli_num_rows($char_result) > 0) {
                     while ($char = mysqli_fetch_assoc($char_result)) {
                         $is_npc = ($char['player_name'] === 'NPC');
@@ -152,26 +146,7 @@ include __DIR__ . '/../includes/header.php';
                     <tr class="character-row" data-type="<?php echo $is_npc ? 'npc' : 'pc'; ?>" 
                         data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
                         data-clan="<?php echo htmlspecialchars($char['clan'] ?? 'Unknown'); ?>">
-                        <td><?php echo $char['id']; ?></td>
                         <td><strong><?php echo htmlspecialchars($char['character_name']); ?></strong></td>
-                        <td>
-                            <?php if ($is_npc): ?>
-                                <span class="badge-npc">NPC</span>
-                            <?php else: ?>
-                                <?php echo htmlspecialchars($char['player_name']); ?>
-                            <?php endif; ?>
-                        </td>
-                        <td><?php echo htmlspecialchars($char['clan'] ?? 'Unknown'); ?></td>
-                        <td><?php echo $char['generation']; ?>th</td>
-                        <td>
-                            <?php
-                            $status = $char['status'] ?? 'draft';
-                            $badge_class = 'badge-' . $status;
-                            $status_display = ucfirst($status);
-                            ?>
-                            <span class="<?php echo $badge_class; ?>"><?php echo $status_display; ?></span>
-                        </td>
-                        <td><?php echo date('M j, Y', strtotime($char['created_at'])); ?></td>
                         <td class="actions">
                             <button class="action-btn view-btn" 
                                     data-id="<?php echo $char['id']; ?>"
@@ -189,7 +164,7 @@ include __DIR__ . '/../includes/header.php';
                 <?php 
                     }
                 } else {
-                    echo "<tr><td colspan='8' class='empty-state'>No characters found.</td></tr>";
+                    echo "<tr><td colspan='2' class='empty-state'>No characters found.</td></tr>";
                 }
                 ?>
             </tbody>
@@ -291,8 +266,28 @@ include __DIR__ . '/../includes/header.php';
 .stat-mini .stat-number { font-family: var(--font-brand), 'IM Fell English', serif; font-size: 1.8em; color: #8B0000; font-weight: bold; }
 .stat-mini .stat-label { font-family: var(--font-body), 'Source Serif Pro', serif; font-size: 0.85em; color: #b8a090; margin-top: 5px; }
 
-.character-table-wrapper { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 2px solid #8B0000; border-radius: 8px; overflow: hidden; }
-.character-table { width: 100%; border-collapse: collapse; }
+.character-table-wrapper { 
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); 
+    border: 2px solid #8B0000; 
+    border-radius: 8px; 
+    overflow-x: auto; 
+    overflow-y: visible;
+    scrollbar-width: thin; /* Firefox - thin scrollbar on desktop */
+    scrollbar-color: rgba(139, 0, 0, 0.6) rgba(26, 15, 15, 0.3);
+}
+
+/* Hide scrollbar on mobile/tablet to prevent clipping sticky columns */
+@media (max-width: 768px) {
+    .character-table-wrapper {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+    
+    .character-table-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+}
+.character-table { width: auto; border-collapse: collapse; }
 .character-table thead { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); }
 .character-table th { padding: 15px 12px; text-align: left; font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-weight: 700; cursor: pointer; user-select: none; }
 .character-table th:hover { background: rgba(179, 0, 0, 0.3); }
@@ -307,6 +302,7 @@ include __DIR__ . '/../includes/header.php';
 .character-table td { padding: 12px; font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; }
 .character-table td strong { color: #f5e6d3; font-size: 1.05em; }
 
+
 .badge-npc { background: #4a1a6b; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-draft { background: #8B6508; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-finalized { background: #1a6b3a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
@@ -314,14 +310,37 @@ include __DIR__ . '/../includes/header.php';
 .badge-dead { background: #3a3a3a; color: #999; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-missing { background: #5a4a2a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 
-.actions { display: flex; gap: 8px; justify-content: center; }
-.action-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; text-decoration: none; font-size: 1.1em; cursor: pointer; background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); transition: all 0.2s; }
+/* Character Name column - shrink to fit content */
+.character-table th[data-sort="character_name"],
+.character-table td:first-child {
+    padding: 12px;
+    width: 1%;
+    white-space: nowrap;
+}
+
+/* Actions column - shrink to fit buttons */
+.character-table th:last-child,
+.character-table td.actions {
+    padding: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
+    width: 1%;
+}
+
+.actions { display: flex; gap: 8px; justify-content: center; align-items: center; white-space: nowrap; }
+.action-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; text-decoration: none; font-size: 1.1em; cursor: pointer; background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); transition: all 0.2s; flex-shrink: 0; }
 .action-btn:hover { background: rgba(139, 0, 0, 0.4); transform: scale(1.1); }
 .view-btn { background: rgba(0, 100, 200, 0.2); border-color: rgba(0, 100, 200, 0.4); }
 .view-btn:hover { background: rgba(0, 100, 200, 0.4); }
 .edit-btn { background: rgba(139, 100, 0, 0.2); border-color: rgba(139, 100, 0, 0.4); }
 .edit-btn:hover { background: rgba(139, 100, 0, 0.4); }
-.delete-btn { background: rgba(139, 0, 0, 0.2); border-color: rgba(139, 0, 0, 0.4); }
+.delete-btn { 
+    display: inline-flex !important;
+    background: rgba(139, 0, 0, 0.2); 
+    border-color: rgba(139, 0, 0, 0.4); 
+}
+.delete-btn:hover { background: rgba(139, 0, 0, 0.4); }
 .empty-state { text-align: center; padding: 40px; color: #b8a090; font-style: italic; }
 
 .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; }
@@ -652,6 +671,333 @@ include __DIR__ . '/../includes/header.php';
     
 /* Bootstrap handles responsive columns automatically */
 }
+
+/* iPad and Tablet Devices (768px) */
+@media (min-width: 431px) and (max-width: 768px) {
+    .admin-panel-container {
+        padding: 25px 20px;
+    }
+    
+    .panel-title {
+        font-size: 2.2em;
+    }
+    
+    .panel-subtitle {
+        font-size: 1.1em;
+    }
+    
+    /* Optimize table wrapper for tablet */
+    .character-table-wrapper {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+        border: 2px solid #8B0000;
+        border-radius: 8px;
+        padding: 5px;
+        /* Hide scrollbar but keep functionality */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(139, 0, 0, 0.5) transparent;
+    }
+    
+    /* Hide scrollbar on mobile to prevent clipping buttons */
+    .character-table-wrapper {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+    
+    .character-table-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+    
+    /* Add subtle scroll indicator */
+    .character-table-wrapper::before {
+        content: '';
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 25px;
+        pointer-events: none;
+        z-index: 5;
+        background: linear-gradient(to right, rgba(26, 15, 15, 0.9), transparent);
+    }
+    
+    /* Table sizing for better tablet readability */
+    .character-table {
+        width: auto;
+    }
+    
+    .character-table th,
+    .character-table td {
+        padding: 14px 12px;
+        font-size: 0.95em;
+        white-space: nowrap;
+    }
+    
+    /* Simplified 2-column layout - no sticky positioning needed */
+    .character-table th:first-child,
+    .character-table td:first-child {
+        padding: 14px 12px;
+    }
+    
+    .character-table th:last-child,
+    .character-table td.actions {
+        padding: 14px 12px;
+        text-align: center;
+    }
+    
+    /* Larger action buttons for tablet touch */
+    .action-btn {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 1.3em;
+        padding: 8px;
+        margin: 0 4px;
+        flex-shrink: 0; /* Prevent buttons from shrinking */
+    }
+    
+    /* Remove scroll hint on tablet - scrollbar is visible */
+    .character-table-wrapper::after {
+        display: none;
+    }
+    
+    /* Tablet-optimized pagination */
+    .pagination-controls {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .pagination-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 48px;
+        min-height: 48px;
+        font-size: 1em;
+    }
+}
+
+/* iPhone SE and Small Mobile Devices (max-width: 375px) */
+@media (max-width: 375px) {
+    .admin-panel-container {
+        padding: 15px 10px;
+    }
+    
+    .panel-title {
+        font-size: 1.8em;
+    }
+    
+    .panel-subtitle {
+        font-size: 1em;
+    }
+    
+    /* Make table wrapper more obviously scrollable */
+    .character-table-wrapper {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        /* Add visual scroll indicator */
+        background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+        border: 2px solid #8B0000;
+        border-radius: 8px;
+    }
+    
+    /* Add scroll shadow indicators */
+    .character-table-wrapper::before {
+        content: '';
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        pointer-events: none;
+        z-index: 5;
+        background: linear-gradient(to right, rgba(26, 15, 15, 0.95), transparent);
+    }
+    
+    /* Make table cells more compact */
+    .character-table {
+        width: auto;
+    }
+    
+    .character-table th,
+    .character-table td {
+        padding: 10px 8px;
+        font-size: 0.85em;
+        white-space: nowrap;
+    }
+    
+    /* Simplified 2-column layout */
+    .character-table th:last-child,
+    .character-table td.actions {
+        padding: 10px 8px;
+        text-align: center;
+    }
+    
+    /* Make action buttons larger and more touch-friendly */
+    .action-btn {
+        min-width: 36px;
+        min-height: 36px;
+        font-size: 1.2em;
+        padding: 6px;
+        margin: 0 2px;
+    }
+    
+    /* Add scroll hint */
+    .character-table-wrapper {
+        position: relative;
+    }
+    
+    .character-table-wrapper::after {
+        content: '← Scroll →';
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        color: rgba(201, 169, 110, 0.6);
+        font-size: 0.75em;
+        font-family: var(--font-body), 'Source Serif Pro', serif;
+        pointer-events: none;
+        z-index: 4;
+        animation: fadeInOut 3s ease-in-out infinite;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+    }
+    
+    /* Better pagination on mobile */
+    .pagination-controls {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .pagination-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* iPhone 14 Pro Max and Medium Mobile Devices (max-width: 430px) */
+@media (max-width: 430px) and (min-width: 376px) {
+    .admin-panel-container {
+        padding: 20px 15px;
+    }
+    
+    .panel-title {
+        font-size: 2em;
+    }
+    
+    .panel-subtitle {
+        font-size: 1.05em;
+    }
+    
+    /* Make table wrapper more obviously scrollable */
+    .character-table-wrapper {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+        border: 2px solid #8B0000;
+        border-radius: 8px;
+    }
+    
+    /* Add scroll shadow indicator */
+    .character-table-wrapper::before {
+        content: '';
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        pointer-events: none;
+        z-index: 5;
+        background: linear-gradient(to right, rgba(26, 15, 15, 0.95), transparent);
+    }
+    
+    /* Make table cells more compact but slightly larger than iPhone SE */
+    .character-table {
+        width: auto;
+    }
+    
+    .character-table th,
+    .character-table td {
+        padding: 12px 10px;
+        font-size: 0.9em;
+        white-space: nowrap;
+    }
+    
+    /* Simplified 2-column layout */
+    .character-table th:first-child,
+    .character-table td:first-child {
+        padding: 12px 10px;
+    }
+    
+    .character-table th:last-child,
+    .character-table td.actions {
+        padding: 12px 10px;
+        text-align: center;
+    }
+    
+    /* Make action buttons larger and more touch-friendly */
+    .action-btn {
+        min-width: 38px;
+        min-height: 38px;
+        font-size: 1.25em;
+        padding: 7px;
+        margin: 0 3px;
+    }
+    
+    /* Add scroll hint */
+    .character-table-wrapper::after {
+        content: '← Scroll →';
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        color: rgba(201, 169, 110, 0.6);
+        font-size: 0.8em;
+        font-family: var(--font-body), 'Source Serif Pro', serif;
+        pointer-events: none;
+        z-index: 4;
+        animation: fadeInOut 3s ease-in-out infinite;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Better pagination on mobile */
+    .pagination-controls {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .pagination-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
 .modal-message { font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; font-size: 1.1em; margin-bottom: 10px; }
 .modal-character-name { font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-size: 1.4em; text-align: center; margin: 20px 0; font-weight: bold; }
 .modal-warning { background: rgba(139, 0, 0, 0.3); border-left: 4px solid #8B0000; padding: 15px; margin: 20px 0; color: #f5e6d3; }
@@ -665,5 +1011,8 @@ include __DIR__ . '/../includes/header.php';
 
 <!-- Include the external JavaScript file for admin panel functionality -->
 <script src="../js/admin_panel.js"></script>
+<script>
+// No auto-scroll needed - Name and Actions columns are sticky and always visible
+</script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

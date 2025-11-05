@@ -1,6 +1,33 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.10 (Current)
+## Version 0.9.11 (Current)
+**Date:** January 2025
+
+### Admin Panel Table Layout Fixes:
+- ✅ **Simplified Table Structure** - Reduced admin panel character table from 8 columns to 2 columns (Character Name + Actions)
+- ✅ **Removed Hidden Columns** - Eliminated ID, Player, Clan, Gen, Status, and Created columns per user requirements
+- ✅ **Fixed Column Widths** - Removed all `min-width` constraints from table columns and cells
+- ✅ **Action Buttons Visibility** - Made Delete button visible (removed `display: none`)
+- ✅ **Removed Sticky Positioning** - Eliminated sticky column CSS that caused spacing and clipping issues
+- ✅ **Auto-Width Columns** - Set columns to `width: 1%` with `white-space: nowrap` for content-based sizing
+
+### Technical Improvements:
+- **Table Layout** - Changed from `width: 100%` to `width: auto` for natural table sizing
+- **Column Sizing** - Character Name column now sizes to longest name, Actions column sizes to button width
+- **CSS Cleanup** - Removed all `min-width` properties from table-related CSS (kept for touch targets and form elements)
+- **Responsive CSS** - Updated all media query breakpoints to remove min-width constraints from tables
+
+### Files Modified:
+- `admin/admin_panel.php` - Simplified table structure, removed unnecessary columns, fixed CSS for proper column sizing
+
+### Impact:
+- **Table Layout** - Clean, minimal 2-column layout showing only Character Name and Actions
+- **User Experience** - Columns now properly sized to content, no wasted space
+- **Code Quality** - Removed problematic CSS patterns (min-width on columns, sticky positioning)
+- **Maintainability** - Simplified table structure easier to maintain and extend
+
+---
+## Version 0.9.10
 **Date:** November 2025
 
 ### Git Workflow Fix:
