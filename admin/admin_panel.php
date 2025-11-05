@@ -121,7 +121,7 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <!-- Character Table -->
-    <div class="character-table-wrapper table-responsive">
+    <div class="character-table-wrapper">
         <table class="character-table" id="characterTable">
             <thead>
                 <tr>
@@ -274,6 +274,25 @@ include __DIR__ . '/../includes/header.php';
     overflow-y: visible;
     scrollbar-width: thin; /* Firefox - thin scrollbar on desktop */
     scrollbar-color: rgba(139, 0, 0, 0.6) rgba(26, 15, 15, 0.3);
+    padding: 0 !important; /* Remove any default padding */
+    margin-left: -20px; /* Compensate for container padding */
+    margin-right: -20px; /* Compensate for container padding */
+    width: calc(100% + 40px); /* Extend to full width including negative margins */
+    box-sizing: border-box; /* Include border in width calculation */
+}
+
+/* Override global.css table-responsive styles if class is present */
+.character-table-wrapper.table-responsive {
+    padding: 0 !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    width: calc(100% + 40px) !important;
+}
+
+/* Ensure table takes full width of wrapper */
+.character-table-wrapper .character-table {
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 /* Hide scrollbar on mobile/tablet to prevent clipping sticky columns */
@@ -287,7 +306,13 @@ include __DIR__ . '/../includes/header.php';
         display: none; /* Chrome/Safari/Opera */
     }
 }
-.character-table { width: auto; border-collapse: collapse; }
+.character-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 0;
+    padding: 0;
+    table-layout: fixed; /* Force table to respect column widths */
+}
 .character-table thead { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); }
 .character-table th { padding: 15px 12px; text-align: left; font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-weight: 700; cursor: pointer; user-select: none; }
 .character-table th:hover { background: rgba(179, 0, 0, 0.3); }
@@ -310,25 +335,36 @@ include __DIR__ . '/../includes/header.php';
 .badge-dead { background: #3a3a3a; color: #999; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-missing { background: #5a4a2a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 
-/* Character Name column - shrink to fit content */
+/* Character Name column - expand to fill available space */
 .character-table th[data-sort="character_name"],
 .character-table td:first-child {
     padding: 12px;
-    width: 1%;
-    white-space: nowrap;
+    width: auto; /* Takes remaining space */
 }
 
-/* Actions column - shrink to fit buttons */
-.character-table th:last-child,
+/* Actions column - fixed narrow width on the right */
+.character-table th:last-child {
+    padding: 15px 6px 15px 12px !important;
+    text-align: right !important;
+    width: 120px !important; /* Fixed width instead of 1% */
+}
+
 .character-table td.actions {
-    padding: 12px;
-    text-align: center;
-    white-space: nowrap;
+    padding: 12px 6px 12px 12px !important;
+    text-align: right !important;
     overflow: visible;
-    width: 1%;
+    width: 120px !important; /* Fixed width to match header */
+    max-width: 120px !important;
 }
 
-.actions { display: flex; gap: 8px; justify-content: center; align-items: center; white-space: nowrap; }
+.actions { 
+    display: flex; 
+    gap: 8px; 
+    justify-content: flex-end; 
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+}
 .action-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; text-decoration: none; font-size: 1.1em; cursor: pointer; background: rgba(139, 0, 0, 0.2); border: 1px solid rgba(139, 0, 0, 0.4); transition: all 0.2s; flex-shrink: 0; }
 .action-btn:hover { background: rgba(139, 0, 0, 0.4); transform: scale(1.1); }
 .view-btn { background: rgba(0, 100, 200, 0.2); border-color: rgba(0, 100, 200, 0.4); }
@@ -726,7 +762,7 @@ include __DIR__ . '/../includes/header.php';
     
     /* Table sizing for better tablet readability */
     .character-table {
-        width: auto;
+        width: 100%;
     }
     
     .character-table th,
@@ -825,7 +861,7 @@ include __DIR__ . '/../includes/header.php';
     
     /* Make table cells more compact */
     .character-table {
-        width: auto;
+        width: 100%;
     }
     
     .character-table th,
@@ -934,7 +970,7 @@ include __DIR__ . '/../includes/header.php';
     
     /* Make table cells more compact but slightly larger than iPhone SE */
     .character-table {
-        width: auto;
+        width: 100%;
     }
     
     .character-table th,

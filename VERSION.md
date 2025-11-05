@@ -1,6 +1,34 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.11 (Current)
+## Version 0.9.12 (Current)
+**Date:** January 2025
+
+### Admin Panel Actions Column Alignment:
+- ✅ **Right Alignment Fixed** - Actions column now properly aligned to right edge of table
+- ✅ **Table Layout Fixed** - Changed to `table-layout: fixed` with `width: 100%` for proper column control
+- ✅ **Fixed Column Width** - Actions column set to fixed `width: 120px` instead of percentage-based
+- ✅ **Container Padding Compensation** - Added negative margins to extend table wrapper to container edges
+- ✅ **Bootstrap Class Removed** - Removed `table-responsive` class to eliminate Bootstrap padding interference
+- ✅ **Right Padding Added** - Added 6px padding-right to Actions column for visual spacing
+- ✅ **Box-Sizing Fix** - Added `box-sizing: border-box` to wrapper to properly account for border width
+
+### Technical Improvements:
+- **Table Layout Algorithm** - Using `table-layout: fixed` enforces column width specifications
+- **Wrapper Extension** - Negative margins (`-20px`) compensate for container padding, extend to edges
+- **Border Handling** - `box-sizing: border-box` ensures border is included in width calculation
+- **CSS Overrides** - Added specific overrides for Bootstrap and global.css table-responsive styles
+
+### Files Modified:
+- `admin/admin_panel.php` - Fixed table layout, wrapper margins, Actions column width and padding
+
+### Impact:
+- **Visual Alignment** - Actions column now properly positioned on right side of page
+- **Layout Stability** - Fixed column widths prevent layout shifts and positioning issues
+- **Code Quality** - Removed Bootstrap dependency, cleaner CSS with explicit sizing
+
+---
+
+## Version 0.9.11
 **Date:** January 2025
 
 ### Admin Panel Table Layout Fixes:
