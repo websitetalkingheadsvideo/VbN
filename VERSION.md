@@ -1,6 +1,26 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.14 (Current)
+## Version 0.9.15 (Current)
+**Date:** November 2025
+
+### ComfyUI Removal & Taskmaster Integration:
+- ✅ **ComfyUI Removal Plan** - Created Taskmaster plan to completely remove ComfyUI from project
+- ✅ **Taskmaster Initialization** - Initialized Taskmaster project management system
+- ✅ **Removal Tasks Created** - Generated 5 tasks for systematic ComfyUI removal
+- ✅ **Workflow Cleanup** - Identified ComfyUI workflow JSON files for deletion
+
+### Files Created:
+- `.taskmaster/docs/remove_comfyui_prd.txt` - PRD for ComfyUI removal
+- `.taskmaster/tasks/tasks.json` - Taskmaster task list with removal tasks
+
+### Impact:
+- **Project Cleanup** - Systematic plan to remove unused ComfyUI integration
+- **Task Management** - Taskmaster system now available for project management
+- **Code Quality** - Removing unused dependencies improves project maintainability
+
+---
+
+## Version 0.9.14
 **Date:** January 2025
 
 ### Trait System Updates & Character Data Cleanup:
