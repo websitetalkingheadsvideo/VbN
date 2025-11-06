@@ -1,6 +1,30 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.15 (Current)
+## Version 0.9.16 (Current)
+**Date:** January 2025
+
+### Admin Panel Sorting Fix & File Management:
+- ✅ **Name Sorting Fix** - Fixed admin panel character name sorting (incorrect column index)
+- ✅ **Reference Files Added** - Added 4 character JSON files, location data, and relationship documentation
+- ✅ **Character Images Added** - Added 10 character images and supporting workflow files
+- ✅ **Git Configuration** - Removed image file ignores to allow tracking character images
+
+### Files Modified:
+- `js/admin_panel.js` - Fixed character name sorting column index
+- `.gitignore` - Removed image file ignores
+
+### Files Added:
+- Multiple character JSON files, location data, documentation, and character images
+- See `docs/CHAT_REPORT_ADMIN_PANEL_SORTING.mdc` for complete list
+
+### Impact:
+- **User Experience** - Admin panel name sorting now functional
+- **Asset Management** - Character images can now be version controlled
+- **Project Organization** - New reference files properly tracked
+
+---
+
+## Version 0.9.15
 **Date:** November 2025
 
 ### ComfyUI Removal & Taskmaster Integration:

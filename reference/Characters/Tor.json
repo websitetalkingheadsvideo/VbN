@@ -1,0 +1,106 @@
+{
+    "character_name": "Tor",
+    "player_name": "NPC",
+    "chronicle": "Valley by Night",
+    "nature": "Child",
+    "demeanor": "Loyalist",
+    "concept": "Apt pupil ghoul bound to Mr. Ashby",
+    "clan": "Ghoul (Malkavian blood)",
+    "generation": 13,
+    "sire": "Mr. Harold Ashby",
+    "pc": 0,
+    "biography": "Once a lonely, simple handyman drifting between jobs along the Arizona highways, Tor met Mr. Ashby when his truck broke down outside Mesa. The Malkavian offered him water, and a drop of vitae — a gift that changed everything. Ashby became his teacher and master, teaching him to 'listen' to the quiet beneath grief. Tor now serves him in Sun City, tending to the homes of the elderly and unwittingly helping arrange their ritual deaths. Loyal, gentle, and manipulated, Tor believes he is helping souls find peace.",
+    "character_image": null,
+    "equipment": "Tool belt, rusted pickup truck, work gloves, small Bible, cracked photo frame showing him with Mr. Ashby (Ashby’s face scratched out).",
+    "notes": "Tor is physically imposing yet emotionally fragile. Speaks softly, rarely makes eye contact. Collects broken things, hums when nervous. Complete blood bond to Mr. Ashby.",
+    "agentNotes": null,
+    "actingNotes": "Portray Tor with childlike sincerity and quiet strength. He rarely lies, but his understanding of events is distorted by loyalty and Dementation influence. Dialogue should feel hesitant and reverent: 'Mister A says I help people rest.'",
+    "status": "active",
+    "total_xp": 30,
+    "spent_xp": 0,
+    "custom_data": {},
+    "traits": {
+      "Physical": [
+        {"Strength": 4},
+        {"Dexterity": 2},
+        {"Stamina": 3}
+      ],
+      "Social": [
+        {"Charisma": 1},
+        {"Manipulation": 1},
+        {"Appearance": 1}
+      ],
+      "Mental": [
+        {"Perception": 2},
+        {"Intelligence": 1},
+        {"Wits": 2}
+      ]
+    },
+    "negativeTraits": {
+      "Physical": [],
+      "Social": [],
+      "Mental": []
+    },
+    "abilities": [
+      {"Brawl": 3},
+      {"Crafts": 2},
+      {"Survival": 2},
+      {"Awareness": 1},
+      {"Athletics": 2}
+    ],
+    "ability_specializations": [],
+    "disciplines": [
+      {"Potence": 1},
+      {"Obfuscate": 1}
+    ],
+    "backgrounds": {
+      "Resources": 1,
+      "Haven": 1,
+      "Retainer": 0
+    },
+    "backgroundDetails": {
+      "Haven": "Small rented room attached to a workshop near Sun City outskirts.",
+      "Resources": "Minimal — odd jobs, minor cash gifts from Mr. Ashby."
+    },
+    "morality": {
+      "path_name": "Humanity",
+      "path_rating": 5,
+      "conscience": 3,
+      "self_control": 2,
+      "courage": 4,
+      "willpower_permanent": 5,
+      "willpower_current": 5,
+      "humanity": 5
+    },
+    "merits_flaws": [
+      {"Merit": "Strong Back (1 pt)"},
+      {"Flaw": "Gullible (2 pt)"},
+      {"Flaw": "Dependent (Mr. Ashby) (1 pt)"}
+    ],
+    "status": {
+      "sect_status": "",
+      "clan_status": "",
+      "city_status": "",
+      "health_levels": 7,
+      "blood_pool_current": 3,
+      "blood_pool_maximum": 10
+    },
+    "coteries": [],
+    "relationships": [
+      {
+        "character": "Mr. Harold Ashby",
+        "relationship_type": "Master / Mentor",
+        "details": "Tor’s domitor and teacher. He is emotionally and supernaturally bound to Ashby by a full blood bond."
+      },
+      {
+        "character": "Richard Lyle",
+        "relationship_type": "Distant Acquaintance",
+        "details": "Tor occasionally saw Richard at the Golden Hours center, mistaking his kindness for suspicion."
+      }
+    ],
+    "rituals": [],
+    "specializations": {},
+    "research_notes": {},
+    "artifacts": []
+  }
+  

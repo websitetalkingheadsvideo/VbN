@@ -165,8 +165,8 @@ function sortTable(column, direction) {
                 bVal = parseInt(bCells[0].textContent);
                 break;
             case 'character_name':
-                aVal = aCells[1].textContent.trim().toLowerCase();
-                bVal = bCells[1].textContent.trim().toLowerCase();
+                aVal = aCells[0].textContent.trim().toLowerCase();
+                bVal = bCells[0].textContent.trim().toLowerCase();
                 break;
             case 'player_name':
                 aVal = aCells[2].textContent.trim().toLowerCase();

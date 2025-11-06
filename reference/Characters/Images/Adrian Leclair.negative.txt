@@ -1,0 +1,1 @@
+Avoid: daylight, sunlight, flat lighting, harsh HDR, oversaturated colors, cartoon or anime style, comedic tone, gore, disfigurement, extra fingers, deformed anatomy, low-res, blur, text or watermarks, lens flare artifacts, glowing eyes or supernatural eye effects

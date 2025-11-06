@@ -1,0 +1,158 @@
+{
+  "character_name": "Mr. Harold Ashby",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Visionary",
+  "demeanor": "Architect",
+  "concept": "Ritualistic Malkavian killer obsessed with capturing 'quiet' moments of grief",
+  "clan": "Malkavian",
+  "generation": 10,
+  "sire": "Unknown Malkavian elder",
+  "pc": 0,
+  "biography": "Harold Ashby was once a photographer specializing in funerary portraits. His obsession with the silence of death drew the attention of a Malkavian who Embraced him to preserve his 'art'. Now, Ashby lives in Sun City, staging ritualized murders of grieving elders as acts of 'preservation'. He manipulates his ghoul Tor through the promise of understanding the 'pattern beneath grief.' His havens are immaculate, filled with photographs of victims posed at peace.",
+  "character_image": null,
+  "equipment": "Vintage Rolleiflex camera, notebooks filled with patterns and numerology, folding knife, small silver flask (blood-stained interior).",
+  "notes": "Speaks in calm, teacherly tones. Prefers order and ritual over chaos. Sees each death as part of a divine pattern only he can interpret.",
+  "agentNotes": null,
+  "actingNotes": "Play Ashby as calm and intellectual \u2014 never raving. He believes himself to be performing acts of mercy, not murder. Every word should sound like instruction. He rarely raises his voice and maintains eye contact longer than is comfortable.",
+  "status": {
+    "sect_status": "Camarilla (low profile)",
+    "clan_status": "Respected eccentric within clan",
+    "city_status": "Unknown to most",
+    "health_levels": 7,
+    "blood_pool_current": 10,
+    "blood_pool_maximum": 13
+  },
+  "total_xp": 30,
+  "spent_xp": 0,
+  "custom_data": {},
+  "traits": {
+    "Physical": [
+      {
+        "Strength": 2
+      },
+      {
+        "Dexterity": 3
+      },
+      {
+        "Stamina": 2
+      }
+    ],
+    "Social": [
+      {
+        "Charisma": 2
+      },
+      {
+        "Manipulation": 3
+      },
+      {
+        "Appearance": 2
+      }
+    ],
+    "Mental": [
+      {
+        "Perception": 4
+      },
+      {
+        "Intelligence": 3
+      },
+      {
+        "Wits": 2
+      }
+    ]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "abilities": [
+    {
+      "Academics": 2
+    },
+    {
+      "Investigation": 3
+    },
+    {
+      "Occult": 2
+    },
+    {
+      "Stealth": 2
+    },
+    {
+      "Subterfuge": 2
+    },
+    {
+      "Crafts": 2
+    }
+  ],
+  "ability_specializations": [],
+  "disciplines": [
+    {
+      "Auspex": 2
+    },
+    {
+      "Obfuscate": 2
+    },
+    {
+      "Dementation": 1
+    }
+  ],
+  "backgrounds": {
+    "Resources": 2,
+    "Contacts": 2,
+    "Haven": 2,
+    "Retainer": 1
+  },
+  "backgroundDetails": {
+    "Resources": "Old life insurance policies and retirement savings from victims laundered through art sales.",
+    "Contacts": "Two quiet Malkavians and one hospice nurse in Sun City who reports ideal 'subjects'.",
+    "Haven": "An immaculate duplex converted into a private darkroom and study.",
+    "Retainer": "Tor, his ghoul and student."
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 3,
+    "conscience": 2,
+    "self_control": 3,
+    "courage": 2,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 3
+  },
+  "merits_flaws": [
+    {
+      "Merit": "Calm Heart (3 pt)"
+    },
+    {
+      "Flaw": "Obsession (Capturing Moments of Grief) (2 pt)"
+    },
+    {
+      "Flaw": "Derangement (Pattern Compulsion) (3 pt)"
+    }
+  ],
+  "coteries": [],
+  "relationships": [
+    {
+      "character": "Tor",
+      "relationship_type": "Ghoul / Apt Pupil",
+      "details": "Completely devoted to Ashby. Acts as servant and student. Ashby manipulates him with paternal affection."
+    },
+    {
+      "character": "Richard Lyle",
+      "relationship_type": "Political Acquaintance",
+      "details": "A Toreador who suspects Ashby's involvement but lacks proof. Ashby sees him as a potential distraction for investigators."
+    }
+  ],
+  "rituals": [],
+  "specializations": {},
+  "research_notes": {
+    "Philosophy": "Ashby records symbolic correspondences between deaths, seeking a pattern that will 'end the noise of humanity'. His notes are written in photographic exposure shorthand."
+  },
+  "artifacts": [
+    {
+      "name": "Silver Flask",
+      "description": "Carried from his mortal life, always half-full of vitae. Symbol of his 'communion with silence.'"
+    }
+  ]
+}

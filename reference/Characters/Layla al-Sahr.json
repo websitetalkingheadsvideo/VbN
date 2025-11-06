@@ -1,0 +1,66 @@
+{
+    "character_name": "Layla al-Sahr",
+    "alias": "Lydia Sahr",
+    "player_name": "NPC",
+    "clan_true": "Banu Haqim (Assamite)",
+    "clan_cover": "Malkavian",
+    "sect": "Camarilla (by deception)",
+    "generation": "10th",
+    "apparent_age": "Late 20s",
+    "real_age": "Approximately 60 years",
+    "concept": "Backup Assassin posing as a Malkavian visitor",
+    "nature": "Soldier",
+    "demeanor": "Visionary",
+    "sire": "Misfortune (claim)",
+    "haven": "Temporary suite in a Scottsdale boutique hotel, rented under alias",
+    "attributes": {
+      "physical": "Excellent (Dexterous, Graceful, Quick, Precise)",
+      "social": "Good (Charming, Controlled, Poised)",
+      "mental": "Good (Perceptive, Disciplined, Clever)"
+    },
+    "abilities": {
+      "alertness": 2,
+      "athletics": 2,
+      "disguise": 3,
+      "subterfuge": 4,
+      "stealth": 4,
+      "melee": 3,
+      "empathy": 2,
+      "investigation": 3,
+      "expression": 1
+    },
+    "disciplines_true": {
+      "quietus": "••",
+      "obfuscate": "••••",
+      "celerity": "••"
+    },
+    "disciplines_pretended": {
+      "auspex": "•",
+      "obfuscate": "••••"
+    },
+    "backgrounds": {
+      "contacts": 1,
+      "resources": 2,
+      "false_identity": 2,
+      "concealed_weapon": 1
+    },
+    "virtues": {
+      "conviction": 3,
+      "instinct": 2,
+      "courage": 3
+    },
+    "morality": {
+      "path": "Humanity",
+      "humanity": 6
+    },
+    "willpower": 7,
+    "description": "Layla al-Sahr was sent to Phoenix as the backup operative the night the Prince was slain. Her cover: a Malkavian from Salt Lake visiting her 'sire,' Misfortune. When the primary assassin struck and never returned, she was left stranded in Elysium—mission incomplete, cover active, and every eye upon her.",
+    "rumors": [
+      "She arrived moments before the Prince was found dead.",
+      "Misfortune plays along with her claim, though he never mentioned her before.",
+      "Tremere investigators found traces of Quietus near the scene.",
+      "She never feeds in public and always knows when someone is watching."
+    ],
+    "notes": "Layla's true assignment was not to perform the kill, but to extract the primary assassin after the hit. She was the backup and cleanup specialist, ensuring the contract ended cleanly with no trace. When the Prince fell, the first assassin—codename 'Anwar'—never appeared at the rendezvous point. Layla found only faint Quietus residue and signs of a struggle. Now stranded in Phoenix with her handler missing and extraction impossible, she must maintain her Malkavian cover under increasing suspicion while covertly searching for her lost comrade. Her predicament intertwines with the city's chaos: Misfortune’s surprise 'childe,' Tremere investigation, and Harpy gossip all circle her presence. Whether she will vanish quietly, hunt for Anwar, or accept a new role within Phoenix’s deadly politics remains uncertain."
+  }
+  

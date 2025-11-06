@@ -3,12 +3,8 @@
 *.PDF
 # Note: reference/Books/ and reference/Scenes/ folders themselves can contain tracked files (just not PDFs)
 
-# Character images
-reference/Characters/Images/
-*.webp
-*.jpg
-*.jpeg
-*.png
+# Character images - allow tracking in reference/Characters/Images/
+# (removed global image ignores to allow tracking character images)
 
 # Always track JSON files in Characters folder (even if *.json is ignored elsewhere)
 !reference/Characters/*.json

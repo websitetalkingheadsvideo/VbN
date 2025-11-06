@@ -1,0 +1,84 @@
+{
+  "havens": [
+    {
+      "haven_name": "The Reflection Wells",
+      "clan": "Toreador",
+      "faction": "Camarilla",
+      "location": "Central Phoenix, near Roosevelt Row",
+      "type": "Renovated Art Deco apartment complex",
+      "description": "Once a derelict building slated for demolition, The Reflection Wells has been transformed into an art commune and performance space. The upper floors house private apartments for select Toreador, while the lower level hosts salons and midnight recitals. Mirrors and light installations line the halls, both aesthetic and symbolic.",
+      "quest_unlock": "The Patron\u2019s Eye",
+      "quest_description": "Earn the trust of Cordelia Fairchild by curating or saving a notable artistic piece.",
+      "features": [
+        "Improves Influence (Art, Culture)",
+        "Occasional mortal visitors risk Masquerade breaches",
+        "Access to Gallery Network (Toreador-only gossip line)"
+      ],
+      "player_name": "NPC"
+    },
+    {
+      "haven_name": "The Dry Veins",
+      "clan": "Nosferatu",
+      "faction": "Independent / Anarch",
+      "location": "Beneath Sky Harbor Airport access tunnels",
+      "type": "Abandoned subterranean infrastructure",
+      "description": "A labyrinth of maintenance shafts, sealed drainage tunnels, and forgotten sub-basements \u2014 home to Phoenix\u2019s Nosferatu warren. Graffiti tags mark safe paths, and crude monitors show hacked airport security feeds.",
+      "quest_unlock": "Echoes of Concrete",
+      "quest_description": "Retrieve a stolen data drive from an Anarch courier.",
+      "features": [
+        "Increases Stealth and Streetwise bonuses",
+        "Hidden information network access",
+        "Nosferatu or allies only (Camarilla members risk hostility)"
+      ],
+      "player_name": "NPC"
+    },
+    {
+      "haven_name": "Roadrunner\u2019s Nest",
+      "clan": "Gangrel",
+      "faction": "Independent",
+      "location": "Desert fringe between Apache Junction and the Superstition Mountains",
+      "type": "Desert trailer compound",
+      "description": "A scattered set of trailers and sheds hidden among cactus and stones. A fire pit, hunting trophies, and solar panels mark this quiet outpost. Few come here uninvited \u2014 and fewer leave without permission.",
+      "quest_unlock": "Wild Tracks",
+      "quest_description": "Track and eliminate a rogue lupine encroaching on the Valley border.",
+      "features": [
+        "Boosts Survival and Animal Ken",
+        "Lower risk of daytime discovery",
+        "Periodic encounters with desert spirits or Garou"
+      ],
+      "player_name": "NPC"
+    },
+    {
+      "haven_name": "The Velvet Door",
+      "clan": "Setite",
+      "faction": "Independent",
+      "location": "Mesa, inside an old theater-turned-nightclub",
+      "type": "Luxury nightclub and temple",
+      "description": "A lush, hypnotic den of vice. The Velvet Door\u2019s crimson and gold d\u00e9cor hides layers of temptation and control. The Setites operate it as both a business and sanctuary where mortal and Kindred desires intertwine.",
+      "quest_unlock": "Serpent\u2019s Tongue",
+      "quest_description": "Broker peace between a Setite priestess and a Camarilla Harpy.",
+      "features": [
+        "Access to Influence (Vice, Religion)",
+        "Boost to Social rolls (Presence, Subterfuge)",
+        "Hidden ritual chamber below the stage"
+      ],
+      "player_name": "NPC"
+    },
+    {
+      "haven_name": "The Asylum Grounds",
+      "clan": "Malkavian",
+      "faction": "Camarilla",
+      "location": "Perimeter of the Arizona State Hospital near 24th Street",
+      "type": "Abandoned medical wing repurposed as a private sanctum",
+      "description": "Hidden behind bricked windows and condemned signs, the Asylum Grounds serve as sanctuary for the Malkavians under their elder\u2019s watchful madness. Whispers echo through the halls, and the old operating lights still flicker faintly at night.",
+      "quest_unlock": "Glass Voices",
+      "quest_description": "Uncover the truth about an old patient record tied to the Prince\u2019s death.",
+      "features": [
+        "Improves Auspex and Insight",
+        "Random prophetic visions (can grant clues or mislead)",
+        "Camarilla-aligned but avoided by most Kindred"
+      ],
+      "player_name": "NPC"
+    }
+  ]
+}

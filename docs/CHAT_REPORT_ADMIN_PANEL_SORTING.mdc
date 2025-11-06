@@ -1,0 +1,118 @@
+# Chat Session Report - Admin Panel Name Sorting Fix & File Management
+
+### Session Summary
+- **Date:** January 2025
+- **Version:** 0.9.15 → 0.9.16 (Patch Increment)
+- **Work Type:** Bug Fix - Admin Panel Sorting & Git Configuration
+
+### What We Accomplished
+
+#### 1. Fixed Admin Panel Name Sorting
+- **Root Cause Identified** - Sorting function was reading character name from wrong column index (index 1 instead of 0)
+- **Column Index Fix** - Updated `sortTable()` function in `js/admin_panel.js` to read from `aCells[0]` instead of `aCells[1]`
+- **Sorting Functionality** - Character name column now properly sorts A-Z and Z-A when clicked
+- **Visual Feedback** - Sort icon correctly updates to show current sort direction (▲ ascending, ▼ descending)
+
+#### 2. Added Reference Files to Project
+- **Character Files** - Added 4 new character JSON files:
+  - `Layla al-Sahr.json`
+  - `Misfortune.json`
+  - `Tor.json`
+  - `harold_ashby_character_sheet.json`
+- **Location Files** - Added location data:
+  - `valley_by_night_havens.json`
+- **Documentation** - Added relationship system documentation:
+  - `Valley_by_Night_Relationship_Faction_Haven_System.md`
+
+#### 3. Added Character Images to Repository
+- **Image Files** - Force-added 10 character images (PNG, WEBP, JPG, JPEG formats):
+  - `Layla al-Sahr.png`
+  - `Misfortune.png`
+  - `Andrei Radulescu.png`
+  - `Bayside Bob.png`
+  - `Cordelia Fairchild.png`
+  - `Barry Washington.webp`
+  - `Sebastian and Sabine.jpeg`
+  - `Violet.jpg`
+  - Plus 2 ChatGPT-generated images
+- **Supporting Files** - Added ComfyUI workflow files and prompts:
+  - `Adrian Leclair.comfy.json`
+  - `Adrian Leclair.negative.txt`
+  - `Adrian Leclair.prompt.txt`
+  - `Adrian Leclair.render-instructions.md`
+  - `dark_gothic_workflow.json`
+
+#### 4. Updated Git Configuration
+- **Removed Image Ignores** - Removed global image file ignores (`*.png`, `*.webp`, `*.jpg`, `*.jpeg`) from `.gitignore`
+- **Removed Directory Ignore** - Removed `reference/Characters/Images/` directory ignore rule
+- **Image Tracking** - Character images in `reference/Characters/Images/` can now be tracked in git
+
+### Technical Implementation Details
+
+#### JavaScript Changes (`js/admin_panel.js`)
+- **Sort Function Fix** - Line 168: Changed `aCells[1]` to `aCells[0]` for character_name sorting
+- **Column Structure** - Table has 2 columns: Character Name (index 0) and Actions (index 1)
+- **Sort Logic** - Sorting now correctly reads character name from first column
+
+#### Git Configuration Changes (`.gitignore`)
+- **Removed Rules**:
+  - `reference/Characters/Images/` (directory ignore)
+  - `*.webp` (global ignore)
+  - `*.jpg` (global ignore)
+  - `*.jpeg` (global ignore)
+  - `*.png` (global ignore)
+- **Impact** - All image files can now be tracked, not just in specific directories
+
+### Bug Fixes Summary
+
+1. **Name Sorting Not Working** ✅
+   - **Root Cause**: Sorting function reading from column index 1 (Actions column) instead of index 0 (Character Name column)
+   - **Fix**: Changed `aCells[1]` to `aCells[0]` in `sortTable()` function for `character_name` case
+   - **Result**: Clicking "Character Name" header now properly sorts characters alphabetically
+
+### Files Modified
+- `js/admin_panel.js` - Fixed character name sorting column index
+- `.gitignore` - Removed image file ignores to allow tracking character images
+
+### Files Added
+- `reference/Characters/Layla al-Sahr.json`
+- `reference/Characters/Misfortune.json`
+- `reference/Characters/Tor.json`
+- `reference/Characters/harold_ashby_character_sheet.json`
+- `reference/Locations/valley_by_night_havens.json`
+- `reference/Valley_by_Night_Relationship_Faction_Haven_System.md`
+- `reference/Characters/Images/Layla al-Sahr.png`
+- `reference/Characters/Images/Misfortune.png`
+- `reference/Characters/Images/Andrei Radulescu.png`
+- `reference/Characters/Images/Bayside Bob.png`
+- `reference/Characters/Images/Cordelia Fairchild.png`
+- `reference/Characters/Images/Barry Washington.webp`
+- `reference/Characters/Images/Sebastian and Sabine.jpeg`
+- `reference/Characters/Images/Violet.jpg`
+- `reference/Characters/Images/ChatGPT Image Nov 5, 2025, 11_30_48 PM.png`
+- `reference/Characters/Images/ChatGPT Image Nov 6, 2025, 12_13_25 AM.png`
+- `reference/Characters/Images/Adrian Leclair.comfy.json`
+- `reference/Characters/Images/Adrian Leclair.negative.txt`
+- `reference/Characters/Images/Adrian Leclair.prompt.txt`
+- `reference/Characters/Images/Adrian Leclair.render-instructions.md`
+- `reference/Characters/Images/dark_gothic_workflow.json`
+- `reference/Characters/Images/_notes/dwsync.xml`
+
+### Current Status
+- **Name Sorting**: ✅ Working correctly - sorts A-Z and Z-A when clicking column header
+- **Image Tracking**: ✅ Character images can now be tracked in git
+- **Reference Files**: ✅ All new character, location, and documentation files added
+- **Git Configuration**: ✅ Updated to allow image file tracking
+
+### Impact Summary
+- **User Experience**: Admin panel name sorting now functional, making character management easier
+- **Project Organization**: New reference files properly tracked and organized
+- **Asset Management**: Character images can now be version controlled
+- **Code Quality**: Fixed incorrect column index reference in sorting logic
+
+### Lessons Learned
+- **Column Index Verification**: Always verify table column structure matches JavaScript array indices
+- **Git Ignore Patterns**: Global ignores can prevent tracking of important assets - use directory-specific rules when needed
+- **Force Add**: Use `git add -f` to override `.gitignore` rules when necessary, but consider updating ignore rules for consistency
+
+---
