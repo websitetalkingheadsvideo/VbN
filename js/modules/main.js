@@ -526,6 +526,13 @@ class CharacterCreationApp {
 					this.modules.disciplineSystem.updateAllDisplays();
 				}
                 
+                // Update trait displays immediately since state is already set
+                if (characterData.traits && this.modules.traitSystem) {
+                    setTimeout(() => {
+                        this.modules.traitSystem.updateAllDisplays();
+                    }, 100);
+                }
+                
                 // Populate form fields with loaded data (with a small delay to ensure DOM is ready)
                 setTimeout(() => {
                     this.populateFormFromCharacterData(characterData);
@@ -580,14 +587,32 @@ class CharacterCreationApp {
             });
         }, 100);
         
-        // Populate traits
+        // Populate traits - ensure state is set and displays are updated
         if (data.traits) {
             this.populateTraitsFromData(data.traits);
+            // Also ensure traits are in state (they should already be from loadCharacter, but double-check)
+            const currentState = this.modules.stateManager.getState();
+            if (!currentState.traits || Object.keys(currentState.traits).length === 0) {
+                this.modules.stateManager.setState({ traits: {
+                    Physical: Array.isArray(data.traits.Physical) ? data.traits.Physical : [],
+                    Social: Array.isArray(data.traits.Social) ? data.traits.Social : [],
+                    Mental: Array.isArray(data.traits.Mental) ? data.traits.Mental : []
+                }});
+            }
         }
         
-        // Populate negative traits
+        // Populate negative traits - ensure state is set and displays are updated
         if (data.negative_traits) {
             this.populateNegativeTraitsFromData(data.negative_traits);
+            // Also ensure negative traits are in state
+            const currentState = this.modules.stateManager.getState();
+            if (!currentState.negativeTraits || Object.keys(currentState.negativeTraits).length === 0) {
+                this.modules.stateManager.setState({ negativeTraits: {
+                    Physical: Array.isArray(data.negative_traits.Physical) ? data.negative_traits.Physical : [],
+                    Social: Array.isArray(data.negative_traits.Social) ? data.negative_traits.Social : [],
+                    Mental: Array.isArray(data.negative_traits.Mental) ? data.negative_traits.Mental : []
+                }});
+            }
         }
         
         // Populate abilities - prefer abilities_full if available (has levels), otherwise use abilities (category-based)
@@ -634,6 +659,13 @@ class CharacterCreationApp {
         if (data.merits_flaws) {
             this.populateMeritsFlawsFromData(data.merits_flaws);
         }
+        
+        // Final update of trait displays to ensure everything is shown
+        setTimeout(() => {
+            if (this.modules.traitSystem) {
+                this.modules.traitSystem.updateAllDisplays();
+            }
+        }, 600);
     }
     
     /**
@@ -652,37 +684,54 @@ class CharacterCreationApp {
      * Populate traits from loaded data
      */
     populateTraitsFromData(traits) {
-        // Clear existing selections
-        document.querySelectorAll('.trait-select').forEach(select => {
-            select.value = '';
-        });
+        console.log('populateTraitsFromData called with:', traits);
         
-        // Set selected traits
-        Object.entries(traits).forEach(([category, traitNames]) => {
-            traitNames.forEach(traitName => {
-                const select = document.querySelector(`select[data-category="${category}"] option[value="${traitName}"]`);
-                if (select) {
-                    select.selected = true;
-                    select.parentElement.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-            });
-        });
+        if (!traits || typeof traits !== 'object') {
+            console.warn('populateTraitsFromData: Invalid traits data', traits);
+            return;
+        }
+        
+        // Set traits in state (format: { Physical: [trait1, trait2], Social: [...], Mental: [...] })
+        const traitsState = {
+            Physical: Array.isArray(traits.Physical) ? traits.Physical : [],
+            Social: Array.isArray(traits.Social) ? traits.Social : [],
+            Mental: Array.isArray(traits.Mental) ? traits.Mental : []
+        };
+        
+        console.log('Setting traits state:', traitsState);
+        this.modules.stateManager.setState({ traits: traitsState });
+        
+        // Update trait system displays
+        if (this.modules.traitSystem) {
+            this.modules.traitSystem.updateAllDisplays();
+        }
     }
     
     /**
      * Populate negative traits from loaded data
      */
     populateNegativeTraitsFromData(negativeTraits) {
-        // Similar to populateTraitsFromData but for negative traits
-        Object.entries(negativeTraits).forEach(([category, traitNames]) => {
-            traitNames.forEach(traitName => {
-                const checkbox = document.querySelector(`input[type="checkbox"][data-category="${category}"][value="${traitName}"]`);
-                if (checkbox) {
-                    checkbox.checked = true;
-                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-            });
-        });
+        console.log('populateNegativeTraitsFromData called with:', negativeTraits);
+        
+        if (!negativeTraits || typeof negativeTraits !== 'object') {
+            console.warn('populateNegativeTraitsFromData: Invalid negative traits data', negativeTraits);
+            return;
+        }
+        
+        // Set negative traits in state (format: { Physical: [trait1, trait2], Social: [...], Mental: [...] })
+        const negativeTraitsState = {
+            Physical: Array.isArray(negativeTraits.Physical) ? negativeTraits.Physical : [],
+            Social: Array.isArray(negativeTraits.Social) ? negativeTraits.Social : [],
+            Mental: Array.isArray(negativeTraits.Mental) ? negativeTraits.Mental : []
+        };
+        
+        console.log('Setting negative traits state:', negativeTraitsState);
+        this.modules.stateManager.setState({ negativeTraits: negativeTraitsState });
+        
+        // Update trait system displays
+        if (this.modules.traitSystem) {
+            this.modules.traitSystem.updateAllDisplays();
+        }
     }
     
     /**

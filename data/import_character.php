@@ -154,11 +154,23 @@ try {
     ");
     
     $trait_count = 0;
-    foreach ($character['traits'] as $category => $traits) {
-        foreach ($traits as $trait) {
-            $trait_stmt->bind_param("iss", $character_id, $category, $trait);
-            $trait_stmt->execute();
-            $trait_count++;
+    if (!empty($character['traits']) && is_array($character['traits'])) {
+        foreach ($character['traits'] as $category => $traits) {
+            if (!is_array($traits)) continue;
+            foreach ($traits as $trait) {
+                $trait_name = null;
+                if (is_string($trait)) {
+                    $trait_name = $trait;
+                } elseif (is_array($trait)) {
+                    // Handle format like [{"Strength": 2}]
+                    $trait_name = array_key_first($trait);
+                }
+                if ($trait_name) {
+                    $trait_stmt->bind_param("iss", $character_id, $category, $trait_name);
+                    $trait_stmt->execute();
+                    $trait_count++;
+                }
+            }
         }
     }
     echo "✅ {$trait_count} positive traits added\n\n";
@@ -175,13 +187,24 @@ try {
     }
     
     $neg_count = 0;
-    foreach ($character['negativeTraits'] as $category => $traits) {
-        foreach ($traits as $trait) {
-            $neg_trait_stmt->bind_param("iss", $character_id, $category, $trait);
-            if (!$neg_trait_stmt->execute()) {
-                throw new Exception("Negative trait insert failed: " . $neg_trait_stmt->error);
+    if (!empty($character['negativeTraits']) && is_array($character['negativeTraits'])) {
+        foreach ($character['negativeTraits'] as $category => $traits) {
+            if (!is_array($traits)) continue;
+            foreach ($traits as $trait) {
+                $trait_name = null;
+                if (is_string($trait)) {
+                    $trait_name = $trait;
+                } elseif (is_array($trait)) {
+                    $trait_name = array_key_first($trait);
+                }
+                if ($trait_name) {
+                    $neg_trait_stmt->bind_param("iss", $character_id, $category, $trait_name);
+                    if (!$neg_trait_stmt->execute()) {
+                        throw new Exception("Negative trait insert failed: " . $neg_trait_stmt->error);
+                    }
+                    $neg_count++;
+                }
             }
-            $neg_count++;
         }
     }
     echo "✅ {$neg_count} negative traits added\n\n";
@@ -197,23 +220,80 @@ try {
         throw new Exception("Abilities prepare failed: " . $conn->error);
     }
     
-    foreach ($character['abilities'] as $ability) {
-        // Check if this ability has a specialization
-        $spec = isset($character['specializations'][$ability['name']]) 
-            ? $character['specializations'][$ability['name']] 
-            : null;
+    $ability_count = 0;
+    if (!empty($character['abilities']) && is_array($character['abilities'])) {
+        // Check if abilities are organized by category (talents/skills/knowledges)
+        $abilities_list = [];
+        if (isset($character['abilities']['talents']) || isset($character['abilities']['skills']) || isset($character['abilities']['knowledges'])) {
+            // Format: {"talents": ["Alertness 3", ...], "skills": [...], "knowledges": [...]}
+            foreach (['talents', 'skills', 'knowledges'] as $category) {
+                if (!empty($character['abilities'][$category]) && is_array($character['abilities'][$category])) {
+                    foreach ($character['abilities'][$category] as $ability) {
+                        $abilities_list[] = $ability;
+                    }
+                }
+            }
+        } else {
+            // Format: [{"name": "...", "level": ...}, ...] or [{"Academics": 2}, ...]
+            $abilities_list = $character['abilities'];
+        }
+        
+        foreach ($abilities_list as $ability) {
+            $ability_name = null;
+            $ability_level = 0;
+            $spec = null;
             
-        $ability_stmt->bind_param("isis",
-            $character_id,
-            $ability['name'],
-            $ability['level'],
-            $spec
-        );
-        if (!$ability_stmt->execute()) {
-            throw new Exception("Ability insert failed for '{$ability['name']}': " . $ability_stmt->error);
+            // Handle different formats
+            if (is_string($ability)) {
+                // Format: "Alertness 3" or "Performance 1 (emcee)"
+                if (preg_match('/^(.+?)\s+(\d+)(?:\s*\((.+?)\))?$/i', $ability, $matches)) {
+                    $ability_name = trim($matches[1]);
+                    $ability_level = (int)$matches[2];
+                    if (isset($matches[3])) {
+                        $spec = trim($matches[3]);
+                    }
+                } else {
+                    continue; // Skip malformed entries
+                }
+            } elseif (is_array($ability)) {
+                // Format: {"name": "Academics", "level": 2} or {"Academics": 2}
+                if (isset($ability['name']) && isset($ability['level'])) {
+                    $ability_name = $ability['name'];
+                    $ability_level = (int)$ability['level'];
+                    $spec = $ability['specialization'] ?? null;
+                } elseif (count($ability) === 1) {
+                    // Format: {"Academics": 2}
+                    $ability_name = array_key_first($ability);
+                    $ability_level = (int)$ability[$ability_name];
+                } else {
+                    continue; // Skip malformed entries
+                }
+            } else {
+                continue; // Skip non-array, non-string entries
+            }
+            
+            if (empty($ability_name) || $ability_level <= 0) {
+                continue; // Skip invalid entries
+            }
+            
+            // Check if this ability has a specialization in specializations object
+            if (!$spec && isset($character['specializations'][$ability_name])) {
+                $spec = $character['specializations'][$ability_name];
+            }
+            
+            $ability_stmt->bind_param("isis",
+                $character_id,
+                $ability_name,
+                $ability_level,
+                $spec
+            );
+            if (!$ability_stmt->execute()) {
+                throw new Exception("Ability insert failed for '{$ability_name}': " . $ability_stmt->error);
+            }
+            $ability_count++;
         }
     }
-    echo "✅ " . count($character['abilities']) . " abilities added\n\n";
+    echo "✅ {$ability_count} abilities added\n\n";
 
     // 5. Insert disciplines (new normalized structure: one row per discipline with max level)
     echo "📝 Inserting disciplines...\n";
@@ -232,19 +312,70 @@ try {
     
     $discipline_levels = [];
     
-    // First pass: collect all power levels per discipline
-    foreach ($character['disciplines'] as $discipline) {
-        $discipline_name = $discipline['name'];
-        
-        if (!isset($discipline_levels[$discipline_name])) {
-            $discipline_levels[$discipline_name] = [];
+    if (!empty($character['disciplines']) && is_array($character['disciplines'])) {
+        // Check if disciplines are in flat object format {"animalism": 2, "auspex": 0}
+        $is_flat_format = false;
+        foreach ($character['disciplines'] as $key => $value) {
+            if (is_string($key) && (is_numeric($value) || is_int($value))) {
+                $is_flat_format = true;
+                break;
+            }
         }
         
-        if (!empty($discipline['powers'])) {
-            foreach ($discipline['powers'] as $power) {
-                $level = (int)($power['level'] ?? 1);
-                if ($level >= 1 && $level <= 5) {
+        if ($is_flat_format) {
+            // Format: {"animalism": 2, "auspex": 0, "celerity": 0}
+            foreach ($character['disciplines'] as $discipline_name => $level) {
+                $level = (int)$level;
+                if ($level > 0) {
+                    $discipline_name = ucfirst(strtolower($discipline_name));
+                    if (!isset($discipline_levels[$discipline_name])) {
+                        $discipline_levels[$discipline_name] = [];
+                    }
                     $discipline_levels[$discipline_name][] = $level;
+                }
+            }
+        } else {
+            // First pass: collect all power levels per discipline (array format)
+            foreach ($character['disciplines'] as $discipline) {
+                $discipline_name = null;
+                $discipline_level = 0;
+                
+                // Handle different formats
+                if (is_array($discipline)) {
+                    if (isset($discipline['name'])) {
+                        // Format: {"name": "Auspex", "level": 2, "powers": [...]}
+                        $discipline_name = $discipline['name'];
+                        if (!empty($discipline['powers'])) {
+                            foreach ($discipline['powers'] as $power) {
+                                $level = (int)($power['level'] ?? 1);
+                                if ($level >= 1 && $level <= 5) {
+                                    if (!isset($discipline_levels[$discipline_name])) {
+                                        $discipline_levels[$discipline_name] = [];
+                                    }
+                                    $discipline_levels[$discipline_name][] = $level;
+                                }
+                            }
+                        } elseif (isset($discipline['level'])) {
+                            // Format: {"name": "Auspex", "level": 2}
+                            $discipline_level = (int)$discipline['level'];
+                            if ($discipline_level > 0) {
+                                if (!isset($discipline_levels[$discipline_name])) {
+                                    $discipline_levels[$discipline_name] = [];
+                                }
+                                $discipline_levels[$discipline_name][] = $discipline_level;
+                            }
+                        }
+                    } elseif (count($discipline) === 1) {
+                        // Format: {"Auspex": 2}
+                        $discipline_name = array_key_first($discipline);
+                        $discipline_level = (int)$discipline[$discipline_name];
+                        if ($discipline_level > 0) {
+                            if (!isset($discipline_levels[$discipline_name])) {
+                                $discipline_levels[$discipline_name] = [];
+                            }
+                            $discipline_levels[$discipline_name][] = $discipline_level;
+                        }
+                    }
                 }
             }
         }
@@ -287,14 +418,16 @@ try {
     }
     
     $bg_count = 0;
-    foreach ($character['backgrounds'] as $name => $level) {
-        if ($level > 0) {
-            $details = $character['backgroundDetails'][$name] ?? null;
-            $bg_stmt->bind_param("isis", $character_id, $name, $level, $details);
-            if (!$bg_stmt->execute()) {
-                throw new Exception("Background insert failed for '{$name}': " . $bg_stmt->error);
+    if (!empty($character['backgrounds']) && is_array($character['backgrounds'])) {
+        foreach ($character['backgrounds'] as $name => $level) {
+            if (is_int($level) && $level > 0) {
+                $details = $character['backgroundDetails'][$name] ?? null;
+                $bg_stmt->bind_param("isis", $character_id, $name, $level, $details);
+                if (!$bg_stmt->execute()) {
+                    throw new Exception("Background insert failed for '{$name}': " . $bg_stmt->error);
+                }
+                $bg_count++;
             }
-            $bg_count++;
         }
     }
     echo "✅ {$bg_count} backgrounds added\n\n";
@@ -322,7 +455,7 @@ try {
     echo "✅ Morality added\n\n";
 
     // 8. Insert merits and flaws
-    if (!empty($character['merits_flaws'])) {
+    if (!empty($character['merits_flaws']) && is_array($character['merits_flaws'])) {
         echo "📝 Inserting merits/flaws...\n";
         $mf_stmt = $conn->prepare("
             INSERT INTO character_merits_flaws (
@@ -334,24 +467,63 @@ try {
             throw new Exception("Merits/flaws prepare failed: " . $conn->error);
         }
         
+        $mf_count = 0;
         foreach ($character['merits_flaws'] as $mf) {
-            // Capitalize first letter of type for ENUM
-            $type_capitalized = ucfirst(strtolower($mf['type']));
+            $mf_name = null;
+            $mf_type = null;
+            $mf_category = null;
+            $mf_point_value = 0;
+            $mf_description = null;
             
-            $mf_stmt->bind_param("isssiis",
-                $character_id,
-                $mf['name'],
-                $type_capitalized,
-                $mf['category'],
-                $mf['cost'], // point_value
-                $mf['cost'], // point_cost
-                $mf['description']
-            );
-            if (!$mf_stmt->execute()) {
-                throw new Exception("Merit/flaw insert failed for '{$mf['name']}': " . $mf_stmt->error);
+            // Handle different formats
+            if (is_array($mf)) {
+                if (isset($mf['name']) && isset($mf['type'])) {
+                    // Format: {"name": "Natural Leader", "type": "merit", "category": "Social", "cost": 1, "description": "..."}
+                    // or with "point_value" instead of "cost"
+                    $mf_name = $mf['name'];
+                    $mf_type = $mf['type'];
+                    $mf_category = $mf['category'] ?? null;
+                    $mf_point_value = (int)($mf['cost'] ?? $mf['point_value'] ?? 0);
+                    $mf_description = $mf['description'] ?? null;
+                } elseif (count($mf) === 1) {
+                    // Format: {"Merit": "Calm Heart (3 pt)"} or {"Flaw": "Obsession (2 pt)"}
+                    $mf_type = array_key_first($mf);
+                    $mf_value = $mf[$mf_type];
+                    
+                    // Extract name and point value from string like "Calm Heart (3 pt)"
+                    if (preg_match('/^(.+?)\s*\((\d+)\s*pt\)/i', $mf_value, $matches)) {
+                        $mf_name = trim($matches[1]);
+                        $mf_point_value = (int)$matches[2];
+                    } else {
+                        $mf_name = trim($mf_value);
+                        $mf_point_value = 0;
+                    }
+                    
+                    $mf_category = null; // Not available in this format
+                    $mf_description = null;
+                }
+            }
+            
+            if ($mf_name && $mf_type) {
+                // Capitalize first letter of type for ENUM
+                $type_capitalized = ucfirst(strtolower($mf_type));
+                
+                $mf_stmt->bind_param("isssiis",
+                    $character_id,
+                    $mf_name,
+                    $type_capitalized,
+                    $mf_category,
+                    $mf_point_value, // point_value
+                    $mf_point_value, // point_cost
+                    $mf_description
+                );
+                if (!$mf_stmt->execute()) {
+                    throw new Exception("Merit/flaw insert failed for '{$mf_name}': " . $mf_stmt->error);
+                }
+                $mf_count++;
             }
         }
-        echo "✅ " . count($character['merits_flaws']) . " merits/flaws added\n\n";
+        echo "✅ {$mf_count} merits/flaws added\n\n";
     }
 
     // Commit transaction

@@ -1,0 +1,286 @@
+{
+  "file_name": "Valley_by_Night_Characters.json",
+  "image_dir": "reference/Characters/Images",
+  "image_format": "webp",
+  "characters": [
+        {
+            "name": "Adrian Leclair",
+            "clan": "Toreador",
+            "description": "Embraced in post-war Europe for his precision in shaping beauty, Adrian relocated to Scottsdale to court wealthy mortal patrons and provide the Camarilla with controlled, emotionally tuned venues. He maintains a professional, boon-based relationship with Sarah Hansen of The Velvet Door and is quietly opposed to Setite cultural expansion.",
+            "notes": "",
+            "traits": [
+              "Graceful",
+              "Elegant",
+              "Charismatic",
+              "Persuasive",
+              "Dignified",
+              "Discerning",
+              "Observant",
+              "Meticulous",
+              "Focused",
+              "Intelligent"
+            ],
+            "image": "Adrian Leclair.webp"
+        },
+        {
+            "name": "Andrei Radulescu",
+            "clan": "Tremere",
+            "description": "0",
+            "notes": "0",
+            "traits": [],
+            "image": "Andrei Radulescu.webp"
+        },
+        {
+            "name": "Ardvark",
+            "clan": "Gangrel",
+            "description": "",
+            "notes": "0",
+            "traits": [
+              "Rugged",
+              "Resilient",
+              "Tough",
+              "Enduring",
+              "Alert",
+              "Observant",
+              "Cunning",
+              "Steady",
+              "Quick",
+              "Intimidating"
+            ],
+            "image": "Ardvark.webp"
+        },
+        {
+            "name": "Barry Washington",
+            "clan": "Ventrue",
+            "description": "Barry Washington was born to older parents in Phoenix, showing exceptional business acumen from a young age. Unbeknownst to him, Warner Jefferson began observing him in high school, subtly manipulating his path. Barry excelled at ASU, completing his MBA two years early at age 23. He was hired by Warner's venture capital firm, proved his value for a year, then spent two years as Warner's ghoul before being Embraced six months ago. His parents in Sun City believe he died in a car accident. Within days of his Embrace, Barry decided he wanted to become Prince someday - an ambition he keeps secret from Warner. He lives in a small room in Warner's penthouse, serving as his sire's eyes and ears in Kindred society while secretly planning to eventually surpass him. Barry is thoughtful, intelligent, and charismatic, deliberately avoiding making enemies while building a power base across Camarilla factions.",
+            "notes": "PLOT HOOK: One of Barry's parents will become a victim of the Malkavian serial killer, forcing him to confront his faked death and lost mortal connections. Barry is completely unaware that Warner has been manipulating his entire life since high school. The blood bond heavily influences his loyalty to Warner, though he doesn't recognize this. His ambition to become Prince puts him on a collision course with his sire - either Warner planned this all along, or it's the one thing he didn't anticipate. Barry has an unusually strong connection with the Nosferatu Primogen despite being Ventrue.",
+            "traits": [],
+            "image": "Barry Washington.webp"
+        },
+        {
+            "name": "Bayside Bob",
+            "clan": "Toreador",
+            "description": "Bayside Bob served in the Coast Guard, where he earned his 'Bayside' nickname. During a patrol in a particular area, the crew affectionately referred to it as 'Bayside.' One of the female crew members playfully remarked that she was 'going Bayside with Bob,' and the joke stuck, earning him the nickname 'Bayside Bob.' His last posting was as a recruiter in the Phoenix office, a landlocked irony that he often jokes about. He was embraced sometime after 1981, adding a layer of mystery to his past. Bob arrived in Phoenix early in 1981 and has been a part of the city's undead scene ever since. By 1994, he has been in Phoenix for 13 years.\n\nThe Bali Hai, a Tiki-style Polynesian restaurant on Camelback Road, serves as a front for Anarch meetings and is the de facto gathering place for Anarchs in Phoenix. Despite the fading Tiki craze, Bob keeps the business running, ensuring it remains a viable gathering place for the faction. His laid-back nature and appreciation for vintage Americana and Tiki culture make him a stabilizing presence within the Anarch faction.",
+            "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc.",
+            "traits": [],
+            "image": "Bayside Bob.webp"
+        },
+        {
+            "name": "Cordelia Fairchild",
+            "clan": "Toreador",
+            "description": "Embraced in 1914 at the age of 28, Cordelia Fairchild was a socialite and art critic during the height of the American Gilded Age’s decline. Her Embrace came from a Toreador enamored with her ability to destroy reputations with a single whispered review. For decades she moved through Arizona’s small but decadent Kindred society, first establishing herself in Flagstaff, where she cultivated influence through the city’s business elite and railroad-connected families. By the late 1940s, she had relocated to Phoenix, bringing her mortal and Kindred contacts with her. Her rise was inevitable: by the 1950s she was recognized as the Harpy of the domain, her wit and cruelty wrapped in honeyed civility. In 1960, she orchestrated the social destruction of Darrell Buyers, a Nosferatu elder who once controlled the city’s mortal political machine. The scandal ended his influence and solidified Cordelia’s supremacy. She remains the Harpy to this night, as elegant as she is terrifying, a living reminder that in the Jyhad of whispers, words kill faster than blades.",
+            "notes": "Cordelia is the Harpy of Phoenix, controlling the city’s social order with surgical cruelty. She destroyed Nosferatu Elder Darrell Buyers in 1960 through social annihilation. She views most Kindred as subjects in her ongoing study of 'Grace under pressure'.",
+            "traits": [],
+            "image": "Cordelia Fairchild.webp"
+        },
+        {
+            "name": "Core (Alexandra Chen)",
+            "clan": "N/A - Human",
+            "description": "",
+            "notes": "",
+            "traits": [
+              "Analytical",
+              "Logical",
+              "Methodical",
+              "Focused",
+              "Intelligent",
+              "Observant",
+              "Meticulous",
+              "Patient",
+              "Attentive",
+              "Shrewd"
+            ],
+            "image": "Core (Alexandra Chen).webp"
+        },
+        {
+            "name": "Dr. Margaret Ashford",
+            "clan": "Tremere",
+            "description": "0",
+            "notes": "0",
+            "traits": [],
+            "image": "Dr. Margaret Ashford.webp"
+        },
+        {
+            "name": "Duke Tiki",
+            "clan": "Toreador",
+            "description": "Duke Tiki was a celebrated sculptor and designer of Polynesian-inspired art and décor, capturing the essence of the mid-century Tiki craze. He was a regular at Bali Hai, holding court over rum cocktails and torchlight, sketching murals and carving idols that would adorn the lounges of the jet set. He wasn't Hawaiian or Polynesian himself—more of a mid-century romantic who saw escapism in the imagery of paradise—but he treated his craft as homage rather than kitsch. He believed Tiki culture was about inviting warmth and joy into a cold world.\n\nAmong his regulars was Bob, a man who didn't create but understood art. Bob saw the soul in his carvings and could articulate it better than the artist himself. That drew the Toreador's attention. He saw in Bob not a rival, but a rare admirer who truly 'saw.' After a long friendship, and with the Prince's blessing, he Embraced Bob—a testament to the Toreador belief that beauty and perception are equally divine.",
+            "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc.",
+            "traits": [],
+            "image": "Duke Tiki.webp"
+        },
+        {
+            "name": "James Whitmore",
+            "clan": "Tremere",
+            "description": "0",
+            "notes": "0",
+            "traits": [],
+            "image": "James Whitmore.webp"
+        },
+        {
+            "name": "Jax 'The Ghost Dealer'",
+            "clan": "Ravnos",
+            "description": "Jax was a street hustler before the Embrace, peddling fake charms, talismans, and minor scams. Their Ravnos sire saw the potential to combine illusion and charisma, granting them Chimerstry to enhance their tricks. Now, Jax runs small-time psychic scams across the city, selling ghost removals, haunted trinkets, and protection spells. Some of their illusions have begun acting independently, creating problems Jax cannot fully control. Their personality is chaotic, charming, and unpredictable. They are androgynous in appearance, with bright eyes, shaved sides, colorful scarves, and ash-stained hands. Despite their bravado, a gnawing fear that something they created is now stalking them drives much of their behavior.",
+            "notes": "Street-level Ravnos con artist with unpredictable Chimerstry. Useful for chaos, plot hooks, and minor NPC antagonism. Prefers working alone, but will collaborate if profitable.",
+            "traits": [],
+            "image": "Jax 'The Ghost Dealer'.webp"
+        },
+        {
+            "name": "Leo",
+            "clan": "Nosferatu",
+            "description": "",
+            "notes": "",
+            "traits": [
+              "Resilient",
+              "Steady",
+              "Rugged",
+              "Intimidating",
+              "Cunning",
+              "Observant",
+              "Perceptive",
+              "Patient",
+              "Shrewd",
+              "Clever"
+            ],
+            "image": "Leo.webp"
+        },
+        {
+            "name": "Lucien Marchand",
+            "clan": "Ghoul",
+            "description": "",
+            "notes": "",
+            "traits": [],
+            "image": "Lucien Marchand.webp"
+        },
+        {
+            "name": "Marisol \"Roadrunner\" Vega",
+            "clan": "Gangrel",
+            "description": "",
+            "notes": "Knows Garou patrol patterns anecdotally; leaves coterie sigils on mile markers.",
+            "traits": [
+              "Quick",
+              "Agile",
+              "Nimble",
+              "Enduring",
+              "Resilient",
+              "Observant",
+              "Perceptive",
+              "Determined"
+            ],
+            "image": "Marisol \"Roadrunner\" Vega.webp"
+        },
+        {
+            "name": "Mr. Harold Ashby",
+            "clan": "Malkavian",
+            "description": "Harold Ashby was once a photographer specializing in funerary portraits. His obsession with the silence of death drew the attention of a Malkavian who Embraced him to preserve his 'art'. Now, Ashby lives in Sun City, staging ritualized murders of grieving elders as acts of 'preservation'. He manipulates his ghoul Tor through the promise of understanding the 'pattern beneath grief.' His havens are immaculate, filled with photographs of victims posed at peace.",
+            "notes": "Speaks in calm, teacherly tones. Prefers order and ritual over chaos. Sees each death as part of a divine pattern only he can interpret.",
+            "traits": [],
+            "image": "Mr. Harold Ashby.webp"
+        },
+        {
+            "name": "Phreak",
+            "clan": "N/A - Human (Cybernetically Enhanced)",
+            "description": "",
+            "notes": "",
+            "traits": [
+              "Alert",
+              "Clever",
+              "Cunning",
+              "Analytical",
+              "Focused",
+              "Observant",
+              "Shrewd",
+              "Intelligent",
+              "Patient"
+            ],
+            "image": "Phreak.webp"
+        },
+        {
+            "name": "Pistol Pete",
+            "clan": "Brujah",
+            "description": "",
+            "notes": "",
+            "traits": [
+              "Quick",
+              "Agile",
+              "Brawny",
+              "Tough",
+              "Lethal",
+              "Rugged",
+              "Intimidating",
+              "Assertive",
+              "Determined",
+              "Focused"
+            ],
+            "image": "Pistol Pete.webp"
+        },
+        {
+            "name": "Piston",
+            "clan": "Brujah",
+            "description": "Originally generation 10, Piston committed diablerie on a Gangrel during the Los Angeles Anarch faction wars (late 1980s/early 1990s). A former Hell's Angels member embraced in mid-1980s LA by Fred Osmond, he adapted to Kindred life while maintaining his biker identity. He found the Anarch philosophy aligned with Hell's Angels anti-authority stance. During the LA Anarch Free State internal faction wars, he rose in power through combat prowess. In late 80s/early 90s during a gang clash, he frenzied in combat with a Gangrel enforcer. The Beast took over and he committed diablerie, gaining Fortitude but acquiring the mark. LA became too dangerous after the diablerie - Gangrel wanted revenge, faction was divided. He fled to Phoenix early-to-mid 1990s, established in Surprise, and embraced two former Hell's Angels (Butch Reed and Basher) to rebuild brotherhood. Now running criminal operations to fund acquisition of a bar.",
+            "notes": "Generation 9 Brujah Anarch. Originally generation 10, committed diablerie on Gangrel in LA. Now in Phoenix running criminal operations. Wants to acquire a bar for his coterie. Has two childer: Butch Reed and Basher. Marked by diablerie - black veins visible to Auspex users.",
+            "traits": [],
+            "image": "Piston.webp"
+        },
+        {
+            "name": "Rembrandt Jones",
+            "clan": "Toreador",
+            "description": "",
+            "notes": "",
+            "traits": [],
+            "image": "Rembrandt Jones.webp"
+        },
+        {
+            "name": "Sasha",
+            "clan": "Malkavian",
+            "description": "",
+            "notes": "",
+            "traits": [
+              "Insightful",
+              "Perceptive",
+              "Observant",
+              "Clever",
+              "Wise",
+              "Shrewd",
+              "Eloquent",
+              "Expressive",
+              "Charismatic",
+              "Focused"
+            ],
+            "image": "Sasha.webp"
+        },
+        {
+            "name": "Sofia Alvarez",
+            "clan": "Ghoul",
+            "description": "",
+            "notes": "",
+            "traits": [],
+            "image": "Sofia Alvarez.webp"
+        },
+        {
+            "name": "Tariq Ibrahim",
+            "clan": "Followers of Set",
+            "description": "",
+            "notes": "Maintains a 'private' VIP tier where Setite rites are thinly veiled as immersive theater.",
+            "traits": [
+              "Alluring",
+              "Charismatic",
+              "Commanding",
+              "Persuasive",
+              "Elegant",
+              "Eloquent",
+              "Cunning",
+              "Discerning",
+              "Shrewd"
+            ],
+            "image": "Tariq Ibrahim.webp"
+        },
+        {
+            "name": "Tor",
+            "clan": "Ghoul (Malkavian blood)",
+            "description": "Once a lonely, simple handyman drifting between jobs along the Arizona highways, Tor met Mr. Ashby when his truck broke down outside Mesa. The Malkavian offered him water, and a drop of vitae -- a gift that changed everything. Ashby became his teacher and master, teaching him to 'listen' to the quiet beneath grief. Tor now serves him in Sun City, tending to the homes of the elderly and unwittingly helping arrange their ritual deaths. Loyal, gentle, and manipulated, Tor believes he is helping souls find peace.",
+            "notes": "Tor is physically imposing yet emotionally fragile. Speaks softly, rarely makes eye contact. Collects broken things, hums when nervous. Complete blood bond to Mr. Ashby.",
+            "traits": [],
+            "image": "Tor.webp"
+        }
+  ]
+}

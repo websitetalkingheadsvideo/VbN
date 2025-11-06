@@ -1,6 +1,40 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.13 (Current)
+## Version 0.9.14 (Current)
+**Date:** January 2025
+
+### Trait System Updates & Character Data Cleanup:
+- ✅ **Comprehensive Trait Lists** - Updated all trait lists in `lotn_char_create.php` with official Fandom/TV Tropes trait lists (96 total traits: 66 positive, 30 negative)
+- ✅ **Physical Traits (Positive)** - 21 traits added
+- ✅ **Mental Traits (Positive)** - 23 traits added
+- ✅ **Social Traits (Positive)** - 22 traits added
+- ✅ **Negative Traits** - 30 traits total (10 Physical, 10 Social, 10 Mental)
+- ✅ **Character Import Enhancements** - Enhanced `data/import_character.php` functionality
+- ✅ **Character Data Cleanup** - Removed obsolete character JSON files
+- ✅ **JavaScript Updates** - Improved `js/modules/main.js` functionality
+- ✅ **Discipline Converter** - Updated `data/disciplines_converter.php` with fixes
+
+### Files Modified:
+- `lotn_char_create.php` - Comprehensive trait list updates
+- `data/import_character.php` - Enhanced import functionality
+- `js/modules/main.js` - JavaScript improvements
+- `data/disciplines_converter.php` - Discipline converter updates
+- `tests/test_discipline_converter.php` - Test improvements
+- `reference/Characters/Added to Database/Warner Jefferson.json` - Character data updates
+- `use_laws_agent_for_design.md` - Documentation updates
+
+### Files Deleted:
+- Multiple obsolete character JSON files (Core.json, Phreak.json, Adrian_Leclair.json, Barry Washington.json, roadrunner.json, tariq_ibrahim_setite.json, character_sheet_template_example.json)
+
+### Impact:
+- **Trait System** - Now uses comprehensive official trait lists from Fandom/TV Tropes
+- **Character Creation** - More accurate and diverse trait options
+- **Code Quality** - Cleaner codebase with obsolete files removed
+- **Data Management** - Improved character import and data handling
+
+---
+
+## Version 0.9.13
 **Date:** January 2025
 
 ### Character Data Updates & Refinements:

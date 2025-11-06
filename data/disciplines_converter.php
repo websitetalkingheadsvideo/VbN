@@ -189,3 +189,5 @@ function getDisciplineStatistics(array $disciplines_db): array
 
 
 
+
+
