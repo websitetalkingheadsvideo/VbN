@@ -93,7 +93,7 @@ Import Complete!
 ### Format Mismatch Issues
 - **Problem**: Character JSON files in narrative/descriptive format won't import
 - **Solution**: Convert to full character sheet format before importing
-- **Required fields**: `character_name`, `player_name`, `chronicle`, `pc`, `biography`, `status`, `morality`
+- **Required fields**: `character_name`, `player_name`, `chronicle`, `pc`, `biography`, `current_state`, `camarilla_status`, `status`, `morality`
 - **Required structures**: 
   - `traits` as arrays by category
   - `abilities` as array of objects with name/category/level
@@ -135,6 +135,8 @@ When converting narrative format to character sheet format:
 {
   "character_name": "Character Name",
   "player_name": "NPC",
+  "current_state": "active",
+  "camarilla_status": "Unknown",
   "chronicle": "Valley by Night",
   "nature": "Nature",
   "demeanor": "Demeanor", 
@@ -192,6 +194,8 @@ When converting narrative format to character sheet format:
   ],
   "status": {
     "created_date": "2025-01-11",
+    "current_state": "active",
+    "camarilla_status": "Unknown",
     "xp_total": 0,
     "xp_spent": 0,
     "xp_available": 0,

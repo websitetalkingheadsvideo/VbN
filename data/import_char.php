@@ -69,15 +69,29 @@ try {
         INSERT INTO characters (
             user_id, character_name, player_name, chronicle, nature, demeanor, 
             concept, clan, generation, sire, pc, biography, equipment,
-            experience_total, experience_unspent, blood_pool_current, notes
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            experience_total, experience_unspent, blood_pool_current, notes,
+            status, camarilla_status
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
     
     if (!$stmt) {
         throw new Exception("Prepare failed: " . $conn->error);
     }
     
-    $stmt->bind_param("isssssssisissiiis",
+    $valid_states = ['active', 'inactive', 'archived'];
+    $status_value = strtolower($character['current_state'] ?? ($character['status']['current_state'] ?? 'active'));
+    if (!in_array($status_value, $valid_states, true)) {
+        $status_value = 'active';
+    }
+
+    $valid_camarilla = ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'];
+    $camarilla_value_raw = $character['camarilla_status'] ?? ($character['status']['camarilla_status'] ?? 'Unknown');
+    $camarilla_value = $camarilla_value_raw ? ucfirst(strtolower($camarilla_value_raw)) : 'Unknown';
+    if (!in_array($camarilla_value, $valid_camarilla, true)) {
+        $camarilla_value = 'Unknown';
+    }
+
+    $stmt->bind_param("isssssssisissiiisss",
         $user_id,
         $character['character_name'],
         $character['player_name'],
@@ -94,7 +108,9 @@ try {
         $character['status']['xp_total'],
         $character['status']['xp_available'],
         $character['status']['blood_pool'],
-        $character['status']['notes']
+        $character['status']['notes'],
+        $status_value,
+        $camarilla_value
     );
     
     if (!$stmt->execute()) {
@@ -164,11 +180,10 @@ try {
     echo "📝 Inserting disciplines...\n";
     
     $disc_stmt = $conn->prepare("
-        INSERT INTO character_disciplines (character_id, discipline_name, level, xp_cost)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO character_disciplines (character_id, discipline_name, level)
+        VALUES (?, ?, ?)
         ON DUPLICATE KEY UPDATE 
-        level = VALUES(level),
-        xp_cost = VALUES(xp_cost)
+        level = VALUES(level)
     ");
     
     if (!$disc_stmt) {
@@ -203,13 +218,11 @@ try {
         }
         
         $max_level = max($levels);
-        $xp_cost = 0;
         
-        $disc_stmt->bind_param("isii",
+        $disc_stmt->bind_param("isi",
             $character_id,
             $discipline_name,
-            $max_level,
-            $xp_cost
+            $max_level
         );
         
         if (!$disc_stmt->execute()) {

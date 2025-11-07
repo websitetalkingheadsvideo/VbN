@@ -153,17 +153,38 @@ function getSelectedTraits(category) {
 }
 
 function getSelectedAbilities() {
-    const abilities = [];
-    const abilityButtons = document.querySelectorAll('.ability-btn.selected');
-    abilityButtons.forEach(button => {
-        const abilityName = button.textContent.trim();
-        const count = parseInt(button.dataset.count) || 1;
-        for (let i = 0; i < count; i++) {
-            abilities.push(abilityName);
+    const app = window.characterCreationApp;
+    const stateManager = app?.modules?.stateManager;
+
+    if (!stateManager || typeof stateManager.getState !== 'function') {
+        return [];
+    }
+
+    const state = stateManager.getState();
+    const categories = ['Physical', 'Social', 'Mental', 'Optional'];
+    const displayList = [];
+
+    categories.forEach((category) => {
+        const list = state.abilities?.[category];
+        if (!Array.isArray(list)) {
+            return;
         }
+
+        const counts = new Map();
+        list.forEach((abilityName) => {
+            const key = abilityName || '';
+            if (key === '') {
+                return;
+            }
+            counts.set(key, (counts.get(key) || 0) + 1);
+        });
+
+        counts.forEach((count, abilityName) => {
+            displayList.push(count > 1 ? `${abilityName} x${count}` : abilityName);
+        });
     });
-    
-    return abilities;
+
+    return displayList;
 }
 
 function getSelectedDisciplines() {
@@ -339,6 +360,76 @@ function collectFormData() {
             permanent: 5
         }
     };
+
+    const app = window.characterCreationApp;
+    const stateManager = app?.modules?.stateManager;
+
+    if (stateManager && typeof stateManager.getState === 'function') {
+        const state = stateManager.getState();
+        const categories = ['Physical', 'Social', 'Mental', 'Optional'];
+
+        const normalizedAbilities = categories.reduce((accumulator, category) => {
+            const list = state.abilities?.[category];
+            accumulator[category] = Array.isArray(list) ? [...list] : [];
+            return accumulator;
+        }, {
+            Physical: [],
+            Social: [],
+            Mental: [],
+            Optional: []
+        });
+
+        const abilitiesFull = [];
+
+        categories.forEach((category) => {
+            const counts = new Map();
+            normalizedAbilities[category].forEach((abilityName) => {
+                const key = abilityName || '';
+                if (key === '') {
+                    return;
+                }
+                counts.set(key, (counts.get(key) || 0) + 1);
+            });
+
+            counts.forEach((level, abilityName) => {
+                abilitiesFull.push({
+                    ability_name: abilityName,
+                    ability_category: category,
+                    level,
+                    specialization: null
+                });
+            });
+        });
+
+        data.abilities = normalizedAbilities;
+        data.abilities_full = abilitiesFull;
+
+        if (typeof window.characterData === 'undefined') {
+            window.characterData = {};
+        }
+
+        window.characterData.abilities = categories.reduce((accumulator, category) => {
+            accumulator[category] = [...normalizedAbilities[category]];
+            return accumulator;
+        }, {
+            Physical: [],
+            Social: [],
+            Mental: [],
+            Optional: []
+        });
+    }
+    
+    // Collect Custom Data, Coterie, and Relationships
+    const customDataField = document.getElementById('customData');
+    if (customDataField) {
+        data.custom_data = customDataField.value.trim();
+    }
+    
+    // Collect coteries
+    data.coteries = collectCoteries();
+    
+    // Collect relationships
+    data.relationships = collectRelationships();
     
     return data;
 }
@@ -2456,9 +2547,225 @@ function initializeBackgrounds() {
     updateBackgroundsSummary();
 }
 
+// Coterie and Relationships Management Functions
+let coterieCounter = 0;
+let relationshipCounter = 0;
+
+function collectCoteries() {
+    const coteries = [];
+    const coterieEntries = document.querySelectorAll('.coterie-entry');
+    coterieEntries.forEach(entry => {
+        const coterie = {
+            coterie_name: entry.querySelector('.coterie-name')?.value || '',
+            coterie_type: entry.querySelector('.coterie-type')?.value || '',
+            role: entry.querySelector('.coterie-role')?.value || '',
+            description: entry.querySelector('.coterie-description')?.value || '',
+            notes: entry.querySelector('.coterie-notes')?.value || ''
+        };
+        // Only add if at least name is provided
+        if (coterie.coterie_name.trim()) {
+            coteries.push(coterie);
+        }
+    });
+    return coteries;
+}
+
+function collectRelationships() {
+    const relationships = [];
+    const relationshipEntries = document.querySelectorAll('.relationship-entry');
+    relationshipEntries.forEach(entry => {
+        const characterSelect = entry.querySelector('.relationship-character-name');
+        const relationship = {
+            related_character_name: characterSelect ? characterSelect.value : '',
+            relationship_type: entry.querySelector('.relationship-type')?.value || '',
+            relationship_subtype: entry.querySelector('.relationship-subtype')?.value || '',
+            strength: entry.querySelector('.relationship-strength')?.value || '',
+            description: entry.querySelector('.relationship-description')?.value || ''
+        };
+        // Only add if at least character name is provided
+        if (relationship.related_character_name.trim()) {
+            relationships.push(relationship);
+        }
+    });
+    return relationships;
+}
+
+// Make function globally accessible for inline onclick handlers
+window.addCoterieEntry = function(coterieData = null) {
+    const container = document.getElementById('coterieContainer');
+    const emptyState = document.getElementById('coterieEmptyState');
+    if (!container) {
+        console.error('Coterie container not found');
+        return;
+    }
+    
+    if (emptyState) emptyState.style.display = 'none';
+    
+    const index = coterieCounter++;
+    const entry = document.createElement('div');
+    entry.className = 'coterie-entry';
+    entry.dataset.index = index;
+    
+    entry.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h5 style="margin: 0; color: #d4af37;">Coterie ${index + 1}</h5>
+            <button type="button" class="remove-coterie-btn">Remove</button>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <div>
+                <label class="form-label">Coterie Name *</label>
+                <input type="text" class="form-control coterie-name" placeholder="e.g., The Phoenix Circle" value="${coterieData?.coterie_name || ''}" required>
+            </div>
+            <div>
+                <label class="form-label">Type</label>
+                <select class="form-control coterie-type">
+                    <option value="">Select type...</option>
+                    <option value="faction" ${coterieData?.coterie_type === 'faction' ? 'selected' : ''}>Faction</option>
+                    <option value="role" ${coterieData?.coterie_type === 'role' ? 'selected' : ''}>Role</option>
+                    <option value="membership" ${coterieData?.coterie_type === 'membership' ? 'selected' : ''}>Membership</option>
+                    <option value="informal_group" ${coterieData?.coterie_type === 'informal_group' ? 'selected' : ''}>Informal Group</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Role</label>
+                <input type="text" class="form-control coterie-role" placeholder="e.g., Leader, Member, Advisor" value="${coterieData?.role || ''}">
+            </div>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label class="form-label">Description</label>
+            <textarea class="form-control coterie-description" rows="2" placeholder="Describe the coterie and your character's involvement">${coterieData?.description || ''}</textarea>
+        </div>
+        <div>
+            <label class="form-label">Notes</label>
+            <textarea class="form-control coterie-notes" rows="2" placeholder="Additional notes about this coterie association">${coterieData?.notes || ''}</textarea>
+        </div>
+    `;
+    
+    container.appendChild(entry);
+    
+    // Add remove handler
+    entry.querySelector('.remove-coterie-btn').addEventListener('click', function() {
+        entry.remove();
+        if (container.querySelectorAll('.coterie-entry').length === 0 && emptyState) {
+            emptyState.style.display = 'block';
+        }
+    });
+}
+
+// Make function globally accessible for inline onclick handlers
+window.addRelationshipEntry = function(relationshipData = null) {
+    const container = document.getElementById('relationshipsContainer');
+    const emptyState = document.getElementById('relationshipsEmptyState');
+    if (!container) {
+        console.error('Relationships container not found');
+        return;
+    }
+    
+    if (emptyState) emptyState.style.display = 'none';
+    
+    const index = relationshipCounter++;
+    const entry = document.createElement('div');
+    entry.className = 'relationship-entry';
+    entry.dataset.index = index;
+    
+    // Build character options HTML
+    let characterOptions = '<option value="">Select character...</option>';
+    if (window.allCharacters && Array.isArray(window.allCharacters)) {
+        window.allCharacters.forEach(char => {
+            const selected = relationshipData?.related_character_name === char.name ? 'selected' : '';
+            characterOptions += `<option value="${char.name.replace(/"/g, '&quot;')}" ${selected}>${char.name}</option>`;
+        });
+    }
+    
+    entry.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h5 style="margin: 0; color: #d4af37;">Relationship ${index + 1}</h5>
+            <button type="button" class="remove-relationship-btn">Remove</button>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <div>
+                <label class="form-label">Character Name *</label>
+                <select class="form-control relationship-character-name" required>
+                    ${characterOptions}
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Relationship Type</label>
+                <select class="form-control relationship-type">
+                    <option value="">Select type...</option>
+                    <option value="sire" ${relationshipData?.relationship_type === 'sire' ? 'selected' : ''}>Sire</option>
+                    <option value="childe" ${relationshipData?.relationship_type === 'childe' ? 'selected' : ''}>Childe</option>
+                    <option value="mentor" ${relationshipData?.relationship_type === 'mentor' ? 'selected' : ''}>Mentor</option>
+                    <option value="ally" ${relationshipData?.relationship_type === 'ally' ? 'selected' : ''}>Ally</option>
+                    <option value="contact" ${relationshipData?.relationship_type === 'contact' ? 'selected' : ''}>Contact</option>
+                    <option value="rival" ${relationshipData?.relationship_type === 'rival' ? 'selected' : ''}>Rival</option>
+                    <option value="enemy" ${relationshipData?.relationship_type === 'enemy' ? 'selected' : ''}>Enemy</option>
+                    <option value="other" ${relationshipData?.relationship_type === 'other' ? 'selected' : ''}>Other</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Subtype</label>
+                <input type="text" class="form-control relationship-subtype" placeholder="e.g., Business partner, Former lover" value="${relationshipData?.relationship_subtype || ''}">
+            </div>
+            <div>
+                <label class="form-label">Strength</label>
+                <input type="text" class="form-control relationship-strength" placeholder="e.g., Strong, Weak, Neutral" value="${relationshipData?.strength || ''}">
+            </div>
+        </div>
+        <div>
+            <label class="form-label">Description</label>
+            <textarea class="form-control relationship-description" rows="3" placeholder="Describe the nature of this relationship">${relationshipData?.description || ''}</textarea>
+        </div>
+    `;
+    
+    container.appendChild(entry);
+    
+    // Add remove handler
+    entry.querySelector('.remove-relationship-btn').addEventListener('click', function() {
+        entry.remove();
+        if (container.querySelectorAll('.relationship-entry').length === 0 && emptyState) {
+            emptyState.style.display = 'block';
+        }
+    });
+}
+
+function initializeFinalDetailsFields() {
+    // Add Coterie button handler
+    const addCoterieBtn = document.getElementById('addCoterieBtn');
+    if (addCoterieBtn) {
+        addCoterieBtn.addEventListener('click', function() {
+            addCoterieEntry();
+        });
+    }
+    
+    // Add Relationship button handler
+    const addRelationshipBtn = document.getElementById('addRelationshipBtn');
+    if (addRelationshipBtn) {
+        addRelationshipBtn.addEventListener('click', function() {
+            addRelationshipEntry();
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     // Initialize any required functionality when page loads
     console.log('LOTN Character Creation form loaded');
+    
+    // Load character names for relationship dropdowns
+    try {
+        const response = await fetch('api_get_character_names.php');
+        const data = await response.json();
+        if (data.success && Array.isArray(data.characters)) {
+            window.allCharacters = data.characters;
+            console.log('Loaded', data.characters.length, 'characters for relationship dropdowns');
+        } else {
+            console.error('Failed to load character names:', data.error);
+            window.allCharacters = [];
+        }
+    } catch (error) {
+        console.error('Error loading character names:', error);
+        window.allCharacters = [];
+    }
     
     // Load discipline data from database
     await loadDisciplineData();
@@ -2468,6 +2775,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Initialize backgrounds system
     initializeBackgrounds();
+    
+    // Initialize final details fields (Custom Data, Coterie, Relationships)
+    initializeFinalDetailsFields();
     
     // Generate character summary and calculate cash when Final Details tab is shown
     const finalDetailsTab = document.querySelector('[onclick="showTab(7)"]');
@@ -3477,16 +3787,17 @@ function filterMeritsFlaws() {
     const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
     const sortFilter = document.getElementById('sortFilter').value;
     
-    const availableList = document.getElementById('availableList');
+    const availableList = document.getElementById('availableMeritsFlawsList');
     if (!availableList) return;
     
-    const items = Array.from(availableList.querySelectorAll('.merit-flaw-item'));
+    const items = Array.from(availableList.querySelectorAll('.merit-flaw-option'));
     
     // Filter items
     const filteredItems = items.filter(item => {
         const category = item.dataset.category;
-        const type = item.dataset.type;
-        const name = item.querySelector('.merit-flaw-name').textContent.toLowerCase();
+        const type = (item.dataset.type || '').toLowerCase();
+        const nameNode = item.querySelector('.add-merit-flaw-btn');
+        const name = nameNode ? nameNode.textContent.toLowerCase() : '';
         
         let show = true;
         
@@ -3496,10 +3807,10 @@ function filterMeritsFlaws() {
         }
         
         // Type filter
-        if (typeFilter === 'merits' && type !== 'merit') {
+        if (typeFilter === 'merits' && type !== 'merits') {
             show = false;
         }
-        if (typeFilter === 'flaws' && type !== 'flaw') {
+        if (typeFilter === 'flaws' && type !== 'flaws') {
             show = false;
         }
         
@@ -3525,16 +3836,16 @@ function filterMeritsFlaws() {
 // Get sort function based on sort filter
 function getSortFunction(sortFilter) {
     return (a, b) => {
-        const aName = a.querySelector('.merit-flaw-name').textContent;
-        const bName = b.querySelector('.merit-flaw-name').textContent;
+        const aBtn = a.querySelector('.add-merit-flaw-btn');
+        const bBtn = b.querySelector('.add-merit-flaw-btn');
+        const aName = aBtn ? aBtn.textContent : '';
+        const bName = bBtn ? bBtn.textContent : '';
         const aCategory = a.dataset.category;
         const bCategory = b.dataset.category;
         
         // Get cost values
-        const aCostText = a.querySelector('.merit-flaw-cost').textContent;
-        const bCostText = b.querySelector('.merit-flaw-cost').textContent;
-        const aCost = parseCost(aCostText);
-        const bCost = parseCost(bCostText);
+        const aCost = parseCost(a.dataset.cost);
+        const bCost = parseCost(b.dataset.cost);
         
         switch (sortFilter) {
             case 'cost':
@@ -3557,9 +3868,19 @@ function getSortFunction(sortFilter) {
 }
 
 // Parse cost from text (handles "1pt", "2pts", "1-3pts", etc.)
-function parseCost(costText) {
-    const match = costText.match(/(\d+)/);
-    return match ? parseInt(match[1]) : 0;
+function parseCost(costValue) {
+    if (costValue === null || costValue === undefined) {
+        return 0;
+    }
+    if (typeof costValue === 'number') {
+        return costValue;
+    }
+    const numeric = parseInt(costValue, 10);
+    if (!Number.isNaN(numeric)) {
+        return numeric;
+    }
+    const match = String(costValue).match(/(\d+)/);
+    return match ? parseInt(match[1], 10) : 0;
 }
 
 // Reset all filters to default values

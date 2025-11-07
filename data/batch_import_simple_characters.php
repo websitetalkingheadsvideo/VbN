@@ -93,18 +93,46 @@ function importCharacter($conn, $filename) {
             INSERT INTO characters (
                 user_id, character_name, player_name, chronicle, nature, demeanor, 
                 concept, clan, generation, sire, pc, biography, equipment,
-                experience_total, experience_unspent, blood_pool_current, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                experience_total, experience_unspent, blood_pool_current, notes,
+                status, camarilla_status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
         
         if (!$stmt) {
             throw new Exception("Prepare failed: " . mysqli_error($conn));
         }
         
-        mysqli_stmt_bind_param($stmt, "isssssssisissiiis",
+        $status_value = 'active';
+        $camarilla_value = 'Unknown';
+        if (!empty($character['current_state'])) {
+            $candidate = strtolower($character['current_state']);
+            if (in_array($candidate, ['active', 'inactive', 'archived'], true)) {
+                $status_value = $candidate;
+            }
+        }
+        if (!empty($character['camarilla_status'])) {
+            $candidate = ucfirst(strtolower($character['camarilla_status']));
+            if (in_array($candidate, ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'], true)) {
+                $camarilla_value = $candidate;
+            }
+        }
+
+        if (!empty($character['status']) && is_array($character['status'])) {
+            $candidateState = strtolower($character['status']['current_state'] ?? '');
+            if (in_array($candidateState, ['active', 'inactive', 'archived'], true)) {
+                $status_value = $candidateState;
+            }
+            $candidateCam = ucfirst(strtolower($character['status']['camarilla_status'] ?? ''));
+            if (in_array($candidateCam, ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'], true)) {
+                $camarilla_value = $candidateCam;
+            }
+        }
+
+        mysqli_stmt_bind_param($stmt, "isssssssisissiiisss",
             $user_id, $character_name, $player_name, $chronicle, $nature,
             $demeanor, $concept, $clan, $generation, $sire, $pc, $biography,
-            $equipment, $xp_total, $xp_available, $blood_pool, $notes
+            $equipment, $xp_total, $xp_available, $blood_pool, $notes,
+            $status_value, $camarilla_value
         );
         
         if (!mysqli_stmt_execute($stmt)) {
@@ -117,8 +145,8 @@ function importCharacter($conn, $filename) {
         // Insert disciplines
         if (isset($character['disciplines']) && is_array($character['disciplines'])) {
             $disc_stmt = mysqli_prepare($conn, "
-                INSERT INTO character_disciplines (character_id, discipline_name, level, xp_cost)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO character_disciplines (character_id, discipline_name, level)
+                VALUES (?, ?, ?)
                 ON DUPLICATE KEY UPDATE level = VALUES(level)
             ");
             
@@ -126,9 +154,7 @@ function importCharacter($conn, $filename) {
             foreach ($character['disciplines'] as $discipline_name => $level) {
                 $discipline_name_capitalized = ucfirst(strtolower($discipline_name));
                 $level = (int)$level;
-                $xp_cost = 0;
-                
-                mysqli_stmt_bind_param($disc_stmt, "isii", $character_id, $discipline_name_capitalized, $level, $xp_cost);
+                mysqli_stmt_bind_param($disc_stmt, "isi", $character_id, $discipline_name_capitalized, $level);
                 mysqli_stmt_execute($disc_stmt);
                 $disc_count++;
             }

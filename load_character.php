@@ -22,7 +22,7 @@ try {
     $character = db_fetch_one($conn,
         "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept, 
                 clan, generation, sire, pc, biography, character_image, equipment, notes, 
-                total_xp, spent_xp, created_at, updated_at 
+                total_xp, spent_xp, status AS current_state, camarilla_status, created_at, updated_at 
          FROM characters WHERE id = ?",
         "i",
         [$character_id]
@@ -33,6 +33,20 @@ try {
         echo json_encode(['success' => false, 'message' => 'Character not found']);
         exit;
     }
+
+    $valid_states = ['active', 'inactive', 'archived'];
+    $character['current_state'] = strtolower($character['current_state'] ?? 'active');
+    if (!in_array($character['current_state'], $valid_states, true)) {
+        $character['current_state'] = 'active';
+    }
+
+    $valid_camarilla = ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'];
+    $camarilla = $character['camarilla_status'] ?? 'Unknown';
+    $camarilla = $camarilla ? ucfirst(strtolower($camarilla)) : 'Unknown';
+    if (!in_array($camarilla, $valid_camarilla, true)) {
+        $camarilla = 'Unknown';
+    }
+    $character['camarilla_status'] = $camarilla;
     
     // Get all related data using helper functions
     $traits = db_fetch_all($conn,
@@ -243,7 +257,11 @@ try {
         'disciplinePowers' => $discipline_powers_obj,
         'backgrounds' => $backgrounds,
         'morality' => $morality,
-        'merits_flaws' => $merits_flaws
+        'merits_flaws' => $merits_flaws,
+        'status_meta' => [
+            'current_state' => $character['current_state'],
+            'camarilla_status' => $character['camarilla_status']
+        ]
     ];
     
     error_log("load_character.php - Response includes abilities_full: " . (isset($response['abilities_full']) ? 'YES' : 'NO'));

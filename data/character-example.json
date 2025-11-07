@@ -1,6 +1,8 @@
 {
   "character_name": "Example Character Name",
   "player_name": "Player Name or ST/NPC",
+  "current_state": "active",
+  "camarilla_status": "Unknown",
   "chronicle": "Valley by Night",
   "nature": "Survivor",
   "demeanor": "Conformist",
@@ -101,6 +103,8 @@
   
   "status": {
     "created_date": "2025-01-11",
+    "current_state": "active",
+    "camarilla_status": "Unknown",
     "xp_total": 0,
     "xp_spent": 0,
     "xp_available": 0,

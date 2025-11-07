@@ -102,15 +102,41 @@ try {
         INSERT INTO characters (
             user_id, character_name, player_name, chronicle, nature, demeanor, 
             concept, clan, generation, sire, pc, biography, equipment,
-            experience_total, experience_unspent, blood_pool_current, notes
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            experience_total, experience_unspent, blood_pool_current, notes,
+            status, camarilla_status
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
     
     if (!$stmt) {
         throw new Exception("Prepare failed: " . mysqli_error($conn));
     }
     
-    mysqli_stmt_bind_param($stmt, "isssssssisissiiis",
+    $status_value = 'active';
+    $camarilla_value = 'Unknown';
+    if (!empty($character['current_state'])) {
+        $candidate = strtolower($character['current_state']);
+        if (in_array($candidate, ['active', 'inactive', 'archived'], true)) {
+            $status_value = $candidate;
+        }
+    }
+    if (!empty($character['camarilla_status'])) {
+        $candidate = ucfirst(strtolower($character['camarilla_status']));
+        if (in_array($candidate, ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'], true)) {
+            $camarilla_value = $candidate;
+        }
+    }
+    if (!empty($character['status']) && is_array($character['status'])) {
+        $candidateState = strtolower($character['status']['current_state'] ?? '');
+        if (in_array($candidateState, ['active', 'inactive', 'archived'], true)) {
+            $status_value = $candidateState;
+        }
+        $candidateCamarilla = ucfirst(strtolower($character['status']['camarilla_status'] ?? ''));
+        if (in_array($candidateCamarilla, ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'], true)) {
+            $camarilla_value = $candidateCamarilla;
+        }
+    }
+
+    mysqli_stmt_bind_param($stmt, "isssssssisissiiisss",
         $user_id,
         $character_name,
         $player_name,
@@ -127,7 +153,9 @@ try {
         $xp_total,
         $xp_available,
         $blood_pool,
-        $notes
+        $notes,
+        $status_value,
+        $camarilla_value
     );
     
     if (!mysqli_stmt_execute($stmt)) {
@@ -141,11 +169,10 @@ try {
     echo "📝 Inserting disciplines...\n";
     
     $disc_stmt = mysqli_prepare($conn, "
-        INSERT INTO character_disciplines (character_id, discipline_name, level, xp_cost)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO character_disciplines (character_id, discipline_name, level)
+        VALUES (?, ?, ?)
         ON DUPLICATE KEY UPDATE 
-        level = VALUES(level),
-        xp_cost = VALUES(xp_cost)
+        level = VALUES(level)
     ");
     
     if (!$disc_stmt) {
@@ -160,13 +187,11 @@ try {
             // Capitalize first letter for consistency
             $discipline_name_capitalized = ucfirst(strtolower($discipline_name));
             $level = (int)$level;
-            $xp_cost = 0;
             
-            mysqli_stmt_bind_param($disc_stmt, "isii",
+            mysqli_stmt_bind_param($disc_stmt, "isi",
                 $character_id,
                 $discipline_name_capitalized,
-                $level,
-                $xp_cost
+                $level
             );
             
             if (!mysqli_stmt_execute($disc_stmt)) {

@@ -96,12 +96,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="header-top-row d-flex align-items-center gap-2 flex-wrap">
                     <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="quick-nav">
-                        <select id="agentSelect" class="agent-dropdown" 
-                                onchange="if(this.value) window.location.href=this.value; this.value='';">
-                            <option value="">Select Agent...</option>
-                            <option value="<?php echo $path_prefix; ?>admin/laws_agent.php">🧛 Laws Agent</option>
-                            <!-- Add more agents here in the future -->
-                        </select>
+                        <button id="agentSelect" class="btn btn-outline-danger btn-sm" type="button" onclick="window.location.href='<?php echo $path_prefix; ?>admin/laws_agent.php';">
+                            🧛 Laws Agent
+                        </button>
                     </div>
                     <?php endif; ?>
                     <div class="user-info">

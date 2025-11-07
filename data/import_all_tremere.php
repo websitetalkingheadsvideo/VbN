@@ -99,15 +99,26 @@ foreach ($characters as $index => $char) {
             INSERT INTO characters (
                 user_id, character_name, player_name, chronicle, nature, demeanor, 
                 concept, clan, generation, sire, pc, biography, equipment, 
-                total_xp, spent_xp, notes, custom_data
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                total_xp, spent_xp, notes, custom_data, status, camarilla_status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
         
         if (!$stmt) {
             throw new Exception("Prepare failed: " . mysqli_error($conn));
         }
         
-        mysqli_stmt_bind_param($stmt, "isssssssississiis",
+        $status_value = strtolower($char['current_state'] ?? ($char['status']['current_state'] ?? 'active'));
+        if (!in_array($status_value, ['active', 'inactive', 'archived'], true)) {
+            $status_value = 'active';
+        }
+
+        $camarilla_value_raw = $char['camarilla_status'] ?? ($char['status']['camarilla_status'] ?? 'Unknown');
+        $camarilla_value = $camarilla_value_raw ? ucfirst(strtolower($camarilla_value_raw)) : 'Unknown';
+        if (!in_array($camarilla_value, ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'], true)) {
+            $camarilla_value = 'Unknown';
+        }
+
+        mysqli_stmt_bind_param($stmt, "isssssssississiisss",
             $user_id,
             $char['character_name'],
             $char['player_name'],
@@ -124,7 +135,9 @@ foreach ($characters as $index => $char) {
             $char['status']['xp_total'],
             $char['status']['xp_spent'],
             $char['status']['notes'],
-            $custom_data_json
+            $custom_data_json,
+            $status_value,
+            $camarilla_value
         );
         
         if (!mysqli_stmt_execute($stmt)) {

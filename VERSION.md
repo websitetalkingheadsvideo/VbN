@@ -1,6 +1,62 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.18 (Current)
+## Version 0.9.20 (Current)
+**Date:** January 2025
+
+### Final Details Tab & Character Relationships:
+- ✅ **Custom Data Field** – Added textarea for JSON/plain text storage in Final Details tab
+- ✅ **Coterie Management** – Dynamic add/remove coterie entries with full form fields
+- ✅ **Relationships Management** – Dynamic add/remove relationship entries with character name dropdown
+- ✅ **Character Dropdown** – Relationship character names now use dropdown populated from database
+- ✅ **JSON Validation Fix** – Fixed `custom_data` save failures by properly handling empty strings (convert to NULL for JSON columns)
+- ✅ **Data Persistence** – Coterie and relationship data saves to `character_coteries` and `character_relationships` tables
+- ✅ **Data Loading** – Existing coteries and relationships populate correctly when editing characters
+- ⚠️ **Image Upload** – Still debugging file picker dialog not opening (needs work next session)
+
+### Files Modified / Added:
+- `lotn_char_create.php` – Added Final Details fields, inline JavaScript functions
+- `save_character.php` – Added `cleanJsonData()` function, coterie/relationship saving logic
+- `api_get_character_names.php` – NEW API endpoint for character name dropdowns
+- `js/modules/main.js` – Updated save/load functions, removed excessive logging
+- `js/script.js` – Updated relationship collection, added character loading
+- `js/character_image.js` – Cleaned up debug logging
+
+### Impact:
+- **Character Creation** – Final Details tab now complete with custom data and relationship management
+- **Data Integrity** – Custom data properly validated, empty values handled correctly
+- **User Experience** – Character relationships use dropdown instead of manual text entry
+- **Code Quality** – Removed excessive debug logging, cleaner event handlers
+
+---
+
+## Version 0.9.19
+**Date:** November 2025
+
+### Character Lifecycle & Sect Integration:
+- ✅ **Lifecycle Status Column** – Added `status` column (defaults to `active`) to `characters` table with automated migration script
+- ✅ **Sect Alignment Field** – Added `camarilla_status` column with `Unknown` default and ensured indexes for both new fields
+- ✅ **JSON Template Alignment** – Updated character template and import documentation to include `current_state` and `camarilla_status`
+- ✅ **Importer Support** – Updated all character import scripts to read/write the new fields with sensible fallbacks
+- ✅ **Admin Editor Updates** – Added status/sect dropdowns, surfaced values in the admin table, modal view, and compact character sheet
+- ✅ **API & Saver Sync** – Extended view/load/save endpoints plus JS clients to persist and expose the new lifecycle data
+
+### Files Modified / Added:
+- `database/add_character_status_fields.php` – new migration utility
+- `database/create user table.php`
+- `data/character-example.json`
+- `data/import_character*.php`, `data/import_*`
+- `admin/admin_panel.php`, `js/admin_panel.js`, `lotn_char_create.php`, `save_character.php`
+- `admin/view_character_api.php`, `load_character.php`, `js/modules/main.js`
+- `reference/Characters/CHARACTER_IMPORT_PROCESS.md`
+
+### Impact:
+- **Lifecycle Visibility** – Every character now carries an explicit lifecycle state used across admin filters and exports
+- **Faction Reporting** – Sect alignment is captured consistently in DB, forms, and template data
+- **Import Reliability** – JSON exports remain backward compatible while enforcing the new schema defaults
+
+---
+
+## Version 0.9.18
 **Date:** November 2025
 
 ### Admin Panel Bootstrap Column Cleanup:

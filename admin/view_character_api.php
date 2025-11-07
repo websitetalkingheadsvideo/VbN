@@ -26,7 +26,8 @@ if ($character_id <= 0) {
 $character = db_fetch_one($conn,
     "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept,
             clan, generation, sire, pc, biography, character_image, equipment, notes,
-            total_xp, spent_xp, custom_data, created_at, updated_at
+            total_xp, spent_xp, custom_data, status AS current_state, camarilla_status,
+            created_at, updated_at
      FROM characters WHERE id = ?",
     "i",
     [$character_id]
@@ -36,6 +37,20 @@ if (!$character) {
     echo json_encode(['success' => false, 'message' => 'Character not found']);
     exit();
 }
+
+$valid_states = ['active', 'inactive', 'archived'];
+$character['current_state'] = strtolower($character['current_state'] ?? 'active');
+if (!in_array($character['current_state'], $valid_states, true)) {
+    $character['current_state'] = 'active';
+}
+
+$valid_camarilla = ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'];
+$camarilla_state = $character['camarilla_status'] ?? 'Unknown';
+$camarilla_state = $camarilla_state ? ucfirst(strtolower($camarilla_state)) : 'Unknown';
+if (!in_array($camarilla_state, $valid_camarilla, true)) {
+    $camarilla_state = 'Unknown';
+}
+$character['camarilla_status'] = $camarilla_state;
 
 // Resolve clan logo URL from DB mapping (relative to admin path)
 $clan_logo_url = null;
@@ -52,7 +67,7 @@ if (!empty($character['clan'])) {
 
 // Get all related data using helper functions with explicit columns
 $traits = db_fetch_all($conn,
-    "SELECT id, trait_name, trait_category, trait_type, xp_cost 
+    "SELECT id, trait_name, trait_category, trait_type 
      FROM character_traits WHERE character_id = ?",
     "i",
     [$character_id]
@@ -81,7 +96,7 @@ if (empty($abilities_raw)) {
             error_log("WARNING: Character {$character_id} has {$count_row['count']} abilities but db_fetch_all returned empty");
             // Try fetching without prepared statement
             $direct_result = mysqli_query($conn,
-                "SELECT id, ability_name, specialization, level, xp_cost 
+                "SELECT id, ability_name, specialization, level 
                  FROM character_abilities 
                  WHERE character_id = " . intval($character_id)
             );
@@ -121,8 +136,7 @@ foreach ($abilities_raw as $ability) {
         'ability_name' => $ability['ability_name'],
         'ability_category' => $resolved_category,
         'specialization' => $ability['specialization'] ?? null,
-        'level' => isset($ability['level']) ? intval($ability['level']) : 1,
-        'xp_cost' => 0 // xp_cost column doesn't exist in character_abilities table
+        'level' => isset($ability['level']) ? intval($ability['level']) : 1
     ];
 }
 
@@ -137,7 +151,6 @@ foreach ($all_disciplines_data as $disc_name => $disc_data) {
         'id' => 0, // Not needed for display
         'discipline_name' => $disc_name,
         'level' => $disc_data['level'],
-        'xp_cost' => 0, // Could be added to character_disciplines table later
         'powers' => $disc_data['powers'], // Include powers for detailed display
         'power_count' => count($disc_data['powers']),
         'is_custom' => $disc_data['is_custom']
@@ -145,7 +158,7 @@ foreach ($all_disciplines_data as $disc_name => $disc_data) {
 }
 
 $backgrounds = db_fetch_all($conn,
-    "SELECT id, background_name, level, xp_cost 
+    "SELECT id, background_name, level 
      FROM character_backgrounds WHERE character_id = ?",
     "i",
     [$character_id]
@@ -173,6 +186,10 @@ $status = db_fetch_one($conn,
     "i",
     [$character_id]
 );
+
+$status_details = $status ?: [];
+$status_details['current_state'] = $character['current_state'];
+$status_details['camarilla_status'] = $character['camarilla_status'];
 
 $coteries = db_fetch_all($conn,
     "SELECT id, coterie_name, coterie_type, role, description, notes
@@ -205,14 +222,18 @@ foreach ($relationships as $rel) {
 
 echo json_encode([
     'success' => true,
-    'character' => array_merge($character, [ 'clan_logo_url' => $clan_logo_url ]),
+    'character' => array_merge($character, [
+        'clan_logo_url' => $clan_logo_url,
+        'current_state' => $character['current_state'],
+        'camarilla_status' => $character['camarilla_status']
+    ]),
     'traits' => $traits,
     'abilities' => $abilities,
     'disciplines' => $disciplines,
     'backgrounds' => $backgrounds,
     'morality' => $morality,
     'merits_flaws' => $merits_flaws,
-    'status' => $status,
+    'status' => $status_details,
     'coteries' => $coteries,
     'relationships' => $relationship_data
 ]);

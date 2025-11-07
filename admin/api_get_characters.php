@@ -12,7 +12,7 @@ require_once __DIR__ . '/../includes/connect.php';
 $response = ['success' => false, 'characters' => [], 'error' => ''];
 
 try {
-    $query = "SELECT id, character_name, clan, player_name FROM characters ORDER BY character_name ASC";
+    $query = "SELECT id, character_name, clan, player_name, status, camarilla_status FROM characters ORDER BY character_name ASC";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $result = $stmt->get_result();

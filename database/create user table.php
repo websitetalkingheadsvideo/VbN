@@ -41,6 +41,8 @@ $create_characters = "CREATE TABLE IF NOT EXISTS characters (
     generation INT NOT NULL,
     sire VARCHAR(100),
     pc BOOLEAN DEFAULT TRUE,
+    status VARCHAR(20) NOT NULL DEFAULT 'active',
+    camarilla_status VARCHAR(50) NOT NULL DEFAULT 'Unknown',
     biography TEXT,
     equipment TEXT,
     total_xp INT DEFAULT 30,

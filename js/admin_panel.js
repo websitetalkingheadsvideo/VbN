@@ -487,6 +487,9 @@ function renderCharacterView(mode) {
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Chronicle</span><span class="character-info-value">' + (char.chronicle || 'N/A') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Clan</span><span class="character-info-value">' + (char.clan || 'Unknown') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Generation</span><span class="character-info-value">' + (char.generation || 'N/A') + 'th</span></div>';
+        const formattedState = (char.current_state || 'active').toString().charAt(0).toUpperCase() + (char.current_state || 'active').toString().slice(1);
+        headerHtml += '<div class="character-info-row"><span class="character-info-label">Status</span><span class="character-info-value">' + formattedState + '</span></div>';
+        headerHtml += '<div class="character-info-row"><span class="character-info-label">Sect Alignment</span><span class="character-info-value">' + (char.camarilla_status || 'Unknown') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Nature</span><span class="character-info-value">' + (char.nature || 'N/A') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Demeanor</span><span class="character-info-value">' + (char.demeanor || 'N/A') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Sire</span><span class="character-info-value">' + (char.sire || 'Unknown') + '</span></div>';
@@ -507,20 +510,11 @@ function renderCharacterView(mode) {
     if (mode === 'compact') {
         // Compact view - essential info only (header already rendered above)
         contentHtml = '<div class="character-details compact">';
-        
-        if (currentViewData.traits && currentViewData.traits.length > 0) {
-            const physical = currentViewData.traits.filter(t => t.trait_category === 'Physical');
-            const social = currentViewData.traits.filter(t => t.trait_category === 'Social');
-            const mental = currentViewData.traits.filter(t => t.trait_category === 'Mental');
-            
-            contentHtml += '<h3>Traits</h3>';
-            if (physical.length > 0) contentHtml += '<p><strong>Physical:</strong> ' + physical.map(t => t.trait_name).join(', ') + '</p>';
-            if (social.length > 0) contentHtml += '<p><strong>Social:</strong> ' + social.map(t => t.trait_name).join(', ') + '</p>';
-            if (mental.length > 0) contentHtml += '<p><strong>Mental:</strong> ' + mental.map(t => t.trait_name).join(', ') + '</p>';
-        }
-        
-        // Disciplines removed from compact view
-        
+        const statusLabel = (char.current_state || 'active').toString();
+        const formattedStatus = statusLabel.charAt(0).toUpperCase() + statusLabel.slice(1);
+        contentHtml += '<p><strong>Status:</strong> ' + formattedStatus + '</p>';
+        contentHtml += '<p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p>';
+
         contentHtml += '</div>';
     } else {
         // Full view - all details (header already rendered above)
@@ -800,7 +794,11 @@ function renderCharacterView(mode) {
         contentHtml += '<h3>Status & Resources</h3>';
         if (currentViewData.status) {
             const s = currentViewData.status;
+            const lifecycleStatus = (char.current_state || 'active').toString();
+            const formattedLifecycle = lifecycleStatus.charAt(0).toUpperCase() + lifecycleStatus.slice(1);
             contentHtml += '<div class="row g-3 mt-2">';
+            contentHtml += '<div class="col-md-6"><p><strong>Status:</strong> ' + formattedLifecycle + '</p></div>';
+            contentHtml += '<div class="col-md-6"><p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p></div>';
             contentHtml += '<div class="col-md-6"><p><strong>Health Levels:</strong> ' + (s.health_levels || 'N/A') + '</p></div>';
             contentHtml += '<div class="col-md-6"><p><strong>Blood Pool:</strong> ' + (s.blood_pool_current || 0) + '/' + (s.blood_pool_maximum || 0) + '</p></div>';
             if (s.sect_status) contentHtml += '<div class="col-md-6"><p><strong>Sect Status:</strong> ' + s.sect_status + '</p></div>';
@@ -808,7 +806,13 @@ function renderCharacterView(mode) {
             if (s.city_status) contentHtml += '<div class="col-md-6"><p><strong>City Status:</strong> ' + s.city_status + '</p></div>';
             contentHtml += '</div>';
         } else {
-            contentHtml += '<p class="empty-state">No status information recorded.</p>';
+            const lifecycleStatus = (char.current_state || 'active').toString();
+            const formattedLifecycle = lifecycleStatus.charAt(0).toUpperCase() + lifecycleStatus.slice(1);
+            contentHtml += '<div class="row g-3 mt-2">';
+            contentHtml += '<div class="col-md-6"><p><strong>Status:</strong> ' + formattedLifecycle + '</p></div>';
+            contentHtml += '<div class="col-md-6"><p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p></div>';
+            contentHtml += '<div class="col-12"><p class="empty-state">No additional status track information recorded.</p></div>';
+            contentHtml += '</div>';
         }
         
         // Custom Data

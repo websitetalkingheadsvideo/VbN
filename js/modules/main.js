@@ -242,40 +242,15 @@ class CharacterCreationApp {
 					console.log('[ui] Button clicked:', { id: id || '(no-id)', label });
 				}
 			}
-			// File chooser (Choose Image) - only log, don't interfere
+			// File chooser (Choose Image) - don't interfere with native behavior
 			const fileClickEl = event.target.closest('input[type="file"], label[for]');
 			if (fileClickEl) {
-				const el = fileClickEl;
-				const kind = el.tagName.toLowerCase();
-				const forAttr = el.getAttribute('for') || '';
-				console.log('[ui] File chooser clicked:', { kind, for: forAttr });
 				// Don't preventDefault or stopPropagation - let native behavior work
-			}
-			// Generic Upload Image-ish controls (covers anchors/divs used as buttons)
-			const clickable = event.target.closest('[id], [class], a, div, span');
-			if (clickable) {
-				const text = (clickable.textContent || '').toLowerCase();
-				const id2 = clickable.id || '';
-				const cls = clickable.className || '';
-				if (/upload/.test(text) || /upload/.test(id2) || /upload/.test(cls)) {
-					console.log('[ui] Upload-ish element clicked:', { id: id2, class: cls, text: text.slice(0, 80) });
-				}
 			}
 		}, { capture: true });
 
-		// Log selected files when file input changes
-		document.addEventListener('change', (event) => {
-			const input = event.target;
-			if (input && input.type === 'file') {
-				console.log('[main.js] File input change detected on:', input.id || 'unnamed input');
-				if (input.files && input.files.length > 0) {
-					const names = Array.from(input.files).map(f => f.name);
-					console.log('[main.js] File selected:', names);
-				} else {
-					console.log('[main.js] File input change but no files - user may have canceled');
-				}
-			}
-		}, { capture: true });
+        // File input change handling is done by character_image.js
+        // No need for additional logging here
         
         // Save character
         this.modules.eventManager.onCustomEvent('saveCharacter', async (event) => {
@@ -338,6 +313,9 @@ class CharacterCreationApp {
             } else {
                 // Start with a fresh state for new character creation
                 this.modules.stateManager.reset();
+                if (this.modules.abilitySystem && typeof this.modules.abilitySystem.resetAll === 'function') {
+                    this.modules.abilitySystem.resetAll();
+                }
             }
         }
         
@@ -470,9 +448,36 @@ class CharacterCreationApp {
     async saveCharacter() {
         try {
             const state = this.modules.stateManager.getState();
+            
+            // Collect Custom Data, Coterie, and Relationships from Final Details tab
+            const customDataField = document.getElementById('customData');
+            if (customDataField) {
+                state.custom_data = customDataField.value.trim();
+            }
+            
+            // Collect coteries and relationships using global functions
+            if (typeof window.collectCoteries === 'function') {
+                state.coteries = window.collectCoteries();
+            }
+            if (typeof window.collectRelationships === 'function') {
+                state.relationships = window.collectRelationships();
+            }
+            
             const response = await this.modules.dataManager.saveCharacter(state);
             
             if (response.success) {
+                const returnedId = response.character_id || response.id;
+                if (returnedId) {
+                    const idValue = parseInt(returnedId, 10);
+                    if (!Number.isNaN(idValue) && idValue > 0) {
+                        this.modules.stateManager.setStateProperty('characterId', idValue);
+                        this.modules.stateManager.setStateProperty('id', idValue);
+                        const hidden = document.getElementById('characterId');
+                        if (hidden) {
+                            hidden.value = String(idValue);
+                        }
+                    }
+                }
                 this.modules.stateManager.setStateProperty('isDirty', false);
                 this.modules.stateManager.setStateProperty('lastSaved', Date.now());
             } else {
@@ -565,6 +570,8 @@ class CharacterCreationApp {
         this.setFormValue('#chronicle', character.chronicle);
         this.setFormValue('#generation', character.generation);
         this.setFormValue('#sire', character.sire);
+        this.setFormValue('#currentState', character.status || character.current_state || 'active');
+        this.setFormValue('#camarillaStatus', character.camarilla_status || 'Unknown');
         
         // Set PC checkbox based on is_pc field or player_name
         const isPC = character.is_pc !== undefined ? character.is_pc : (character.player_name !== 'NPC');
@@ -660,6 +667,54 @@ class CharacterCreationApp {
             this.populateMeritsFlawsFromData(data.merits_flaws);
         }
         
+        // Populate Custom Data, Coterie, and Relationships
+        if (character.custom_data) {
+            const customDataField = document.getElementById('customData');
+            if (customDataField) {
+                customDataField.value = character.custom_data;
+            }
+        }
+        
+        // Populate coteries
+        if (data.coteries && Array.isArray(data.coteries) && data.coteries.length > 0) {
+            if (typeof window.addCoterieEntry === 'function') {
+                // Reset counter and clear existing entries
+                if (typeof window.coterieCounter !== 'undefined') {
+                    window.coterieCounter = 0;
+                }
+                const container = document.getElementById('coterieContainer');
+                if (container) {
+                    container.innerHTML = '';
+                    const emptyState = document.getElementById('coterieEmptyState');
+                    if (emptyState) emptyState.style.display = 'none';
+                }
+                // Add each coterie entry
+                data.coteries.forEach(coterie => {
+                    window.addCoterieEntry(coterie);
+                });
+            }
+        }
+        
+        // Populate relationships
+        if (data.relationships && Array.isArray(data.relationships) && data.relationships.length > 0) {
+            if (typeof window.addRelationshipEntry === 'function') {
+                // Reset counter and clear existing entries
+                if (typeof window.relationshipCounter !== 'undefined') {
+                    window.relationshipCounter = 0;
+                }
+                const container = document.getElementById('relationshipsContainer');
+                if (container) {
+                    container.innerHTML = '';
+                    const emptyState = document.getElementById('relationshipsEmptyState');
+                    if (emptyState) emptyState.style.display = 'none';
+                }
+                // Add each relationship entry
+                data.relationships.forEach(relationship => {
+                    window.addRelationshipEntry(relationship);
+                });
+            }
+        }
+        
         // Final update of trait displays to ensure everything is shown
         setTimeout(() => {
             if (this.modules.traitSystem) {
@@ -740,6 +795,43 @@ class CharacterCreationApp {
     populateAbilitiesFromData(abilities) {
         console.log('Populating abilities from data:', abilities);
         console.log('abilities type:', typeof abilities, 'isArray:', Array.isArray(abilities));
+
+        const emptyAbilityBuckets = () => ({
+            Physical: [],
+            Social: [],
+            Mental: [],
+            Optional: []
+        });
+
+        const normalizeCategoryKey = (category) => {
+            if (!category) {
+                return 'Optional';
+            }
+
+            const lowered = category.toString().trim().toLowerCase();
+            if (lowered.startsWith('phys')) return 'Physical';
+            if (lowered.startsWith('soc')) return 'Social';
+            if (lowered.startsWith('ment')) return 'Mental';
+            return 'Optional';
+        };
+
+        const normalizedState = emptyAbilityBuckets();
+
+        const pushAbilityDots = (categoryKey, abilityName, level = 1) => {
+            const normalizedName = (abilityName || '').trim();
+            if (!normalizedName || !normalizedState.hasOwnProperty(categoryKey)) {
+                return;
+            }
+
+            const numericLevel = Number(level);
+            const safeLevel = Number.isFinite(numericLevel)
+                ? Math.max(1, Math.min(5, Math.floor(numericLevel)))
+                : 1;
+
+            for (let dot = 0; dot < safeLevel; dot += 1) {
+                normalizedState[categoryKey].push(normalizedName);
+            }
+        };
         
         // Also update global characterData for character sheet
         if (typeof window.characterData === 'undefined') {
@@ -747,18 +839,13 @@ class CharacterCreationApp {
                 abilities: { Physical: [], Social: [], Mental: [], Optional: [] }
             };
         }
-        if (!window.characterData.abilities) {
-            window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
-        }
+        window.characterData.abilities = emptyAbilityBuckets();
         
         // Check if we have full ability data with levels (from load_character.php)
         if (this.modules.stateManager) {
             const state = this.modules.stateManager.getState();
             if (state && state.abilities_full && Array.isArray(state.abilities_full) && state.abilities_full.length > 0) {
                 // Use full ability data with levels and specializations
-                // Clear existing abilities in characterData
-                window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
-                
                 state.abilities_full.forEach(ability => {
                     // Populate form inputs
                     const input = document.querySelector(`input[name="ability_${ability.ability_name}"]`);
@@ -768,8 +855,7 @@ class CharacterCreationApp {
                     }
                     
                     // Also populate characterData.abilities for character sheet
-                    const category = ability.ability_category || 'Optional';
-                    const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                    const normalizedCategory = normalizeCategoryKey(ability.ability_category);
                     if (window.characterData.abilities.hasOwnProperty(normalizedCategory)) {
                         let displayName = ability.ability_name;
                         if (ability.level && ability.level > 0) {
@@ -780,7 +866,14 @@ class CharacterCreationApp {
                         }
                         window.characterData.abilities[normalizedCategory].push(displayName);
                     }
+
+                    pushAbilityDots(normalizedCategory, ability.ability_name, ability.level);
                 });
+
+                this.modules.stateManager.setState({ abilities: normalizedState });
+                if (this.modules.abilitySystem) {
+                    this.modules.abilitySystem.updateAllDisplays();
+                }
                 return;
             }
         }
@@ -788,9 +881,6 @@ class CharacterCreationApp {
         // Handle both array and object formats
         if (Array.isArray(abilities)) {
             // Old format - array of ability objects with level info
-            // Clear existing abilities in characterData
-            window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
-            
             abilities.forEach(ability => {
                 const input = document.querySelector(`input[name="ability_${ability.ability_name}"]`);
                 if (input) {
@@ -799,8 +889,7 @@ class CharacterCreationApp {
                 }
                 
                 // Populate characterData.abilities
-                const category = ability.ability_category || 'Optional';
-                const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                const normalizedCategory = normalizeCategoryKey(ability.ability_category);
                 if (window.characterData.abilities.hasOwnProperty(normalizedCategory)) {
                     let displayName = ability.ability_name;
                     if (ability.level && ability.level > 0) {
@@ -811,14 +900,13 @@ class CharacterCreationApp {
                     }
                     window.characterData.abilities[normalizedCategory].push(displayName);
                 }
+
+                pushAbilityDots(normalizedCategory, ability.ability_name, ability.level);
             });
         } else if (typeof abilities === 'object' && abilities !== null) {
             // New format - object with categories as keys (array of ability names only)
-            // Clear and populate characterData.abilities
-            window.characterData.abilities = { Physical: [], Social: [], Mental: [], Optional: [] };
-            
             Object.entries(abilities).forEach(([category, abilityNames]) => {
-                const normalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+                const normalizedCategory = normalizeCategoryKey(category);
                 if (window.characterData.abilities.hasOwnProperty(normalizedCategory)) {
                     abilityNames.forEach(abilityName => {
                         const input = document.querySelector(`input[name="ability_${abilityName}"]`);
@@ -828,9 +916,15 @@ class CharacterCreationApp {
                         }
                         // Add to characterData for sheet display
                         window.characterData.abilities[normalizedCategory].push(abilityName);
+                        pushAbilityDots(normalizedCategory, abilityName, 1);
                     });
                 }
             });
+        }
+
+        this.modules.stateManager.setState({ abilities: normalizedState });
+        if (this.modules.abilitySystem) {
+            this.modules.abilitySystem.updateAllDisplays();
         }
     }
     

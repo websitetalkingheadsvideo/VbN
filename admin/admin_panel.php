@@ -24,27 +24,29 @@ function render_status_badge($status) {
 
     $classMap = [
         'npc' => 'badge-npc',
-        'draft' => 'badge-draft',
-        'finalized' => 'badge-finalized',
         'active' => 'badge-active',
+        'inactive' => 'badge-inactive',
+        'archived' => 'badge-archived',
         'dead' => 'badge-dead',
-        'missing' => 'badge-missing'
+        'missing' => 'badge-missing',
+        'unknown' => 'badge-neutral'
     ];
 
     $labelMap = [
         'npc' => 'NPC',
-        'draft' => 'Draft',
-        'finalized' => 'Finalized',
         'active' => 'Active',
+        'inactive' => 'Inactive',
+        'archived' => 'Archived',
         'dead' => 'Dead',
-        'missing' => 'Missing'
+        'missing' => 'Missing',
+        'unknown' => 'Unknown'
     ];
 
-    $class = $classMap[$status] ?? 'badge-draft';
     if ($status === '' || !isset($labelMap[$status])) {
         return '';
     }
 
+    $class = $classMap[$status] ?? 'badge-neutral';
     $label = $labelMap[$status];
 
     return sprintf('<span class="%s">%s</span>', $class, htmlspecialchars($label));
@@ -56,13 +58,25 @@ function render_status_badge($status) {
     <p class="panel-subtitle lead text-muted fst-italic mb-4">Manage all characters across the chronicle</p>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav d-flex flex-wrap gap-2 mb-4">
-        <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm active">👥 Characters</a>
-        <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm">🧛 Sire/Childe</a>
-        <a href="admin_equipment.php" class="nav-btn btn btn-outline-danger btn-sm">⚔️ Equipment</a>
-        <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm">📍 Locations</a>
-        <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm">📋 NPC Briefing</a>
+    <div class="admin-nav row g-2 g-md-3 mb-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">👥 Characters</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">🧛 Sire/Childe</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="admin_equipment.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">⚔️ Equipment</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📍 Locations</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📝 Questionnaire</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📋 NPC Briefing</a>
+        </div>
     </div>
     
     <!-- Character Statistics -->
@@ -82,19 +96,19 @@ function render_status_badge($status) {
             echo "<p style='color: red;'>Stats query error: " . mysqli_error($conn) . "</p>";
         }
         ?>
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="col-12 col-sm-4 col-lg-3">
             <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $stats['total'] ?? 0; ?></span>
             <span class="stat-label">Total</span>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="col-12 col-sm-4 col-lg-3">
             <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $stats['pcs'] ?? 0; ?></span>
             <span class="stat-label">PCs</span>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="col-12 col-sm-4 col-lg-3">
             <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></span>
             <span class="stat-label">NPCs</span>
@@ -103,7 +117,8 @@ function render_status_badge($status) {
     </div>
 
     <!-- Questionnaire Statistics -->
-    <div class="questionnaire-stats d-flex flex-wrap gap-3 mb-4">
+    <div class="questionnaire-stats d-flex flex-wrap gap-3 mb-4 align-items-center">
+        <h2 class="h6 text-light mb-0">Story Questionnaire</h2>
         <?php
         // Get questionnaire statistics
         $questionnaire_query = "SELECT COUNT(*) as total_questions FROM questionnaire_questions";
@@ -168,6 +183,8 @@ function render_status_badge($status) {
                     <th data-sort="character_name" class="text-start">Name <span class="sort-icon">⇅</span></th>
                     <th data-sort="player_name" class="text-center text-nowrap">NPC <span class="sort-icon">⇅</span></th>
                     <th data-sort="clan" class="text-center text-nowrap">Clan <span class="sort-icon">⇅</span></th>
+                    <th data-sort="generation" class="text-center text-nowrap">Gen <span class="sort-icon">⇅</span></th>
+                    <th data-sort="status" class="text-center text-nowrap">Status <span class="sort-icon">⇅</span></th>
                     <th class="text-center text-nowrap" style="width: 150px;">Actions</th>
                 </tr>
             </thead>
@@ -180,14 +197,15 @@ function render_status_badge($status) {
                 $char_result = mysqli_query($conn, $char_query);
                 
                 if (!$char_result) {
-                    echo "<tr><td colspan='7'>Query Error: " . mysqli_error($conn) . "</td></tr>";
+                    echo "<tr><td colspan='6'>Query Error: " . mysqli_error($conn) . "</td></tr>";
                 } elseif (mysqli_num_rows($char_result) > 0) {
                     while ($char = mysqli_fetch_assoc($char_result)) {
                         $is_npc = ($char['player_name'] === 'NPC');
                         $playerName = trim($char['player_name'] ?? '') !== '' ? $char['player_name'] : ($is_npc ? 'NPC' : '—');
                         $clanName = $char['clan'] ?? 'Unknown';
                         $generation = $char['generation'] ?? '';
-                        $status = $char['status'] ?? 'draft';
+                        $status = strtolower(trim($char['status'] ?? '')) ?: 'active';
+                        $camarilla = $char['camarilla_status'] ?? 'Unknown';
                         $owner = $char['owner_username'] ?? '—';
                 ?>
                     <tr class="character-row" 
@@ -198,12 +216,29 @@ function render_status_badge($status) {
                         data-player="<?php echo htmlspecialchars($playerName); ?>"
                         data-generation="<?php echo htmlspecialchars($generation); ?>"
                         data-status="<?php echo htmlspecialchars($status); ?>"
+                        data-camarilla="<?php echo htmlspecialchars($camarilla); ?>"
                         data-owner="<?php echo htmlspecialchars($owner); ?>">
                         <td class="character-cell align-top text-light">
                             <strong><?php echo htmlspecialchars($char['character_name']); ?></strong>
                         </td>
-                        <td class="align-top text-light text-center text-nowrap"><?php echo htmlspecialchars($playerName); ?></td>
+                        <td class="align-top text-center text-nowrap">
+                            <?php
+                            if ($is_npc) {
+                                echo render_status_badge('npc');
+                            } elseif ($playerName && $playerName !== '—') {
+                                echo '<span class="text-light">' . htmlspecialchars($playerName) . '</span>';
+                            } else {
+                                echo '<span class="text-muted">—</span>';
+                            }
+                            ?>
+                        </td>
                         <td class="align-top text-light text-center text-nowrap"><?php echo htmlspecialchars($clanName); ?></td>
+                        <td class="align-top text-center text-nowrap">
+                            <?php echo htmlspecialchars($generation ?: '—'); ?>
+                        </td>
+                        <td class="align-top text-center text-nowrap">
+                            <?php echo render_status_badge($status); ?>
+                        </td>
                         <td class="actions text-center align-top" style="width: 150px;">
                             <div class="btn-group btn-group-sm" role="group" aria-label="Character actions">
                                 <button class="action-btn view-btn btn btn-primary" 
@@ -223,7 +258,7 @@ function render_status_badge($status) {
                 <?php 
                     }
                 } else {
-                    echo "<tr><td colspan='7' class='empty-state'>No characters found.</td></tr>";
+                    echo "<tr><td colspan='6' class='empty-state'>No characters found.</td></tr>";
                 }
                 ?>
             </tbody>
@@ -442,6 +477,9 @@ function render_status_badge($status) {
 .badge-draft { background: #8B6508; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-finalized { background: #1a6b3a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-active { background: #0d7a4a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+.badge-inactive { background: #8B6508; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+.badge-archived { background: #3a3a3a; color: #d4c4b0; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+.badge-neutral { background: rgba(139, 0, 0, 0.2); color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-dead { background: #3a3a3a; color: #999; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-missing { background: #5a4a2a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 
@@ -492,9 +530,9 @@ function render_status_badge($status) {
 .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; }
 .modal.active { display: flex; }
 .modal-content { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 3px solid #8B0000; border-radius: 10px; padding: 30px; max-width: 500px; position: relative; }
-.modal-content.large-modal { max-width: 900px; max-height: 90vh; overflow-y: auto; }
+.modal-content.large-modal { max-width: 900px; max-height: 85vh; overflow-y: auto; }
 .modal-content.large-modal.compact-mode { 
-    max-height: 95vh; 
+    max-height: 90vh; 
     overflow-y: hidden; 
     display: flex;
     flex-direction: column;

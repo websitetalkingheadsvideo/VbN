@@ -304,6 +304,30 @@ include 'includes/connect.php';
                             <input type="text" id="chronicle" name="chronicle" value="Valley by Night">
                             <div class="helper-text">Name of the campaign/game</div>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="currentState">Character Status</label>
+                                <select id="currentState" name="currentState">
+                                    <option value="active" selected>Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="archived">Archived</option>
+                                </select>
+                                <div class="helper-text">Controls whether this character appears in active rosters.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="camarillaStatus">Sect Alignment</label>
+                                <select id="camarillaStatus" name="camarillaStatus">
+                                    <option value="Unknown" selected>Unknown</option>
+                                    <option value="Camarilla">Camarilla</option>
+                                    <option value="Anarch">Anarch</option>
+                                    <option value="Independent">Independent</option>
+                                    <option value="Sabbat">Sabbat</option>
+                                </select>
+                                <div class="helper-text">Tracks faction allegiance for reports and filters.</div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Character Image Column -->
@@ -977,15 +1001,15 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="clanDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism" onmouseenter="showDisciplinePopover(event, 'Animalism')" onmouseleave="hideDisciplinePopover()">Animalism</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex" onmouseenter="showDisciplinePopover(event, 'Auspex')" onmouseleave="hideDisciplinePopover()">Auspex</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity" onmouseenter="showDisciplinePopover(event, 'Celerity')" onmouseleave="hideDisciplinePopover()">Celerity</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate" onmouseenter="showDisciplinePopover(event, 'Dominate')" onmouseleave="hideDisciplinePopover()">Dominate</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude" onmouseenter="showDisciplinePopover(event, 'Fortitude')" onmouseleave="hideDisciplinePopover()">Fortitude</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate" onmouseenter="showDisciplinePopover(event, 'Obfuscate')" onmouseleave="hideDisciplinePopover()">Obfuscate</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence" onmouseenter="showDisciplinePopover(event, 'Potence')" onmouseleave="hideDisciplinePopover()">Potence</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence" onmouseenter="showDisciplinePopover(event, 'Presence')" onmouseleave="hideDisciplinePopover()">Presence</button>
-                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean" onmouseenter="showDisciplinePopover(event, 'Protean')" onmouseleave="hideDisciplinePopover()">Protean</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Animalism">Animalism</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Auspex">Auspex</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Celerity">Celerity</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Dominate">Dominate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Fortitude">Fortitude</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Obfuscate">Obfuscate</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Potence">Potence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Presence">Presence</button>
+                        <button type="button" class="discipline-option-btn clan" data-discipline="Protean">Protean</button>
                     </div>
                     
                     <div class="discipline-list" id="clanDisciplinesList">
@@ -1037,29 +1061,28 @@ include 'includes/connect.php';
                     </div>
                     
                     <div class="discipline-options" id="advancedDisciplinesOptions">
-                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration" onmouseenter="showDisciplinePopover(event, 'Obtenebration')" onmouseleave="hideDisciplinePopover()">Obtenebration</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry" onmouseenter="showDisciplinePopover(event, 'Chimerstry')" onmouseleave="hideDisciplinePopover()">Chimerstry</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Dementation" onmouseenter="showDisciplinePopover(event, 'Dementation')" onmouseleave="hideDisciplinePopover()">Dementation</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Quietus" onmouseenter="showDisciplinePopover(event, 'Quietus')" onmouseleave="hideDisciplinePopover()">Quietus</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude" onmouseenter="showDisciplinePopover(event, 'Vicissitude')" onmouseleave="hideDisciplinePopover()">Vicissitude</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis" onmouseenter="showDisciplinePopover(event, 'Serpentis')" onmouseleave="hideDisciplinePopover()">Serpentis</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon" onmouseenter="showDisciplinePopover(event, 'Daimoinon')" onmouseleave="hideDisciplinePopover()">Daimoinon</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee" onmouseenter="showDisciplinePopover(event, 'Melpominee')" onmouseleave="hideDisciplinePopover()">Melpominee</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Valeren" onmouseenter="showDisciplinePopover(event, 'Valeren')" onmouseleave="hideDisciplinePopover()">Valeren</button>
-                        <button type="button" class="discipline-option-btn" data-discipline="Mortis" onmouseenter="showDisciplinePopover(event, 'Mortis')" onmouseleave="hideDisciplinePopover()">Mortis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Obtenebration">Obtenebration</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Chimerstry">Chimerstry</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Dementation">Dementation</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Quietus">Quietus</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Vicissitude">Vicissitude</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Serpentis">Serpentis</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Daimoinon">Daimoinon</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Melpominee">Melpominee</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Valeren">Valeren</button>
+                        <button type="button" class="discipline-option-btn" data-discipline="Mortis">Mortis</button>
                     </div>
                     
                     <div class="discipline-list" id="advancedDisciplinesList">
                     </div>
                 </div>
-                
-                <!-- Discipline Power Popover -->
-                <div id="disciplinePopover" class="discipline-popover" onmouseenter="clearPopoverTimeout()" onmouseleave="hideDisciplinePopover()">
-                    <h4 id="popoverTitle">Discipline Powers</h4>
-                    <div id="popoverPowers">
-                        <!-- Power options will be dynamically generated here -->
-                    </div>
-                </div>
+            
+            <!-- Discipline Power Popover -->
+            <div id="disciplinePopover" class="discipline-popover" style="display: none;">
+                <h4 id="popoverTitle">Discipline Powers</h4>
+                <p id="popoverDescription" class="popover-description"></p>
+                <div id="popoverPowers"></div>
+            </div>
                 
                 <div class="button-group">
                     <button type="button" class="nav-btn" data-action="previous">← Previous</button>
@@ -1561,7 +1584,7 @@ include 'includes/connect.php';
                     </div>
                     
                     <!-- Filter and Search Controls -->
-                    <div class="filter-controls">
+                    <div class="filter-controls merits-flaws-filters">
                         <div class="filter-group">
                             <label>Filter by Category:</label>
                             <select id="categoryFilter" data-action="filter-merits-flaws">
@@ -1592,10 +1615,10 @@ include 'includes/connect.php';
                         </div>
                         <div class="filter-group">
                             <label>Search:</label>
-                            <input type="text" id="searchFilter" placeholder="Search merits and flaws..." onkeyup="filterMeritsFlaws()">
+                            <input type="text" id="searchFilter" placeholder="Search merits and flaws...">
                         </div>
                         <div class="filter-group">
-                            <button type="button" class="reset-filters-btn" onclick="resetMeritsFlawsFilters()" title="Reset all filters">
+                            <button type="button" class="reset-filters-btn" data-action="reset-merits-flaws" title="Reset all filters">
                                 🔄 Reset
                             </button>
                         </div>
@@ -1605,14 +1628,14 @@ include 'includes/connect.php';
                     <div class="merits-flaws-container">
                         <div class="available-section">
                             <h3>Available</h3>
-                            <div class="merits-flaws-list" id="availableList">
+                            <div class="merits-flaws-list" id="availableMeritsFlawsList">
                                 <!-- Will be populated by JavaScript -->
                             </div>
                         </div>
                         
                         <div class="selected-section">
                             <h3>Selected</h3>
-                            <div class="merits-flaws-list" id="selectedList">
+                            <div class="merits-flaws-list" id="selectedMeritsFlawsList">
                                 <!-- Will be populated by JavaScript -->
                             </div>
                         </div>
@@ -1645,6 +1668,37 @@ include 'includes/connect.php';
                         <div id="characterSummary" class="character-summary">
                             <!-- Character summary will be generated here -->
                         </div>
+                    </div>
+                    
+                    <!-- Custom Data -->
+                    <div class="form-group">
+                        <label for="customData">Custom Data</label>
+                        <textarea id="customData" name="customData" class="form-control" rows="6" placeholder='Enter JSON data or plain text (e.g., {"research_notes": "...", "discipline_notes": {...}})'></textarea>
+                        <div class="helper-text">Store custom character data as JSON or plain text. This can include research notes, discipline notes, artifacts, or any character-specific information.</div>
+                    </div>
+                    
+                    <!-- Coterie -->
+                    <div class="form-group">
+                        <label>Coterie Associations</label>
+                        <div id="coterieContainer" class="dynamic-form-container">
+                            <div class="empty-state" id="coterieEmptyState">
+                                <p>No coterie associations added. Click "Add Coterie" to add one.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="add-entry-btn" id="addCoterieBtn" onclick="addCoterieEntry()">+ Add Coterie</button>
+                        <div class="helper-text">Record coterie memberships, factions, or groups your character belongs to.</div>
+                    </div>
+                    
+                    <!-- Relationships -->
+                    <div class="form-group">
+                        <label>Relationships</label>
+                        <div id="relationshipsContainer" class="dynamic-form-container">
+                            <div class="empty-state" id="relationshipsEmptyState">
+                                <p>No relationships added. Click "Add Relationship" to add one.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="add-entry-btn" id="addRelationshipBtn" onclick="addRelationshipEntry()">+ Add Relationship</button>
+                        <div class="helper-text">Track important relationships with other characters (sire, mentor, ally, contact, etc.).</div>
                     </div>
                     
                     
@@ -1933,7 +1987,55 @@ include 'includes/connect.php';
             const imagePath = imgEl && imgEl.value ? imgEl.value : undefined;
 
             // Collect state from CharacterCreationApp if available, otherwise use defaults
-            const state = window.characterCreationApp ? window.characterCreationApp.modules.stateManager.getState() : null;
+            let state = window.characterCreationApp ? window.characterCreationApp.modules.stateManager.getState() : null;
+            
+            // Sync abilities from DOM to state if state abilities are empty but DOM has abilities
+            if (state && window.characterCreationApp && window.characterCreationApp.modules.abilitySystem) {
+                const stateAbilities = state.abilities || {};
+                const hasStateAbilities = Object.values(stateAbilities).some(arr => Array.isArray(arr) && arr.length > 0);
+                
+                if (!hasStateAbilities) {
+                    // Read from DOM and sync to state
+                    const abilitiesFromDOM = { Physical: [], Social: [], Mental: [], Optional: [] };
+                    const categories = ['Physical', 'Social', 'Mental', 'Optional'];
+                    
+                    categories.forEach(category => {
+                        const listElement = document.getElementById(category.toLowerCase() + 'AbilitiesList');
+                        if (listElement) {
+                            const selectedAbilities = listElement.querySelectorAll('.selected-ability');
+                            selectedAbilities.forEach(abilityEl => {
+                                const abilityNameEl = abilityEl.querySelector('.ability-name');
+                                if (abilityNameEl) {
+                                    let abilityName = abilityNameEl.textContent.trim();
+                                    // Parse count from "AbilityName (2)" format
+                                    const countMatch = abilityName.match(/^(.+?)\s*\((\d+)\)$/);
+                                    if (countMatch) {
+                                        const name = countMatch[1].trim();
+                                        const count = parseInt(countMatch[2], 10);
+                                        for (let i = 0; i < count; i++) {
+                                            abilitiesFromDOM[category].push(name);
+                                        }
+                                    } else {
+                                        abilitiesFromDOM[category].push(abilityName);
+                                    }
+                                }
+                            });
+                        }
+                    });
+                    
+                    // Update state with DOM abilities
+                    const hasDOMAbilities = Object.values(abilitiesFromDOM).some(arr => Array.isArray(arr) && arr.length > 0);
+                    if (hasDOMAbilities) {
+                        window.characterCreationApp.modules.stateManager.setState({ abilities: abilitiesFromDOM });
+                        state = window.characterCreationApp.modules.stateManager.getState();
+                    }
+                }
+            }
+            
+            const currentStateSelect = document.getElementById('currentState');
+            const camarillaSelect = document.getElementById('camarillaStatus');
+            const currentState = currentStateSelect ? (currentStateSelect.value || 'active') : 'active';
+            const camarillaStatus = camarillaSelect ? (camarillaSelect.value || 'Unknown') : 'Unknown';
             
             const formData = {
                 character_name: document.getElementById('characterName').value || '',
@@ -1952,11 +2054,14 @@ include 'includes/connect.php';
                 spent_xp: 0, // Default value
                 traits: state?.traits || {},
                 negativeTraits: state?.negativeTraits || {},
-                abilities: state?.abilities || [],
+                abilities: state?.abilities || { Physical: [], Social: [], Mental: [], Optional: [] },
                 disciplinePowers: state?.disciplinePowers || {},
                 backgrounds: state?.backgrounds || {},
                 backgroundDetails: state?.backgroundDetails || {},
                 merits_flaws: state?.selectedMeritsFlaws || [],
+                status: currentState,
+                current_state: currentState,
+                camarilla_status: camarillaStatus,
                 morality: {
                     path_name: 'Humanity',
                     path_rating: 7,
@@ -1967,12 +2072,16 @@ include 'includes/connect.php';
                     willpower_current: 5,
                     humanity: 7
                 },
-                status: {},
+                status_details: {
+                    current_state: currentState,
+                    camarilla_status: camarillaStatus
+                },
                 ...(effectiveId ? { id: effectiveId } : {}),
                 ...(imagePath ? { imagePath } : {})
             };
             
             console.log('Sending data:', formData);
+            console.log('Abilities being sent:', formData.abilities);
             
             fetch('save_character.php', {
                 method: 'POST',
@@ -1990,7 +2099,7 @@ include 'includes/connect.php';
                 try {
                     const jsonData = JSON.parse(data);
                     if (jsonData.success) {
-                        alert('✅ Character saved successfully! Character ID: ' + jsonData.character_id);
+                        console.log('✅ Character saved successfully! Character ID:', jsonData.character_id);
                     } else {
                         alert('❌ Save failed: ' + jsonData.message);
                     }
@@ -2085,25 +2194,46 @@ include 'includes/connect.php';
                 reader.readAsDataURL(fileOrName);
             }
 
-            // Test: Verify label-input connection
+            // Ensure label click triggers file input
             const fileLabel = document.querySelector('label[for="characterImageInput"]');
             if (fileLabel && fileInput) {
-                console.log('[inline] Label and input found - testing connection');
-                console.log('[inline] Label for attr:', fileLabel.getAttribute('for'));
-                console.log('[inline] Input ID:', fileInput.id);
-                console.log('[inline] Match?', fileLabel.getAttribute('for') === fileInput.id);
-                
-                // Verify they're in the DOM
-                console.log('[inline] Label in DOM?', document.contains(fileLabel));
-                console.log('[inline] Input in DOM?', document.contains(fileInput));
-                
-                // Check for any CSS that might block
-                const labelStyle = window.getComputedStyle(fileLabel);
-                const inputStyle = window.getComputedStyle(fileInput);
-                console.log('[inline] Label pointer-events:', labelStyle.pointerEvents);
-                console.log('[inline] Input pointer-events:', inputStyle.pointerEvents);
-            } else {
-                console.error('[inline] Missing elements:', { label: !!fileLabel, input: !!fileInput });
+                fileLabel.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Make input visible and clickable
+                    fileInput.style.position = 'fixed';
+                    fileInput.style.top = '50%';
+                    fileInput.style.left = '50%';
+                    fileInput.style.transform = 'translate(-50%, -50%)';
+                    fileInput.style.opacity = '0.01';
+                    fileInput.style.display = 'block';
+                    fileInput.style.width = '1px';
+                    fileInput.style.height = '1px';
+                    fileInput.style.zIndex = '999999';
+                    fileInput.style.pointerEvents = 'auto';
+                    
+                    // Force a reflow
+                    fileInput.offsetHeight;
+                    
+                    // Click the input
+                    fileInput.focus();
+                    fileInput.click();
+                    
+                    // Hide it again after a delay
+                    setTimeout(() => {
+                        fileInput.style.display = 'none';
+                        fileInput.style.position = '';
+                        fileInput.style.top = '';
+                        fileInput.style.left = '';
+                        fileInput.style.transform = '';
+                        fileInput.style.opacity = '';
+                        fileInput.style.zIndex = '';
+                        fileInput.style.width = '';
+                        fileInput.style.height = '';
+                        fileInput.style.pointerEvents = '';
+                    }, 300);
+                }, true); // Capture phase to catch it early
             }
 
             // File input change handler (fallback if CharacterImageManager doesn't handle it)
@@ -2574,6 +2704,214 @@ include 'includes/connect.php';
                 updateDisciplineAvailability();
             }
         });
+    </script>
+    
+    <!-- Final Details Functions (Coterie & Relationships) -->
+    <script>
+        // Coterie and Relationships Management Functions
+        window.coterieCounter = 0;
+        window.relationshipCounter = 0;
+
+        function collectCoteries() {
+            const coteries = [];
+            const coterieEntries = document.querySelectorAll('.coterie-entry');
+            coterieEntries.forEach(entry => {
+                const coterie = {
+                    coterie_name: entry.querySelector('.coterie-name')?.value || '',
+                    coterie_type: entry.querySelector('.coterie-type')?.value || '',
+                    role: entry.querySelector('.coterie-role')?.value || '',
+                    description: entry.querySelector('.coterie-description')?.value || '',
+                    notes: entry.querySelector('.coterie-notes')?.value || ''
+                };
+                if (coterie.coterie_name.trim()) {
+                    coteries.push(coterie);
+                }
+            });
+            return coteries;
+        }
+
+        function collectRelationships() {
+            const relationships = [];
+            const relationshipEntries = document.querySelectorAll('.relationship-entry');
+            relationshipEntries.forEach(entry => {
+                const characterSelect = entry.querySelector('.relationship-character-name');
+                const relationship = {
+                    related_character_name: characterSelect ? characterSelect.value : '',
+                    relationship_type: entry.querySelector('.relationship-type')?.value || '',
+                    relationship_subtype: entry.querySelector('.relationship-subtype')?.value || '',
+                    strength: entry.querySelector('.relationship-strength')?.value || '',
+                    description: entry.querySelector('.relationship-description')?.value || ''
+                };
+                if (relationship.related_character_name.trim()) {
+                    relationships.push(relationship);
+                }
+            });
+            return relationships;
+        }
+
+        window.addCoterieEntry = function(coterieData = null) {
+            const container = document.getElementById('coterieContainer');
+            const emptyState = document.getElementById('coterieEmptyState');
+            if (!container) {
+                console.error('Coterie container not found');
+                return;
+            }
+            
+            if (emptyState) emptyState.style.display = 'none';
+            
+            const index = window.coterieCounter++;
+            const entry = document.createElement('div');
+            entry.className = 'coterie-entry';
+            entry.dataset.index = index;
+            
+            entry.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h5 style="margin: 0; color: #d4af37;">Coterie ${index + 1}</h5>
+                    <button type="button" class="remove-coterie-btn">Remove</button>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div>
+                        <label class="form-label">Coterie Name *</label>
+                        <input type="text" class="form-control coterie-name" placeholder="e.g., The Phoenix Circle" value="${coterieData?.coterie_name || ''}" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Type</label>
+                        <select class="form-control coterie-type">
+                            <option value="">Select type...</option>
+                            <option value="faction" ${coterieData?.coterie_type === 'faction' ? 'selected' : ''}>Faction</option>
+                            <option value="role" ${coterieData?.coterie_type === 'role' ? 'selected' : ''}>Role</option>
+                            <option value="membership" ${coterieData?.coterie_type === 'membership' ? 'selected' : ''}>Membership</option>
+                            <option value="informal_group" ${coterieData?.coterie_type === 'informal_group' ? 'selected' : ''}>Informal Group</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Role</label>
+                        <input type="text" class="form-control coterie-role" placeholder="e.g., Leader, Member, Advisor" value="${coterieData?.role || ''}">
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control coterie-description" rows="2" placeholder="Describe the coterie and your character's involvement">${coterieData?.description || ''}</textarea>
+                </div>
+                <div>
+                    <label class="form-label">Notes</label>
+                    <textarea class="form-control coterie-notes" rows="2" placeholder="Additional notes about this coterie association">${coterieData?.notes || ''}</textarea>
+                </div>
+            `;
+            
+            container.appendChild(entry);
+            
+            entry.querySelector('.remove-coterie-btn').addEventListener('click', function() {
+                entry.remove();
+                if (container.querySelectorAll('.coterie-entry').length === 0 && emptyState) {
+                    emptyState.style.display = 'block';
+                }
+            });
+        };
+
+        window.addRelationshipEntry = function(relationshipData = null) {
+            const container = document.getElementById('relationshipsContainer');
+            const emptyState = document.getElementById('relationshipsEmptyState');
+            if (!container) {
+                console.error('Relationships container not found');
+                return;
+            }
+            
+            if (emptyState) emptyState.style.display = 'none';
+            
+            const index = window.relationshipCounter++;
+            const entry = document.createElement('div');
+            entry.className = 'relationship-entry';
+            entry.dataset.index = index;
+            
+            // Build character options HTML
+            let characterOptions = '<option value="">Select character...</option>';
+            if (window.allCharacters && Array.isArray(window.allCharacters)) {
+                window.allCharacters.forEach(char => {
+                    const selected = relationshipData?.related_character_name === char.name ? 'selected' : '';
+                    characterOptions += `<option value="${char.name.replace(/"/g, '&quot;')}" ${selected}>${char.name}</option>`;
+                });
+            }
+            
+            entry.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h5 style="margin: 0; color: #d4af37;">Relationship ${index + 1}</h5>
+                    <button type="button" class="remove-relationship-btn">Remove</button>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div>
+                        <label class="form-label">Character Name *</label>
+                        <select class="form-control relationship-character-name" required>
+                            ${characterOptions}
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Relationship Type</label>
+                        <select class="form-control relationship-type">
+                            <option value="">Select type...</option>
+                            <option value="sire" ${relationshipData?.relationship_type === 'sire' ? 'selected' : ''}>Sire</option>
+                            <option value="childe" ${relationshipData?.relationship_type === 'childe' ? 'selected' : ''}>Childe</option>
+                            <option value="mentor" ${relationshipData?.relationship_type === 'mentor' ? 'selected' : ''}>Mentor</option>
+                            <option value="ally" ${relationshipData?.relationship_type === 'ally' ? 'selected' : ''}>Ally</option>
+                            <option value="contact" ${relationshipData?.relationship_type === 'contact' ? 'selected' : ''}>Contact</option>
+                            <option value="rival" ${relationshipData?.relationship_type === 'rival' ? 'selected' : ''}>Rival</option>
+                            <option value="enemy" ${relationshipData?.relationship_type === 'enemy' ? 'selected' : ''}>Enemy</option>
+                            <option value="other" ${relationshipData?.relationship_type === 'other' ? 'selected' : ''}>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Subtype</label>
+                        <input type="text" class="form-control relationship-subtype" placeholder="e.g., Business partner, Former lover" value="${relationshipData?.relationship_subtype || ''}">
+                    </div>
+                    <div>
+                        <label class="form-label">Strength</label>
+                        <input type="text" class="form-control relationship-strength" placeholder="e.g., Strong, Weak, Neutral" value="${relationshipData?.strength || ''}">
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control relationship-description" rows="3" placeholder="Describe the nature of this relationship">${relationshipData?.description || ''}</textarea>
+                </div>
+            `;
+            
+            container.appendChild(entry);
+            
+            entry.querySelector('.remove-relationship-btn').addEventListener('click', function() {
+                entry.remove();
+                if (container.querySelectorAll('.relationship-entry').length === 0 && emptyState) {
+                    emptyState.style.display = 'block';
+                }
+            });
+        };
+
+        // Make collect functions available to DataManager if needed
+        window.collectCoteries = collectCoteries;
+        window.collectRelationships = collectRelationships;
+        
+        // Load character names for relationship dropdowns
+        async function loadCharacterNames() {
+            try {
+                const response = await fetch('api_get_character_names.php');
+                const data = await response.json();
+                if (data.success && Array.isArray(data.characters)) {
+                    window.allCharacters = data.characters;
+                    console.log('Loaded', data.characters.length, 'characters for relationship dropdowns');
+                } else {
+                    console.error('Failed to load character names:', data.error);
+                    window.allCharacters = [];
+                }
+            } catch (error) {
+                console.error('Error loading character names:', error);
+                window.allCharacters = [];
+            }
+        }
+        
+        // Load characters when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadCharacterNames);
+        } else {
+            loadCharacterNames();
+        }
     </script>
     <script src="js/character_image.js"></script>
 </body>
