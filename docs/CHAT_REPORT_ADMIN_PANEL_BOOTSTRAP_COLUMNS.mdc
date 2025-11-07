@@ -1,0 +1,42 @@
+# Chat Session Report - Admin Panel Bootstrap Columns
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.9.17 → 0.9.18 (Patch Increment)
+- **Work Type:** UI Layout Refinement – Admin Character Table
+
+### What We Accomplished
+
+#### 1. Rebuilt Table Columns Around Bootstrap
+- **Explicit Columns** – Restored dedicated `Name`, `NPC`, `Clan`, and `Actions` headings so character data and controls stay visible at tablet widths (≈768 px)
+- **Bootstrap Utilities** – Swapped custom flex/padding rules for Bootstrap’s utility classes to control alignment, spacing, and responsive behavior
+
+#### 2. Guaranteed Action Button Visibility
+- **Single Actions Column** – Consolidated view/edit/delete buttons into one column rendered as a `btn-group btn-group-sm`
+- **Centered Header/Content** – Forced centered alignment and a fixed column width so header text and controls line up at every breakpoint
+
+#### 3. Removed Unused Status Noise
+- **Badge Helper Update** – Suppressed `draft` and `finalized` badges from `render_status_badge()` so empty UI fragments don’t render
+- **Column Cleanup** – Dropped the unused status column entirely to reclaim horizontal space for character names
+
+### Technical Implementation Details
+
+#### `admin/admin_panel.php`
+- Replaced the table header/row structure with Bootstrap-aligned columns (`text-start`, `text-center`, `btn-group`)
+- Adjusted status badge helper to return nothing for irrelevant states and fall back gracefully for unknown statuses
+- Narrowed the `Actions` column with inline width to keep controls centered and on-screen at 768 px
+
+#### `js/admin_panel.js`
+- Updated pagination button creation to emit Bootstrap button classes for consistent styling with the new table layout
+
+### Files Modified
+- `admin/admin_panel.php`
+- `js/admin_panel.js`
+- `VERSION.md`
+
+### Impact Summary
+- **Usability:** Operators can see names, NPC markers, clans, and action buttons without horizontal scrolling on tablets
+- **Consistency:** Buttons now inherit Bootstrap styling, matching the rest of the admin UI refactor
+- **Signal-to-Noise:** Removed unused status indicators, keeping the table focused on actionable data
+
+---

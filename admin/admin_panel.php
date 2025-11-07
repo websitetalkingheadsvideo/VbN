@@ -15,24 +15,58 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 require_once __DIR__ . '/../includes/connect.php';
 include __DIR__ . '/../includes/header.php';
+
+function render_status_badge($status) {
+    $status = strtolower($status ?? '');
+    if ($status === 'draft' || $status === 'finalized') {
+        return '';
+    }
+
+    $classMap = [
+        'npc' => 'badge-npc',
+        'draft' => 'badge-draft',
+        'finalized' => 'badge-finalized',
+        'active' => 'badge-active',
+        'dead' => 'badge-dead',
+        'missing' => 'badge-missing'
+    ];
+
+    $labelMap = [
+        'npc' => 'NPC',
+        'draft' => 'Draft',
+        'finalized' => 'Finalized',
+        'active' => 'Active',
+        'dead' => 'Dead',
+        'missing' => 'Missing'
+    ];
+
+    $class = $classMap[$status] ?? 'badge-draft';
+    if ($status === '' || !isset($labelMap[$status])) {
+        return '';
+    }
+
+    $label = $labelMap[$status];
+
+    return sprintf('<span class="%s">%s</span>', $class, htmlspecialchars($label));
+}
 ?>
 
-<div class="admin-panel-container">
-    <h1 class="panel-title">🔧 Character Management</h1>
-    <p class="panel-subtitle">Manage all characters across the chronicle</p>
+<div class="admin-panel-container container-fluid py-4 px-3 px-md-4">
+    <h1 class="panel-title display-5 text-light fw-bold mb-1">🔧 Character Management</h1>
+    <p class="panel-subtitle lead text-muted fst-italic mb-4">Manage all characters across the chronicle</p>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav">
-        <a href="admin_panel.php" class="nav-btn active">👥 Characters</a>
-        <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
-        <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
-        <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
-        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
+    <div class="admin-nav d-flex flex-wrap gap-2 mb-4">
+        <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm active">👥 Characters</a>
+        <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm">🧛 Sire/Childe</a>
+        <a href="admin_equipment.php" class="nav-btn btn btn-outline-danger btn-sm">⚔️ Equipment</a>
+        <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm">📍 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm">📝 Questionnaire</a>
+        <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm">📋 NPC Briefing</a>
     </div>
     
     <!-- Character Statistics -->
-    <div class="character-stats">
+    <div class="character-stats row g-3 mb-4">
     <?php
         $stats_query = "SELECT 
             COUNT(*) as total,
@@ -48,47 +82,53 @@ include __DIR__ . '/../includes/header.php';
             echo "<p style='color: red;'>Stats query error: " . mysqli_error($conn) . "</p>";
         }
         ?>
-        <div class="stat-mini">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $stats['total'] ?? 0; ?></span>
             <span class="stat-label">Total</span>
+            </div>
         </div>
-        <div class="stat-mini">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $stats['pcs'] ?? 0; ?></span>
             <span class="stat-label">PCs</span>
+            </div>
         </div>
-        <div class="stat-mini">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></span>
             <span class="stat-label">NPCs</span>
+            </div>
         </div>
     </div>
 
     <!-- Questionnaire Statistics -->
-    <div class="questionnaire-stats">
+    <div class="questionnaire-stats d-flex flex-wrap gap-3 mb-4">
         <?php
         // Get questionnaire statistics
         $questionnaire_query = "SELECT COUNT(*) as total_questions FROM questionnaire_questions";
         $questionnaire_result = mysqli_query($conn, $questionnaire_query);
         $questionnaire_count = $questionnaire_result ? mysqli_fetch_assoc($questionnaire_result)['total_questions'] : 0;
         ?>
-        <div class="stat-mini">
+        <div class="stat-mini text-center">
             <span class="stat-number"><?php echo $questionnaire_count; ?></span>
             <span class="stat-label">Questions</span>
         </div>
-        <div class="stat-mini">
-            <a href="questionnaire_admin.php" class="stat-link">📝 Manage</a>
+        <div class="d-flex align-items-center">
+            <a href="questionnaire_admin.php" class="btn btn-outline-danger btn-sm">📝 Manage</a>
         </div>
     </div>
 
     <!-- Filter Controls -->
-    <div class="filter-controls">
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Characters</button>
-            <button class="filter-btn" data-filter="pcs">PCs Only</button>
-            <button class="filter-btn" data-filter="npcs">NPCs Only</button>
+    <div class="filter-controls row gy-3 align-items-center mb-4">
+        <div class="filter-buttons col-12 col-md-auto d-flex flex-wrap gap-2">
+            <button class="filter-btn btn btn-outline-danger active" data-filter="all">All Characters</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="pcs">PCs Only</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="npcs">NPCs Only</button>
         </div>
-        <div class="clan-filter">
-            <label for="clanFilter">Sort by Clan:</label>
-            <select id="clanFilter">
+        <div class="clan-filter col-12 col-md-auto d-flex align-items-center gap-2">
+            <label for="clanFilter" class="text-light text-uppercase small mb-0">Sort by Clan:</label>
+            <select id="clanFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Clans</option>
                 <option value="Assamite">Assamite</option>
                 <option value="Brujah">Brujah</option>
@@ -107,12 +147,12 @@ include __DIR__ . '/../includes/header.php';
                 <option value="Ghoul">Ghoul</option>
             </select>
         </div>
-        <div class="search-box">
-            <input type="text" id="characterSearch" placeholder="🔍 Search by name..." />
+        <div class="search-box col-12 col-lg col-xl-4">
+            <input type="text" id="characterSearch" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="🔍 Search by name..." />
         </div>
-        <div class="page-size-control">
-            <label for="pageSize">Per page:</label>
-            <select id="pageSize">
+        <div class="page-size-control col-12 col-md-auto d-flex align-items-center gap-2">
+            <label for="pageSize" class="text-light text-uppercase small mb-0">Per page:</label>
+            <select id="pageSize" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="20" selected>20</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
@@ -121,12 +161,14 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <!-- Character Table -->
-    <div class="character-table-wrapper">
-        <table class="character-table" id="characterTable">
+    <div class="character-table-wrapper table-responsive rounded-3">
+        <table class="character-table table table-dark table-hover align-middle mb-0" id="characterTable">
             <thead>
                 <tr>
-                    <th data-sort="character_name">Character Name <span class="sort-icon">⇅</span></th>
-                    <th>Actions</th>
+                    <th data-sort="character_name" class="text-start">Name <span class="sort-icon">⇅</span></th>
+                    <th data-sort="player_name" class="text-center text-nowrap">NPC <span class="sort-icon">⇅</span></th>
+                    <th data-sort="clan" class="text-center text-nowrap">Clan <span class="sort-icon">⇅</span></th>
+                    <th class="text-center text-nowrap" style="width: 150px;">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -138,33 +180,50 @@ include __DIR__ . '/../includes/header.php';
                 $char_result = mysqli_query($conn, $char_query);
                 
                 if (!$char_result) {
-                    echo "<tr><td colspan='2'>Query Error: " . mysqli_error($conn) . "</td></tr>";
+                    echo "<tr><td colspan='7'>Query Error: " . mysqli_error($conn) . "</td></tr>";
                 } elseif (mysqli_num_rows($char_result) > 0) {
                     while ($char = mysqli_fetch_assoc($char_result)) {
                         $is_npc = ($char['player_name'] === 'NPC');
+                        $playerName = trim($char['player_name'] ?? '') !== '' ? $char['player_name'] : ($is_npc ? 'NPC' : '—');
+                        $clanName = $char['clan'] ?? 'Unknown';
+                        $generation = $char['generation'] ?? '';
+                        $status = $char['status'] ?? 'draft';
+                        $owner = $char['owner_username'] ?? '—';
                 ?>
-                    <tr class="character-row" data-type="<?php echo $is_npc ? 'npc' : 'pc'; ?>" 
+                    <tr class="character-row" 
+                        data-id="<?php echo $char['id']; ?>"
+                        data-type="<?php echo $is_npc ? 'npc' : 'pc'; ?>" 
                         data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
-                        data-clan="<?php echo htmlspecialchars($char['clan'] ?? 'Unknown'); ?>">
-                        <td><strong><?php echo htmlspecialchars($char['character_name']); ?></strong></td>
-                        <td class="actions">
-                            <button class="action-btn view-btn" 
-                                    data-id="<?php echo $char['id']; ?>"
-                                    title="View Character">👁️</button>
-                            <a href="../lotn_char_create.php?id=<?php echo $char['id']; ?>" 
-                               class="action-btn edit-btn" 
-                               title="Edit Character">✏️</a>
-                            <button class="action-btn delete-btn" 
-                                    data-id="<?php echo $char['id']; ?>" 
-                                    data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
-                                    data-status="<?php echo $char['status'] ?? 'draft'; ?>"
-                                    title="Delete Character">🗑️</button>
+                        data-clan="<?php echo htmlspecialchars($clanName); ?>"
+                        data-player="<?php echo htmlspecialchars($playerName); ?>"
+                        data-generation="<?php echo htmlspecialchars($generation); ?>"
+                        data-status="<?php echo htmlspecialchars($status); ?>"
+                        data-owner="<?php echo htmlspecialchars($owner); ?>">
+                        <td class="character-cell align-top text-light">
+                            <strong><?php echo htmlspecialchars($char['character_name']); ?></strong>
+                        </td>
+                        <td class="align-top text-light text-center text-nowrap"><?php echo htmlspecialchars($playerName); ?></td>
+                        <td class="align-top text-light text-center text-nowrap"><?php echo htmlspecialchars($clanName); ?></td>
+                        <td class="actions text-center align-top" style="width: 150px;">
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Character actions">
+                                <button class="action-btn view-btn btn btn-primary" 
+                                        data-id="<?php echo $char['id']; ?>"
+                                        title="View Character">👁️</button>
+                                <a href="../lotn_char_create.php?id=<?php echo $char['id']; ?>" 
+                                   class="action-btn edit-btn btn btn-warning" 
+                                   title="Edit Character">✏️</a>
+                                <button class="action-btn delete-btn btn btn-danger" 
+                                        data-id="<?php echo $char['id']; ?>" 
+                                        data-name="<?php echo htmlspecialchars($char['character_name']); ?>"
+                                        data-status="<?php echo $status; ?>"
+                                        title="Delete Character">🗑️</button>
+                            </div>
                         </td>
                     </tr>
                 <?php 
                     }
                 } else {
-                    echo "<tr><td colspan='2' class='empty-state'>No characters found.</td></tr>";
+                    echo "<tr><td colspan='7' class='empty-state'>No characters found.</td></tr>";
                 }
                 ?>
             </tbody>
@@ -172,11 +231,11 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <!-- Pagination Controls -->
-    <div class="pagination-controls" id="paginationControls">
-        <div class="pagination-info">
+    <div class="pagination-controls d-flex flex-column flex-lg-row gap-3 align-items-center justify-content-between" id="paginationControls">
+        <div class="pagination-info fw-semibold">
             <span id="paginationInfo">Showing 1-26 of 26 characters</span>
         </div>
-        <div class="pagination-buttons" id="paginationButtons">
+        <div class="pagination-buttons d-flex flex-wrap gap-2 justify-content-center" id="paginationButtons">
             <!-- Buttons will be generated by JavaScript -->
         </div>
     </div>
@@ -224,44 +283,21 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <style>
-.admin-panel-container { max-width: 1600px; margin: 0 auto; padding: 30px 20px; }
-.panel-title { font-family: var(--font-brand), 'IM Fell English', serif; color: #f5e6d3; font-size: 2.5em; margin-bottom: 10px; }
-.panel-subtitle { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; font-size: 1.1em; font-style: italic; margin-bottom: 30px; }
+.admin-panel-container { max-width: 1600px; margin: 0 auto; }
+.panel-title { font-family: var(--font-brand), 'IM Fell English', serif; }
+.panel-subtitle { font-family: var(--font-body), 'Source Serif Pro', serif; }
 
-.admin-nav { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-.nav-btn { padding: 12px 20px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+.nav-btn { background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
 .nav-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
 .nav-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
-
-.filter-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 20px; flex-wrap: wrap; }
-.filter-buttons { display: flex; gap: 10px; }
 .filter-btn { padding: 10px 20px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
 .filter-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
 .filter-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
-
-.search-box { flex: 1; max-width: 400px; }
-.search-box input { width: 100%; padding: 10px 15px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; }
-.search-box input:focus { outline: none; border-color: #8B0000; }
-.search-box input::placeholder { color: #666; }
-
-.clan-filter { display: flex; align-items: center; gap: 10px; }
-.clan-filter label { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; font-size: 0.95em; }
-.clan-filter select { padding: 8px 12px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; cursor: pointer; min-width: 120px; }
-.clan-filter select:focus { outline: none; border-color: #8B0000; }
-
-.page-size-control { display: flex; align-items: center; gap: 10px; }
-.page-size-control label { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; font-size: 0.95em; }
-.page-size-control select { padding: 8px 12px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; cursor: pointer; }
-.page-size-control select:focus { outline: none; border-color: #8B0000; }
-
-.pagination-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 15px; background: rgba(26, 15, 15, 0.3); border-radius: 5px; }
+.pagination-controls { margin-top: 20px; padding: 15px; background: rgba(26, 15, 15, 0.3); border-radius: 5px; }
 .pagination-info { font-family: var(--font-body), 'Source Serif Pro', serif; color: #b8a090; }
-.pagination-buttons { display: flex; gap: 8px; }
 .page-btn { padding: 8px 12px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 4px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; cursor: pointer; transition: all 0.2s; }
 .page-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
 .page-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
-
-.character-stats { display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }
 .stat-mini { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 2px solid #8B0000; border-radius: 5px; padding: 12px 20px; display: flex; flex-direction: column; align-items: center; min-width: 100px; }
 .stat-mini .stat-number { font-family: var(--font-brand), 'IM Fell English', serif; font-size: 1.8em; color: #8B0000; font-weight: bold; }
 .stat-mini .stat-label { font-family: var(--font-body), 'Source Serif Pro', serif; font-size: 0.85em; color: #b8a090; margin-top: 5px; }
@@ -326,7 +362,81 @@ include __DIR__ . '/../includes/header.php';
 .character-table tbody tr.hidden { display: none; }
 .character-table td { padding: 12px; font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; }
 .character-table td strong { color: #f5e6d3; font-size: 1.05em; }
+.character-cell { position: relative; }
+.character-heading { display: flex; flex-direction: column; gap: 6px; }
+.col-header,
+.col-cell { display: none; }
+.mobile-meta { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; font-size: 0.9em; color: #b8a090; }
+.mobile-meta .meta-item { display: flex; gap: 6px; align-items: baseline; padding: 4px 0; border-bottom: 1px solid rgba(139, 0, 0, 0.15); }
+.mobile-meta .meta-item:last-child { border-bottom: none; }
+.mobile-meta .meta-label { font-weight: 600; color: #d4c4b0; text-transform: uppercase; letter-spacing: 0.4px; font-size: 0.75em; }
+.mobile-meta .meta-value { color: #f5e6d3; font-weight: 500; }
+.status-cell span { display: inline-block; }
 
+@media (max-width: 572.98px) {
+    .character-heading { gap: 6px; }
+    .mobile-meta { padding-top: 6px; }
+    .mobile-meta .meta-item { background: none; border-radius: 0; padding: 4px 0; font-size: 0.9em; }
+}
+
+@media (min-width: 573px) and (max-width: 991.98px) {
+    .character-heading { flex-direction: row; align-items: center; gap: 12px; }
+    .character-heading strong { white-space: nowrap; }
+    .mobile-meta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 0;
+    }
+    .mobile-meta .meta-item {
+        align-items: center;
+        background: rgba(139, 0, 0, 0.2);
+        border: 1px solid rgba(139, 0, 0, 0.4);
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 0.82em;
+        color: #f5e6d3;
+        gap: 6px;
+    }
+    .mobile-meta .meta-item .meta-label {
+        display: none;
+    }
+    .mobile-meta .meta-item .meta-value {
+        color: #f5e6d3;
+        font-weight: 600;
+    }
+    .mobile-meta .meta-item.meta-status .badge-npc,
+    .mobile-meta .meta-item.meta-status .badge-draft,
+    .mobile-meta .meta-item.meta-status .badge-finalized,
+    .mobile-meta .meta-item.meta-status .badge-active,
+    .mobile-meta .meta-item.meta-status .badge-dead,
+    .mobile-meta .meta-item.meta-status .badge-missing {
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 0.85em;
+        display: inline-block;
+    }
+    .mobile-meta .meta-item:nth-child(n+4) {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-meta {
+        display: none;
+    }
+    .col-header.col-lg-visible,
+    .col-cell.col-lg-visible {
+        display: table-cell;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-header.col-xl-visible,
+    .col-cell.col-xl-visible {
+        display: table-cell;
+    }
+}
 
 .badge-npc { background: #4a1a6b; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-draft { background: #8B6508; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }

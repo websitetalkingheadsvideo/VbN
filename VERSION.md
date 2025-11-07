@@ -1,6 +1,26 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.17 (Current)
+## Version 0.9.18 (Current)
+**Date:** November 2025
+
+### Admin Panel Bootstrap Column Cleanup:
+- ✅ **Responsive Columns Restored** – Rebuilt the admin character table with explicit `Name`, `NPC`, `Clan`, and `Actions` columns using Bootstrap utilities
+- ✅ **Action Buttons Always Visible** – Consolidated view/edit/delete controls into a centered `btn-group` so they remain visible across breakpoints (including 768 px)
+- ✅ **Status Noise Removed** – Dropped unused Draft/Finalized badges and ensured the table no longer reserves space for empty data
+
+### Files Modified:
+- `admin/admin_panel.php` – Reworked table markup, Bootstrap class usage, and status badge helper logic
+- `js/admin_panel.js` – Updated pagination button styling to align with Bootstrap buttons
+- `VERSION.md`
+
+### Impact:
+- **Cleaner Layout** – Key character attributes fit on tablet widths without wasted whitespace
+- **Consistent Controls** – Action buttons now remain accessible and aligned at every viewport size
+- **Noise-Free UI** – Removed unused status indicators to focus on the data storytellers actually need
+
+---
+
+## Version 0.9.17
 **Date:** February 2025
 
 ### Character Trait Synchronization & Data Backfill:

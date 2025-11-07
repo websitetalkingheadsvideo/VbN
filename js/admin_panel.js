@@ -6,7 +6,7 @@
 // State management
 let currentFilter = 'all';
 let currentClanFilter = 'all';
-let currentSort = { column: 'id', direction: 'desc' };
+let currentSort = { column: 'character_name', direction: 'asc' };
 let deleteCharacterId = null;
 let currentPage = 1;
 let pageSize = 20;
@@ -153,46 +153,43 @@ function sortTable(column, direction) {
     const rows = Array.from(tbody.querySelectorAll('.character-row'));
     
     rows.sort((a, b) => {
-        let aVal, bVal;
-        
-        // Get values based on column
-        const aCells = a.querySelectorAll('td');
-        const bCells = b.querySelectorAll('td');
-        
+        let aVal = '';
+        let bVal = '';
+
         switch(column) {
             case 'id':
-                aVal = parseInt(aCells[0].textContent);
-                bVal = parseInt(bCells[0].textContent);
+                aVal = parseInt(a.dataset.id || '0', 10) || 0;
+                bVal = parseInt(b.dataset.id || '0', 10) || 0;
                 break;
             case 'character_name':
-                aVal = aCells[0].textContent.trim().toLowerCase();
-                bVal = bCells[0].textContent.trim().toLowerCase();
+                aVal = (a.dataset.name || '').toLowerCase();
+                bVal = (b.dataset.name || '').toLowerCase();
                 break;
             case 'player_name':
-                aVal = aCells[2].textContent.trim().toLowerCase();
-                bVal = bCells[2].textContent.trim().toLowerCase();
+                aVal = (a.dataset.player || '').toLowerCase();
+                bVal = (b.dataset.player || '').toLowerCase();
                 break;
             case 'clan':
-                aVal = aCells[3].textContent.trim().toLowerCase();
-                bVal = bCells[3].textContent.trim().toLowerCase();
+                aVal = (a.dataset.clan || '').toLowerCase();
+                bVal = (b.dataset.clan || '').toLowerCase();
                 break;
             case 'generation':
-                aVal = parseInt(aCells[4].textContent);
-                bVal = parseInt(bCells[4].textContent);
+                aVal = parseInt(a.dataset.generation || '0', 10) || 0;
+                bVal = parseInt(b.dataset.generation || '0', 10) || 0;
                 break;
             case 'status':
-                aVal = aCells[5].textContent.trim().toLowerCase();
-                bVal = bCells[5].textContent.trim().toLowerCase();
+                aVal = (a.dataset.status || '').toLowerCase();
+                bVal = (b.dataset.status || '').toLowerCase();
                 break;
-            case 'created_at':
-                aVal = new Date(aCells[6].textContent);
-                bVal = new Date(bCells[6].textContent);
+            case 'owner':
+                aVal = (a.dataset.owner || '').toLowerCase();
+                bVal = (b.dataset.owner || '').toLowerCase();
                 break;
             default:
-                return 0;
+                aVal = (a.dataset.name || '').toLowerCase();
+                bVal = (b.dataset.name || '').toLowerCase();
         }
         
-        // Compare
         let comparison = 0;
         if (aVal > bVal) comparison = 1;
         if (aVal < bVal) comparison = -1;
@@ -364,7 +361,7 @@ function updatePagination(visibleRows = null) {
 
 function createPageButton(text, page) {
     const btn = document.createElement('button');
-    btn.className = 'page-btn';
+    btn.className = 'page-btn btn btn-outline-danger btn-sm';
     btn.textContent = text;
     btn.onclick = () => goToPage(page);
     return btn;
@@ -537,47 +534,65 @@ function renderCharacterView(mode) {
         contentHtml += '<div class="col-lg-4 col-md-4 col-sm-12"><p><strong>Available XP:</strong> ' + ((char.total_xp || 0) - (char.spent_xp || 0)) + '</p></div>';
         contentHtml += '</div>';
         
-        // Traits
+        // Character Traits
+        contentHtml += '<h3>Character Traits</h3>';
         if (currentViewData.traits && currentViewData.traits.length > 0) {
-            const physical = currentViewData.traits.filter(t => t.trait_category === 'Physical');
-            const social = currentViewData.traits.filter(t => t.trait_category === 'Social');
-            const mental = currentViewData.traits.filter(t => t.trait_category === 'Mental');
+            // Filter traits by category (case-insensitive, trim whitespace)
+            const physical = currentViewData.traits.filter(t => {
+                const category = (t.trait_category || '').toString().trim();
+                return category.toLowerCase() === 'physical';
+            });
+            const social = currentViewData.traits.filter(t => {
+                const category = (t.trait_category || '').toString().trim();
+                return category.toLowerCase() === 'social';
+            });
+            const mental = currentViewData.traits.filter(t => {
+                const category = (t.trait_category || '').toString().trim();
+                return category.toLowerCase() === 'mental';
+            });
             
-            contentHtml += '<div class="row g-4 mb-4">';
-            contentHtml += '<div class="col-md-6">';
-            if (physical.length > 0) {
-                contentHtml += '<h3>Physical Traits (' + physical.length + ')</h3>';
-                contentHtml += '<div class="trait-list">';
-                physical.forEach(t => {
-                    const xpInfo = t.xp_cost ? ' (XP: ' + t.xp_cost + ')' : '';
-                    contentHtml += '<span class="trait-badge">' + t.trait_name + xpInfo + '</span>';
-                });
+            if (physical.length > 0 || social.length > 0 || mental.length > 0) {
+                contentHtml += '<div class="row g-3 mt-2">';
+                
+                if (physical.length > 0) {
+                    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6">';
+                    contentHtml += '<h4>Physical</h4>';
+                    contentHtml += '<div class="trait-list">';
+                    physical.forEach(t => {
+                        contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
+                    });
+                    contentHtml += '</div>';
+                    contentHtml += '</div>';
+                }
+                
+                if (social.length > 0) {
+                    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6">';
+                    contentHtml += '<h4>Social</h4>';
+                    contentHtml += '<div class="trait-list">';
+                    social.forEach(t => {
+                        contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
+                    });
+                    contentHtml += '</div>';
+                    contentHtml += '</div>';
+                }
+                
+                if (mental.length > 0) {
+                    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-12">';
+                    contentHtml += '<h4>Mental</h4>';
+                    contentHtml += '<div class="trait-list">';
+                    mental.forEach(t => {
+                        contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
+                    });
+                    contentHtml += '</div>';
+                    contentHtml += '</div>';
+                }
+                
                 contentHtml += '</div>';
+            } else {
+                contentHtml += '<p class="empty-state">No character traits found.</p>';
             }
-            contentHtml += '</div>';
-            
-            contentHtml += '<div class="col-md-6">';
-            if (social.length > 0) {
-                contentHtml += '<h3>Social Traits (' + social.length + ')</h3>';
-                contentHtml += '<div class="trait-list">';
-                social.forEach(t => {
-                    const xpInfo = t.xp_cost ? ' (XP: ' + t.xp_cost + ')' : '';
-                    contentHtml += '<span class="trait-badge">' + t.trait_name + xpInfo + '</span>';
-                });
-                contentHtml += '</div>';
-            }
-            contentHtml += '</div>';
-            contentHtml += '</div>';
-            
-            if (mental.length > 0) {
-                contentHtml += '<h3>Mental Traits (' + mental.length + ')</h3>';
-                contentHtml += '<div class="trait-list">';
-                mental.forEach(t => {
-                    const xpInfo = t.xp_cost ? ' (XP: ' + t.xp_cost + ')' : '';
-                    contentHtml += '<span class="trait-badge">' + t.trait_name + xpInfo + '</span>';
-                });
-                contentHtml += '</div>';
-            }
+        } else {
+            contentHtml += '<p class="empty-state">No character traits found.</p>';
         }
         
         // Abilities - always show section header
@@ -605,7 +620,6 @@ function renderCharacterView(mode) {
                         let badge = a.ability_name;
                         if (a.level && a.level > 0) badge += ' x' + a.level;
                         if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
                     contentHtml += '</div>';
@@ -621,7 +635,6 @@ function renderCharacterView(mode) {
                         let badge = a.ability_name;
                         if (a.level && a.level > 0) badge += ' x' + a.level;
                         if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
                     contentHtml += '</div>';
@@ -637,7 +650,6 @@ function renderCharacterView(mode) {
                         let badge = a.ability_name;
                         if (a.level && a.level > 0) badge += ' x' + a.level;
                         if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
                     contentHtml += '</div>';
@@ -651,7 +663,6 @@ function renderCharacterView(mode) {
                         let badge = a.ability_name;
                         if (a.level && a.level > 0) badge += ' x' + a.level;
                         if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
                     contentHtml += '</div>';
@@ -665,7 +676,6 @@ function renderCharacterView(mode) {
                         let badge = a.ability_name;
                         if (a.level && a.level > 0) badge += ' x' + a.level;
                         if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        if (a.xp_cost) badge += ' [XP: ' + a.xp_cost + ']';
                         if (a.ability_category) badge += ' [' + a.ability_category + ']';
                         contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
                     });
@@ -685,7 +695,6 @@ function renderCharacterView(mode) {
             currentViewData.disciplines.forEach(d => {
                 const discName = (d.discipline_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 const level = d.level || 0;
-                const xpInfo = d.xp_cost ? ' [XP: ' + d.xp_cost + ']' : '';
                 const powerCount = d.power_count || (d.powers ? d.powers.length : 0);
                 const isCustom = d.is_custom || false;
                 
@@ -724,7 +733,6 @@ function renderCharacterView(mode) {
             contentHtml += '<div class="trait-list">';
             currentViewData.backgrounds.forEach(b => {
                 let badge = b.background_name + ' x' + b.level;
-                if (b.xp_cost) badge += ' [XP: ' + b.xp_cost + ']';
                 contentHtml += '<span class="trait-badge">' + badge + '</span>';
             });
             contentHtml += '</div>';
