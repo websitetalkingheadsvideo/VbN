@@ -1,0 +1,69 @@
+{
+  "character_name": "Adrian Leclair",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Perfectionist",
+  "demeanor": "Gallant",
+  "concept": "Elegant Toreador Curator",
+  "clan": "Toreador",
+  "generation": 10,
+  "sire": "Unknown",
+  "pc": 0,
+  "biography": "Adrian Leclair curates exclusive modern art showings for Phoenix's elite, leveraging precise taste and subtle Kindred influence to guide mortal patrons while sheltering Camarilla investments.",
+  "equipment": "Tailored wardrobe, curated gallery catalogues, Toreador boon ledger",
+
+  "traits": {
+    "Physical": ["Graceful"],
+    "Social": ["Elegant", "Charismatic", "Persuasive", "Dignified"],
+    "Mental": ["Discerning", "Observant", "Meticulous", "Focused", "Intelligent"]
+  },
+
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+
+  "abilities": [],
+
+  "disciplines": [],
+
+  "backgrounds": {},
+
+  "backgroundDetails": {},
+
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+
+  "merits_flaws": [],
+
+  "status": {
+    "sect_status": "",
+    "clan_status": "",
+    "city_status": "",
+    "health_levels": 7,
+    "blood_pool_current": 10,
+    "blood_pool_maximum": 10,
+    "notes": "Maintains a private salon for Toreador patrons; trades favors for access to rare pieces"
+  },
+
+  "coteries": [],
+
+  "relationships": [],
+
+  "rituals": [],
+
+  "specializations": {},
+
+  "research_notes": {},
+
+  "artifacts": []
+}

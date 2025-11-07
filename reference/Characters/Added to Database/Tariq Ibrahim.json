@@ -1,0 +1,69 @@
+{
+  "character_name": "Tariq Ibrahim",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Bon Vivant",
+  "demeanor": "Tempter",
+  "concept": "Setite nightlife impresario",
+  "clan": "Followers of Set",
+  "generation": 9,
+  "sire": "Unknown",
+  "pc": 0,
+  "biography": "Tariq Ibrahim curates a clandestine VIP tier within Phoenix nightclubs where Setite rites masquerade as immersive theater, trading forbidden experiences for influence and secrets.",
+  "equipment": "Exclusive club access lists, Setite ritual kit, curated wardrobe",
+
+  "traits": {
+    "Physical": [],
+    "Social": ["Alluring", "Charismatic", "Commanding", "Persuasive", "Elegant", "Eloquent"],
+    "Mental": ["Cunning", "Discerning", "Shrewd"]
+  },
+
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+
+  "abilities": [],
+
+  "disciplines": [],
+
+  "backgrounds": {},
+
+  "backgroundDetails": {},
+
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 5,
+    "conscience": 1,
+    "self_control": 3,
+    "courage": 4,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 5
+  },
+
+  "merits_flaws": [],
+
+  "status": {
+    "sect_status": "",
+    "clan_status": "",
+    "city_status": "",
+    "health_levels": 7,
+    "blood_pool_current": 12,
+    "blood_pool_maximum": 12,
+    "notes": "Maintains Setite rite chamber hidden within a premier nightclub"
+  },
+
+  "coteries": [],
+
+  "relationships": [],
+
+  "rituals": [],
+
+  "specializations": {},
+
+  "research_notes": {},
+
+  "artifacts": []
+}

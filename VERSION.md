@@ -1,5 +1,33 @@
 # LOTN Character Creator - Version History
 
+## Version 0.9.17 (Current)
+**Date:** February 2025
+
+### Character Trait Synchronization & Data Backfill:
+- ✅ **Trait Sync Script Hardening** – Updated `data/sync_character_traits.php` (PHP 5 compatible, better error handling, auto-detects `xp_cost` column, generates fallback traits)
+- ✅ **Shutdown Diagnostics** – Added fatal-error logging so web runs surface issues immediately
+- ✅ **Character JSON Backfill** – Restored missing per-character JSON sheets for Adrian Leclair, Ardvark, Core (Alexandra Chen), Marisol "Roadrunner" Vega, and Tariq Ibrahim
+- ✅ **Unknown Character Audit** – Identified single nameless DB record (ID 94) as only remaining sync warning
+
+### Files Modified:
+- `data/sync_character_traits.php`
+- `VERSION.md`
+
+### Files Added:
+- `reference/Characters/Added to Database/Adrian Leclair.json`
+- `reference/Characters/Added to Database/Ardvark.json`
+- `reference/Characters/Added to Database/Core (Alexandra Chen).json`
+- `reference/Characters/Added to Database/Marisol Roadrunner Vega.json`
+- `reference/Characters/Added to Database/Tariq Ibrahim.json`
+- `docs/CHAT_REPORT_CHARACTER_TRAIT_SYNC.mdc`
+
+### Impact:
+- **Reliability** – Trait sync script now runs cleanly on production PHP without warnings or 500s
+- **Data Integrity** – All characters (except the blank-name placeholder) now have JSON sources for traits
+- **Debuggability** – Immediate visibility into future fatal errors during scripted sync runs
+
+---
+
 ## Version 0.9.16 (Current)
 **Date:** January 2025
 
