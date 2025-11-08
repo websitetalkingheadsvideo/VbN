@@ -21,8 +21,8 @@ try {
     // Get character data - specify only needed columns (avoid SELECT *)
     $character = db_fetch_one($conn,
         "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept, 
-                clan, generation, sire, pc, biography, character_image, equipment, notes, 
-                total_xp, spent_xp, status AS current_state, camarilla_status, created_at, updated_at 
+                clan, generation, sire, pc, appearance, biography, character_image, equipment, notes, 
+                total_xp, spent_xp, status, camarilla_status, created_at, updated_at 
          FROM characters WHERE id = ?",
         "i",
         [$character_id]
@@ -35,10 +35,12 @@ try {
     }
 
     $valid_states = ['active', 'inactive', 'archived'];
-    $character['current_state'] = strtolower($character['current_state'] ?? 'active');
-    if (!in_array($character['current_state'], $valid_states, true)) {
-        $character['current_state'] = 'active';
+    $lifecycle_state = strtolower($character['status'] ?? $character['current_state'] ?? 'active');
+    if (!in_array($lifecycle_state, $valid_states, true)) {
+        $lifecycle_state = 'active';
     }
+    $character['status'] = $lifecycle_state;
+    $character['current_state'] = $lifecycle_state;
 
     $valid_camarilla = ['Camarilla', 'Anarch', 'Independent', 'Sabbat', 'Unknown'];
     $camarilla = $character['camarilla_status'] ?? 'Unknown';
@@ -50,7 +52,7 @@ try {
     
     // Get all related data using helper functions
     $traits = db_fetch_all($conn,
-        "SELECT id, trait_name, trait_category, trait_type, xp_cost 
+        "SELECT id, trait_name, trait_category, trait_type 
          FROM character_traits 
          WHERE character_id = ? 
          ORDER BY trait_category, trait_name",
@@ -59,7 +61,7 @@ try {
     );
     
     $negative_traits = db_fetch_all($conn,
-        "SELECT id, trait_name, trait_category, xp_cost 
+        "SELECT id, trait_name, trait_category 
          FROM character_negative_traits 
          WHERE character_id = ? 
          ORDER BY trait_category, trait_name",
@@ -131,8 +133,7 @@ try {
             'ability_name' => $ability['ability_name'],
             'ability_category' => $category ? $category['category'] : 'Optional',
             'specialization' => $ability['specialization'] ?? null,
-            'level' => isset($ability['level']) ? intval($ability['level']) : 1,
-            'xp_cost' => 0 // xp_cost column doesn't exist in character_abilities table
+            'level' => isset($ability['level']) ? intval($ability['level']) : 1
         ];
     }
     
@@ -140,7 +141,7 @@ try {
     $all_disciplines_data = getCharacterAllDisciplines($character_id);
     
     $backgrounds = db_fetch_all($conn,
-        "SELECT id, background_name, level, xp_cost 
+        "SELECT id, background_name, level 
          FROM character_backgrounds 
          WHERE character_id = ? 
          ORDER BY level DESC",
@@ -200,8 +201,7 @@ try {
                 'ability_name' => $ability['ability_name'],
                 'ability_category' => $ability['ability_category'] ?? 'Optional',
                 'specialization' => $ability['specialization'] ?? null,
-                'level' => isset($ability['level']) ? intval($ability['level']) : 1,
-                'xp_cost' => 0 // xp_cost column doesn't exist in character_abilities table
+                'level' => isset($ability['level']) ? intval($ability['level']) : 1
             ];
         }
         error_log("load_character.php - abilities_full count: " . count($abilities_full));
@@ -259,7 +259,8 @@ try {
         'morality' => $morality,
         'merits_flaws' => $merits_flaws,
         'status_meta' => [
-            'current_state' => $character['current_state'],
+            'status' => $character['status'],
+            'current_state' => $character['status'],
             'camarilla_status' => $character['camarilla_status']
         ]
     ];

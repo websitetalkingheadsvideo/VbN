@@ -455,6 +455,22 @@ class CharacterCreationApp {
                 state.custom_data = customDataField.value.trim();
             }
             
+            // Collect Description fields (appearance, biography, notes)
+            const appearanceField = document.getElementById('appearance');
+            if (appearanceField) {
+                state.appearance = appearanceField.value.trim();
+            }
+            
+            const biographyField = document.getElementById('biography');
+            if (biographyField) {
+                state.biography = biographyField.value.trim();
+            }
+            
+            const notesField = document.getElementById('notes');
+            if (notesField) {
+                state.notes = notesField.value.trim();
+            }
+            
             // Collect coteries and relationships using global functions
             if (typeof window.collectCoteries === 'function') {
                 state.coteries = window.collectCoteries();
@@ -672,6 +688,28 @@ class CharacterCreationApp {
             const customDataField = document.getElementById('customData');
             if (customDataField) {
                 customDataField.value = character.custom_data;
+            }
+        }
+        
+        // Populate Description fields (appearance, biography, notes)
+        if (character.appearance !== undefined) {
+            const appearanceField = document.getElementById('appearance');
+            if (appearanceField) {
+                appearanceField.value = character.appearance || '';
+            }
+        }
+        
+        if (character.biography !== undefined) {
+            const biographyField = document.getElementById('biography');
+            if (biographyField) {
+                biographyField.value = character.biography || '';
+            }
+        }
+        
+        if (character.notes !== undefined) {
+            const notesField = document.getElementById('notes');
+            if (notesField) {
+                notesField.value = character.notes || '';
             }
         }
         

@@ -18,6 +18,7 @@ class TabManager {
             { id: 'backgrounds', name: 'Backgrounds', required: true },
             { id: 'morality', name: 'Morality', required: true },
             { id: 'merits', name: 'Merits & Flaws', required: false },
+            { id: 'description', name: 'Description', required: false },
             { id: 'review', name: 'Review', required: true }
         ];
         
@@ -336,6 +337,9 @@ class TabManager {
             
             case 'merits':
                 return true; // Optional tab
+            
+            case 'description':
+                return true; // Optional tab - description fields are not required
             
             case 'morality':
                 return this.validateMorality(state.virtues, state.humanity);

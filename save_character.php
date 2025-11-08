@@ -122,6 +122,7 @@ $cleanData = [
     'generation' => cleanInt($data['generation'] ?? 13),
     'sire' => cleanString($data['sire'] ?? ''),
     'pc' => cleanInt($data['pc'] ?? $data['is_pc'] ?? 1),
+    'appearance' => cleanString($data['appearance'] ?? ''),
     'biography' => cleanString($data['biography'] ?? ''),
     'notes' => cleanString($data['notes'] ?? ''),
     'custom_data' => cleanJsonData($data['custom_data'] ?? ''),
@@ -164,7 +165,7 @@ try {
     try {
         if ($character_id > 0) {
             // Update existing character (no strict ownership gating here)
-            $update_sql = "UPDATE characters SET character_name = ?, player_name = ?, chronicle = ?, nature = ?, demeanor = ?, concept = ?, clan = ?, generation = ?, sire = ?, pc = ?, biography = ?, notes = ?, custom_data = ?, status = ?, camarilla_status = ?" .
+            $update_sql = "UPDATE characters SET character_name = ?, player_name = ?, chronicle = ?, nature = ?, demeanor = ?, concept = ?, clan = ?, generation = ?, sire = ?, pc = ?, appearance = ?, biography = ?, notes = ?, custom_data = ?, status = ?, camarilla_status = ?" .
                          ($cleanData['character_image'] !== '' ? ", character_image = ?" : "") .
                          " WHERE id = ?";
 
@@ -174,6 +175,29 @@ try {
             }
 
             if ($cleanData['character_image'] !== '') {
+                mysqli_stmt_bind_param(
+                    $stmt,
+                    'sssssssisisssssssi',
+                    $cleanData['character_name'],
+                    $cleanData['player_name'],
+                    $cleanData['chronicle'],
+                    $cleanData['nature'],
+                    $cleanData['demeanor'],
+                    $cleanData['concept'],
+                    $cleanData['clan'],
+                    $cleanData['generation'],
+                    $cleanData['sire'],
+                    $cleanData['pc'],
+                    $cleanData['appearance'],
+                    $cleanData['biography'],
+                    $cleanData['notes'],
+                    $cleanData['custom_data'],
+                    $cleanData['status'],
+                    $cleanData['camarilla_status'],
+                    $cleanData['character_image'],
+                    $character_id
+                );
+            } else {
                 mysqli_stmt_bind_param(
                     $stmt,
                     'sssssssisissssssi',
@@ -187,28 +211,7 @@ try {
                     $cleanData['generation'],
                     $cleanData['sire'],
                     $cleanData['pc'],
-                    $cleanData['biography'],
-                    $cleanData['notes'],
-                    $cleanData['custom_data'],
-                    $cleanData['status'],
-                    $cleanData['camarilla_status'],
-                    $cleanData['character_image'],
-                    $character_id
-                );
-            } else {
-                mysqli_stmt_bind_param(
-                    $stmt,
-                    'sssssssisisssssi',
-                    $cleanData['character_name'],
-                    $cleanData['player_name'],
-                    $cleanData['chronicle'],
-                    $cleanData['nature'],
-                    $cleanData['demeanor'],
-                    $cleanData['concept'],
-                    $cleanData['clan'],
-                    $cleanData['generation'],
-                    $cleanData['sire'],
-                    $cleanData['pc'],
+                    $cleanData['appearance'],
                     $cleanData['biography'],
                     $cleanData['notes'],
                     $cleanData['custom_data'],

@@ -254,6 +254,7 @@ include 'includes/connect.php';
             <button class="tab tab-btn" data-tab="backgrounds">Backgrounds</button>
             <button class="tab tab-btn" data-tab="morality">Morality</button>
             <button class="tab tab-btn" data-tab="merits">Merits & Flaws</button>
+            <button class="tab tab-btn" data-tab="description">Description</button>
             <button class="tab tab-btn" data-tab="review">Final Details</button>
         </div>
         
@@ -1655,7 +1656,44 @@ include 'includes/connect.php';
                 </div>
             </div>
             
-            <!-- Tab 7: Final Details -->
+            <!-- Tab 7: Description -->
+            <div class="tab-content" id="descriptionTab">
+                <div class="tab-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Character Description</h2>
+                        <p class="card-subtitle">Describe your character's appearance, background, and notes</p>
+                    </div>
+                
+                    <!-- Appearance Field -->
+                    <div class="form-group">
+                        <label for="appearance">Appearance</label>
+                        <textarea id="appearance" name="appearance" class="form-control" rows="6" placeholder="Describe your character's physical appearance..." aria-label="Character appearance description"></textarea>
+                        <div class="helper-text">Describe your character's physical appearance, including notable features, clothing style, and distinctive characteristics.</div>
+                    </div>
+                    
+                    <!-- Biography Field -->
+                    <div class="form-group">
+                        <label for="biography">Biography</label>
+                        <textarea id="biography" name="biography" class="form-control" rows="8" placeholder="Write your character's background story and history..." aria-label="Character biography"></textarea>
+                        <div class="helper-text">Tell your character's story - their background, history, and the events that led them to this point.</div>
+                    </div>
+                    
+                    <!-- Notes Field -->
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" name="notes" class="form-control" rows="6" placeholder="Add any additional notes, reminders, or details about your character..." aria-label="Character notes"></textarea>
+                        <div class="helper-text">Use this space for player notes, storyteller notes, or any additional information about your character.</div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="nav-btn" data-action="previous">← Previous</button>
+                        <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
+                        <button type="button" class="nav-btn" data-action="next">Next →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 8: Final Details -->
             <div class="tab-content" id="reviewTab">
                 <div class="tab-card">
                     <div class="card-header">
