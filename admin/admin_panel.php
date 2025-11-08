@@ -5,7 +5,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.9.21');
+define('LOTN_VERSION', '0.9.22');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -95,7 +95,7 @@ function render_clan_badge(string $clan): string {
 
 <div class="admin-panel-container container-fluid py-4 px-3 px-md-4">
     <h1 class="panel-title display-5 text-light fw-bold mb-1">🔧 Character Management</h1>
-    <p class="panel-subtitle lead text-muted fst-italic mb-4">Manage all characters across the chronicle</p>
+    <p class="panel-subtitle lead text-light fst-italic mb-4">Manage all characters across the chronicle</p>
     
     <!-- Admin Navigation -->
     <div class="admin-nav row g-2 g-md-3 mb-4">

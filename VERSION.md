@@ -1,6 +1,23 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.21 (Current)
+## Version 0.9.22 (Current)
+**Date:** January 2025
+
+### Admin UI Improvements:
+- ✅ **Boon Ledger Navigation** – Added "Back to Admin Panel" button for easier navigation
+- ✅ **Subtitle Visibility** – Brightened admin panel subtitle text for better readability
+
+### Files Modified:
+- `admin/boon_ledger.php` – Added back to admin panel button
+- `admin/admin_panel.php` – Changed subtitle color from text-muted to text-light
+
+### Impact:
+- **User Experience** – Easier navigation between admin pages
+- **Visual Design** – Improved text visibility and readability
+
+---
+
+## Version 0.9.21
 **Date:** January 2025
 
 ### Boon System Implementation:

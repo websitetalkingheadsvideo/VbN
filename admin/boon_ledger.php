@@ -6,7 +6,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.9.21');
+define('LOTN_VERSION', '0.9.22');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -54,7 +54,12 @@ function render_status_badge($status) {
 
 <div class="admin-panel-container container-fluid py-4 px-3 px-md-4">
     <h1 class="panel-title display-5 text-light fw-bold mb-1">💎 Boon Ledger</h1>
-    <p class="panel-subtitle lead text-muted fst-italic mb-4">Track favors and debts between characters</p>
+    <p class="panel-subtitle lead text-muted fst-italic mb-2">Track favors and debts between characters</p>
+    <div class="mb-3">
+        <a href="admin_panel.php" class="btn btn-outline-secondary btn-sm">
+            ← Back to Admin Panel
+        </a>
+    </div>
     
     <!-- Admin Navigation -->
     <div class="admin-nav row g-2 g-md-3 mb-4">
