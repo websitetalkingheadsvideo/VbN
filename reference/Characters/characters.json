@@ -76,18 +76,18 @@
         {
             "name": "Core (Alexandra Chen)",
             "clan": "N/A - Human",
-            "description": "",
-            "notes": "",
+            "description": "Age 28. Former top-tier corporate security specialist for NexaCorp who defected after witnessing the human cost of surveillance systems she helped implement. Now leads a resistance cell, using her insider knowledge to dismantle what she helped build. Athletic build, sharp calculating eyes, typically wears tactical gear with concealed weapons. Moves with precision and economy of motion.",
+            "notes": "STRENGTHS: Strategic mastermind with exceptional tactical planning, unwavering moral conviction despite pragmatic methods, natural leader who inspires loyalty, quick decision-maker under pressure, highly disciplined and self-controlled. FLAWS: Carries crushing guilt over past corporate work, tendency to shoulder all responsibility alone, difficulty trusting fully even allies, sometimes prioritizes mission over individual safety, struggles to forgive herself. SKILLS: Expert in hand-to-hand combat and tactical firearms, intimate knowledge of corporate defenses and vulnerabilities, exceptional at planning multi-layered operations, commands respect and coordinates diverse team members, can blend into corporate environments seamlessly. RELATIONSHIPS: Complex partnership with Phreak built on mutual respect and complementary skills with underlying romantic tension. Respected by resistance members but keeps emotional distance. Hunted by former colleagues. CHARACTER ARC: Guilt-ridden defector trying to atone, learning to balance idealism with pragmatism, moving from solitary burden-bearer to true team leader. KEY QUOTE: 'We don't get to choose clean hands. We choose what we fight for.'",
             "traits": [
-              "Analytical",
-              "Logical",
-              "Methodical",
+              "Strategic",
+              "Disciplined",
+              "Tactical",
               "Focused",
               "Intelligent",
               "Observant",
-              "Meticulous",
-              "Patient",
-              "Attentive",
+              "Commanding",
+              "Resilient",
+              "Determined",
               "Shrewd"
             ],
             "image": "Core (Alexandra Chen).webp"
@@ -154,8 +154,8 @@
         {
             "name": "Marisol \"Roadrunner\" Vega",
             "clan": "Gangrel",
-            "description": "",
-            "notes": "Knows Garou patrol patterns anecdotally; leaves coterie sigils on mile markers.",
+            "description": "Marisol 'Roadrunner' Vega keeps the smuggling lanes between Phoenix and the outlying territories, running high‑speed reconnaissance across the desert for her Gangrel kin and allied Anarchs. A lean, tireless courier on a custom dirt bike, she caches supplies along the routes and reads the desert like a living map, favoring night runs and moonlit back roads.",
+            "notes": "Knows Garou patrol timings and Anarch smuggling routes; leaves coterie sigils on mile markers; maintains hidden caches; prefers traveling after moonrise; avoids Elysium politics unless delivering messages.",
             "traits": [
               "Quick",
               "Agile",
@@ -178,11 +178,10 @@
         },
         {
             "name": "Phreak",
-            "clan": "N/A - Human (Cybernetically Enhanced)",
-            "description": "",
-            "notes": "",
+            "clan": "Nosferatu",
+            "description": "Age 26 (estimated). Elite hacker and digital resistance operative from the underground hacker collective. Real name unknown/undisclosed. Lean build from hours at terminals, constantly fidgeting fingers, cybernetic neural interface port hidden beneath hair, dark circles from irregular sleep patterns. Dresses in layers of tech-modified clothing with hidden devices. Restless energy, struggles to sit still.",
+            "notes": "STRENGTHS: Brilliant improviser with technology, infectious enthusiasm and optimism, unshakeable loyalty to chosen allies, sees possibilities where others see obstacles, quick wit and dark humor under pressure. FLAWS: Impulsive and sometimes reckless, overconfident in digital abilities, uncomfortable with emotional vulnerability, tendency to make light of serious situations, can be cavalier about physical danger. BACKGROUND: Grew up in digital underground, self-taught prodigy who learned hacking as survival, lost someone important to corporate surveillance (details unclear), built reputation in hacker circles before joining Core, refuses to discuss life before becoming 'Phreak'. TECHNICAL SPECIALTIES: Quantum encryption breaking, deepfake generation, network topology mapping, zero-day exploits, distributed systems coordination. UNIQUE ABILITY: Unusual ability to 'speak' to AI systems persuasively, treats them almost as living entities, has philosophical conversations with them. RELATIONSHIPS: Deep respect mixed with friendly antagonism toward Core, uses humor to deflect deeper feelings, would die for her without hesitation. Part of loose hacker collective, values community. Instinctive distrust of authority figures. CHARACTER ARC: Cocky hacker treating resistance as exciting game, confronting real consequences and stakes, developing from solo operator to team player, accepting vulnerability. KEY QUOTE: 'Reality is just poorly debugged code. Let me patch that for you.'",
             "traits": [
-              "Alert",
               "Clever",
               "Cunning",
               "Analytical",
@@ -190,7 +189,9 @@
               "Observant",
               "Shrewd",
               "Intelligent",
-              "Patient"
+              "Quick",
+              "Creative",
+              "Resourceful"
             ],
             "image": "Phreak.webp"
         },
@@ -218,7 +219,23 @@
             "clan": "Brujah",
             "description": "Originally generation 10, Piston committed diablerie on a Gangrel during the Los Angeles Anarch faction wars (late 1980s/early 1990s). A former Hell's Angels member embraced in mid-1980s LA by Fred Osmond, he adapted to Kindred life while maintaining his biker identity. He found the Anarch philosophy aligned with Hell's Angels anti-authority stance. During the LA Anarch Free State internal faction wars, he rose in power through combat prowess. In late 80s/early 90s during a gang clash, he frenzied in combat with a Gangrel enforcer. The Beast took over and he committed diablerie, gaining Fortitude but acquiring the mark. LA became too dangerous after the diablerie - Gangrel wanted revenge, faction was divided. He fled to Phoenix early-to-mid 1990s, established in Surprise, and embraced two former Hell's Angels (Butch Reed and Basher) to rebuild brotherhood. Now running criminal operations to fund acquisition of a bar.",
             "notes": "Generation 9 Brujah Anarch. Originally generation 10, committed diablerie on Gangrel in LA. Now in Phoenix running criminal operations. Wants to acquire a bar for his coterie. Has two childer: Butch Reed and Basher. Marked by diablerie - black veins visible to Auspex users.",
-            "traits": [],
+            "traits": [
+              "Strong",
+              "Tough",
+              "Athletic",
+              "Resilient",
+              "Imposing",
+              "Intimidating",
+              "Loyal",
+              "Direct",
+              "Protective",
+              "Brotherly",
+              "Blunt",
+              "Streetwise",
+              "Survivor",
+              "Instinctive",
+              "Practical"
+            ],
             "image": "Piston.webp"
         },
         {

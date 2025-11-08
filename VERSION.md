@@ -1,6 +1,42 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.20 (Current)
+## Version 0.9.21 (Current)
+**Date:** January 2025
+
+### Boon System Implementation:
+- ✅ **Boon Ledger Admin Page** – Complete CRUD interface for tracking favors (boons) between characters
+- ✅ **Database Table** – Created `boons` table with support for both new schema (text names) and existing schema (character IDs)
+- ✅ **Character Dropdowns** – Giver and Receiver fields use character name dropdowns with custom option
+- ✅ **Status Management** – Mark boons as Paid, Broken, or update status with dropdown filter
+- ✅ **API Endpoint** – RESTful API (`api_boons.php`) with full CRUD operations and schema detection
+- ✅ **Admin Navigation** – Added "Boons" button to admin panel navigation
+- ✅ **Schema Compatibility** – API automatically detects and adapts to existing `boons` table structure
+
+### Files Created:
+- `database/create_boons_table.sql` – SQL migration for new boons table schema
+- `admin/boon_ledger.php` – Main admin page with Bootstrap table and modals
+- `admin/api_boons.php` – RESTful API endpoint for boon operations
+- `js/admin_boons.js` – JavaScript for modal management and AJAX operations
+- `BOON_SYSTEM_IMPLEMENTATION_REPORT.md` – Implementation documentation
+
+### Files Modified:
+- `admin/admin_panel.php` – Added "Boons" navigation button
+- `reference/Characters/characters.json` – Updated Core and Phreak character entries with background information
+
+### Technical Details:
+- **Schema Detection** – API detects whether table uses `giver_name`/`receiver_name` (new) or `creditor_id`/`debtor_id` (old)
+- **Status Mapping** – Converts between UI status values ('Owed', 'Paid', 'Broken') and database values ('active', 'fulfilled', 'cancelled')
+- **Character Lookup** – When using old schema, looks up character IDs by name for compatibility
+- **Error Handling** – Enhanced error messages show actual database errors for debugging
+- **Future Ready** – Includes placeholders (`giver_ref`, `receiver_ref`) for future Agent/Character table integration
+
+### Impact:
+- **Admin Tools** – New boon tracking system for managing favors between characters
+- **User Experience** – Character dropdowns with custom option provide better UX than text inputs
+- **Data Integrity** – Supports both existing and new table schemas seamlessly
+- **Maintainability** – Clear separation of concerns with API endpoint and JavaScript module
+
+---
 **Date:** January 2025
 
 ### Final Details Tab & Character Relationships:

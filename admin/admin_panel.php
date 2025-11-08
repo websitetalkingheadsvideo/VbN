@@ -5,7 +5,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.9.0');
+define('LOTN_VERSION', '0.9.21');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -51,6 +51,46 @@ function render_status_badge($status) {
 
     return sprintf('<span class="%s">%s</span>', $class, htmlspecialchars($label));
 }
+
+function render_clan_badge(string $clan): string {
+    $name = trim($clan);
+    if ($name === '') {
+        return '<span class="text-muted">—</span>';
+    }
+
+    static $palette = [
+        'assamite' => '#2E3192',
+        'banu haqim' => '#2E3192',
+        'banu haqim (assamite)' => '#2E3192',
+        'brujah' => '#B22222',
+        'caitiff' => '#708090',
+        'followers of set' => '#8B6C37',
+        'setite' => '#8B6C37',
+        'gangrel' => '#228B22',
+        'giovanni' => '#556B2F',
+        'lasombra' => '#1A1A40',
+        'malkavian' => '#6A0DAD',
+        'nosferatu' => '#556B5D',
+        'ravnos' => '#008B8B',
+        'toreador' => '#C71585',
+        'tremere' => '#8B008B',
+        'tzimisce' => '#99CC00',
+        'ventrue' => '#1F3A93',
+        'ghoul' => '#8B4513'
+    ];
+
+    $key = strtolower($name);
+    if (!isset($palette[$key])) {
+        return htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+    }
+
+    $color = $palette[$key];
+    return sprintf(
+        '<span class="clan-badge" style="background-color:%s;">%s</span>',
+        $color,
+        htmlspecialchars($name, ENT_QUOTES, 'UTF-8')
+    );
+}
 ?>
 
 <div class="admin-panel-container container-fluid py-4 px-3 px-md-4">
@@ -76,6 +116,9 @@ function render_status_badge($status) {
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📋 NPC Briefing</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="boon_ledger.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">💎 Boons</a>
         </div>
     </div>
     
@@ -204,7 +247,17 @@ function render_status_badge($status) {
                         $playerName = trim($char['player_name'] ?? '') !== '' ? $char['player_name'] : ($is_npc ? 'NPC' : '—');
                         $clanName = $char['clan'] ?? 'Unknown';
                         $generation = $char['generation'] ?? '';
-                        $status = strtolower(trim($char['status'] ?? '')) ?: 'active';
+                        $statusRaw = trim((string)($char['status'] ?? ''));
+                        $status = strtolower($statusRaw);
+                        if ($status === '') {
+                            $status = 'active';
+                        }
+
+                        $allowedStatuses = ['active', 'inactive', 'archived', 'dead', 'missing', 'npc', 'unknown'];
+                        if (!in_array($status, $allowedStatuses, true)) {
+                            $status = 'unknown';
+                        }
+
                         $camarilla = $char['camarilla_status'] ?? 'Unknown';
                         $owner = $char['owner_username'] ?? '—';
                 ?>
@@ -232,12 +285,19 @@ function render_status_badge($status) {
                             }
                             ?>
                         </td>
-                        <td class="align-top text-light text-center text-nowrap"><?php echo htmlspecialchars($clanName); ?></td>
+                        <td class="align-top text-center text-nowrap"><?php echo render_clan_badge($clanName); ?></td>
                         <td class="align-top text-center text-nowrap">
                             <?php echo htmlspecialchars($generation ?: '—'); ?>
                         </td>
                         <td class="align-top text-center text-nowrap">
-                            <?php echo render_status_badge($status); ?>
+                            <?php
+                                $statusBadge = render_status_badge($status);
+                                if ($statusBadge === '') {
+                                    echo '<span class="badge-neutral">' . htmlspecialchars(ucfirst($status)) . '</span>';
+                                } else {
+                                    echo $statusBadge;
+                                }
+                            ?>
                         </td>
                         <td class="actions text-center align-top" style="width: 150px;">
                             <div class="btn-group btn-group-sm" role="group" aria-label="Character actions">
@@ -480,6 +540,7 @@ function render_status_badge($status) {
 .badge-inactive { background: #8B6508; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-archived { background: #3a3a3a; color: #d4c4b0; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-neutral { background: rgba(139, 0, 0, 0.2); color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+.clan-badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: 600; color: #f5e6d3; letter-spacing: 0.4px; }
 .badge-dead { background: #3a3a3a; color: #999; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 .badge-missing { background: #5a4a2a; color: #f5e6d3; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
 
@@ -589,11 +650,9 @@ function render_status_badge($status) {
 .mode-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
 .mode-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
 
-/* Character Header Section - Two Column Layout */
+/* Character Header Section - styles only, layout handled by Bootstrap grid */
 .character-header-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: block;
     margin-bottom: 0;
     padding: 25px;
     background: linear-gradient(135deg, rgba(42, 21, 21, 0.6) 0%, rgba(26, 15, 15, 0.6) 100%);
@@ -602,7 +661,6 @@ function render_status_badge($status) {
 }
 
 .compact-mode .character-header-section {
-    gap: 20px;
     margin-bottom: 0;
     padding: 20px;
 }
