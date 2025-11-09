@@ -1,6 +1,45 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.23 (Current)
+## Version 0.9.25 (Current)
+**Date:** November 2025
+
+### Character Field Merge Workflow:
+- ✅ **Preview & Merge Tool** – Added admin interface at `admin/character_field_sync.php` to compare JSON reference fields (appearance, biography, notes, portrait) against live records with safe preview and apply modes.
+- ✅ **Transactional Updates** – Wraps merge operations in database transactions, surfaces success and rollback messaging, and guards against blank-overwrite scenarios.
+- ✅ **Per-Character Debugging** – Provides `?character_id=` query inspection to diff JSON vs database values for targeted troubleshooting.
+
+### Reference Data Refresh:
+- ✅ **Lore Expansion** – Updated `reference/Characters/character_field_work.json` with complete appearance, biography, and notes entries for Phoenix Kindred roster, keeping line endings normalized.
+- ✅ **Image Alignment** – Ensured character image filenames stay synchronized with `uploads/characters/` inventory for downstream portrait sync tooling.
+
+### Files Added / Updated:
+- `admin/character_field_sync.php`
+- `reference/Characters/character_field_work.json`
+- `VERSION.md`
+- `docs/CHAT_REPORT_CHARACTER_FIELD_SYNC.mdc`
+
+---
+
+## Version 0.9.24
+**Date:** January 2025
+
+### Character Data Sync Utilities:
+- ✅ **Character Field Merge Tool** – Added preview/merge workflow to push appearance, biography, notes, and portrait references from `character_field_work.json` into live character records while ignoring blank JSON values.
+- ✅ **Transactional Safety** – Merge operations run inside a transaction with rollback on failure and produce admin-facing success/error notices.
+- ✅ **Debug Comparisons** – Added per-character diff inspection via `?character_id=` query parameter to review JSON vs database values before merging.
+- ✅ **Character Portrait Sync Utility** – Introduced admin page that audits portrait filenames between the JSON reference and `uploads/characters/`, highlights missing assets, and copies available source images on demand.
+- ✅ **Ops Visibility** – Summary cards show total expected images, already-present assets, and missing source files with badge indicators for follow-up.
+
+### Files Added / Updated:
+- `admin/character_field_sync.php`
+- `admin/character_image_sync.php`
+- `reference/Characters/character_field_work.json`
+- `VERSION.md`
+- `docs/CHAT_REPORT_CHARACTER_DATA_SYNC.mdc`
+
+---
+
+## Version 0.9.23
 **Date:** January 2025
 
 ### Character Description Tab Implementation:

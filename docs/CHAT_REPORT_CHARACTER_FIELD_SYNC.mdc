@@ -1,0 +1,46 @@
+# Chat Session Report - November 2025
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.9.24 → 0.9.25 (Patch Increment)
+- **Work Type:** Admin Utilities – Character Narrative Synchronization
+
+### What We Accomplished
+
+#### 1. Character Field Merge Admin Workflow
+- **Preview + Merge Modes** – Completed the admin UI at `admin/character_field_sync.php` that compares JSON reference data (appearance, biography, notes, portrait) against live character rows with explicit preview vs merge states.
+- **Non-Destructive Sync** – Normalizes incoming JSON, skips empty values, and applies only changed fields so existing lore can’t be overwritten by blanks.
+- **Transactional Safety** – Wraps write operations in database transactions, rolling back on failure and surfacing success messaging when commits succeed.
+- **Per-Character Debugging** – Added `?character_id=` query support that prints JSON vs database diffs for targeted troubleshooting before merges.
+
+#### 2. Reference Data Refresh
+- **Lore Expansion** – Updated `reference/Characters/character_field_work.json` with the latest Phoenix Kindred biographies, appearances, and notes while standardizing line endings.
+- **Portrait Alignment** – Ensured JSON portrait filenames match the assets staged in `uploads/characters/` to keep downstream portrait sync tooling accurate.
+
+### Technical Implementation Details
+
+#### `admin/character_field_sync.php`
+- Declares strict types, enforces admin-only access, and registers a shutdown handler for fatal error surfacing.
+- Uses helper functions (`db_fetch_one`, `db_execute`, transaction helpers) to compare normalized text and update only the differing columns.
+- Renders preview tables, debug comparison cards, and merge summaries so administrators can validate changes pre-commit.
+
+#### `reference/Characters/character_field_work.json`
+- Carries enriched biography/appearance/notes entries for the current roster with normalized newline handling.
+- Provides an authoritative list of portrait filenames consumed by both merge and image-sync utilities.
+
+### Files Added / Updated
+- `admin/character_field_sync.php`
+- `reference/Characters/character_field_work.json`
+- `docs/CHAT_REPORT_CHARACTER_FIELD_SYNC.mdc`
+- `VERSION.md`
+- `includes/version.php`
+
+### Current Status
+- **Character Field Synchronization:** ✅ Preview + merge tooling operational with rollback safety and per-character debugging.
+- **Narrative Source Data:** ✅ JSON reference refreshed with consistent formatting and portrait alignment.
+- **Versioning:** ✅ Project version advanced to `0.9.25` reflecting the completed admin merge workflow.
+
+### Impact Summary
+- **Data Hygiene:** Admins can bulk-apply curated narrative updates without risking accidental blank overwrites.
+- **Operational Confidence:** Transactions, previews, and diff tooling provide clear validation before merging changes.
+- **Documentation:** Version history and chat report capture the workflow for future operators and release notes.
