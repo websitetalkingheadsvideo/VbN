@@ -2,6 +2,7 @@
 /**
  * Admin Panel - Character Management
  */
+// Updated 2025-11-09: VbN Agents Page Styling + Link Integration
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -14,6 +15,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 }
 
 require_once __DIR__ . '/../includes/connect.php';
+$extra_css = ['css/admin-agents.css'];
 include __DIR__ . '/../includes/header.php';
 
 function render_status_badge($status) {
@@ -120,6 +122,9 @@ function render_clan_badge(string $clan): string {
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="boon_ledger.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">💎 Boons</a>
         </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="agents.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Agents</a>
+        </div>
     </div>
     
     <!-- Character Statistics -->
@@ -158,6 +163,15 @@ function render_clan_badge(string $clan): string {
             </div>
         </div>
     </div>
+
+    <section class="mb-4">
+        <h2 class="h5 text-light mb-3 text-uppercase">Agents</h2>
+        <div class="row g-2 g-md-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <a href="agents.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Agents Dashboard</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Questionnaire Statistics -->
     <div class="questionnaire-stats d-flex flex-wrap gap-3 mb-4 align-items-center">

@@ -48,6 +48,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <!-- Bootstrap Override Layer - Neutralizes Bootstrap reset while preserving existing design -->
     <link rel="stylesheet" href="<?php echo $path_prefix; ?>css/bootstrap-overrides.css">
     <link rel="stylesheet" href="<?php echo $path_prefix; ?>css/global.css">
+    <?php
+    if (isset($extra_css) && is_array($extra_css)) {
+        foreach ($extra_css as $cssPath) {
+            $normalizedPath = ltrim($cssPath, '/');
+            echo '<link rel="stylesheet" href="' . htmlspecialchars($path_prefix . $normalizedPath, ENT_QUOTES, 'UTF-8') . '">' . PHP_EOL;
+        }
+    }
+    ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nosifer&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -95,17 +103,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <div class="header-right d-flex flex-column align-items-end gap-1">
                 <div class="header-top-row d-flex align-items-center gap-2 flex-wrap">
                     <?php if (isset($_SESSION['user_id'])): ?>
-                    <div class="quick-nav">
-                        <button id="agentSelect" class="btn btn-outline-danger btn-sm" type="button" onclick="window.location.href='<?php echo $path_prefix; ?>admin/laws_agent.php';">
-                            🧛 Laws Agent
-                        </button>
-                    </div>
-                    <?php endif; ?>
                     <div class="user-info">
                         <span class="user-label">Kindred:</span>
                         <span class="username"><?php echo htmlspecialchars($username); ?></span>
                         <a href="<?php echo $app_root; ?>logout.php" class="logout-btn" title="Logout">Logout</a>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="version-info">
                     <span class="version">v<?php echo htmlspecialchars($version); ?></span>

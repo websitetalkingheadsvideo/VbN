@@ -1,0 +1,199 @@
+/* ========================================
+   Agents Admin Styles
+   Shared styles for agents dashboard components
+   ======================================== */
+
+.agents-panel {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.agents-intro {
+    color: var(--text-muted);
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+}
+
+.agents-grid {
+    margin-bottom: 2rem;
+}
+
+.agent-card {
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 24px;
+    color: var(--text-mid);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.agent-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(139, 0, 0, 0.45);
+    border-color: #b30000;
+}
+
+.agent-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.agent-card-title {
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    color: var(--text-light);
+    font-size: 1.35rem;
+    margin: 0;
+}
+
+.agent-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(139, 0, 0, 0.25);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.agent-status[data-status="inactive"] {
+    background: rgba(139, 100, 0, 0.35);
+}
+
+.agent-card-description,
+.agent-card-text,
+.agent-card-meta {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.agent-card-section {
+    border-top: 1px solid rgba(139, 0, 0, 0.35);
+    padding-top: 12px;
+}
+
+.agent-card-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.agent-card-subtitle {
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+}
+
+.agent-path-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.agent-path {
+    display: inline-block;
+    background: rgba(26, 15, 15, 0.65);
+    border: 1px solid rgba(139, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.agent-action-group {
+    margin-top: auto;
+}
+
+.agent-action-group .btn {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.agent-card-meta {
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.planned-agents-panel {
+    background: linear-gradient(135deg, rgba(26, 15, 15, 0.8) 0%, rgba(13, 6, 6, 0.9) 100%);
+    border: 2px solid rgba(139, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 24px;
+    color: var(--text-mid);
+}
+
+.planned-agents-panel h2 {
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+}
+
+.planned-agents-panel p {
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.planned-agents-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.planned-agents-list li {
+    position: relative;
+    padding-left: 20px;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    color: var(--text-mid);
+}
+
+.planned-agents-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #8B0000;
+    font-size: 1.2rem;
+    line-height: 1;
+    top: 2px;
+}
+
+@media (max-width: 575.98px) {
+    .agent-card {
+        padding: 20px;
+    }
+
+    .agent-card-title {
+        font-size: 1.2rem;
+    }
+
+    .agent-status {
+        font-size: 0.85rem;
+    }
+
+    .agent-path {
+        font-size: 0.8rem;
+    }
+}
+

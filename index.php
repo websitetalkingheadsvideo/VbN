@@ -111,6 +111,13 @@ include 'includes/header.php';
                 </div>
                 
                 <div class="action-card col-md-4 col-sm-6">
+                    <div class="card-icon">👥</div>
+                    <h3>Agents Dashboard</h3>
+                    <p>Monitor automation helpers and review agent activity</p>
+                    <a href="admin/agents.php" class="gothic-button">Open Agents</a>
+                </div>
+                
+                <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon">🌟</div>
                     <h3>Clan Discovery Quiz</h3>
                     <p>Test the character creation questionnaire</p>

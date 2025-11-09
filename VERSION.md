@@ -1,6 +1,25 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.25 (Current)
+## Version 0.9.26 (Current)
+**Date:** November 2025
+
+### Admin Agents Experience Refresh:
+- ✅ **Dashboard Access** – Added an Agents dashboard quick-action card for storytellers on `index.php`, giving direct access to `/admin/agents.php`.
+- ✅ **Admin Panel Navigation** – Introduced an Agents navigation button and mid-page quick link to keep automation tools alongside other management areas.
+- ✅ **Agents Page Restyle** – Rebuilt `/admin/agents.php` with the standard admin container, typography, and gradient cards, plus a new grid entry for the Laws Agent.
+- ✅ **Shared Styling** – Created `css/admin-agents.css` for reusable agent card styling and wired header loading of page-specific CSS.
+
+### Files Added / Updated:
+- `admin/agents.php`
+- `admin/admin_panel.php`
+- `includes/header.php`
+- `index.php`
+- `css/admin-agents.css`
+- `VERSION.md`
+
+---
+
+## Version 0.9.25
 **Date:** November 2025
 
 ### Character Field Merge Workflow:
