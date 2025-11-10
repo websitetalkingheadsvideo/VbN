@@ -1,0 +1,1556 @@
+[
+  {
+    "file": "/docs/ARCHIVE_MANIFEST_SNAPSHOT.md",
+    "archivePath": "/archive/md/docs/ARCHIVE_MANIFEST_SNAPSHOT.md",
+    "category": "md",
+    "action": "archived",
+    "timestamp": "2025-11-10T10:05:00+00:00",
+    "reason": "Documentation archived for reference-only retention"
+  }
+]
+[
+  {
+    "file": "/admin/admin_create_location.php",
+    "archivePath": "/archive/php/admin/admin_create_location.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin/admin_create_location_story.php",
+    "archivePath": "/archive/php/admin/admin_create_location_story.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin/admin_equipment.php",
+    "archivePath": "/archive/php/admin/admin_equipment.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin/admin_items.php",
+    "archivePath": "/archive/php/admin/admin_items.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin/admin_panel_simple.php",
+    "archivePath": "/archive/php/admin/admin_panel_simple.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\admin_locations.php",
+    "archivePath": "/archive/php/admin\\admin_locations.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\admin_npc_briefing.php",
+    "archivePath": "/archive/php/admin\\admin_npc_briefing.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\admin_sire_childe.php",
+    "archivePath": "/archive/php/admin\\admin_sire_childe.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\admin_sire_childe_enhanced.php",
+    "archivePath": "/archive/php/admin\\admin_sire_childe_enhanced.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_admin_add_equipment.php",
+    "archivePath": "/archive/php/admin\\api_admin_add_equipment.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_admin_items_crud.php",
+    "archivePath": "/archive/php/admin\\api_admin_items_crud.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_admin_locations_crud.php",
+    "archivePath": "/archive/php/admin\\api_admin_locations_crud.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_admin_location_assignments.php",
+    "archivePath": "/archive/php/admin\\api_admin_location_assignments.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_admin_remove_equipment.php",
+    "archivePath": "/archive/php/admin\\api_admin_remove_equipment.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_admin_update_equipment.php",
+    "archivePath": "/archive/php/admin\\api_admin_update_equipment.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_analyze_sire_relationships.php",
+    "archivePath": "/archive/php/admin\\api_analyze_sire_relationships.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_boons.php",
+    "archivePath": "/archive/php/admin\\api_boons.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_create_location.php",
+    "archivePath": "/archive/php/admin\\api_create_location.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_delete_location_simple.php",
+    "archivePath": "/archive/php/admin\\api_delete_location_simple.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_disciplines.php",
+    "archivePath": "/archive/php/admin\\api_disciplines.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_enrich_characters.php",
+    "archivePath": "/archive/php/admin\\api_enrich_characters.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_get_characters.php",
+    "archivePath": "/archive/php/admin\\api_get_characters.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_get_characters_json.php",
+    "archivePath": "/archive/php/admin\\api_get_characters_json.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_get_equipment.php",
+    "archivePath": "/archive/php/admin\\api_get_equipment.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_items.php",
+    "archivePath": "/archive/php/admin\\api_items.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_laws_agent.php",
+    "archivePath": "/archive/php/admin\\api_laws_agent.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_locations.php",
+    "archivePath": "/archive/php/admin\\api_locations.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_npc_briefing.php",
+    "archivePath": "/archive/php/admin\\api_npc_briefing.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_parse_location_story.php",
+    "archivePath": "/archive/php/admin\\api_parse_location_story.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_rulebooks_search.php",
+    "archivePath": "/archive/php/admin\\api_rulebooks_search.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_sire_childe.php",
+    "archivePath": "/archive/php/admin\\api_sire_childe.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\api_update_npc_notes.php",
+    "archivePath": "/archive/php/admin\\api_update_npc_notes.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\boon_ledger.php",
+    "archivePath": "/archive/php/admin\\boon_ledger.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\character_field_sync.php",
+    "archivePath": "/archive/php/admin\\character_field_sync.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\character_image_sync.php",
+    "archivePath": "/archive/php/admin\\character_image_sync.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\check_traits_db.php",
+    "archivePath": "/archive/php/admin\\check_traits_db.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\debug_delete_location.php",
+    "archivePath": "/archive/php/admin\\debug_delete_location.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\delete_character_api.php",
+    "archivePath": "/archive/php/admin\\delete_character_api.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\deploy_to_websitetalkingheads.php",
+    "archivePath": "/archive/php/admin\\deploy_to_websitetalkingheads.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\disable_login.php",
+    "archivePath": "/archive/php/admin\\disable_login.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\fonts.php",
+    "archivePath": "/archive/php/admin\\fonts.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\laws_agent.php",
+    "archivePath": "/archive/php/admin\\laws_agent.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\npc_tracker.php",
+    "archivePath": "/archive/php/admin\\npc_tracker.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\npc_tracker_submit.php",
+    "archivePath": "/archive/php/admin\\npc_tracker_submit.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\npc_tracker_submit_updated.php",
+    "archivePath": "/archive/php/admin\\npc_tracker_submit_updated.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\questionnaire_admin.php",
+    "archivePath": "/archive/php/admin\\questionnaire_admin.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\rulebooks_search.php",
+    "archivePath": "/archive/php/admin\\rulebooks_search.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\setup_npc_tracker.php",
+    "archivePath": "/archive/php/admin\\setup_npc_tracker.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\test_abilities.php",
+    "archivePath": "/archive/php/admin\\test_abilities.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\test_db_connection.php",
+    "archivePath": "/archive/php/admin\\test_db_connection.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\test_delete_minimal.php",
+    "archivePath": "/archive/php/admin\\test_delete_minimal.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\test_includes.php",
+    "archivePath": "/archive/php/admin\\test_includes.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\test_thaumaturgy.php",
+    "archivePath": "/archive/php/admin\\test_thaumaturgy.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\tools\\generate_cleanup_manifest.php",
+    "archivePath": "/archive/php/admin\\tools\\generate_cleanup_manifest.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\verify_thaumaturgy_powers.php",
+    "archivePath": "/archive/php/admin\\verify_thaumaturgy_powers.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/admin\\view_character_api.php",
+    "archivePath": "/archive/php/admin\\view_character_api.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/api_get_character_names.php",
+    "archivePath": "/archive/php/api_get_character_names.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/auto_increment_version.php",
+    "archivePath": "/archive/php/auto_increment_version.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/cc.php",
+    "archivePath": "/archive/php/cc.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/chat.php",
+    "archivePath": "/archive/php/chat.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\batch_import_simple_characters.php",
+    "archivePath": "/archive/php/data\\batch_import_simple_characters.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\check_merits.php",
+    "archivePath": "/archive/php/data\\check_merits.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\check_simple_imports.php",
+    "archivePath": "/archive/php/data\\check_simple_imports.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\check_traits.php",
+    "archivePath": "/archive/php/data\\check_traits.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\delete_character.php",
+    "archivePath": "/archive/php/data\\delete_character.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\disciplines_converter.php",
+    "archivePath": "/archive/php/data\\disciplines_converter.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\enrich_characters_json.php",
+    "archivePath": "/archive/php/data\\enrich_characters_json.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_all_tremere.php",
+    "archivePath": "/archive/php/data\\import_all_tremere.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_andrei.php",
+    "archivePath": "/archive/php/data\\import_andrei.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_char.php",
+    "archivePath": "/archive/php/data\\import_char.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_character.php",
+    "archivePath": "/archive/php/data\\import_character.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_character_fixed.php",
+    "archivePath": "/archive/php/data\\import_character_fixed.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_location.php",
+    "archivePath": "/archive/php/data\\import_location.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_rembrandt.php",
+    "archivePath": "/archive/php/data\\import_rembrandt.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_simple_character.php",
+    "archivePath": "/archive/php/data\\import_simple_character.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\import_simple_characters_ui.php",
+    "archivePath": "/archive/php/data\\import_simple_characters_ui.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\list_characters.php",
+    "archivePath": "/archive/php/data\\list_characters.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\list_characters_without_images.php",
+    "archivePath": "/archive/php/data\\list_characters_without_images.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\list_files.php",
+    "archivePath": "/archive/php/data\\list_files.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\run_migration.php",
+    "archivePath": "/archive/php/data\\run_migration.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\sync_character_traits.php",
+    "archivePath": "/archive/php/data\\sync_character_traits.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\test_load_character.php",
+    "archivePath": "/archive/php/data\\test_load_character.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\test_path.php",
+    "archivePath": "/archive/php/data\\test_path.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\verify_andrei.php",
+    "archivePath": "/archive/php/data\\verify_andrei.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data\\view_character.php",
+    "archivePath": "/archive/php/data\\view_character.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\add_character_description_fields.php",
+    "archivePath": "/archive/php/database\\add_character_description_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\add_character_image_column.php",
+    "archivePath": "/archive/php/database\\add_character_image_column.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\add_character_status_fields.php",
+    "archivePath": "/archive/php/database\\add_character_status_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\add_email_verification_columns.php",
+    "archivePath": "/archive/php/database\\add_email_verification_columns.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\add_npc_briefing_fields.php",
+    "archivePath": "/archive/php/database\\add_npc_briefing_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\add_thaumaturgy_paths.php",
+    "archivePath": "/archive/php/database\\add_thaumaturgy_paths.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\analyze_characters_schema.php",
+    "archivePath": "/archive/php/database\\analyze_characters_schema.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\backup_character_fields.php",
+    "archivePath": "/archive/php/database\\backup_character_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\character_field_commit.php",
+    "archivePath": "/archive/php/database\\character_field_commit.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\character_field_merge.php",
+    "archivePath": "/archive/php/database\\character_field_merge.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\character_field_plan.php",
+    "archivePath": "/archive/php/database\\character_field_plan.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\check_character_disciplines.php",
+    "archivePath": "/archive/php/database\\check_character_disciplines.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\check_character_disciplines_status.php",
+    "archivePath": "/archive/php/database\\check_character_disciplines_status.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\check_users_table.php",
+    "archivePath": "/archive/php/database\\check_users_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create user table.php",
+    "archivePath": "/archive/php/database\\create user table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_boons_table.php",
+    "archivePath": "/archive/php/database\\create_boons_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_clans_table.php",
+    "archivePath": "/archive/php/database\\create_clans_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_locations_table.php",
+    "archivePath": "/archive/php/database\\create_locations_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_location_assignments_table.php",
+    "archivePath": "/archive/php/database\\create_location_assignments_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_missing_tables.php",
+    "archivePath": "/archive/php/database\\create_missing_tables.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_npc_tracker_table.php",
+    "archivePath": "/archive/php/database\\create_npc_tracker_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_rulebooks_tables.php",
+    "archivePath": "/archive/php/database\\create_rulebooks_tables.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\create_xp_costs_table.php",
+    "archivePath": "/archive/php/database\\create_xp_costs_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\debug_disciplines.php",
+    "archivePath": "/archive/php/database\\debug_disciplines.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\export_characters_to_json.php",
+    "archivePath": "/archive/php/database\\export_characters_to_json.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\export_character_field_workplan.php",
+    "archivePath": "/archive/php/database\\export_character_field_workplan.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\fill_character_fields.php",
+    "archivePath": "/archive/php/database\\fill_character_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\import_character_field_work.php",
+    "archivePath": "/archive/php/database\\import_character_field_work.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\import_items.php",
+    "archivePath": "/archive/php/database\\import_items.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\import_rulebooks.php",
+    "archivePath": "/archive/php/database\\import_rulebooks.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\import_specific_rulebooks.php",
+    "archivePath": "/archive/php/database\\import_specific_rulebooks.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\list_character_ids.php",
+    "archivePath": "/archive/php/database\\list_character_ids.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\migrate_character_disciplines.php",
+    "archivePath": "/archive/php/database\\migrate_character_disciplines.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\migrate_coterie_relationships.php",
+    "archivePath": "/archive/php/database\\migrate_coterie_relationships.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\migrate_discipline_schema.php",
+    "archivePath": "/archive/php/database\\migrate_discipline_schema.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\migrate_remove_xp_cost_columns.php",
+    "archivePath": "/archive/php/database\\migrate_remove_xp_cost_columns.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\normalize_npc_player_names.php",
+    "archivePath": "/archive/php/database\\normalize_npc_player_names.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\populate_coterie_relationships.php",
+    "archivePath": "/archive/php/database\\populate_coterie_relationships.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\populate_discipline_data.php",
+    "archivePath": "/archive/php/database\\populate_discipline_data.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\populate_discipline_powers.php",
+    "archivePath": "/archive/php/database\\populate_discipline_powers.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\reseed_clans_table.php",
+    "archivePath": "/archive/php/database\\reseed_clans_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\rollback_remove_xp_cost_columns.php",
+    "archivePath": "/archive/php/database\\rollback_remove_xp_cost_columns.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\run_email_verification_migration.php",
+    "archivePath": "/archive/php/database\\run_email_verification_migration.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\run_moral_state_update.php",
+    "archivePath": "/archive/php/database\\run_moral_state_update.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\setup_database.php",
+    "archivePath": "/archive/php/database\\setup_database.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\setup_disciplines_simple.php",
+    "archivePath": "/archive/php/database\\setup_disciplines_simple.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\setup_discipline_powers.php",
+    "archivePath": "/archive/php/database\\setup_discipline_powers.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\setup_items_database.php",
+    "archivePath": "/archive/php/database\\setup_items_database.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\show_clans_table.php",
+    "archivePath": "/archive/php/database\\show_clans_table.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\sync_character_fields.php",
+    "archivePath": "/archive/php/database\\sync_character_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\test_discipline_function.php",
+    "archivePath": "/archive/php/database\\test_discipline_function.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\update_ardvark_biography.php",
+    "archivePath": "/archive/php/database\\update_ardvark_biography.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\update_ardvark_description.php",
+    "archivePath": "/archive/php/database\\update_ardvark_description.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\update_ardvark_fields.php",
+    "archivePath": "/archive/php/database\\update_ardvark_fields.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\update_schema_mysql_compliance.php",
+    "archivePath": "/archive/php/database\\update_schema_mysql_compliance.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\validate_traits_schema.php",
+    "archivePath": "/archive/php/database\\validate_traits_schema.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/database\\view_characters_json.php",
+    "archivePath": "/archive/php/database\\view_characters_json.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/import_with_progress.php",
+    "archivePath": "/archive/php/import_with_progress.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\anthropic_helper.php",
+    "archivePath": "/archive/php/includes\\anthropic_helper.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\auth_bypass.php",
+    "archivePath": "/archive/php/includes\\auth_bypass.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\connect.php",
+    "archivePath": "/archive/php/includes\\connect.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\discipline_functions.php",
+    "archivePath": "/archive/php/includes\\discipline_functions.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\email_helper.php",
+    "archivePath": "/archive/php/includes\\email_helper.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\email_helper_simple.php",
+    "archivePath": "/archive/php/includes\\email_helper_simple.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\footer.php",
+    "archivePath": "/archive/php/includes\\footer.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\header.php",
+    "archivePath": "/archive/php/includes\\header.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\urls.php",
+    "archivePath": "/archive/php/includes\\urls.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/includes\\version.php",
+    "archivePath": "/archive/php/includes\\version.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/increment_version.php",
+    "archivePath": "/archive/php/increment_version.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/login_process.php",
+    "archivePath": "/archive/php/login_process.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/questionnaire.php",
+    "archivePath": "/archive/php/questionnaire.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/register_process.php",
+    "archivePath": "/archive/php/register_process.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/remove_character_image.php",
+    "archivePath": "/archive/php/remove_character_image.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/test_api_endpoint.php",
+    "archivePath": "/archive/php/test_api_endpoint.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/test_delete_api.php",
+    "archivePath": "/archive/php/test_delete_api.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/test_import.php",
+    "archivePath": "/archive/php/test_import.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/update_version.php",
+    "archivePath": "/archive/php/update_version.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/upload_character_image.php",
+    "archivePath": "/archive/php/upload_character_image.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/users.php",
+    "archivePath": "/archive/php/users.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/verify_email.php",
+    "archivePath": "/archive/php/verify_email.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/version_commands.php",
+    "archivePath": "/archive/php/version_commands.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/404.php",
+    "archivePath": "/archive/php/404.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/500.php",
+    "archivePath": "/archive/php/500.php",
+    "category": "php",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "inactive page archived"
+  },
+  {
+    "file": "/data/extracted_rulebooks/VTM - Counsel of Primogen (1).json",
+    "archivePath": "/archive/json/data/extracted_rulebooks/VTM - Counsel of Primogen (1).json",
+    "category": "json",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "unreferenced reference data archived"
+  },
+  {
+    "file": "/reference/Characters/Images/109_1762560972_539bc98d.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/109_1762560972_539bc98d.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Tor.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Tor.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/50_1761942326_4f021683.jpeg",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/50_1761942326_4f021683.jpeg",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/52_1761942303_4f021683.jpeg",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/52_1761942303_4f021683.jpeg",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/57_1761917770_a960e538.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/57_1761917770_a960e538.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Étienne Duvalier.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Étienne Duvalier.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Barry Horowitz.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Barry Horowitz.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Jennifer Kwan.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Jennifer Kwan.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Marcus Webb.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Marcus Webb.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Kerry.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Kerry.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Roland Cross.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Roland Cross.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Ardvark.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Ardvark.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Barry Washington.webp",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Barry Washington.webp",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/dark_gothic_00002_.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/dark_gothic_00002_.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Layla al-Sahr.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Layla al-Sahr.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Misfortune.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Misfortune.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Phreak.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Phreak.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Pistol Pete.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Pistol Pete.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Piston.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Piston.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Roadrunner.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Roadrunner.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Roxanne Murphy.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Roxanne Murphy.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Sasha.jpg",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Sasha.jpg",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Tariq Ibrahim.png",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Tariq Ibrahim.png",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  },
+  {
+    "file": "/reference/Characters/Images/Warner Jefferson.webp",
+    "archivePath": "/archive/images/duplicates/reference/Characters/Images/Warner Jefferson.webp",
+    "category": "image",
+    "action": "archived",
+    "timestamp": "2025-11-09 11:17:16 UTC",
+    "reason": "duplicate image isolated"
+  }
+]

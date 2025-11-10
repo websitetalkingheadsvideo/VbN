@@ -1,6 +1,28 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.26 (Current)
+## Version 0.9.27 (Current)
+**Date:** November 2025
+
+### Archive Maintenance & Reporting:
+- ✅ **Protected Snapshot** – Archived `docs/ARCHIVE_MANIFEST_SNAPSHOT.md` into `archive/md/docs/` and logged the move for future purges.
+- ✅ **Cleanup Reporting** – Refreshed `_cleanup_report.md`, `_cleanup_log.json`, and `_purge_list.txt` to track archive actions and duplicate handling.
+- ✅ **Image Duplicate Summary** – Generated structured duplicate reports (`image_duplicates.json` and `image_duplicates_summary.json`) from the cleanup manifest for dashboard consumption.
+- ✅ **Dashboard Logging** – Extended `admin/tools/archive_dashboard.php` to append structured entries to `_cleanup_log.json` whenever restore/safe/approve actions run.
+
+### Files Added / Updated:
+- `archive/_cleanup_report.md`
+- `archive/_cleanup_log.json`
+- `archive/_purge_list.txt`
+- `archive/cleanup_manifest.json`
+- `archive/image_duplicates_summary.json`
+- `admin/tools/archive_dashboard.php`
+- `tmp/move_duplicate_images.py`
+- `docs/CHAT_REPORT_ARCHIVE_CLEANUP.mdc`
+- `VERSION.md`
+
+---
+
+## Version 0.9.26
 **Date:** November 2025
 
 ### Admin Agents Experience Refresh:

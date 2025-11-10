@@ -1,0 +1,45 @@
+# Chat Session Report – Archive Cleanup & Reporting
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.9.26 → 0.9.27 (Patch Increment)
+- **Focus:** Archive manifest protection, reporting scaffolds, duplicate image analytics, and dashboard logging
+
+### What We Accomplished
+
+#### 1. Protected Archive Snapshot
+- Archived `docs/ARCHIVE_MANIFEST_SNAPSHOT.md` into `archive/md/docs/`.
+- Logged the relocation in `_purge_list.txt` and `_cleanup_log.json` to preserve the audit trail.
+- Updated `cleanup_manifest.json` notes so future passes know the document already lives in the archive.
+
+#### 2. Cleanup Reporting Foundations
+- Refined `_cleanup_report.md` structure to list moves, duplicate findings, and space-saving notes.
+- Ensured `_cleanup_log.json` captures every archive dashboard action (restore, mark safe, approve deletion).
+- Kept `_purge_list.txt` in sync with actual moves and pending duplicate relocations.
+
+#### 3. Image Duplicate Analytics
+- Reworked `tmp/move_duplicate_images.py` into a reporting utility that reads duplicate groups from the manifest.
+- Generated structured duplicate outputs: detailed `image_duplicates.json` plus a quick-glance `image_duplicates_summary.json`.
+- Highlighted prime images retained under `uploads/characters/` and duplicates staged inside `archive/images/duplicates/`.
+
+#### 4. Archive Dashboard Logging
+- Added helper utilities (`normalizeLogPath`, `detectLogCategory`, `appendLogEntry`) to `admin/tools/archive_dashboard.php`.
+- Extended POST actions to append structured entries to `_cleanup_log.json` with ISO timestamps and action reasons.
+- Surfaced Markdown entries in the dashboard tabs so documentation archive moves remain visible alongside PHP/JSON/image items.
+
+### Impact Summary
+- **Protected Inventory:** Archive manifest now tracks the protected document list and notes completed moves.
+- **Operations Visibility:** Cleanup report, purge list, and log all provide synchronized insight into archive activity.
+- **Image Hygiene:** Duplicate analytics identify 21 hash groups and ensure prime assets stay in `uploads/characters/`.
+- **Dashboard UX:** Admins see live status badges and can trace every restore/safe/delete decision via `_cleanup_log.json`.
+
+### Files Added / Updated
+- `archive/_cleanup_log.json`
+- `archive/_cleanup_report.md`
+- `archive/_purge_list.txt`
+- `archive/cleanup_manifest.json`
+- `archive/image_duplicates_summary.json`
+- `admin/tools/archive_dashboard.php`
+- `tmp/move_duplicate_images.py`
+- `docs/CHAT_REPORT_ARCHIVE_CLEANUP.mdc`
+- `VERSION.md`
