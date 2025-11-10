@@ -1,6 +1,27 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.27 (Current)
+## Version 0.9.28 (Current)
+**Date:** November 2025
+
+### Documentation Automation Enhancements:
+- ✅ **Triage Controls** – Added `--archive-phases` and `--archive-prds` flags to `scripts/maintain_docs.py` so legacy phase guides and PRDs auto-move to `archive/docs/legacy/`.
+- ✅ **Purge Tracking** – Purge list entries now record relocated docs using repo-relative paths for consistent auditing.
+- ✅ **README & Inventory Refresh** – Regenerated `docs/README.md` with a PRD section and updated next-step guidance; `DOCS_INVENTORY.md` reflects current files and timestamps.
+- ✅ **PRD Archival** – Moved outdated `docs/json-analysis/extracted-data.json` and `extraction-summary.md` into the legacy archive.
+
+### Files Added / Updated:
+- `scripts/maintain_docs.py`
+- `docs/README.md`
+- `docs/DOCS_INVENTORY.md`
+- `archive/_purge_list.txt`
+- `archive/docs/legacy/json-analysis/extracted-data.json`
+- `archive/docs/legacy/json-analysis/extraction-summary.md`
+- `docs/CHAT_REPORT_DOC_AUTOMATION.mdc`
+- `VERSION.md`
+
+---
+
+## Version 0.9.27
 **Date:** November 2025
 
 ### Archive Maintenance & Reporting:

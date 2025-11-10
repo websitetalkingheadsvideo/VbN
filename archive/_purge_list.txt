@@ -197,3 +197,8 @@
 [IMAGE] /reference/Characters/Images/Sasha.jpg -> /archive/images/duplicates/reference/Characters/Images/Sasha.jpg
 [IMAGE] /reference/Characters/Images/Tariq Ibrahim.png -> /archive/images/duplicates/reference/Characters/Images/Tariq Ibrahim.png
 [IMAGE] /reference/Characters/Images/Warner Jefferson.webp -> /archive/images/duplicates/reference/Characters/Images/Warner Jefferson.webp
+[DOC] /docs/CHAT_REPORT.mdc -> /archive/docs/legacy/CHAT_REPORT.mdc
+[DOC] /docs/CHAT_REPORT_BOON_SYSTEM.mdc -> /archive/docs/legacy/CHAT_REPORT_BOON_SYSTEM.mdc
+[DOC] /docs/CHAT_REPORT_CHARACTER_TRAIT_SYNC.mdc -> /archive/docs/legacy/CHAT_REPORT_CHARACTER_TRAIT_SYNC.mdc
+[DOC] /docs/json-analysis/extracted-data.json -> /archive/docs/legacy/json-analysis/extracted-data.json
+[DOC] /docs/json-analysis/extraction-summary.md -> /archive/docs/legacy/json-analysis/extraction-summary.md
