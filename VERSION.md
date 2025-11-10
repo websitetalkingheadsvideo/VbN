@@ -1,6 +1,20 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.0 (Current)
+## Version 0.10.1 (Current)
+**Date:** November 2025
+
+### Chronicle Prelude Documentation Refresh
+- ✅ **Expanded Prelude Guide** – Replaced the chronicle summary with a full prelude dossier covering geography, factions, political pressure points, act structure, and Laws of the Night Revised mechanics.
+- ✅ **First-Night Timeline** – Added minute-by-minute beats starting at 8:00 PM for the Hawthorne Estate gathering, tying hooks to Setite, Nosferatu, and Anarch assets across the Valley.
+
+### Files Added / Updated:
+- `reference/Valley_by_Night_Chronicle_Summary.md`
+- `docs/CHAT_REPORT_CHRONICLE_PRELUDE_REFRESH.mdc`
+- `VERSION.md`
+
+---
+
+## Version 0.10.0
 **Date:** November 2025
 
 ### Clan Expansion & Admin UX Updates

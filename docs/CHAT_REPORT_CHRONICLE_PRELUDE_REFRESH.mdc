@@ -1,0 +1,26 @@
+# Chat Session Report - Chronicle Prelude Refresh
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.10.0 → 0.10.1 (Patch Increment)
+- **Work Type:** Documentation Expansion – Valley by Night Chronicle Prelude
+
+### What We Accomplished
+
+#### 1. Chronicle Overview Upgrade
+- Replaced the minimal bullet summary with a complete prelude dossier detailing Phoenix’s 1994 geography, mortal infrastructure, and faction landscape.
+- Documented political fault lines, macro act structure, and Laws of the Night Revised system notes to ground future session prep.
+
+#### 2. First-Night Timeline
+- Added a beat-by-beat schedule beginning at 8:00 PM for the Hawthorne Estate gathering, connecting hooks to Setite, Nosferatu, and Anarch assets.
+- Ensured timeline references link directly to supporting location JSON files for quick lookup.
+
+### Files Updated
+- `reference/Valley_by_Night_Chronicle_Summary.md`
+- `VERSION.md`
+
+### Version Impact
+- **New Version:** 0.10.1 (Patch)
+- **Focus:** Narrative documentation refresh supporting session-zero prelude planning.
+
+---
