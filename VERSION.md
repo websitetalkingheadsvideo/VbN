@@ -1,6 +1,30 @@
 # LOTN Character Creator - Version History
 
-## Version 0.9.28 (Current)
+## Version 0.10.0 (Current)
+**Date:** November 2025
+
+### Clan Expansion & Admin UX Updates
+- ✅ **Daughter of Cacophony Support** – Seed scripts, discipline metadata, and creation tooling now recognize the clan with Fortitude/Melpominee/Presence access.
+- ✅ **UI Integration** – Character creator dropdowns, admin filters, clan badges, and discipline gating all list the new clan and tint it Deep Indigo (#483D8B).
+- ✅ **Logo Alignment** – Admin character viewer resolves `LogoBloodlineDaughtersofCacophony.webp` for roster portraits when no custom art is present.
+- ✅ **Modal Accessibility** – Character modal shows a polite loading/error state using `aria-busy` before rendering details.
+
+### Files Added / Updated:
+- `database/create_clans_table.php`
+- `database/reseed_clans_table.php`
+- `database/populate_discipline_data.php`
+- `js/modules/systems/DisciplineSystem.js`
+- `js/script.js`
+- `lotn_char_create.php`
+- `admin/admin_panel.php`
+- `admin/admin_npc_briefing.php`
+- `js/admin_panel.js`
+- `VERSION.md`
+- `includes/version.php`
+
+---
+
+## Version 0.9.28
 **Date:** November 2025
 
 ### Documentation Automation Enhancements:

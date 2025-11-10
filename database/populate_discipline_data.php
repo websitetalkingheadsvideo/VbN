@@ -230,6 +230,13 @@ $clans = [
         'playstyle' => 'Social manipulation and corruption',
         'availability' => 'Admin Approval'
     ],
+    'Daughter of Cacophony' => [
+        'description' => 'Haunting vocalists who weaponize emotion through supernatural song',
+        'weakness' => 'Prone to emotional obsession with their performances and audiences',
+        'theme' => 'Music, prophecy, and emotional resonance',
+        'playstyle' => 'Social dominance and sonic control',
+        'availability' => 'Admin Approval'
+    ],
     'Gangrel' => [
         'description' => 'Wild and bestial vampires with animalistic traits',
         'weakness' => 'Gain animalistic features when using disciplines',
@@ -308,6 +315,7 @@ $clanDisciplineAccess = [
     'Brujah' => ['Celerity', 'Potence', 'Presence'],
     'Caitiff' => ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
     'Followers of Set' => ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+    'Daughter of Cacophony' => ['Fortitude', 'Melpominee', 'Presence'],
     'Gangrel' => ['Animalism', 'Fortitude', 'Protean'],
     'Giovanni' => ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
     'Lasombra' => ['Dominate', 'Obfuscate', 'Obtenebration'],

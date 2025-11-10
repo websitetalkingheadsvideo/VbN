@@ -25,6 +25,7 @@ $seed = [
     ['Assamite', 'LogoClanAssamite.webp'],
     ['Brujah', 'LogoClanBrujah.webp'],
     ['Followers of Set', 'LogoClanFollowersofSet.webp'],
+    ['Daughter of Cacophony', 'LogoBloodlineDaughtersofCacophony.webp'],
     ['Gangrel', 'LogoClanGangrel.webp'],
     ['Giovanni', 'LogoClanGiovanni.webp'],
     ['Lasombra', 'LogoClanLasombra.webp'],

@@ -23,14 +23,14 @@ include __DIR__ . '/../includes/header.php';
     <p class="panel-subtitle">Quick reference for playing NPCs in sessions</p>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav">
+    <nav class="admin-nav" aria-label="Admin Navigation">
         <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
         <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
         <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
         <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
         <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
         <a href="admin_npc_briefing.php" class="nav-btn active">📋 NPC Briefing</a>
-    </div>
+    </nav>
     
     <!-- NPC Statistics -->
     <div class="character-stats">
@@ -74,6 +74,7 @@ include __DIR__ . '/../includes/header.php';
                 <option value="Brujah">Brujah</option>
                 <option value="Caitiff">Caitiff</option>
                 <option value="Followers of Set">Followers of Set</option>
+                <option value="Daughter of Cacophony">Daughter of Cacophony</option>
                 <option value="Gangrel">Gangrel</option>
                 <option value="Giovanni">Giovanni</option>
                 <option value="Lasombra">Lasombra</option>
@@ -175,12 +176,12 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <!-- Briefing Modal -->
-<div id="briefingModal" class="modal">
+<div id="briefingModal" class="modal" role="dialog" aria-modal="true" aria-label="Agent Briefing" aria-describedby="briefingContent">
     <div class="modal-content large-modal">
         <h2 class="modal-title">📋 Agent Briefing: <span id="briefingCharacterName"></span></h2>
         <button class="modal-close" onclick="closeBriefingModal()">×</button>
         
-        <div id="briefingContent" class="briefing-content">
+        <div id="briefingContent" class="briefing-content" aria-live="polite">
             Loading...
         </div>
         
@@ -191,7 +192,7 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <!-- Edit Notes Modal -->
-<div id="editNotesModal" class="modal">
+<div id="editNotesModal" class="modal" role="dialog" aria-modal="true" aria-label="Edit Notes" aria-describedby="editNotesContent">
     <div class="modal-content large-modal">
         <h2 class="modal-title">✏️ Edit Notes: <span id="editCharacterName"></span></h2>
         <button class="modal-close" onclick="closeEditNotesModal()">×</button>

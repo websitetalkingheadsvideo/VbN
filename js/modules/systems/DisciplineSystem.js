@@ -26,6 +26,7 @@ class DisciplineSystem {
             'Brujah': ['Celerity', 'Potence', 'Presence'],
             'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
             'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+            'Daughter of Cacophony': ['Fortitude', 'Melpominee', 'Presence'],
             'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
             'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
             'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],

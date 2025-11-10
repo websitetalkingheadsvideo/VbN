@@ -381,7 +381,11 @@ function viewCharacter(characterId) {
     const modal = document.getElementById('viewModal');
     modal.classList.add('active');
     document.getElementById('characterHeader').innerHTML = '';
-    document.getElementById('viewCharacterContent').innerHTML = 'Loading...';
+    const vc = document.getElementById('viewCharacterContent');
+    if (vc) {
+      vc.setAttribute('aria-busy','true');
+      vc.textContent = 'Loading...';
+    }
     
     // Remove any existing click handler to prevent duplicates
     if (modalClickHandler) {
@@ -411,12 +415,18 @@ function viewCharacter(characterId) {
                 renderCharacterView(currentViewMode);
             } else {
                 document.getElementById('characterHeader').innerHTML = '';
-                document.getElementById('viewCharacterContent').innerHTML = '<p style="color: red;">Error: ' + data.message + '</p>';
+                if (vc) {
+                  vc.innerHTML = '<p style="color: red;">Error: ' + data.message + '</p>';
+                  vc.setAttribute('aria-busy','false');
+                }
             }
         })
         .catch(error => {
             document.getElementById('characterHeader').innerHTML = '';
-            document.getElementById('viewCharacterContent').innerHTML = '<p style="color: red;">Error loading character</p>';
+            if (vc) {
+              vc.innerHTML = '<p style="color: red;">Error loading character</p>';
+              vc.setAttribute('aria-busy','false');
+            }
             console.error(error);
         });
 }
@@ -447,18 +457,19 @@ function renderCharacterView(mode) {
     const char = currentViewData.character;
     let headerHtml = '';
     let contentHtml = '';
-    
+
     function clanLogoUrl(clan) {
         if (!clan) return null;
         const basePath = '../images/Clan%20Logos/';
         const clean = String(clan)
-            .replace(/[\u{1F300}-\u{1FAFF}]/gu, '') // strip emoji
+            .replace(/[\u{1F300}-\u{1FAFF}]/gu, '')
             .trim()
             .toLowerCase();
         const map = {
             'assamite': 'LogoClanAssamite.webp',
             'brujah': 'LogoClanBrujah.webp',
-            'followers of set': 'LogoClanFollowersofSet.webp', // note lowercase 'of' in filename
+            'followers of set': 'LogoClanFollowersofSet.webp',
+            'daughter of cacophony': 'LogoBloodlineDaughtersofCacophony.webp',
             'gangrel': 'LogoClanGangrel.webp',
             'giovanni': 'LogoClanGiovanni.webp',
             'lasombra': 'LogoClanLasombra.webp',
@@ -476,26 +487,25 @@ function renderCharacterView(mode) {
         const url = basePath + file;
         return url;
     }
-    
-    // Build header section (two-column layout)
+
     const hasPortrait = !!char.character_image;
     const fallbackUrl = char.clan_logo_url || clanLogoUrl(char.clan);
     const imageUrl = hasPortrait ? ('../uploads/characters/' + char.character_image) : fallbackUrl;
-    
+
     headerHtml += '<div class="character-info-column">';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Player</span><span class="character-info-value">' + (char.player_name || 'NPC') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Chronicle</span><span class="character-info-value">' + (char.chronicle || 'N/A') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Clan</span><span class="character-info-value">' + (char.clan || 'Unknown') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Generation</span><span class="character-info-value">' + (char.generation || 'N/A') + 'th</span></div>';
-        const formattedState = (char.current_state || 'active').toString().charAt(0).toUpperCase() + (char.current_state || 'active').toString().slice(1);
-        headerHtml += '<div class="character-info-row"><span class="character-info-label">Status</span><span class="character-info-value">' + formattedState + '</span></div>';
-        headerHtml += '<div class="character-info-row"><span class="character-info-label">Sect Alignment</span><span class="character-info-value">' + (char.camarilla_status || 'Unknown') + '</span></div>';
+    const formattedState = (char.current_state || 'active').toString().charAt(0).toUpperCase() + (char.current_state || 'active').toString().slice(1);
+    headerHtml += '<div class="character-info-row"><span class="character-info-label">Status</span><span class="character-info-value">' + formattedState + '</span></div>';
+    headerHtml += '<div class="character-info-row"><span class="character-info-label">Sect Alignment</span><span class="character-info-value">' + (char.camarilla_status || 'Unknown') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Nature</span><span class="character-info-value">' + (char.nature || 'N/A') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Demeanor</span><span class="character-info-value">' + (char.demeanor || 'N/A') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Sire</span><span class="character-info-value">' + (char.sire || 'Unknown') + '</span></div>';
     headerHtml += '<div class="character-info-row"><span class="character-info-label">Concept</span><span class="character-info-value">' + (char.concept || 'N/A') + '</span></div>';
     headerHtml += '</div>';
-    
+
     headerHtml += '<div class="character-image-column">';
     headerHtml += '<div class="character-image-wrapper">';
     if (imageUrl) {
@@ -504,419 +514,424 @@ function renderCharacterView(mode) {
     headerHtml += '<span class="character-image-placeholder" style="display: ' + (imageUrl ? 'none' : 'block') + ';">No Image</span>';
     headerHtml += '</div>';
     headerHtml += '</div>';
-    
+
     document.getElementById('characterHeader').innerHTML = headerHtml;
-    
+
     if (mode === 'compact') {
-        // Compact view - essential info only (header already rendered above)
-        contentHtml = '<div class="character-details compact">';
         const statusLabel = (char.current_state || 'active').toString();
         const formattedStatus = statusLabel.charAt(0).toUpperCase() + statusLabel.slice(1);
+        contentHtml = '<div class="character-details compact">';
         contentHtml += '<p><strong>Status:</strong> ' + formattedStatus + '</p>';
         contentHtml += '<p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p>';
+        contentHtml += '</div>';
+        if (vc) {
+          vc.innerHTML = contentHtml;
+          vc.setAttribute('aria-busy','false');
+        }
+        return;
+    }
 
-        contentHtml += '</div>';
-    } else {
-        // Full view - all details (header already rendered above)
-        contentHtml = '<div class="character-details full">';
+    contentHtml = '<div class="character-details full">';
+    
+    // XP Information
+    contentHtml += '<h3>Experience Points</h3>';
+    contentHtml += '<div class="row g-3 mt-2">';
+    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Total XP:</strong> ' + (char.total_xp || 0) + '</p></div>';
+    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Spent XP:</strong> ' + (char.spent_xp || 0) + '</p></div>';
+    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-12"><p><strong>Available XP:</strong> ' + ((char.total_xp || 0) - (char.spent_xp || 0)) + '</p></div>';
+    contentHtml += '</div>';
+    
+    // Character Traits
+    contentHtml += '<h3>Character Traits</h3>';
+    if (currentViewData.traits && currentViewData.traits.length > 0) {
+        // Filter traits by category (case-insensitive, trim whitespace)
+        const physical = currentViewData.traits.filter(t => {
+            const category = (t.trait_category || '').toString().trim();
+            return category.toLowerCase() === 'physical';
+        });
+        const social = currentViewData.traits.filter(t => {
+            const category = (t.trait_category || '').toString().trim();
+            return category.toLowerCase() === 'social';
+        });
+        const mental = currentViewData.traits.filter(t => {
+            const category = (t.trait_category || '').toString().trim();
+            return category.toLowerCase() === 'mental';
+        });
         
-        // XP Information
-        contentHtml += '<h3>Experience Points</h3>';
-        contentHtml += '<div class="row g-3 mt-2">';
-        contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Total XP:</strong> ' + (char.total_xp || 0) + '</p></div>';
-        contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Spent XP:</strong> ' + (char.spent_xp || 0) + '</p></div>';
-        contentHtml += '<div class="col-lg-4 col-md-4 col-sm-12"><p><strong>Available XP:</strong> ' + ((char.total_xp || 0) - (char.spent_xp || 0)) + '</p></div>';
-        contentHtml += '</div>';
-        
-        // Character Traits
-        contentHtml += '<h3>Character Traits</h3>';
-        if (currentViewData.traits && currentViewData.traits.length > 0) {
-            // Filter traits by category (case-insensitive, trim whitespace)
-            const physical = currentViewData.traits.filter(t => {
-                const category = (t.trait_category || '').toString().trim();
-                return category.toLowerCase() === 'physical';
-            });
-            const social = currentViewData.traits.filter(t => {
-                const category = (t.trait_category || '').toString().trim();
-                return category.toLowerCase() === 'social';
-            });
-            const mental = currentViewData.traits.filter(t => {
-                const category = (t.trait_category || '').toString().trim();
-                return category.toLowerCase() === 'mental';
-            });
+        if (physical.length > 0 || social.length > 0 || mental.length > 0) {
+            contentHtml += '<div class="row g-3 mt-2">';
             
-            if (physical.length > 0 || social.length > 0 || mental.length > 0) {
-                contentHtml += '<div class="row g-3 mt-2">';
-                
-                if (physical.length > 0) {
-                    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6">';
-                    contentHtml += '<h4>Physical</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    physical.forEach(t => {
-                        contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
-                    });
-                    contentHtml += '</div>';
-                    contentHtml += '</div>';
-                }
-                
-                if (social.length > 0) {
-                    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6">';
-                    contentHtml += '<h4>Social</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    social.forEach(t => {
-                        contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
-                    });
-                    contentHtml += '</div>';
-                    contentHtml += '</div>';
-                }
-                
-                if (mental.length > 0) {
-                    contentHtml += '<div class="col-lg-4 col-md-4 col-sm-12">';
-                    contentHtml += '<h4>Mental</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    mental.forEach(t => {
-                        contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
-                    });
-                    contentHtml += '</div>';
-                    contentHtml += '</div>';
-                }
-                
+            if (physical.length > 0) {
+                contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6">';
+                contentHtml += '<h4>Physical</h4>';
+                contentHtml += '<div class="trait-list">';
+                physical.forEach(t => {
+                    contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
+                });
                 contentHtml += '</div>';
-            } else {
-                contentHtml += '<p class="empty-state">No character traits found.</p>';
+                contentHtml += '</div>';
             }
+            
+            if (social.length > 0) {
+                contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6">';
+                contentHtml += '<h4>Social</h4>';
+                contentHtml += '<div class="trait-list">';
+                social.forEach(t => {
+                    contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
+                });
+                contentHtml += '</div>';
+                contentHtml += '</div>';
+            }
+            
+            if (mental.length > 0) {
+                contentHtml += '<div class="col-lg-4 col-md-4 col-sm-12">';
+                contentHtml += '<h4>Mental</h4>';
+                contentHtml += '<div class="trait-list">';
+                mental.forEach(t => {
+                    contentHtml += '<span class="trait-badge">' + t.trait_name + '</span>';
+                });
+                contentHtml += '</div>';
+                contentHtml += '</div>';
+            }
+            
+            contentHtml += '</div>';
         } else {
             contentHtml += '<p class="empty-state">No character traits found.</p>';
         }
+    } else {
+        contentHtml += '<p class="empty-state">No character traits found.</p>';
+    }
+    
+    // Abilities - always show section header
+    contentHtml += '<h3>Abilities</h3>';
+    if (currentViewData.abilities && currentViewData.abilities.length > 0) {
+        // Group by database category (Physical/Social/Mental/Optional)
+        const physical = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'physical');
+        const social = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'social');
+        const mental = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'mental');
+        const optional = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'optional');
+        const uncategorized = currentViewData.abilities.filter(a => !a.ability_category || 
+            (a.ability_category.toLowerCase() !== 'physical' && 
+             a.ability_category.toLowerCase() !== 'social' && 
+             a.ability_category.toLowerCase() !== 'mental' &&
+             a.ability_category.toLowerCase() !== 'optional'));
         
-        // Abilities - always show section header
-        contentHtml += '<h3>Abilities</h3>';
-        if (currentViewData.abilities && currentViewData.abilities.length > 0) {
-            // Group by database category (Physical/Social/Mental/Optional)
-            const physical = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'physical');
-            const social = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'social');
-            const mental = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'mental');
-            const optional = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'optional');
-            const uncategorized = currentViewData.abilities.filter(a => !a.ability_category || 
-                (a.ability_category.toLowerCase() !== 'physical' && 
-                 a.ability_category.toLowerCase() !== 'social' && 
-                 a.ability_category.toLowerCase() !== 'mental' &&
-                 a.ability_category.toLowerCase() !== 'optional'));
-            
-            if (physical.length > 0 || social.length > 0 || mental.length > 0 || optional.length > 0 || uncategorized.length > 0) {
-                contentHtml += '<div class="row g-4 mb-4">';
-                if (physical.length > 0) {
-                    contentHtml += '<div class="col-md-6">';
-                    contentHtml += '<h4>Physical</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    physical.forEach(a => {
-                        if (!a || !a.ability_name) return; // Skip invalid abilities
-                        let badge = a.ability_name;
-                        if (a.level && a.level > 0) badge += ' x' + a.level;
-                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    });
-                    contentHtml += '</div>';
-                    contentHtml += '</div>';
-                }
-                
-                if (social.length > 0) {
-                    contentHtml += '<div class="col-md-6">';
-                    contentHtml += '<h4>Social</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    social.forEach(a => {
-                        if (!a || !a.ability_name) return; // Skip invalid abilities
-                        let badge = a.ability_name;
-                        if (a.level && a.level > 0) badge += ' x' + a.level;
-                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    });
-                    contentHtml += '</div>';
-                    contentHtml += '</div>';
-                }
+        if (physical.length > 0 || social.length > 0 || mental.length > 0 || optional.length > 0 || uncategorized.length > 0) {
+            contentHtml += '<div class="row g-4 mb-4">';
+            if (physical.length > 0) {
+                contentHtml += '<div class="col-md-6">';
+                contentHtml += '<h4>Physical</h4>';
+                contentHtml += '<div class="trait-list">';
+                physical.forEach(a => {
+                    if (!a || !a.ability_name) return; // Skip invalid abilities
+                    let badge = a.ability_name;
+                    if (a.level && a.level > 0) badge += ' x' + a.level;
+                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
+                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                });
                 contentHtml += '</div>';
-                
-                if (mental.length > 0) {
-                    contentHtml += '<h4>Mental</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    mental.forEach(a => {
-                        if (!a || !a.ability_name) return; // Skip invalid abilities
-                        let badge = a.ability_name;
-                        if (a.level && a.level > 0) badge += ' x' + a.level;
-                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    });
-                    contentHtml += '</div>';
-                }
-                
-                if (optional.length > 0) {
-                    contentHtml += '<h4>Optional</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    optional.forEach(a => {
-                        if (!a || !a.ability_name) return; // Skip invalid abilities
-                        let badge = a.ability_name;
-                        if (a.level && a.level > 0) badge += ' x' + a.level;
-                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    });
-                    contentHtml += '</div>';
-                }
-                
-                if (uncategorized.length > 0) {
-                    contentHtml += '<h4>Other Abilities</h4>';
-                    contentHtml += '<div class="trait-list">';
-                    uncategorized.forEach(a => {
-                        if (!a || !a.ability_name) return; // Skip invalid abilities
-                        let badge = a.ability_name;
-                        if (a.level && a.level > 0) badge += ' x' + a.level;
-                        if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                        if (a.ability_category) badge += ' [' + a.ability_category + ']';
-                        contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    });
-                    contentHtml += '</div>';
-                }
-            } else {
-                contentHtml += '<p class="empty-state">No abilities recorded.</p>';
+                contentHtml += '</div>';
+            }
+            
+            if (social.length > 0) {
+                contentHtml += '<div class="col-md-6">';
+                contentHtml += '<h4>Social</h4>';
+                contentHtml += '<div class="trait-list">';
+                social.forEach(a => {
+                    if (!a || !a.ability_name) return; // Skip invalid abilities
+                    let badge = a.ability_name;
+                    if (a.level && a.level > 0) badge += ' x' + a.level;
+                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
+                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                });
+                contentHtml += '</div>';
+                contentHtml += '</div>';
+            }
+            contentHtml += '</div>';
+            
+            if (mental.length > 0) {
+                contentHtml += '<h4>Mental</h4>';
+                contentHtml += '<div class="trait-list">';
+                mental.forEach(a => {
+                    if (!a || !a.ability_name) return; // Skip invalid abilities
+                    let badge = a.ability_name;
+                    if (a.level && a.level > 0) badge += ' x' + a.level;
+                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
+                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                });
+                contentHtml += '</div>';
+            }
+            
+            if (optional.length > 0) {
+                contentHtml += '<h4>Optional</h4>';
+                contentHtml += '<div class="trait-list">';
+                optional.forEach(a => {
+                    if (!a || !a.ability_name) return; // Skip invalid abilities
+                    let badge = a.ability_name;
+                    if (a.level && a.level > 0) badge += ' x' + a.level;
+                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
+                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                });
+                contentHtml += '</div>';
+            }
+            
+            if (uncategorized.length > 0) {
+                contentHtml += '<h4>Other Abilities</h4>';
+                contentHtml += '<div class="trait-list">';
+                uncategorized.forEach(a => {
+                    if (!a || !a.ability_name) return; // Skip invalid abilities
+                    let badge = a.ability_name;
+                    if (a.level && a.level > 0) badge += ' x' + a.level;
+                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
+                    if (a.ability_category) badge += ' [' + a.ability_category + ']';
+                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                });
+                contentHtml += '</div>';
             }
         } else {
             contentHtml += '<p class="empty-state">No abilities recorded.</p>';
         }
-        
-        // Disciplines - always show section header
-        contentHtml += '<h3>Disciplines</h3>';
-        if (currentViewData.disciplines && currentViewData.disciplines.length > 0) {
-            contentHtml += '<div class="discipline-list">';
-            currentViewData.disciplines.forEach(d => {
-                const discName = (d.discipline_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                const level = d.level || 0;
-                const powerCount = d.power_count || (d.powers ? d.powers.length : 0);
-                const isCustom = d.is_custom || false;
-                
-                contentHtml += '<div class="discipline-item">';
-                contentHtml += '<div style="width: 100%;">';
-                contentHtml += '<div style="display: flex; justify-content: space-between; align-items: center;">';
-                contentHtml += '<strong>' + discName + ' ' + level + '</strong>';
-                if (powerCount > 0) {
-                    contentHtml += '<span style="color: #c4a037;">' + powerCount + ' powers</span>';
-                } else if (isCustom) {
-                    contentHtml += '<span style="color: #999; font-style: italic;">Custom/Path</span>';
-                }
-                contentHtml += '</div>';
-                
-                // Show powers if available
-                if (d.powers && d.powers.length > 0) {
-                    contentHtml += '<div class="powers-list" style="margin-top: 8px; padding-left: 20px;">';
-                    d.powers.forEach(power => {
-                        const powerName = (power.power_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                        contentHtml += '<div style="color: #c4a037; font-size: 0.9em;">• ' + powerName + ' <span style="color: #999; font-size: 0.85em;">(Level ' + (power.level || 0) + ')</span></div>';
-                    });
-                    contentHtml += '</div>';
-                }
-                
-                contentHtml += '</div>';
-                contentHtml += '</div>';
-            });
-            contentHtml += '</div>';
-        } else {
-            contentHtml += '<p class="empty-state">No disciplines recorded.</p>';
-        }
-        
-        // Backgrounds
-        if (currentViewData.backgrounds && currentViewData.backgrounds.length > 0) {
-            contentHtml += '<h3>Backgrounds</h3>';
-            contentHtml += '<div class="trait-list">';
-            currentViewData.backgrounds.forEach(b => {
-                let badge = b.background_name + ' x' + b.level;
-                contentHtml += '<span class="trait-badge">' + badge + '</span>';
-            });
-            contentHtml += '</div>';
-        }
-        
-        // Morality & Virtues
-        if (currentViewData.morality) {
-            const m = currentViewData.morality;
-            contentHtml += '<h3>Morality & Virtues</h3>';
-            contentHtml += '<div class="row g-3 mt-2">';
-            if (m.path_name) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Path:</strong> ' + m.path_name + ' (' + (m.path_rating || 'N/A') + ')</p></div>';
-            if (m.humanity !== null && m.humanity !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Humanity:</strong> ' + m.humanity + '/10</p></div>';
-            contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Willpower:</strong> ' + (m.willpower_current || 0) + '/' + (m.willpower_permanent || 0) + '</p></div>';
-            if (m.conscience !== null && m.conscience !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Conscience:</strong> ' + m.conscience + '</p></div>';
-            if (m.self_control !== null && m.self_control !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Self-Control:</strong> ' + m.self_control + '</p></div>';
-            if (m.courage !== null && m.courage !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Courage:</strong> ' + m.courage + '</p></div>';
-            contentHtml += '</div>';
-        }
-        
-        // Merits & Flaws
-        if (currentViewData.merits_flaws && currentViewData.merits_flaws.length > 0) {
-            const merits = currentViewData.merits_flaws.filter(m => m.type === 'merit');
-            const flaws = currentViewData.merits_flaws.filter(m => m.type === 'flaw');
+    } else {
+        contentHtml += '<p class="empty-state">No abilities recorded.</p>';
+    }
+    
+    // Disciplines - always show section header
+    contentHtml += '<h3>Disciplines</h3>';
+    if (currentViewData.disciplines && currentViewData.disciplines.length > 0) {
+        contentHtml += '<div class="discipline-list">';
+        currentViewData.disciplines.forEach(d => {
+            const discName = (d.discipline_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const level = d.level || 0;
+            const powerCount = d.power_count || (d.powers ? d.powers.length : 0);
+            const isCustom = d.is_custom || false;
             
-            contentHtml += '<div class="row g-4 mb-4">';
-            if (merits.length > 0) {
-                contentHtml += '<div class="col-md-6">';
-                contentHtml += '<h3>Merits</h3>';
-                merits.forEach(m => {
-                    let badge = m.name + ' (' + m.point_value + ')';
-                    if (m.xp_bonus) badge += ' [XP Bonus: ' + m.xp_bonus + ']';
-                    contentHtml += '<div class="merit-flaw-item">';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    if (m.category) contentHtml += '<span class="item-category">' + m.category.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    if (m.description) {
-                        const descEscaped = m.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-                        contentHtml += '<p class="item-description">' + descEscaped.replace(/\n/g, '<br>') + '</p>';
-                    }
-                    contentHtml += '</div>';
+            contentHtml += '<div class="discipline-item">';
+            contentHtml += '<div style="width: 100%;">';
+            contentHtml += '<div style="display: flex; justify-content: space-between; align-items: center;">';
+            contentHtml += '<strong>' + discName + ' ' + level + '</strong>';
+            if (powerCount > 0) {
+                contentHtml += '<span style="color: #c4a037;">' + powerCount + ' powers</span>';
+            } else if (isCustom) {
+                contentHtml += '<span style="color: #999; font-style: italic;">Custom/Path</span>';
+            }
+            contentHtml += '</div>';
+            
+            // Show powers if available
+            if (d.powers && d.powers.length > 0) {
+                contentHtml += '<div class="powers-list" style="margin-top: 8px; padding-left: 20px;">';
+                d.powers.forEach(power => {
+                    const powerName = (power.power_name || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    contentHtml += '<div style="color: #c4a037; font-size: 0.9em;">• ' + powerName + ' <span style="color: #999; font-size: 0.85em;">(Level ' + (power.level || 0) + ')</span></div>';
                 });
                 contentHtml += '</div>';
             }
             
-            if (flaws.length > 0) {
-                contentHtml += '<div class="col-md-6">';
-                contentHtml += '<h3>Flaws</h3>';
-                flaws.forEach(f => {
-                    let badge = f.name + ' (' + f.point_value + ')';
-                    if (f.xp_bonus) badge += ' [XP Bonus: ' + f.xp_bonus + ']';
-                    contentHtml += '<div class="merit-flaw-item">';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    if (f.category) contentHtml += '<span class="item-category">' + f.category.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                    if (f.description) {
-                        const descEscaped = f.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-                        contentHtml += '<p class="item-description">' + descEscaped.replace(/\n/g, '<br>') + '</p>';
-                    }
-                    contentHtml += '</div>';
-                });
-                contentHtml += '</div>';
-            }
             contentHtml += '</div>';
-        }
-        
-        // Status & Resources - always show section
-        contentHtml += '<h3>Status & Resources</h3>';
-        if (currentViewData.status) {
-            const s = currentViewData.status;
-            const lifecycleStatus = (char.current_state || 'active').toString();
-            const formattedLifecycle = lifecycleStatus.charAt(0).toUpperCase() + lifecycleStatus.slice(1);
-            contentHtml += '<div class="row g-3 mt-2">';
-            contentHtml += '<div class="col-md-6"><p><strong>Status:</strong> ' + formattedLifecycle + '</p></div>';
-            contentHtml += '<div class="col-md-6"><p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p></div>';
-            contentHtml += '<div class="col-md-6"><p><strong>Health Levels:</strong> ' + (s.health_levels || 'N/A') + '</p></div>';
-            contentHtml += '<div class="col-md-6"><p><strong>Blood Pool:</strong> ' + (s.blood_pool_current || 0) + '/' + (s.blood_pool_maximum || 0) + '</p></div>';
-            if (s.sect_status) contentHtml += '<div class="col-md-6"><p><strong>Sect Status:</strong> ' + s.sect_status + '</p></div>';
-            if (s.clan_status) contentHtml += '<div class="col-md-6"><p><strong>Clan Status:</strong> ' + s.clan_status + '</p></div>';
-            if (s.city_status) contentHtml += '<div class="col-md-6"><p><strong>City Status:</strong> ' + s.city_status + '</p></div>';
             contentHtml += '</div>';
-        } else {
-            const lifecycleStatus = (char.current_state || 'active').toString();
-            const formattedLifecycle = lifecycleStatus.charAt(0).toUpperCase() + lifecycleStatus.slice(1);
-            contentHtml += '<div class="row g-3 mt-2">';
-            contentHtml += '<div class="col-md-6"><p><strong>Status:</strong> ' + formattedLifecycle + '</p></div>';
-            contentHtml += '<div class="col-md-6"><p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p></div>';
-            contentHtml += '<div class="col-12"><p class="empty-state">No additional status track information recorded.</p></div>';
-            contentHtml += '</div>';
-        }
-        
-        // Custom Data
-        contentHtml += '<h3>Custom Data</h3>';
-        if (char.custom_data) {
-            try {
-                const customData = typeof char.custom_data === 'string' ? JSON.parse(char.custom_data) : char.custom_data;
-                contentHtml += '<div class="text-content">';
-                contentHtml += '<pre class="custom-data-json">' + JSON.stringify(customData, null, 2).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
-                contentHtml += '</div>';
-            } catch (e) {
-                contentHtml += '<div class="text-content">' + char.custom_data.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') + '</div>';
-            }
-        } else {
-            contentHtml += '<p class="empty-state">No custom data recorded.</p>';
-        }
-        
-        // Coterie
-        contentHtml += '<h3>Coterie</h3>';
-        if (currentViewData.coteries && currentViewData.coteries.length > 0) {
-            contentHtml += '<div class="row g-3 mt-2">';
-            currentViewData.coteries.forEach(c => {
-                contentHtml += '<div class="col-md-6">';
-                contentHtml += '<div class="coterie-card">';
-                contentHtml += '<h4>' + (c.coterie_name || 'Unknown Coterie').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</h4>';
-                if (c.coterie_type) contentHtml += '<p><strong>Type:</strong> ' + c.coterie_type.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
-                if (c.role) contentHtml += '<p><strong>Role:</strong> ' + c.role.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
-                if (c.description) {
-                    const descEscaped = c.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-                    contentHtml += '<p><strong>Description:</strong> ' + descEscaped.replace(/\n/g, '<br>') + '</p>';
-                }
-                if (c.notes) {
-                    const notesEscaped = c.notes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-                    contentHtml += '<p><strong>Notes:</strong> ' + notesEscaped.replace(/\n/g, '<br>') + '</p>';
-                }
-                contentHtml += '</div>';
-                contentHtml += '</div>';
-            });
-            contentHtml += '</div>';
-        } else {
-            contentHtml += '<p class="empty-state">No coterie associations recorded.</p>';
-        }
-        
-        // Relationships
-        contentHtml += '<h3>Relationships</h3>';
-        if (currentViewData.relationships && currentViewData.relationships.length > 0) {
-            contentHtml += '<div class="row g-3 mt-2">';
-            currentViewData.relationships.forEach(r => {
-                contentHtml += '<div class="col-md-6">';
-                contentHtml += '<div class="relationship-card">';
-                contentHtml += '<h4>' + (r.related_character_name || 'Unknown Character').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</h4>';
-                if (r.relationship_type) contentHtml += '<p><strong>Type:</strong> ' + r.relationship_type.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
-                if (r.relationship_subtype) contentHtml += '<p><strong>Subtype:</strong> ' + r.relationship_subtype.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
-                if (r.strength) contentHtml += '<p><strong>Strength:</strong> ' + r.strength.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
-                if (r.description) {
-                    const descEscaped = r.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-                    contentHtml += '<p><strong>Description:</strong> ' + descEscaped.replace(/\n/g, '<br>') + '</p>';
-                }
-                contentHtml += '</div>';
-                contentHtml += '</div>';
-            });
-            contentHtml += '</div>';
-        } else {
-            contentHtml += '<p class="empty-state">No relationships recorded.</p>';
-        }
-        
-        // Biography
-        if (char.biography) {
-            contentHtml += '<h3>Biography</h3>';
-            const bioEscaped = char.biography.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-            contentHtml += '<div class="text-content">' + bioEscaped.replace(/\n/g, '<br>') + '</div>';
-        }
-        
-        // Equipment
-        if (char.equipment) {
-            contentHtml += '<h3>Equipment</h3>';
-            const equipEscaped = char.equipment.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-            contentHtml += '<div class="text-content">' + equipEscaped.replace(/\n/g, '<br>') + '</div>';
-        }
-        
-        // Notes
-        if (char.notes) {
-            contentHtml += '<h3>Notes</h3>';
-            const notesEscaped = char.notes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-            contentHtml += '<div class="text-content">' + notesEscaped.replace(/\n/g, '<br>') + '</div>';
-        }
-        
-        // Metadata
-        contentHtml += '<h3>Character Metadata</h3>';
-        contentHtml += '<div class="row g-3 mt-2">';
-        if (char.created_at) {
-            const created = new Date(char.created_at);
-            contentHtml += '<div class="col-md-6"><p><strong>Created:</strong> ' + created.toLocaleString() + '</p></div>';
-        }
-        if (char.updated_at) {
-            const updated = new Date(char.updated_at);
-            contentHtml += '<div class="col-md-6"><p><strong>Last Updated:</strong> ' + updated.toLocaleString() + '</p></div>';
-        }
+        });
         contentHtml += '</div>';
-        
+    } else {
+        contentHtml += '<p class="empty-state">No disciplines recorded.</p>';
+    }
+    
+    // Backgrounds
+    if (currentViewData.backgrounds && currentViewData.backgrounds.length > 0) {
+        contentHtml += '<h3>Backgrounds</h3>';
+        contentHtml += '<div class="trait-list">';
+        currentViewData.backgrounds.forEach(b => {
+            let badge = b.background_name + ' x' + b.level;
+            contentHtml += '<span class="trait-badge">' + badge + '</span>';
+        });
         contentHtml += '</div>';
     }
     
-    document.getElementById('viewCharacterContent').innerHTML = contentHtml;
+    // Morality & Virtues
+    if (currentViewData.morality) {
+        const m = currentViewData.morality;
+        contentHtml += '<h3>Morality & Virtues</h3>';
+        contentHtml += '<div class="row g-3 mt-2">';
+        if (m.path_name) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Path:</strong> ' + m.path_name + ' (' + (m.path_rating || 'N/A') + ')</p></div>';
+        if (m.humanity !== null && m.humanity !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Humanity:</strong> ' + m.humanity + '/10</p></div>';
+        contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Willpower:</strong> ' + (m.willpower_current || 0) + '/' + (m.willpower_permanent || 0) + '</p></div>';
+        if (m.conscience !== null && m.conscience !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Conscience:</strong> ' + m.conscience + '</p></div>';
+        if (m.self_control !== null && m.self_control !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Self-Control:</strong> ' + m.self_control + '</p></div>';
+        if (m.courage !== null && m.courage !== undefined) contentHtml += '<div class="col-lg-4 col-md-4 col-sm-6"><p><strong>Courage:</strong> ' + m.courage + '</p></div>';
+        contentHtml += '</div>';
+    }
+    
+    // Merits & Flaws
+    if (currentViewData.merits_flaws && currentViewData.merits_flaws.length > 0) {
+        const merits = currentViewData.merits_flaws.filter(m => m.type === 'merit');
+        const flaws = currentViewData.merits_flaws.filter(m => m.type === 'flaw');
+        
+        contentHtml += '<div class="row g-4 mb-4">';
+        if (merits.length > 0) {
+            contentHtml += '<div class="col-md-6">';
+            contentHtml += '<h3>Merits</h3>';
+            merits.forEach(m => {
+                let badge = m.name + ' (' + m.point_value + ')';
+                if (m.xp_bonus) badge += ' [XP Bonus: ' + m.xp_bonus + ']';
+                contentHtml += '<div class="merit-flaw-item">';
+                contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                if (m.category) contentHtml += '<span class="item-category">' + m.category.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                if (m.description) {
+                    const descEscaped = m.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+                    contentHtml += '<p class="item-description">' + descEscaped.replace(/\n/g, '<br>') + '</p>';
+                }
+                contentHtml += '</div>';
+            });
+            contentHtml += '</div>';
+        }
+        
+        if (flaws.length > 0) {
+            contentHtml += '<div class="col-md-6">';
+            contentHtml += '<h3>Flaws</h3>';
+            flaws.forEach(f => {
+                let badge = f.name + ' (' + f.point_value + ')';
+                if (f.xp_bonus) badge += ' [XP Bonus: ' + f.xp_bonus + ']';
+                contentHtml += '<div class="merit-flaw-item">';
+                contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                if (f.category) contentHtml += '<span class="item-category">' + f.category.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+                if (f.description) {
+                    const descEscaped = f.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+                    contentHtml += '<p class="item-description">' + descEscaped.replace(/\n/g, '<br>') + '</p>';
+                }
+                contentHtml += '</div>';
+            });
+            contentHtml += '</div>';
+        }
+        contentHtml += '</div>';
+    }
+    
+    // Status & Resources - always show section
+    contentHtml += '<h3>Status & Resources</h3>';
+    if (currentViewData.status) {
+        const s = currentViewData.status;
+        const lifecycleStatus = (char.current_state || 'active').toString();
+        const formattedLifecycle = lifecycleStatus.charAt(0).toUpperCase() + lifecycleStatus.slice(1);
+        contentHtml += '<div class="row g-3 mt-2">';
+        contentHtml += '<div class="col-md-6"><p><strong>Status:</strong> ' + formattedLifecycle + '</p></div>';
+        contentHtml += '<div class="col-md-6"><p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p></div>';
+        contentHtml += '<div class="col-md-6"><p><strong>Health Levels:</strong> ' + (s.health_levels || 'N/A') + '</p></div>';
+        contentHtml += '<div class="col-md-6"><p><strong>Blood Pool:</strong> ' + (s.blood_pool_current || 0) + '/' + (s.blood_pool_maximum || 0) + '</p></div>';
+        if (s.sect_status) contentHtml += '<div class="col-md-6"><p><strong>Sect Status:</strong> ' + s.sect_status + '</p></div>';
+        if (s.clan_status) contentHtml += '<div class="col-md-6"><p><strong>Clan Status:</strong> ' + s.clan_status + '</p></div>';
+        if (s.city_status) contentHtml += '<div class="col-md-6"><p><strong>City Status:</strong> ' + s.city_status + '</p></div>';
+        contentHtml += '</div>';
+    } else {
+        const lifecycleStatus = (char.current_state || 'active').toString();
+        const formattedLifecycle = lifecycleStatus.charAt(0).toUpperCase() + lifecycleStatus.slice(1);
+        contentHtml += '<div class="row g-3 mt-2">';
+        contentHtml += '<div class="col-md-6"><p><strong>Status:</strong> ' + formattedLifecycle + '</p></div>';
+        contentHtml += '<div class="col-md-6"><p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p></div>';
+        contentHtml += '<div class="col-12"><p class="empty-state">No additional status track information recorded.</p></div>';
+        contentHtml += '</div>';
+    }
+    
+    // Custom Data
+    contentHtml += '<h3>Custom Data</h3>';
+    if (char.custom_data) {
+        try {
+            const customData = typeof char.custom_data === 'string' ? JSON.parse(char.custom_data) : char.custom_data;
+            contentHtml += '<div class="text-content">';
+            contentHtml += '<pre class="custom-data-json">' + JSON.stringify(customData, null, 2).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+            contentHtml += '</div>';
+        } catch (e) {
+            contentHtml += '<div class="text-content">' + char.custom_data.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') + '</div>';
+        }
+    } else {
+        contentHtml += '<p class="empty-state">No custom data recorded.</p>';
+    }
+    
+    // Coterie
+    contentHtml += '<h3>Coterie</h3>';
+    if (currentViewData.coteries && currentViewData.coteries.length > 0) {
+        contentHtml += '<div class="row g-3 mt-2">';
+        currentViewData.coteries.forEach(c => {
+            contentHtml += '<div class="col-md-6">';
+            contentHtml += '<div class="coterie-card">';
+            contentHtml += '<h4>' + (c.coterie_name || 'Unknown Coterie').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</h4>';
+            if (c.coterie_type) contentHtml += '<p><strong>Type:</strong> ' + c.coterie_type.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
+            if (c.role) contentHtml += '<p><strong>Role:</strong> ' + c.role.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
+            if (c.description) {
+                const descEscaped = c.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+                contentHtml += '<p><strong>Description:</strong> ' + descEscaped.replace(/\n/g, '<br>') + '</p>';
+            }
+            if (c.notes) {
+                const notesEscaped = c.notes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+                contentHtml += '<p><strong>Notes:</strong> ' + notesEscaped.replace(/\n/g, '<br>') + '</p>';
+            }
+            contentHtml += '</div>';
+            contentHtml += '</div>';
+        });
+        contentHtml += '</div>';
+    } else {
+        contentHtml += '<p class="empty-state">No coterie associations recorded.</p>';
+    }
+    
+    // Relationships
+    contentHtml += '<h3>Relationships</h3>';
+    if (currentViewData.relationships && currentViewData.relationships.length > 0) {
+        contentHtml += '<div class="row g-3 mt-2">';
+        currentViewData.relationships.forEach(r => {
+            contentHtml += '<div class="col-md-6">';
+            contentHtml += '<div class="relationship-card">';
+            contentHtml += '<h4>' + (r.related_character_name || 'Unknown Character').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</h4>';
+            if (r.relationship_type) contentHtml += '<p><strong>Type:</strong> ' + r.relationship_type.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
+            if (r.relationship_subtype) contentHtml += '<p><strong>Subtype:</strong> ' + r.relationship_subtype.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
+            if (r.strength) contentHtml += '<p><strong>Strength:</strong> ' + r.strength.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
+            if (r.description) {
+                const descEscaped = r.description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+                contentHtml += '<p><strong>Description:</strong> ' + descEscaped.replace(/\n/g, '<br>') + '</p>';
+            }
+            contentHtml += '</div>';
+            contentHtml += '</div>';
+        });
+        contentHtml += '</div>';
+    } else {
+        contentHtml += '<p class="empty-state">No relationships recorded.</p>';
+    }
+    
+    // Biography
+    if (char.biography) {
+        contentHtml += '<h3>Biography</h3>';
+        const bioEscaped = char.biography.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        contentHtml += '<div class="text-content">' + bioEscaped.replace(/\n/g, '<br>') + '</div>';
+    }
+    
+    // Equipment
+    if (char.equipment) {
+        contentHtml += '<h3>Equipment</h3>';
+        const equipEscaped = char.equipment.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        contentHtml += '<div class="text-content">' + equipEscaped.replace(/\n/g, '<br>') + '</div>';
+    }
+    
+    // Notes
+    if (char.notes) {
+        contentHtml += '<h3>Notes</h3>';
+        const notesEscaped = char.notes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        contentHtml += '<div class="text-content">' + notesEscaped.replace(/\n/g, '<br>') + '</div>';
+    }
+    
+    // Metadata
+    contentHtml += '<h3>Character Metadata</h3>';
+    contentHtml += '<div class="row g-3 mt-2">';
+    if (char.created_at) {
+        const created = new Date(char.created_at);
+        contentHtml += '<div class="col-md-6"><p><strong>Created:</strong> ' + created.toLocaleString() + '</p></div>';
+    }
+    if (char.updated_at) {
+        const updated = new Date(char.updated_at);
+        contentHtml += '<div class="col-md-6"><p><strong>Last Updated:</strong> ' + updated.toLocaleString() + '</p></div>';
+    }
+    contentHtml += '</div>';
+    
+    contentHtml += '</div>';
+    const vc2 = document.getElementById('viewCharacterContent');
+    if (vc2) {
+      vc2.innerHTML = contentHtml;
+      vc2.setAttribute('aria-busy','false');
+    }
 }
 
 function closeViewModal() {
@@ -928,4 +943,3 @@ function closeViewModal() {
         modalClickHandler = null;
     }
 }
-

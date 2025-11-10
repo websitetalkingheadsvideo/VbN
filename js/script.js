@@ -643,6 +643,7 @@ function loadFallbackData() {
         'Brujah': ['Celerity', 'Potence', 'Presence'],
         'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
         'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
+        'Daughter of Cacophony': ['Fortitude', 'Melpominee', 'Presence'],
         'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
         'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
         'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
@@ -1756,40 +1757,95 @@ function saveCharacterData() {
     // Collect all form data and save to database
 }
 
-// Clan Guide Modal Functions
-function showClanGuide() {
-    document.getElementById('clanGuideModal').style.display = 'block';
+// Accessible modal helpers (focus trap, restore focus, ESC, inert background)
+let lastActiveElement = null;
+function ccGetFocusable(container) {
+    return Array.from(container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'))
+        .filter(el => (el.offsetParent !== null || el.getAttribute('aria-hidden') !== 'true'));
 }
+function ccTrapFocus(modal) {
+    function onKeyDown(e) {
+        if (e.key === 'Tab') {
+            const list = ccGetFocusable(modal);
+            const first = list[0];
+            const last = list[list.length - 1];
+            if (list.length === 0) { e.preventDefault(); return; }
+            if (document.activeElement === modal) {
+                e.preventDefault();
+                if (e.shiftKey) { last.focus(); } else { first.focus(); }
+                return;
+            }
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        } else if (e.key === 'Escape') {
+            ccCloseAnyOpenModal();
+        }
+    }
+    modal.__trapHandler = onKeyDown;
+    document.addEventListener('keydown', onKeyDown);
+}
+function ccReleaseFocus(modal) {
+    if (modal && modal.__trapHandler) { document.removeEventListener('keydown', modal.__trapHandler); delete modal.__trapHandler; }
+    if (lastActiveElement) { try { lastActiveElement.focus(); } catch(_) {} lastActiveElement = null; }
+}
+function ccHideSiblings(modal, hide) {
+    const parent = modal.parentElement;
+    if (!parent) return;
+    const siblings = Array.from(parent.children).filter(ch => ch !== modal);
+    siblings.forEach(el => {
+        if (hide) {
+            if (!el.hasAttribute('data-aria-hidden-was')) {
+                el.setAttribute('data-aria-hidden-was', el.getAttribute('aria-hidden') || '');
+            }
+            el.setAttribute('aria-hidden','true');
+            el.setAttribute('inert','');
+        } else {
+            const prev = el.getAttribute('data-aria-hidden-was');
+            if (prev !== null) { if (prev === '') el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', prev); el.removeAttribute('data-aria-hidden-was'); }
+            else { el.removeAttribute('aria-hidden'); }
+            el.removeAttribute('inert');
+        }
+    });
+}
+function ccOpenModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    lastActiveElement = document.activeElement;
+    modal.style.display = 'block';
+    // Focus the modal container for screen readers
+    if (!modal.hasAttribute('tabindex')) modal.setAttribute('tabindex','-1');
+    try { modal.focus(); } catch(_) {}
+    ccHideSiblings(modal, true);
+    // Ensure close buttons are labeled
+    modal.querySelectorAll('.modal-close').forEach(btn => { if (!btn.getAttribute('aria-label')) btn.setAttribute('aria-label','Close dialog'); });
+    ccTrapFocus(modal);
+}
+function ccCloseModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    modal.style.display = 'none';
+    ccHideSiblings(modal, false);
+    ccReleaseFocus(modal);
+}
+function ccCloseAnyOpenModal() {
+    ['clanGuideModal','disciplineGuideModal','finalizeModal','characterSheetModal','meritFlawDescriptionModal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && getComputedStyle(el).display !== 'none') ccCloseModal(id);
+    });
+}
+// Background click to close
+window.addEventListener('mousedown', function (event) {
+    const ids = ['clanGuideModal','disciplineGuideModal','finalizeModal','characterSheetModal','meritFlawDescriptionModal'];
+    ids.forEach(id => { const el = document.getElementById(id); if (el && event.target === el) ccCloseModal(id); });
+});
 
-function closeClanGuide() {
-    document.getElementById('clanGuideModal').style.display = 'none';
-}
+// Clan Guide Modal Functions
+function showClanGuide() { ccOpenModal('clanGuideModal'); }
+function closeClanGuide() { ccCloseModal('clanGuideModal'); }
 
 // Discipline Guide Modal Functions
-function showDisciplineGuide() {
-    document.getElementById('disciplineGuideModal').style.display = 'block';
-}
-
-function closeDisciplineGuide() {
-    document.getElementById('disciplineGuideModal').style.display = 'none';
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    const clanModal = document.getElementById('clanGuideModal');
-    const disciplineModal = document.getElementById('disciplineGuideModal');
-    const meritFlawModal = document.getElementById('meritFlawDescriptionModal');
-    
-    if (event.target === clanModal) {
-        clanModal.style.display = 'none';
-    }
-    if (event.target === disciplineModal) {
-        disciplineModal.style.display = 'none';
-    }
-    if (event.target === meritFlawModal) {
-        meritFlawModal.style.display = 'none';
-    }
-}
+function showDisciplineGuide() { ccOpenModal('disciplineGuideModal'); }
+function closeDisciplineGuide() { ccCloseModal('disciplineGuideModal'); }
 
 // Discipline Section Visibility Functions
 function handleClanChange() {
@@ -1821,7 +1877,7 @@ function handleClanChange() {
     
     // Define which clans have access to which discipline categories
     const bloodSorceryClans = ['Giovanni', 'Tremere', 'Caitiff'];
-    const advancedClans = ['Assamite', 'Followers of Set', 'Lasombra', 'Malkavian', 'Ravnos', 'Tzimisce', 'Caitiff'];
+    const advancedClans = ['Assamite', 'Followers of Set', 'Lasombra', 'Malkavian', 'Ravnos', 'Tzimisce', 'Caitiff', 'Daughter of Cacophony'];
     
     // Get clan-specific discipline access
     const clanDisciplineAccess = getClanDisciplineAccess();
@@ -1980,13 +2036,11 @@ function showFinalizePopup() {
     // Generate character summary
     generateCharacterSummary();
     
-    // Show the finalize modal
-    document.getElementById('finalizeModal').style.display = 'block';
+    // Show the finalize modal (accessible)
+    ccOpenModal('finalizeModal');
 }
 
-function closeFinalizeModal() {
-    document.getElementById('finalizeModal').style.display = 'none';
-}
+function closeFinalizeModal() { ccCloseModal('finalizeModal'); }
 
 function generateCharacterSummary() {
     console.log('generateCharacterSummary called');
@@ -2119,13 +2173,11 @@ function showCharacterSheet() {
     // Generate character sheet content
     generateCharacterSheet();
     
-    // Show the character sheet modal
-    document.getElementById('characterSheetModal').style.display = 'block';
+    // Show the character sheet modal (accessible)
+    ccOpenModal('characterSheetModal');
 }
 
-function closeCharacterSheetModal() {
-    document.getElementById('characterSheetModal').style.display = 'none';
-}
+function closeCharacterSheetModal() { ccCloseModal('characterSheetModal'); }
 
 /**
  * Format abilities for character sheet display
@@ -3936,14 +3988,12 @@ function showMeritFlawDescription(name, type) {
         effectsDiv.style.display = 'none';
     }
     
-    // Show modal
-    document.getElementById('meritFlawDescriptionModal').style.display = 'block';
+    // Show modal (accessible)
+    ccOpenModal('meritFlawDescriptionModal');
 }
 
 // Close merit/flaw description modal
-function closeMeritFlawDescription() {
-    document.getElementById('meritFlawDescriptionModal').style.display = 'none';
-}
+function closeMeritFlawDescription() { ccCloseModal('meritFlawDescriptionModal'); }
 
 // Calculate character's starting cash based on various factors
 function calculateCash() {

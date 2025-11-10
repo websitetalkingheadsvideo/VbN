@@ -68,6 +68,8 @@ function render_clan_badge(string $clan): string {
         'caitiff' => '#708090',
         'followers of set' => '#8B6C37',
         'setite' => '#8B6C37',
+        'daughter of cacophony' => '#483D8B',
+        'daughters of cacophony' => '#483D8B',
         'gangrel' => '#228B22',
         'giovanni' => '#556B2F',
         'lasombra' => '#1A1A40',
@@ -100,7 +102,7 @@ function render_clan_badge(string $clan): string {
     <p class="panel-subtitle lead text-light fst-italic mb-4">Manage all characters across the chronicle</p>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav row g-2 g-md-3 mb-4">
+    <nav class="admin-nav row g-2 g-md-3 mb-4" aria-label="Admin Navigation">
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">👥 Characters</a>
         </div>
@@ -125,7 +127,7 @@ function render_clan_badge(string $clan): string {
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="agents.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Agents</a>
         </div>
-    </div>
+    </nav>
     
     <!-- Character Statistics -->
     <div class="character-stats row g-3 mb-4">
@@ -206,6 +208,7 @@ function render_clan_badge(string $clan): string {
                 <option value="Brujah">Brujah</option>
                 <option value="Caitiff">Caitiff</option>
                 <option value="Followers of Set">Followers of Set</option>
+                <option value="Daughter of Cacophony">Daughter of Cacophony</option>
                 <option value="Gangrel">Gangrel</option>
                 <option value="Giovanni">Giovanni</option>
                 <option value="Lasombra">Lasombra</option>
@@ -351,7 +354,7 @@ function render_clan_badge(string $clan): string {
 </div>
 
 <!-- View Character Modal -->
-<div id="viewModal" class="modal">
+<div id="viewModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="viewCharacterName" aria-describedby="viewCharacterContent">
     <div class="modal-content large-modal">
         <div class="modal-header-section">
             <h2 class="modal-title">📄 <span id="viewCharacterName">Character Details</span></h2>
@@ -369,14 +372,14 @@ function render_clan_badge(string $clan): string {
         </div>
         
         <!-- Character Details Content -->
-        <div id="viewCharacterContent" class="view-content">
+        <div id="viewCharacterContent" class="view-content" aria-live="polite">
             Loading...
         </div>
     </div>
 </div>
 
 <!-- Delete Modal -->
-<div id="deleteModal" class="modal">
+<div id="deleteModal" class="modal" role="dialog" aria-modal="true" aria-label="Confirm Deletion" aria-describedby="deleteCharacterName deleteWarning">
     <div class="modal-content">
         <h2 class="modal-title">⚠️ Confirm Deletion</h2>
         <p class="modal-message">Delete character:</p>

@@ -16,11 +16,11 @@ if (!defined('LOTN_VERSION')) {
             define('LOTN_VERSION', $matches[1]);
         } else {
             // Fallback version if parsing fails
-            define('LOTN_VERSION', '0.9.28');
+            define('LOTN_VERSION', '0.10.0');
         }
     } else {
         // Fallback version if VERSION.md doesn't exist
-        define('LOTN_VERSION', '0.9.28');
+        define('LOTN_VERSION', '0.10.0');
     }
 }
 

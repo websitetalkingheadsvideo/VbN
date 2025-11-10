@@ -449,6 +449,7 @@ include 'includes/connect.php';
                             <option value="Assamite">⚔️ Assamite</option>
                             <option value="Brujah">✊ Brujah</option>
                             <option value="Followers of Set">🐍 Followers of Set</option>
+                            <option value="Daughter of Cacophony">🎶 Daughter of Cacophony</option>
                             <option value="Gangrel">🐺 Gangrel</option>
                             <option value="Giovanni">💀 Giovanni</option>
                             <option value="Lasombra">🌑 Lasombra</option>
@@ -1760,13 +1761,13 @@ include 'includes/connect.php';
     </div>
 
     <!-- Clan Guide Modal -->
-    <div id="clanGuideModal" class="modal">
+    <div id="clanGuideModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="clanGuideTitle" aria-describedby="clanGuideBody">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Clan Guide</h2>
-                <button type="button" class="modal-close" onclick="closeClanGuide()">&times;</button>
+                <h2 id="clanGuideTitle">Clan Guide</h2>
+                <button type="button" class="modal-close" onclick="closeClanGuide()" aria-label="Close dialog">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="clanGuideBody">
                 <p><strong>Complete guide to all vampire clans:</strong></p>
                 <div class="clan-table-container">
                     <table class="clan-table">
@@ -1829,13 +1830,13 @@ include 'includes/connect.php';
     </div>
 
     <!-- Discipline Guide Modal -->
-    <div id="disciplineGuideModal" class="modal">
+    <div id="disciplineGuideModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="disciplineGuideTitle" aria-describedby="disciplineGuideBody">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Discipline-Ability Guide</h2>
-                <button type="button" class="modal-close" data-action="close-discipline-guide">&times;</button>
+                <h2 id="disciplineGuideTitle">Discipline-Ability Guide</h2>
+                <button type="button" class="modal-close" data-action="close-discipline-guide" aria-label="Close dialog">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="disciplineGuideBody">
                 <p><strong>Recommended abilities for each Discipline:</strong></p>
                 <div class="discipline-table-container">
                     <table class="discipline-table">
@@ -1934,13 +1935,13 @@ include 'includes/connect.php';
     </div>
 
     <!-- Merit/Flaw Description Modal -->
-    <div id="meritFlawDescriptionModal" class="modal">
+    <div id="meritFlawDescriptionModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="meritFlawModalTitle" aria-describedby="meritFlawBody">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="meritFlawModalTitle">Merit/Flaw Description</h2>
-                <button type="button" class="modal-close" onclick="closeMeritFlawDescription()">&times;</button>
+                <button type="button" class="modal-close" onclick="closeMeritFlawDescription()" aria-label="Close dialog">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="meritFlawBody">
                 <div class="merit-flaw-detail">
                     <div class="detail-columns">
                         <div class="detail-column">
