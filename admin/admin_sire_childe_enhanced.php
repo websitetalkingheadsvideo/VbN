@@ -24,7 +24,7 @@ include __DIR__ . '/../includes/header.php';
     <p class="panel-subtitle">Track vampire lineage with biography analysis and manual verification</p>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav">
+    <nav class="admin-nav" aria-label="Admin Navigation">
         <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
         <a href="admin_sire_childe.php" class="nav-btn">🧛 Basic Sire/Childe</a>
         <a href="admin_sire_childe_enhanced.php" class="nav-btn active">🔍 Enhanced Analysis</a>
@@ -32,7 +32,7 @@ include __DIR__ . '/../includes/header.php';
         <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
         <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
         <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
-    </div>
+    </nav>
     
     <!-- Analysis Controls -->
     <div class="analysis-controls">
@@ -263,7 +263,7 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <!-- Enhanced Relationship Modal -->
-<div id="relationshipModal" class="modal">
+<div id="relationshipModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="analysisResults">
     <div class="modal-content large-modal">
         <h2 class="modal-title">🔍 <span id="modalTitle">Analyze Relationship</span></h2>
         <button class="modal-close" onclick="closeRelationshipModal()">×</button>
@@ -286,12 +286,12 @@ include __DIR__ . '/../includes/header.php';
             </div>
         </div>
         
-        <form id="relationshipForm">
+        <form id="relationshipForm" class="needs-validation" novalidate>
             <input type="hidden" id="characterId" name="character_id">
             
-            <div class="form-group">
-                <label for="sireSelect">Set Sire:</label>
-                <select id="sireSelect" name="sire">
+            <div class="form-group mb-3">
+                <label for="sireSelect" class="form-label">Set Sire:</label>
+                <select id="sireSelect" name="sire" class="form-select">
                     <option value="">No sire (Sireless)</option>
                     <?php
                     $sire_query = "SELECT id, character_name FROM characters ORDER BY character_name";
@@ -305,9 +305,9 @@ include __DIR__ . '/../includes/header.php';
                 </select>
             </div>
             
-            <div class="form-group">
-                <label for="relationshipNotes">Analysis Notes:</label>
-                <textarea id="relationshipNotes" name="notes" placeholder="Notes about this relationship analysis..."></textarea>
+            <div class="form-group mb-3">
+                <label for="relationshipNotes" class="form-label">Analysis Notes:</label>
+                <textarea id="relationshipNotes" name="notes" class="form-control" placeholder="Notes about this relationship analysis..."></textarea>
             </div>
             
             <div class="modal-actions">
@@ -1006,4 +1006,5 @@ function calculateConfidence($biography, $suggestedSire) {
 }
 ?>
 
+<script src="../js/form_validation.js"></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

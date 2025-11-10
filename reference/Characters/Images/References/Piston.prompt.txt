@@ -1,0 +1,12 @@
+Square portrait of Piston, a Brujah Anarch from Valley by Night, depicted in a cinematic World of Darkness style with urban-grit biker aesthetics. Strong, imposing, streetwise; leather cut with worn patches over a dark denim shirt, chain wallet, scarred knuckles, blunt stance and direct gaze. He stands in a nocturnal biker bar/garage threshold: chipped concrete, corrugated metal, protest stickers and fading posters, motorcycle handlebars and neon signage blurred in the background. Lighting is moody, medium-high contrast: warm amber/crimson key from a bar lamp with cool teal shadow fill and a faint rim picking the shoulder and jawline. Film-still realism, shallow depth of field, subtle haze and dust motes, bruised-neon palette, restrained intensity.
+
+Emphasize traits: Strong, Tough, Athletic, Resilient, Imposing, Intimidating, Loyal, Direct, Protective, Brotherly, Blunt, Streetwise, Survivor, Instinctive, Practical
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, exaggerated anatomy, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Ex-Hell's Angels Brujah Anarch, hardened by faction wars; tone is direct, protective, and loyal-avoid comedy or glam, keep it grounded and kinetic.
+

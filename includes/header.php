@@ -25,6 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley by Night - A Vampire Tale</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <?php
     // Determine the base path of the application
     $script_name = $_SERVER['SCRIPT_NAME'];
@@ -60,8 +61,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nosifer&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <script src="<?php echo $path_prefix; ?>js/logo-animation.js"></script>
+    <script src="<?php echo $path_prefix; ?>js/form_validation.js"></script>
 </head>
 <body>
+<a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
 <div class="page-wrapper">
     <header class="valley-header">
         <div class="header-container container d-flex justify-content-between align-items-center gap-4">
@@ -118,5 +121,5 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </header>
     
     <!-- Main content starts below header -->
-    <main class="main-wrapper">
+    <main id="main-content" class="main-wrapper" role="main" aria-label="Main content">
 

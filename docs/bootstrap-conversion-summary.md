@@ -1,7 +1,7 @@
 # Bootstrap Conversion Summary
 
-**Date:** November 4, 2024  
-**Status:** In Progress  
+**Date:** November 2025  
+**Status:** In Progress (admin sweep ongoing)  
 **Bootstrap Version:** 5.3.2
 
 ## Completed Conversions
@@ -103,11 +103,25 @@
 ## Files Modified
 
 ### PHP Files
-- `includes/header.php`
+- `includes/header.php` (skip link, main landmark, SRI/CDN, form validation helper)
 - `includes/footer.php`
-- `login.php`
-- `register.php`
+- `login.php` (Bootstrap form classes + validation)
+- `register.php` (Bootstrap form classes + validation + password match)
 - `index.php`
+- Admin (header/footer adoption):
+  - `admin/admin_create_location.php`
+  - `admin/admin_create_location_story.php`
+  - `admin/admin_equipment.php`
+  - `admin/admin_panel_simple.php`
+  - `admin/questionnaire_admin.php`
+  - Footer added where missing: `admin/disable_login.php`, `admin/laws_agent.php`, `admin/npc_tracker.php`, `admin/npc_tracker_submit.php`, `admin/npc_tracker_submit_updated.php`, `admin/rulebooks_search.php`, `admin/setup_npc_tracker.php`, `admin/test_includes.php`
+- Admin forms standardized:
+  - `admin/admin_items.php`, `admin/admin_locations.php`
+  - `admin/admin_sire_childe.php`, `admin/admin_sire_childe_enhanced.php`
+  - `admin/boon_ledger.php`
+  - `admin/disable_login.php`
+  - `admin/npc_tracker_submit.php`, `admin/npc_tracker_submit_updated.php`
+  - `admin/questionnaire_admin.php`
 
 ### CSS Files
 - `css/header.css`
@@ -127,9 +141,9 @@
 
 ### Remaining High-Priority Files
 - `dashboard.php` - User dashboard
-- `lotn_char_create.php` - Character creation form
-- `questionnaire.php` - Character questionnaire
-- Admin panel files (40+ files)
+- `lotn_char_create.php` - Character creation form (non-admin)
+- `questionnaire.php` - Character questionnaire (non-admin)
+- Admin: review legacy pages in `archive/` (no header/footer) – leave as legacy unless reactivated
 
 ### Future Phases
 - Phase 3: Additional spacing utility conversions
@@ -143,4 +157,7 @@
 - Custom CSS classes are preserved where needed for design-specific styling
 - Bootstrap utilities complement rather than replace custom CSS
 - Zero visual regressions introduced
+- Modals upgraded with focus trap, Escape, inert background, and container focus
+- `aria-live="polite"` added to view/pagination regions for SR feedback
+- Shared `js/form_validation.js` consolidates form validation across pages
 

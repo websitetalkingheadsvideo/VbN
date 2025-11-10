@@ -1,0 +1,221 @@
+# Character Traits Synchronization System - PRD
+
+## Overview
+Create a comprehensive system to examine all characters in the database, match them with their JSON files, and ensure they have traits either imported from JSON or generated based on character data.
+
+## Problem Statement
+Many characters in the database lack traits. Traits may exist in JSON files but haven't been imported, or they may be completely missing. We need to:
+1. Identify characters without traits
+2. Check if traits exist in their JSON files
+3. Import traits from JSON if available
+4. Generate appropriate traits if missing, based on character data
+
+## Goals
+1. **Trait Discovery**: Automatically scan all characters in database
+2. **JSON Matching**: Match database characters with JSON files by character_name
+3. **Trait Import**: Import traits from JSON files to database when available
+4. **Trait Generation**: Generate contextual traits when missing, based on:
+   - Abilities and ability levels
+   - Disciplines and discipline levels
+   - Clan characteristics
+   - Nature and Demeanor archetypes
+   - Biography text analysis
+   - Concept description
+5. **Bidirectional Sync**: Update both JSON files and database
+
+## Requirements
+
+### Functional Requirements
+
+#### 1. Character Scanning System
+- Query all characters from database (characters table)
+- For each character, attempt to find matching JSON file in `reference/Characters/Added to Database/`
+- Match by character_name (with fuzzy matching for name variations)
+- Handle characters without corresponding JSON files
+
+#### 2. Trait Detection in JSON
+- Check for standard trait structure: `traits.Physical`, `traits.Social`, `traits.Mental` arrays
+- Check for negative traits: `negativeTraits.Physical`, `negativeTraits.Social`, `negativeTraits.Mental`
+- Handle alternative JSON structures (some files use different formats like `attributes`)
+- Validate trait format (should be arrays of strings)
+
+#### 3. Trait Import from JSON
+- Read traits from JSON file
+- Check if character already has traits in database (character_traits table)
+- Import positive traits with trait_type='positive'
+- Import negative traits with trait_type='negative'
+- Set appropriate trait_category (Physical, Social, Mental)
+- Handle duplicate traits gracefully
+- Use database transactions for atomicity
+
+#### 4. Trait Generation Engine
+When traits are missing, generate them based on:
+
+**4.1 Ability-Based Traits**
+- High Physical abilities (Athletics, Brawl, Melee, Stealth) → Physical traits (Quick, Strong, Agile, Graceful)
+- High Social abilities (Expression, Performance, Subterfuge, Leadership) → Social traits (Charismatic, Persuasive, Elegant)
+- High Mental abilities (Academics, Investigation, Occult, Science) → Mental traits (Intelligent, Observant, Studious, Clever)
+
+**4.2 Discipline-Based Traits**
+- Celerity → Physical traits (Quick, Nimble)
+- Potence → Physical traits (Strong, Powerful)
+- Presence → Social traits (Charismatic, Alluring, Commanding)
+- Auspex → Mental traits (Perceptive, Intuitive, Observant)
+- Obfuscate → Mental/Social traits (Subtle, Cunning, Unassuming)
+- Dominate → Social traits (Commanding, Intimidating)
+- Thaumaturgy → Mental traits (Studious, Analytical, Focused)
+
+**4.3 Clan-Based Traits**
+- Brujah → Physical traits (Aggressive, Quick), Social traits (Passionate)
+- Toreador → Social traits (Charismatic, Elegant, Alluring)
+- Tremere → Mental traits (Studious, Analytical, Disciplined)
+- Ventrue → Social traits (Commanding, Diplomatic, Poised)
+- Gangrel → Physical traits (Wild, Tough, Resilient)
+- Malkavian → Mental traits (Perceptive, Intuitive, Unpredictable)
+- Nosferatu → Mental traits (Clever, Resourceful), Social negative traits (Repulsive, Hideous)
+- Etc.
+
+**4.4 Nature/Demeanor-Based Traits**
+- Analyze nature and demeanor archetypes
+- Map to appropriate traits (e.g., "Architect" → Mental traits, "Bon Vivant" → Social traits)
+
+**4.5 Biography Text Analysis**
+- Extract keywords from biography text
+- Match keywords to trait categories
+- Generate traits based on described characteristics
+
+**4.6 Concept-Based Traits**
+- Analyze concept description
+- Extract trait suggestions from concept (e.g., "Assassin" → Physical/Mental traits)
+
+**4.7 Trait Balancing**
+- Ensure balanced distribution across Physical, Social, Mental categories
+- Default to 3-5 traits per category for positive traits
+- Generate 0-2 negative traits based on character flaws or clan weaknesses
+- Respect character power level (generation, XP spent)
+
+#### 5. Database Operations
+- Insert traits into character_traits table
+- Handle existing traits (skip duplicates or update)
+- Use prepared statements for SQL injection prevention
+- Implement proper error handling and logging
+- Support batch processing for multiple characters
+
+#### 6. JSON File Updates
+- When generating traits, update the JSON file
+- Add traits structure if missing
+- Preserve existing JSON structure and formatting
+- Create backup before modifying JSON files
+
+#### 7. Reporting and Logging
+- Generate detailed report of:
+  - Characters processed
+  - Traits imported from JSON
+  - Traits generated
+  - Characters without JSON files
+  - Errors encountered
+- Log all operations for audit trail
+
+### Technical Requirements
+
+#### 1. Script Structure
+- Main script: `data/sync_character_traits.php`
+- Support functions in separate file or same file
+- Command-line and web-accessible interface
+- Support for single character or batch processing
+
+#### 2. Database Schema
+- Use existing character_traits table:
+  - id (AUTO_INCREMENT)
+  - character_id (INT, FOREIGN KEY)
+  - trait_name (VARCHAR(100))
+  - trait_category (ENUM: 'Physical', 'Social', 'Mental')
+  - trait_type (ENUM: 'positive', 'negative')
+  - xp_cost (INT, default 0)
+
+#### 3. JSON File Handling
+- Support multiple JSON file locations:
+  - `reference/Characters/Added to Database/`
+  - `reference/Characters/` (fallback)
+- Handle various JSON formats and structures
+- Validate JSON structure before processing
+- Handle encoding issues (UTF-8)
+
+#### 4. Trait Generation Algorithm
+- Create trait mapping tables/rules
+- Implement scoring system for trait generation
+- Weight different factors (abilities, disciplines, clan, etc.)
+- Generate contextually appropriate traits
+- Avoid generating contradictory traits
+
+#### 5. Error Handling
+- Graceful handling of missing files
+- Database connection errors
+- JSON parsing errors
+- Character matching failures
+- Continue processing other characters on individual failures
+
+### Non-Functional Requirements
+
+1. **Performance**: Process 100+ characters efficiently
+2. **Reliability**: Transaction support for data integrity
+3. **Maintainability**: Well-documented, modular code
+4. **Extensibility**: Easy to add new trait generation rules
+5. **Safety**: Backup JSON files before modification
+6. **Logging**: Comprehensive logging for debugging
+
+## Implementation Phases
+
+### Phase 1: Foundation
+- Create main sync script structure
+- Implement database connection and character querying
+- Implement JSON file matching logic
+- Create basic logging system
+
+### Phase 2: Trait Detection and Import
+- Implement trait detection in JSON files
+- Implement trait import from JSON to database
+- Handle various JSON formats
+- Test with existing characters that have traits in JSON
+
+### Phase 3: Trait Generation Engine
+- Create trait mapping rules/tables
+- Implement ability-based trait generation
+- Implement discipline-based trait generation
+- Implement clan-based trait generation
+- Implement nature/demeanor-based trait generation
+
+### Phase 4: Advanced Generation
+- Implement biography text analysis
+- Implement concept-based trait generation
+- Implement trait balancing logic
+- Refine trait generation algorithms
+
+### Phase 5: JSON Updates and Reporting
+- Implement JSON file updating
+- Create comprehensive reporting system
+- Add backup functionality
+- Create admin interface for reviewing/syncing traits
+
+### Phase 6: Testing and Refinement
+- Test with all characters in database
+- Refine trait generation based on results
+- Handle edge cases
+- Performance optimization
+
+## Success Criteria
+1. All characters in database have traits (either imported or generated)
+2. Traits are contextually appropriate for each character
+3. JSON files are updated with generated traits
+4. System can be run repeatedly without duplicating traits
+5. Comprehensive reporting shows what was done
+6. System handles edge cases gracefully
+
+## Future Enhancements
+1. Web-based admin interface for trait management
+2. Manual trait override system
+3. Trait validation against master trait list
+4. Trait suggestions based on similar characters
+5. Bulk trait editing capabilities
+6. Trait history tracking
+

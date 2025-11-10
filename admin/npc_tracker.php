@@ -352,6 +352,5 @@ define('LOTN_VERSION', '0.2.0');
             details.classList.toggle('active');
         }
     </script>
-</body>
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 

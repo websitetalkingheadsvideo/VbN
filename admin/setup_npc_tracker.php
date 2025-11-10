@@ -131,6 +131,5 @@ define('LOTN_VERSION', '0.2.0');
             </a>
         </div>
     </div>
-</body>
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 

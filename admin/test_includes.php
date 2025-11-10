@@ -28,3 +28,5 @@ if (file_exists($header_path)) {
 }
 ?>
 
+<?php include __DIR__ . '/../includes/footer.php'; ?>
+

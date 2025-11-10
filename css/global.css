@@ -536,6 +536,30 @@ body {
     white-space: nowrap;
 }
 
+/* Visible focus on modal container for admin dialogs */
+.modal:focus {
+    outline: 2px solid var(--blood-red);
+    outline-offset: 0;
+}
+
+/* Accessible focus styles within modals */
+.modal .modal-content :focus-visible,
+.modal .modal-content button:focus,
+.modal .modal-content a:focus,
+.modal .modal-content input:focus,
+.modal .modal-content select:focus,
+.modal .modal-content textarea:focus {
+    outline: 2px solid var(--blood-red);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.25);
+}
+
+.modal .modal-close:focus-visible,
+.modal .modal-close:focus {
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.45);
+    border-radius: 50%;
+}
+
 /* Mobile-friendly forms */
 .form-mobile {
     display: flex;

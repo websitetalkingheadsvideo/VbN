@@ -1,0 +1,14 @@
+Square portrait of Lucien Marchand, a ghoul retainer to a Toreador master from Valley by Night, depicted in a cinematic World of Darkness style with studio‑atelier aesthetics. Tall, pale, blond hair neatly cut, intense blue eyes; hands dusted with fine white marble powder; fitted dark work shirt and vest, rolled sleeves, leather apron straps; a sculptor’s chisel held with precise control. He stands in a quiet night atelier among white plaster casts and half‑finished marble, motes of dust hanging in the air.
+
+Lighting is moody and disciplined: warm candle/work‑lamp key shaping the face and hands, with cool teal shadow fill from a high window and a faint rim catching shoulder and jaw; subtle haze/dust for atmosphere. Film‑still realism, shallow depth of field with soft bokeh of busts and columns; elegant, restrained tone.
+
+Emphasize traits: Strong, Precise, Steady‑handed, Resilient, Earnest, Attractive, Observant, Attentive
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low‑res, flat lighting, overexposed, underexposed, cartoon, comedic, garish neon, messy clutter, modern power tools, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Lucien is a devoted Parisian conservator turned ghoul assistant (since 1927). Keep demeanor calm and meticulous; emphasize marble dust, classical forms, and precise tool handling. Avoid gore or camp; aim for quiet reverence to art.
+

@@ -1,0 +1,12 @@
+Square portrait of Pistol Pete, a Brujah from Valley by Night, depicted in a cinematic World of Darkness style with nocturnal, predatory elegance. Quick, brawny, intimidating; dark wool peacoat over a fitted charcoal tee, fingerless gloves and scarred knuckles, storm-damp hair, hard set jaw and direct stare; cool vampiric pallor, eyes razor-sharp with an eerie catchlight, the faintest hint of canines at the lip. He stands beneath rain-slick cathedral arches at the edge of Elysium: cracked stone, wrought-iron fencing, protest banners and flyers blurred beyond, neon reflections pooling on wet cobblestone. Lighting is moody, medium-high contrast: cold teal moonlight key with a blood-red neon accent and a soft amber rim on the shoulders. Film-still realism, shallow depth of field, subtle mist/drizzle and haze, restrained menace.
+
+Emphasize traits: Quick, Agile, Brawny, Tough, Lethal, Rugged, Intimidating, Assertive, Determined, Focused
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, exaggerated anatomy, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Brujah street enforcer with protest-era grit; avoid camp or glossy glamour-keep it grounded, raw, and disciplined.
+

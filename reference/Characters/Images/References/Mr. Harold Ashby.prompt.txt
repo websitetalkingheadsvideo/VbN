@@ -1,0 +1,12 @@
+Square portrait of Mr. Harold Ashby, a Malkavian from Valley by Night, depicted in a cinematic World of Darkness style with ritualized, funereal elegance. Calm, meticulous, unsettling; dark three-piece suit, understated tie pin, immaculate grooming; gloved hand lightly touching a vintage large-format camera; composed, teacherly gaze with a precise, assessing focus. He stands in an immaculate Sun City parlor turned studio: framed black-and-white portraits on patterned wallpaper, carefully arranged lilies, a single candle and lace curtains, glass reflections hinting at a second, offset image.
+
+Lighting is intentionally uneven and slightly split: warm candle amber on one side, cool violet-teal window spill on the other; soft fill with minimal rim, reflections in glass frames introducing subtle asymmetry. Film-still realism, shallow depth of field, faint haze and dust motes; atmosphere is intimate, orderly, and quietly ominous-never graphic.
+
+Emphasize traits: Calm, Meticulous, Patient, Calculated, Precise, Observant, Disciplined, Ritualistic, Soft-spoken, Unsettling
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, gore, blood splatter, graphic violence, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Former funerary portrait photographer turned Malkavian `preservationist'; favor reflections, glass, and gentle surreal asymmetry; maintain elegance and restraint-avoid explicit imagery.
+

@@ -1,250 +1,195 @@
 <?php
 /**
- * Random Question Questionnaire - Valley by Night
- * 20 random questions with fade transitions
+ * Character Questionnaire (Dynamic) — Valley by Night
+ * Loads 20 random questions with defensive schema detection and shared includes.
  */
 
 session_start();
 
-// Check for authentication bypass
-require_once 'includes/auth_bypass.php';
-
-// Check if user is logged in (or bypass is enabled)
+require_once __DIR__ . '/includes/auth_bypass.php';
 if (!isset($_SESSION['user_id']) && !isAuthBypassEnabled()) {
-    header("Location: login.php");
+    header('Location: login.php');
     exit();
 }
-
-// If bypass is enabled, set up guest session
 if (isAuthBypassEnabled() && !isset($_SESSION['user_id'])) {
     setupBypassSession();
 }
 
-// Database connection
-include 'includes/connect.php';
+include __DIR__ . '/includes/connect.php';
 
-// Check for testing mode
-$testingMode = isset($_GET['test']) && in_array($_GET['test'], ['brujah', 'tremere', 'gangrel']);
+// Detect available columns to support prod/dev schema differences
+$columnsResult = db_select($conn, 'SHOW COLUMNS FROM questionnaire_questions');
+if ($columnsResult === false) {
+    die('Database error: Failed to inspect questionnaire schema');
+}
+$available = [];
+while ($row = mysqli_fetch_assoc($columnsResult)) {
+    $available[strtolower($row['Field'])] = true;
+}
 
-if ($testingMode) {
-    // Skip questions for testing - go directly to results
-    $questions = [];
-} else {
-    // Get 20 random questions from database with explicit columns
-    $result = db_select($conn,
-        "SELECT id, question_text, category, subcategory 
-         FROM questionnaire_questions ORDER BY RAND() LIMIT 20",
-        "",
-        []
-    );
-    if (!$result) {
-        die("Database error: Failed to load questions");
-    }
-    $questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    if (empty($questions)) {
-        die("No questions found in database. Please run populate_complete_39_questions.php first.");
+// Build a resilient SELECT list
+$selects = [];
+
+// Always try to include id/ID
+if (isset($available['id'])) {
+    $selects[] = 'id';
+} elseif (isset($available['ID'])) { // case-insensitivity safeguard
+    $selects[] = 'ID as id';
+}
+
+// Category/subcategory when present
+if (isset($available['category'])) {
+    $selects[] = 'category';
+}
+if (isset($available['subcategory'])) {
+    $selects[] = 'subcategory';
+}
+
+// Question text — prefer `question`, fallback to `question_text`
+if (isset($available['question'])) {
+    $selects[] = 'question as question';
+} elseif (isset($available['question_text'])) {
+    $selects[] = 'question_text as question';
+}
+
+// Answers (if table stores them)
+for ($i = 1; $i <= 4; $i++) {
+    $col = 'answer' . $i;
+    if (isset($available[$col])) {
+        $selects[] = $col;
     }
 }
 
-// Get username from session
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
-
-// Get version
-if (!defined('LOTN_VERSION')) {
-    define('LOTN_VERSION', '0.2.6');
+// Clan weights for scoring in JS (comma-delimited strings)
+for ($i = 1; $i <= 4; $i++) {
+    $col = 'clanweight' . $i; // handle case-insensitive variations
+    if (isset($available[$col])) {
+        $selects[] = 'clanWeight' . $i;
+    } elseif (isset($available['clanWeight' . $i])) {
+        $selects[] = 'clanWeight' . $i;
+    }
 }
-$version = LOTN_VERSION;
+
+// Fallback if question text not found
+if (!in_array('question as question', $selects, true) && !in_array('question_text as question', $selects, true)) {
+    // Provide at least id and category to avoid total failure; inform user
+    die('Database error: Missing question text column (expected `question` or `question_text`)');
+}
+
+$sql = 'SELECT ' . implode(', ', $selects) . ' FROM questionnaire_questions ORDER BY RAND() LIMIT 20';
+$result = db_select($conn, $sql);
+if ($result === false) {
+    // Log was already recorded by db_select; show friendly message
+    die('Database error: Failed to load questions');
+}
+$questions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+if (empty($questions)) {
+    die('No questions found in database.');
+}
+
+$extra_css = [
+    'css/questionnaire.css'
+];
+include __DIR__ . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Questionnaire - Valley by Night</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/questionnaire.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nosifer&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="page-wrapper">
-        <!-- Header -->
-        <header class="valley-header">
-            <div class="header-container">
-                <div class="header-left">
-                    <div class="logo-placeholder" title="Valley by Night Logo">
-                        <div class="logo-frame">
-                            <span class="logo-initial">VbN</span>
-                        </div>
-                    </div>
-                    <div class="title-section">
-                        <h1 class="site-title">
-                            <a href="index.php">Valley by Night</a>
-                        </h1>
-                        <p class="site-subtitle">A Vampire Tale</p>
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="user-info">
-                        <span class="user-label">Kindred:</span>
-                        <span class="username"><?php echo htmlspecialchars($username); ?></span>
-                        <a href="logout.php" class="logout-btn" title="Logout">Logout</a>
-                    </div>
-                    <div class="version-info">
-                        <span class="version">v<?php echo htmlspecialchars($version); ?></span>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!-- Tracking Toggle Button (optional reveal) -->
+        <button id="tracking-toggle" class="tracking-toggle nav-btn next-btn">Show Clan Scores</button>
 
-        <!-- Main Content -->
-        <main class="main-wrapper">
-            <!-- Tracking Toggle Button -->
-            <button id="tracking-toggle" class="tracking-toggle">Show Clan Scores</button>
-            
-            <!-- Admin Debug Toggle Button -->
-            <button id="admin-debug-toggle" class="admin-debug-toggle" style="display: none;">Admin Debug</button>
-            
-            <!-- Tracking Popup -->
-            <div id="tracking-popup" class="tracking-popup" style="display: none;">
-                <div class="tracking-header">
-                    <h3 class="tracking-title">Clan Tracking</h3>
-                    <button id="tracking-close" class="tracking-close">&times;</button>
-                </div>
-                <div id="tracking-content">
-                    <!-- Clan scores will be populated here -->
-                </div>
+        <!-- Admin Debug Toggle Button (hidden by default; can be enabled via ?admin=1) -->
+        <button id="admin-debug-toggle" class="admin-debug-toggle nav-btn next-btn" style="display: none;">Admin Debug</button>
+
+        <!-- aria-live status for async/UI updates -->
+        <div id="questionnaire-status" class="visually-hidden" role="status" aria-live="polite"></div>
+
+        <!-- Tracking Popup -->
+        <div id="tracking-popup" class="tracking-popup" style="display: none;">
+            <div class="tracking-header">
+                <h3 class="tracking-title">Clan Tracking</h3>
+                <button id="tracking-close" class="tracking-close" aria-label="Close tracking popup">&times;</button>
             </div>
-            
-            <!-- Admin Debug Popup -->
-            <div id="admin-debug-popup" class="admin-debug-popup" style="display: none;">
-                <div class="admin-debug-header">
-                    <h3 class="admin-debug-title">Admin Debug</h3>
-                    <button id="admin-debug-close" class="admin-debug-close">&times;</button>
-                </div>
-                <div id="admin-debug-content" class="admin-debug-content">
-                    <!-- Debug content will be populated here -->
-                </div>
+            <div id="tracking-content"><!-- Clan scores populated here --></div>
+        </div>
+
+        <!-- Admin Debug Popup -->
+        <div id="admin-debug-popup" class="admin-debug-popup" style="display: none;">
+            <div class="admin-debug-header">
+                <h3 class="admin-debug-title">Admin Debug</h3>
+                <button id="admin-debug-close" class="admin-debug-close" aria-label="Close admin debug popup">&times;</button>
             </div>
-            
-            <div class="questionnaire-container">
-                <div class="questionnaire-header">
-                    <h1 class="questionnaire-title">🌟 The Night Creates You</h1>
-                    <p class="questionnaire-subtitle">Character Creation Questionnaire</p>
-                    <p class="questionnaire-description">
-                        Answer these questions to discover which vampire clan calls to your soul. 
-                        Your responses will guide the ancient blood to reveal your true nature.
-                    </p>
+            <div id="admin-debug-content" class="admin-debug-content"></div>
+        </div>
+
+        <div class="questionnaire-container">
+            <div class="questionnaire-header">
+                <h1 class="questionnaire-title">The Night Creates You</h1>
+                <p class="questionnaire-subtitle">Character Creation Questionnaire</p>
+                <p class="questionnaire-description">
+                    Answer these questions to discover which vampire clan calls to your soul.
+                </p>
+            </div>
+
+            <form id="questionnaire-form" class="questionnaire-form" novalidate>
+                <!-- Progress Indicator -->
+                <div class="progress-section" aria-live="polite">
+                    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+                    <div class="progress-text">
+                        <span id="current-question">1</span> of <span id="total-questions">20</span>
+                    </div>
                 </div>
 
-                <form id="questionnaire-form" class="questionnaire-form">
-                    <!-- Progress Indicator -->
-                    <div class="progress-section">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span id="current-question">1</span> of <span id="total-questions">20</span>
-                        </div>
+                <?php $qNum = 1; foreach ($questions as $q): ?>
+                <section class="question-section <?php echo $qNum === 1 ? 'active' : ''; ?>" data-question="<?php echo $qNum; ?>" aria-labelledby="q<?php echo $qNum; ?>-title">
+                    <h2 id="q<?php echo $qNum; ?>-title" class="question-title">Question <?php echo $qNum; ?></h2>
+                    <?php if (!empty($q['category'])): ?>
+                    <div class="question-category" data-category="<?php echo htmlspecialchars($q['category']); ?>">
+                        <?php echo ucfirst(htmlspecialchars($q['category'])); ?>
                     </div>
+                    <?php endif; ?>
+                    <p class="question-text"><?php echo htmlspecialchars($q['question'] ?? ''); ?></p>
 
-                    <?php 
-                    $questionNumber = 1;
-                    foreach ($questions as $question): 
-                    ?>
-                    
-                    <!-- Question -->
-                    <div class="question-section <?php echo $questionNumber === 1 ? "active" : ""; ?>" data-question="<?php echo $questionNumber; ?>">
-                        <h2 class="question-title">Question <?php echo $questionNumber; ?></h2>
-                        <div class="question-category" data-category="<?php echo htmlspecialchars($question["category"]); ?>">
-                            <?php echo ucfirst(htmlspecialchars($question["category"])); ?>
-                        </div>
-                        <p class="question-text"><?php echo htmlspecialchars($question["question"]); ?></p>
-                        
-                        <div class="answer-group">
-                            <?php for ($i = 1; $i <= 4; $i++): 
-                                $answer = $question["answer" . $i];
-                                if (!empty($answer)):
-                            ?>
+                    <fieldset class="answer-group">
+                        <legend class="visually-hidden">Answer options</legend>
+                        <?php for ($i = 1; $i <= 4; $i++): $key = 'answer' . $i; if (!empty($q[$key])): ?>
                             <label class="answer-option">
-                                <input type="radio" name="question_<?php echo $questionNumber; ?>" value="<?php echo $i; ?>">
-                                <span class="answer-text"><?php echo htmlspecialchars($answer); ?></span>
+                                <input type="radio" name="question_<?php echo $qNum; ?>" value="<?php echo $i; ?>">
+                                <span class="answer-text"><?php echo htmlspecialchars($q[$key]); ?></span>
                             </label>
-                            <?php endif; endfor; ?>
+                        <?php endif; endfor; ?>
+                    </fieldset>
+                </section>
+                <?php $qNum++; endforeach; ?>
+
+                <nav class="questionnaire-navigation" aria-label="Questionnaire Navigation">
+                    <button type="button" id="next-btn" class="nav-btn next-btn" disabled>Next Question</button>
+                    <button type="submit" id="submit-btn" class="nav-btn next-btn" style="display: none;">Complete Questionnaire</button>
+                </nav>
+            </form>
+
+            <section id="results-section" class="results-section" hidden>
+                <div class="results-container">
+                    <h1 class="results-title">Your Clan Has Been Revealed</h1>
+                    <div class="clan-result">
+                        <div class="clan-logo-container">
+                            <img id="clan-logo" src="" alt="" class="clan-logo">
+                        </div>
+                        <h2 id="clan-name" class="clan-name"></h2>
+                        <p id="clan-description" class="clan-description"></p>
+                        <div class="clan-stats">
+                            <h3>Your Clan Scores:</h3>
+                            <div id="all-clan-scores" class="all-clan-scores"></div>
                         </div>
                     </div>
-                    
-                    <?php 
-                    $questionNumber++;
-                    endforeach; 
-                    ?>
-
-                    <!-- Navigation Buttons -->
-                    <div class="questionnaire-navigation">
-                        <button type="button" id="next-btn" class="nav-btn next-btn" disabled>Next Question</button>
-                        <button type="submit" id="submit-btn" class="nav-btn submit-btn" style="display: none;">Complete Questionnaire</button>
-                    </div>
-                </form>
-
-                <!-- Results Section -->
-                <div id="results-section" class="results-section" style="display: none;">
-                    <div class="results-container">
-                        <h1 class="results-title">🌟 Your Clan Has Been Revealed 🌟</h1>
-                        <div class="clan-result">
-                            <div class="clan-logo-container">
-                                <img id="clan-logo" src="" alt="Clan Logo" class="clan-logo">
-                            </div>
-                            <h2 id="clan-name" class="clan-name"></h2>
-                            <p id="clan-description" class="clan-description"></p>
-                            <div class="clan-stats">
-                                <h3>Your Clan Scores:</h3>
-                                <div id="all-clan-scores" class="all-clan-scores"></div>
-                            </div>
-                        </div>
-                        <div class="results-actions">
-                            <button id="retake-btn" class="nav-btn">Retake Questionnaire</button>
-                            <button id="create-character-btn" class="nav-btn submit-btn">Create Character</button>
-                        </div>
+                    <div class="results-actions">
+                        <button id="retake-btn" class="nav-btn next-btn" type="button">Retake Questionnaire</button>
+                        <button id="create-character-btn" class="nav-btn next-btn" type="button">Create Character</button>
                     </div>
                 </div>
-            </div>
-        </main>
+            </section>
+        </div>
 
-        <!-- Footer -->
-        <footer class="valley-footer">
-            <div class="footer-container">
-                <div class="footer-content">
-                    <h2 class="footer-title">
-                        <a href="index.php">Valley by Night</a>
-                    </h2>
-                    <p class="footer-tagline">A Vampire Tale</p>
-                </div>
-                <div class="footer-bottom">
-                    <p class="copyright">© 2025 Valley by Night. All rights reserved.</p>
-                    <p class="disclaimer">Vampire: The Masquerade is a trademark of White Wolf Entertainment.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Pass questions data to JavaScript -->
-    <script>
-        const questionsData = <?php echo json_encode($questions); ?>;
-        const testingMode = <?php echo $testingMode ? 'true' : 'false'; ?>;
-        
-        if (testingMode) {
-            // Skip questionnaire and go directly to test clan results
-            document.addEventListener('DOMContentLoaded', function() {
-                const testClan = '<?php echo $_GET['test'] ?? 'brujah'; ?>';
-                showTestClanResults(testClan);
-            });
-        } else if (!questionsData || questionsData.length === 0) {
-            throw new Error("No questions data available. Database may be empty or corrupted.");
-        }
-    </script>
-    
-    <!-- Include external JavaScript file -->
-    <script src="js/questionnaire.js"></script>
-</body>
-</html>
+        <script>
+            // Expose questions to JS for scoring via clanWeight1..4 when present
+            const questionsData = <?php echo json_encode($questions); ?>;
+        </script>
+        <script src="js/questionnaire.js"></script>
+<?php include __DIR__ . '/includes/footer.php'; ?>

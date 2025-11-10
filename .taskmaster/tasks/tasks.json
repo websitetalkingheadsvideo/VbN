@@ -152,11 +152,82 @@
         ],
         "status": "pending",
         "subtasks": []
+      },
+      {
+        "id": 53,
+        "title": "Audit admin/agents.php layout against existing admin panel components",
+        "description": "Conduct a comprehensive visual and code audit of the new admin/agents.php layout to identify discrepancies in containers, typography, spacing, and button styles compared to existing admin UI components, then prepare a detailed change list for alignment.",
+        "details": "1. Open admin/agents.php in browser and take screenshots of all sections\n2. Compare with existing admin panel pages (dashboard, users, settings, etc.) to establish baseline UI patterns:\n   - Container widths, margins, and padding standards\n   - Typography hierarchy (h1, h2, h3, p, labels) and font sizes\n   - Button styles, colors, hover states, and sizing\n   - Form element styling and spacing\n   - Table layouts and cell padding\n   - Navigation and breadcrumb patterns\n3. Document current admin/agents.php CSS classes and inline styles\n4. Create detailed comparison matrix identifying specific discrepancies:\n   - Container: wrapper divs, content areas, sidebar alignment\n   - Typography: heading sizes, font weights, line heights, color values\n   - Spacing: margins between sections, padding within elements\n   - Buttons: primary/secondary styles, dimensions, border radius\n5. Generate prioritized change list with specific CSS modifications needed\n6. Include before/after mockups or annotated screenshots\n7. Note any custom styling that should be preserved vs. standardized\n8. Document recommended CSS class names to match existing admin conventions",
+        "testStrategy": "Review change list with UI/UX team for completeness. Cross-reference identified discrepancies by viewing admin/agents.php alongside 3-4 other admin pages in split-screen mode. Validate that all major UI components (headers, forms, tables, buttons) are covered in the audit. Confirm change list includes specific CSS selectors and property values for each required modification.",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Capture current admin panel layout patterns",
+            "description": "Review admin/admin_panel.php and note container classes, card markup, spacing utilities, typography, and button styles that define the standard admin visual language.",
+            "details": "<info added on 2025-11-09T12:18:10.697Z>\nEstablished baseline admin styling patterns from admin_panel.php analysis:\n\nContainer Structure:\n- Main wrapper: div.admin-panel-container.container-fluid.py-4.px-3.px-md-4 with max-width 1600px\n- Custom font definitions in inline style block\n\nTypography Hierarchy:\n- Primary titles: display-5, lead, text-light, fw-bold, fst-italic classes\n- Section headers: h2.h6.text-light.mb-0 or similar text-light headings\n- Supporting text: text-light/text-muted combinations\n- Emoji prefixes for section names (🔧 for Characters)\n- Font references: --font-brand/body variables\n\nNavigation Pattern:\n- Container: div.admin-nav.row.g-2.g-md-3.mb-4\n- Button wrapper: col-* responsive columns\n- Button styling: nav-btn.btn.btn-outline-danger.btn-sm.w-100.text-center\n- Active state: .active class application\n\nComponent Styling:\n- Stats widgets: .stat-mini elements with gradient backgrounds, borders, centered typography\n- Grid system: Bootstrap responsive columns (col-12 col-sm-4 col-lg-3)\n- Cards/tables: dark gradient backgrounds with #8B0000 borders\n- Consistent btn-outline-danger palette for all buttons\n- Layout spacing: Bootstrap rows with g-* spacing and mb-4 margin utilities\n\nThese patterns will serve as the reference standard for agents.php refactoring to ensure visual consistency across the admin interface.\n</info added on 2025-11-09T12:18:10.697Z>",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 53
+          },
+          {
+            "id": 2,
+            "title": "Document discrepancies on admin/agents.php",
+            "description": "Walk through admin/agents.php markup to log deviations from the standard admin layout (containers, card styles, typography, spacing, button classes) and flag any missing shared includes.",
+            "details": "<info added on 2025-11-09T12:18:23.720Z>\nReviewed G:\\VbN\\admin\\agents.php for mismatches:\n- Page wrapper lacks admin-panel-container class; uses body.no-scroll and container-fluid py-4 but without px-3/px-md-4 padding and custom typography.\n- Inline <style> block defines ad-hoc .agent-card, .no-scroll styles; deviates from theme and violates external CSS rule (should reuse admin styles rather than local overrides).\n- Cards rely on .card default styling without gradient background or crimson border used elsewhere; typography uses default Bootstrap rather than text-light palettes.\n- Buttons inside cards use btn-primary/btn-outline-secondary instead of btn-outline-danger scheme; inconsistent sizes (btn-sm but colors differ).\n- Data access paths rendered with <code> elements that inherit default colors (likely dark on dark background when theme applied) — need theme-consistent text-muted styling.\n- No global background wrapper providing dark theme; page likely shows white background given missing admin layout classes.\n- Header area: h1.h3 text-dark default, lacks emoji or themed fonts.\n- Planned agents list is simple ul with default bullets; may need styling to match admin typography/text-muted.\nThese require swapping to shared classes, removing inline styles, and aligning button palette with btn-outline-danger variations.\n</info added on 2025-11-09T12:18:23.720Z>",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 53
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "title": "Implement admin/agents.php UI standardization and navigation integration",
+        "description": "Update admin/agents.php to use standard admin panel card/grid structure and typography based on approved audit findings, then add Agents navigation entry to admin_panel.php for dashboard accessibility.",
+        "details": "1. Wait for Task 53 audit approval and review the detailed change list for required UI modifications\n2. Update admin/agents.php layout structure:\n   - Replace custom containers with standard admin card/grid classes\n   - Apply consistent typography hierarchy (h1, h2, h3, p, labels) matching other admin pages\n   - Update button styles to mirror existing admin panel buttons exactly (colors, hover states, sizing)\n   - Standardize form element styling and spacing\n   - Align table layouts and cell padding with admin standards\n   - Ensure responsive grid behavior matches other admin pages\n3. Preserve all existing PHP data logic and backend functionality - only modify HTML structure and CSS classes\n4. Add navigation entry to admin/admin_panel.php:\n   - Locate existing navigation menu structure\n   - Insert new \"Agents\" menu item following established patterns\n   - Use consistent icon, styling, and URL structure\n   - Position appropriately within menu hierarchy\n5. Test navigation flow from dashboard to agents page\n6. Verify all existing functionality remains intact after UI changes",
+        "testStrategy": "Verify admin/agents.php visually matches other admin pages in terms of layout, typography, and button styles through side-by-side comparison. Test all existing functionality (CRUD operations, filtering, pagination) to ensure PHP logic remains unaffected. Confirm new Agents navigation entry appears correctly in admin dashboard and links properly to agents page. Test responsive behavior across different screen sizes. Validate HTML markup follows admin panel conventions and CSS classes are consistent with existing pages.",
+        "status": "done",
+        "dependencies": [
+          53
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Refactor agents page layout with shared admin classes",
+            "description": "Apply the audit findings to admin/agents.php: swap in the standard admin container markup, card styles, typography classes, and spacing utilities without touching PHP logic.",
+            "details": "<info added on 2025-11-09T12:19:34.546Z>\nExtend scope to include building the new Agents summary row between the stats and questionnaire sections. Requirements: integrate Bootstrap row/col cards for Agents overview, include entries for the Agents dashboard and Laws Agent, reserve space for future cards, and ensure styles mirror admin_panel.php components. Keep PHP logic intact while reusing shared admin classes and removing inline styles.\n</info added on 2025-11-09T12:19:34.546Z>",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 54
+          },
+          {
+            "id": 2,
+            "title": "Expose agents page via admin panel navigation",
+            "description": "Insert an Agents navigation button into admin/admin_panel.php alongside the existing section links, matching markup, classes, order, and iconography conventions.",
+            "details": "<info added on 2025-11-09T12:19:44.030Z>\nCreate Agents nav button in admin_panel.php using 👥 icon (two silhouettes) and consistent btn-outline-danger styling; position near existing section links. Remove any existing Laws Agent link from the header include so the only access points are in the new Agents row and nav button. Confirm markup mirrors surrounding buttons and maintains responsive grid sizing.\n</info added on 2025-11-09T12:19:44.030Z>",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 54
+          },
+          {
+            "id": 3,
+            "title": "Verify visual parity and link routing",
+            "description": "Compare the updated agents page against the admin panel for layout and styling parity, ensure no scrollbars appear unexpectedly, and test the new navigation link routes to /admin/agents.php.",
+            "details": "",
+            "status": "done",
+            "dependencies": [],
+            "parentTaskId": 54
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-10-07T00:02:45.247Z",
-      "updated": "2025-11-06T07:30:47.724Z",
+      "updated": "2025-11-09T12:29:31.980Z",
       "description": "Tasks for master context"
     }
   },

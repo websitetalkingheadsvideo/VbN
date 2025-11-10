@@ -1,0 +1,29 @@
+.archive-dashboard .card {
+    border-radius: 0.75rem;
+}
+
+.archive-dashboard .card .card-body .display-6 {
+    font-size: 2.25rem;
+}
+
+.archive-dashboard .table code {
+    font-size: 0.85rem;
+    color: #d63384;
+}
+
+.archive-dashboard .table tbody tr td {
+    vertical-align: middle;
+}
+
+.archive-dashboard .btn-group .btn {
+    min-width: 120px;
+}
+
+.archive-dashboard .accordion-button {
+    font-size: 0.95rem;
+}
+
+.archive-dashboard .badge {
+    font-size: 0.75rem;
+}
+

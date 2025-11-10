@@ -1,0 +1,31 @@
+Square portrait of Marisol "Roadrunner" Vega, a Gangrel from Valley by Night, depicted in a cinematic World of Darkness style with desert‑night courier aesthetics. Alert, resilient, focused; black felt cowboy hat (simple leather band), long straight black hair, red bandana around the neck, classic denim jacket and jeans, scuffed boots; small silver and turquoise earrings glint subtly. She stands atop a freeway overpass beside a concrete pillar marked with a faint coterie sigil (subtle), the dual‑sport bike parked against the barrier behind her, handlebars and frame rendered as soft bokeh. Her gaze is toward the middle distance, scanning for movement.
+
+Lighting is strictly nocturnal and moody: cool teal moonlight as the key with a sodium‑vapor road‑light accent and a soft rim catching hat brim and shoulder; shallow depth of field, light dust/haze carried on a desert breeze. Film‑still realism, restrained intensity.
+
+Emphasize traits: Quick, Agile, Nimble, Enduring, Resilient, Observant, Perceptive, Determined
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, exaggerated anatomy, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, gore, graphic violence, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Identity references are implied (Salt River Reservation context without explicit signage). Keep the sigil subtle; the bike stays present but de‑emphasized. Favor practical gear and wind/dust cues over glam; maintain grounded, feral poise without overt claws or fangs.
+
+Variant — High‑Contrast Graffiti Overpass
+Square portrait of Marisol "Roadrunner" Vega, a Gangrel from Valley by Night, atop a freeway overpass with vivid graffiti murals. Alert, resilient, focused; black cowboy hat, long straight black hair, red bandana at the neck, denim jacket and jeans, silver and turquoise earrings. She stands near a concrete pillar and barrier splashed with colorful graffiti tags and stencil art (teal, magenta, amber accents), the dual‑sport bike parked against the barrier behind her, softly out of focus. Expression is watchful, scanning the middle distance.
+
+Lighting is darker and higher contrast: deep shadows with a cool teal moonlight key; saturated sodium‑vapor spill from the roadway; selective amber/neon reflections that make the graffiti colors pop; a crisp rim catching hat brim, cheek, and shoulder. Film‑still realism, shallow depth of field, subtle dust/haze from traffic. Strictly nocturnal — no daylight cues.
+
+Emphasize traits: Quick, Agile, Nimble, Enduring, Resilient, Observant, Perceptive, Determined
+
+Negative Prompt (variant addendum): muddy, low‑contrast, washed‑out colors, overexposed highlights, flat lighting, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers
+
+Variant — Darker, Deeper DoF, Minimal Overhead
+Square portrait of Marisol "Roadrunner" Vega atop a freeway overpass at night, rendered darker with richer shadows and a touch more depth of field. Black cowboy hat, long straight black hair, red bandana at neck, denim jacket and jeans, silver/turquoise earrings; concrete pillar with faint coterie sigil; dual‑sport bike parked against the barrier, now more legible but still secondary.
+
+Lighting is low and directional: cut the overhead/canopy light; use a low‑angle cool teal moonlight side key and a selective sodium spill from the roadway below; add a lean, crisp rim along the hat brim and jacket edge. Exposure sits darker overall with high contrast; midtones compressed; speculars controlled. Depth of field is increased slightly (medium‑shallow) so the pillar graffiti/sigil and the bike read more clearly while background city lights remain softened. Strictly nocturnal—no daylight cues.
+
+Emphasize traits: Quick, Agile, Nimble, Enduring, Resilient, Observant, Perceptive, Determined
+
+Negative Prompt (variant addendum): bright overhead light, canopy top‑light, floodlit scene, flat top‑down lighting, washed‑out midtones, daylight, sunlight, daytime, blue sky, sunbeams, window daylight

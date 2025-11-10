@@ -1,0 +1,12 @@
+Square portrait of Tariq Ibrahim, a Followers of Set Kindred from Valley by Night, in a 1970s swinger-meets-gothic-cult aesthetic. Alluring, elegant, commanding; deep burgundy velvet blazer with wide satin lapels, black silk shirt open at the collar (two buttons), thicker gold chain with serpent medallion, gold signet ring; calm, persuasive gaze. Private VIP ritual lounge with walnut paneling, patterned wallpaper embossed with subtle serpent sigils, smoked-glass/mirrored bar reflections, velvet banquette, multiple candles and faint incense haze. Moody, medium-high contrast: warm amber candle key on the face with a cool teal rim from the right; minimal rim on hair and shoulders. Film-still realism, shallow depth of field, subtle haze and dust motes, restrained intensity.
+
+Emphasize traits: Alluring, Charismatic, Commanding, Persuasive, Elegant, Eloquent, Cunning, Discerning, Shrewd
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, exaggerated anatomy, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Maintains a "private" VIP tier where Setite rites are thinly veiled as immersive theater; tone stays elegant, persuasive, and controlled.
+

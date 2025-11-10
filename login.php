@@ -75,15 +75,18 @@ if (file_exists($loginDisableFile)) {
                 }
                 ?>
                 
-                <form action="login_process.php" method="POST" class="login-form d-flex flex-column gap-4">
+                <form action="login_process.php" method="POST" class="login-form d-flex flex-column gap-4 needs-validation" novalidate>
                 <div class="form-group mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" id="username" name="username" required autofocus>
+                    <input type="text" id="username" name="username" class="form-control" required autofocus aria-describedby="usernameHelp">
+                    <div id="usernameHelp" class="form-text">Enter your account username.</div>
+                    <div class="invalid-feedback">Username is required.</div>
                 </div>
                 
                 <div class="form-group mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                    <div class="invalid-feedback">Password is required.</div>
                 </div>
                 
                     <button type="submit" class="login-btn">Enter the Chronicle</button>
@@ -95,5 +98,6 @@ if (file_exists($loginDisableFile)) {
             <?php endif; ?>
         </div>
     </div>
+    <script src="js/form_validation.js"></script>
 </body>
 </html>

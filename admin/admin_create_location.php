@@ -20,18 +20,15 @@ define('LOTN_VERSION', '0.2.1');
 // Get location ID if editing
 $location_id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 $is_edit = $location_id !== null;
+<?php
+// Extra CSS for this page (consumed by includes/header.php)
+$extra_css = [
+    'css/style.css',
+    'css/admin_location.css',
+];
+include __DIR__ . '/../includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $is_edit ? 'Edit' : 'Create' ?> Location - VbN Admin</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin_location.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+    <!-- Page content -->
     <div class="admin-container">
         <div class="admin-header">
             <h1><i class="fas fa-map-marker-alt"></i> <?= $is_edit ? 'Edit' : 'Create' ?> Location</h1>
@@ -39,22 +36,23 @@ $is_edit = $location_id !== null;
             <a href="admin_locations.php" class="btn-secondary">← Back to Locations</a>
         </div>
 
-        <form id="location-form" class="location-form">
+        <form id="location-form" class="location-form needs-validation" novalidate>
             <input type="hidden" id="location_id" value="<?= $location_id ?>">
 
             <!-- Basic Information Section -->
             <section class="form-section">
                 <h2><i class="fas fa-info-circle"></i> Basic Information</h2>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Location Name *</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="name" class="form-label">Location Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" required aria-describedby="nameHelp">
+                        <div class="invalid-feedback">Please enter a location name.</div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="location_type">Type of Location *</label>
-                        <select id="location_type" name="location_type" required>
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="location_type" class="form-label">Type of Location *</label>
+                        <select id="location_type" name="location_type" class="form-select" required>
                             <option value="">-- Select Type --</option>
                             <option value="Haven">Haven</option>
                             <option value="Elysium">Elysium</option>
@@ -68,33 +66,34 @@ $is_edit = $location_id !== null;
                             <option value="Wilderness">Wilderness Area</option>
                             <option value="Other">Other</option>
                         </select>
+                        <div class="invalid-feedback">Please select a location type.</div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="summary">Short Summary</label>
-                    <input type="text" id="summary" name="summary" maxlength="500" 
-                           placeholder="Brief one-line description">
-                    <small>Max 500 characters - Quick overview for lists</small>
+                <div class="form-group mb-3">
+                    <label for="summary" class="form-label">Short Summary</label>
+                    <input type="text" id="summary" name="summary" class="form-control" maxlength="500" 
+                           placeholder="Brief one-line description" aria-describedby="summaryHelp">
+                    <small id="summaryHelp" class="form-text">Max 500 characters - Quick overview for lists</small>
                 </div>
 
-                <div class="form-group">
-                    <label for="description">Full Description (POV Style)</label>
-                    <textarea id="description" name="description" rows="6"
-                              placeholder="Describe the location as if the character is experiencing it..."></textarea>
-                    <small>Write from the character's perspective - what they see, hear, smell, feel</small>
+                <div class="form-group mb-3">
+                    <label for="description" class="form-label">Full Description (POV Style)</label>
+                    <textarea id="description" name="description" class="form-control" rows="6"
+                              placeholder="Describe the location as if the character is experiencing it..." aria-describedby="descriptionHelp"></textarea>
+                    <small id="descriptionHelp" class="form-text">Write from the character's perspective - what they see, hear, smell, feel</small>
                 </div>
 
-                <div class="form-group">
-                    <label for="notes">GM Notes (Private)</label>
-                    <textarea id="notes" name="notes" rows="4"
+                <div class="form-group mb-3">
+                    <label for="notes" class="form-label">GM Notes (Private)</label>
+                    <textarea id="notes" name="notes" class="form-control" rows="4"
                               placeholder="Admin/storyteller notes not visible to players..."></textarea>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="status">Status *</label>
-                        <select id="status" name="status" required>
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="status" class="form-label">Status *</label>
+                        <select id="status" name="status" class="form-select" required>
                             <option value="Active">Active</option>
                             <option value="Abandoned">Abandoned</option>
                             <option value="Destroyed">Destroyed</option>
@@ -102,13 +101,15 @@ $is_edit = $location_id !== null;
                             <option value="Contested">Contested</option>
                             <option value="Hidden">Hidden/Secret</option>
                         </select>
+                        <div class="invalid-feedback">Please select a status.</div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="status_notes">Status Notes</label>
-                        <input type="text" id="status_notes" name="status_notes" 
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="status_notes" class="form-label">Status Notes</label>
+                        <input type="text" id="status_notes" name="status_notes" class="form-control"
                                placeholder="Additional details about status...">
                     </div>
+                    <div class="invalid-feedback">Please select a status.</div>
                 </div>
             </section>
 
@@ -116,30 +117,30 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-map"></i> Geography</h2>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="district">District/Area</label>
-                        <input type="text" id="district" name="district" 
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="district" class="form-label">District/Area</label>
+                        <input type="text" id="district" name="district" class="form-control"
                                placeholder="e.g., Downtown Phoenix, Scottsdale, Tempe">
                     </div>
 
-                    <div class="form-group">
-                        <label for="address">Street Address</label>
-                        <input type="text" id="address" name="address" 
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="address" class="form-label">Street Address</label>
+                        <input type="text" id="address" name="address" class="form-control"
                                placeholder="Optional street address">
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="latitude">Latitude</label>
-                        <input type="number" id="latitude" name="latitude" step="0.000001" 
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="latitude" class="form-label">Latitude</label>
+                        <input type="number" id="latitude" name="latitude" class="form-control" step="0.000001" 
                                placeholder="33.4484">
                     </div>
 
-                    <div class="form-group">
-                        <label for="longitude">Longitude</label>
-                        <input type="number" id="longitude" name="longitude" step="0.000001" 
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="longitude" class="form-label">Longitude</label>
+                        <input type="number" id="longitude" name="longitude" class="form-control" step="0.000001" 
                                placeholder="-112.0740">
                     </div>
                 </div>
@@ -149,10 +150,10 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-key"></i> Ownership & Control</h2>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="owner_type">Ownership Type *</label>
-                        <select id="owner_type" name="owner_type" required>
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="owner_type" class="form-label">Ownership Type *</label>
+                        <select id="owner_type" name="owner_type" class="form-select" required>
                             <option value="">-- Select Type --</option>
                             <option value="Individual">Individual Character</option>
                             <option value="Coterie">Coterie (Shared Group)</option>
@@ -161,19 +162,21 @@ $is_edit = $location_id !== null;
                             <option value="Contested">Contested (Multiple Claimants)</option>
                             <option value="Public">Public/Neutral</option>
                         </select>
+                        <div class="invalid-feedback">Please select an ownership type.</div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="owner_notes">Ownership Notes</label>
-                        <textarea id="owner_notes" name="owner_notes" rows="2"
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="owner_notes" class="form-label">Ownership Notes</label>
+                        <textarea id="owner_notes" name="owner_notes" class="form-control" rows="2"
                                   placeholder="Who specifically owns/controls this location?"></textarea>
                     </div>
+                    <div class="invalid-feedback">Please select an ownership type.</div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="faction">Faction Affiliation</label>
-                        <select id="faction" name="faction">
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="faction" class="form-label">Faction Affiliation</label>
+                        <select id="faction" name="faction" class="form-select">
                             <option value="">-- None/Neutral --</option>
                             <option value="Camarilla">Camarilla</option>
                             <option value="Anarch">Anarch</option>
@@ -183,9 +186,9 @@ $is_edit = $location_id !== null;
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="access_control">Access Control *</label>
-                        <select id="access_control" name="access_control" required>
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="access_control" class="form-label">Access Control *</label>
+                        <select id="access_control" name="access_control" class="form-select" required>
                             <option value="">-- Select Access Level --</option>
                             <option value="Public">Public (Anyone Can Enter)</option>
                             <option value="Open">Open (Sect Members)</option>
@@ -194,12 +197,14 @@ $is_edit = $location_id !== null;
                             <option value="Threshold">Threshold (Vampire Invitation Rules)</option>
                             <option value="Elysium">Elysium (Special Rules)</option>
                         </select>
+                        <div class="invalid-feedback">Please select an access control level.</div>
                     </div>
+                    <div class="invalid-feedback">Please select an access control level.</div>
                 </div>
 
-                <div class="form-group">
-                    <label for="access_notes">Access Control Details</label>
-                    <textarea id="access_notes" name="access_notes" rows="2"
+                <div class="form-group mb-3">
+                    <label for="access_notes" class="form-label">Access Control Details</label>
+                    <textarea id="access_notes" name="access_notes" class="form-control" rows="2"
                               placeholder="Who can enter? What are the specific rules or requirements?"></textarea>
                 </div>
             </section>
@@ -208,8 +213,8 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-shield-alt"></i> Security Features</h2>
                 
-                <div class="form-group">
-                    <label>Security Level</label>
+                <div class="form-group mb-3">
+                    <label class="form-label">Security Level</label>
                     <div class="radio-group">
                         <label><input type="radio" name="security_level" value="1"> 1 - Minimal</label>
                         <label><input type="radio" name="security_level" value="2"> 2 - Basic</label>
@@ -254,9 +259,9 @@ $is_edit = $location_id !== null;
                     </label>
                 </div>
 
-                <div class="form-group">
-                    <label for="security_notes">Security Details</label>
-                    <textarea id="security_notes" name="security_notes" rows="2"
+                <div class="form-group mb-3">
+                    <label for="security_notes" class="form-label">Security Details</label>
+                    <textarea id="security_notes" name="security_notes" class="form-control" rows="2"
                               placeholder="Additional security details, special measures, weaknesses..."></textarea>
                 </div>
             </section>
@@ -311,22 +316,22 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-users"></i> Social Features</h2>
                 
-                <div class="form-group">
-                    <label for="social_features">Social Importance & Features</label>
-                    <textarea id="social_features" name="social_features" rows="4"
+                <div class="form-group mb-3">
+                    <label for="social_features" class="form-label">Social Importance & Features</label>
+                    <textarea id="social_features" name="social_features" class="form-control" rows="4"
                               placeholder="Status/prestige value, meeting space capacity, entertainment facilities, mortal fronts, social significance..."></textarea>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="capacity">Capacity (People)</label>
-                        <input type="number" id="capacity" name="capacity" min="1" 
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="capacity" class="form-label">Capacity (People)</label>
+                        <input type="number" id="capacity" name="capacity" class="form-control" min="1" 
                                placeholder="How many can gather here?">
                     </div>
 
-                    <div class="form-group">
-                        <label for="prestige_level">Prestige Level</label>
-                        <select id="prestige_level" name="prestige_level">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="prestige_level" class="form-label">Prestige Level</label>
+                        <select id="prestige_level" name="prestige_level" class="form-select">
                             <option value="0">None</option>
                             <option value="1">Minor</option>
                             <option value="2">Moderate</option>
@@ -342,7 +347,7 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-magic"></i> Supernatural Features</h2>
                 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label class="toggle-label">
                         <input type="checkbox" id="has_supernatural" name="has_supernatural" value="1">
                         <span>This location has supernatural properties</span>
@@ -350,17 +355,17 @@ $is_edit = $location_id !== null;
                 </div>
 
                 <div id="supernatural-fields" style="display: none;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="node_points">Node Points</label>
-                            <input type="number" id="node_points" name="node_points" min="0" max="10" 
+                    <div class="form-row row g-3">
+                        <div class="form-group mb-3 col-12 col-md-6">
+                            <label for="node_points" class="form-label">Node Points</label>
+                            <input type="number" id="node_points" name="node_points" class="form-control" min="0" max="10" 
                                    placeholder="0-10">
-                            <small>Magical energy available at this location (typically 0-5 for minor, 6-10 for major nodes)</small>
+                            <small class="form-text">Magical energy available at this location (typically 0-5 for minor, 6-10 for major nodes)</small>
                         </div>
 
-                        <div class="form-group">
-                            <label for="node_type">Node Type</label>
-                            <select id="node_type" name="node_type">
+                        <div class="form-group mb-3 col-12 col-md-6">
+                            <label for="node_type" class="form-label">Node Type</label>
+                            <select id="node_type" name="node_type" class="form-select">
                                 <option value="">None</option>
                                 <option value="Standard">Standard</option>
                                 <option value="Corrupted">Corrupted</option>
@@ -394,10 +399,10 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-sitemap"></i> Location Relationships</h2>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="parent_location">Part of Larger Location</label>
-                        <select id="parent_location" name="parent_location">
+                <div class="form-row row g-3">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="parent_location" class="form-label">Part of Larger Location</label>
+                        <select id="parent_location" name="parent_location" class="form-select">
                             <option value="">-- None (Standalone) --</option>
                             <option value="1">Example Building</option>
                             <option value="2">Example District</option>
@@ -405,9 +410,9 @@ $is_edit = $location_id !== null;
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="relationship_type">Relationship Type</label>
-                        <select id="relationship_type" name="relationship_type">
+                    <div class="form-group mb-3 col-12 col-md-6">
+                        <label for="relationship_type" class="form-label">Relationship Type</label>
+                        <select id="relationship_type" name="relationship_type" class="form-select">
                             <option value="">-- None --</option>
                             <option value="Room In">Room/Suite In</option>
                             <option value="Floor Of">Floor Of</option>
@@ -429,11 +434,11 @@ $is_edit = $location_id !== null;
             <section class="form-section">
                 <h2><i class="fas fa-image"></i> Location Image</h2>
                 
-                <div class="form-group">
-                    <label for="image">Image URL</label>
-                    <input type="url" id="image" name="image" 
-                           placeholder="https://example.com/location-image.jpg">
-                    <small>Optional image to represent this location</small>
+                <div class="form-group mb-3">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input type="url" id="image" name="image" class="form-control"
+                           placeholder="https://example.com/location-image.jpg" aria-describedby="imageHelp">
+                    <small id="imageHelp" class="form-text">Optional image to represent this location</small>
                 </div>
             </section>
 
@@ -448,8 +453,7 @@ $is_edit = $location_id !== null;
             </div>
         </form>
     </div>
-
-    <script src="js/admin_location.js"></script>
-</body>
-</html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../js/admin_location.js"></script>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 

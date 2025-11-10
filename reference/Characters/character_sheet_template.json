@@ -2,6 +2,8 @@
   "character_name": "",
   "player_name": "",
   "chronicle": "Valley by Night",
+  "current_state": "active",
+  "camarilla_status": "Unknown",
   "nature": "",
   "demeanor": "",
   "concept": "",
@@ -9,39 +11,51 @@
   "generation": 13,
   "sire": "",
   "pc": 1,
+  "appearance": "",
+  "description": "",
   "biography": "",
   "character_image": null,
   "equipment": "",
   "notes": "",
   "agentNotes": null,
   "actingNotes": null,
-  "status": "draft",
+  "status": "active",
   "total_xp": 30,
   "spent_xp": 0,
   "custom_data": {},
-  
+  "status_details": {
+    "current_state": "active",
+    "camarilla_status": "Unknown",
+    "xp_total": 30,
+    "xp_spent": 0,
+    "xp_available": 30,
+    "health_levels": 7,
+    "blood_pool_current": 10,
+    "blood_pool_maximum": 10
+  },
+
   "traits": {
     "Physical": [],
     "Social": [],
     "Mental": []
   },
-  
+
   "negativeTraits": {
     "Physical": [],
     "Social": [],
     "Mental": []
   },
-  
+
   "abilities": [],
-  
+
   "ability_specializations": [],
-  
+
   "disciplines": [],
-  
+
   "backgrounds": {},
-  
+
   "backgroundDetails": {},
-  
+
   "morality": {
     "path_name": "Humanity",
     "path_rating": 7,
@@ -52,28 +66,19 @@
     "willpower_current": 5,
     "humanity": 7
   },
-  
+
   "merits_flaws": [],
-  
-  "status": {
-    "sect_status": "",
-    "clan_status": "",
-    "city_status": "",
-    "health_levels": 7,
-    "blood_pool_current": 10,
-    "blood_pool_maximum": 10
-  },
-  
+
   "coteries": [],
-  
+
   "relationships": [],
-  
+
   "rituals": [],
-  
+
   "specializations": {},
-  
+
   "research_notes": {},
-  
+
   "artifacts": []
 }
 

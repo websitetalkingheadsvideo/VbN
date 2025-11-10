@@ -326,44 +326,46 @@ define('LOTN_VERSION', '0.2.0');
             </ul>
         </div>
 
-        <form method="POST">
+        <form method="POST" class="needs-validation" novalidate>
             <?php if ($edit_mode): ?>
                 <input type="hidden" name="npc_id" value="<?php echo (int)$npc_data['id']; ?>">
             <?php endif; ?>
 
-            <div class="form-group">
-                <label class="required">Character Name</label>
-                <input type="text" name="character_name" 
+            <div class="form-group mb-3">
+                <label class="required form-label">Character Name</label>
+                <input type="text" name="character_name" class="form-control"
                        value="<?php echo htmlspecialchars($npc_data['character_name'] ?? $_POST['character_name'] ?? ''); ?>" 
                        required>
+                <div class="invalid-feedback">Please provide a character name.</div>
             </div>
 
-            <div class="form-group">
-                <label>Clan</label>
-                <input type="text" name="clan" 
+            <div class="form-group mb-3">
+                <label class="form-label">Clan</label>
+                <input type="text" name="clan" class="form-control"
                        value="<?php echo htmlspecialchars($npc_data['clan'] ?? $_POST['clan'] ?? ''); ?>"
                        placeholder="e.g., Gangrel, Nosferatu, Toreador, or leave blank if unknown">
             </div>
 
-            <div class="form-group">
-                <label class="required">Linked To</label>
-                <input type="text" name="linked_to" 
+            <div class="form-group mb-3">
+                <label class="required form-label">Linked To</label>
+                <input type="text" name="linked_to" class="form-control"
                        value="<?php echo htmlspecialchars($npc_data['linked_to'] ?? $_POST['linked_to'] ?? ''); ?>" 
                        required
                        placeholder="e.g., Cordelia Fairchild, Player Character Name">
+                <div class="invalid-feedback">Please provide a linked entity.</div>
             </div>
 
-            <div class="form-group">
-                <label>Introduced In</label>
-                <input type="text" name="introduced_in" 
+            <div class="form-group mb-3">
+                <label class="form-label">Introduced In</label>
+                <input type="text" name="introduced_in" class="form-control"
                        value="<?php echo htmlspecialchars($npc_data['introduced_in'] ?? $_POST['introduced_in'] ?? ''); ?>"
                        placeholder="e.g., Cordelia Fairchild.json">
                 <div class="hint">Filename where this character was first mentioned</div>
             </div>
 
-            <div class="form-group">
-                <label>Status</label>
-                <select name="status">
+            <div class="form-group mb-3">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select">
                     <?php
                     $statuses = [
                         '💡 Concept Only' => 'Concept Only',
@@ -381,21 +383,21 @@ define('LOTN_VERSION', '0.2.0');
                 </select>
             </div>
 
-            <div class="form-group">
-                <label>Summary</label>
-                <textarea name="summary" rows="5" placeholder="Brief description of who they are, their role, key relationships..."><?php echo htmlspecialchars($npc_data['summary'] ?? $_POST['summary'] ?? ''); ?></textarea>
+            <div class="form-group mb-3">
+                <label class="form-label">Summary</label>
+                <textarea name="summary" class="form-control" rows="5" placeholder="Brief description of who they are, their role, key relationships..."><?php echo htmlspecialchars($npc_data['summary'] ?? $_POST['summary'] ?? ''); ?></textarea>
                 <div class="hint">Who they are, their position, relationships to other characters</div>
             </div>
 
-            <div class="form-group">
-                <label>Plot Hooks</label>
-                <textarea name="plot_hooks" rows="5" placeholder="How they could be used in story, potential conflicts, alliances, complications..."><?php echo htmlspecialchars($npc_data['plot_hooks'] ?? $_POST['plot_hooks'] ?? ''); ?></textarea>
+            <div class="form-group mb-3">
+                <label class="form-label">Plot Hooks</label>
+                <textarea name="plot_hooks" class="form-control" rows="5" placeholder="How they could be used in story, potential conflicts, alliances, complications..."><?php echo htmlspecialchars($npc_data['plot_hooks'] ?? $_POST['plot_hooks'] ?? ''); ?></textarea>
                 <div class="hint">How this character could drive plot, create conflicts, or enable story arcs</div>
             </div>
 
-            <div class="form-group">
-                <label>Mentioned Details</label>
-                <textarea name="mentioned_details" rows="5" placeholder="Only include details explicitly stated in source material: generation, disciplines, personality traits, etc."><?php echo htmlspecialchars($npc_data['mentioned_details'] ?? $_POST['mentioned_details'] ?? ''); ?></textarea>
+            <div class="form-group mb-3">
+                <label class="form-label">Mentioned Details</label>
+                <textarea name="mentioned_details" class="form-control" rows="5" placeholder="Only include details explicitly stated in source material: generation, disciplines, personality traits, etc."><?php echo htmlspecialchars($npc_data['mentioned_details'] ?? $_POST['mentioned_details'] ?? ''); ?></textarea>
                 <div class="hint">ONLY details from source material - don't invent or assume anything</div>
             </div>
 
@@ -409,6 +411,5 @@ define('LOTN_VERSION', '0.2.0');
             </div>
         </form>
     </div>
-</body>
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 

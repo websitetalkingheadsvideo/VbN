@@ -1,0 +1,74 @@
+{
+  "agent_name": "Character Agent",
+  "version": "0.1",
+  "description": "Monitors, analyzes, and summarizes character data for the Valley by Night chronicle.",
+  "paths": {
+    "characters_folder": "../../data/Characters/",
+    "history_folder": "../../data/History/",
+    "plots_folder": "../../data/Plots/",
+    "reports_folder": "../reports/",
+    "log_file": "../logs/agent_activity.log"
+  },
+  "watch_settings": {
+    "enable_file_watch": true,
+    "watch_interval_minutes": 30,
+    "file_types": [
+      ".json",
+      ".md"
+    ],
+    "report_on_change": true
+  },
+  "report_settings": {
+    "daily_report": true,
+    "weekly_summary": true,
+    "include_plot_hooks": true,
+    "include_relationship_map": true,
+    "output_format": "markdown",
+    "max_hooks_per_character": 3
+  },
+  "tone_and_lore_constraints": {
+    "chronicle_title": "Valley by Night",
+    "setting_year": 1994,
+    "masquerade_rules": true,
+    "tone_keywords": [
+      "Cinematic",
+      "World of Darkness",
+      "Noir",
+      "Tragic",
+      "Personal Horror",
+      "Political Intrigue"
+    ],
+    "forbidden_themes": [
+      "overt Sabbat revelations",
+      "technological anachronisms",
+      "modern slang",
+      "breaking the Masquerade"
+    ]
+  },
+  "lore_sources": {
+    "chronicle_summary": "../../../Valley_by_Night_Chronicle_Summary.md",
+    "cinematic_guide": "../../../Valley_by_Night_Cinematic_Intro_Guide.md",
+    "character_art_guide": "../../../Valley_by_Night_Character_Art_Guide.json"
+  },
+  "output_rules": {
+    "auto_write": false,
+    "require_human_approval": true,
+    "cite_sources": true,
+    "timestamp_reports": true,
+    "file_naming_pattern": "character_brief_{character_name}_{date}.md"
+  },
+  "integration": {
+    "admin_panel_url": "https://vbn.talkingheads.video/admin/admin_panel.php",
+    "database_sync": false,
+    "future_agents": [
+      "boon_agent",
+      "influence_agent",
+      "rumor_agent"
+    ]
+  },
+  "meta": {
+    "maintainer": "Andy",
+    "last_updated": "2025-11-09",
+    "notes": "Full folder structure initialized for Character Agent."
+  }
+}

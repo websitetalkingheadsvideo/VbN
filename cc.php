@@ -228,11 +228,11 @@ $version = LOTN_VERSION;
                     </div>
 
                     <!-- Navigation Buttons -->
-                    <div class="questionnaire-navigation">
+                    <nav class="questionnaire-navigation" aria-label="Questionnaire Navigation">
                         <button type="button" id="prev-btn" class="nav-btn prev-btn" disabled>Previous</button>
                         <button type="button" id="next-btn" class="nav-btn next-btn" disabled>Next</button>
                         <button type="submit" id="submit-btn" class="nav-btn submit-btn" style="display: none;">Discover Your Clan</button>
-                    </div>
+                    </nav>
                 </form>
 
                 <!-- Results Section (Hidden Initially) -->

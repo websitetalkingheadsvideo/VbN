@@ -227,16 +227,17 @@ include __DIR__ . '/../includes/header.php';
         </div>
         
         <?php if (!$currentBypassStatus['enabled']): ?>
-        <form method="POST">
+        <form method="POST" class="needs-validation" novalidate>
             <input type="hidden" name="action" value="enable_bypass">
-            <div class="form-group">
-                <label for="bypass_hours">Enable Bypass For (hours):</label>
-                <input type="number" id="bypass_hours" name="bypass_hours" value="1" min="1" max="24" required>
+            <div class="form-group mb-3">
+                <label for="bypass_hours" class="form-label">Enable Bypass For (hours):</label>
+                <input type="number" id="bypass_hours" name="bypass_hours" class="form-control" value="1" min="1" max="24" required>
+                <div class="invalid-feedback">Please enter hours between 1 and 24.</div>
             </div>
             <button type="submit" class="btn btn-enable">✅ Enable Authentication Bypass</button>
         </form>
         <?php else: ?>
-        <form method="POST">
+        <form method="POST" class="needs-validation" novalidate>
             <input type="hidden" name="action" value="disable_bypass">
             <button type="submit" class="btn btn-disable">🚫 Disable Bypass Immediately</button>
         </form>
@@ -261,11 +262,12 @@ include __DIR__ . '/../includes/header.php';
         </div>
         
         <?php if (!$currentStatus['disabled']): ?>
-        <form method="POST">
+        <form method="POST" class="needs-validation" novalidate>
             <input type="hidden" name="action" value="disable">
-            <div class="form-group">
-                <label for="hours">Disable Login For (hours):</label>
-                <input type="number" id="hours" name="hours" value="1" min="1" max="24" required>
+            <div class="form-group mb-3">
+                <label for="hours" class="form-label">Disable Login For (hours):</label>
+                <input type="number" id="hours" name="hours" class="form-control" value="1" min="1" max="24" required>
+                <div class="invalid-feedback">Please enter hours between 1 and 24.</div>
             </div>
             <button type="submit" class="btn btn-disable">🚫 Disable Login</button>
         </form>
@@ -282,6 +284,5 @@ include __DIR__ . '/../includes/header.php';
             </p>
         </div>
     </div>
-</body>
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 

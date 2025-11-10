@@ -62,7 +62,7 @@ function render_status_badge($status) {
     </div>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav row g-2 g-md-3 mb-4">
+    <nav class="admin-nav row g-2 g-md-3 mb-4" aria-label="Admin Navigation">
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Characters</a>
         </div>
@@ -84,7 +84,7 @@ function render_status_badge($status) {
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="boon_ledger.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">💎 Boons</a>
         </div>
-    </div>
+    </nav>
     
     <!-- Action Bar -->
     <div class="action-bar d-flex justify-content-between align-items-center mb-4">
@@ -130,14 +130,14 @@ function render_status_badge($status) {
 </div>
 
 <!-- Boon Modal -->
-<div id="boonModal" class="modal">
+<div id="boonModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="boonForm">
     <div class="modal-content">
         <div class="modal-header-section">
             <h2 class="modal-title">💎 <span id="modalTitle">New Boon</span></h2>
             <button class="modal-close" onclick="closeBoonModal()">×</button>
         </div>
         
-        <form id="boonForm">
+        <form id="boonForm" class="needs-validation" novalidate>
             <input type="hidden" id="boonId" name="boon_id">
             
             <div class="form-group mb-3">
@@ -151,6 +151,7 @@ function render_status_badge($status) {
                     <?php endforeach; ?>
                     <option value="__CUSTOM__">-- Custom / Other --</option>
                 </select>
+                <div class="invalid-feedback">Please select a giver or provide a custom name.</div>
                 <input type="text" id="giverNameCustom" name="giver_name_custom" 
                        class="form-control bg-dark text-light border-danger mt-2" 
                        placeholder="Enter custom name" 
@@ -169,6 +170,7 @@ function render_status_badge($status) {
                     <?php endforeach; ?>
                     <option value="__CUSTOM__">-- Custom / Other --</option>
                 </select>
+                <div class="invalid-feedback">Please select a receiver or provide a custom name.</div>
                 <input type="text" id="receiverNameCustom" name="receiver_name_custom" 
                        class="form-control bg-dark text-light border-danger mt-2" 
                        placeholder="Enter custom name" 
@@ -184,6 +186,7 @@ function render_status_badge($status) {
                     <option value="Major">Major</option>
                     <option value="Life">Life</option>
                 </select>
+                <div class="invalid-feedback">Please select a boon type.</div>
             </div>
             
             <div class="form-group mb-3">
@@ -215,7 +218,7 @@ function render_status_badge($status) {
 </div>
 
 <!-- Delete Confirmation Modal -->
-<div id="deleteBoonModal" class="modal">
+<div id="deleteBoonModal" class="modal" role="dialog" aria-modal="true" aria-label="Confirm Deletion" aria-describedby="deleteBoonInfo">
     <div class="modal-content">
         <h2 class="modal-title">⚠️ Confirm Deletion</h2>
         <p class="modal-message">Delete boon:</p>
@@ -307,6 +310,7 @@ function render_status_badge($status) {
 </style>
 
 <script src="../js/admin_boons.js"></script>
+<script src="../js/form_validation.js"></script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
 

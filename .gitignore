@@ -33,6 +33,9 @@ sync_config.jsonc
 config.env
 node_modules
 
+# Archives
+archive/
+
 # Logs
 logs
 *.log

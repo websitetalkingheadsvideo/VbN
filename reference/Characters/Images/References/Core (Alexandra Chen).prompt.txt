@@ -1,0 +1,15 @@
+Square portrait of Core (Alexandra Chen), a human resistance leader from Valley by Night, depicted in a cinematic World of Darkness style during a parking-garage ambush setup. Calm, disciplined, and tense—action about to start. Limited tactical gear: tailored dark jacket over a low-profile plate carrier, discreet earpiece, gloves; compact holster mostly concealed. She holds a small notebook in her non-dominant hand, pages dog-eared and marked; stance precise and controlled with a clearly feminine silhouette; sharp, assessing eyes.
+
+Facial morphology reveals her Nosferatu nature while retaining an unmistakably female presence: enlarged, pointed ears partially visible beneath tightly pulled-back hair; gaunt, angular yet subtly soft-featured visage with pronounced cheekbones; elongated incisors barely visible behind closed or slightly parted lips; cool pallor; deep-set, alert eyes that hold both human intelligence and predatory awareness. The transformation is subtle but unmistakable—she is both human resistance leader and Kindred, the tactical discipline of a mortal commander combined with the predatory grace of a vampire.
+
+Lighting is strictly nocturnal and low on overhead: reduce canopy light. Use a low, directional cool teal key from an open stairwell doorway; add a selective sodium-amber accent from a distant garage light; optional faint red alarm reflection on concrete for urgency. Keep high contrast with deep shadows, controlled speculars, and a crisp rim catching jawline, ear edge, and jacket edge. Background: numbered bay, concrete pillar, hazard striping and distant car silhouettes rendered as soft bokeh. Film-still realism, shallow-to-medium depth of field, subtle haze.
+
+Emphasize traits: Strategic, Disciplined, Tactical, Focused, Intelligent, Observant, Commanding, Resilient, Determined, Shrewd, Predatory, Alert
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low-res, flat lighting, bright overhead flood, washed-out midtones, overexposed highlights, cartoon, comedic, garish neon, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers, glam beauty retouch, glossy fashion look, zombie gore, mutilation, animal ears, elf cosplay, masculine proportions, bulky male physique
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Keep gear understated and practical; foreground the small notebook as mission planner's tool. Convey poised command under pressure—action imminent but not yet in motion. The Nosferatu features should be subtle but present, showing her dual nature as both human resistance leader and Kindred. Ensure the figure reads decisively female even with the monstrous traits. No gore or camp—eerie, controlled presence that suggests both mortal determination and vampire hunger.

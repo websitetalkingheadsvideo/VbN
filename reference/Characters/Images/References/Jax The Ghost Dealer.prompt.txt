@@ -1,0 +1,22 @@
+Square portrait of Jax "The Ghost Dealer", a Ravnos from Valley by Night, depicted in a cinematic World of Darkness style at a neon tarot stand under an overpass. Androgynous, charming, slightly haunted; shaved sides beneath layered colorful scarves, patched jacket/vest, fingerless gloves, ash‑stained fingers. A small table holds a tarot spread and a burning incense cone with curling smoke; trinket charms hang from string lights. Expression is engaged yet wary, eyes bright and observant.
+
+Lighting is strictly nocturnal and high‑contrast: warm amber/candle key on the face from the table, with a violet/magenta neon rim from a nearby “PSYCHIC” sign and cool teal shadow in the background. Film‑still realism, shallow depth of field, subtle haze from incense; colors remain saturated but tasteful (subtle, not gaudy). Chimerstry appears only as refined hints: a faint double‑exposure shimmer on the edge of a single tarot card and a soft after‑image in a small travel mirror—no overt glows or effects.
+
+Emphasize traits: Charismatic, Cunning, Creative, Resourceful, Observant, Wary, Unpredictable, Charming, Persuasive, Nimble
+
+No Daylight: strictly night or interior lighting; no daylight, sunbeams, or blue sky.
+
+Negative Prompt: blurry, low‑res, flat lighting, washed‑out colors, muddy contrast, overexposed highlights, cartoon, comedic, clownish, garish neon, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, gore, graphic violence, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Keep illusion cues subtle and elegant (card edge shimmer, mirror after‑image). Maintain androgynous styling with layered scarves and ash‑smudged fingers; emphasize color harmony (amber key + violet neon + teal shadows) without tipping into gaudy.
+
+Variant — Darker, Deeper DoF, Minimal Overhead
+Square portrait of Jax "The Ghost Dealer" at the neon tarot stand rendered darker with richer shadows and slightly increased depth of field. Androgynous; shaved sides with layered colorful scarves, patched vest, fingerless gloves, ash‑stained fingers. Tarot spread and a single incense cone on the table; small travel mirror and hanging charms.
+
+Lighting is low and directional: reduce any overhead/ambient canopy light. Use a low‑angle warm candle key from the table, a restrained violet/magenta neon side rim from the “PSYCHIC” sign, and cool teal background falloff. Exposure sits darker overall with higher contrast; midtones compressed; speculars controlled. Depth of field is increased a touch (medium‑shallow) so select props (cards, incense curl, mirror edge) remain readable while the background stays soft. Chimerstry remains subtle (card edge shimmer, faint mirror after‑image only). Strictly nocturnal.
+
+Emphasize traits: Charismatic, Cunning, Creative, Resourceful, Observant, Wary, Unpredictable, Charming, Persuasive, Nimble
+
+Negative Prompt (variant addendum): bright overhead light, top‑down floodlight, flat canopy lighting, washed‑out midtones, low contrast, daylight, sunlight, daytime, blue sky, sunbeams, window daylight

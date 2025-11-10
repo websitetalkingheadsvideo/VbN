@@ -65,17 +65,12 @@ $questions = db_fetch_all($conn,
     "",
     []
 );
+<?php
+$extra_css = [
+    'css/admin_questionnaire.css'
+];
+include __DIR__ . '/../includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionnaire Admin - Valley by Night</title>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/admin_questionnaire.css">
-</head>
-<body>
     <div class="admin-container">
         <div class="admin-header">
             <h1>🦇 Questionnaire Admin Panel</h1>
@@ -94,12 +89,12 @@ $questions = db_fetch_all($conn,
         <!-- Add New Question Form -->
         <div class="question-form">
             <h2>Add New Question</h2>
-            <form method="POST">
+            <form method="POST" class="needs-validation" novalidate>
                 <input type="hidden" name="action" value="add">
                 
-                <div class="form-group">
-                    <label for="category">Category:</label>
-                    <select name="category" id="category" required>
+                <div class="form-group mb-3">
+                    <label for="category" class="form-label">Category:</label>
+                    <select name="category" id="category" class="form-select" required>
                         <option value="">Select Category</option>
                         <option value="embrace">Embrace</option>
                         <option value="personality">Personality</option>
@@ -117,51 +112,55 @@ $questions = db_fetch_all($conn,
                         <option value="power">Power</option>
                         <option value="life">Life</option>
                     </select>
+                    <div class="invalid-feedback">Please select a category.</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="question">Question:</label>
-                    <textarea name="question" id="question" required></textarea>
+                <div class="form-group mb-3">
+                    <label for="question" class="form-label">Question:</label>
+                    <textarea name="question" id="question" class="form-control" required></textarea>
+                    <div class="invalid-feedback">Please enter the question text.</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="answer1">Answer 1:</label>
-                    <input type="text" name="answer1" id="answer1" required>
+                <div class="form-group mb-3">
+                    <label for="answer1" class="form-label">Answer 1:</label>
+                    <input type="text" name="answer1" id="answer1" class="form-control" required>
+                    <div class="invalid-feedback">Answer 1 is required.</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="answer2">Answer 2:</label>
-                    <input type="text" name="answer2" id="answer2" required>
+                <div class="form-group mb-3">
+                    <label for="answer2" class="form-label">Answer 2:</label>
+                    <input type="text" name="answer2" id="answer2" class="form-control" required>
+                    <div class="invalid-feedback">Answer 2 is required.</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="answer3">Answer 3:</label>
-                    <input type="text" name="answer3" id="answer3">
+                <div class="form-group mb-3">
+                    <label for="answer3" class="form-label">Answer 3:</label>
+                    <input type="text" name="answer3" id="answer3" class="form-control">
                 </div>
                 
-                <div class="form-group">
-                    <label for="answer4">Answer 4:</label>
-                    <input type="text" name="answer4" id="answer4">
+                <div class="form-group mb-3">
+                    <label for="answer4" class="form-label">Answer 4:</label>
+                    <input type="text" name="answer4" id="answer4" class="form-control">
                 </div>
                 
-                <div class="form-group">
-                    <label for="clanWeight1">Clan Weight 1 (format: clan:points,clan:points):</label>
-                    <input type="text" name="clanWeight1" id="clanWeight1" placeholder="ventrue:3,tremere:2">
+                <div class="form-group mb-3">
+                    <label for="clanWeight1" class="form-label">Clan Weight 1 (format: clan:points,clan:points):</label>
+                    <input type="text" name="clanWeight1" id="clanWeight1" class="form-control" placeholder="ventrue:3,tremere:2">
                 </div>
                 
-                <div class="form-group">
-                    <label for="clanWeight2">Clan Weight 2:</label>
-                    <input type="text" name="clanWeight2" id="clanWeight2" placeholder="tremere:3,nosferatu:2">
+                <div class="form-group mb-3">
+                    <label for="clanWeight2" class="form-label">Clan Weight 2:</label>
+                    <input type="text" name="clanWeight2" id="clanWeight2" class="form-control" placeholder="tremere:3,nosferatu:2">
                 </div>
                 
-                <div class="form-group">
-                    <label for="clanWeight3">Clan Weight 3:</label>
-                    <input type="text" name="clanWeight3" id="clanWeight3" placeholder="brujah:3,gangrel:2">
+                <div class="form-group mb-3">
+                    <label for="clanWeight3" class="form-label">Clan Weight 3:</label>
+                    <input type="text" name="clanWeight3" id="clanWeight3" class="form-control" placeholder="brujah:3,gangrel:2">
                 </div>
                 
-                <div class="form-group">
-                    <label for="clanWeight4">Clan Weight 4:</label>
-                    <input type="text" name="clanWeight4" id="clanWeight4" placeholder="malkavian:3,nosferatu:2">
+                <div class="form-group mb-3">
+                    <label for="clanWeight4" class="form-label">Clan Weight 4:</label>
+                    <input type="text" name="clanWeight4" id="clanWeight4" class="form-control" placeholder="malkavian:3,nosferatu:2">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Add Question</button>
@@ -297,5 +296,5 @@ $questions = db_fetch_all($conn,
     </div>
 
     <script src="../js/admin_questionnaire.js"></script>
-</body>
-</html>
+    <script src="../js/form_validation.js"></script>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -55,6 +55,12 @@ function openBriefingModal(characterId) {
     currentCharacterId = characterId;
     const modal = document.getElementById('briefingModal');
     modal.classList.add('active');
+    const bc = document.getElementById('briefingContent');
+    if (bc) {
+      bc.setAttribute('aria-live','polite');
+      bc.setAttribute('aria-busy','true');
+      bc.textContent = 'Loading character briefing...';
+    }
     
     // Fetch character data
     fetch(`api_npc_briefing.php?id=${characterId}`)
@@ -62,14 +68,19 @@ function openBriefingModal(characterId) {
         .then(data => {
             if (data.success) {
                 displayBriefing(data);
+                if (bc) bc.setAttribute('aria-busy','false');
             } else {
-                document.getElementById('briefingContent').innerHTML = 
-                    `<p style="color: red;">Error: ${data.message}</p>`;
+                if (bc) {
+                  bc.innerHTML = `<p style="color: red;">Error: ${data.message}</p>`;
+                  bc.setAttribute('aria-busy','false');
+                }
             }
         })
         .catch(error => {
-            document.getElementById('briefingContent').innerHTML = 
-                `<p style="color: red;">Error loading character data: ${error}</p>`;
+            if (bc) {
+              bc.innerHTML = `<p style="color: red;">Error loading character data: ${error}</p>`;
+              bc.setAttribute('aria-busy','false');
+            }
         });
 }
 

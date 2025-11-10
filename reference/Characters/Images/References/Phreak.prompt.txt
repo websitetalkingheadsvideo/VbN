@@ -1,0 +1,17 @@
+Square portrait of Phreak, a Nosferatu from Valley by Night, depicted in a cinematic World of Darkness style with industrial undercity aesthetics. Clever, analytical, restless; hooded tech jacket with integrated cabling, fingerless gloves, subtle facial asymmetry and textured skin partially obscured by shadow; cyber-interface port glinting beneath hair; intense, hyper-focused gaze. He stands in a damp service tunnel/server alcove: brick and riveted steel, leaking pipes, chain-link, flickering monitors and terminal glow reflected on wet concrete.
+
+Lighting is moody, high on shadow: cold teal monitor light as key, thin sickly sodium/amber accent from a distant bulb, and a razor rim catching cheekbone and hood edge. Composition favors negative space and partial concealment of features; film-still realism, shallow depth of field, light mist and condensation, gritty texture.
+
+Emphasize traits: Clever, Cunning, Analytical, Focused, Observant, Shrewd, Intelligent, Quick, Creative, Resourceful
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, handsome glamour, beauty retouch, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers
+
+Settings (SDXL example): model: SDXL 1.0; sampler: DPM++ 2M Karras; steps: 30; cfg: 5.5; seed: -1; size: 1024x1024
+
+Notes: Nosferatu information broker and hacker-keep features grounded, partially obscured, and unsettling but dignified; avoid glossy cyberpunk neon overload.
+
+Variant - Monitor Wall (90s retro-futurist)
+Square portrait of Phreak, a Nosferatu from Valley by Night, in a 90s retro-futurist hacker bunker. Clever, analytical, unsettling; hooded tech jacket with integrated cabling, fingerless gloves, subtle facial asymmetry and textured skin half in shadow; a cyber-interface port glints beneath hair; hyper-focused gaze. He stands before a wall of mismatched CRT monitors stacked in a lattice, green phosphor code and camera feeds flickering; screens unobstructed and clearly visible; cables bundled and routed behind the monitors or along the sides-no wires crossing the glass; bundles of ribbon and coax cables, salvaged server racks, hydraulic struts and oil-stained metal panels suggest a claustrophobic ship interior. Lighting is moody and high on shadow: green CRT glow as the key, a sickly sodium/amber bulb as accent, scattered red status LEDs, and a razor rim outlining hood and cheekbone. Film-still realism, shallow depth of field, faint screen haze and cable-borne dust, gritty texture; avoid glossy neon.
+
+Negative Prompt: blurry, low-res, flat lighting, overexposed, underexposed, cartoon, comedic, handsome glamour, beauty retouch, daylight, sunlight, daytime, blue sky, sunbeams, window daylight, watermark, text, logo, extra fingers, wires across screens, cables over screens, occluded monitors, foreground cables
+

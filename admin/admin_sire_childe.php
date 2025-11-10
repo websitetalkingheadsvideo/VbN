@@ -24,7 +24,7 @@ include __DIR__ . '/../includes/header.php';
     <p class="panel-subtitle">Track vampire lineage and blood bonds in the city</p>
     
     <!-- Admin Navigation -->
-    <div class="admin-nav">
+    <nav class="admin-nav" aria-label="Admin Navigation">
         <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
         <a href="admin_sire_childe.php" class="nav-btn active">🧛 Sire/Childe</a>
         <a href="admin_sire_childe_enhanced.php" class="nav-btn">🔍 Enhanced Analysis</a>
@@ -32,7 +32,7 @@ include __DIR__ . '/../includes/header.php';
         <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
         <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
         <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
-    </div>
+    </nav>
     
     <!-- Relationship Statistics -->
     <div class="relationship-stats">
@@ -182,17 +182,17 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <!-- Add/Edit Relationship Modal -->
-<div id="relationshipModal" class="modal">
+<div id="relationshipModal" class="modal" role="dialog" aria-modal="true" aria-label="Edit Relationship" aria-describedby="relationshipForm">
     <div class="modal-content">
         <h2 class="modal-title">🧛 <span id="modalTitle">Add Relationship</span></h2>
         <button class="modal-close" onclick="closeRelationshipModal()">×</button>
         
-        <form id="relationshipForm">
+        <form id="relationshipForm" class="needs-validation" novalidate>
             <input type="hidden" id="characterId" name="character_id">
             
-            <div class="form-group">
-                <label for="characterSelect">Vampire:</label>
-                <select id="characterSelect" name="character_name" required>
+            <div class="form-group mb-3">
+                <label for="characterSelect" class="form-label">Vampire:</label>
+                <select id="characterSelect" name="character_name" class="form-select" required>
                     <option value="">Select a vampire...</option>
                     <?php
                     $char_query = "SELECT id, character_name FROM characters ORDER BY character_name";
@@ -204,11 +204,12 @@ include __DIR__ . '/../includes/header.php';
                     }
                     ?>
                 </select>
+                <div class="invalid-feedback">Please select a vampire.</div>
             </div>
             
-            <div class="form-group">
-                <label for="sireSelect">Sire:</label>
-                <select id="sireSelect" name="sire">
+            <div class="form-group mb-3">
+                <label for="sireSelect" class="form-label">Sire:</label>
+                <select id="sireSelect" name="sire" class="form-select">
                     <option value="">No sire (Sireless)</option>
                     <?php
                     $sire_query = "SELECT id, character_name FROM characters ORDER BY character_name";
@@ -222,9 +223,9 @@ include __DIR__ . '/../includes/header.php';
                 </select>
             </div>
             
-            <div class="form-group">
-                <label for="relationshipNotes">Notes:</label>
-                <textarea id="relationshipNotes" name="notes" placeholder="Additional notes about this relationship..."></textarea>
+            <div class="form-group mb-3">
+                <label for="relationshipNotes" class="form-label">Notes:</label>
+                <textarea id="relationshipNotes" name="notes" class="form-control" placeholder="Additional notes about this relationship..."></textarea>
             </div>
             
             <div class="modal-actions">
@@ -437,4 +438,5 @@ function viewCharacter(characterId) {
 }
 </script>
 
+<script src="../js/form_validation.js"></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

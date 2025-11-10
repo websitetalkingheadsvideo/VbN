@@ -1,0 +1,85 @@
+# Product Requirements Document: Character Description Tab
+
+## Overview
+Add a new tab to the character creation page (`lotn_char_create.php`) that appears before the "Final Details" tab. This tab will contain fields for character appearance, biography, and notes.
+
+## Background
+Currently, the character creation flow goes through tabs: Basic Info → Traits → Abilities → Disciplines → Backgrounds → Morality → Merits & Flaws → Final Details. Users need a dedicated place to add descriptive text about their character before finalizing.
+
+## Goals
+- Provide a dedicated tab for character description fields (appearance, biography, notes)
+- Maintain consistency with existing tab styling and structure
+- Ensure data is saved and loaded properly with character data
+- Position the new tab logically before Final Details
+
+## Requirements
+
+### Functional Requirements
+1. **New Tab Creation**
+   - Add a new tab button labeled "Description" or "Character Description" before "Final Details"
+   - Tab should follow the same styling pattern as existing tabs
+   - Tab should be accessible via tab navigation system
+
+2. **Form Fields**
+   - **Appearance Field**: Large textarea for character physical description
+   - **Biography Field**: Large textarea for character background story
+   - **Notes Field**: Large textarea for player notes/storyteller notes
+   - All fields should be styled consistently with other form fields in the application
+
+3. **Data Persistence**
+   - Fields must save to database when character is saved
+   - Fields must load from database when editing existing character
+   - Data should be included in character export/finalization
+
+4. **Tab Navigation**
+   - Tab should integrate with existing tab navigation system
+   - Previous/Next buttons should work correctly
+   - Tab progress indicator should include the new tab
+
+### Technical Requirements
+1. **HTML Structure**
+   - Add new tab button in the tabs container (before "Final Details")
+   - Create new tab-content div with id "descriptionTab" or similar
+   - Use existing tab-card structure for consistency
+
+2. **JavaScript Integration**
+   - Update TabManager.js to include new tab in tabs array
+   - Ensure tab switching works correctly
+   - Add field IDs that match database column names (appearance, biography, notes)
+
+3. **Database Schema**
+   - Verify characters table has columns for: appearance, biography, notes
+   - If columns don't exist, document need for migration
+   - Ensure save/load functions handle these fields
+
+4. **Styling**
+   - Use existing CSS classes (tab-card, card-header, card-title, form-group, etc.)
+   - Textareas should match existing form-control styling
+   - Ensure responsive design works on mobile devices
+
+## User Stories
+1. As a player, I want to describe my character's appearance so that others can visualize them
+2. As a player, I want to write my character's biography so I can establish their background
+3. As a player, I want to add notes about my character so I can track important details
+4. As a player, I want these fields to be saved automatically when I save my character
+
+## Success Criteria
+- New tab appears before "Final Details" tab
+- All three fields (appearance, biography, notes) are present and functional
+- Data saves and loads correctly
+- Tab styling matches existing tabs
+- Navigation between tabs works smoothly
+- Mobile responsive design maintained
+
+## Out of Scope
+- Rich text editing (plain textareas only)
+- Image uploads in this tab (handled elsewhere)
+- Character validation based on description content
+- Auto-generation of descriptions
+
+## Technical Notes
+- Check existing database schema for appearance/biography/notes columns
+- Review TabManager.js for tab management patterns
+- Review save_character.php for data saving patterns
+- Ensure consistency with existing form field styling
+

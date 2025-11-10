@@ -46,18 +46,15 @@ foreach ($all_items as $item) {
 }
 
 define('LOTN_VERSION', '0.2.1');
+<?php
+// Page CSS consumed by header include
+$extra_css = [
+    'css/style.css',
+    'css/admin_equipment.css',
+];
+include __DIR__ . '/../includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Equipment Manager - VbN</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin_equipment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
     <div class="admin-equipment-container">
         <div class="admin-header">
             <h1><i class="fas fa-shield-alt"></i> Admin Equipment Manager</h1>
@@ -185,6 +182,5 @@ define('LOTN_VERSION', '0.2.1');
         // Pass PHP data to JavaScript
         const itemsData = <?= json_encode($all_items) ?>;
     </script>
-    <script src="js/admin_equipment.js"></script>
-</body>
-</html>
+    <script src="../js/admin_equipment.js"></script>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

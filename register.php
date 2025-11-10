@@ -44,30 +44,34 @@ if (isset($_SESSION['user_id'])) {
             }
             ?>
             
-            <form action="register_process.php" method="POST" class="login-form d-flex flex-column gap-4">
+            <form action="register_process.php" method="POST" class="login-form d-flex flex-column gap-4 needs-validation" novalidate>
                 <div class="form-group mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" id="username" name="username" required autofocus 
+                    <input type="text" id="username" name="username" class="form-control" required autofocus 
                            minlength="3" maxlength="50"
                            pattern="[a-zA-Z0-9_]+"
                            title="Username must be 3-50 characters, letters, numbers, and underscores only">
+                    <div class="invalid-feedback">Username must be 3-50 chars (letters, numbers, underscores).</div>
                 </div>
                 
                 <div class="form-group mb-3">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
                 </div>
                 
                 <div class="form-group mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" name="password" required 
+                    <input type="password" id="password" name="password" class="form-control" required 
                            minlength="8"
                            title="Password must be at least 8 characters">
+                    <div class="invalid-feedback">Password must be at least 8 characters.</div>
                 </div>
                 
                 <div class="form-group mb-3">
                     <label for="confirm_password" class="form-label">Confirm Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" required>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                    <div class="invalid-feedback">Please confirm your password.</div>
                 </div>
                 
                 <button type="submit" class="login-btn">Create Account</button>
@@ -78,6 +82,38 @@ if (isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
+    <script src="js/form_validation.js"></script>
+    <script>
+      // Client-side password match validation
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form.needs-validation');
+        if (!form) return;
+        const pwd = document.getElementById('password');
+        const confirm = document.getElementById('confirm_password');
+        if (!pwd || !confirm) return;
+
+        // Ensure an invalid-feedback element exists for confirm password
+        let fb = confirm.parentElement.querySelector('.invalid-feedback.mismatch');
+        if (!fb) {
+          fb = document.createElement('div');
+          fb.className = 'invalid-feedback mismatch';
+          fb.textContent = 'Passwords must match.';
+          confirm.parentElement.appendChild(fb);
+        }
+
+        function validateMatch() {
+          if (confirm.value && pwd.value !== confirm.value) {
+            confirm.setCustomValidity('Passwords must match');
+          } else {
+            confirm.setCustomValidity('');
+          }
+        }
+
+        pwd.addEventListener('input', validateMatch);
+        confirm.addEventListener('input', validateMatch);
+        form.addEventListener('submit', validateMatch);
+      });
+    </script>
 </body>
 </html>
 

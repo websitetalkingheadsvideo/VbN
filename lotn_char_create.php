@@ -21,19 +21,14 @@ if (isAuthBypassEnabled() && !isset($_SESSION['user_id'])) {
 
 // Database connection
 include 'includes/connect.php';
+<?php
+$extra_css = [
+  'css/style.css',
+  'css/character_image.css',
+  'css/exit-button.css'
+];
+include __DIR__ . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Character - Laws of the Night</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Nosifer&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/character_image.css">
-    <link rel="stylesheet" href="css/exit-button.css">
-</head>
-<body>
     <!-- Sidebar Tracker -->
     <div class="sidebar">
         <h3>Character Progress</h3>
@@ -2953,5 +2948,4 @@ include 'includes/connect.php';
         }
     </script>
     <script src="js/character_image.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>

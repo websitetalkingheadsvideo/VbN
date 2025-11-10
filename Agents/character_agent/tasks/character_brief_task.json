@@ -1,0 +1,8 @@
+{
+  "task_name": "Generate Character Briefs",
+  "description": "Automatically summarize each character JSON and create a markdown brief.",
+  "schedule": "daily",
+  "output_path": "../reports/daily/",
+  "requires_approval": true,
+  "enabled": true
+}

@@ -1,0 +1,318 @@
+{
+    "generated_at": "2025-11-08T21:39:42+00:00",
+    "source": "characters table",
+    "characters": [
+        {
+            "id": 12,
+            "character_name": "Ardvark",
+            "character_image": "Ardvark.png",
+            "appearance": "Lean, weather-beaten Gangrel with sun-cracked skin and short dust-brown hair kept close to the scalp. Wears a coyote-brown hooded field jacket over a charcoal henley, desert scarf, and fingerless gloves; boots and gear are permanently dusted with grit and engine oil. His eyes stay narrow, reflective, and constantly scanning, and a scoped rifle is almost always slung across his chest.",
+            "biography": "Ardvark has patrolled the desert fringes around Phoenix for over a decade, a Gangrel scout who reads the land like a living map and sees threats before they become problems. Embraced in the early 1980s by a Gangrel who saw survival instincts in a drifter, Ardvark took to the desert and never looked back.\r\n\r\nHe operates from a network of hidden caches and temporary havens between Apache Junction and the Superstition Mountains, moving along the canals and dry riverbeds that mark Phoenix's edge. His customized dirt bike carries him across terrain most Kindred avoid, and his scoped rifle has ended threats before they reached the city.\r\n\r\nArdvark serves as an early warning system for the Phoenix Kindred. He watches for Sabbat movements from Guadalupe, tracks Garou patrols that control the deeper desert, and monitors the smuggling routes that Anarchs and independents use. He trades information and warnings for favors—ammunition, fuel, blood bags cached in safe locations, and occasional shelter when the sun threatens.\r\n\r\nHis relationship with other Gangrel is pragmatic. He occasionally crosses paths with Marisol \"Roadrunner\" Vega, who runs the faster courier routes; they share intelligence but keep separate territories. He knows of Kerry, the desert-wandering Gangrel who witnessed the 1973 Prince's staking, but avoids him—too much history, too much paranoia.\r\n\r\nThe Prince's death in 1994 has made Ardvark's role more critical than ever. With the Camarilla in chaos and every faction scrambling for power, the desert has become a highway for opportunists. He's seen increased Sabbat activity, more Anarch traffic, and Garou patrols pushing closer to the city limits. He doesn't take sides—he survives, and he makes sure those who pay attention survive too.\r\n\r\nArdvark's methods are simple: watch, warn, and when necessary, eliminate. He leaves subtle markers—coyote tracks arranged in patterns, rocks stacked in specific configurations—that those who know how to read can follow. His haven is wherever he can dig in before dawn, often in abandoned structures or natural caves, always with multiple escape routes.\r\n\r\nHe rarely enters Phoenix proper, preferring the outskirts where the city meets the desert. When he does come into the city, it's for business: trading intelligence, collecting favors owed, or warning of threats that could break the Masquerade. He speaks little, observes much, and disappears back into the darkness before most Kindred realize he was there.\r\n\r\nIn a city where politics kill faster than bullets, Ardvark is a reminder that the desert doesn't care about your clan or your sect—it only cares if you're strong enough to survive it.",
+            "notes": "Desert scout contact: trades intel on Sabbat movements, Garou patrols, and Anarch smuggling routes for ammunition, fuel, and blood caches. Uses coyote-track markers and stacked stones to signal warnings. Can arrange rapid extractions from the outskirts if treated with respect; betraying him risks the desert turning hostile."
+        },
+        {
+            "id": 26,
+            "character_name": "Andrei Radulescu",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 27,
+            "character_name": "Dr. Margaret Ashford",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 28,
+            "character_name": "James Whitmore",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 42,
+            "character_name": "Rembrandt Jones",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 43,
+            "character_name": "Violet 'The Confidence Queen'",
+            "character_image": "43_1761917743_6ea15cbd.jpg",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 44,
+            "character_name": "Jax 'The Ghost Dealer'",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Jax was a street hustler before the Embrace, peddling fake charms, talismans, and minor scams. Their Ravnos sire saw the potential to combine illusion and charisma, granting them Chimerstry to enhance their tricks. Now, Jax runs small-time psychic scams across the city, selling ghost removals, haunted trinkets, and protection spells. Some of their illusions have begun acting independently, creating problems Jax cannot fully control. Their personality is chaotic, charming, and unpredictable. They are androgynous in appearance, with bright eyes, shaved sides, colorful scarves, and ash-stained hands. Despite their bravado, a gnawing fear that something they created is now stalking them drives much of their behavior.",
+            "notes": "Street-level Ravnos con artist with unpredictable Chimerstry. Useful for chaos, plot hooks, and minor NPC antagonism. Prefers working alone, but will collaborate if profitable."
+        },
+        {
+            "id": 46,
+            "character_name": "Bayside Bob",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Bayside Bob served in the Coast Guard, where he earned his 'Bayside' nickname. During a patrol in a particular area, the crew affectionately referred to it as 'Bayside.' One of the female crew members playfully remarked that she was 'going Bayside with Bob,' and the joke stuck, earning him the nickname 'Bayside Bob.' His last posting was as a recruiter in the Phoenix office, a landlocked irony that he often jokes about. He was embraced sometime after 1981, adding a layer of mystery to his past. Bob arrived in Phoenix early in 1981 and has been a part of the city's undead scene ever since. By 1994, he has been in Phoenix for 13 years.\n\nThe Bali Hai, a Tiki-style Polynesian restaurant on Camelback Road, serves as a front for Anarch meetings and is the de facto gathering place for Anarchs in Phoenix. Despite the fading Tiki craze, Bob keeps the business running, ensuring it remains a viable gathering place for the faction. His laid-back nature and appreciation for vintage Americana and Tiki culture make him a stabilizing presence within the Anarch faction.",
+            "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc."
+        },
+        {
+            "id": 47,
+            "character_name": "Cordelia Fairchild",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Embraced in 1914 at the age of 28, Cordelia Fairchild was a socialite and art critic during the height of the American Gilded Age’s decline. Her Embrace came from a Toreador enamored with her ability to destroy reputations with a single whispered review. For decades she moved through Arizona’s small but decadent Kindred society, first establishing herself in Flagstaff, where she cultivated influence through the city’s business elite and railroad-connected families. By the late 1940s, she had relocated to Phoenix, bringing her mortal and Kindred contacts with her. Her rise was inevitable: by the 1950s she was recognized as the Harpy of the domain, her wit and cruelty wrapped in honeyed civility. In 1960, she orchestrated the social destruction of Darrell Buyers, a Nosferatu elder who once controlled the city’s mortal political machine. The scandal ended his influence and solidified Cordelia’s supremacy. She remains the Harpy to this night, as elegant as she is terrifying, a living reminder that in the Jyhad of whispers, words kill faster than blades.",
+            "notes": "Cordelia is the Harpy of Phoenix, controlling the city’s social order with surgical cruelty. She destroyed Nosferatu Elder Darrell Buyers in 1960 through social annihilation. She views most Kindred as subjects in her ongoing study of 'Grace under pressure'."
+        },
+        {
+            "id": 48,
+            "character_name": "Duke Tiki",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Duke Tiki was a celebrated sculptor and designer of Polynesian-inspired art and décor, capturing the essence of the mid-century Tiki craze. He was a regular at Bali Hai, holding court over rum cocktails and torchlight, sketching murals and carving idols that would adorn the lounges of the jet set. He wasn't Hawaiian or Polynesian himself—more of a mid-century romantic who saw escapism in the imagery of paradise—but he treated his craft as homage rather than kitsch. He believed Tiki culture was about inviting warmth and joy into a cold world.\n\nAmong his regulars was Bob, a man who didn't create but understood art. Bob saw the soul in his carvings and could articulate it better than the artist himself. That drew the Toreador's attention. He saw in Bob not a rival, but a rare admirer who truly 'saw.' After a long friendship, and with the Prince's blessing, he Embraced Bob—a testament to the Toreador belief that beauty and perception are equally divine.",
+            "notes": "ST notes, gameplay notes, personality traits, roleplaying hints, mechanical reminders, etc."
+        },
+        {
+            "id": 49,
+            "character_name": "Pistol Pete",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 50,
+            "character_name": "Sabine",
+            "character_image": "50_1761942326_4f021683.jpeg",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 51,
+            "character_name": "Sasha",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 52,
+            "character_name": "Sebastian",
+            "character_image": "52_1761942303_4f021683.jpeg",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 55,
+            "character_name": "Leo",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 57,
+            "character_name": "Betty",
+            "character_image": "57_1761917770_a960e538.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 60,
+            "character_name": "Lucien Marchand",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 62,
+            "character_name": "Sofia Alvarez",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 63,
+            "character_name": "Piston",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Originally generation 10, Piston committed diablerie on a Gangrel during the Los Angeles Anarch faction wars (late 1980s/early 1990s). A former Hell's Angels member embraced in mid-1980s LA by Fred Osmond, he adapted to Kindred life while maintaining his biker identity. He found the Anarch philosophy aligned with Hell's Angels anti-authority stance. During the LA Anarch Free State internal faction wars, he rose in power through combat prowess. In late 80s/early 90s during a gang clash, he frenzied in combat with a Gangrel enforcer. The Beast took over and he committed diablerie, gaining Fortitude but acquiring the mark. LA became too dangerous after the diablerie - Gangrel wanted revenge, faction was divided. He fled to Phoenix early-to-mid 1990s, established in Surprise, and embraced two former Hell's Angels (Butch Reed and Basher) to rebuild brotherhood. Now running criminal operations to fund acquisition of a bar.",
+            "notes": "Generation 9 Brujah Anarch. Originally generation 10, committed diablerie on Gangrel in LA. Now in Phoenix running criminal operations. Wants to acquire a bar for his coterie. Has two childer: Butch Reed and Basher. Marked by diablerie - black veins visible to Auspex users."
+        },
+        {
+            "id": 68,
+            "character_name": "Étienne Duvalier",
+            "character_image": "68_1761864977_09fd06ca.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 70,
+            "character_name": "Barry Horowitz",
+            "character_image": "70_1761917586_da3ffe05.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 71,
+            "character_name": "Jennifer Kwan",
+            "character_image": "71_1761917569_5db6b141.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 72,
+            "character_name": "Marcus Webb",
+            "character_image": "72_1761811769_0fa12396.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 87,
+            "character_name": "Kerry, the Gangrel",
+            "character_image": "87_1761917487_1f65b1dd.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 88,
+            "character_name": "Roland Cross",
+            "character_image": "88_1761917227_953c266e.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 89,
+            "character_name": "Pistol Pete",
+            "character_image": "",
+            "appearance": "",
+            "biography": "To capture and publicly humiliate a Camarilla elder to prove the establishment's weakness.",
+            "notes": "Haven: Abandoned skate shop (Mesa/Chandler border)"
+        },
+        {
+            "id": 90,
+            "character_name": "Sasha",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 92,
+            "character_name": "Adrian Leclair",
+            "character_image": "92_1762561016_a06ae8cc.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 95,
+            "character_name": "Core (Alexandra Chen)",
+            "character_image": "95_1762637244_fd1dc380.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 97,
+            "character_name": "Phreak",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 101,
+            "character_name": "Barry Washington",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Barry Washington was born to older parents in Phoenix, showing exceptional business acumen from a young age. Unbeknownst to him, Warner Jefferson began observing him in high school, subtly manipulating his path. Barry excelled at ASU, completing his MBA two years early at age 23. He was hired by Warner's venture capital firm, proved his value for a year, then spent two years as Warner's ghoul before being Embraced six months ago. His parents in Sun City believe he died in a car accident. Within days of his Embrace, Barry decided he wanted to become Prince someday - an ambition he keeps secret from Warner. He lives in a small room in Warner's penthouse, serving as his sire's eyes and ears in Kindred society while secretly planning to eventually surpass him. Barry is thoughtful, intelligent, and charismatic, deliberately avoiding making enemies while building a power base across Camarilla factions.",
+            "notes": "PLOT HOOK: One of Barry's parents will become a victim of the Malkavian serial killer, forcing him to confront his faked death and lost mortal connections. Barry is completely unaware that Warner has been manipulating his entire life since high school. The blood bond heavily influences his loyalty to Warner, though he doesn't recognize this. His ambition to become Prince puts him on a collision course with his sire - either Warner planned this all along, or it's the one thing he didn't anticipate. Barry has an unusually strong connection with the Nosferatu Primogen despite being Ventrue."
+        },
+        {
+            "id": 102,
+            "character_name": "Mr. Harold Ashby",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Harold Ashby was once a photographer specializing in funerary portraits. His obsession with the silence of death drew the attention of a Malkavian who Embraced him to preserve his 'art'. Now, Ashby lives in Sun City, staging ritualized murders of grieving elders as acts of 'preservation'. He manipulates his ghoul Tor through the promise of understanding the 'pattern beneath grief.' His havens are immaculate, filled with photographs of victims posed at peace.",
+            "notes": "Speaks in calm, teacherly tones. Prefers order and ritual over chaos. Sees each death as part of a divine pattern only he can interpret."
+        },
+        {
+            "id": 103,
+            "character_name": "Marisol \"Roadrunner\" Vega",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": "Knows Garou patrol patterns anecdotally; leaves coterie sigils on mile markers."
+        },
+        {
+            "id": 104,
+            "character_name": "Tariq Ibrahim",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": "Maintains a 'private' VIP tier where Setite rites are thinly veiled as immersive theater."
+        },
+        {
+            "id": 106,
+            "character_name": "Mr. Harold Ashby",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Harold Ashby was once a photographer specializing in funerary portraits. His obsession with the silence of death drew the attention of a Malkavian who Embraced him to preserve his 'art'. Now, Ashby lives in Sun City, staging ritualized murders of grieving elders as acts of 'preservation'. He manipulates his ghoul Tor through the promise of understanding the 'pattern beneath grief.' His havens are immaculate, filled with photographs of victims posed at peace.",
+            "notes": "Speaks in calm, teacherly tones. Prefers order and ritual over chaos. Sees each death as part of a divine pattern only he can interpret."
+        },
+        {
+            "id": 107,
+            "character_name": "Layla al-Sahr",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": "Layla's true assignment was not to perform the kill, but to extract the primary assassin after the hit. She was the backup and cleanup specialist, ensuring the contract ended cleanly with no trace. When the Prince fell, the first assassin--codename 'Anwar'--never appeared at the rendezvous point. Layla found only faint Quietus residue and signs of a struggle. Now stranded in Phoenix with her handler missing and extraction impossible, she must maintain her Malkavian cover under increasing suspicion while covertly searching for her lost comrade. Her predicament intertwines with the city's chaos: Misfortune's surprise 'childe,' Tremere investigation, and Harpy gossip all circle her presence. Whether she will vanish quietly, hunt for Anwar, or accept a new role within Phoenix's deadly politics remains uncertain."
+        },
+        {
+            "id": 108,
+            "character_name": "Misfortune",
+            "character_image": "",
+            "appearance": "",
+            "biography": "Born in the 1860s, the man who would become Misfortune was a successful snake oil salesman, traveling the American West with elaborate pitches and convincing performances. His talent for reading marks and spinning believable lies caught the attention of Jeremiah 'Prophet' Blackwood, a Malkavian elder who saw potential in the young charlatan's gift for manipulation.\n\nEmbraced in the 1880s, Misfortune quickly adapted to unlife, applying his mortal skills to the Jyhad. He relocated to San Francisco, where the thriving Camarilla court provided ample opportunities to practice his craft. There, he began his lifelong obsession with collecting boons, treating social debts like the patent medicine receipts of his mortal days.\n\nThe expansion of the railroad system triggered a new fixation. Misfortune became fascinated with trains--their schedules, their routes, the way they connected the growing nation. When Arizona's railroad boom began, he followed the tracks south, eventually settling in the Phoenix area as it transformed from frontier outpost to growing city.\n\nOne fateful night outside Flagstaff, Misfortune discovered Cordelia Fairchild's sire trapped on a train as dawn approached. Using his knowledge of the rail system and quick thinking, he extracted the elder from the train and sheltered him in his haven until safe transportation could be arranged. This act created a blood debt that would prove invaluable--when Cordelia later came to Phoenix, the alliance between Misfortune and the Fairchild line was already cemented.\n\nHis ascension to Primogen came not through violence but through absence. When the position opened, no other Malkavian wanted the responsibility, and the Prince of the time lacked the political capital to prevent it. Misfortune accepted with theatrical flair, transforming the role into a platform for his true ambition: controlling Phoenix's social web through the Harpy network. Behind his jester's mask and maddening riddles lies a patient manipulator who has spent over a century perfecting the art of the deal.\n\nHis true name, if he ever had one beyond his charlatan's stage names, has been forgotten--or perhaps deliberately discarded. Now there is only Misfortune, the fool who knows everyone's secrets and holds everyone's debts.",
+            "notes": "Primogen of Clan Malkavian. Haven: Hidden loft behind abandoned children's theater in downtown Phoenix. Domain influence: Information, gossip, minor boons, Harpy network. Appearance varies between mismatched suit (Elysium) and full jester costume (Haven). Speech style: Riddles, puns, singsong tone."
+        },
+        {
+            "id": 109,
+            "character_name": "Tor",
+            "character_image": "109_1762560972_539bc98d.png",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        },
+        {
+            "id": 110,
+            "character_name": "Roxanne Vega",
+            "character_image": "",
+            "appearance": "",
+            "biography": "",
+            "notes": ""
+        }
+    ]
+}

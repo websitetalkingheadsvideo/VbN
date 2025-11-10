@@ -1,0 +1,153 @@
+{
+  "character_name": "Eddy Valiant",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "current_state": "active",
+  "camarilla_status": "Unofficial Investigator",
+  "nature": "Cynic",
+  "demeanor": "Gallant",
+  "concept": "Hard-boiled Malkavian private investigator",
+  "clan": "Malkavian",
+  "generation": 12,
+  "sire": "Unknown (believed deceased or vanished)",
+  "pc": 0,
+  "appearance": "Heavyset and short, mid-40s in apparent age. Three-day stubble, tired intelligence in the eyes. Tan trench coat over a rumpled shirt and loosened tie, fedora tilted back, cigarette in hand. Clothes are worn but intentional. Amber-and-teal noir lighting recommended in depictions.",
+  "description": "A 12th-generation Malkavian investigator whose derangement makes him experience reality as a noir film. Gruff but perceptive, he serves as a deniable investigator for the Camarilla in Phoenix, 1994.",
+  "biography": "Once a mortal private investigator in Phoenix during the 1970s, Eddy Valiant earned a reputation for solving cases the police would not touch. In 1981 a case brought him face to face with a supernatural killer, and his Embrace followed. His sire disappeared, leaving Eddy to find his own way into the Camarilla. He now runs the Valiant Detective Agency from a cramped office above a pawn shop on 7th and Van Buren. His ghoul secretary, Marilyn Chase, maintains the daylight front while Eddy does the real work at night. Among Phoenix Kindred he is known as the 'court bloodhound' \u2014 useful, discreet, and too jaded to be easily intimidated. On the night the Prince dies at Hawthorn Estate, Eddy is already present, slipping in through a side door like he was following a lead.",
+  "character_image": null,
+  "equipment": "Smith & Wesson Model 10 revolver; battered leather notebook; cigarette case; Polaroid camera; trench coat; flask of A-negative.",
+  "notes": "Designed for Valley by Night. Derangement: Cinematic Delusion (hears/occasionally speaks inner narration). Keep Humanity at 6 to preserve his moral tension. Often hired by Harpy Cordelia and the Seneschal for deniable investigations. Allies with Sarah Hansen and occasionally the Gangrel tracker Kerry.",
+  "agentNotes": null,
+  "actingNotes": "Voice: gravelly, deliberate, Bogart-adjacent. Frequently mutters lines that sound like narration. Treat pauses as if someone off-screen is talking to him.",
+  "status": "active",
+  "total_xp": 70,
+  "spent_xp": 70,
+  "custom_data": {
+    "derangement": "Cinematic Delusion"
+  },
+  "status_details": {
+    "current_state": "active",
+    "camarilla_status": "Unofficial Investigator",
+    "xp_total": 70,
+    "xp_spent": 70,
+    "xp_available": 0,
+    "health_levels": 7,
+    "blood_pool_current": 11,
+    "blood_pool_maximum": 11
+  },
+  "traits": {
+    "Physical": [
+      "Strength \u2022\u2022",
+      "Dexterity \u2022\u2022\u2022",
+      "Stamina \u2022\u2022\u2022"
+    ],
+    "Social": [
+      "Charisma \u2022\u2022\u2022",
+      "Manipulation \u2022\u2022\u2022\u2022",
+      "Appearance \u2022\u2022"
+    ],
+    "Mental": [
+      "Perception \u2022\u2022\u2022\u2022",
+      "Intelligence \u2022\u2022\u2022",
+      "Wits \u2022\u2022\u2022"
+    ]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "abilities": [
+    "Alertness \u2022\u2022\u2022",
+    "Empathy \u2022\u2022\u2022",
+    "Subterfuge \u2022\u2022\u2022",
+    "Streetwise \u2022\u2022\u2022",
+    "Intimidation \u2022\u2022",
+    "Drive \u2022\u2022",
+    "Firearms \u2022\u2022\u2022",
+    "Investigation \u2022\u2022\u2022\u2022",
+    "Stealth \u2022\u2022\u2022",
+    "Law \u2022\u2022",
+    "Occult \u2022\u2022\u2022",
+    "Academics \u2022\u2022",
+    "Enigmas \u2022\u2022"
+  ],
+  "ability_specializations": [
+    "Investigation (Details)",
+    "Subterfuge (Interrogation)",
+    "Firearms (Revolver)",
+    "Streetwise (Information Trade)"
+  ],
+  "disciplines": [
+    "Auspex \u2022\u2022\u2022\u2022",
+    "Obfuscate \u2022\u2022",
+    "Dementation \u2022\u2022"
+  ],
+  "backgrounds": {
+    "Retainers": 3,
+    "Contacts": 3,
+    "Allies": 1,
+    "Resources": 2,
+    "Herd": 2
+  },
+  "backgroundDetails": {
+    "Retainers": "Marilyn Chase (ghoul secretary), plus two on-call day contractors.",
+    "Contacts": "Police detectives, street informants, journalists.",
+    "Allies": "One sympathetic homicide detective.",
+    "Resources": "Modest income from detective agency; office above pawn shop.",
+    "Herd": "Regular mortal visitors who come to 'confess' to the detective."
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 6,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 4,
+    "willpower_permanent": 7,
+    "willpower_current": 7,
+    "humanity": 6
+  },
+  "merits_flaws": [
+    "Common Sense (Merit)",
+    "Iron Will (Merit)",
+    "Haunted by Past Case (Flaw)"
+  ],
+  "coteries": [
+    "Valley by Night Core Cast"
+  ],
+  "relationships": [
+    {
+      "name": "Marilyn Chase",
+      "type": "Ghoul",
+      "relationship": "Daytime front, loyal retainer, manages mortal affairs."
+    },
+    {
+      "name": "Sarah Hansen",
+      "type": "Toreador",
+      "relationship": "Occasional client and ally; mutual respect."
+    },
+    {
+      "name": "Cordelia Fairchild",
+      "type": "Harpy",
+      "relationship": "Finds him useful; he calls her 'the velvet executioner.'"
+    },
+    {
+      "name": "Seneschal Roland",
+      "type": "Ventrue",
+      "relationship": "Official Camarilla contact; professional tension."
+    },
+    {
+      "name": "Kerry",
+      "type": "Gangrel",
+      "relationship": "Field partner for tracking and desert work."
+    }
+  ],
+  "rituals": [],
+  "specializations": {
+    "Auspex": "Used for intuitive detective leaps.",
+    "Obfuscate": "Used to observe without being seen.",
+    "Dementation": "Used sparingly in interrogations."
+  },
+  "research_notes": {},
+  "artifacts": []
+}

@@ -98,11 +98,23 @@ function setupEventListeners() {
 
 function handleAnswerChange(event) {
     console.log('Answer selected:', event.target.value);
-    
+
     // Enable next button (scoring will happen when Next is clicked)
     const nextBtn = document.getElementById('next-btn');
     if (nextBtn) {
         nextBtn.disabled = false;
+    }
+
+    // Visually mark the selected option in the current question
+    const selectedRadio = event.target;
+    const currentSection = selectedRadio.closest('.question-section');
+    if (currentSection) {
+        // Remove previous selection highlight in this section
+        currentSection.querySelectorAll('.answer-option.selected').forEach(el => el.classList.remove('selected'));
+        const optionLabel = selectedRadio.closest('.answer-option');
+        if (optionLabel) {
+            optionLabel.classList.add('selected');
+        }
     }
 }
 
@@ -410,7 +422,7 @@ function hideAdminDebugPopup() {
 function showResults() {
     const resultsSection = document.getElementById('results-section');
     if (!resultsSection) return;
-    
+
     // Hide questionnaire header
     const questionnaireHeader = document.querySelector('.questionnaire-header');
     if (questionnaireHeader) {
@@ -425,7 +437,9 @@ function showResults() {
     displayClanResult(winningClan);
     displayAllClanScores();
     
-    // Show results section with fade in
+    // Show results section with fade in (ensure hidden attribute is removed)
+    resultsSection.hidden = false;
+    resultsSection.removeAttribute('hidden');
     resultsSection.style.display = 'block';
     setTimeout(() => {
         resultsSection.classList.add('active');
@@ -542,6 +556,8 @@ function showTestClanResults(clan) {
     // Show results section
     const resultsSection = document.getElementById('results-section');
     if (resultsSection) {
+        resultsSection.hidden = false;
+        resultsSection.removeAttribute('hidden');
         resultsSection.style.display = 'block';
         resultsSection.classList.add('active');
         

@@ -83,54 +83,46 @@ include 'includes/header.php';
             <!-- Admin Actions -->
             <div class="action-grid row g-4 mb-5">
                 <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">✏️</div>
-                    <h3>Create Character</h3>
-                    <p>Bring a new kindred into the world</p>
-                    <a href="lotn_char_create.php" class="gothic-button">Create New</a>
-                </div>
-                
-                <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">🏠</div>
-                    <h3>Locations Database</h3>
-                    <p>Manage game locations and character assignments</p>
-                    <a href="admin/admin_locations.php" class="gothic-button">Manage Locations</a>
-                </div>
-                
-                <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">⚔️</div>
-                    <h3>Items Database</h3>
-                    <p>Manage equipment and artifacts</p>
-                    <a href="admin/admin_items.php" class="gothic-button">Manage Items</a>
-                </div>
-                
-                <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">📋</div>
-                    <h3>Character List</h3>
-                    <p>View, edit, and delete characters</p>
-                    <a href="admin/admin_panel.php" class="gothic-button">View Characters</a>
-                </div>
-                
-                <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">👥</div>
-                    <h3>Agents Dashboard</h3>
-                    <p>Monitor automation helpers and review agent activity</p>
-                    <a href="admin/agents.php" class="gothic-button">Open Agents</a>
-                </div>
-                
-                <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">🌟</div>
+                    <div class="card-icon" aria-hidden="true">🧪</div>
                     <h3>Clan Discovery Quiz</h3>
                     <p>Test the character creation questionnaire</p>
                     <a href="questionnaire.php" class="gothic-button">Take Quiz</a>
                 </div>
-                
                 <div class="action-card col-md-4 col-sm-6">
-                    <div class="card-icon">🧛</div>
-                    <h3>Laws Agent</h3>
-                    <p>Ask AI about VTM/MET rules and lore</p>
-                    <a href="admin/laws_agent.php" class="gothic-button">Ask Questions</a>
+                    <div class="card-icon" aria-hidden="true">🤖</div>
+                    <h3>Agents Dashboard</h3>
+                    <p>Monitor automation helpers and review agent activity</p>
+                    <a href="admin/agents.php" class="gothic-button">Open Agents</a>
                 </div>
+                <div class="action-card col-md-4 col-sm-6">
+                    <div class="card-icon" aria-hidden="true">📜</div>
+                    <h3>Character List</h3>
+                    <p>View, edit, and delete characters</p>
+                    <a href="admin/admin_panel.php" class="gothic-button">View Characters</a>
+                </div>
+                <div class="action-card col-md-4 col-sm-6">
+                    <div class="card-icon" aria-hidden="true">✨</div>
+                    <h3>Create Character</h3>
+                    <p>Bring a new kindred into the world</p>
+                    <a href="lotn_char_create.php" class="gothic-button">Create New</a>
+                </div>
+
+                <div class="action-card col-md-4 col-sm-6">
+                    <div class="card-icon" aria-hidden="true">📍</div>
+                    <h3>Locations Database</h3>
+                    <p>Manage game locations and character assignments</p>
+                    <a href="admin/admin_locations.php" class="gothic-button">Manage Locations</a>
+                </div>
+
+                <div class="action-card col-md-4 col-sm-6">
+                    <div class="card-icon" aria-hidden="true">🧰</div>
+                    <h3>Items Database</h3>
+                    <p>Manage equipment and artifacts</p>
+                    <a href="admin/admin_items.php" class="gothic-button">Manage Items</a>
+                </div>
+
                 
+
                 <div class="action-card disabled col-md-4 col-sm-6">
                     <div class="card-icon">📖</div>
                     <h3>AI Plots Manager</h3>
@@ -226,13 +218,7 @@ include 'includes/header.php';
             
             <!-- Additional Player Links -->
             <div class="player-links">
-                <div class="link-card">
-                    <div class="card-icon">🧛</div>
-                    <h3>Laws Agent</h3>
-                    <p>Ask AI about VTM/MET rules and lore</p>
-                    <a href="admin/laws_agent.php" class="gothic-button">Ask Questions</a>
-                </div>
-                
+
                 <div class="link-card">
                     <div class="card-icon">💬</div>
                     <h3>Chat Room</h3>

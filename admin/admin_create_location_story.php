@@ -16,15 +16,14 @@ if (!isset($_SESSION['user_id'])) {
 // if (!$_SESSION['is_admin']) { header('Location: dashboard.php'); exit(); }
 
 define('LOTN_VERSION', '0.2.1');
+<?php
+// Page-specific CSS for header include
+$extra_css = [
+    'css/style.css',
+    'css/admin_location.css',
+];
+include __DIR__ . '/../includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Location from Story - VbN Admin</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin_location.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .story-container {
@@ -271,8 +270,6 @@ define('LOTN_VERSION', '0.2.1');
             }
         }
     </style>
-</head>
-<body>
     <div class="admin-container">
         <div class="admin-header">
             <h1><i class="fas fa-magic"></i> Create Location from Story</h1>
@@ -335,7 +332,6 @@ define('LOTN_VERSION', '0.2.1');
         </div>
     </div>
 
-    <script src="js/location_story_parser.js"></script>
-</body>
-</html>
+    <script src="../js/location_story_parser.js"></script>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 

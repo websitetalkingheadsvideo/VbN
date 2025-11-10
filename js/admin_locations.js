@@ -18,8 +18,111 @@ let currentLocationId = null;
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
+    setupAccessibleModals();
     loadLocations();
 });
+
+// Accessible modal helpers (focus trap, restore focus, ESC)
+let lastActiveEl = null;
+function getFocusable(container) {
+    return Array.from(container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'))
+        .filter(el => el.offsetParent !== null || el.getAttribute('aria-hidden') !== 'true');
+}
+function trapFocus(modal) {
+    function onKeyDown(e) {
+        if (e.key === 'Tab') {
+            const list = getFocusable(modal);
+            if (list.length === 0) { e.preventDefault(); return; }
+            const first = list[0];
+            const last = list[list.length - 1];
+            if (document.activeElement === modal) {
+                e.preventDefault();
+                if (e.shiftKey) { last.focus(); } else { first.focus(); }
+                return;
+            }
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        } else if (e.key === 'Escape') {
+            closeAnyOpenModal();
+        }
+    }
+    modal.__trapHandler = onKeyDown;
+    document.addEventListener('keydown', onKeyDown);
+}
+function releaseFocus(modal) {
+    if (modal && modal.__trapHandler) {
+        document.removeEventListener('keydown', modal.__trapHandler);
+        delete modal.__trapHandler;
+    }
+    if (lastActiveEl) {
+        try { lastActiveEl.focus(); } catch (_) {}
+        lastActiveEl = null;
+    }
+}
+function openModalA11y(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    lastActiveEl = document.activeElement;
+    // aria-hide siblings at this level
+    const parent = modal.parentElement;
+    if (parent) {
+      const siblings = Array.from(parent.children).filter(ch => ch !== modal);
+      siblings.forEach(el => {
+        if (!el.hasAttribute('data-aria-hidden-was')) {
+          el.setAttribute('data-aria-hidden-was', el.getAttribute('aria-hidden') || '');
+        }
+        el.setAttribute('aria-hidden','true');
+        el.setAttribute('inert','');
+      });
+      modal.setAttribute('aria-hidden','false');
+      modal.removeAttribute('inert');
+    }
+    modal.classList.add('active');
+    if (!modal.hasAttribute('tabindex')) modal.setAttribute('tabindex','-1');
+    try { modal.focus(); } catch (_) {}
+    trapFocus(modal);
+}
+function closeModalA11y(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.remove('active');
+    // restore siblings
+    const parent = modal.parentElement;
+    if (parent) {
+      const siblings = Array.from(parent.children).filter(ch => ch !== modal);
+      siblings.forEach(el => {
+        const prev = el.getAttribute('data-aria-hidden-was');
+        if (prev !== null) {
+          if (prev === '' ) { el.removeAttribute('aria-hidden'); }
+          else { el.setAttribute('aria-hidden', prev); }
+          el.removeAttribute('data-aria-hidden-was');
+        } else {
+          el.removeAttribute('aria-hidden');
+        }
+        el.removeAttribute('inert');
+      });
+    }
+    releaseFocus(modal);
+}
+function closeAnyOpenModal() {
+    ['locationModal','viewModal','assignModal','deleteModal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.classList.contains('active')) closeModalA11y(id);
+    });
+}
+function setupAccessibleModals() {
+    ['locationModal','viewModal','assignModal','deleteModal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mousedown', (e) => { if (e.target === el) closeModalA11y(id); });
+    });
+    // Ensure close buttons have accessible labels
+    document.querySelectorAll('.modal-close').forEach(btn => {
+        if (!btn.getAttribute('aria-label')) {
+            btn.setAttribute('aria-label', 'Close dialog');
+        }
+    });
+}
 
 function initializeEventListeners() {
     // Filter buttons
@@ -246,7 +349,7 @@ function openAddLocationModal() {
     document.getElementById('locationModalTitle').textContent = 'Add New Location';
     document.getElementById('locationForm').reset();
     document.getElementById('locationId').value = '';
-    document.getElementById('locationModal').classList.add('active');
+    openModalA11y('locationModal');
 }
 
 function editLocation(id) {
@@ -267,7 +370,7 @@ function editLocation(id) {
     document.getElementById('locationSummary').value = location.summary || '';
     document.getElementById('locationNotes').value = location.notes || '';
     
-    document.getElementById('locationModal').classList.add('active');
+    openModalA11y('locationModal');
 }
 
 async function viewLocation(id) {
@@ -277,8 +380,12 @@ async function viewLocation(id) {
     document.getElementById('viewLocationName').textContent = location.name;
     
     // Show loading state
-    document.getElementById('viewLocationContent').innerHTML = '<div class="loading">Loading location details...</div>';
-    document.getElementById('viewModal').classList.add('active');
+    const viewContainer = document.getElementById('viewLocationContent');
+    if (viewContainer) {
+      viewContainer.setAttribute('aria-busy','true');
+      viewContainer.innerHTML = '<div class="loading">Loading location details...</div>';
+    }
+    openModalA11y('viewModal');
     
     try {
         // Fetch character assignments
@@ -358,23 +465,29 @@ async function viewLocation(id) {
             ` : ''}
         `;
         
-        document.getElementById('viewLocationContent').innerHTML = content;
+        if (viewContainer) {
+          viewContainer.innerHTML = content;
+          viewContainer.setAttribute('aria-busy','false');
+        }
         
     } catch (error) {
         console.error('Error loading assignments:', error);
-        document.getElementById('viewLocationContent').innerHTML = `
+        if (viewContainer) {
+          viewContainer.innerHTML = `
             <div class="view-section">
                 <h3>Error</h3>
                 <p>Failed to load character assignments.</p>
             </div>
-        `;
+          `;
+          viewContainer.setAttribute('aria-busy','false');
+        }
     }
 }
 
 function assignLocation(id, name) {
     currentLocationId = id;
     document.getElementById('assignLocationName').textContent = name;
-    document.getElementById('assignModal').classList.add('active');
+    openModalA11y('assignModal');
 }
 
 function deleteLocation(id, name) {
@@ -400,25 +513,17 @@ function deleteLocation(id, name) {
             document.getElementById('confirmDeleteBtn').disabled = false;
         });
     
-    document.getElementById('deleteModal').classList.add('active');
+    openModalA11y('deleteModal');
 }
 
 // Modal Functions
-function closeLocationModal() {
-    document.getElementById('locationModal').classList.remove('active');
-}
+function closeLocationModal() { closeModalA11y('locationModal'); }
 
-function closeViewModal() {
-    document.getElementById('viewModal').classList.remove('active');
-}
+function closeViewModal() { closeModalA11y('viewModal'); }
 
-function closeAssignModal() {
-    document.getElementById('assignModal').classList.remove('active');
-}
+function closeAssignModal() { closeModalA11y('assignModal'); }
 
-function closeDeleteModal() {
-    document.getElementById('deleteModal').classList.remove('active');
-}
+function closeDeleteModal() { closeModalA11y('deleteModal'); }
 
 // Form Handling
 async function handleFormSubmit(e) {
@@ -554,10 +659,5 @@ document.addEventListener('click', function(e) {
 
 // Close modals on escape key
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeLocationModal();
-        closeViewModal();
-        closeAssignModal();
-        closeDeleteModal();
-    }
+    if (e.key === 'Escape') closeAnyOpenModal();
 });
