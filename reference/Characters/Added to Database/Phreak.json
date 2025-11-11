@@ -1,0 +1,59 @@
+{
+  "character_name": "Phreak",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Trickster",
+  "demeanor": "Jester",
+  "concept": "Underground hacker bound to Core’s network",
+  "clan": "Human",
+  "generation": 0,
+  "sire": "",
+  "pc": 0,
+  "biography": "An elite hacker from the underground collective, Phreak has existed behind a handle so long his birth identity barely matters. He grew up in the digital underground, self-taught and weaponizing zero-day exploits to survive corporate surveillance. The loss of a close confidant to a surveillance dragnet pushed him deeper into digital resistance. He partnered with Core in the Valley, running infiltration, deepfake ops, and distributed surveillance countermeasures from a Faraday-shielded bunker.",
+  "equipment": "Custom-built workstation with Faraday cage, multi-monitor grid, quantum encryption tools, RF sniffers, war-dialing rigs, and a wardrobe of irony-laden hoodies.",
+  "traits": {
+    "Physical": [],
+    "Social": ["Irreverent"],
+    "Mental": ["Genius-level", "Creative", "Obsessive", "Intuitive", "Quick-thinking"]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Flippant"],
+    "Mental": ["Reckless"]
+  },
+  "abilities": [],
+  "disciplines": [],
+  "backgrounds": {},
+  "backgroundDetails": {},
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 6,
+    "conscience": 2,
+    "self_control": 3,
+    "courage": 4,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 6
+  },
+  "merits_flaws": [],
+  "status": {
+    "current_state": "active",
+    "camarilla_status": "Independent ally (Core’s network)",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "health_levels": 7,
+    "blood_pool_current": 0,
+    "blood_pool_maximum": 0,
+    "notes": "Human operative; invaluable for digital ops but needs careful handling due to impulsivity."
+  },
+  "coteries": [],
+  "relationships": [],
+  "rituals": [],
+  "specializations": {},
+  "research_notes": {
+    "digital_methods": "Excels at quantum encryption breaking, deepfake generation, network topology mapping, and treating emergent AI like conversational partners."
+  },
+  "artifacts": []
+}
+
