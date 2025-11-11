@@ -36,11 +36,11 @@ a:hover {
 }
 
 /* Override Bootstrap's default button styles - preserve our gothic buttons */
-button,
+/* DISABLED: Avoid overriding Bootstrap button styles globally. Use custom classes instead. */
+/* button,
 .btn {
-    /* Our custom button styles take precedence */
     font-family: var(--font-body), 'Source Serif Pro', serif !important;
-}
+} */
 
 /* Override Bootstrap's default form styles */
 input,

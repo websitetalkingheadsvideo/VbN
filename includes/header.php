@@ -62,6 +62,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nosifer&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <script src="<?php echo $path_prefix; ?>js/logo-animation.js"></script>
     <script src="<?php echo $path_prefix; ?>js/form_validation.js"></script>
+    <script src="<?php echo $path_prefix; ?>js/modal_a11y.js"></script>
 </head>
 <body>
 <a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
@@ -109,6 +110,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <div class="user-info">
                         <span class="user-label">Kindred:</span>
                         <span class="username"><?php echo htmlspecialchars($username); ?></span>
+                        <a href="<?php echo $app_root; ?>account.php" class="logout-btn" title="Account Settings">Account</a>
                         <a href="<?php echo $app_root; ?>logout.php" class="logout-btn" title="Logout">Logout</a>
                     </div>
                     <?php endif; ?>

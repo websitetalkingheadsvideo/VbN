@@ -17,7 +17,7 @@
 - `save_character.php` - Character saving handler
 - `users.php` - User management
 - `chat.php` - Chat interface
-- `cc.php` - Character creation (alternate)
+// Removed `cc.php` (legacy alternate questionnaire) — consolidated on `questionnaire.php`.
 - `404.php` - Error page
 - `500.php` - Error page
 

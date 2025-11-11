@@ -1,0 +1,52 @@
+# Chat Session Report – Character Creator Grid & Discipline QA
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.10.1 → 0.10.2 (Patch Increment)
+- **Focus:** Align the character creator with Bootstrap-native layout patterns, correct Daughter of Cacophony discipline access, and reinforce popover/accessibility feedback loops.
+
+### What We Accomplished
+
+#### 1. Bootstrap-Aligned Character Creator Shell
+- Wrapped `lotn_char_create.php` in a `container-xxl` grid so the sidebar and sheet coexist responsively with consistent gutters.
+- Surfaced header-level Save/Exit actions and deferred container/modal styling to Bootstrap by disabling legacy global overrides in `css/style.css` and `css/bootstrap-overrides.css`.
+- Converted the clan guide modal to Bootstrap markup, ensuring overriden height rules stay scoped to the component.
+
+#### 2. Discipline Access & Content Fixes
+- Normalized Daughter of Cacophony aliases, enforced Melpominee/Presence/Auspex gating, and returned clean allowlists from `DisciplineSystem`.
+- Added lore-forward Melpominee copy in both API and fallback data, plus viewport-aware popover positioning and close controls.
+- Ensured NPCs bypass clan restrictions while PCs immediately clear invalid discipline selections.
+
+#### 3. Accessibility & Status Feedback
+- Announced character image uploads via an injected `role="status"` region and `aria-busy` toggles.
+- Upgraded chat character lists with polite live regions for load results and kept list containers flagged busy until fetch completion.
+- Stabilized popover hover handling, preventing accidental close when traversing between buttons and popover content.
+
+### Impact
+- **Creator UX:** Bootstrap grid restores predictable spacing, while inline actions reduce scroll friction during editing.
+- **Rules Fidelity:** Clan discipline enforcement now matches the Daughter of Cacophony template regardless of spelling variance.
+- **Assistive Feedback:** Screen readers receive clear loading and success cues for uploads and roster fetches.
+
+### Files Added / Updated
+- `lotn_char_create.php`
+- `css/style.css`
+- `css/bootstrap-overrides.css`
+- `css/admin_items.css`
+- `css/admin_location.css`
+- `css/admin_locations.css`
+- `css/admin_questionnaire.css`
+- `database/populate_discipline_data.php`
+- `js/modules/systems/DisciplineSystem.js`
+- `js/script.js`
+- `js/character-image.js`
+- `js/form_validation.js`
+- `js/modules/ui/NotificationManager.js`
+- `chat.php`
+- `includes/header.php`
+- `index.php`
+- `login.php`
+- `register.php`
+- `cc.php` (removed)
+- `docs/bootstrap-conversion-inventory.md`
+- `VERSION.md`
+- `docs/CHAT_REPORT_CHARACTER_CREATOR_GRID.mdc`

@@ -461,6 +461,7 @@ async function loadDisciplineData() {
             
             // Set clan discipline access
             clanDisciplineAccess = result.data.clanDisciplineAccess;
+            clanDisciplineAccess['Daughter of Cacophony'] = ['Melpominee', 'Presence', 'Auspex'];
             
             console.log('✅ Discipline data loaded from database');
             console.log('Loaded disciplines:', Object.keys(disciplinePowers).length);
@@ -616,11 +617,11 @@ function loadFallbackData() {
         { level: 5, name: 'Dark Inspiration', description: 'The vampire can use their connection to the infernal to inspire others to commit acts of evil or violence.' }
     ],
     'Melpominee': [
-        { level: 1, name: 'Captivating Song', description: 'The vampire can use their voice to create musical effects that can charm and captivate others.' },
-        { level: 2, name: 'Charm', description: 'The vampire can use their voice to create effects that can make others more susceptible to their influence.' },
-        { level: 3, name: 'Enthrall Audience', description: 'The vampire can use their voice to create effects that can captivate large groups of people.' },
-        { level: 4, name: 'Inspire Emotion', description: 'The vampire can use their voice to create specific emotional effects in others.' },
-        { level: 5, name: 'Hypnotic Performance', description: 'The vampire can use their voice to create powerful hypnotic effects that can control the behavior of others.' }
+        { level: 1, name: 'Captivating Song', description: 'Mesmerize listeners with haunting melodies that command their attention.' },
+        { level: 2, name: 'Siren\'s Lure', description: 'Project your voice to draw a chosen target toward you despite their instincts.' },
+        { level: 3, name: 'Discordant Chorus', description: 'Twist the mood of a gathered crowd by layering harmonics that manipulate shared emotion.' },
+        { level: 4, name: 'Hymn to Discord', description: 'Split your voice into counterpoint that disorients foes or bolsters allies mid-conflict.' },
+        { level: 5, name: 'Voice of the Siren', description: 'Resonate with a target\'s soul, compelling obedience or despair with a single, perfect note.' }
     ],
     'Valeren': [
         { level: 1, name: 'Healing Touch', description: 'The vampire can use their supernatural abilities to heal wounds and injuries in others.' },
@@ -643,7 +644,7 @@ function loadFallbackData() {
         'Brujah': ['Celerity', 'Potence', 'Presence'],
         'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
         'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
-        'Daughter of Cacophony': ['Fortitude', 'Melpominee', 'Presence'],
+        'Daughter of Cacophony': ['Melpominee', 'Presence', 'Auspex'],
         'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
         'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
         'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
@@ -710,8 +711,8 @@ function showDisciplinePopover(event, disciplineName) {
     const popoverTitle = document.getElementById('popoverTitle');
     const popoverPowers = document.getElementById('popoverPowers');
     
-    // Set title
-    popoverTitle.textContent = `${disciplineName} Powers`;
+    // Set title (remove "Powers" suffix for tighter header)
+    popoverTitle.textContent = `${disciplineName}`;
     
     // Get available powers for this discipline
     const availablePowers = getAvailablePowers(disciplineName);
@@ -849,6 +850,24 @@ function showDisciplinePopover(event, disciplineName) {
         hideDisciplinePopover();
     };
     
+    // Wire close button (immediate close, no delay)
+    const closeBtn = document.getElementById('popoverClose');
+    if (closeBtn) {
+        closeBtn.onclick = (e) => {
+            e.stopPropagation();
+            clearPopoverTimeout();
+            const p = document.getElementById('disciplinePopover');
+            if (p) p.style.display = 'none';
+            currentPopoverButton = null;
+        };
+    }
+
+    // Show popover and keep it open on hover; hide with tolerance on leave
+    popover.onmouseenter = clearPopoverTimeout;
+    popover.onmouseleave = () => {
+        hideDisciplinePopover();
+    };
+
     // Show popover
     popover.style.display = 'block';
 }

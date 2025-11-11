@@ -81,6 +81,7 @@ include 'includes/header.php';
             </div>
             
             <!-- Admin Actions -->
+            <nav aria-label="Admin Actions">
             <div class="action-grid row g-4 mb-5">
                 <div class="action-card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">🧪</div>
@@ -130,6 +131,7 @@ include 'includes/header.php';
                     <span class="gothic-button-disabled">Coming Soon</span>
                 </div>
             </div>
+            </nav>
         </div>
         
     <?php else: ?>
@@ -154,6 +156,7 @@ include 'includes/header.php';
             <p class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>. The night is yours to command.</p>
             
             <!-- Player Actions -->
+            <nav aria-label="Player Actions">
             <div class="player-actions">
                 <a href="lotn_char_create.php" class="create-character-btn">
                     <span class="btn-icon">✏️</span>
@@ -165,10 +168,11 @@ include 'includes/header.php';
                     <span class="btn-text">Discover Your Clan</span>
                 </a>
             </div>
+            </nav>
             
             <!-- Player's Characters -->
-            <div class="character-list">
-                <h3 class="list-heading">Your Characters</h3>
+            <div class="character-list" role="region" aria-labelledby="playerCharactersHeading">
+                <h3 id="playerCharactersHeading" class="list-heading">Your Characters</h3>
                 <?php
                 // Get player's characters
                 $char_query = "SELECT c.*, cl.name as clan_name 
@@ -217,6 +221,7 @@ include 'includes/header.php';
             </div>
             
             <!-- Additional Player Links -->
+            <nav aria-label="Player Links">
             <div class="player-links">
 
                 <div class="link-card">
@@ -226,6 +231,7 @@ include 'includes/header.php';
                     <span class="gothic-button-disabled">Unavailable</span>
                 </div>
             </div>
+            </nav>
         </div>
     <?php endif; ?>
 </div>

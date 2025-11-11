@@ -21,7 +21,6 @@ if (isAuthBypassEnabled() && !isset($_SESSION['user_id'])) {
 
 // Database connection
 include 'includes/connect.php';
-<?php
 $extra_css = [
   'css/style.css',
   'css/character_image.css',
@@ -29,8 +28,11 @@ $extra_css = [
 ];
 include __DIR__ . '/includes/header.php';
 ?>
-    <!-- Sidebar Tracker -->
-    <div class="sidebar">
+    <div class="container-xxl">
+      <div class="row g-4 align-items-start">
+        <!-- Sidebar Tracker (right on desktop) -->
+        <div class="col-12 col-lg-4 order-lg-2">
+          <aside class="sidebar" aria-label="Character Progress Sidebar">
         <h3>Character Progress</h3>
         
         <div class="xp-summary">
@@ -217,10 +219,10 @@ include __DIR__ . '/includes/header.php';
                     </div>
                 </div>
             </div>
+          </aside>
         </div>
-    </div>
     
-    <div class="container" id="sheet">
+        <div class="col-12 col-lg-8 order-lg-1" id="sheet">
         <div class="header">
             <h1 class="brand">⚜ Laws of the Night: Character Creation ⚜</h1>
             <div class="header-center">
@@ -237,6 +239,10 @@ include __DIR__ . '/includes/header.php';
                     <div class="label">Available XP</div>
                     <div class="xp-display" id="xpDisplay">30</div>
                     <div class="xp-label">Experience Points</div>
+                </div>
+                <div class="header-actions d-flex justify-content-end align-items-center gap-2 mt-2">
+                    <button type="button" id="saveHeaderBtn" class="btn btn-success save-btn" data-action="save" aria-label="Save character">Save</button>
+                    <button type="button" id="exitEditorBtn" class="exit-inline" title="Exit without saving" aria-label="Exit without saving">Exit</button>
                 </div>
             </div>
         </div>
@@ -810,7 +816,7 @@ include __DIR__ . '/includes/header.php';
                                 <li>Each click adds 1 dot to that ability and counts toward your XP cost</li>
                             </ul>
                         </div>
-                        <button type="button" class="help-btn" data-action="show-discipline-guide" title="View Discipline-Ability Guide">
+                        <button type="button" class="help-btn" data-action="show-discipline-guide" title="View Discipline-Ability Guide" data-bs-toggle="modal" data-bs-target="#clanGuideModal">
                             <span>?</span>
                         </button>
                     </div>
@@ -974,7 +980,7 @@ include __DIR__ . '/includes/header.php';
                                 <li><strong>Clan disciplines</strong> are marked with a special indicator</li>
                             </ul>
                         </div>
-                        <button type="button" class="help-btn" data-action="show-discipline-guide" title="View Discipline-Ability Guide">
+                        <button type="button" class="help-btn" data-action="show-discipline-guide" title="View Discipline-Ability Guide" data-bs-toggle="modal" data-bs-target="#clanGuideModal">
                             <span>?</span>
                         </button>
                     </div>
@@ -1074,10 +1080,12 @@ include __DIR__ . '/includes/header.php';
                     </div>
                 </div>
             
-            <!-- Discipline Power Popover -->
+            <!-- Discipline Power Popover (anchored next to button, compact header with close) -->
             <div id="disciplinePopover" class="discipline-popover" style="display: none;">
-                <h4 id="popoverTitle">Discipline Powers</h4>
-                <p id="popoverDescription" class="popover-description"></p>
+                <div class="popover-header">
+                    <span id="popoverTitle"></span>
+                    <button type="button" id="popoverClose" class="popover-close" aria-label="Close">×</button>
+                </div>
                 <div id="popoverPowers"></div>
             </div>
                 
@@ -1756,13 +1764,14 @@ include __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Clan Guide Modal -->
-    <div id="clanGuideModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="clanGuideTitle" aria-describedby="clanGuideBody">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="clanGuideTitle">Clan Guide</h2>
-                <button type="button" class="modal-close" onclick="closeClanGuide()" aria-label="Close dialog">&times;</button>
-            </div>
-            <div class="modal-body" id="clanGuideBody">
+    <div class="modal fade" id="clanGuideModal" tabindex="-1" aria-labelledby="clanGuideTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="clanGuideTitle" class="modal-title">Clan Guide</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="clanGuideBody">
                 <p><strong>Complete guide to all vampire clans:</strong></p>
                 <div class="clan-table-container">
                     <table class="clan-table">
@@ -1817,9 +1826,10 @@ include __DIR__ . '/includes/header.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="modal-btn" onclick="closeClanGuide()">Close</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
@@ -2183,7 +2193,12 @@ include __DIR__ . '/includes/header.php';
                 exitBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     console.log('Exit Editor button pressed');
-                    if (history.length > 1) { history.back(); } else { window.location.href = 'dashboard.php'; }
+                    const ref = document.referrer || '';
+                    if (ref.includes('admin/admin_panel.php')) {
+                        history.back();
+                    } else {
+                        window.location.href = 'admin/admin_panel.php';
+                    }
                 });
             }
 
@@ -2193,7 +2208,12 @@ include __DIR__ . '/includes/header.php';
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     console.log('Exit Editor button pressed');
-                    if (history.length > 1) { history.back(); } else { window.location.href = 'dashboard.php'; }
+                    const ref2 = document.referrer || '';
+                    if (ref2.includes('admin/admin_panel.php')) {
+                        history.back();
+                    } else {
+                        window.location.href = 'admin/admin_panel.php';
+                    }
                 });
             });
 
@@ -2545,8 +2565,8 @@ include __DIR__ . '/includes/header.php';
             const popoverTitle = document.getElementById('popoverTitle');
             const popoverPowers = document.getElementById('popoverPowers');
             
-            // Set title
-            popoverTitle.textContent = `${disciplineName} Powers`;
+            // Set title (no "Powers" suffix per UX guidance)
+            popoverTitle.textContent = `${disciplineName}`;
             
             // Get available powers for this discipline
             const availablePowers = getAvailablePowers(disciplineName);
@@ -2567,6 +2587,23 @@ include __DIR__ . '/includes/header.php';
                 popoverPowers.appendChild(powerOption);
             });
             
+            // Wire close button for immediate close
+            const closeBtn = document.getElementById('popoverClose');
+            if (closeBtn) {
+                closeBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    // immediate close without delay
+                    clearPopoverTimeout();
+                    const p = document.getElementById('disciplinePopover');
+                    if (p) p.style.display = 'none';
+                    currentPopoverButton = null;
+                };
+            }
+
+            // Keep open when hovering popover; hide on leave with tolerance
+            popover.onmouseenter = clearPopoverTimeout;
+            popover.onmouseleave = hideDisciplinePopover;
+
             // Position popover
             const button = event.target;
             const rect = button.getBoundingClientRect();
@@ -2574,6 +2611,15 @@ include __DIR__ . '/includes/header.php';
             popover.style.position = 'fixed';
             popover.style.left = (rect.right + 10) + 'px';
             popover.style.top = rect.top + 'px';
+
+            // Ensure within viewport vertically (no scrollbars, adjust position)
+            const vpH = window.innerHeight;
+            const ph = popover.offsetHeight;
+            let top = rect.top;
+            if (top + ph > vpH - 16) {
+                top = Math.max(16, vpH - ph - 16);
+                popover.style.top = top + 'px';
+            }
             popover.style.display = 'block';
             popover.style.zIndex = '1000';
             
@@ -2948,4 +2994,7 @@ include __DIR__ . '/includes/header.php';
         }
     </script>
     <script src="js/character_image.js"></script>
+        </div><!-- /.col-12 col-lg-8 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
 <?php include __DIR__ . '/includes/footer.php'; ?>

@@ -6,9 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!form.checkValidity()) {
         e.preventDefault();
         e.stopPropagation();
+        // Focus the first invalid field for better accessibility
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid && typeof firstInvalid.focus === 'function') {
+          try { firstInvalid.focus({ preventScroll: true }); } catch (_) { firstInvalid.focus(); }
+          try { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) {}
+        }
       }
       form.classList.add('was-validated');
     }, false);
   });
 });
-

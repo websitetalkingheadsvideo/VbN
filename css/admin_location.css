@@ -197,7 +197,7 @@
     border-top: 2px solid var(--border-color);
 }
 
-.btn-primary, .btn-secondary {
+.admin-container .btn-primary, .admin-container .btn-secondary {
     padding: 12px 24px;
     border: none;
     border-radius: 6px;
@@ -210,24 +210,24 @@
     gap: 8px;
 }
 
-.btn-primary {
+.admin-container .btn-primary {
     background: var(--accent-color);
     color: white;
 }
 
-.btn-primary:hover {
+.admin-container .btn-primary:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-secondary {
+.admin-container .btn-secondary {
     background: var(--bg-primary);
     color: var(--text-primary);
     border: 2px solid var(--border-color);
 }
 
-.btn-secondary:hover {
+.admin-container .btn-secondary:hover {
     border-color: var(--accent-color);
     background: var(--bg-secondary);
 }
@@ -259,7 +259,7 @@
         flex-direction: column;
     }
 
-    .btn-primary, .btn-secondary {
+    .admin-container .btn-primary, .admin-container .btn-secondary {
         width: 100%;
         justify-content: center;
     }

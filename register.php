@@ -35,11 +35,11 @@ if (isset($_SESSION['user_id'])) {
             
             <?php
             if (isset($_SESSION['error'])) {
-                echo '<div class="login-error">⚠️ ' . htmlspecialchars($_SESSION['error']) . '</div>';
+                echo '<div class="login-error" role="alert" aria-live="polite">⚠️ ' . htmlspecialchars($_SESSION['error']) . '</div>';
                 unset($_SESSION['error']);
             }
             if (isset($_SESSION['success'])) {
-                echo '<div class="login-success">✓ ' . htmlspecialchars($_SESSION['success']) . '</div>';
+                echo '<div class="login-success" role="alert" aria-live="polite">✓ ' . htmlspecialchars($_SESSION['success']) . '</div>';
                 unset($_SESSION['success']);
             }
             ?>
@@ -47,7 +47,7 @@ if (isset($_SESSION['user_id'])) {
             <form action="register_process.php" method="POST" class="login-form d-flex flex-column gap-4 needs-validation" novalidate>
                 <div class="form-group mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" id="username" name="username" class="form-control" required autofocus 
+                    <input type="text" id="username" name="username" class="form-control" required autofocus autocomplete="username" 
                            minlength="3" maxlength="50"
                            pattern="[a-zA-Z0-9_]+"
                            title="Username must be 3-50 characters, letters, numbers, and underscores only">
@@ -56,13 +56,13 @@ if (isset($_SESSION['user_id'])) {
                 
                 <div class="form-group mb-3">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
                     <div class="invalid-feedback">Please enter a valid email address.</div>
                 </div>
                 
                 <div class="form-group mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" required 
+                    <input type="password" id="password" name="password" class="form-control" required autocomplete="new-password" 
                            minlength="8"
                            title="Password must be at least 8 characters">
                     <div class="invalid-feedback">Password must be at least 8 characters.</div>
@@ -70,7 +70,7 @@ if (isset($_SESSION['user_id'])) {
                 
                 <div class="form-group mb-3">
                     <label for="confirm_password" class="form-label">Confirm Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" required autocomplete="new-password">
                     <div class="invalid-feedback">Please confirm your password.</div>
                 </div>
                 

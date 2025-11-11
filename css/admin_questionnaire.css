@@ -8,10 +8,10 @@
 .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 8px; border: 1px solid #444; background: #1a0f0f; color: #c9a96e; border-radius: 4px; }
 .form-group textarea { height: 80px; resize: vertical; }
 
-.btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
-.btn-primary { background: #8b0000; color: white; }
-.btn-secondary { background: #666; color: white; }
-.btn-danger { background: #cc0000; color: white; }
+.admin-container .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
+.admin-container .btn-primary { background: #8b0000; color: white; }
+.admin-container .btn-secondary { background: #666; color: white; }
+.admin-container .btn-danger { background: #cc0000; color: white; }
 
 .questions-table { background: #2a1f1f; border-radius: 8px; overflow: hidden; }
 .questions-table table { width: 100%; border-collapse: collapse; }

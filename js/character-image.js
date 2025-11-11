@@ -103,6 +103,14 @@
         form.append('image', file);
         if (characterId) form.append('characterId', characterId);
         console.log('Upload request sent');
+        // A11y: announce upload start and mark busy
+        const status = ensureStatusRegion();
+        if (status) {
+            status.textContent = 'Uploading image…';
+        }
+        if (previewContainer) {
+            previewContainer.setAttribute('aria-busy', 'true');
+        }
         const resp = await fetch('upload_character_image.php', {
             method: 'POST',
             body: form,
@@ -117,9 +125,13 @@
         if (!resp.ok || !data?.success) {
             const err = data?.error || `HTTP ${resp.status}`;
             console.error('Upload failed:', err);
+            if (status) status.textContent = 'Image upload failed.';
+            if (previewContainer) previewContainer.setAttribute('aria-busy', 'false');
             throw new Error(String(err));
         }
         console.log('Upload successful:', data);
+        if (status) status.textContent = 'Image uploaded successfully.';
+        if (previewContainer) previewContainer.setAttribute('aria-busy', 'false');
         return data;
     };
 
@@ -191,6 +203,24 @@
             e.preventDefault();
             handleExitClick();
         });
+    }
+
+    // Ensure a live status region exists for SR feedback
+    function ensureStatusRegion() {
+        let region = document.getElementById('imageUploadStatus');
+        if (!region) {
+            region = document.createElement('div');
+            region.id = 'imageUploadStatus';
+            region.setAttribute('role', 'status');
+            region.setAttribute('aria-live', 'polite');
+            region.className = 'visually-hidden';
+            if (previewContainer) {
+                previewContainer.prepend(region);
+            } else {
+                document.body.appendChild(region);
+            }
+        }
+        return region;
     }
 })();
 

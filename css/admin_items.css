@@ -405,7 +405,7 @@
 }
 
 /* Modals */
-.modal {
+.admin-items-container .modal {
     display: none;
     position: fixed;
     z-index: 9999;
@@ -418,11 +418,11 @@
     justify-content: center;
 }
 
-.modal.active {
+.admin-items-container .modal.active {
     display: flex;
 }
 
-.modal-content {
+.admin-items-container .modal-content {
     background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
     border: 3px solid #8B0000;
     border-radius: 10px;
@@ -433,11 +433,11 @@
     overflow-y: auto;
 }
 
-.modal-content.large-modal {
+.admin-items-container .modal-content.large-modal {
     max-width: 900px;
 }
 
-.modal-close {
+.admin-items-container .modal-close {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -452,12 +452,12 @@
     transition: all 0.2s;
 }
 
-.modal-close:hover {
+.admin-items-container .modal-close:hover {
     background: rgba(139, 0, 0, 0.6);
     transform: scale(1.1);
 }
 
-.modal-title {
+.admin-items-container .modal-title {
     font-family: var(--font-brand), 'IM Fell English', serif;
     color: #f5e6d3;
     font-size: 2em;
@@ -465,14 +465,14 @@
     text-align: center;
 }
 
-.modal-message {
+.admin-items-container .modal-message {
     font-family: var(--font-body), 'Source Serif Pro', serif;
     color: #d4c4b0;
     font-size: 1.1em;
     margin-bottom: 10px;
 }
 
-.modal-character-name {
+.admin-items-container .modal-character-name {
     font-family: var(--font-title), 'Libre Baskerville', serif;
     color: #f5e6d3;
     font-size: 1.4em;
@@ -481,7 +481,7 @@
     font-weight: bold;
 }
 
-.modal-warning {
+.admin-items-container .modal-warning {
     background: rgba(139, 0, 0, 0.3);
     border-left: 4px solid #8B0000;
     padding: 15px;
@@ -489,14 +489,14 @@
     color: #f5e6d3;
 }
 
-.modal-actions {
+.admin-items-container .modal-actions {
     display: flex;
     gap: 15px;
     justify-content: center;
     margin-top: 25px;
 }
 
-.modal-btn {
+.admin-items-container .modal-btn {
     padding: 12px 30px;
     border-radius: 5px;
     font-family: var(--font-body), 'Source Serif Pro', serif;

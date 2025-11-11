@@ -26,7 +26,7 @@ class DisciplineSystem {
             'Brujah': ['Celerity', 'Potence', 'Presence'],
             'Caitiff': ['Animalism', 'Auspex', 'Celerity', 'Dominate', 'Fortitude', 'Obfuscate', 'Potence', 'Presence', 'Protean', 'Thaumaturgy', 'Necromancy', 'Koldunic Sorcery', 'Obtenebration', 'Chimerstry', 'Dementation', 'Quietus', 'Vicissitude', 'Serpentis', 'Daimoinon', 'Melpominee', 'Valeren', 'Mortis'],
             'Followers of Set': ['Animalism', 'Obfuscate', 'Presence', 'Serpentis'],
-            'Daughter of Cacophony': ['Fortitude', 'Melpominee', 'Presence'],
+            'Daughter of Cacophony': ['Melpominee', 'Presence', 'Auspex'],
             'Gangrel': ['Animalism', 'Fortitude', 'Protean'],
             'Giovanni': ['Dominate', 'Fortitude', 'Necromancy', 'Mortis'],
             'Lasombra': ['Dominate', 'Obfuscate', 'Obtenebration'],
@@ -38,6 +38,7 @@ class DisciplineSystem {
             'Tzimisce': ['Animalism', 'Auspex', 'Dominate', 'Vicissitude'],
             'Ventrue': ['Dominate', 'Fortitude', 'Presence']
         };
+        this.ensureDaughterMapping();
         
         // Discipline category mapping
         this.disciplineCategories = {
@@ -106,6 +107,7 @@ class DisciplineSystem {
                     if (response.data.clanDisciplineAccess) {
                         this.clanDisciplineAccess = { ...this.clanDisciplineAccess, ...response.data.clanDisciplineAccess };
                     }
+                    this.ensureDaughterMapping();
                     
                     // Add Thaumaturgy paths to BloodSorcery category dynamically
                     // Thaumaturgy paths are disciplines with parent_discipline='Thaumaturgy' in the database
@@ -291,8 +293,54 @@ class DisciplineSystem {
                     "4": { "name": "Irrational Fear", "description": "The vampire can create specific, irrational fears in others.", "cost": "1 Willpower" },
                     "5": { "name": "Frenzy Inducement", "description": "The vampire can cause others to enter a state of frenzy, making them lose control.", "cost": "1 Willpower" }
                 }
+            },
+            "Melpominee": {
+                "description": "The Discipline of Melpominee lets vampires weave emotion and compulsion through supernatural song.",
+                "powers": {
+                    "1": { "name": "Captivating Song", "description": "Mesmerize listeners with haunting melodies that command their attention.", "cost": "1 Willpower" },
+                    "2": { "name": "Siren's Lure", "description": "Project your voice to draw a chosen target toward you despite their instincts.", "cost": "1 Willpower" },
+                    "3": { "name": "Discordant Chorus", "description": "Twist the mood of a gathered crowd by layering harmonics that manipulate shared emotion.", "cost": "1 Willpower" },
+                    "4": { "name": "Hymn to Discord", "description": "Split your voice into counterpoint that disorients foes or bolsters allies mid-conflict.", "cost": "1 Willpower" },
+                    "5": { "name": "Voice of the Siren", "description": "Resonate with a target's soul, compelling obedience or despair with a single, perfect note.", "cost": "1 Willpower" }
+                }
             }
         };
+        
+        this.ensureDaughterMapping();
+    }
+    
+    ensureDaughterMapping() {
+        const canonicalKey = 'Daughter of Cacophony';
+        const aliasKey = 'Daughter of Cacophany';
+        const mapping = ['Melpominee', 'Presence', 'Auspex'];
+        
+        this.clanDisciplineAccess[canonicalKey] = mapping;
+        this.clanDisciplineAccess[aliasKey] = mapping;
+    }
+    
+    resolveClanKey(clanName) {
+        if (!clanName) return '';
+        const normalized = clanName.trim().toLowerCase();
+        
+        let matchedKey = Object.keys(this.clanDisciplineAccess).find(key => key.trim().toLowerCase() === normalized);
+        
+        if (!matchedKey && normalized === 'daughter of cacophany') {
+            matchedKey = 'Daughter of Cacophony';
+            const mapping = ['Melpominee', 'Presence', 'Auspex'];
+            this.clanDisciplineAccess[matchedKey] = mapping;
+        }
+        
+        if (matchedKey && matchedKey !== clanName && !this.clanDisciplineAccess[clanName]) {
+            this.clanDisciplineAccess[clanName] = this.clanDisciplineAccess[matchedKey];
+        }
+        
+        return matchedKey || clanName;
+    }
+    
+    getAllowedDisciplinesForClan(clanName) {
+        const resolvedKey = this.resolveClanKey(clanName);
+        const allowed = this.clanDisciplineAccess[resolvedKey];
+        return Array.isArray(allowed) ? allowed : [];
     }
     
     /**
@@ -322,11 +370,11 @@ class DisciplineSystem {
         });
         
         // Discipline popover events
-        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseenter', (e) => {
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseover', (e) => {
             this.handleDisciplineMouseEnter(e);
         });
         
-        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseleave', (e) => {
+        eventManager.addDelegatedListener(document, '.discipline-option-btn', 'mouseout', (e) => {
             this.handleDisciplineMouseLeave(e);
         });
         
@@ -343,6 +391,9 @@ class DisciplineSystem {
         // Close popover when clicking outside
         eventManager.addListener(document, 'click', (e) => {
             if (this.popoverElement && !this.popoverElement.contains(e.target)) {
+                if (e.target.closest('.discipline-option-btn')) {
+                    return;
+                }
                 this.hidePopover();
             }
         });
@@ -364,23 +415,26 @@ class DisciplineSystem {
      * Handle discipline selection click
      */
     handleDisciplineClick(event) {
-        const button = event.target;
-        const disciplineName = button.dataset.discipline;
+        const button = event.target.closest('.discipline-option-btn');
+        if (!button) return;
         
+        const disciplineName = button.dataset.discipline;
         if (!disciplineName) return;
         
-        // Check if discipline is available to current clan
+        // Block clicks on disallowed disciplines
         const state = this.stateManager.getState();
-        const currentClan = state.clan;
+        const currentClan = this.resolveClanKey(state.clan);
         if (currentClan) {
-            const allowedDisciplines = this.clanDisciplineAccess[currentClan] || [];
+            const allowedDisciplines = this.getAllowedDisciplinesForClan(currentClan);
             if (!allowedDisciplines.includes(disciplineName)) {
                 console.warn(`DisciplineSystem: ${disciplineName} is not available to ${currentClan}`);
                 return;
             }
         }
         
-        this.selectDiscipline(disciplineName);
+        event.preventDefault();
+        event.stopPropagation();
+        this.showPopover(disciplineName, button);
     }
     
     /**
@@ -427,12 +481,20 @@ class DisciplineSystem {
      * Handle discipline mouse enter (show popover)
      */
     handleDisciplineMouseEnter(event) {
-        const button = event.target;
+        const button = event.target.closest('.discipline-option-btn');
+        if (!button) return;
+        
         const disciplineName = button.dataset.discipline;
-        
-        console.log('DisciplineSystem: Mouse enter on discipline:', disciplineName);
-        
         if (!disciplineName) return;
+        
+        const state = this.stateManager.getState();
+        const currentClan = this.resolveClanKey(state.clan);
+        if (currentClan) {
+            const allowedDisciplines = this.getAllowedDisciplinesForClan(currentClan);
+            if (!allowedDisciplines.includes(disciplineName)) {
+                return;
+            }
+        }
         
         this.showPopover(disciplineName, button);
     }
@@ -441,6 +503,16 @@ class DisciplineSystem {
      * Handle discipline mouse leave (hide popover)
      */
     handleDisciplineMouseLeave(event) {
+        const button = event.target.closest('.discipline-option-btn');
+        if (!button) return;
+        
+        const related = event.relatedTarget;
+        if (related) {
+            if (related === this.popoverElement) return;
+            if (this.popoverElement && this.popoverElement.contains(related)) return;
+            if (related.closest && related.closest('.discipline-option-btn') === button) return;
+        }
+        
         this.hidePopover();
     }
     
@@ -842,10 +914,36 @@ class DisciplineSystem {
         const rect = button.getBoundingClientRect();
         const popover = this.popoverElement;
         
-        // Position popover to the right of button, centered vertically
+        if (!popover) return;
+        
+        const popoverRect = popover.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        
+        let left = rect.right + scrollX + 16;
+        let top = rect.top + scrollY;
+        
+        if (left + popoverRect.width > viewportWidth + scrollX) {
+            left = rect.left + scrollX - popoverRect.width - 16;
+        }
+        
+        if (left < scrollX) {
+            left = scrollX + 16;
+        }
+        
+        if (top + popoverRect.height > viewportHeight + scrollY) {
+            top = viewportHeight + scrollY - popoverRect.height - 16;
+        }
+        
+        if (top < scrollY) {
+            top = scrollY + 16;
+        }
+        
         popover.style.position = 'absolute';
-        popover.style.top = (rect.top + rect.height/2 - 100) + 'px'; // Center vertically, offset up
-        popover.style.left = (rect.right + 10) + 'px';
+        popover.style.left = `${left}px`;
+        popover.style.top = `${top}px`;
         popover.style.zIndex = '1000';
     }
     
@@ -872,6 +970,14 @@ class DisciplineSystem {
                 this.hidePopover();
             });
         }
+        
+        this.popoverElement.addEventListener('mouseleave', (e) => {
+            const related = e.relatedTarget;
+            if (related && related.closest && related.closest('.discipline-option-btn')) {
+                return;
+            }
+            this.hidePopover();
+        });
     }
     
     /**
@@ -984,17 +1090,17 @@ class DisciplineSystem {
     updateClanDisciplines(selectedClan) {
         if (!selectedClan) return;
         
-        // Check if this is an NPC or existing character being edited
+        // Check if this is an NPC (NPCs have unrestricted access)
         const state = this.stateManager.getState();
         const isNPC = state.playerName === 'NPC';
-        const isEditing = (state.characterId && state.characterId > 0) || (state.id && state.id > 0);
         
-        // Don't apply clan restrictions for NPCs or when editing existing characters
-        if (isNPC || isEditing) {
+        // Don't apply clan restrictions for NPCs
+        if (isNPC) {
             // Enable all discipline buttons
             const allDisciplineButtons = document.querySelectorAll('.discipline-option-btn');
             allDisciplineButtons.forEach(button => {
                 button.disabled = false;
+                button.classList.remove('discipline-disabled');
                 button.style.opacity = '1';
                 button.style.cursor = 'pointer';
                 button.title = '';
@@ -1003,7 +1109,8 @@ class DisciplineSystem {
         }
         
         // Original clan restriction logic for new PC characters
-        const allowedDisciplines = this.clanDisciplineAccess[selectedClan] || [];
+        const resolvedClan = this.resolveClanKey(selectedClan);
+        const allowedDisciplines = this.getAllowedDisciplinesForClan(resolvedClan);
         
         // Get all discipline option buttons
         const allDisciplineButtons = document.querySelectorAll('.discipline-option-btn');
@@ -1016,20 +1123,22 @@ class DisciplineSystem {
             if (isAllowed) {
                 // Enable the button
                 button.disabled = false;
+                button.classList.remove('discipline-disabled');
                 button.style.opacity = '1';
                 button.style.cursor = 'pointer';
                 button.title = ''; // Clear any tooltip
             } else {
                 // Disable the button
                 button.disabled = true;
+                button.classList.add('discipline-disabled');
                 button.style.opacity = '0.4';
                 button.style.cursor = 'not-allowed';
-                button.title = `${disciplineName} is not available to ${selectedClan}`;
+                button.title = `${disciplineName} is not available to ${resolvedClan}`;
             }
         });
         
         // Clear any selected disciplines that the clan can't access
-        this.clearInvalidDisciplines(selectedClan, allowedDisciplines);
+        this.clearInvalidDisciplines(resolvedClan, allowedDisciplines);
     }
     
     /**
@@ -1038,12 +1147,16 @@ class DisciplineSystem {
     clearInvalidDisciplines(selectedClan, allowedDisciplines) {
         const state = this.stateManager.getState();
         const isNPC = state.playerName === 'NPC';
-        const isEditing = (state.characterId && state.characterId > 0) || (state.id && state.id > 0);
         
-        // Don't clear disciplines for NPCs or when editing
-        if (isNPC || isEditing) {
+        // Don't clear disciplines for NPCs
+        if (isNPC) {
             return;
         }
+        
+        const resolvedClan = this.resolveClanKey(selectedClan);
+        const allowedList = Array.isArray(allowedDisciplines) && allowedDisciplines.length > 0
+            ? allowedDisciplines
+            : this.getAllowedDisciplinesForClan(resolvedClan);
         
         const disciplines = [...state.disciplines];
         const disciplinePowers = { ...state.disciplinePowers };
@@ -1052,7 +1165,7 @@ class DisciplineSystem {
         
         // Remove disciplines not available to the clan
         const validDisciplines = disciplines.filter(discipline => {
-            if (allowedDisciplines.includes(discipline)) {
+            if (allowedList.includes(discipline)) {
                 return true;
             } else {
                 removedDisciplines.push(discipline);
@@ -1070,7 +1183,7 @@ class DisciplineSystem {
             });
             
             // Show notification about removed disciplines
-            console.warn(`DisciplineSystem: Removed ${removedDisciplines.length} discipline(s) not available to ${selectedClan}: ${removedDisciplines.join(', ')}`);
+            console.warn(`DisciplineSystem: Removed ${removedDisciplines.length} discipline(s) not available to ${resolvedClan}: ${removedDisciplines.join(', ')}`);
             
             this.updateAllDisplays();
         }

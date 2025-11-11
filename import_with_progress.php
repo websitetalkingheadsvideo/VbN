@@ -11,7 +11,7 @@ if (ob_get_level()) {
     ob_end_flush();
 }
 
-echo "<pre>";
+echo "<pre id='importStatus' role='status' aria-live='polite' aria-busy='true'>";
 echo "Starting rulebook import...\n";
 echo "Data directory: " . __DIR__ . "/data/extracted_rulebooks\n\n";
 

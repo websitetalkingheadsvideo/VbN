@@ -63,14 +63,14 @@ if (file_exists($loginDisableFile)) {
             if ($loginDisabled):
                 $untilTime = $disabledUntil ? date('F j, Y \a\t g:i A', strtotime($disabledUntil)) : '1 hour';
             ?>
-                <div class="login-error login-disabled-alert">
+                <div class="login-error login-disabled-alert" role="alert" aria-live="polite">
                     <h2 class="alert-title">🚫 Login Temporarily Disabled</h2>
                     <p class="alert-text">Login is currently disabled. It will be re-enabled after: <strong><?php echo htmlspecialchars($untilTime); ?></strong></p>
                 </div>
             <?php else: ?>
                 <?php
                 if (isset($_SESSION['error'])) {
-                    echo '<div class="login-error">⚠️ ' . htmlspecialchars($_SESSION['error']) . '</div>';
+                    echo '<div class="login-error" role="alert" aria-live="polite">⚠️ ' . htmlspecialchars($_SESSION['error']) . '</div>';
                     unset($_SESSION['error']);
                 }
                 ?>
@@ -78,14 +78,14 @@ if (file_exists($loginDisableFile)) {
                 <form action="login_process.php" method="POST" class="login-form d-flex flex-column gap-4 needs-validation" novalidate>
                 <div class="form-group mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" id="username" name="username" class="form-control" required autofocus aria-describedby="usernameHelp">
+                    <input type="text" id="username" name="username" class="form-control" required autofocus aria-describedby="usernameHelp" autocomplete="username">
                     <div id="usernameHelp" class="form-text">Enter your account username.</div>
                     <div class="invalid-feedback">Username is required.</div>
                 </div>
                 
                 <div class="form-group mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" required>
+                    <input type="password" id="password" name="password" class="form-control" required autocomplete="current-password">
                     <div class="invalid-feedback">Password is required.</div>
                 </div>
                 

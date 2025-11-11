@@ -1,6 +1,33 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.1 (Current)
+## Version 0.10.2 (Current)
+**Date:** November 2025
+
+### Character Creator Layout & Discipline Access QA
+- ⚙️ **Bootstrap Grid Adoption** – Rebuilt the character creator shell with `container-xxl` + responsive columns, surfaced inline Save/Exit actions, and let Bootstrap regain control over container/modal defaults for predictable theming.
+- 🎯 **Daughter of Cacophony Fixes** – Normalized clan aliases, corrected discipline loadouts (Melpominee/Presence/Auspex), and hardened gating so restricted buttons stay inert for PCs while NPCs remain unrestricted.
+- 🪄 **Popover & Status Polish** – Added close controls and viewport-aware positioning for discipline popovers, wired upload/chat lists to announce busy/completion states, and expanded Melpominee copy to match lore tone.
+- 🧹 **Legacy Cleanup** – Removed the unused `cc.php` stub now that all traffic routes through the modern character creator.
+
+### Files Added / Updated:
+- `lotn_char_create.php`
+- `css/style.css`
+- `css/bootstrap-overrides.css`
+- `js/modules/systems/DisciplineSystem.js`
+- `js/script.js`
+- `js/character-image.js`
+- `chat.php`
+- `database/populate_discipline_data.php`
+- `includes/header.php`
+- `index.php`
+- `login.php`
+- `register.php`
+- `cc.php` (removed)
+- `VERSION.md`
+
+---
+
+## Version 0.10.1
 **Date:** November 2025
 
 ### Chronicle Prelude Documentation Refresh
@@ -935,7 +962,7 @@
 - ✅ **Temporary Authentication Bypass** - Created system to allow site access without login for specified duration (1-24 hours)
 - ✅ **Guest Session Support** - Automatic guest session setup when bypass is enabled
 - ✅ **Admin Control Interface** - Admin page to enable/disable authentication bypass with time-based expiration
-- ✅ **Multi-Page Integration** - Updated key pages (index.php, questionnaire.php, lotn_char_create.php, cc.php) to respect bypass
+- ✅ **Multi-Page Integration** - Updated key pages (index.php, questionnaire.php, lotn_char_create.php) to respect bypass; removed legacy `cc.php` to avoid duplication
 - ✅ **Auto-Expiration** - Bypass automatically expires after set duration and re-enables authentication requirement
 - ✅ **Helper Functions** - Created centralized auth_bypass.php with isAuthBypassEnabled() and setupBypassSession() functions
 
@@ -955,7 +982,7 @@
   - `index.php` - Added bypass check before authentication requirement
   - `questionnaire.php` - Added bypass check before authentication requirement
   - `lotn_char_create.php` - Added bypass check before authentication requirement
-  - `cc.php` - Added bypass check before authentication requirement
+  - Removed legacy `cc.php` (alternate questionnaire) in favor of `questionnaire.php`
 
 ### User Experience:
 - **Site Analysis Ready** - Allows external tools/apps to analyze site without login requirements

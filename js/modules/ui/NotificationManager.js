@@ -344,6 +344,7 @@ style.textContent = `
     
     .notification-container {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 0.5em; /* reduce overall size by ~50% */
     }
     
     .notification {

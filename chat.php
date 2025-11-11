@@ -154,10 +154,10 @@ include 'includes/header.php';
     <div class="chat-content">
             <div class="character-selection">
                 <h3>Select Character for Chat</h3>
-                <div class="character-list" id="characterList">
+                <div class="character-list" id="characterList" role="status" aria-live="polite" aria-busy="true">
                     <p>Loading your characters...</p>
                 </div>
-                <div class="selected-character" id="selectedCharacter" style="display: none;">
+                <div class="selected-character" id="selectedCharacter" role="status" aria-live="polite" style="display: none;">
                     <h4>Selected Character:</h4>
                     <div class="character-info" id="characterInfo"></div>
                 </div>
@@ -191,21 +191,39 @@ include 'includes/header.php';
         });
 
         async function loadUserCharacters() {
+            const list = document.getElementById('characterList');
+            if (list) list.setAttribute('aria-busy', 'true');
             try {
                 const response = await fetch('api_get_characters.php');
                 const data = await response.json();
                 
                 if (data.success) {
-                    userCharacters = data.characters;
+                    userCharacters = data.characters || [];
                     displayCharacters(userCharacters);
+                    if (list) {
+                        list.setAttribute('aria-busy', 'false');
+                        let status = document.getElementById('characterListStatus');
+                        if (!status) {
+                            status = document.createElement('div');
+                            status.id = 'characterListStatus';
+                            status.setAttribute('role', 'status');
+                            status.className = 'visually-hidden';
+                            list.prepend(status);
+                        }
+                        status.textContent = `${userCharacters.length} character${userCharacters.length === 1 ? '' : 's'} loaded`;
+                    }
                 } else {
-                    document.getElementById('characterList').innerHTML = 
-                        '<div class="no-characters">No characters found. <a href="lotn_char_create.php">Create your first character</a></div>';
+                    if (list) {
+                        list.setAttribute('aria-busy', 'false');
+                        list.innerHTML = '<div class="no-characters">No characters found. <a href="lotn_char_create.php">Create your first character</a></div>';
+                    }
                 }
             } catch (error) {
                 console.error('Error loading characters:', error);
-                document.getElementById('characterList').innerHTML = 
-                    '<div class="no-characters">Error loading characters. Please try again.</div>';
+                if (list) {
+                    list.setAttribute('aria-busy', 'false');
+                    list.innerHTML = '<div class="no-characters">Error loading characters. Please try again.</div>';
+                }
             }
         }
 

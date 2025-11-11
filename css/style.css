@@ -32,10 +32,8 @@ body {
     gap: 20px;
     min-height: 100vh;
 }
-
-    .container {
-        max-width: 95%;
-    }
+/* DISABLED: global .container override to restore Bootstrap defaults */
+/**/
     
     .sidebar {
         width: 300px;
@@ -169,15 +167,8 @@ h4, .subsection-title {
 /* ========================================
    LAYOUT COMPONENTS
    ======================================== */
-
-.container {
-    flex: 0 1 1200px;
-    max-width: 1200px;
-    background: linear-gradient(145deg, #1a1a1a, #2a2a2a, #1a1a1a);
-    border: 2px solid #780606;
-    border-radius: 8px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8), 0 0 20px rgba(120, 6, 6, 0.4), inset 0 1px 0 rgba(120, 6, 6, 0.1);
-}
+/* DISABLED: global .container override to restore Bootstrap defaults */
+/**/
 
 .header {
     background: linear-gradient(135deg, #1a0000, #2d0000, #1a0000);
@@ -586,11 +577,8 @@ h4, .subsection-title {
 }
 
 /* Enhanced Spacing and Visual Hierarchy */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* DISABLED: global .container override to restore Bootstrap defaults */
+/**/
 
 .header {
     margin-bottom: 30px;
@@ -1826,7 +1814,8 @@ button:disabled {
 }
 
 /* Modal Styles */
-.modal {
+/* DISABLED: global Bootstrap override to restore Bootstrap defaults */
+/*.modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -1836,8 +1825,10 @@ button:disabled {
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     overflow: auto;
-}
+}*/
 
+/* DISABLED: global modal-content overrides to allow Bootstrap modal sizing */
+/*
 .modal-content {
     background-color: #2a2a2a;
     margin: 2% auto;
@@ -1850,6 +1841,12 @@ button:disabled {
     display: flex;
     flex-direction: column;
 }
+*/
+/* Targeted sizing for Clan Guide Bootstrap modal: never exceed viewport height */
+#clanGuideModal .modal-content {
+    max-height: calc(100vh - var(--bs-modal-margin) * 2);
+}
+#clanGuideModal .modal-body { overflow-y: auto; }
 
 .modal-header {
     background: #4B0101;
@@ -2264,12 +2261,36 @@ button:disabled {
     display: block;
 }
 
+/* Compact header row: name + close on same line */
+.discipline-popover .popover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.discipline-popover .popover-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #e0e0e0;
+}
+
+.discipline-popover .popover-close,
+.discipline-popover .popover-close-btn {
+    background: transparent;
+    border: 0;
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+/* Hide the inner "Powers" heading to save vertical space */
 .discipline-popover h4 {
-    color: #4B0101;
-    margin: 0 0 10px 0;
-    font-size: 16px;
-    border-bottom: 1px solid #4B0101;
-    padding-bottom: 3px;
+    display: none;
 }
 
 .power-option {
@@ -2335,6 +2356,11 @@ button:disabled {
 
 .discipline-option-btn {
     position: relative;
+}
+
+.discipline-option-btn.discipline-disabled {
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
 }
 
 /* Clan Table Styles */
@@ -2565,7 +2591,8 @@ button:disabled {
     font-size: 14px;
     line-height: 1.6;
 }
-
+/* DISABLED: global Bootstrap override to restore Bootstrap defaults */
+/*
 .btn-cancel {
     background: #6c757d;
     color: white;
@@ -2574,12 +2601,13 @@ button:disabled {
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
-}
+}*/
 
 .btn-cancel:hover {
     background: #5a6268;
 }
-
+/* DISABLED: global Bootstrap override to restore Bootstrap defaults */
+/*
 .btn-finalize {
     background: #4B0101;
     color: white;
@@ -2588,12 +2616,13 @@ button:disabled {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-}
+}*/
 
 .btn-finalize:hover {
     background: #a00000;
 }
-
+/* DISABLED: global Bootstrap override to restore Bootstrap defaults */
+/*
 .btn-download {
     background: #28a745;
     color: white;
@@ -2602,7 +2631,7 @@ button:disabled {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-}
+}*/
 
 .btn-download:hover {
     background: #218838;
@@ -2873,11 +2902,8 @@ button:disabled {
 /* ========================================
    MOBILE RESPONSIVE DESIGN
    ======================================== */
-
-    .container {
-        max-width: 100%;
-        padding: 0 10px;
-    }
+/* DISABLED: global .container override to restore Bootstrap defaults */
+/**/
     
     .sidebar {
         order: 2;
@@ -4201,12 +4227,9 @@ select {
         gap: 10px;
     }
 
-    /* Fix container layout */
-    .container {
-        max-width: 100%;
-        padding: 0 10px;
-        margin: 0;
-    }
+/* Fix container layout */
+/* DISABLED: global .container override to restore Bootstrap defaults */
+/**/
     
     /* Fix sidebar positioning */
     .sidebar {
@@ -4770,9 +4793,8 @@ select {
     }
     
     /* Character Viewing Mobile Styles */
-    .container {
-        padding: 10px;
-    }
+/* DISABLED: global .container override to restore Bootstrap defaults */
+/**/
     
     .actions-bar {
         flex-direction: column;
@@ -4928,9 +4950,10 @@ select {
     }
     
     /* Modal improvements for mobile */
-    .modal {
+/* DISABLED: global Bootstrap override to restore Bootstrap defaults */
+/*    .modal {
         padding: 10px;
-    }
+    }*/
     
     .modal-content {
         width: 95%;
@@ -4992,13 +5015,14 @@ select {
     /* Button improvements for mobile */
     .btn-primary,
     .btn-secondary,
-    .btn-danger {
+/* DISABLED: global Bootstrap override to restore Bootstrap defaults */
+/*    .btn-danger {
         width: 100%;
         padding: 12px 20px;
         min-height: 44px;
         font-size: 16px;
         margin-bottom: 10px;
-    }
+    }*/
     
     /* Tab improvements for mobile */
     .tabs {
@@ -5108,6 +5132,19 @@ select {
         padding: 10px;
         min-height: 44px;
     }
+}
+
+/* Bootstrap-first overrides for character creator layout */
+@media (min-width: 992px) {
+  /* Let Bootstrap grid control the layout */
+  .sidebar {
+    float: none !important; /* neutralize any legacy float */
+  }
+  #sheet {
+    float: none !important; /* neutralize any legacy float */
+    /* Sheet max width for readability */
+    max-width: 1000px !important;
+  }
 }
 
 /* Tablet Responsive Design */
