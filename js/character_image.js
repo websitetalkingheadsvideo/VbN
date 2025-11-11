@@ -48,10 +48,10 @@ class CharacterImageManager {
         
         console.log('[CharacterImageManager] File selected:', file.name, file.type, file.size);
         
-        // Validate file type
-        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+        // Validate file type (frontend mirror of backend)
+        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
         if (!allowedTypes.includes(file.type)) {
-            this.showError('Invalid file type. Please select a JPG, PNG, or GIF image.');
+            this.showError('Invalid file type. Please select a JPG, PNG, GIF, or WEBP image.');
             event.target.value = ''; // Clear selection
             return;
         }

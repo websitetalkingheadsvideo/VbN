@@ -1,0 +1,79 @@
+{
+  "character_name": "Roxanne Murphy",
+  "player_name": "NPC",
+  "chronicle": "Valley by Night",
+  "current_state": "active",
+  "camarilla_status": "Independent (Followers of Set)",
+  "nature": "Visionary",
+  "demeanor": "Priestess",
+  "concept": "Setite temple-mistress running a nightclub front in Mesa",
+  "clan": "Followers of Set",
+  "generation": 9,
+  "sire": "",
+  "pc": 0,
+  "appearance": "Impeccably composed Setite woman who favors Egyptian-inspired jewelry and rich fabrics. Often seen in the private levels of The Hole, lit by warm, low light that accents her ritual regalia.",
+  "description": "Roxanne Murphy is the architect and high priestess behind The Hole \u2014 the Mesa nightclub that doubles as a tiered Setite corruption engine and, beneath it, a blasphemy-shrine to Set. Outwardly a cultured, dangerous businesswoman, she is in truth a devoted sorcerer who believes her monthly rituals hasten Set's return. She allows neutral ground so long as it serves Set's purposes, but her hospitality has limits.",
+  "biography": "After years operating in smaller occult circles, Roxanne established herself in Mesa by building The Hole as both a profitable nightlife destination and a perfectly concealed Setite temple. She rules its levels like a descending mystery cult: public pleasure above, true corruption and worship below. She works closely with Marcus (operations) and Jennifer (security) and maintains the blasphemy-shrine where she performs Akhu rites. She is aware of Camarilla eyes on her domain but is confident in her layered defenses.",
+  "character_image": "Roxanne Murphy.png",
+  "equipment": "",
+  "notes": "",
+  "agentNotes": null,
+  "actingNotes": null,
+  "status": "active",
+  "total_xp": 30,
+  "spent_xp": 0,
+  "custom_data": {},
+  "status_details": {
+    "current_state": "active",
+    "camarilla_status": "Independent (Followers of Set)",
+    "xp_total": 30,
+    "xp_spent": 0,
+    "xp_available": 30,
+    "health_levels": 7,
+    "blood_pool_current": 10,
+    "blood_pool_maximum": 10
+  },
+  "traits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "abilities": [],
+  "ability_specializations": [],
+  "disciplines": [
+    "Serpentis",
+    "Presence",
+    "Obfuscate",
+    "Akhu (Setite Sorcery)"
+  ],
+  "backgrounds": {},
+  "backgroundDetails": {},
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  "merits_flaws": [],
+  "coteries": [],
+  "relationships": [],
+  "rituals": [],
+  "specializations": {},
+  "research_notes": {},
+  "artifacts": [
+    "Akhu Ritual Implements (knives, chalices, censers)",
+    "Basalt Altar of Set (ritual focus enhancing Akhu power)",
+    "Book of Going Forth by Night \u2013 annotated Setite edition",
+    "Preserved Bodies and Ritual Ingredients",
+    "Egyptian Scrolls and Blasphemous Texts of Set"
+  ]
+}

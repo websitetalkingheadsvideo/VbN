@@ -2007,6 +2007,227 @@ include __DIR__ . '/includes/header.php';
     
     <!-- Simple Save Button Handler -->
     <script>
+        const MAX_VIRTUE_POINTS = 7;
+        const VIRTUE_KEY_MAP = {
+            conscience: 'Conscience',
+            selfcontrol: 'SelfControl',
+            'self-control': 'SelfControl'
+        };
+
+        const MORALITY_STATE_LABELS = {
+            10: 'Saintlike',
+            9: 'Serene',
+            8: 'Compassionate',
+            7: 'Balanced',
+            6: 'Conflicted',
+            5: 'Turbulent',
+            4: 'Falling',
+            3: 'Bestial',
+            2: 'Monstrous',
+            1: 'Inhuman',
+            0: 'Lost'
+        };
+
+        let hasVirtueSubscriptions = false;
+
+        function normalizeVirtueKey(rawKey) {
+            if (!rawKey) {
+                throw new Error('Virtue key is required');
+            }
+            const normalized = VIRTUE_KEY_MAP[rawKey.toString().trim().toLowerCase()];
+            if (!normalized) {
+                throw new Error(`Unknown virtue key "${rawKey}"`);
+            }
+            return normalized;
+        }
+
+        function getStateManager() {
+            const app = window.characterCreationApp;
+            if (!app || !app.modules || !app.modules.stateManager) {
+                return null;
+            }
+            return app.modules.stateManager;
+        }
+
+        function computeTotalVirtuePoints(virtues) {
+            return (virtues.Conscience ?? 1) + (virtues.SelfControl ?? 1);
+        }
+
+        function getVirtuesFromState() {
+            const stateManager = getStateManager();
+            if (!stateManager) {
+                return { Conscience: 1, SelfControl: 1 };
+            }
+            const state = stateManager.getState();
+            return {
+                Conscience: state.virtues?.Conscience ?? 1,
+                SelfControl: state.virtues?.SelfControl ?? 1
+            };
+        }
+
+        function updateVirtueValueDisplay(virtueKey, level) {
+            const valueElement = document.getElementById(virtueKey === 'Conscience' ? 'conscienceValue' : 'selfControlValue');
+            if (valueElement) {
+                valueElement.textContent = level.toString();
+            }
+
+            const progressElement = document.getElementById(virtueKey === 'Conscience' ? 'conscienceProgress' : 'selfControlProgress');
+            if (progressElement) {
+                const clampedLevel = Math.max(1, Math.min(5, level));
+                progressElement.style.width = `${(clampedLevel / 5) * 100}%`;
+            }
+
+            const markersContainer = document.getElementById(virtueKey === 'Conscience' ? 'conscienceMarkers' : 'selfControlMarkers');
+            if (markersContainer && markersContainer.children.length === 5) {
+                Array.from(markersContainer.children).forEach((marker, idx) => {
+                    if (idx < level) {
+                        marker.classList.add('active');
+                        marker.classList.remove('inactive');
+                    } else {
+                        marker.classList.remove('active');
+                        marker.classList.add('inactive');
+                    }
+                });
+            }
+
+            const minusBtn = document.getElementById(virtueKey === 'Conscience' ? 'conscienceMinus' : 'selfControlMinus');
+            if (minusBtn) {
+                minusBtn.disabled = level <= 1;
+            }
+
+            const plusBtn = document.getElementById(virtueKey === 'Conscience' ? 'consciencePlus' : 'selfControlPlus');
+            if (plusBtn) {
+                plusBtn.disabled = level >= 5;
+            }
+        }
+
+        function updateVirtueSummary(virtues) {
+            const totalPoints = computeTotalVirtuePoints(virtues);
+            const remaining = Math.max(0, MAX_VIRTUE_POINTS - totalPoints);
+
+            const remainingElement = document.getElementById('virtuePointsRemaining');
+            if (remainingElement) {
+                remainingElement.textContent = remaining.toString();
+            }
+
+            const humanity = Math.max(0, Math.min(10, virtues.Conscience + virtues.SelfControl));
+            updateHumanityDisplay(virtues, humanity);
+        }
+
+        function getMoralStateLabel(humanity) {
+            return MORALITY_STATE_LABELS.hasOwnProperty(humanity)
+                ? MORALITY_STATE_LABELS[humanity]
+                : `Humanity ${humanity}`;
+        }
+
+        function updateHumanityDisplay(virtues, humanity) {
+            const humanityValueElement = document.getElementById('humanityValue');
+            if (humanityValueElement) {
+                humanityValueElement.textContent = humanity.toString();
+            }
+
+            const humanityFill = document.getElementById('humanityFill');
+            if (humanityFill) {
+                humanityFill.style.width = `${(humanity / 10) * 100}%`;
+            }
+
+            const humanityCalculationElement = document.getElementById('humanityCalculation');
+            if (humanityCalculationElement) {
+                humanityCalculationElement.textContent = `${virtues.Conscience} + ${virtues.SelfControl} = ${humanity}`;
+            }
+
+            const moralStateElement = document.getElementById('moralStateDisplay');
+            if (moralStateElement) {
+                moralStateElement.textContent = getMoralStateLabel(humanity);
+            }
+        }
+
+        function syncVirtuesFromState() {
+            const stateManager = getStateManager();
+            if (!stateManager) {
+                return;
+            }
+
+            if (!hasVirtueSubscriptions) {
+                stateManager.subscribe('virtues', () => {
+                    const virtues = getVirtuesFromState();
+                    updateVirtueValueDisplay('Conscience', virtues.Conscience);
+                    updateVirtueValueDisplay('SelfControl', virtues.SelfControl);
+                    updateVirtueSummary(virtues);
+                });
+
+                stateManager.subscribe('humanity', () => {
+                    const virtues = getVirtuesFromState();
+                    const state = stateManager.getState();
+                    updateHumanityDisplay(virtues, state.humanity ?? (virtues.Conscience + virtues.SelfControl));
+                });
+
+                hasVirtueSubscriptions = true;
+            }
+
+            const virtues = getVirtuesFromState();
+            updateVirtueValueDisplay('Conscience', virtues.Conscience);
+            updateVirtueValueDisplay('SelfControl', virtues.SelfControl);
+            updateVirtueSummary(virtues);
+
+            const state = stateManager.getState();
+            const humanity = state.humanity ?? (virtues.Conscience + virtues.SelfControl);
+            updateHumanityDisplay(virtues, humanity);
+        }
+
+        function enqueueVirtueSync(attempt = 0) {
+            try {
+                syncVirtuesFromState();
+            } catch (error) {
+                if (attempt < 10) {
+                    setTimeout(() => enqueueVirtueSync(attempt + 1), 100);
+                } else {
+                    console.error('Failed to synchronise virtues after multiple attempts:', error);
+                }
+            }
+        }
+
+        window.adjustVirtue = function adjustVirtue(virtueKey, delta) {
+            const stateManager = getStateManager();
+            if (!stateManager) {
+                console.error('StateManager is not ready; cannot adjust virtue.');
+                return;
+            }
+
+            const normalizedKey = normalizeVirtueKey(virtueKey);
+            const currentState = stateManager.getState();
+            const currentVirtues = {
+                Conscience: currentState.virtues?.Conscience ?? 1,
+                SelfControl: currentState.virtues?.SelfControl ?? 1
+            };
+
+            const proposedLevel = Math.max(1, Math.min(5, currentVirtues[normalizedKey] + delta));
+            if (proposedLevel === currentVirtues[normalizedKey]) {
+                return;
+            }
+
+            const prospectiveVirtues = { ...currentVirtues, [normalizedKey]: proposedLevel };
+            const totalPoints = computeTotalVirtuePoints(prospectiveVirtues);
+            if (totalPoints > MAX_VIRTUE_POINTS) {
+                return;
+            }
+
+            const humanity = Math.max(0, Math.min(10, prospectiveVirtues.Conscience + prospectiveVirtues.SelfControl));
+
+            stateManager.setState({
+                virtues: prospectiveVirtues,
+                humanity
+            });
+
+            updateVirtueValueDisplay('Conscience', prospectiveVirtues.Conscience);
+            updateVirtueValueDisplay('SelfControl', prospectiveVirtues.SelfControl);
+            updateVirtueSummary(prospectiveVirtues);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            enqueueVirtueSync();
+        });
+
         // Simple save function for testing
         function saveCharacter(isFinalization = false) {
             console.log('saveCharacter called with isFinalization:', isFinalization);
@@ -2014,6 +2235,9 @@ include __DIR__ . '/includes/header.php';
             // Show loading state
             const saveButtons = document.querySelectorAll('.save-btn');
             saveButtons.forEach(btn => {
+                if (!btn.dataset.originalLabel) {
+                    btn.dataset.originalLabel = btn.innerHTML;
+                }
                 btn.disabled = true;
                 btn.innerHTML = isFinalization ? '🎯 Finalizing...' : '💾 Saving...';
             });
@@ -2160,7 +2384,9 @@ include __DIR__ . '/includes/header.php';
                 // Reset button state
                 saveButtons.forEach(btn => {
                     btn.disabled = false;
-                    btn.innerHTML = isFinalization ? '🎯 Finalize Character' : '💾 Save Character';
+                    if (btn.dataset.originalLabel) {
+                        btn.innerHTML = btn.dataset.originalLabel;
+                    }
                 });
             });
         }
@@ -2173,6 +2399,26 @@ include __DIR__ . '/includes/header.php';
             const urlId = params.get('id');
             if (urlId && document.getElementById('characterId')) {
                 document.getElementById('characterId').value = urlId;
+            }
+            const rawReturnUrl = params.get('returnUrl');
+            const fallbackExitUrl = '/admin/admin_panel.php';
+            let exitTargetUrl = fallbackExitUrl;
+
+            if (rawReturnUrl) {
+                try {
+                    const decodedReturn = decodeURIComponent(rawReturnUrl);
+                    if (decodedReturn.includes('admin/admin_panel.php')) {
+                        if (decodedReturn.startsWith('http://') || decodedReturn.startsWith('https://')) {
+                            exitTargetUrl = decodedReturn;
+                        } else if (decodedReturn.startsWith('/')) {
+                            exitTargetUrl = decodedReturn;
+                        } else {
+                            exitTargetUrl = '/' + decodedReturn;
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Invalid returnUrl parameter', error);
+                }
             }
             
             // Add click listeners to all save buttons
@@ -2189,32 +2435,21 @@ include __DIR__ . '/includes/header.php';
 
             // Exit button handler (local to this page)
             const exitBtn = document.getElementById('exitEditorBtn');
+            const handleExit = (event) => {
+                if (event) {
+                    event.preventDefault();
+                }
+                console.log('Exit Editor button pressed');
+                window.location.href = exitTargetUrl;
+            };
             if (exitBtn) {
-                exitBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Exit Editor button pressed');
-                    const ref = document.referrer || '';
-                    if (ref.includes('admin/admin_panel.php')) {
-                        history.back();
-                    } else {
-                        window.location.href = 'admin/admin_panel.php';
-                    }
-                });
+                exitBtn.addEventListener('click', handleExit);
             }
 
             // Bind all inline Exit buttons (e.g., in mobile-save-container)
             const exitInlineBtns = document.querySelectorAll('.exit-inline');
             exitInlineBtns.forEach(function(btn){
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Exit Editor button pressed');
-                    const ref2 = document.referrer || '';
-                    if (ref2.includes('admin/admin_panel.php')) {
-                        history.back();
-                    } else {
-                        window.location.href = 'admin/admin_panel.php';
-                    }
-                });
+                btn.addEventListener('click', handleExit);
             });
 
             // Image upload wiring for this page's IDs

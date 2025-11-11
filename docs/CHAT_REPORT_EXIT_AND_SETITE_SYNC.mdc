@@ -1,0 +1,35 @@
+## Chat Session Report — November 2025
+
+### Session Summary
+- **Date:** November 2025  
+- **Version:** 0.10.6 (Patch Increment)  
+- **Focus:** Character editor exit flow, image upload support, Setite roster hydration
+
+### What We Accomplished
+
+#### 1. Character Editor Exit Consistency
+- Added `returnUrl` propagation in `admin/admin_panel.php` so edit links remember filter/sort state.
+- Updated `lotn_char_create.php` to decode the parameter and route every Exit button back to the originating admin panel view.
+- Restored Save buttons to their original labels after async actions and aligned all with the green success styling.
+
+#### 2. Image Upload UX Fix
+- Extended `js/character_image.js` validation to accept WebP files, matching backend allowances and unblocking newer portraits.
+
+#### 3. Setite Reference & Database Sync
+- Linked `Roxanne Murphy`’s JSON sheet to her portrait and created `database/insert_roxanne_murphy.php` for one-click seeding.
+- Ran the reference sync script, confirming all characters—including Roxanne, Warner, Roadrunner, and Tariq—now hydrate without omissions (duplicates are limited to multi-character JSONs).
+
+### Files Added / Updated
+- `admin/admin_panel.php`
+- `css/style.css`
+- `js/character_image.js`
+- `lotn_char_create.php`
+- `reference/Characters/Roxanne_Murphy.json`
+- `database/insert_roxanne_murphy.php`
+- `docs/CHAT_REPORT_EXIT_AND_SETITE_SYNC.mdc`
+- `VERSION.md`
+
+### Current Status
+- **Exit flow:** ✅ Always returns to the prior admin panel state.
+- **Portrait uploads:** ✅ WebP accepted across UI and API.
+- **Reference sync:** ✅ Clean run; only expected duplicate notices remain for multi-entry JSON sources.

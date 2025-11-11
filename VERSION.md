@@ -1,6 +1,26 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.5 (Current)
+## Version 0.10.6 (Current)
+**Date:** November 2025
+
+### Admin Exit & Setite Updates
+- ✅ **Consistent Exit Flow** – Character editor now respects a `returnUrl` so Exit always lands back on `admin/admin_panel.php` with the original filters and pagination intact.
+- ✅ **Save Button Polish** – All in-sheet Save actions now use the green success gradient and restore their original labels after asynchronous saves.
+- ✅ **WebP Upload Unlock** – Front-end validation in `js/character_image.js` accepts WebP files, matching backend support.
+- 🐍 **Setite Roster** – Added Roxanne Murphy’s reference sheet, portrait link, and insert helper to hydrate the live database before sync.
+
+### Files Added / Updated:
+- `lotn_char_create.php`
+- `admin/admin_panel.php`
+- `css/style.css`
+- `js/character_image.js`
+- `reference/Characters/Roxanne_Murphy.json`
+- `database/insert_roxanne_murphy.php`
+- `VERSION.md`
+
+---
+
+## Version 0.10.5
 **Date:** November 2025
 
 ### Character Agent Dry Run & Reference Sync

@@ -255,6 +255,8 @@ function render_clan_badge(string $clan): string {
                                LEFT JOIN users u ON c.user_id = u.id
                                ORDER BY c.id DESC";
                 $char_result = mysqli_query($conn, $char_query);
+                $currentAdminUrl = $_SERVER['REQUEST_URI'] ?? '/admin/admin_panel.php';
+                $encodedReturnUrl = rawurlencode($currentAdminUrl);
                 
                 if (!$char_result) {
                     echo "<tr><td colspan='6'>Query Error: " . mysqli_error($conn) . "</td></tr>";
@@ -321,7 +323,7 @@ function render_clan_badge(string $clan): string {
                                 <button class="action-btn view-btn btn btn-primary" 
                                         data-id="<?php echo $char['id']; ?>"
                                         title="View Character">👁️</button>
-                                <a href="../lotn_char_create.php?id=<?php echo $char['id']; ?>" 
+                                <a href="../lotn_char_create.php?id=<?php echo $char['id']; ?>&returnUrl=<?php echo $encodedReturnUrl; ?>" 
                                    class="action-btn edit-btn btn btn-warning" 
                                    title="Edit Character">✏️</a>
                                 <button class="action-btn delete-btn btn btn-danger" 

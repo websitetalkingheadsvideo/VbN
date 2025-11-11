@@ -2541,9 +2541,9 @@ button:disabled {
 }
 
 .save-btn {
-    background: linear-gradient(135deg, #2d2d2d, #444);
-    color: #e0e0e0;
-    border: 2px solid #666;
+    background: linear-gradient(135deg, #146c43, #198754);
+    color: #f8f9fa;
+    border: 2px solid #0f5132;
     padding: 3px 25px;
     border-radius: 8px;
     cursor: pointer;
@@ -2557,8 +2557,8 @@ button:disabled {
 }
 
 .save-btn:hover {
-    background: linear-gradient(135deg, #444, #666);
-    border-color: #888;
+    background: linear-gradient(135deg, #198754, #28a745);
+    border-color: #14532d;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
