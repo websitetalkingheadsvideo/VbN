@@ -1,13 +1,28 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.6 (Current)
+## Version 0.10.7 (Current)
+**Date:** November 2025
+
+### Tremere Bundles Split
+- ✅ **Standalone Sheets** – Broke the combined Tremere JSON into `Andrei_Radulescu.json`, `Dr_Margaret_Ashford.json`, and `James_Whitmore.json` so each character syncs independently without duplicate notices.
+- ♻️ **Legacy Cleanup** – Removed the legacy `Tremere.json` array file now that the roster is normalized.
+
+### Files Added / Updated:
+- `reference/Characters/Added to Database/Andrei_Radulescu.json`
+- `reference/Characters/Added to Database/Dr_Margaret_Ashford.json`
+- `reference/Characters/Added to Database/James_Whitmore.json`
+- `VERSION.md`
+
+---
+
+## Version 0.10.6
 **Date:** November 2025
 
 ### Admin Exit & Setite Updates
 - ✅ **Consistent Exit Flow** – Character editor now respects a `returnUrl` so Exit always lands back on `admin/admin_panel.php` with the original filters and pagination intact.
 - ✅ **Save Button Polish** – All in-sheet Save actions now use the green success gradient and restore their original labels after asynchronous saves.
 - ✅ **WebP Upload Unlock** – Front-end validation in `js/character_image.js` accepts WebP files, matching backend support.
-- 🐍 **Setite Roster** – Added Roxanne Murphy’s reference sheet, portrait link, and insert helper to hydrate the live database before sync.
+- 🐍 **Setite Roster** – Added Roxanne Murphy's reference sheet, portrait link, and insert helper to hydrate the live database before sync.
 
 ### Files Added / Updated:
 - `lotn_char_create.php`
@@ -58,7 +73,7 @@
 **Date:** November 2025
 
 ### Admin Character Viewer Bootstrap Retrofit
-- ✅ **Modal Conversion** – Replaced the legacy character viewer markup with Bootstrap’s `modal-dialog-scrollable`, added compact/details toggles, and aligned portrait/summary columns with responsive grid semantics.
+- ✅ **Modal Conversion** – Replaced the legacy character viewer markup with Bootstrap's `modal-dialog-scrollable`, added compact/details toggles, and aligned portrait/summary columns with responsive grid semantics.
 - ✅ **Compact Layout Polish** – Reflowed metadata into two-column label/value rows, balanced portrait height, and removed redundant status fields from compact mode.
 - ✅ **Ability Grid Cleanup** – Normalized abilities into Physical/Social/Mental/Optional buckets and rendered them as a 2×2 grid while escaping user-entered content.
 - ✅ **API Hardening** – Updated `view_character_api.php` to emit UTF‑8 JSON with error logging so malformed biographies no longer crash modal fetches.

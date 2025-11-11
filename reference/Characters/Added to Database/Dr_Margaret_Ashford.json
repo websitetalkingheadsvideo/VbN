@@ -1,0 +1,113 @@
+{
+  "character_name": "Dr. Margaret Ashford",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Perfectionist",
+  "demeanor": "Pedagogue",
+  "concept": "Victorian Scholar of Protective Magic",
+  "clan": "Tremere",
+  "generation": 11,
+  "sire": "Unknown Philadelphia Tremere",
+  "pc": 0,
+  "biography": "Embraced in 1880s Philadelphia. Born into wealthy family, earned doctorate in unusual circumstances for a woman of her era. Specialized in protective wards and European ritual magic. Relocated to Phoenix 3 months ago to research indigenous magic (assignment she resents). Currently under fae enchantment via her horse Aonbharr.",
+  "equipment": "Research materials, Victorian-era journals, occult texts on ward-craft",
+  "traits": {
+    "Physical": ["Precise", "Steady-handed", "Coordinated"],
+    "Social": ["Poised", "Diplomatic", "Authoritative", "Elegant", "Stubborn"],
+    "Mental": ["Intelligent", "Scholarly", "Analytical", "Methodical", "Focused", "Patient", "Determined", "Rational", "Wise"]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": [],
+    "Mental": []
+  },
+  "abilities": [
+    {"name": "Academics", "category": "Mental", "level": 4},
+    {"name": "Occult", "category": "Mental", "level": 4},
+    {"name": "Linguistics", "category": "Mental", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Subterfuge", "category": "Social", "level": 2},
+    {"name": "Etiquette", "category": "Social", "level": 3},
+    {"name": "Expression", "category": "Social", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 2},
+    {"name": "Awareness", "category": "Optional", "level": 2}
+  ],
+  "disciplines": [
+    {
+      "name": "Thaumaturgy",
+      "path": "Hearth Path",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Warm the Hearth"},
+        {"level": 2, "power": "Enchant the Threshold"},
+        {"level": 3, "power": "Rhyme of Discord"}
+      ]
+    },
+    {
+      "name": "Thaumaturgy",
+      "path": "Path of Warding",
+      "level": 3,
+      "powers": [
+        {"level": 1, "power": "Ward Against Ghouls"},
+        {"level": 2, "power": "Ward Against Spirits"},
+        {"level": 3, "power": "Glyph of Scrying"}
+      ]
+    },
+    {
+      "name": "Auspex",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"},
+        {"level": 2, "power": "Aura Perception"}
+      ]
+    }
+  ],
+  "backgrounds": {
+    "Generation": 2,
+    "Resources": 2,
+    "Status": 1,
+    "Mentor": 2
+  },
+  "backgroundDetails": {
+    "Resources": "Inherited wealth from Philadelphia family, modest but comfortable",
+    "Status": "Known researcher within Tremere hierarchy, though currently assigned to unwanted task",
+    "Mentor": "Her sire in Philadelphia, maintains correspondence"
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 4,
+    "courage": 2,
+    "willpower_permanent": 6,
+    "willpower_current": 6,
+    "humanity": 7
+  },
+  "merits_flaws": [
+    {"name": "Natural Linguist", "type": "merit", "category": "Mental", "cost": 2, "description": "Learns languages easily"},
+    {"name": "Code of Honor", "type": "flaw", "category": "Mental", "cost": 1, "description": "Victorian propriety and academic integrity"},
+    {"name": "Enchanted (Aonbharr)", "type": "flaw", "category": "Supernatural", "cost": 3, "description": "Under fae enchantment via her horse, unknown to her"}
+  ],
+  "status": {
+    "created_date": "2024-01-01",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 13,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "Master of protective magic, ironically vulnerable to fae manipulation. Resents indigenous magic assignment. Victorian academic who never adapted to modern era."
+  },
+  "rituals": [
+    "Communicate with Sire",
+    "Ward vs Ghouls (Level 1)",
+    "Ward vs Spirits (Level 2)",
+    "Illuminate Trail of Prey (Level 2)",
+    "Encrypt Missive (Level 1)"
+  ],
+  "specializations": {
+    "Occult": "Protection rituals and wards",
+    "Academics": "European ritual magic history"
+  }
+}
+

@@ -1,0 +1,118 @@
+{
+  "character_name": "Andrei Radulescu",
+  "player_name": "ST/NPC",
+  "chronicle": "Valley by Night",
+  "nature": "Survivor",
+  "demeanor": "Conformist",
+  "concept": "Refugee Scholar Creating Desert Blood Magic",
+  "clan": "Tremere",
+  "generation": 12,
+  "sire": "Unknown Tremere (possibly European)",
+  "pc": 0,
+  "biography": "Romanian refugee family fled to US late 1970s (fleeing communism and possibly supernatural threats). Grew up in Kenosha, Wisconsin immigrant community. Books were his childhood protection and escape, leading to love of learning. Embraced early 1980s. Working on experimental Dehydrate Thaumaturgy path perfect for Arizona desert conditions. This research is his chance to prove he deserved the Embrace despite lower generation. Nervous, survival-focused, perpetually on guard - people often think 'rat' when they see him. Good #2 to James Whitmore. Resents Dr. Ashford but acknowledges her superiority.",
+  "equipment": "Research notes on Dehydrate path, occult texts, cheap but functional ritual components",
+  "traits": {
+    "Physical": ["Quick", "Nimble", "Alert"],
+    "Social": ["Stubborn", "Loyal"],
+    "Mental": ["Intelligent", "Clever", "Resourceful", "Observant", "Studious", "Focused", "Patient", "Determined", "Persistent"]
+  },
+  "negativeTraits": {
+    "Physical": [],
+    "Social": ["Awkward"],
+    "Mental": []
+  },
+  "abilities": [
+    {"name": "Occult", "category": "Mental", "level": 4},
+    {"name": "Academics", "category": "Mental", "level": 3},
+    {"name": "Science", "category": "Mental", "level": 3},
+    {"name": "Investigation", "category": "Mental", "level": 2},
+    {"name": "Linguistics", "category": "Mental", "level": 2},
+    {"name": "Survival", "category": "Physical", "level": 2},
+    {"name": "Stealth", "category": "Physical", "level": 2},
+    {"name": "Alertness", "category": "Optional", "level": 3},
+    {"name": "Streetwise", "category": "Social", "level": 2},
+    {"name": "Subterfuge", "category": "Social", "level": 1}
+  ],
+  "disciplines": [
+    {
+      "name": "Thaumaturgy",
+      "path": "Dehydrate Path (Experimental)",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "Dessicate (touch removes moisture)"},
+        {"level": 2, "power": "Thirst (cause intense dehydration at range)"}
+      ],
+      "notes": "Still developing this path - working toward Level 3"
+    },
+    {
+      "name": "Thaumaturgy",
+      "path": "Path of Blood",
+      "level": 2,
+      "powers": [
+        {"level": 1, "power": "A Taste for Blood"},
+        {"level": 2, "power": "Blood Rage"}
+      ]
+    },
+    {
+      "name": "Auspex",
+      "level": 1,
+      "powers": [
+        {"level": 1, "power": "Heightened Senses"}
+      ]
+    }
+  ],
+  "backgrounds": {
+    "Generation": 1,
+    "Resources": 1,
+    "Mentor": 2,
+    "Status": 1
+  },
+  "backgroundDetails": {
+    "Resources": "Modest Tremere stipend, lives frugally",
+    "Mentor": "James Whitmore provides guidance and support",
+    "Status": "Junior researcher in Phoenix Chantry"
+  },
+  "morality": {
+    "path_name": "Humanity",
+    "path_rating": 7,
+    "conscience": 3,
+    "self_control": 3,
+    "courage": 3,
+    "willpower_permanent": 5,
+    "willpower_current": 5,
+    "humanity": 7
+  },
+  "merits_flaws": [
+    {"name": "Natural Linguist", "type": "merit", "category": "Mental", "cost": 2, "description": "Learns languages easily (grew up multilingual)"},
+    {"name": "Eat Food", "type": "merit", "category": "Physical", "cost": 1, "description": "Can consume mortal food without difficulty"},
+    {"name": "Prey Exclusion (Upper Class)", "type": "flaw", "category": "Physical", "cost": 1, "description": "Cannot feed from wealthy/upper class victims comfortably"},
+    {"name": "Inferiority Complex", "type": "flaw", "category": "Mental", "cost": 2, "description": "Feels need to constantly prove worth, especially regarding his Embrace"},
+    {"name": "Eerie Presence", "type": "flaw", "category": "Social", "cost": 2, "description": "People instinctively think 'rat' - nervous energy, hunched posture, darting eyes"}
+  ],
+  "status": {
+    "created_date": "2024-01-01",
+    "xp_total": 0,
+    "xp_spent": 0,
+    "xp_available": 0,
+    "blood_pool": 11,
+    "blood_per_turn": 1,
+    "health_levels": 7,
+    "notes": "Passionate about Dehydrate path research - this is his validation. Scrappy survivor mentality. Resents Dr. Ashford but knows she's better. Loyal #2 to Whitmore. Limited by 12th generation (max 2 dots in Thaumaturgy paths). Behavioral 'rat' quality from posture and nervous survival instincts, not malicious."
+  },
+  "rituals": [
+    "Communicate with Sire (Level 1)",
+    "Deflection of Wooden Doom (Level 2)",
+    "Preserve Blood (Level 1)",
+    "Purity of Flesh (Level 2)",
+    "Defense of the Sacred Haven (Level 2)"
+  ],
+  "specializations": {
+    "Occult": "Desert-based magic and elemental theory",
+    "Science": "Chemistry and environmental sciences",
+    "Survival": "Urban survival from immigrant upbringing"
+  },
+  "research_notes": {
+    "dehydrate_path_progress": "Working on Level 3: 'Desert Wind' - area effect dehydration. Theory complete, testing needed. Arizona environment perfect for this research. Path could be genuinely useful to Tremere in desert regions. Success would prove I deserved the Embrace despite generation limitations."
+  }
+}
+

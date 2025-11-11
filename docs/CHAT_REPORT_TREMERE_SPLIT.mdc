@@ -1,0 +1,21 @@
+## Chat Session Report — November 2025
+
+### Session Summary
+- **Date:** November 2025  
+- **Version:** 0.10.7 (Patch Increment)  
+- **Focus:** Normalize Tremere references and clean sync duplicates
+
+### What We Accomplished
+- **Split Bundle JSON:** Replaced the aggregate `reference/Characters/Added to Database/Tremere.json` with three dedicated files (`Andrei_Radulescu.json`, `Dr_Margaret_Ashford.json`, `James_Whitmore.json`) so each Tremere processes independently during syncs.
+- **Removed Legacy Artifact:** Deleted the obsolete array file that was triggering duplicate-entry notices during the reference sync run.
+- **Post-Change Validation:** Rerunning the sync now reports clean “No changes required” lines for each Tremere entry with no duplicate warnings.
+
+### Files Added / Updated
+- `reference/Characters/Added to Database/Andrei_Radulescu.json`
+- `reference/Characters/Added to Database/Dr_Margaret_Ashford.json`
+- `reference/Characters/Added to Database/James_Whitmore.json`
+- `VERSION.md`
+- `docs/CHAT_REPORT_TREMERE_SPLIT.mdc`
+
+### Current Status
+- **Reference sync:** ✅ No residual duplicate messages for Tremere entries. All other sheets remain up to date.
