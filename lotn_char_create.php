@@ -2550,8 +2550,8 @@ include __DIR__ . '/includes/header.php';
         
         // Show discipline power popover
         function showDisciplinePopover(event, disciplineName) {
-            // Don't show popover if the discipline button is disabled
-            if (event.target.disabled) {
+            const button = event.target.closest('.discipline-option-btn');
+            if (!button || button.disabled) {
                 return;
             }
             
@@ -2604,25 +2604,45 @@ include __DIR__ . '/includes/header.php';
             popover.onmouseenter = clearPopoverTimeout;
             popover.onmouseleave = hideDisciplinePopover;
 
-            // Position popover
-            const button = event.target;
+            // Position popover next to hovered button with viewport guards
             const rect = button.getBoundingClientRect();
-            
-            popover.style.position = 'fixed';
-            popover.style.left = (rect.right + 10) + 'px';
-            popover.style.top = rect.top + 'px';
+            const margin = 12;
 
-            // Ensure within viewport vertically (no scrollbars, adjust position)
-            const vpH = window.innerHeight;
-            const ph = popover.offsetHeight;
-            let top = rect.top;
-            if (top + ph > vpH - 16) {
-                top = Math.max(16, vpH - ph - 16);
-                popover.style.top = top + 'px';
-            }
+            popover.style.position = 'fixed';
+            popover.style.visibility = 'hidden';
             popover.style.display = 'block';
             popover.style.zIndex = '1000';
-            
+
+            const popoverRect = popover.getBoundingClientRect();
+            const vpW = window.innerWidth;
+            const vpH = window.innerHeight;
+
+            // Horizontal placement: prefer right side, fall back to left if overflow
+            let left = rect.right + margin;
+            if (left + popoverRect.width > vpW - margin) {
+                left = rect.left - popoverRect.width - margin;
+            }
+
+            // Update hover tracking
+            if (currentPopoverButton) {
+                currentPopoverButton.classList.remove('popover-target');
+            }
+            button.classList.add('popover-target');
+            if (left < margin) {
+                left = margin;
+            }
+
+            // Vertical placement: center to button, clamp to viewport
+            let top = rect.top + (rect.height - popoverRect.height) / 2;
+            if (top < margin) {
+                top = margin;
+            } else if (top + popoverRect.height > vpH - margin) {
+                top = Math.max(margin, vpH - popoverRect.height - margin);
+            }
+
+            popover.style.left = `${left}px`;
+            popover.style.top = `${top}px`;
+            popover.style.visibility = 'visible';
             currentPopoverButton = button;
         }
         
@@ -2755,22 +2775,35 @@ include __DIR__ . '/includes/header.php';
                 if (!clan) {
                     // No clan selected - disable all
                     button.disabled = true;
-                    button.classList.add('disabled');
+                    button.classList.add('disabled', 'discipline-disabled');
+                    button.classList.remove('caitiff-available');
+                    button.style.opacity = '0.4';
+                    button.style.cursor = 'not-allowed';
+                    button.title = 'Select a clan to unlock disciplines';
                 } else if (clan === 'Caitiff') {
                     // Caitiff can learn any discipline - enable all
                     button.disabled = false;
-                    button.classList.remove('disabled');
+                    button.classList.remove('disabled', 'discipline-disabled');
                     button.classList.add('caitiff-available');
+                    button.style.opacity = '1';
+                    button.style.cursor = 'pointer';
+                    button.title = '';
                 } else if (!clanDisciplines[clan] || !clanDisciplines[clan].includes(disciplineName)) {
                     // Discipline not available to clan - disable
                     button.disabled = true;
-                    button.classList.add('disabled');
+                    button.classList.add('disabled', 'discipline-disabled');
                     button.classList.remove('caitiff-available');
+                    button.style.opacity = '0.4';
+                    button.style.cursor = 'not-allowed';
+                    button.title = `${disciplineName} is not available to ${clan}`;
                 } else {
                     // Discipline available to clan - enable
                     button.disabled = false;
-                    button.classList.remove('disabled');
+                    button.classList.remove('disabled', 'discipline-disabled');
                     button.classList.remove('caitiff-available');
+                    button.style.opacity = '1';
+                    button.style.cursor = 'pointer';
+                    button.title = '';
                 }
             });
         }

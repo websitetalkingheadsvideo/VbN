@@ -19,6 +19,9 @@ class DisciplineSystem {
         this.disciplineData = null;
         this.popoverElement = null;
         this.currentDiscipline = null;
+        this.currentPopoverButton = null;
+        this.popoverHideTimeout = null;
+        this.popoverHoverDelay = 400;
         
         // Clan discipline access mapping
         this.clanDisciplineAccess = {
@@ -496,6 +499,7 @@ class DisciplineSystem {
             }
         }
         
+        this.clearPopoverHideTimer();
         this.showPopover(disciplineName, button);
     }
     
@@ -513,7 +517,7 @@ class DisciplineSystem {
             if (related.closest && related.closest('.discipline-option-btn') === button) return;
         }
         
-        this.hidePopover();
+        this.startPopoverHideTimer();
     }
     
     /**
@@ -844,7 +848,12 @@ class DisciplineSystem {
         }
         
         this.currentDiscipline = disciplineName;
+        this.clearPopoverHideTimer();
         this.createPopover(disciplineName, button);
+        this.currentPopoverButton = button;
+        if (this.currentPopoverButton) {
+            this.currentPopoverButton.classList.add('popover-target');
+        }
     }
     
     /**
@@ -922,23 +931,24 @@ class DisciplineSystem {
         const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         
-        let left = rect.right + scrollX + 16;
+        const margin = 4;
+        let left = rect.right + scrollX + margin;
         let top = rect.top + scrollY;
         
         if (left + popoverRect.width > viewportWidth + scrollX) {
-            left = rect.left + scrollX - popoverRect.width - 16;
+            left = rect.left + scrollX - popoverRect.width - margin;
         }
         
         if (left < scrollX) {
-            left = scrollX + 16;
+            left = scrollX + margin;
         }
         
         if (top + popoverRect.height > viewportHeight + scrollY) {
-            top = viewportHeight + scrollY - popoverRect.height - 16;
+            top = viewportHeight + scrollY - popoverRect.height - margin;
         }
         
         if (top < scrollY) {
-            top = scrollY + 16;
+            top = scrollY + margin;
         }
         
         popover.style.position = 'absolute';
@@ -971,12 +981,46 @@ class DisciplineSystem {
             });
         }
         
+        this.popoverElement.addEventListener('mouseenter', () => {
+            this.clearPopoverHideTimer();
+        });
+
         this.popoverElement.addEventListener('mouseleave', (e) => {
             const related = e.relatedTarget;
-            if (related && related.closest && related.closest('.discipline-option-btn')) {
+            if (related && this.currentPopoverButton && related.closest && related.closest('.discipline-option-btn') === this.currentPopoverButton) {
                 return;
             }
-            this.hidePopover();
+            this.startPopoverHideTimer();
+        });
+    }
+
+    clearPopoverHideTimer() {
+        if (this.popoverHideTimeout) {
+            clearTimeout(this.popoverHideTimeout);
+            this.popoverHideTimeout = null;
+        }
+    }
+
+    startPopoverHideTimer() {
+        this.clearPopoverHideTimer();
+        this.popoverHideTimeout = setTimeout(() => {
+            if (!this.isHoveringPopoverOrButton()) {
+                this.hidePopover();
+            }
+        }, this.popoverHoverDelay);
+    }
+
+    isHoveringPopoverOrButton() {
+        const hovered = document.querySelectorAll(':hover');
+        if (!hovered || hovered.length === 0) return false;
+        const hoveredArray = Array.from(hovered);
+        const popover = this.popoverElement;
+        const button = this.currentPopoverButton;
+        return hoveredArray.some((el) => {
+            if (!el) return false;
+            if (popover && (el === popover || popover.contains(el))) return true;
+            if (button && (el === button || button.contains(el))) return true;
+            return false;
         });
     }
     
@@ -984,11 +1028,16 @@ class DisciplineSystem {
      * Hide discipline popover
      */
     hidePopover() {
+        this.clearPopoverHideTimer();
+        if (this.currentPopoverButton) {
+            this.currentPopoverButton.classList.remove('popover-target');
+        }
         if (this.popoverElement) {
             this.popoverElement.remove();
             this.popoverElement = null;
-            this.currentDiscipline = null;
         }
+        this.currentPopoverButton = null;
+        this.currentDiscipline = null;
     }
     
     /**

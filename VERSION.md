@@ -1,6 +1,22 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.3 (Current)
+## Version 0.10.4 (Current)
+**Date:** November 2025
+
+### Character Creator Discipline UX Polish
+- ✅ **Disabled State Clarity** – Added shared `discipline-disabled` styling, opacity, and tooltips so out-of-clan buttons visibly lock when a clan forbids them.
+- ✅ **Popover Follow Behavior** – Reworked discipline popover anchoring to track the hovered button, clamp to the viewport, and delay dismissal to allow direct mouse travel.
+- ✅ **Modal Spacing Cleanup** – Tightened cost/description spacing inside the discipline modal for a more compact, readable layout.
+
+### Files Added / Updated:
+- `lotn_char_create.php`
+- `js/modules/systems/DisciplineSystem.js`
+- `css/style.css`
+- `VERSION.md`
+
+---
+
+## Version 0.10.3
 **Date:** November 2025
 
 ### Admin Character Viewer Bootstrap Retrofit

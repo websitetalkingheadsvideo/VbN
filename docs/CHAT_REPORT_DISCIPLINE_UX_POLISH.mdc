@@ -1,0 +1,61 @@
+# Chat Session Report - Discipline UX Polish
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.10.3 → 0.10.4 (Patch Increment)
+- **Work Type:** Character Creator UX & Styling Tweaks
+
+### What We Accomplished
+
+#### 1. Discipline Button State Clarity
+- **Shared Disabled Styling** – Reused the modern discipline system toggles so out-of-clan buttons add the `.discipline-disabled` marker, lower opacity, and show tooltips describing the restriction.
+- **Caitiff Handling** – Ensured Caitiff resets strip any disabled/opacity changes so their universal access looks distinct.
+
+#### 2. Popover Stickiness & Positioning
+- **Viewport-Aware Placement** – Replaced the legacy right-only calculation with smart left/right swapping, axis clamping, and a 4px gap to hug the hovered button.
+- **Hover Persistence** – Added cross-element timers that keep the popover open while traveling between the button and modal body, preventing premature closings.
+
+#### 3. Modal Density Adjustments
+- **Cost Line Spacing** – Reduced the vertical gap above/below the cost row for each power.
+- **Description Compression** – Cut the trailing margin after descriptions so stacked powers read as a continuous list.
+
+### Technical Implementation Details
+
+#### `lotn_char_create.php`
+- Updated the inline discipline availability helper to apply the shared disabled styles, cursor, opacity, and tooltips.
+- Revised the popover placement routine to anchor against `getBoundingClientRect()` data, flip sides when needed, clamp to viewport bounds, and manage hover target classes.
+
+#### `js/modules/systems/DisciplineSystem.js`
+- Centralized popover state with `currentPopoverButton`, hover timers, and helper guards (`clearPopoverHideTimer`, `startPopoverHideTimer`, `isHoveringPopoverOrButton`).
+- Extended mouse enter/leave handlers to respect the new timers, avoiding flicker when moving between the trigger and popover.
+- Recalibrated positioning margins and ensured Caitiff toggles reuse the shared styles when clan restrictions change.
+
+#### `css/style.css`
+- Tightened `.power-cost` and `.power-description` spacing to align with the modal’s compact layout service.
+
+#### `VERSION.md`
+- Logged the 0.10.4 patch notes summarizing the discipline UX refinements.
+
+### Files Modified
+- `lotn_char_create.php`
+- `js/modules/systems/DisciplineSystem.js`
+- `css/style.css`
+- `VERSION.md`
+- `docs/CHAT_REPORT_DISCIPLINE_UX_POLISH.mdc`
+
+### Current Status
+- **Discipline Buttons:** ✅ Disabled states are visually distinct with tooltips explaining clan restrictions.
+- **Popover Behavior:** ✅ Popovers remain accessible when mousing from the button into the modal content.
+- **Modal Layout:** ✅ Cost/description rows render with tighter, consistent spacing.
+
+### Impact Summary
+- **Player Readability:** Clear disabled styling and tooltips explain gating without guesswork.
+- **Interaction Flow:** Popovers stay open long enough to browse power text, reducing frustration.
+- **Visual Consistency:** Discipline modal matches the polished Bootstrap look across the creator.
+
+### Lessons Learned
+- **Shared Styling Hooks:** Aligning inline helpers with system-level classes avoids divergent states.
+- **Hover Timers:** Lightweight timers provide a better UX than instant hide/show logic for hover popovers.
+- **Small Spacing Tweaks:** Minor CSS adjustments can dramatically improve dense content readability.
+
+---
