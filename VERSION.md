@@ -1,6 +1,35 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.2 (Current)
+## Version 0.10.3 (Current)
+**Date:** November 2025
+
+### Admin Character Viewer Bootstrap Retrofit
+- ✅ **Modal Conversion** – Replaced the legacy character viewer markup with Bootstrap’s `modal-dialog-scrollable`, added compact/details toggles, and aligned portrait/summary columns with responsive grid semantics.
+- ✅ **Compact Layout Polish** – Reflowed metadata into two-column label/value rows, balanced portrait height, and removed redundant status fields from compact mode.
+- ✅ **Ability Grid Cleanup** – Normalized abilities into Physical/Social/Mental/Optional buckets and rendered them as a 2×2 grid while escaping user-entered content.
+- ✅ **API Hardening** – Updated `view_character_api.php` to emit UTF‑8 JSON with error logging so malformed biographies no longer crash modal fetches.
+
+### Files Added / Updated:
+- `admin/admin_panel.php`
+- `admin/view_character_api.php`
+- `js/admin_panel.js`
+- `Prompts/Storyteller`
+- `Prompts/description-prompt.md`
+- `Prompts/Fix_View_Character_Bootstrap_Modal.md`
+- `tests/test_discipline_converter.php`
+- `use_laws_agent_for_design.md`
+- `.cursor/commands/commit-and-summarize.bat`
+- `.cursor/commands/commit-and-summarize.json`
+- `.cursor/commands/commit-and-summarize.ps1`
+- `.cursor/_notes/dwsync.xml`
+- `.cursor/commands/_notes/dwsync.xml`
+- `.cursor/rules/_notes/dwsync.xml`
+- `.cursor/rules/taskmaster/_notes/dwsync.xml`
+- `VERSION.md`
+
+---
+
+## Version 0.10.2
 **Date:** November 2025
 
 ### Character Creator Layout & Discipline Access QA

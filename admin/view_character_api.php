@@ -157,7 +157,7 @@ foreach ($all_disciplines_data as $disc_name => $disc_data) {
     ];
 }
 
-$backgrounds = db_fetch_all($conn,
+$backgrounds = db_fetch_all($conn, 
     "SELECT id, background_name, level 
      FROM character_backgrounds WHERE character_id = ?",
     "i",
@@ -220,7 +220,9 @@ foreach ($relationships as $rel) {
     $relationship_data[] = $rel;
 }
 
-echo json_encode([
+header('Content-Type: application/json; charset=utf-8');
+
+$responsePayload = [
     'success' => true,
     'character' => array_merge($character, [
         'clan_logo_url' => $clan_logo_url,
@@ -236,8 +238,21 @@ echo json_encode([
     'status' => $status_details,
     'coteries' => $coteries,
     'relationships' => $relationship_data
-]);
+];
+
+$json = json_encode($responsePayload, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE);
+
+if ($json === false) {
+    error_log('view_character_api: json_encode failed - ' . json_last_error_msg());
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Unable to encode character data. Please check character content for invalid characters.'
+    ], JSON_UNESCAPED_UNICODE);
+    mysqli_close($conn);
+    exit();
+}
+
+echo $json;
 
 mysqli_close($conn);
-?>
-

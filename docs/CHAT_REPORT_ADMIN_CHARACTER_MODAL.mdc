@@ -1,0 +1,32 @@
+# Chat Session Report – Admin Character Modal Bootstrap Retrofit
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.10.2 → 0.10.3 (Patch Increment)
+- **Focus:** Convert the admin character viewer to Bootstrap, harden the backing API, and normalize ability rendering.
+
+### What We Accomplished
+
+#### 1. Bootstrap Modal Conversion
+- Replaced the legacy `#viewModal` markup in `admin/admin_panel.php` with Bootstrap’s `modal-dialog modal-dialog-scrollable` shell.
+- Added compact vs. details toggle buttons, responsive label/value grid, and a portrait column that maintains equal height via flex layout.
+- Scoped legacy modal styles to `#deleteModal` and introduced new `.character-view-modal` themes to prevent collisions.
+
+#### 2. Frontend Logic Refinement
+- Refactored `viewCharacter` in `js/admin_panel.js` to instantiate `bootstrap.Modal`, handle aria-busy states, and reuse a single initializer for the view-mode buttons.
+- Sanitized output in compact and details modes, removed redundant status fields from compact mode, and grouped abilities into a 2×2 grid (Physical/Social/Mental/Optional) with escaping.
+
+#### 3. API Safeguards
+- Updated `admin/view_character_api.php` to emit UTF‑8 JSON using `JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE`.
+- Added error logging and 500 responses when encoding fails so malformed biographies no longer crash the modal fetch.
+
+### Impact
+- **UX Consistency:** Admins get a Bootstrap-native modal with balanced columns, accessible regions, and consolidated controls.
+- **Data Integrity:** The viewer survives non-UTF8 biographies and reports encoding issues cleanly.
+- **Maintainability:** Ability rendering is now driven by normalized categories, reducing ad-hoc markup and escaping risks.
+
+### Files Added / Updated
+- `admin/admin_panel.php`
+- `admin/view_character_api.php`
+- `js/admin_panel.js`
+- `VERSION.md`

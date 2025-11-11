@@ -354,26 +354,32 @@ function render_clan_badge(string $clan): string {
 </div>
 
 <!-- View Character Modal -->
-<div id="viewModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="viewCharacterName" aria-describedby="viewCharacterContent">
-    <div class="modal-content large-modal">
-        <div class="modal-header-section">
-            <h2 class="modal-title">📄 <span id="viewCharacterName">Character Details</span></h2>
-            <!-- View Mode Toggle -->
-            <div class="view-mode-toggle">
-                <button class="mode-btn active" onclick="setViewMode('compact', event)">Compact</button>
-                <button class="mode-btn" onclick="setViewMode('full', event)">Full Details</button>
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewCharacterName" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content character-view-modal">
+            <div class="modal-header align-items-start flex-wrap gap-2">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title d-flex align-items-center gap-2">
+                        <span aria-hidden="true">📄</span>
+                        <span id="viewCharacterName">Character Details</span>
+                    </h5>
+                </div>
+                <div class="d-flex align-items-center gap-2 ms-auto">
+                    <div class="view-mode-toggle btn-group btn-group-sm" role="group" aria-label="View mode">
+                        <button type="button" class="mode-btn btn btn-outline-danger active" data-view-mode="compact">Compact</button>
+                        <button type="button" class="mode-btn btn btn-outline-danger" data-view-mode="full">Details</button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
             </div>
-            <button class="modal-close" onclick="closeViewModal()">×</button>
-        </div>
-        
-        <!-- Character Header - Two Column Layout -->
-        <div id="characterHeader" class="character-header-section">
-            <!-- Content will be populated by JavaScript -->
-        </div>
-        
-        <!-- Character Details Content -->
-        <div id="viewCharacterContent" class="view-content" aria-live="polite">
-            Loading...
+            <div class="modal-body">
+                <div id="characterHeader" class="character-header-section mb-3" aria-live="polite">
+                    <!-- Populated dynamically -->
+                </div>
+                <div id="viewCharacterContent" class="view-content" aria-live="polite">
+                    Loading...
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -605,48 +611,10 @@ function render_clan_badge(string $clan): string {
 .delete-btn:hover { background: rgba(139, 0, 0, 0.4); }
 .empty-state { text-align: center; padding: 40px; color: #b8a090; font-style: italic; }
 
-.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; }
-.modal.active { display: flex; }
-.modal-content { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 3px solid #8B0000; border-radius: 10px; padding: 30px; max-width: 500px; position: relative; }
-.modal-content.large-modal { max-width: 900px; max-height: 85vh; overflow-y: auto; }
-.modal-content.large-modal.compact-mode { 
-    max-height: 90vh; 
-    overflow-y: hidden; 
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-content.large-modal.compact-mode .view-content { 
-    flex: 1;
-    overflow-y: auto;
-    min-height: 0;
-}
-.modal-header-section { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px; 
-    padding-bottom: 15px; 
-    border-bottom: 2px solid rgba(139, 0, 0, 0.3); 
-    gap: 15px;
-}
-
-.modal-title { 
-    font-family: var(--font-brand), 'IM Fell English', serif; 
-    color: #f5e6d3; 
-    font-size: 2em; 
-    margin: 0; 
-    flex: 1;
-}
-
-.view-mode-toggle { 
-    display: flex; 
-    gap: 8px; 
-    justify-content: center; 
-    margin: 0;
-}
-
-.modal-close { 
+#deleteModal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; }
+#deleteModal.active { display: flex; }
+#deleteModal .modal-content { background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%); border: 3px solid #8B0000; border-radius: 10px; padding: 30px; max-width: 500px; width: 90%; position: relative; }
+#deleteModal .modal-close { 
     background: rgba(139, 0, 0, 0.3); 
     border: 1px solid #8B0000; 
     border-radius: 50%; 
@@ -661,102 +629,160 @@ function render_clan_badge(string $clan): string {
     justify-content: center; 
     flex-shrink: 0;
 }
+#deleteModal .modal-close:hover { background: rgba(139, 0, 0, 0.6); transform: scale(1.1); }
 
-.modal-close:hover { background: rgba(139, 0, 0, 0.6); transform: scale(1.1); }
-.mode-btn { padding: 8px 20px; background: rgba(139, 0, 0, 0.2); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #b8a090; font-family: var(--font-body), 'Source Serif Pro', serif; cursor: pointer; transition: all 0.3s; }
-.mode-btn:hover { background: rgba(139, 0, 0, 0.3); border-color: #8B0000; color: #f5e6d3; }
-.mode-btn.active { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
+.character-view-modal {
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 3px solid #8B0000;
+    border-radius: 12px;
+    color: #d4c4b0;
+}
+.character-view-modal .modal-header {
+    border-bottom: 2px solid rgba(139, 0, 0, 0.3);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.character-view-modal .modal-title {
+    font-family: var(--font-brand), 'IM Fell English', serif;
+    color: #f5e6d3;
+    font-size: 1.75rem;
+    margin: 0;
+}
+.character-view-modal .btn-close {
+    filter: invert(1) grayscale(100%);
+    opacity: 0.75;
+}
+.character-view-modal .btn-close:hover {
+    opacity: 1;
+}
+.character-view-modal .view-mode-toggle {
+    display: inline-flex;
+    gap: 8px;
+}
+.character-view-modal .view-mode-toggle .mode-btn {
+    padding: 6px 16px;
+    border-width: 2px;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    text-transform: none;
+    transition: all 0.25s ease;
+}
+.character-view-modal .view-mode-toggle .mode-btn.active {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    border-color: #b30000;
+    color: #f5e6d3;
+}
+.character-view-modal.compact-mode {
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+.modal-dialog-scrollable .character-view-modal.compact-mode .modal-body {
+    display: flex;
+    flex-direction: column;
+}
+.character-view-modal.compact-mode .view-content {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
 
-/* Character Header Section - styles only, layout handled by Bootstrap grid */
+/* Character Header Section */
 .character-header-section {
     display: block;
-    margin-bottom: 0;
-    padding: 25px;
-    background: linear-gradient(135deg, rgba(42, 21, 21, 0.6) 0%, rgba(26, 15, 15, 0.6) 100%);
-    border: 2px solid rgba(139, 0, 0, 0.3);
-    border-radius: 8px;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(42, 21, 21, 0.6) 0%, rgba(26, 15, 15, 0.65) 100%);
+    border: 2px solid rgba(139, 0, 0, 0.35);
+    border-radius: 0.75rem;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        0 16px 32px rgba(0, 0, 0, 0.55),
+        0 8px 16px rgba(139, 0, 0, 0.2);
 }
 
-.compact-mode .character-header-section {
-    margin-bottom: 0;
-    padding: 20px;
-}
-
-.compact-mode .character-image-wrapper {
-    max-width: 320px;
-    height: 320px;
-}
-
-.compact-mode .character-image-wrapper img {
-    width: 280px;
-    height: 280px;
-    padding: 20px;
-}
-
-.character-info-column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.character-info-row {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.character-info-label {
+.character-summary-label {
     font-family: var(--font-title), 'Libre Baskerville', serif;
-    font-size: 0.85em;
-    color: #b8a090;
-    font-weight: 600;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.08em;
+    color: #b8a090;
 }
 
-.character-info-value {
+.character-summary-value {
     font-family: var(--font-body), 'Source Serif Pro', serif;
-    font-size: 1.1em;
     color: #f5e6d3;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
-.character-image-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.character-image-wrapper {
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
-    background: radial-gradient(circle at center, #a00000, #8b0000, #600000);
+.character-portrait-wrapper {
+    position: relative;
+    background: radial-gradient(circle at center, rgba(160, 0, 0, 0.55), rgba(96, 0, 0, 0.85));
     border: 3px solid #c9a96e;
-    border-radius: 20px;
+    border-radius: 1rem;
+    padding: 12px;
+    min-height: 260px;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
+    height: 100%;
+}
+
+.character-portrait-media {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-portrait-image {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    object-fit: cover;
+    border-radius: 0.85rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.character-portrait-placeholder {
+    color: #d4c4b0;
+    font-family: var(--font-body), 'Source Serif Pro', serif;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.8), inset 0 4px 8px rgba(0,0,0,0.6);
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
 }
 
-.character-image-wrapper img {
-    width: 350px;
-    height: 350px;
-    padding: 25px;
-    object-fit: fill;
-    object-position: center;
-    border: none !important;
-    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.8));
+.character-view-modal.compact-mode .character-header-section {
+    padding: 1.25rem;
 }
 
-.character-image-placeholder {
-    color: #888;
-    font-family: var(--font-body), 'Source Serif Pro', serif;
-    font-size: 0.9em;
-    text-align: center;
-    padding: 20px;
+.character-view-modal.compact-mode .character-summary-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+}
+
+.character-view-modal.compact-mode .character-summary-value {
+    font-size: 0.95rem;
+}
+
+.character-view-modal.compact-mode .character-portrait-wrapper {
+    min-height: 220px;
+}
+
+@media (max-width: 575.98px) {
+    .character-summary-label {
+        font-size: 0.7rem;
+    }
+    .character-summary-value {
+        font-size: 0.95rem;
+    }
 }
 
 .view-content { 
@@ -766,18 +792,18 @@ function render_clan_badge(string $clan): string {
     margin-top: 20px;
 }
 
-.compact-mode .view-content {
+.character-view-modal.compact-mode .view-content {
     margin-top: 10px;
 }
 
-.compact-mode .view-content h3 {
+.character-view-modal.compact-mode .view-content h3 {
     margin-top: 15px;
     margin-bottom: 8px;
     font-size: 1.1em;
     padding-bottom: 5px;
 }
 
-.compact-mode .view-content p {
+.character-view-modal.compact-mode .view-content p {
     margin: 6px 0;
     font-size: 0.95em;
 }
@@ -1257,15 +1283,15 @@ function render_clan_badge(string $clan): string {
         min-height: 44px;
     }
 }
-.modal-message { font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; font-size: 1.1em; margin-bottom: 10px; }
-.modal-character-name { font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-size: 1.4em; text-align: center; margin: 20px 0; font-weight: bold; }
-.modal-warning { background: rgba(139, 0, 0, 0.3); border-left: 4px solid #8B0000; padding: 15px; margin: 20px 0; color: #f5e6d3; }
-.modal-actions { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
-.modal-btn { padding: 12px 30px; border-radius: 5px; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; cursor: pointer; border: 2px solid; }
-.cancel-btn { background: rgba(100, 100, 100, 0.2); border-color: #666; color: #d4c4b0; }
-.cancel-btn:hover { background: rgba(100, 100, 100, 0.4); }
-.confirm-btn { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
-.confirm-btn:hover { background: linear-gradient(135deg, #b30000 0%, #8B0000 100%); }
+#deleteModal .modal-message { font-family: var(--font-body), 'Source Serif Pro', serif; color: #d4c4b0; font-size: 1.1em; margin-bottom: 10px; }
+#deleteModal .modal-character-name { font-family: var(--font-title), 'Libre Baskerville', serif; color: #f5e6d3; font-size: 1.4em; text-align: center; margin: 20px 0; font-weight: bold; }
+#deleteModal .modal-warning { background: rgba(139, 0, 0, 0.3); border-left: 4px solid #8B0000; padding: 15px; margin: 20px 0; color: #f5e6d3; }
+#deleteModal .modal-actions { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
+#deleteModal .modal-btn { padding: 12px 30px; border-radius: 5px; font-family: var(--font-body), 'Source Serif Pro', serif; font-weight: 600; cursor: pointer; border: 2px solid; }
+#deleteModal .cancel-btn { background: rgba(100, 100, 100, 0.2); border-color: #666; color: #d4c4b0; }
+#deleteModal .cancel-btn:hover { background: rgba(100, 100, 100, 0.4); }
+#deleteModal .confirm-btn { background: linear-gradient(135deg, #8B0000 0%, #600000 100%); border-color: #b30000; color: #f5e6d3; }
+#deleteModal .confirm-btn:hover { background: linear-gradient(135deg, #b30000 0%, #8B0000 100%); }
 </style>
 
 <!-- Include the external JavaScript file for admin panel functionality -->

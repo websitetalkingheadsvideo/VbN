@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSorting();
     initializeDeleteButtons();
     initializeViewButtons();
+    initializeViewModeToggle();
     initializePagination();
 });
 
@@ -375,71 +376,117 @@ function goToPage(page) {
 // View character functionality
 let currentViewMode = 'compact';
 let currentViewData = null;
-let modalClickHandler = null;
+let viewModalInstance = null;
 
 function viewCharacter(characterId) {
-    const modal = document.getElementById('viewModal');
-    modal.classList.add('active');
-    document.getElementById('characterHeader').innerHTML = '';
-    const vc = document.getElementById('viewCharacterContent');
-    if (vc) {
-      vc.setAttribute('aria-busy','true');
-      vc.textContent = 'Loading...';
+    if (!characterId) return;
+
+    const modalEl = document.getElementById('viewModal');
+    if (!modalEl) return;
+    if (typeof bootstrap === 'undefined' || !bootstrap.Modal) {
+        console.error('Bootstrap modal runtime not loaded; cannot open character view.');
+        return;
     }
-    
-    // Remove any existing click handler to prevent duplicates
-    if (modalClickHandler) {
-        modal.removeEventListener('click', modalClickHandler);
+
+    viewModalInstance = bootstrap.Modal.getOrCreateInstance(modalEl, {
+        backdrop: true,
+        focus: true
+    });
+
+    if (!modalEl.dataset.viewModalInit) {
+        modalEl.addEventListener('hidden.bs.modal', () => {
+            currentViewData = null;
+            const headerEl = document.getElementById('characterHeader');
+            const contentEl = document.getElementById('viewCharacterContent');
+            if (headerEl) {
+                headerEl.innerHTML = '';
+            }
+            if (contentEl) {
+                contentEl.innerHTML = '';
+                contentEl.removeAttribute('aria-busy');
+            }
+            setViewMode('compact');
+        });
+        modalEl.dataset.viewModalInit = 'true';
     }
-    
-    // Add click-outside-to-close handler
-    modalClickHandler = (e) => {
-        // Only close if clicking the backdrop itself (not the modal content)
-        if (e.target === modal) {
-            closeViewModal();
-        }
-    };
-    modal.addEventListener('click', modalClickHandler);
-    
-    fetch('view_character_api.php?id=' + characterId + '&_t=' + Date.now())
+
+    const header = document.getElementById('characterHeader');
+    const content = document.getElementById('viewCharacterContent');
+    const title = document.getElementById('viewCharacterName');
+
+    if (header) {
+        header.innerHTML = '';
+    }
+
+    if (title) {
+        title.textContent = 'Character Details';
+    }
+
+    if (content) {
+        content.setAttribute('aria-busy', 'true');
+        content.textContent = 'Loading...';
+    }
+
+    // Reset to compact mode by default each time modal opens
+    setViewMode('compact');
+
+    viewModalInstance.show();
+
+    const requestUrl = 'view_character_api.php?id=' + encodeURIComponent(characterId) + '&_t=' + Date.now();
+
+    fetch(requestUrl)
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
+            if (data && data.success) {
                 currentViewData = data;
-                document.getElementById('viewCharacterName').textContent = data.character.character_name;
-                // Debug: log abilities and disciplines (only if abilities are present)
-                if (data.abilities && data.abilities.length > 0) {
-                    console.log('Abilities loaded:', data.abilities.length);
+                if (title) {
+                    title.textContent = data.character.character_name || 'Character Details';
                 }
-                
                 renderCharacterView(currentViewMode);
             } else {
-                document.getElementById('characterHeader').innerHTML = '';
-                if (vc) {
-                  vc.innerHTML = '<p style="color: red;">Error: ' + data.message + '</p>';
-                  vc.setAttribute('aria-busy','false');
+                if (header) {
+                    header.innerHTML = '';
+                }
+                if (content) {
+                    const alert = document.createElement('div');
+                    alert.className = 'alert alert-danger mb-0';
+                    alert.setAttribute('role', 'alert');
+                    alert.textContent = 'Error: ' + (data && data.message ? data.message : 'Unknown error.');
+                    content.innerHTML = '';
+                    content.appendChild(alert);
+                    content.setAttribute('aria-busy', 'false');
                 }
             }
         })
         .catch(error => {
-            document.getElementById('characterHeader').innerHTML = '';
-            if (vc) {
-              vc.innerHTML = '<p style="color: red;">Error loading character</p>';
-              vc.setAttribute('aria-busy','false');
+            console.error('view_character_api error', error);
+            if (header) {
+                header.innerHTML = '';
             }
-            console.error(error);
+            if (content) {
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-danger mb-0';
+                alert.setAttribute('role', 'alert');
+                alert.textContent = 'Error loading character.';
+                content.innerHTML = '';
+                content.appendChild(alert);
+                content.setAttribute('aria-busy', 'false');
+            }
         });
 }
 
-function setViewMode(mode, event) {
+function setViewMode(mode) {
     currentViewMode = mode;
-    document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) {
-        event.target.classList.add('active');
-    }
-    
-    // Toggle compact mode class on modal
-    const modalContent = document.querySelector('.modal-content.large-modal');
+
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    modeButtons.forEach(btn => {
+        const btnMode = btn.dataset.viewMode || 'compact';
+        const isActive = btnMode === mode;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+
+    const modalContent = document.querySelector('.character-view-modal');
     if (modalContent) {
         if (mode === 'compact') {
             modalContent.classList.add('compact-mode');
@@ -447,16 +494,57 @@ function setViewMode(mode, event) {
             modalContent.classList.remove('compact-mode');
         }
     }
-    
+
     if (currentViewData) {
         renderCharacterView(mode);
     }
 }
 
+function initializeViewModeToggle() {
+    const modeButtons = document.querySelectorAll('.view-mode-toggle .mode-btn');
+    modeButtons.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            const nextMode = btn.dataset.viewMode || 'compact';
+            setViewMode(nextMode);
+        });
+    });
+    // Ensure initial aria-pressed state
+    setViewMode(currentViewMode);
+}
+
 function renderCharacterView(mode) {
     const char = currentViewData.character;
+    const headerEl = document.getElementById('characterHeader');
+    const contentEl = document.getElementById('viewCharacterContent');
     let headerHtml = '';
     let contentHtml = '';
+
+    const escapeHtml = (input) => String(input)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    const normalizeValue = (value) => {
+        if (value === null || value === undefined) {
+            return null;
+        }
+        if (typeof value === 'string') {
+            const trimmed = value.trim();
+            return trimmed === '' ? null : trimmed;
+        }
+        return value;
+    };
+
+    const displayValue = (value, fallback = 'N/A') => {
+        const normalized = normalizeValue(value);
+        if (normalized === null) {
+            return fallback;
+        }
+        return escapeHtml(normalized);
+    };
 
     function clanLogoUrl(clan) {
         if (!clan) return null;
@@ -491,42 +579,57 @@ function renderCharacterView(mode) {
     const hasPortrait = !!char.character_image;
     const fallbackUrl = char.clan_logo_url || clanLogoUrl(char.clan);
     const imageUrl = hasPortrait ? ('../uploads/characters/' + char.character_image) : fallbackUrl;
+    const sanitizedImageUrl = imageUrl ? escapeHtml(imageUrl) : null;
 
-    headerHtml += '<div class="character-info-column">';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Player</span><span class="character-info-value">' + (char.player_name || 'NPC') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Chronicle</span><span class="character-info-value">' + (char.chronicle || 'N/A') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Clan</span><span class="character-info-value">' + (char.clan || 'Unknown') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Generation</span><span class="character-info-value">' + (char.generation || 'N/A') + 'th</span></div>';
-    const formattedState = (char.current_state || 'active').toString().charAt(0).toUpperCase() + (char.current_state || 'active').toString().slice(1);
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Status</span><span class="character-info-value">' + formattedState + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Sect Alignment</span><span class="character-info-value">' + (char.camarilla_status || 'Unknown') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Nature</span><span class="character-info-value">' + (char.nature || 'N/A') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Demeanor</span><span class="character-info-value">' + (char.demeanor || 'N/A') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Sire</span><span class="character-info-value">' + (char.sire || 'Unknown') + '</span></div>';
-    headerHtml += '<div class="character-info-row"><span class="character-info-label">Concept</span><span class="character-info-value">' + (char.concept || 'N/A') + '</span></div>';
+    const rawState = normalizeValue(char.current_state) || 'active';
+    const formattedState = escapeHtml(rawState.toString().charAt(0).toUpperCase() + rawState.toString().slice(1));
+    const playerName = normalizeValue(char.player_name) || 'NPC';
+    const generationValue = normalizeValue(char.generation);
+    const generationDisplay = generationValue === null ? 'N/A' : escapeHtml(`${generationValue}th`);
+
+    const summaryFields = [
+        { label: 'Player', value: displayValue(playerName, 'NPC') },
+        { label: 'Chronicle', value: displayValue(char.chronicle, 'N/A') },
+        { label: 'Clan', value: displayValue(char.clan, 'Unknown') },
+        { label: 'Generation', value: generationDisplay },
+        { label: 'Nature', value: displayValue(char.nature, 'N/A') },
+        { label: 'Demeanor', value: displayValue(char.demeanor, 'N/A') },
+        { label: 'Sire', value: displayValue(char.sire, 'Unknown') },
+        { label: 'Concept', value: displayValue(char.concept, 'N/A') }
+    ];
+
+    headerHtml += '<div class="row g-4 align-items-start">';
+    headerHtml += '<div class="col-lg-8">';
+    headerHtml += '<div class="row g-2 character-summary">';
+    summaryFields.forEach(field => {
+        headerHtml += '<div class="col-5 col-sm-4 character-summary-label">' + field.label + '</div>';
+        headerHtml += '<div class="col-7 col-sm-8 character-summary-value">' + field.value + '</div>';
+    });
+    headerHtml += '</div>';
     headerHtml += '</div>';
 
-    headerHtml += '<div class="character-image-column">';
-    headerHtml += '<div class="character-image-wrapper">';
-    if (imageUrl) {
-        headerHtml += '<img src="' + imageUrl + '" alt="Character portrait" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'block\';" />';
+    headerHtml += '<div class="col-lg-4 col-xl-3 ms-lg-auto">';
+    headerHtml += '<div class="character-portrait-wrapper">';
+    headerHtml += '<div class="character-portrait-media">';
+    if (sanitizedImageUrl) {
+        headerHtml += `<img src="${sanitizedImageUrl}" class="character-portrait-image img-fluid" alt="Character portrait" onerror="this.classList.add('d-none'); this.nextElementSibling.classList.remove('d-none');" />`;
     }
-    headerHtml += '<span class="character-image-placeholder" style="display: ' + (imageUrl ? 'none' : 'block') + ';">No Image</span>';
+    headerHtml += `<div class="character-portrait-placeholder${sanitizedImageUrl ? ' d-none' : ''}">No Image</div>`;
+    headerHtml += '</div>';
+    headerHtml += '</div>';
     headerHtml += '</div>';
     headerHtml += '</div>';
 
-    document.getElementById('characterHeader').innerHTML = headerHtml;
+    if (headerEl) {
+        headerEl.innerHTML = headerHtml;
+    }
 
     if (mode === 'compact') {
-        const statusLabel = (char.current_state || 'active').toString();
-        const formattedStatus = statusLabel.charAt(0).toUpperCase() + statusLabel.slice(1);
         contentHtml = '<div class="character-details compact">';
-        contentHtml += '<p><strong>Status:</strong> ' + formattedStatus + '</p>';
-        contentHtml += '<p><strong>Sect Alignment:</strong> ' + (char.camarilla_status || 'Unknown') + '</p>';
         contentHtml += '</div>';
-        if (vc) {
-          vc.innerHTML = contentHtml;
-          vc.setAttribute('aria-busy','false');
+        if (contentEl) {
+            contentEl.innerHTML = contentHtml;
+            contentEl.setAttribute('aria-busy', 'false');
         }
         return;
     }
@@ -605,91 +708,55 @@ function renderCharacterView(mode) {
     // Abilities - always show section header
     contentHtml += '<h3>Abilities</h3>';
     if (currentViewData.abilities && currentViewData.abilities.length > 0) {
-        // Group by database category (Physical/Social/Mental/Optional)
-        const physical = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'physical');
-        const social = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'social');
-        const mental = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'mental');
-        const optional = currentViewData.abilities.filter(a => a.ability_category && a.ability_category.toLowerCase() === 'optional');
-        const uncategorized = currentViewData.abilities.filter(a => !a.ability_category || 
-            (a.ability_category.toLowerCase() !== 'physical' && 
-             a.ability_category.toLowerCase() !== 'social' && 
-             a.ability_category.toLowerCase() !== 'mental' &&
-             a.ability_category.toLowerCase() !== 'optional'));
-        
-        if (physical.length > 0 || social.length > 0 || mental.length > 0 || optional.length > 0 || uncategorized.length > 0) {
-            contentHtml += '<div class="row g-4 mb-4">';
-            if (physical.length > 0) {
-                contentHtml += '<div class="col-md-6">';
-                contentHtml += '<h4>Physical</h4>';
-                contentHtml += '<div class="trait-list">';
-                physical.forEach(a => {
-                    if (!a || !a.ability_name) return; // Skip invalid abilities
-                    let badge = a.ability_name;
-                    if (a.level && a.level > 0) badge += ' x' + a.level;
-                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                });
-                contentHtml += '</div>';
-                contentHtml += '</div>';
-            }
-            
-            if (social.length > 0) {
-                contentHtml += '<div class="col-md-6">';
-                contentHtml += '<h4>Social</h4>';
-                contentHtml += '<div class="trait-list">';
-                social.forEach(a => {
-                    if (!a || !a.ability_name) return; // Skip invalid abilities
-                    let badge = a.ability_name;
-                    if (a.level && a.level > 0) badge += ' x' + a.level;
-                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                });
-                contentHtml += '</div>';
-                contentHtml += '</div>';
-            }
-            contentHtml += '</div>';
-            
-            if (mental.length > 0) {
-                contentHtml += '<h4>Mental</h4>';
-                contentHtml += '<div class="trait-list">';
-                mental.forEach(a => {
-                    if (!a || !a.ability_name) return; // Skip invalid abilities
-                    let badge = a.ability_name;
-                    if (a.level && a.level > 0) badge += ' x' + a.level;
-                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                });
-                contentHtml += '</div>';
-            }
-            
-            if (optional.length > 0) {
-                contentHtml += '<h4>Optional</h4>';
-                contentHtml += '<div class="trait-list">';
-                optional.forEach(a => {
-                    if (!a || !a.ability_name) return; // Skip invalid abilities
-                    let badge = a.ability_name;
-                    if (a.level && a.level > 0) badge += ' x' + a.level;
-                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                });
-                contentHtml += '</div>';
-            }
-            
-            if (uncategorized.length > 0) {
-                contentHtml += '<h4>Other Abilities</h4>';
-                contentHtml += '<div class="trait-list">';
-                uncategorized.forEach(a => {
-                    if (!a || !a.ability_name) return; // Skip invalid abilities
-                    let badge = a.ability_name;
-                    if (a.level && a.level > 0) badge += ' x' + a.level;
-                    if (a.specialization && a.specialization.trim()) badge += ' (' + a.specialization.trim() + ')';
-                    if (a.ability_category) badge += ' [' + a.ability_category + ']';
-                    contentHtml += '<span class="trait-badge">' + badge.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-                });
-                contentHtml += '</div>';
-            }
-        } else {
+        const categorized = {
+            physical: [],
+            social: [],
+            mental: [],
+            optional: []
+        };
+
+        currentViewData.abilities.forEach(ability => {
+            if (!ability || !ability.ability_name) return;
+            const category = (ability.ability_category || '').toLowerCase();
+            const normalizedCategory = ['physical', 'social', 'mental', 'optional'].includes(category) ? category : 'optional';
+            categorized[normalizedCategory].push(ability);
+        });
+
+        const presentGroups = Object.entries(categorized)
+            .filter(([, list]) => list.length > 0)
+            .map(([key, list]) => ({
+                title: key.charAt(0).toUpperCase() + key.slice(1),
+                abilities: list
+            }));
+
+        if (presentGroups.length === 0) {
             contentHtml += '<p class="empty-state">No abilities recorded.</p>';
+        } else {
+            contentHtml += '<div class="row g-4 mb-4 ability-grid">';
+            presentGroups.forEach((group, index) => {
+                const isStartOfRow = index % 2 === 0;
+                if (isStartOfRow) {
+                    contentHtml += '<div class="col-12 d-flex flex-column flex-md-row gap-4">';
+                }
+
+                contentHtml += '<div class="col-md-6 ability-column">';
+                contentHtml += '<h4>' + escapeHtml(group.title) + '</h4>';
+                contentHtml += '<div class="trait-list">';
+                group.abilities.forEach(a => {
+                    let badge = escapeHtml(a.ability_name);
+                    if (a.level && a.level > 0) badge += ' x' + escapeHtml(a.level);
+                    if (a.specialization && a.specialization.trim()) badge += ' (' + escapeHtml(a.specialization.trim()) + ')';
+                    contentHtml += '<span class="trait-badge">' + badge + '</span>';
+                });
+                contentHtml += '</div>';
+                contentHtml += '</div>';
+
+                const isEndOfRow = index % 2 === 1 || index === presentGroups.length - 1;
+                if (isEndOfRow) {
+                    contentHtml += '</div>'; // close row flex wrapper
+                }
+            });
+            contentHtml += '</div>';
         }
     } else {
         contentHtml += '<p class="empty-state">No abilities recorded.</p>';
@@ -927,19 +994,9 @@ function renderCharacterView(mode) {
     contentHtml += '</div>';
     
     contentHtml += '</div>';
-    const vc2 = document.getElementById('viewCharacterContent');
-    if (vc2) {
-      vc2.innerHTML = contentHtml;
-      vc2.setAttribute('aria-busy','false');
+    if (contentEl) {
+        contentEl.innerHTML = contentHtml;
+        contentEl.setAttribute('aria-busy', 'false');
     }
 }
 
-function closeViewModal() {
-    const modal = document.getElementById('viewModal');
-    modal.classList.remove('active');
-    // Remove click handler when closing
-    if (modalClickHandler) {
-        modal.removeEventListener('click', modalClickHandler);
-        modalClickHandler = null;
-    }
-}
