@@ -1,0 +1,37 @@
+## Chat Session Report — November 2025
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.10.4 → 0.10.5 (Patch Increment)
+- **Focus:** Character Agent dry-run tooling and reference sync automation
+
+### What We Accomplished
+
+#### 1. Character Agent Dry-Run Runner
+- Added `Agents/character_agent/run_character_agent.php`, a non-destructive PHP runner that includes `includes/connect.php`, queries Valley by Night characters, and prints which reports would fire (`character_brief`, missing-field diagnostics, processed log notice).
+- Implemented robust error handling: mysqli prepared queries with explicit failure messaging, graceful skips for NPC placeholders, total processed count, and UTF-8 plain-text headers for browser output.
+- Normalized output formatting so NPC placeholders emit explanatory notes while still logging the dry-run action.
+
+#### 2. Reference Field Sync Script
+- Built `Agents/character_agent/scripts/sync_reference_fields.php` to ingest curated JSON from `reference/Characters/Added to Database`, normalize character names, and backfill `biography`, `appearance`, and `notes` only when the database columns are blank.
+- Added tolerant name matching (lowercase, trimmed, ASCII-stripped) so shortened admin-facing names still match longer reference entries (e.g., “Kerry, the Gangrel” vs. “Kerry, the Desert-Wandering Gangrel”).
+- Introduced multi-entry JSON parsing, duplicate detection, and per-entry logging so files containing multiple characters (e.g., `Tremere.json`) hydrate each record without aborting on malformed data.
+- Wrote execution logs to `Agents/character_agent/logs/sync_reference_fields.log` when writable, and surfaced plain-text status lines for browser-driven execution.
+
+### Technical Implementation Notes
+- Both scripts declare strict types, centralize helper routines (normalization, update set building), and avoid destructive writes unless database values are empty.
+- Sync script safeguards include path resolution checks, JSON decode diagnostics, and call_user_func_array binding to support older PHP builds lacking mysqlnd niceties.
+- Duplicate JSON entries are skipped with explicit console messages; unresolved records (no DB match) are listed for follow-up (e.g., Roxanne Murphy, Tariq Ibrahim, Marisol “Roadrunner” Vega).
+
+### Files Added / Updated
+- `Agents/character_agent/run_character_agent.php`
+- `Agents/character_agent/scripts/sync_reference_fields.php`
+- `tmp/character-agent-runner-plan.md`
+- `docs/CHAT_REPORT_CHARACTER_AGENT_SYNC.mdc`
+- `VERSION.md`
+
+### Current Status
+- **Dry-Run Coverage:** ✅ Agent runner outputs missing-field diagnostics without touching reports/logs.
+- **Reference Sync:** ✅ Automates blank-field hydration, tolerates multi-character JSON, and logs unresolved matches for manual action.
+- **Outstanding Follow-Up:** Ardvark (removed), Roxanne Murphy, Tariq Ibrahim, Warner Jefferson, and Marisol “Roadrunner” Vega remain unmatched in the live DB; decide whether to import or retire those records.
+

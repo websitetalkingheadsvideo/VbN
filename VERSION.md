@@ -1,6 +1,24 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.4 (Current)
+## Version 0.10.5 (Current)
+**Date:** November 2025
+
+### Character Agent Dry Run & Reference Sync
+- ✅ **Dry-Run Runner** – Added `Agents/character_agent/run_character_agent.php` to report which Valley by Night characters would trigger report generation without touching files or logs.
+- ✅ **Reference Field Sync** – Implemented `Agents/character_agent/scripts/sync_reference_fields.php` to hydrate biographies, appearances, and notes from curated JSON with tolerant name matching.
+- ✅ **Multi-Entry JSON Support** – Parser now handles files containing multiple character records and skips malformed entries without terminating the sync.
+- 🛠️ **Normalization & Logging** – Normalized character name matching, surfaced duplicate detection, and added plain-text logging for troubleshooting.
+
+### Files Added / Updated:
+- `Agents/character_agent/run_character_agent.php`
+- `Agents/character_agent/scripts/sync_reference_fields.php`
+- `docs/CHAT_REPORT_CHARACTER_AGENT_SYNC.mdc`
+- `tmp/character-agent-runner-plan.md`
+- `VERSION.md`
+
+---
+
+## Version 0.10.4
 **Date:** November 2025
 
 ### Character Creator Discipline UX Polish
