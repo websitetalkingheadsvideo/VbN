@@ -1,6 +1,21 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.7 (Current)
+## Version 0.10.8 (Current)
+**Date:** November 2025
+
+### Admin Panel Sorting Persistence
+- ✅ **Stable Ordering After Deletes** – Characters stay in the user-selected sort order after deleting a row because the table reuses the stored column/direction instead of forcing a reload.
+- ✅ **Page Size Memory** – The per-page selector now remembers the chosen page length across actions so administrators keep their preferred pagination granularity.
+- ✅ **Live Count Updates** – Total, PC, and NPC counts refresh immediately when rows disappear, matching the filtered view without waiting for a full reload.
+
+### Files Added / Updated:
+- `admin/admin_panel.php`
+- `js/admin_panel.js`
+- `VERSION.md`
+
+---
+
+## Version 0.10.7
 **Date:** November 2025
 
 ### Tremere Bundles Split

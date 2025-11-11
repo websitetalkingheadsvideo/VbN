@@ -6,21 +6,105 @@
 // State management
 let currentFilter = 'all';
 let currentClanFilter = 'all';
+const sortStorageKey = 'adminPanelSort';
+const pageSizeStorageKey = 'adminPanelPageSize';
 let currentSort = { column: 'character_name', direction: 'asc' };
 let deleteCharacterId = null;
 let currentPage = 1;
 let pageSize = 20;
 let allRows = [];
 
+function loadSavedSortState() {
+    try {
+        const raw = sessionStorage.getItem(sortStorageKey);
+        if (!raw) {
+            return;
+        }
+        const parsed = JSON.parse(raw);
+        if (
+            parsed &&
+            typeof parsed === 'object' &&
+            typeof parsed.column === 'string' &&
+            (parsed.direction === 'asc' || parsed.direction === 'desc')
+        ) {
+            currentSort = {
+                column: parsed.column,
+                direction: parsed.direction
+            };
+        }
+    } catch (error) {
+        console.error('Unable to restore admin panel sort state', error);
+    }
+}
+
+function persistSortState() {
+    try {
+        sessionStorage.setItem(sortStorageKey, JSON.stringify(currentSort));
+    } catch (error) {
+        console.error('Unable to persist admin panel sort state', error);
+    }
+}
+
+function applySavedSortState() {
+    if (!currentSort || !currentSort.column || !currentSort.direction) {
+        return;
+    }
+
+    const headers = document.querySelectorAll('.character-table th[data-sort]');
+    if (!headers.length) {
+        return;
+    }
+
+    const headerArray = Array.from(headers);
+    const targetHeader = headerArray.find(header => header.dataset.sort === currentSort.column);
+    if (!targetHeader) {
+        return;
+    }
+
+    headerArray.forEach(header => header.classList.remove('sorted-asc', 'sorted-desc'));
+    targetHeader.classList.add('sorted-' + currentSort.direction);
+    sortTable(currentSort.column, currentSort.direction);
+}
+
+function loadSavedPageSize() {
+    const stored = sessionStorage.getItem(pageSizeStorageKey);
+    if (!stored) {
+        return;
+    }
+    const parsed = parseInt(stored, 10);
+    if (!Number.isFinite(parsed) || parsed <= 0) {
+        return;
+    }
+    pageSize = parsed;
+    const pageSizeSelect = document.getElementById('pageSize');
+    if (pageSizeSelect) {
+        const optionExists = Array.from(pageSizeSelect.options).some(option => parseInt(option.value, 10) === parsed);
+        if (optionExists) {
+            pageSizeSelect.value = String(parsed);
+        }
+    }
+}
+
+function persistPageSize() {
+    try {
+        sessionStorage.setItem(pageSizeStorageKey, String(pageSize));
+    } catch (error) {
+        console.error('Unable to persist admin panel page size', error);
+    }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Store all rows for pagination
     allRows = Array.from(document.querySelectorAll('.character-row'));
     
+    loadSavedSortState();
+    loadSavedPageSize();
     initializeFilters();
     initializeClanFilter();
     initializeSearch();
     initializeSorting();
+    applySavedSortState();
     initializeDeleteButtons();
     initializeViewButtons();
     initializeViewModeToggle();
@@ -71,7 +155,7 @@ function initializeSearch() {
 }
 
 // Apply filter, clan filter, and search
-function applyFilters() {
+function applyFilters(resetPage = true) {
     const searchTerm = document.getElementById('characterSearch').value.toLowerCase();
     const rows = document.querySelectorAll('.character-row');
     
@@ -116,8 +200,14 @@ function applyFilters() {
         }
     });
     
-    // Reset to page 1 when filters change
-    currentPage = 1;
+    if (resetPage) {
+        currentPage = 1;
+    } else {
+        const totalPages = Math.max(1, Math.ceil(visibleRows.length / pageSize));
+        if (currentPage > totalPages) {
+            currentPage = totalPages;
+        }
+    }
     updatePagination(visibleRows);
 }
 
@@ -145,6 +235,7 @@ function initializeSorting() {
             
             // Sort table
             sortTable(column, currentSort.direction);
+            persistSortState();
         });
     });
 }
@@ -260,12 +351,7 @@ function confirmDelete() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            const row = document.querySelector(`button[data-id="${deleteCharacterId}"]`).closest('tr');
-            row.remove();
-            closeDeleteModal();
-            setTimeout(() => {
-                window.location.reload();
-            }, 500);
+            handleDeleteSuccess(deleteCharacterId);
         } else {
             alert('Error deleting character: ' + data.message);
         }
@@ -283,6 +369,7 @@ function initializePagination() {
     if (pageSizeSelect) {
         pageSizeSelect.addEventListener('change', function() {
             pageSize = parseInt(this.value);
+            persistPageSize();
             currentPage = 1;
             updatePagination();
         });
@@ -371,6 +458,47 @@ function createPageButton(text, page) {
 function goToPage(page) {
     currentPage = page;
     updatePagination();
+}
+
+function handleDeleteSuccess(characterId) {
+    const deleteButton = document.querySelector(`button.delete-btn[data-id="${characterId}"]`);
+    const row = deleteButton ? deleteButton.closest('tr') : null;
+    
+    if (!row) {
+        closeDeleteModal();
+        return;
+    }
+    
+    row.remove();
+    allRows = Array.from(document.querySelectorAll('.character-row'));
+    
+    closeDeleteModal();
+    recalculateStats();
+    applyFilters(false);
+    persistSortState();
+}
+
+function recalculateStats() {
+    const rows = Array.from(document.querySelectorAll('.character-row'));
+    const total = rows.length;
+    
+    let pcs = 0;
+    let npcs = 0;
+    rows.forEach(row => {
+        if (row.dataset.type === 'npc') {
+            npcs += 1;
+        } else {
+            pcs += 1;
+        }
+    });
+    
+    const totalEl = document.getElementById('statTotal');
+    const pcsEl = document.getElementById('statPcs');
+    const npcsEl = document.getElementById('statNpcs');
+    
+    if (totalEl) totalEl.textContent = total.toString();
+    if (pcsEl) pcsEl.textContent = pcs.toString();
+    if (npcsEl) npcsEl.textContent = npcs.toString();
 }
 
 // View character functionality

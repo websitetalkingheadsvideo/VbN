@@ -6,7 +6,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.9.22');
+define('LOTN_VERSION', '0.10.8');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -148,19 +148,19 @@ function render_clan_badge(string $clan): string {
         ?>
         <div class="col-12 col-sm-4 col-lg-3">
             <div class="stat-mini text-center">
-            <span class="stat-number"><?php echo $stats['total'] ?? 0; ?></span>
+            <span class="stat-number" id="statTotal"><?php echo $stats['total'] ?? 0; ?></span>
             <span class="stat-label">Total</span>
             </div>
         </div>
         <div class="col-12 col-sm-4 col-lg-3">
             <div class="stat-mini text-center">
-            <span class="stat-number"><?php echo $stats['pcs'] ?? 0; ?></span>
+            <span class="stat-number" id="statPcs"><?php echo $stats['pcs'] ?? 0; ?></span>
             <span class="stat-label">PCs</span>
             </div>
         </div>
         <div class="col-12 col-sm-4 col-lg-3">
             <div class="stat-mini text-center">
-            <span class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></span>
+            <span class="stat-number" id="statNpcs"><?php echo $stats['npcs'] ?? 0; ?></span>
             <span class="stat-label">NPCs</span>
             </div>
         </div>
