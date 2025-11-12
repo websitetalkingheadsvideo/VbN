@@ -1,0 +1,13 @@
+{
+    "character_id": 104,
+    "character_name": "Tariq Ibrahim",
+    "detected_at": "2025-11-12T14:56:37+00:00",
+    "fields": [
+        {
+            "field": "appearance",
+            "status": "missing",
+            "recommendation": "Describe look, wardrobe, and notable tells.",
+            "current_value": ""
+        }
+    ]
+}

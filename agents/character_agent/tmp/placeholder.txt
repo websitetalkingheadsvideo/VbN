@@ -1,0 +1,2 @@
+Transient workspace for Character Agent scratch data. Keep gitignored in production.
+

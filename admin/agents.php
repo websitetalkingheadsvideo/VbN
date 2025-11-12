@@ -64,46 +64,54 @@ include __DIR__ . '/../includes/header.php';
     </div>
 
     <div class="agents-grid row g-3 g-lg-4 mb-4">
-        <?php foreach ($agents as $agent): ?>
-            <div class="col-12 col-md-6 col-xl-4">
-                <article class="agent-card h-100">
-                    <div class="agent-card-header">
-                        <h3 class="agent-card-title"><?= htmlspecialchars($agent['name']); ?></h3>
-                        <span class="agent-status" data-status="<?= htmlspecialchars(strtolower($agent['status'])); ?>">
-                            <?= htmlspecialchars($agent['status']); ?>
-                        </span>
-                    </div>
-                    <p class="agent-card-description mb-0">
-                        <?= htmlspecialchars($agent['description']); ?>
-                    </p>
-                    <div class="agent-card-section">
-                        <p class="agent-card-subtitle mb-2">Purpose</p>
-                        <p class="agent-card-text mb-0"><?= htmlspecialchars($agent['purpose']); ?></p>
-                    </div>
-                    <div class="agent-card-section">
-                        <p class="agent-card-subtitle mb-2">Data Access</p>
-                        <ul class="agent-path-list">
-                            <?php foreach ($agent['data_access'] as $path): ?>
-                                <li><span class="agent-path"><?= htmlspecialchars($path); ?></span></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <p class="agent-card-meta mb-0">Last event: <?= htmlspecialchars($agent['last_event']); ?></p>
-                    <?php if (!empty($agent['actions'])): ?>
-                        <div class="agent-action-group mt-3 d-flex flex-column flex-sm-row gap-2">
-                            <?php foreach ($agent['actions'] as $action): ?>
-                                <a href="<?= htmlspecialchars($action['url']); ?>"
-                                   class="btn btn-outline-danger btn-sm w-100"
-                                   <?php if (!empty($action['target'])): ?>target="<?= htmlspecialchars($action['target']); ?>"<?php endif; ?>
-                                   <?php if (!empty($action['rel'])): ?>rel="<?= htmlspecialchars($action['rel']); ?>"<?php endif; ?>>
-                                    <?= htmlspecialchars($action['label']); ?>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
-                </article>
+        <?php if (empty($agents)): ?>
+            <div class="col-12">
+                <div class="card agent-card shadow-sm border-0 text-center py-5">
+                    <p class="mb-0 text-light">No agents configured yet.</p>
+                </div>
             </div>
-        <?php endforeach; ?>
+        <?php else: ?>
+            <?php foreach ($agents as $agent): ?>
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="card agent-card h-100 shadow-sm border-0">
+                        <div class="agent-card-header">
+                            <h3 class="agent-card-title"><?= htmlspecialchars($agent['name']); ?></h3>
+                            <span class="agent-status" data-status="<?= htmlspecialchars(strtolower($agent['status'])); ?>">
+                                <?= htmlspecialchars($agent['status']); ?>
+                            </span>
+                        </div>
+                        <p class="agent-card-description mb-0">
+                            <?= htmlspecialchars($agent['description']); ?>
+                        </p>
+                        <div class="agent-card-section">
+                            <p class="agent-card-subtitle mb-2">Purpose</p>
+                            <p class="agent-card-text mb-0"><?= htmlspecialchars($agent['purpose']); ?></p>
+                        </div>
+                        <div class="agent-card-section">
+                            <p class="agent-card-subtitle mb-2">Data Access</p>
+                            <ul class="agent-path-list">
+                                <?php foreach ($agent['data_access'] as $path): ?>
+                                    <li><span class="agent-path"><?= htmlspecialchars($path); ?></span></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <p class="agent-card-meta mb-0">Last event: <?= htmlspecialchars($agent['last_event']); ?></p>
+                        <?php if (!empty($agent['actions'])): ?>
+                            <div class="agent-action-group mt-3 d-flex flex-column flex-sm-row gap-2">
+                                <?php foreach ($agent['actions'] as $action): ?>
+                                    <a href="<?= htmlspecialchars($action['url']); ?>"
+                                       class="btn btn-outline-danger btn-sm w-100"
+                                       <?php if (!empty($action['target'])): ?>target="<?= htmlspecialchars($action['target']); ?>"<?php endif; ?>
+                                       <?php if (!empty($action['rel'])): ?>rel="<?= htmlspecialchars($action['rel']); ?>"<?php endif; ?>>
+                                        <?= htmlspecialchars($action['label']); ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                    </article>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 
     <section class="planned-agents-panel" id="planned-agents">

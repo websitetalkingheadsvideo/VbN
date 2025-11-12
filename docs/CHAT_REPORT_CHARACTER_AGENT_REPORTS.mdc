@@ -1,0 +1,41 @@
+## Chat Session Report — November 2025
+
+### Session Summary
+- **Date:** November 2025
+- **Version:** 0.9.16 → 0.9.17 (Patch Increment)
+- **Focus:** Character Agent pipeline execution, web runner, and report viewer integration
+
+### What We Accomplished
+
+#### 1. Character Agent Pipeline Execution Flow
+- Added `agents/character_agent/pipeline.php` plus supporting config and `src/*` modules to stream Valley by Night characters, normalize records, write markdown/JSON/history outputs, and append structured log entries.
+- Implemented reusable fetcher, processor, report writer, and logger utilities to keep business logic pure and file IO centralized.
+
+#### 2. Web-Based Runner & UI Integration
+- Built `admin/character_agent_run.php`, an admin-gated form that triggers the pipeline with selectable mode, optional record limit, and dry-run toggle, eliminating the need for shell access.
+- Normalized path handling so both development (`/Agents/…`) and production (`/agents/…`) directory casings resolve correctly.
+
+#### 3. Browser Report Viewer & Styling
+- Published `agents/character_agent/reports/index.php` with accordion previews, pretty-printed JSON, and cross-directory discovery so newly generated reports appear immediately.
+- Introduced `css/character-agent-reports.css` to deliver a readable dark theme consistent with the Agents dashboard.
+
+### Files Added / Updated
+- `admin/character_agent_run.php`
+- `agents/character_agent/config/pipeline.php`
+- `agents/character_agent/pipeline.php`
+- `agents/character_agent/reports/index.php`
+- `agents/character_agent/src/character_fetcher.php`
+- `agents/character_agent/src/character_processor.php`
+- `agents/character_agent/src/report_writer.php`
+- `agents/character_agent/src/logger.php`
+- `css/character-agent-reports.css`
+- `agents/character_agent/README.md`
+- `admin/agents.php`
+- `docs/CHAT_REPORT_CHARACTER_AGENT_SYNC.mdc`
+- `VERSION.md`
+- `tmp/character-agent-pipeline-plan.md`
+
+### Current Status
+- **Pipeline:** ✅ Runs from the admin UI with detailed summaries, logging, and history generation support.
+- **Reports UI:** ✅ Displays daily/weekly/continuity/history outputs with consistent styling across environment directory casings.
+- **Follow-Up:** Consider surfacing latest report metadata in the Agents dashboard and documenting runner usage in `agents/character_agent/README.md`.

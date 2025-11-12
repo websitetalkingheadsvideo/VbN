@@ -1,0 +1,43 @@
+body.character-agent-reports {
+    background: #1a0f0f;
+    color: #f4ece1;
+    font-family: var(--font-body, 'Source Serif Pro'), serif;
+}
+
+.character-agent-reports .page-lead {
+    color: rgba(255, 236, 225, 0.85);
+    font-size: 1.05rem;
+    max-width: 640px;
+}
+
+.character-agent-reports .accordion-button {
+    font-family: var(--font-title, 'Libre Baskerville'), serif;
+    letter-spacing: 0.08em;
+}
+
+.character-agent-reports .report-content {
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(139, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 16px;
+    color: #f8f2ea;
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    max-height: 480px;
+    overflow-y: auto;
+}
+
+.character-agent-reports section h2 {
+    font-family: var(--font-title, 'Libre Baskerville'), serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.95rem;
+    color: #f7d5c2;
+}
+
+.character-agent-reports .card {
+    background: linear-gradient(135deg, rgba(42, 21, 21, 0.9) 0%, rgba(18, 9, 9, 0.95) 100%);
+    border: 1px solid rgba(139, 0, 0, 0.55);
+}
+

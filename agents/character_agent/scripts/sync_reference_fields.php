@@ -286,7 +286,6 @@ function fetchCharacterRow(mysqli $connection, string $name): ?array
     }
 
     $targetNormalized = normalizeCharacterName($name);
-
     if (!mysqli_stmt_bind_result($statement, $id, $dbName, $biography, $appearance, $notes)) {
         $error = mysqli_stmt_error($statement);
         mysqli_stmt_close($statement);
@@ -296,7 +295,13 @@ function fetchCharacterRow(mysqli $connection, string $name): ?array
     $row = null;
 
     while (mysqli_stmt_fetch($statement)) {
-        if (normalizeCharacterName((string) $dbName) !== $targetNormalized) {
+        $dbNormalized = normalizeCharacterName((string) $dbName);
+
+        if (
+            $dbNormalized !== $targetNormalized &&
+            strpos($dbNormalized, $targetNormalized) === false &&
+            strpos($targetNormalized, $dbNormalized) === false
+        ) {
             continue;
         }
 
@@ -434,8 +439,6 @@ try {
 
 echo 'Found ' . count($files) . ' reference files.' . PHP_EOL;
 
-$processedNames = [];
-
 foreach ($files as $filePath) {
     $filename = basename($filePath);
 
@@ -461,14 +464,6 @@ foreach ($files as $filePath) {
             logSyncMessage('Entry skipped in ' . $filename . ' due to missing character_name.');
             continue;
         }
-
-        if (isset($processedNames[$normalizedName])) {
-            echo 'Duplicate entry skipped: ' . $payload['name'] . PHP_EOL;
-            logSyncMessage('Duplicate entry skipped for ' . $payload['name']);
-            continue;
-        }
-
-        $processedNames[$normalizedName] = true;
 
         try {
             applyReferenceUpdate($connection, $payload);

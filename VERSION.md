@@ -66,14 +66,14 @@
 **Date:** November 2025
 
 ### Character Agent Dry Run & Reference Sync
-- ✅ **Dry-Run Runner** – Added `Agents/character_agent/run_character_agent.php` to report which Valley by Night characters would trigger report generation without touching files or logs.
-- ✅ **Reference Field Sync** – Implemented `Agents/character_agent/scripts/sync_reference_fields.php` to hydrate biographies, appearances, and notes from curated JSON with tolerant name matching.
+- ✅ **Dry-Run Runner** – Added `agents/character_agent/run_character_agent.php` to report which Valley by Night characters would trigger report generation without touching files or logs.
+- ✅ **Reference Field Sync** – Implemented `agents/character_agent/scripts/sync_reference_fields.php` to hydrate biographies, appearances, and notes from curated JSON with tolerant name matching.
 - ✅ **Multi-Entry JSON Support** – Parser now handles files containing multiple character records and skips malformed entries without terminating the sync.
 - 🛠️ **Normalization & Logging** – Normalized character name matching, surfaced duplicate detection, and added plain-text logging for troubleshooting.
 
 ### Files Added / Updated:
-- `Agents/character_agent/run_character_agent.php`
-- `Agents/character_agent/scripts/sync_reference_fields.php`
+- `agents/character_agent/run_character_agent.php`
+- `agents/character_agent/scripts/sync_reference_fields.php`
 - `docs/CHAT_REPORT_CHARACTER_AGENT_SYNC.mdc`
 - `tmp/character-agent-runner-plan.md`
 - `VERSION.md`
@@ -477,7 +477,41 @@
 
 ---
 
-## Version 0.9.16 (Current)
+## Version 0.9.17 (Current)
+**Date:** November 2025
+
+### Character Agent Automation & Reporting:
+- ✅ **Database Pipeline** - Implemented `agents/character_agent/pipeline.php` with batched fetcher, transformation utilities, report writers, and structured logging.
+- ✅ **Admin Runner** - Added secure web entry point at `admin/character_agent_run.php` to execute the pipeline with mode, limit, and dry-run controls without shell access.
+- ✅ **Report Viewer** - Published `agents/character_agent/reports/index.php` with dark-theme styling, accordion previews, and cross-directory detection so daily/weekly/continuity/history outputs load from either casing.
+- ✅ **Styling Enhancements** - Introduced `css/character-agent-reports.css` to improve readability and theming for the new report browser.
+- ✅ **Cleanup & Docs** - Normalized agent path references in docs and plans, ensuring consistency with production’s lowercase `/agents/character_agent/` structure.
+
+### Files Modified:
+- `agents/character_agent/reports/index.php`
+- `agents/character_agent/README.md`
+- `admin/agents.php`
+- `docs/CHAT_REPORT_CHARACTER_AGENT_SYNC.mdc`
+- `tmp/character-agent-pipeline-plan.md`
+
+### Files Added:
+- `admin/character_agent_run.php`
+- `agents/character_agent/config/pipeline.php`
+- `agents/character_agent/pipeline.php`
+- `agents/character_agent/src/character_fetcher.php`
+- `agents/character_agent/src/character_processor.php`
+- `agents/character_agent/src/report_writer.php`
+- `agents/character_agent/src/logger.php`
+- `css/character-agent-reports.css`
+
+### Impact:
+- **Automation** – Character Agent can now be executed from the admin UI, logging structured results and generating timestamped reports.
+- **Visibility** – Storytellers can browse generated daily/weekly/continuity/history outputs directly in the browser with improved readability.
+- **Consistency** – Repository paths and documentation now align with production expectations, eliminating case-sensitivity access issues.
+
+---
+
+## Version 0.9.16
 **Date:** January 2025
 
 ### Admin Panel Sorting Fix & File Management:

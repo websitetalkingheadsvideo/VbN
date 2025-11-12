@@ -1,0 +1,25 @@
+{
+    "character_id": 90,
+    "character_name": "Sasha",
+    "detected_at": "2025-11-12T14:56:44+00:00",
+    "fields": [
+        {
+            "field": "biography",
+            "status": "missing",
+            "recommendation": "Add 2-3 paragraph chronicle summary.",
+            "current_value": ""
+        },
+        {
+            "field": "appearance",
+            "status": "missing",
+            "recommendation": "Describe look, wardrobe, and notable tells.",
+            "current_value": ""
+        },
+        {
+            "field": "notes",
+            "status": "missing",
+            "recommendation": "Outline current plots, debts, or secrets.",
+            "current_value": ""
+        }
+    ]
+}
