@@ -6,7 +6,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('LOTN_VERSION', '0.10.8');
+define('LOTN_VERSION', '0.10.9');
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -68,8 +68,8 @@ function render_clan_badge(string $clan): string {
         'caitiff' => '#708090',
         'followers of set' => '#8B6C37',
         'setite' => '#8B6C37',
-        'daughter of cacophony' => '#483D8B',
-        'daughters of cacophony' => '#483D8B',
+        'daughter of cacophony' => '#FF69B4',
+        'daughters of cacophony' => '#FF69B4',
         'gangrel' => '#228B22',
         'giovanni' => '#556B2F',
         'lasombra' => '#1A1A40',

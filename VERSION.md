@@ -1,6 +1,18 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.8 (Current)
+## Version 0.10.9 (Current)
+**Date:** November 2025
+
+### Clan Badge Palette Refresh
+- 🎶 **Daughter of Cacophony Highlight** – Clan badges in the admin roster now use a vivid pink tone so Daughter of Cacophony characters stand out with their signature flair.
+
+### Files Added / Updated:
+- `admin/admin_panel.php`
+- `VERSION.md`
+
+---
+
+## Version 0.10.8
 **Date:** November 2025
 
 ### Admin Panel Sorting Persistence
@@ -486,26 +498,6 @@
 - **User Experience** - Admin panel name sorting now functional
 - **Asset Management** - Character images can now be version controlled
 - **Project Organization** - New reference files properly tracked
-
----
-
-## Version 0.9.15
-**Date:** November 2025
-
-### ComfyUI Removal & Taskmaster Integration:
-- ✅ **ComfyUI Removal Plan** - Created Taskmaster plan to completely remove ComfyUI from project
-- ✅ **Taskmaster Initialization** - Initialized Taskmaster project management system
-- ✅ **Removal Tasks Created** - Generated 5 tasks for systematic ComfyUI removal
-- ✅ **Workflow Cleanup** - Identified ComfyUI workflow JSON files for deletion
-
-### Files Created:
-- `.taskmaster/docs/remove_comfyui_prd.txt` - PRD for ComfyUI removal
-- `.taskmaster/tasks/tasks.json` - Taskmaster task list with removal tasks
-
-### Impact:
-- **Project Cleanup** - Systematic plan to remove unused ComfyUI integration
-- **Task Management** - Taskmaster system now available for project management
-- **Code Quality** - Removing unused dependencies improves project maintainability
 
 ---
 
