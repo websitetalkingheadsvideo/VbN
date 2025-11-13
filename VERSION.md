@@ -1,6 +1,25 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.9 (Current)
+## Version 0.10.10 (Current)
+**Date:** November 2025
+
+### Character Lore & Agent Report Updates
+- 🎭 **New Plot Hooks & Biographies** – Authored fresh lore for Layla al-Sahr, Marisol “Roadrunner” Vega, and Sarah Hansen, including updated biographies, appearance briefs, and tactical notes to fuel agent-driven storytelling.
+- 🧭 **South Mountain Trespass Scenario** – Added a Gangrel-focused three-act hook file for Marisol detailing routes, plays, and failure points across Ahwatukee safe trails.
+- 📄 **Report Viewer Compatibility Fix** – Updated the Character Agent report viewer to parse JSON safely on PHP 7.4 and published a combined missing-field report bundle for daily audits.
+
+### Files Added / Updated:
+- `agents/character_agent/reports/index.php`
+- `agents/character_agent/reports/daily/missing_reports_combined.json`
+- `reference/Characters/Sarah_Hansen.json`
+- `reference/Characters/Added to Database/Sarah_Hansen.json`
+- `reference/Plot Hooks/Layla al-Sahr.json`
+- `reference/Plot Hooks/Marisol Roadrunner Vega.json`
+- `VERSION.md`
+
+---
+
+## Version 0.10.9
 **Date:** November 2025
 
 ### Clan Badge Palette Refresh

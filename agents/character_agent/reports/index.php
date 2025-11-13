@@ -10,15 +10,6 @@ if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'admin') {
     exit();
 }
 
-$candidateRoots = array_filter([
-    realpath(__DIR__),
-    realpath(dirname(__DIR__, 2) . '/Agents/character_agent/reports'),
-]);
-
-if ($candidateRoots === []) {
-    throw new RuntimeException('Unable to locate character agent reports directory. Expected /agents/character_agent/reports/ or /Agents/character_agent/reports/.');
-}
-
 /**
  * @return array<int, string>
  */
@@ -98,7 +89,7 @@ function character_agent_read_file(string $filePath): string
         return '';
     }
 
-    if (str_ends_with($filePath, '.json')) {
+    if (substr($filePath, -5) === '.json') {
         $decoded = json_decode($contents, true);
 
         if (is_array($decoded)) {

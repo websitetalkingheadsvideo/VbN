@@ -1,0 +1,302 @@
+[
+    {
+        "source_file": "20251112_145637_layla-al-sahr_missing.json",
+        "payload": {
+            "character_id": 107,
+            "character_name": "Layla al-Sahr",
+            "detected_at": "2025-11-12T14:56:37+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145637_marisol-roadrunner-vega_missing.json",
+        "payload": {
+            "character_id": 124,
+            "character_name": "Marisol \"Roadrunner\" Vega",
+            "detected_at": "2025-11-12T14:56:37+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145637_sarah-hansen_missing.json",
+        "payload": {
+            "character_id": 113,
+            "character_name": "Sarah Hansen",
+            "detected_at": "2025-11-12T14:56:37+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145637_sasha_missing.json",
+        "payload": {
+            "character_id": 90,
+            "character_name": "Sasha",
+            "detected_at": "2025-11-12T14:56:37+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145637_tariq-ibrahim_missing.json",
+        "payload": {
+            "character_id": 104,
+            "character_name": "Tariq Ibrahim",
+            "detected_at": "2025-11-12T14:56:37+00:00",
+            "fields": [
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145637_warner-jefferson_missing.json",
+        "payload": {
+            "character_id": 123,
+            "character_name": "Warner Jefferson",
+            "detected_at": "2025-11-12T14:56:37+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145644_layla-al-sahr_missing.json",
+        "payload": {
+            "character_id": 107,
+            "character_name": "Layla al-Sahr",
+            "detected_at": "2025-11-12T14:56:44+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145644_marisol-roadrunner-vega_missing.json",
+        "payload": {
+            "character_id": 124,
+            "character_name": "Marisol \"Roadrunner\" Vega",
+            "detected_at": "2025-11-12T14:56:44+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145644_sarah-hansen_missing.json",
+        "payload": {
+            "character_id": 113,
+            "character_name": "Sarah Hansen",
+            "detected_at": "2025-11-12T14:56:44+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145644_sasha_missing.json",
+        "payload": {
+            "character_id": 90,
+            "character_name": "Sasha",
+            "detected_at": "2025-11-12T14:56:44+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145644_tariq-ibrahim_missing.json",
+        "payload": {
+            "character_id": 104,
+            "character_name": "Tariq Ibrahim",
+            "detected_at": "2025-11-12T14:56:44+00:00",
+            "fields": [
+                {
+                    "field": "appearance",
+                    "status": "missing",
+                    "recommendation": "Describe look, wardrobe, and notable tells.",
+                    "current_value": ""
+                }
+            ]
+        }
+    },
+    {
+        "source_file": "20251112_145644_warner-jefferson_missing.json",
+        "payload": {
+            "character_id": 123,
+            "character_name": "Warner Jefferson",
+            "detected_at": "2025-11-12T14:56:44+00:00",
+            "fields": [
+                {
+                    "field": "biography",
+                    "status": "missing",
+                    "recommendation": "Add 2-3 paragraph chronicle summary.",
+                    "current_value": ""
+                },
+                {
+                    "field": "notes",
+                    "status": "missing",
+                    "recommendation": "Outline current plots, debts, or secrets.",
+                    "current_value": ""
+                }
+            ]
+        }
+    }
+]

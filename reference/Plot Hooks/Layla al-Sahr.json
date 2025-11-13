@@ -1,0 +1,149 @@
+{
+  "character_name": "Layla al-Sahr",
+  "chronicle": "Valley by Night",
+  "plot_hooks": [
+    {
+      "title": "Silent Extraction",
+      "type": "Rescue/Investigation",
+      "difficulty": "Hard",
+      "setup": "Layla learns that Anwar, the primary assassin she was meant to extract, is being held in torpor inside a secret Tremere vault beneath Camelback Tower.",
+      "hook": "She needs a crew who can bypass wards without exposing her Quietus signature. PCs capable of stealth, ritual sabotage, or political cover are ideal allies.",
+      "objectives": [
+        "Identify the Tremere chantry's weak points",
+        "Procure a daylight safehouse for Anwar",
+        "Extract Anwar without triggering Camarilla reprisals"
+      ],
+      "complications": [
+        "The Tremere want Anwar as leverage over the Harpies",
+        "Evidence points to Layla if wards are broken inelegantly",
+        "Anwar may not be willing—or sane—enough to leave quietly"
+      ],
+      "themes": ["Loyalty", "Espionage", "Trust", "Double Lives"],
+      "potential_outcomes": [
+        "Layla secures Anwar and considers fleeing Phoenix",
+        "The Tremere expose Layla's Banu Haqim identity to the Prince",
+        "PCs claim Anwar as their own bargaining chip"
+      ]
+    },
+    {
+      "title": "Harpy Glass Daggers",
+      "type": "Politics/Reputation",
+      "difficulty": "Medium",
+      "setup": "Harpy Claudette receives an anonymous tip that Layla's visions are staged, sparking a whisper campaign that her Malkavian mask is fake.",
+      "hook": "Layla must produce convincing 'insight' at a salon within 72 hours or lose status and shelter. She needs the PCs to feed her curated intelligence.",
+      "objectives": [
+        "Forge a believable prophetic performance",
+        "Trace the leak to its source",
+        "Flip the rumor into leverage against the instigator"
+      ],
+      "complications": [
+        "A real Malkavian catches inconsistencies in Layla's persona",
+        "The Harpy demands proof that endangers one of Layla's assets",
+        "If the rumor starter is exposed, they possess damning evidence on the PCs"
+      ],
+      "themes": ["Masquerade", "Intrigue", "Performance", "Social Pressure"],
+      "potential_outcomes": [
+        "Layla cements her cover and gains Harpy favor",
+        "The conspiracy points to a Sabbat agitator stirring unrest",
+        "Layla is forced to reveal a sliver of her true loyalty"
+      ]
+    },
+    {
+      "title": "Quietus Residue",
+      "type": "Mystery/Science",
+      "difficulty": "Medium",
+      "setup": "Tremere analysts detect Quietus traces at multiple murder scenes previously blamed on mortal gangs.",
+      "hook": "Layla recognizes the chemical signature as Anwar's calling card. PCs can help her follow the residue before the Tremere weaponize the data.",
+      "objectives": [
+        "Secure samples before they reach Tremere archives",
+        "Backtrace the supply line distributing Quietus-tainted weapons",
+        "Determine whether Anwar is active—or someone is forging his style"
+      ],
+      "complications": [
+        "The Tremere set bait to catch the Quietus user",
+        "Sabbat scouts hunt the same source",
+        "Layla's Beast resonates with the lingering vitae, risking frenzy"
+      ],
+      "themes": ["Forensics", "Identity", "Hunter and Hunted"],
+      "potential_outcomes": [
+        "Anwar is proven alive and sending coded requests for aid",
+        "A Camarilla rival frames Layla for the killings",
+        "The Quietus samples lead to a rogue Banu Haqim cell"
+      ]
+    },
+    {
+      "title": "The Handler's Ledger",
+      "type": "Espionage/Betrayal",
+      "difficulty": "Hard",
+      "setup": "A black-market broker offers Layla the field ledger of her vanished handler in exchange for a rare favor: sabotaging Prince Lorcan's next court decree.",
+      "hook": "The ledger lists contractors, safehouses, and Phoenix mortals compromised by Banu Haqim operations. PCs can help plan the sabotage or steal the ledger outright.",
+      "objectives": [
+        "Locate the broker's fortified storage unit",
+        "Decide whether to fulfill, subvert, or double-cross the request",
+        "Ensure the ledger doesn't fall into hostile hands"
+      ],
+      "complications": [
+        "The broker is secretly a Setite cultist testing Layla's resolve",
+        "Executing the sabotage antagonizes the Sheriff",
+        "Failing the deal alerts a second buyer aligned with the Sabbat"
+      ],
+      "themes": ["Choice", "Consequences", "Secrets for Sale"],
+      "potential_outcomes": [
+        "Layla obtains the ledger and new allies",
+        "The ledger leaks, compromising Banu Haqim assets",
+        "PCs gain blackmail on multiple Phoenix factions"
+      ]
+    },
+    {
+      "title": "Desert Echo Safehouse",
+      "type": "Survival/Logistics",
+      "difficulty": "Easy to Medium",
+      "setup": "Layla's covert ghoul network reports that the Sabbat reclaimed an abandoned safehouse outside Cave Creek—one that stores quietus vials and forged identities.",
+      "hook": "She wants the cache cleared before Sabbat loyalists reverse-engineer her protocols. PCs can assault, infiltrate, or negotiate for its contents.",
+      "objectives": [
+        "Survey the safehouse without alerting Sabbat sentries",
+        "Neutralize or co-opt the occupying pack",
+        "Recover or destroy compromising materials"
+      ],
+      "complications": [
+        "The Sabbat pack includes an empath who senses deception",
+        "The safehouse is booby-trapped with daylight-triggered explosives",
+        "Evidence implicates a Phoenix Primogen in hiring Layla"
+      ],
+      "themes": ["Cleanup", "Cover Operations", "Old Debts"],
+      "potential_outcomes": [
+        "Layla secures new resources and owes the PCs",
+        "Sabbat retaliation escalates street-level conflict",
+        "The cache reveals a hidden employer funding Layla's mission"
+      ]
+    }
+  ],
+  "meta_hooks": [
+    {
+      "title": "Forked Allegiances",
+      "type": "Political Pressure",
+      "description": "Run two hooks parallel: one forcing Layla to reaffirm Camarilla loyalty, another tempting her with Banu Haqim autonomy. PCs decide which allegiance she ultimately strengthens."
+    },
+    {
+      "title": "Vision in Fragments",
+      "type": "Prophetic Puzzle",
+      "description": "Interleave Layla's staged 'visions' with authentic flashes from her Beast. Combine clues across sessions so the final reveal exposes who sabotaged Anwar."
+    },
+    {
+      "title": "Agent Provocateur",
+      "type": "Long Con",
+      "description": "Let an NPC Harpy suspect Layla is Sabbat, then secretly ask her to spy on the Prince. PCs help Layla juggle triple agency without collapsing her cover."
+    }
+  ],
+  "usage_notes": {
+    "scaling": "Each hook can run as a standalone session or chain into a mini-arc culminating in Anwar's fate.",
+    "difficulty_guide": {
+      "Easy": "Social maneuvering, infiltration with limited combat, low political fallout",
+      "Medium": "Multiple factions involved, resource management, risk of exposure",
+      "Hard": "High-stakes operations, potential Masquerade breaches, lasting political consequences"
+    },
+    "combination": "Use 'Harpy Glass Daggers' as a social prelude to 'Silent Extraction'—the Harpy cover provides access to Tremere-held information.",
+    "character_growth": "Success pushes Layla toward choosing between Camarilla security and Banu Haqim loyalty; failure erodes her identity and opens her to Sabbat recruitment."
+  }
+}
+

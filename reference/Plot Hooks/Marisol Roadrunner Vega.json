@@ -1,0 +1,82 @@
+{
+  "character_name": "Marisol \"Roadrunner\" Vega",
+  "chronicle": "Valley by Night",
+  "plot_hooks": [
+    {
+      "title": "South Mountain Trespass",
+      "type": "Territory Defense",
+      "difficulty": "Medium to Hard",
+      "setup": "Marisol detects three unknown predators cresting South Mountain into Ahwatukee, their tracks masked with treated sand and Quietus residue.",
+      "hook": "She asks the PCs—preferably Gangrel hunters—to follow the trail, confirm the threat, and help seal the breach before dawn.",
+      "structure": {
+        "act_i": {
+          "name": "Scents on Basalt",
+          "plays": [
+            "The Dust-Tongue Briefing: Marisol shares her atlas, soil samples, and offers cache access for cooperation.",
+            "Echoes in the Cholla: PCs track through South Mountain Park, confronting altered Sabbat and Setite sigils while dodging Garou attention.",
+            "The Culvert Cache: Discovery of an abandoned ADOT storm culvert stocked with blood bags, towing straps, and Casa Del Sol clues."
+          ]
+        },
+        "act_ii": {
+          "name": "Neighborhood Veils",
+          "plays": [
+            "Casa Del Sol Recon: Investigate the assisted living facility supplying sedated elders via Tremere ghouls.",
+            "Subdivision Dead Drop: Uncover a McMansion storage hub labeled \"Operation: Palm Veil\" with Sabbat hardware.",
+            "When Shadows Blink: Interrogate or release a Tremere-bound Black Spiral puppet watching the neighborhood."
+          ]
+        },
+        "act_iii": {
+          "name": "Crossing the Valley Floor",
+          "plays": [
+            "Foothills Ambush: Engage the trio—Lasombra deserter Gloria \"Bitumen\" Ruiz, Setite heretic Father Kaine, and mortal courier \"The Mule\".",
+            "The Skyline Cut: Pursue any escapees through freeway drainage tunnels wracked by flooding and shadow warfare.",
+            "Ledger of Safe Trails: Debrief at Marisol's maintenance shed, updating trail maps and distributing new boons."
+          ]
+        }
+      },
+      "failure_points": [
+        "If the PCs mishandle the Tremere ghoul nurse at Casa Del Sol, she triggers a panic beacon that brings Phoenix PD body cams and lets the intruders advance unchecked.",
+        "Collateral damage during the Foothills ambush can cave in Marisol's escape tunnel, forcing the coterie onto paved roads where Setite reinforcements wait."
+      ],
+      "objectives": [
+        "Track the trespassers from South Mountain into Ahwatukee without triggering mortal alarms.",
+        "Identify the coalition between Lasombra antitribu, Setite heretics, and Sabbat raiders.",
+        "Secure or destroy caches before they become permanent Sabbat corridors."
+      ],
+      "resources": [
+        "Access to Marisol's safe-trail caches (blood bags, silver bolos, incendiary charges).",
+        "Intel on Garou patrol windows and ADOT maintenance schedules.",
+        "Potential Brujah and Toreador support from Valley Watch allies."
+      ],
+      "complications": [
+        "Garou scouts may test the PCs' right to be on the land.",
+        "Tremere wrath if their ghoul assets disappear without explanation.",
+        "Sabbat counter-hunters aiming to turn the pursuit into an ambush."
+      ],
+      "themes": ["Territory", "Hunter's Instincts", "Border Wars", "Trust vs. Pragmatism"],
+      "potential_outcomes": [
+        "PCs co-own Ahwatukee safe trails with Marisol, gaining future travel advantages.",
+        "Captured foes expose a larger Sabbat incursion routed through Guadalupe.",
+        "Tremere politicking forces the PCs to trade intel for clemency, straining Marisol's trust."
+      ]
+    }
+  ],
+  "meta_hooks": [
+    {
+      "title": "Coyote Sigils",
+      "type": "Ongoing Patrol",
+      "description": "Every success or failure updates Marisol's sigil network; players can earn ongoing downtime actions to control desert routes."
+    },
+    {
+      "title": "Fuel for Favors",
+      "type": "Resource Economy",
+      "description": "Marisol offers caches or mortal trucking contacts in exchange for future protection runs, binding PCs into Valley Watch logistics."
+    }
+  ],
+  "usage_notes": {
+    "scaling": "Easily adjusts from an investigation crawl to a full combat arc by increasing the number of Sabbat strike teams or involving Garou complications.",
+    "combination": "Pair with Layla al-Sahr's \"Quietus Residue\" hook—the same Setite network could be forging both incursions.",
+    "character_growth": "Failure risks Marisol withdrawing her atlas support; success cements the PCs as the Valley's border wardens."
+  }
+}
+
