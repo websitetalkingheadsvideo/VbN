@@ -30,7 +30,7 @@ The Laws Agent is an AI assistant powered by Anthropic Claude that provides accu
 ## Web Interface
 
 ### Access
-Navigate to: `http://yourdomain.com/admin/laws_agent.php`
+Navigate to: `http://yourdomain.com/agents/laws_agent/index.php`
 
 Or click the "🧛 Laws Agent" button in the site header (visible when logged in)
 
@@ -85,7 +85,7 @@ Or click the "🧛 Laws Agent" button in the site header (visible when logged in
 
 ### Base Endpoint
 ```
-http://yourdomain.com/admin/api_laws_agent.php
+http://yourdomain.com/agents/laws_agent/api.php
 ```
 
 ### Authentication
@@ -99,7 +99,7 @@ http://yourdomain.com/admin/api_laws_agent.php
 
 **Request:**
 ```http
-GET /admin/api_laws_agent.php?action=ask&question=How+does+Celerity+work
+GET /agents/laws_agent/api.php?action=ask&question=How+does+Celerity+work
 ```
 
 **Optional Parameters:**
@@ -140,7 +140,7 @@ GET /admin/api_laws_agent.php?action=ask&question=How+does+Celerity+work
 
 **Request:**
 ```http
-GET /admin/api_laws_agent.php?action=health
+GET /agents/laws_agent/api.php?action=health
 ```
 
 **Response:**
@@ -166,7 +166,7 @@ async function askLawsAgent(question, category = null, system = null) {
   if (category) params.append('category', category);
   if (system) params.append('system', system);
   
-  const response = await fetch(`/admin/api_laws_agent.php?${params}`);
+  const response = await fetch(`/agents/laws_agent/api.php?${params}`);
   const data = await response.json();
   
   if (data.success) {
@@ -189,7 +189,7 @@ session_start();
 // Assuming user is logged in
 
 $question = urlencode('How does Celerity work?');
-$url = "https://vbn.talkingheads.video/admin/api_laws_agent.php?action=ask&question={$question}";
+$url = "https://vbn.talkingheads.video/agents/laws_agent/api.php?action=ask&question={$question}";
 
 $response = file_get_contents($url);
 $data = json_decode($response, true);
@@ -233,7 +233,7 @@ The AI will call the tool and present the formatted response.
 To run the MCP server standalone:
 
 ```bash
-node scripts/mcp_laws_agent.js
+node agents/laws_agent/scripts/mcp_laws_agent.js
 ```
 
 **Environment Variables**:
@@ -263,20 +263,20 @@ node scripts/mcp_laws_agent.js
    - Makes API calls to Anthropic
    - Handles errors and responses
 
-2. **Laws Agent API** (`admin/api_laws_agent.php`)
+2. **Laws Agent API** (`agents/laws_agent/api.php`)
    - Authentication checking
    - Database searching
    - Context building
    - AI integration
    - Response formatting
 
-3. **Web Interface** (`admin/laws_agent.php`)
+3. **Web Interface** (`agents/laws_agent/index.php`)
    - Chat-style UI
    - Real-time messaging
    - Source display
    - Filter controls
 
-4. **MCP Tool** (`scripts/mcp_laws_agent.js`)
+4. **MCP Tool** (`agents/laws_agent/scripts/mcp_laws_agent.js`)
    - Tool definition
    - API wrapper
    - Response formatting
@@ -356,7 +356,7 @@ call_anthropic($prompt, $system_prompt, $max_tokens, 'claude-3-opus-20240229');
 - Excerpt length: 800 characters
 - Max tokens: 1500 (for AI response)
 
-Modify in `admin/api_laws_agent.php`:
+Modify in `agents/laws_agent/api.php`:
 ```php
 $search_results = search_rulebooks($conn, $question, $category, $system, 10); // More results
 ```
@@ -489,7 +489,7 @@ Track API usage:
 To update to a newer Claude model:
 
 ```php
-// In admin/api_laws_agent.php
+// In agents/laws_agent/api.php
 $ai_response = call_anthropic($prompt, $system_prompt, 1500, 'claude-3-opus-20240229');
 ```
 

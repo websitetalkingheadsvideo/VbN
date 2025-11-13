@@ -26,7 +26,7 @@
 - `admin/admin_locations.php` - Location management
 - `admin/admin_items.php` - Items management
 - `admin/admin_equipment.php` - Equipment management
-- `admin/laws_agent.php` - Laws Agent interface
+- `agents/laws_agent/index.php` - Laws Agent interface
 - `admin/questionnaire_admin.php` - Questionnaire admin
 - Plus 40+ additional admin PHP files
 

@@ -7,12 +7,12 @@ Successfully configured the Laws Agent MCP server for Cursor AI integration, all
 ## Files Created
 
 ### 1. MCP Server Implementation
-- **File**: `scripts/mcp_laws_agent_v2.js`
+- **File**: `agents/laws_agent/scripts/mcp_laws_agent_v2.js`
 - **Size**: ~520 lines
 - **Purpose**: Node.js MCP server that queries database + Anthropic API directly
 
 ### 2. Package Configuration
-- **File**: `scripts/package.json`
+- **File**: `agents/laws_agent/scripts/package.json`
 - **Dependencies**: mysql2 v3.11.5
 - **Installed**: ✅ npm install completed
 
@@ -32,7 +32,7 @@ User Query (Cursor AI)
     ↓
 query_laws_agent MCP Tool
     ↓
-scripts/mcp_laws_agent_v2.js
+agents/laws_agent/scripts/mcp_laws_agent_v2.js
     ↓
     ├─→ MySQL Database (full-text search)
     │   ├─ rulebooks table (metadata)
@@ -80,7 +80,7 @@ MCP server is configured in `.cursor/mcp.json`:
 ```json
 "laws-agent": {
     "command": "node",
-    "args": ["G:\\VbN\\scripts\\mcp_laws_agent_v2.js"],
+    "args": ["G:\\VbN\\agents\\laws_agent\\scripts\\mcp_laws_agent_v2.js"],
     "env": {
         "ANTHROPIC_API_KEY": "...",
         "DB_HOST": "vdb5.pit.pair.com",
@@ -117,7 +117,7 @@ The Laws Agent can now be used in combination with Taskmaster:
 To test the MCP server independently:
 
 ```bash
-cd G:\VbN\scripts
+cd G:\VbN\agents\laws_agent\scripts
 node mcp_laws_agent_v2.js
 ```
 
@@ -146,8 +146,8 @@ All queries return:
 
 ## Files Modified
 
-1. ✅ `scripts/mcp_laws_agent_v2.js` - Created
-2. ✅ `scripts/package.json` - Created
+1. ✅ `agents/laws_agent/scripts/mcp_laws_agent_v2.js` - Created
+2. ✅ `agents/laws_agent/scripts/package.json` - Created
 3. ✅ `.cursor/mcp.json` - Modified (added laws-agent config)
 4. ✅ `LAWS_AGENT_MCP_SETUP.md` - Created
 5. ✅ `LAWS_AGENT_MCP_COMPLETE.md` - Created (this file)

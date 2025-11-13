@@ -86,7 +86,7 @@ These PDFs appear to be scanned images and cannot be extracted with standard tex
 - Books with extractable text have full page-by-page search
 - Books without extractable text have metadata only
 - Web interface at: https://vbn.talkingheads.video/admin/rulebooks_search.php
-- Laws Agent at: https://vbn.talkingheads.video/admin/laws_agent.php
+- Laws Agent at: https://vbn.talkingheads.video/agents/laws_agent/
 
 ---
 

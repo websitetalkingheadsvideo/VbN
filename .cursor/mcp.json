@@ -17,7 +17,7 @@
 		},
 		"laws-agent": {
 			"command": "node",
-			"args": ["G:/VbN/scripts/mcp_laws_agent_v2.js"],
+			"args": ["G:/VbN/agents/laws_agent/scripts/mcp_laws_agent_v2.js"],
 			"env": {
 				"ANTHROPIC_API_KEY": "${env:ANTHROPIC_API_KEY}",
 				"ANTHROPIC_MODEL": "${env:ANTHROPIC_MODEL}",

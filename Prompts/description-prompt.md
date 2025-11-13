@@ -6,3 +6,5 @@ Ask me any questions to better understand my requirement and also to help me imp
 
 
 As an expert in Laws of the Night Revised and master storyteller, I want you to create a character sheet for Eddy that is tailor made for my game Valley by Night. Use all relevant information in the VbN project to accomplish this. Put into the character_sheet_template.json
+
+

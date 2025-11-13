@@ -114,7 +114,7 @@
   - `admin/admin_equipment.php`
   - `admin/admin_panel_simple.php`
   - `admin/questionnaire_admin.php`
-  - Footer added where missing: `admin/disable_login.php`, `admin/laws_agent.php`, `admin/npc_tracker.php`, `admin/npc_tracker_submit.php`, `admin/npc_tracker_submit_updated.php`, `admin/rulebooks_search.php`, `admin/setup_npc_tracker.php`, `admin/test_includes.php`
+  - Footer added where missing: `admin/disable_login.php`, `agents/laws_agent/index.php`, `admin/npc_tracker.php`, `admin/npc_tracker_submit.php`, `admin/npc_tracker_submit_updated.php`, `admin/rulebooks_search.php`, `admin/setup_npc_tracker.php`, `admin/test_includes.php`
 - Admin forms standardized:
   - `admin/admin_items.php`, `admin/admin_locations.php`
   - `admin/admin_sire_childe.php`, `admin/admin_sire_childe_enhanced.php`

@@ -520,7 +520,7 @@ module.exports = LawsAgentMCPServer;
 Updated the Laws Agent's system prompt to include the Six Traditions. It will mention them when asked about Camarilla traditions.
 
 **Changes made:**
-- Updated the system prompt in `scripts/mcp_laws_agent_v2.js` to include the Six Traditions
+- Updated the system prompt in `agents/laws_agent/scripts/mcp_laws_agent_v2.js` to include the Six Traditions
 - The agent will now mention Masquerade, Domain, Progeny, Accounting, Hospitality, and Destruction when asked about traditions
 
 **Important:** Restart Cursor for the changes to take effect, since the MCP server loads on startup.

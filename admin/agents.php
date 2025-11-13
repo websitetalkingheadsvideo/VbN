@@ -38,8 +38,8 @@ $agents = [
         "slug" => "laws_agent",
         "description" => "Ask canon questions across the MET library, surface rule citations, and validate mechanics before pushing updates.",
         "data_access" => [
-            "/admin/laws_agent.php",
-            "/agents/laws_agent/reference/"
+            "/agents/laws_agent/index.php",
+            "/agents/laws_agent/knowledge-base/"
         ],
         "purpose" => "Provide storytellers with lore, mechanics, and citation support on demand.",
         "status" => "Active",
@@ -47,7 +47,7 @@ $agents = [
         "actions" => [
             [
                 "label" => "Launch Laws Agent",
-                "url" => "/admin/laws_agent.php"
+                "url" => "/agents/laws_agent/"
             ]
         ]
     ],

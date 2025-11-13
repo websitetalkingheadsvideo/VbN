@@ -40,7 +40,7 @@
 
 ### Files Modified
 - `includes/anthropic_helper.php` - Model auto-loading and configuration
-- `admin/api_laws_agent.php` - Increased search limit to 10
+- `agents/laws_agent/api.php` - Increased search limit to 10
 - `database/import_rulebooks.php` - Real-time progress streaming
 - `.taskmaster/config.json` - Updated Claude model configuration
 - `.cursor/rules/hosting.mdc` - XAMPP prohibition rule added
@@ -115,7 +115,7 @@ User added 17 PDFs to `Books/New` folder containing:
 ### Files Modified
 - `reference/Books/MET-Book List.md` - Complete collection status
 - `reference/Books/MET_MISSING_BOOKS.md` - Updated to show 0 missing
-- `admin/laws_agent.php` - Updated book count display
+- `agents/laws_agent/index.php` - Updated book count display
 - `VERSION.md` - Complete session summary
 
 ### Key Updates
@@ -220,7 +220,7 @@ pdf_files = list(books_dir.glob('**/*.pdf'))
 
 ### Core System Files
 - `scripts/extract_pdfs.py`
-- `admin/laws_agent.php`
+- `agents/laws_agent/index.php`
 - `includes/anthropic_helper.php`
 - `database/import_rulebooks.php`
 

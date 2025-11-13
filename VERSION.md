@@ -1,6 +1,28 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.10 (Current)
+## Version 0.10.12 (Current)
+**Date:** November 2025
+
+### Laws Agent Directory Migration
+- 🚚 **Agent Relocation** – Moved the Laws Agent UI, API, MCP scripts, and knowledge base into `agents/laws_agent/` for parity with the Character Agent structure.
+- 🔗 **Path Updates** – Refreshed all PHP links, MCP configuration, and documentation references to target the new paths and canonical HTTPS endpoints.
+- 📚 **Knowledge Base Cleanup** – Consolidated knowledge-base resources under the new directory and removed legacy duplicates from `scripts/`.
+
+### Files Added / Updated:
+- `agents/laws_agent/index.php`
+- `agents/laws_agent/api.php`
+- `agents/laws_agent/knowledge-base/*`
+- `agents/laws_agent/scripts/*`
+- `admin/agents.php`
+- `import_with_progress.php`
+- `test_import.php`
+- `docs/LAWS_AGENT.md`
+- `.cursor/mcp.json`
+- `VERSION.md`
+
+---
+
+## Version 0.10.10
 **Date:** November 2025
 
 ### Character Lore & Agent Report Updates
@@ -701,20 +723,20 @@
 ### Laws Agent MCP Integration:
 - ✅ **MCP Server Setup** - Fixed Laws Agent MCP server to connect via HTTPS to PHP API
 - ✅ **Database Access Fix** - Resolved MySQL connection issues by switching from direct DB to API route
-- ✅ **MCP Bypass Authentication** - Added secure API key bypass for MCP server calls to `admin/api_laws_agent.php`
+- ✅ **MCP Bypass Authentication** - Added secure API key bypass for MCP server calls to `agents/laws_agent/api.php`
 - ✅ **URL Parser Update** - Replaced deprecated `url.parse()` with modern `URL` API in Node.js
 - ✅ **Windows Path Compatibility** - Fixed Windows path format in MCP configuration
 
 ### Technical Improvements:
 - **API Authentication Bypass** - MCP server now bypasses session auth with secure key (`vbn_mcp_b4byp4ss_k3y_2025`)
-- **HTTPS Integration** - MCP server calls `https://vbn.talkingheads.video/admin/api_laws_agent.php` instead of direct MySQL
+- **HTTPS Integration** - MCP server calls `https://vbn.talkingheads.video/agents/laws_agent/api.php` instead of direct MySQL
 - **Code Modernization** - Updated Node.js code to use WHATWG URL API instead of deprecated `url.parse()`
 - **MCP Configuration** - Switched from `mcp_laws_agent_v2.js` (direct DB) to `mcp_laws_agent.js` (PHP API)
 
 ### Files Modified:
 - `.cursor/mcp.json` - Updated to use PHP API route and forward slashes for Windows compatibility
-- `scripts/mcp_laws_agent.js` - Updated to use modern URL API, added MCP API key
-- `admin/api_laws_agent.php` - Added MCP bypass authentication check
+- `agents/laws_agent/scripts/mcp_laws_agent.js` - Updated to use modern URL API, added MCP API key
+- `agents/laws_agent/api.php` - Added MCP bypass authentication check
 
 ### Impact:
 - **Laws Agent Tool** - Now fully functional in Cursor MCP
@@ -961,7 +983,7 @@
 
 ### Files Modified:
 - `scripts/extract_pdfs.py` - Added recursive directory processing (`**/*.pdf`)
-- `admin/laws_agent.php` - Updated book count from 31 to 56
+- `agents/laws_agent/index.php` - Updated book count from 31 to 56
 - `reference/Books/MET-Book List.md` - Complete collection documentation
 - `reference/Books/MET_MISSING_BOOKS.md` - Updated missing books status
 - `reference/Books/NEW_BOOKS_SUMMARY.md` - New book summary document

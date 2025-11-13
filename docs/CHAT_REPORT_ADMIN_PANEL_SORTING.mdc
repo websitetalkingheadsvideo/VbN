@@ -35,12 +35,10 @@
   - `Sebastian and Sabine.jpeg`
   - `Violet.jpg`
   - Plus 2 ChatGPT-generated images
-- **Supporting Files** - Added ComfyUI workflow files and prompts:
-  - `Adrian Leclair.comfy.json`
+- **Supporting Files** - Added prompt assets and render instructions:
   - `Adrian Leclair.negative.txt`
   - `Adrian Leclair.prompt.txt`
   - `Adrian Leclair.render-instructions.md`
-  - `dark_gothic_workflow.json`
 
 #### 4. Updated Git Configuration
 - **Removed Image Ignores** - Removed global image file ignores (`*.png`, `*.webp`, `*.jpg`, `*.jpeg`) from `.gitignore`
@@ -91,11 +89,9 @@
 - `reference/Characters/Images/Violet.jpg`
 - `reference/Characters/Images/ChatGPT Image Nov 5, 2025, 11_30_48 PM.png`
 - `reference/Characters/Images/ChatGPT Image Nov 6, 2025, 12_13_25 AM.png`
-- `reference/Characters/Images/Adrian Leclair.comfy.json`
 - `reference/Characters/Images/Adrian Leclair.negative.txt`
 - `reference/Characters/Images/Adrian Leclair.prompt.txt`
 - `reference/Characters/Images/Adrian Leclair.render-instructions.md`
-- `reference/Characters/Images/dark_gothic_workflow.json`
 - `reference/Characters/Images/_notes/dwsync.xml`
 
 ### Current Status

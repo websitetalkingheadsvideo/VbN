@@ -91,69 +91,6 @@
   "master": {
     "tasks": [
       {
-        "id": 48,
-        "title": "Audit and backup ComfyUI directory before deletion",
-        "description": "Perform a comprehensive audit of the ComfyUI directory to identify all files and ensure no critical project files are mixed in before proceeding with deletion",
-        "details": "1. Navigate to G:\\VbN\\ComfyUI\\ directory\n2. Generate a complete file listing using 'dir /s > comfyui_audit.txt' (Windows) or 'find . -type f > comfyui_audit.txt' (Unix)\n3. Review the audit file to identify any non-ComfyUI files that might be critical to the project\n4. Create a backup of the entire ComfyUI directory to a temporary location outside the project\n5. Document any unexpected files found for manual review\n6. Verify the backup is complete and accessible before proceeding",
-        "testStrategy": "Verify backup integrity by comparing file counts and sizes between original and backup directories. Confirm audit file contains complete directory structure listing.",
-        "priority": "high",
-        "dependencies": [],
-        "status": "pending",
-        "subtasks": []
-      },
-      {
-        "id": 49,
-        "title": "Delete ComfyUI workflow JSON files from reference directory",
-        "description": "Locate and delete all ComfyUI workflow JSON files from the reference\\Characters\\Images\\ directory",
-        "details": "1. Navigate to reference\\Characters\\Images\\ directory\n2. Search for JSON files with ComfyUI-related naming patterns:\n   - dark_gothic_workflow.json\n   - Adrian Leclair.comfy.json\n   - Any files containing 'comfy', 'workflow', or similar patterns\n3. Use command: 'find . -name \"*.json\" | grep -i comfy' or Windows equivalent\n4. Review each identified file to confirm it's ComfyUI-related\n5. Delete confirmed ComfyUI workflow files using 'rm filename.json' or 'del filename.json'\n6. Document deleted files for verification",
-        "testStrategy": "Search the directory after deletion to confirm no ComfyUI JSON files remain. Use grep/findstr to search for 'comfy' or 'workflow' keywords in remaining JSON files.",
-        "priority": "medium",
-        "dependencies": [
-          48
-        ],
-        "status": "pending",
-        "subtasks": []
-      },
-      {
-        "id": 50,
-        "title": "Remove ComfyUI references from documentation files",
-        "description": "Clean up all documentation files by removing references to ComfyUI, starting with the identified Adrian Leclair render instructions file",
-        "details": "1. Open reference\\Characters\\Images\\Adrian Leclair.render-instructions.md\n2. Remove all ComfyUI references, workflow instructions, and related content\n3. Search entire project for other documentation files containing ComfyUI references:\n   - Use 'grep -r \"ComfyUI\" .' or 'findstr /s /i \"ComfyUI\" *.*'\n   - Search for variations: 'comfy', 'workflow', 'stable diffusion workflow'\n4. Edit each identified file to remove ComfyUI content\n5. Update any table of contents or index files that reference removed sections\n6. Ensure documentation flow remains coherent after removals",
-        "testStrategy": "Perform project-wide text search for ComfyUI-related terms to verify complete removal. Review edited documentation files for broken links or incomplete sentences.",
-        "priority": "medium",
-        "dependencies": [
-          49
-        ],
-        "status": "pending",
-        "subtasks": []
-      },
-      {
-        "id": 51,
-        "title": "Scan codebase for ComfyUI references and hardcoded paths",
-        "description": "Perform comprehensive search through all PHP, JavaScript, and configuration files to identify and remove any ComfyUI references or hardcoded paths",
-        "details": "1. Search PHP files for ComfyUI references:\n   - 'grep -r \"ComfyUI\" --include=\"*.php\" .'\n   - 'grep -r \"G:\\\\VbN\\\\ComfyUI\" --include=\"*.php\" .'\n2. Search JavaScript files:\n   - 'grep -r \"ComfyUI\" --include=\"*.js\" .'\n   - Check for AJAX calls or API endpoints referencing ComfyUI\n3. Check configuration files (.env, config.php, etc.) for ComfyUI paths\n4. Search for workflow-related variables or functions\n5. Remove or comment out identified references\n6. Update any import statements or require/include paths\n7. Check for any ComfyUI-related constants or environment variables",
-        "testStrategy": "Run automated tests if available to ensure no broken references. Perform additional grep searches with different keyword variations to confirm complete removal.",
-        "priority": "medium",
-        "dependencies": [
-          50
-        ],
-        "status": "pending",
-        "subtasks": []
-      },
-      {
-        "id": 52,
-        "title": "Delete ComfyUI directory and update project configuration",
-        "description": "Safely delete the entire ComfyUI directory and update .gitignore and other project configuration files as needed",
-        "details": "1. Verify all previous tasks completed successfully\n2. Navigate to project root (G:\\VbN\\)\n3. Delete ComfyUI directory using 'rm -rf ComfyUI' or 'rmdir /s ComfyUI'\n4. Check .gitignore file for ComfyUI-related entries:\n   - Remove lines like 'ComfyUI/', '*.comfy.json', etc.\n   - Add entries if ComfyUI files should remain ignored in future\n5. Update any build scripts or deployment configurations that reference ComfyUI\n6. Check package.json, composer.json, or similar dependency files\n7. Perform final project-wide search to confirm complete removal\n8. Test project startup to ensure no broken dependencies",
-        "testStrategy": "Verify ComfyUI directory no longer exists. Run project in development mode to confirm no missing file errors. Perform final grep search across entire project for any remaining ComfyUI references.",
-        "priority": "high",
-        "dependencies": [
-          51
-        ],
-        "status": "pending",
-        "subtasks": []
-      },
-      {
         "id": 53,
         "title": "Audit admin/agents.php layout against existing admin panel components",
         "description": "Conduct a comprehensive visual and code audit of the new admin/agents.php layout to identify discrepancies in containers, typography, spacing, and button styles compared to existing admin UI components, then prepare a detailed change list for alignment.",
@@ -223,11 +160,24 @@
             "parentTaskId": 54
           }
         ]
+      },
+      {
+        "id": 55,
+        "title": "Implement Character Agent automation pipeline that processes Valley by Night characters directly from the MySQL database via includes/connect.php and writes outputs into agents/character_agent/reports/",
+        "description": "Create an automated pipeline that connects to the MySQL database using the existing includes/connect.php connection, retrieves Valley by Night character data, processes it through the character agent system, and generates structured reports in the agents/character_agent/reports/ directory.",
+        "details": "1. Create main pipeline script at agents/character_agent/pipeline.php:\n   - Include includes/connect.php for database connectivity\n   - Query characters table to retrieve all Valley by Night character records\n   - Implement error handling for database connection failures\n   \n2. Design character data processing workflow:\n   - Extract character attributes (name, clan, generation, disciplines, etc.)\n   - Format data into standardized structure for agent processing\n   - Handle missing or null character data gracefully\n   \n3. Implement report generation system:\n   - Create agents/character_agent/reports/ directory structure\n   - Generate individual character analysis reports (JSON/HTML format)\n   - Create summary reports aggregating character statistics\n   - Implement timestamped file naming convention (YYYY-MM-DD_HH-MM-SS_character_report.json)\n   \n4. Add automation features:\n   - Command-line interface for manual execution\n   - Scheduling capability for automated runs\n   - Progress tracking and logging system\n   - Configuration file for customizable processing parameters\n   \n5. Database optimization:\n   - Use prepared statements for secure queries\n   - Implement pagination for large character datasets\n   - Add indexing recommendations for performance\n   \n6. Error handling and logging:\n   - Log all database operations and errors\n   - Implement retry logic for failed operations\n   - Create detailed error reports for troubleshooting\n<info added on 2025-11-12T09:23:14.816Z>\n7. Asset audit and schema documentation:\n   - Completed comprehensive audit of existing agents/character_agent assets including README, prompts, and dry-run script\n   - Developed formal output schema specification covering markdown briefs, missing-field JSON, continuity payloads, logging, and configuration contract\n   - Created detailed implementation planning documents:\n     * tmp/character-agent-pipeline-plan.md - defines implementation scope and approach\n     * tmp/character-agent-schema.md - specifies data structures and output formats\n   - Established baseline for pipeline development based on existing agent capabilities and requirements\n</info added on 2025-11-12T09:23:14.816Z>\n<info added on 2025-11-12T09:36:36.497Z>\n8. Core infrastructure implementation:\n   - Implemented Agents/character_agent/config/pipeline.php providing immutable runtime configuration including chronicle targeting, batch processing controls, file path definitions, and feature toggle management\n   - Created Agents/character_agent/src/character_fetcher.php with reusable database utilities for connection validation, batched chronicle record streaming, and row payload normalization while preserving input state integrity\n   - Extended agents/character_agent/reports/ directory structure with history bucket subdirectory to align with established schema requirements\n   - Established foundational components that enable pipeline orchestration and report generation workflows\n</info added on 2025-11-12T09:36:36.497Z>\n<info added on 2025-11-12T09:44:35.901Z>\n9. Pipeline execution and processing modules implementation:\n   - Implemented Agents/character_agent/src/character_processor.php with deterministic brief eligibility checks, trait/hook extraction, missing-field payload generation, slug creation, and log assembly utilities\n   - Created Agents/character_agent/src/report_writer.php for markdown brief rendering, history file compilation, and structured output persistence with strict directory management\n   - Added Agents/character_agent/src/logger.php providing JSON line logging capabilities and run summary generation\n   - Completed main Agents/character_agent/pipeline.php orchestration script integrating CLI argument parsing, configuration loading, batched database streaming, report generation, history aggregation, and log emission with comprehensive dry-run support\n   - Extended Agents/character_agent/reports/history/.gitkeep to ensure proper history target directory structure\n   - Updated implementation plan checklist to reflect completion of fetcher, processor, writer, and CLI execution components\n</info added on 2025-11-12T09:44:35.901Z>\n<info added on 2025-11-12T14:54:19.183Z>\n10. Web-based execution interface implementation:\n   - Refactored Agents/character_agent/pipeline.php to separate core runner logic from CLI execution, enabling structured summary returns and reusable function access from web contexts without automatic execution\n   - Implemented admin/character_agent_run.php as authenticated web interface gated by admin session validation, providing browser-based pipeline execution with selectable processing modes, optional record limits, and dry-run capabilities\n   - Added direct browser output for success/error details and execution summaries, eliminating shell access requirements while maintaining full pipeline functionality\n   - Updated implementation plan checklist to document completion of authenticated web entry point alongside existing CLI execution pathway\n</info added on 2025-11-12T14:54:19.183Z>",
+        "testStrategy": "Test database connectivity using includes/connect.php and verify successful character data retrieval. Create test characters in database and run pipeline to confirm proper data extraction and processing. Verify report files are generated in correct directory structure with proper naming conventions and valid JSON/HTML format. Test error handling by simulating database connection failures and invalid character data. Run pipeline with large character datasets to validate performance and memory usage. Confirm automated scheduling works correctly and generates consistent reports. Validate all generated reports contain expected character data fields and proper formatting.",
+        "status": "in-progress",
+        "dependencies": [
+          54
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-10-07T00:02:45.247Z",
-      "updated": "2025-11-09T12:29:31.980Z",
+      "updated": "2025-11-12T09:07:42.115Z",
       "description": "Tasks for master context"
     }
   },

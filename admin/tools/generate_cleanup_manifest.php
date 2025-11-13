@@ -25,7 +25,6 @@ const CLEANUP_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 const CLEANUP_REFERENCE_EXTENSIONS = ['json', 'md', 'php'];
 const CLEANUP_HASH_ALGO = 'sha256';
 const CLEANUP_SKIP_DIRECTORIES = [
-    'ComfyUI',
     'node_modules',
     'vendor',
     '.git',

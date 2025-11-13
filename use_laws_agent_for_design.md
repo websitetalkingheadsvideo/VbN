@@ -295,3 +295,10 @@ function calculateStartingTraits() {
 
 
 
+
+
+
+
+
+
+

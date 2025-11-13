@@ -25,9 +25,3 @@ If using Automatic1111
 - Paste prompt/negative prompt from the .txt files
 - Generate → Save as WebP (Adrian Leclair.webp)
 
-If using ComfyUI (quick path)
-- Load SDXL Base Checkpoint Loader → CLIP/UNet
-- Positive CLIP Text → from Adrian Leclair.prompt.txt
-- Negative CLIP Text → from Adrian Leclair.negative.txt
-- KSampler: DPM++ 2M Karras, Steps 32, CFG 6.5, 1024x1024
-- VAEDecode → Save Image (WebP)

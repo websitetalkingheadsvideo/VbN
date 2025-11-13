@@ -17,7 +17,7 @@ The Laws Agent has been fully implemented with all planned features.
 - 220 lines
 
 ### 2. Laws Agent API ✅
-**File:** `admin/api_laws_agent.php`
+**File:** `agents/laws_agent/api.php`
 
 - Authentication & email verification checking
 - Full-text search across rulebooks database
@@ -28,7 +28,7 @@ The Laws Agent has been fully implemented with all planned features.
 - 290 lines
 
 ### 3. Web Interface ✅
-**File:** `admin/laws_agent.php`
+**File:** `agents/laws_agent/index.php`
 
 - Beautiful chat-style interface
 - Real-time question/answer flow
@@ -41,7 +41,7 @@ The Laws Agent has been fully implemented with all planned features.
 - 340 lines
 
 ### 4. MCP Tool ✅
-**File:** `scripts/mcp_laws_agent.js`
+**File:** `agents/laws_agent/scripts/mcp_laws_agent.js`
 
 - Node.js MCP server implementation
 - `query_laws_agent` tool definition
@@ -84,12 +84,12 @@ The Laws Agent has been fully implemented with all planned features.
 
 ### Web Interface
 ```
-https://vbn.talkingheads.video/admin/laws_agent.php
+https://vbn.talkingheads.video/agents/laws_agent/
 ```
 
 ### API Endpoint
 ```
-https://vbn.talkingheads.video/admin/api_laws_agent.php?action=ask&question=YOUR_QUESTION
+https://vbn.talkingheads.video/agents/laws_agent/api.php?action=ask&question=YOUR_QUESTION
 ```
 
 ### MCP Tool
@@ -105,7 +105,7 @@ Available automatically in Cursor AI as `query_laws_agent`
 
 ### Ask via API
 ```javascript
-fetch('/admin/api_laws_agent.php?action=ask&question=How+does+Celerity+work')
+fetch('/agents/laws_agent/api.php?action=ask&question=How+does+Celerity+work')
   .then(r => r.json())
   .then(data => console.log(data.answer, data.sources));
 ```
@@ -136,9 +136,9 @@ User receives answer
 
 **New Files (5):**
 - `includes/anthropic_helper.php` - AI helper module
-- `admin/api_laws_agent.php` - REST API
-- `admin/laws_agent.php` - Web interface
-- `scripts/mcp_laws_agent.js` - MCP tool
+- `agents/laws_agent/api.php` - REST API
+- `agents/laws_agent/index.php` - Web interface
+- `agents/laws_agent/scripts/mcp_laws_agent.js` - MCP tool
 - `docs/LAWS_AGENT.md` - Documentation
 
 **Modified Files (1):**

@@ -16,7 +16,7 @@ The Laws Agent MCP server provides Cursor AI access to the VTM/MET rules databas
 ### 1. Install Dependencies
 
 ```bash
-cd G:\VbN\scripts
+cd G:\VbN\agents\laws_agent\scripts
 npm install
 ```
 
@@ -83,7 +83,7 @@ The `query_laws_agent` tool accepts:
 
 1. Check `.cursor/mcp.json` configuration
 2. Verify Node.js is installed: `node --version`
-3. Check npm dependencies: `npm list` in `scripts/` directory
+3. Check npm dependencies: `npm list` in `agents/laws_agent/scripts/` directory
 4. Restart Cursor AI
 
 ### Database Connection Errors
@@ -112,7 +112,7 @@ The `query_laws_agent` tool accepts:
 Test the MCP server directly:
 
 ```bash
-cd G:\VbN\scripts
+cd G:\VbN\agents\laws_agent\scripts
 node mcp_laws_agent_v2.js
 ```
 
@@ -125,7 +125,7 @@ Cursor AI
     ↓
 .cursor/mcp.json (configuration)
     ↓
-node scripts/mcp_laws_agent_v2.js
+node agents/laws_agent/scripts/mcp_laws_agent_v2.js
     ↓
     ├─→ MySQL Database (rulebooks, rulebook_pages)
     └─→ Anthropic API (Claude)
@@ -142,11 +142,11 @@ Formatted Response with Citations
 
 ## Files
 
-- `scripts/mcp_laws_agent_v2.js` - MCP server implementation
-- `scripts/package.json` - Node.js dependencies
+- `agents/laws_agent/scripts/mcp_laws_agent_v2.js` - MCP server implementation
+- `agents/laws_agent/scripts/package.json` - Node.js dependencies
 - `.cursor/mcp.json` - Cursor configuration
 - `docs/LAWS_AGENT.md` - Full documentation
-- `admin/api_laws_agent.php` - Web API (PHP authentication required)
+- `agents/laws_agent/api.php` - Web API (PHP authentication required)
 
 ## Support
 

@@ -13,9 +13,9 @@
 - **Solution Strategy** - Switch from direct database access to HTTPS API route
 
 #### 2. Fixed MCP Server Configuration
-- **Path Format** - Changed from `G:\\VbN\\scripts\\mcp_laws_agent_v2.js` to `G:/VbN/scripts/mcp_laws_agent.js`
+- **Path Format** - Changed from `G:\\VbN\\scripts\\mcp_laws_agent_v2.js` to `G:\\VbN\\agents\\laws_agent\\scripts\\mcp_laws_agent.js`
 - **API Route** - Switched from direct DB (`v2.js`) to PHP API (`mcp_laws_agent.js`)
-- **HTTPS Setup** - Configured to use `https://vbn.talkingheads.video/admin/api_laws_agent.php`
+- **HTTPS Setup** - Configured to use `https://vbn.talkingheads.video/agents/laws_agent/api.php`
 
 #### 3. Modernized Code Implementation
 - **URL Parser** - Replaced deprecated `url.parse()` with modern WHATWG `URL` API
@@ -24,31 +24,31 @@
 
 #### 4. API Authentication Bypass
 - **MCP Key Added** - Implemented secure API key: `vbn_mcp_b4byp4ss_k3y_2025`
-- **Bypass Logic** - Added check in `admin/api_laws_agent.php` to skip session auth when MCP key present
+- **Bypass Logic** - Added check in `agents/laws_agent/api.php` to skip session auth when MCP key present
 - **Security** - MCP server can now make authenticated API calls without user sessions
 
 ### Technical Implementation Details
 
 #### MCP Configuration Changes (`.cursor/mcp.json`)
-- **Script Path** - Changed to forward slashes: `G:/VbN/scripts/mcp_laws_agent.js`
+- **Script Path** - Changed to forward slashes: `G:/VbN/agents/laws_agent/scripts/mcp_laws_agent.js`
 - **Environment Variables** - Added `LAWS_AGENT_URL: https://vbn.talkingheads.video`
 - **Removed** - Direct MySQL database credentials (DB_HOST, DB_USER, DB_PASS, DB_NAME)
 
-#### Node.js Changes (`scripts/mcp_laws_agent.js`)
+#### Node.js Changes (`agents/laws_agent/scripts/mcp_laws_agent.js`)
 - **Removed** - `const url = require('url');` (deprecated)
 - **Updated** - `const urlObj = url.parse(fullUrl)` → `const urlObj = new URL(fullUrl)`
 - **Fixed** - `path: urlObj.path` → `path: urlObj.pathname + urlObj.search`
 - **Added** - MCP API key to all API requests: `mcp_key: 'vbn_mcp_b4byp4ss_k3y_2025'`
 
-#### PHP API Changes (`admin/api_laws_agent.php`)
+#### PHP API Changes (`agents/laws_agent/api.php`)
 - **Added** - MCP bypass authentication check at start of request handler
 - **Logic** - If `mcp_key` matches secure value, skip session authentication
 - **Error Handling** - Added error reporting configuration for debugging
 
 ### Files Modified
 - `.cursor/mcp.json` - Updated MCP server configuration and paths
-- `scripts/mcp_laws_agent.js` - Modernized URL handling, added MCP key
-- `admin/api_laws_agent.php` - Added MCP bypass authentication
+- `agents/laws_agent/scripts/mcp_laws_agent.js` - Modernized URL handling, added MCP key
+- `agents/laws_agent/api.php` - Added MCP bypass authentication
 - `VERSION.md` - Updated to version 0.9.9
 
 ### Testing & Validation

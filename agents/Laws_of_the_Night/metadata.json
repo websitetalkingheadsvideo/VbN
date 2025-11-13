@@ -1,0 +1,211 @@
+{
+  "name": "Laws of the Night",
+  "folder": "Laws_of_the_Night",
+  "type": "rulebook",
+  "system": "Mind's Eye Theatre",
+  "version": "2010",
+  "source": "White Wolf / CCP",
+  "description": "Primary rulebook for Mind's Eye Theatre: Vampire the Masquerade (Revised). Contains core rules, clans, disciplines, systems, and Storyteller guidance.",
+  "chapters": [
+    {
+      "id": "00",
+      "name": "Preface & Story Introduction",
+      "file": "chapters/00_Preface.md"
+    },
+    {
+      "id": "01",
+      "name": "Introduction to World of Darkness",
+      "file": "chapters/01_Chapter_One_Introduction.md"
+    },
+    {
+      "id": "02",
+      "name": "The Clans",
+      "file": "chapters/02_Chapter_Two_The_Clans.md"
+    },
+    {
+      "id": "03",
+      "name": "Character Creation & Traits",
+      "file": "chapters/03_Chapter_Three_Character_Creation.md"
+    },
+    {
+      "id": "04",
+      "name": "Disciplines",
+      "file": "chapters/04_Chapter_Four_Disciplines.md"
+    },
+    {
+      "id": "05",
+      "name": "Rules, Systems & Drama",
+      "file": "chapters/05_Chapter_Five_Rules_Systems_and_Drama.md"
+    },
+    {
+      "id": "06",
+      "name": "Storytelling Guide",
+      "file": "chapters/06_Chapter_Six_Storytelling.md"
+    },
+    {
+      "id": "07",
+      "name": "Allies & Antagonists",
+      "file": "chapters/07_Chapter_Seven_Allies_and_Antagonists.md"
+    }
+  ],
+  "clans": [
+    {
+      "name": "Brujah",
+      "file": "clans/Brujah.md"
+    },
+    {
+      "name": "Gangrel",
+      "file": "clans/Gangrel.md"
+    },
+    {
+      "name": "Malkavian",
+      "file": "clans/Malkavian.md"
+    },
+    {
+      "name": "Nosferatu",
+      "file": "clans/Nosferatu.md"
+    },
+    {
+      "name": "Toreador",
+      "file": "clans/Toreador.md"
+    },
+    {
+      "name": "Tremere",
+      "file": "clans/Tremere.md"
+    },
+    {
+      "name": "Ventrue",
+      "file": "clans/Ventrue.md"
+    },
+    {
+      "name": "Assamite",
+      "file": "clans/Assamite.md"
+    },
+    {
+      "name": "Followers of Set",
+      "file": "clans/Followers_of_Set.md"
+    },
+    {
+      "name": "Giovanni",
+      "file": "clans/Giovanni.md"
+    },
+    {
+      "name": "Lasombra",
+      "file": "clans/Lasombra.md"
+    },
+    {
+      "name": "Ravnos",
+      "file": "clans/Ravnos.md"
+    },
+    {
+      "name": "Tzimisce",
+      "file": "clans/Tzimisce.md"
+    },
+    {
+      "name": "Daughters of Cacophony",
+      "file": "clans/Daughters_of_Cacophony.md"
+    },
+    {
+      "name": "Salubri",
+      "file": "clans/Salubri.md"
+    },
+    {
+      "name": "Samedi",
+      "file": "clans/Samedi.md"
+    }
+  ],
+  "disciplines": [
+    {
+      "name": "Animalism",
+      "file": "disciplines/Animalism.md"
+    },
+    {
+      "name": "Auspex",
+      "file": "disciplines/Auspex.md"
+    },
+    {
+      "name": "Celerity",
+      "file": "disciplines/Celerity.md"
+    },
+    {
+      "name": "Chimerstry",
+      "file": "disciplines/Chimerstry.md"
+    },
+    {
+      "name": "Dementation",
+      "file": "disciplines/Dementation.md"
+    },
+    {
+      "name": "Dominate",
+      "file": "disciplines/Dominate.md"
+    },
+    {
+      "name": "Fortitude",
+      "file": "disciplines/Fortitude.md"
+    },
+    {
+      "name": "Necromancy",
+      "file": "disciplines/Necromancy.md"
+    },
+    {
+      "name": "Obfuscate",
+      "file": "disciplines/Obfuscate.md"
+    },
+    {
+      "name": "Obtenebration",
+      "file": "disciplines/Obtenebration.md"
+    },
+    {
+      "name": "Potence",
+      "file": "disciplines/Potence.md"
+    },
+    {
+      "name": "Presence",
+      "file": "disciplines/Presence.md"
+    },
+    {
+      "name": "Protean",
+      "file": "disciplines/Protean.md"
+    },
+    {
+      "name": "Quietus",
+      "file": "disciplines/Quietus.md"
+    },
+    {
+      "name": "Serpentis",
+      "file": "disciplines/Serpentis.md"
+    },
+    {
+      "name": "Thaumaturgy",
+      "file": "disciplines/Thaumaturgy.md"
+    },
+    {
+      "name": "Vicissitude",
+      "file": "disciplines/Vicissitude.md"
+    },
+    {
+      "name": "Melpomene",
+      "file": "disciplines/Melpomene.md"
+    }
+  ],
+  "tags": [
+    "MET",
+    "Vampire",
+    "World of Darkness",
+    "Rules",
+    "System",
+    "Clans",
+    "Disciplines",
+    "Character Creation",
+    "Combat",
+    "Storytelling"
+  ],
+  "agents": [
+    "Character Agent",
+    "Influence Agent",
+    "Boon Agent",
+    "Story Agent"
+  ],
+  "format": "markdown",
+  "notes": "All files in this folder are intended to be referenced by automated agents for rules lookups, clans, disciplines, and character creation support."
+}

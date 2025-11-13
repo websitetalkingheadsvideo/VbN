@@ -1,14 +1,1 @@
-{
-  "name": "vbn-mcp-servers",
-  "version": "1.0.0",
-  "description": "MCP servers for VbN project (Laws Agent)",
-  "main": "mcp_laws_agent_v2.js",
-  "scripts": {
-    "laws-agent": "node mcp_laws_agent_v2.js"
-  },
-  "dependencies": {
-    "mysql2": "^3.11.5"
-  },
-  "author": "",
-  "license": "ISC"
-}
+ 
