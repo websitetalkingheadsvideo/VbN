@@ -1,0 +1,51 @@
+{
+  "title": "Boon Agent Rules Index",
+  "system": "Mind’s Eye Theatre – Laws of the Night (Revised)",
+  "type": "rules_index",
+  "version": "1.0",
+  "target_agent": "Boon Agent",
+  "description": "Structured reference for interpreting and managing prestation (boons, debts, and favors) across Valley by Night chronicles in alignment with Laws of the Night (Revised).",
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose of This Index",
+      "body_md": "This document equips the **Boon Agent** to track and reason about prestation within **Valley by Night**.\n\nUse it to:\n- Record who owes whom, for what, and under which terms.\n- Interpret Laws of the Night guidance on boon etiquette and enforcement.\n- Suggest meaningful story hooks tied to favors, leverage, and political debts.\n- Integrate prestation outcomes with Status, Influence, and Story threads.\n\nPrimary references:\n- `Laws_of_the_Night/chapters/05_Chapter_Five_Rules_Systems_and_Drama.md`\n- `Laws_of_the_Night/chapters/06_Chapter_Six_Storytelling.md`\n- `agents/Laws_of_the_Night/metadata.json`\n"
+    },
+    {
+      "id": "prestation_overview",
+      "title": "Prestation Overview",
+      "body_md": "**Prestation** is the Camarilla custom of tracking favors as enforceable social currency.\n\nKey tenets:\n- Debts are formal, remembered, and enforceable by peer pressure.\n- Reputation hinges on honoring or defaulting on boons.\n- Elders expect precise language and escalation paths for enforcement.\n\nThe Boon Agent should:\n- Treat every boon as a contract with explicit **grantor**, **recipient**, **terms**, **status**, and **stakes**.\n- Surface consequences when players try to ignore or exploit prestation norms.\n"
+    },
+    {
+      "id": "boon_categories",
+      "title": "Canonical Boon Categories",
+      "body_md": "Common boon magnitudes in MET:\n\n- **Trivial** – Minor courtesies; easily repaid; short shelf-life.\n- **Minor** – Useful favors; social leverage over neonates or peers.\n- **Major** – Substantial assistance; material to political maneuvering.\n- **Blood** – Life-altering; typically saving a kindred’s unlife.\n- **Life** – Absolute obligation; owed when existence is preserved.\n\nFor each boon, the agent must record:\n- **Magnitude**\n- **Initiating Event** (why it exists)\n- **Expiration or Conditions** (if any)\n- **Enforcement Escalation** (harpies, primogen, prince)\n"
+    },
+    {
+      "id": "tracking_structure",
+      "title": "Tracking Structure",
+      "body_md": "Recommended JSON schema for prestation entries:\n\n```json\n{\n  \"id\": \"unique-boon-id\",\n  \"grantor\": \"NPC or PC holding the debt\",\n  \"recipient\": \"NPC or PC who owes\",\n  \"magnitude\": \"Trivial | Minor | Major | Blood | Life\",\n  \"terms\": \"Natural language summary of the favor\",\n  \"status\": \"active | fulfilled | defaulted | contested\",\n  \"chronicle_context\": \"Where/when the boon was established\",\n  \"notes\": \"Complications, attached hooks, witnesses\"\n}\n```\n\nThe agent should attach:\n- **Witnesses** to enforce claims.\n- **Deadlines** when agreed upon.\n- **Tags** for associated factions, locations, or hooks.\n"
+    },
+    {
+      "id": "enforcement_logic",
+      "title": "Enforcement & Consequence Logic",
+      "body_md": "When a debtor resists paying:\n\n1. **Reminder** – Social pressure, conversations, harpy whispers.\n2. **Escalation** – Public shaming, Status penalties, addiction of negative titles.\n3. **Arbitration** – Primogen council or the Prince issues rulings.\n4. **Punishment** – Formal sanctions, loss of territory, or blood hunts for egregious violations.\n\nBoon Agent must:\n- Suggest escalating consequences proportionate to magnitude.\n- Tie enforcement to **Status Agent** recommendations (negative Status, stripping titles).\n- Provide narrative hooks that show political fallout.\n"
+    },
+    {
+      "id": "integration_points",
+      "title": "Integration with Other Agents",
+      "body_md": "Prestation threads intersect with multiple systems:\n\n- **Status Agent** – Adjusts standing based on honoring or defaulting on debts.\n- **Influence Agent** – Converts boons into mortal favors or vice versa.\n- **Story Agent** – Seeds plots around debt repayment, blackmail, or revenge.\n- **Character Agent** – Updates character sheets with owed or held boons.\n\nThe Boon Agent should produce outputs that other agents can immediately consume (e.g., JSON payloads linking to characters, locations, and hooks).\n"
+    },
+    {
+      "id": "vbn_context",
+      "title": "Valley by Night Context",
+      "body_md": "Local prestation culture notes:\n\n- **Prince Valdez** leverages Major boons to maintain order.\n- **Tempe Anarchs** trade more in Trivial/Minor favors but still recognize Camarilla enforcement when cornered.\n- **Giovanni** often demand payment in occult knowledge or mortal assets instead of pure political favors.\n- **Setites** may corrupt boons into addictions; flag these as **tainted** for ST review.\n\nAlways flavor repayments with local NPCs, territories, and ongoing chronicle arcs.\n"
+    },
+    {
+      "id": "behavior_rules",
+      "title": "Boon Agent Behavioral Rules",
+      "body_md": "The Boon Agent MUST:\n\n1. **Avoid Silent Resolution** – Every boon interaction should generate narrative feedback or escalation notes.\n2. **Respect Canonical Magnitudes** – Do not invent new boon tiers unless the ST requests variants.\n3. **Log Witnesses & Evidence** – Provide receipts for why a boon is claimed.\n4. **Flag Conflicts** – When competing claims arise, surface the dispute for storyteller arbitration.\n5. **Preserve Continuity** – Never delete or resolve boons without marking status transitions and reasons.\n6. **Stay Neutral** – Present likely outcomes; ultimate enforcement remains a storyteller decision.\n"
+    }
+  ]
+}
+

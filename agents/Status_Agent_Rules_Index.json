@@ -1,0 +1,60 @@
+{
+  "title": "Status Agent Rules Index",
+  "system": "Mind’s Eye Theatre – Laws of the Night (Revised)",
+  "type": "rules_index",
+  "version": "1.0",
+  "target_agent": "Status Agent",
+  "description": "High-signal reference for interpreting, assigning, and adjusting Status within the Camarilla and other sects in Valley by Night.",
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose of This Index",
+      "body_md": "The **Status Agent** manages social standing, titles, and reputation for kindred.\n\nIt is intended to:\n- Interpret and adjust **Status** values and titles.\n- Suggest social consequences for actions (boons, scandals, heroics).\n- Coordinate with Boon and Influence Agents for political effects.\n- Stay grounded in MET / Laws of the Night etiquette and Camarilla customs.\n\nCross-references:\n- `Laws_of_the_Night/chapters/05_Chapter_Five_Rules_Systems_and_Drama.md`\n- `Laws_of_the_Night/chapters/06_Chapter_Six_Storytelling.md`\n- `Laws_of_the_Night/clans/*`\n- `Laws_of_the_Night/metadata.json`\n"
+    },
+    {
+      "id": "what_status_is",
+      "title": "What Status Represents",
+      "body_md": "**Status** is a measure of a kindred’s standing within a political society (most often the Camarilla).\n\nIt reflects:\n- Reputation\n- Recognized authority\n- History of service or disgrace\n- How much others feel compelled to heed you\n\nStatus is relative to:\n- The **sect** (Camarilla, Anarchs, Independents).\n- The **city** or domain (Valley by Night: Phoenix).\n- The character’s acknowledged **titles** and deeds.\n\nStatus Agent should treat Status as:\n- A narrative weight on social interactions.\n- A modulator for how NPCs react.\n- A factor in who can get away with what in Elysium and politics.\n"
+    },
+    {
+      "id": "titles_and_roles",
+      "title": "Titles, Roles, and Formal Status",
+      "body_md": "In Camarilla-focused chronicles, formal titles matter:\n\nCommon titles:\n- **Prince** – Ruler of the domain.\n- **Seneschal** – The Prince’s chief lieutenant and administrator.\n- **Sheriff** – Enforcer of the Prince’s will and security.\n- **Scourge** – Hunter of unapproved kindred and threats.\n- **Harpy** – Arbiter of reputation and prestation.\n- **Primogen** – Representative and leader of a clan.\n- **Whip** – Assistant or enforcer for a Primogen.\n- **Keeper of Elysium** – Curator of neutral ground and Elysium etiquette.\n- **Harpies’ Talons** – Assistants to the Harpy, helping track boons and scandals.\n- **Ancilla** – Recognized, somewhat established kindred.\n- **Elder** – Very old and powerful, socially or politically entrenched.\n\nTitles often carry implicit baseline Status.  \nThe Status Agent should:\n- Consider title when suggesting Status.\n- Never assume a titled kindred is low-Status unless they are disgraced.\n"
+    },
+    {
+      "id": "status_levels",
+      "title": "Status Levels (Abstracted)",
+      "body_md": "For automated reasoning, think of Status as **tiers** rather than strict numbers:\n\n- **Very Low Status**  \n  - Unknown neonate, scandal-ridden, or non-person.\n  - Few respect their demands.\n\n- **Low Status**  \n  - Newcomer accepted into the Camarilla.\n  - Has minimal respect but no serious clout.\n\n- **Moderate Status**  \n  - Established neonate or Ancilla.\n  - Recognized, can make some demands and be taken seriously.\n\n- **High Status**  \n  - Primogen, Sheriff, Seneschal, respected Elder.\n  - Their opinions carry weight in council and Elysium.\n\n- **Very High Status**  \n  - Prince, Elder with immense influence, or long-standing Harpy.\n  - Defying them is dangerous.\n\nStatus Agent:\n- SHOULD use this tiered model when explaining or adjusting Status.\n- MAY interpret chronicle-specific titles or honors as bumps up or down these tiers.\n"
+    },
+    {
+      "id": "sources_of_status",
+      "title": "Sources of Status Gains",
+      "body_md": "Status increases may come from:\n\n- **Service to the Prince or Domain**\n  - Successfully resolving a threat.\n  - Protecting the Masquerade.\n  - Handling a delicate political situation.\n\n- **Social Victories**\n  - Publicly humiliating a rival.\n  - Winning Elysium debates.\n  - Hosting successful events.\n\n- **Clandestine Achievements (if known by the right people)**\n  - Quietly solving a crisis.\n  - Providing key information or assistance.\n\n- **Harpy Recognition**\n  - Harpies publicly acknowledging a kindred’s deeds.\n  - Positive gossip.\n\nThe Status Agent should:\n- Suggest Status gains when deeds are significant AND recognized.\n- Emphasize that secret deeds rarely affect Status unless revealed.\n"
+    },
+    {
+      "id": "loss_of_status",
+      "title": "Loss of Status and Disgrace",
+      "body_md": "Status drops when a kindred:\n\n- Breaks the **Traditions** (especially Masquerade, Domain, Progeny).\n- Fails to honor **boons** or lies about prestation.\n- Is publicly humiliated or proven incompetent.\n- Defies or embarrasses the Prince or Primogen Council.\n- Is punished formally (censure, blood hunt announced, etc.).\n\nConsequences of lost Status:\n- Loss of feeding rights.\n- Exclusion from Elysium or gatherings.\n- Being ignored or stonewalled by higher-Status kindred.\n- Becoming vulnerable to political predation.\n\nThe Status Agent:\n- SHOULD propose concrete social side effects.\n- SHOULD interact with Boon and Influence Agents for ripple effects.\n"
+    },
+    {
+      "id": "sect_context",
+      "title": "Sect Context (Camarilla, Anarchs, Independents)",
+      "body_md": "**Camarilla**:\n- Highly formal Status and titles.\n- Harpies, Princes, Primogen matter a lot.\n- Status is tracked and weaponized.\n\n**Anarchs**:\n- Less formal Status, more about respect and reputation.\n- Titles are looser; might be Baron, Leader, or de facto authority.\n- Status Agent should think in terms of “Street Cred” and leadership respect.\n\n**Independents (e.g., Giovanni, Setites)**\n- Internal Status is clan-specific.\n- External Status in Camarilla terms may be lower, even for powerful Independents.\n- Must consider both **internal** and **external** reputation.\n\nStatus Agent:\n- MUST always consider the **sect** when interpreting Status.\n- SHOULD allow for local Valley by Night customs (e.g., Phoenix-specific titles).\n"
+    },
+    {
+      "id": "vbn_specifics",
+      "title": "Valley by Night Specific Considerations",
+      "body_md": "In **Valley by Night** (Phoenix), social terrain includes:\n\n- A Camarilla structure with Prince, Primogen, Harpy, and key officers.\n- Anarch presence and tensions.\n- Independents with their own networks (e.g., Giovanni, Setites, etc.).\n\nFor this chronicle:\n- Status should connect back to:\n  - Holding court positions.\n  - Participation in Elysium.\n  - Involvement in major city events and plots.\n\nStatus Agent:\n- SHOULD tie Status changes to the evolving city metaplot.\n- MAY use Status shifts to encourage PCs into or out of the spotlight.\n"
+    },
+    {
+      "id": "integration_with_other_agents",
+      "title": "Integration with Boon, Influence, and Character Agents",
+      "body_md": "The Status Agent does not act in isolation.\n\nIt must work with:\n- **Boon Agent** – Prestations fulfilled or broken change Status.\n- **Influence Agent** – Mortal power plus kindred politics shapes perception.\n- **Character Agent** – Status is part of the sheet (Backgrounds, notes, etc.).\n- **Story Agent** – Major Status events should trigger or reflect plot points.\n\nExamples:\n- Paying a Major Boon to the Prince might increase Status.\n- Being revealed as a chronic Masquerade risk lowers Status.\n- Heroic defense of Elysium during an attack boosts Status.\n\nStatus Agent:\n- SHOULD send “events” or suggested log entries to these other agents.\n"
+    },
+    {
+      "id": "behavior_rules",
+      "title": "Status Agent Behavioral Rules",
+      "body_md": "The Status Agent MUST:\n\n1. **Preserve Social Continuity**\n   - Changes should make sense relative to recent events.\n\n2. **Avoid Wild Swings Without Justification**\n   - No drastic Status changes unless the event was truly major and public.\n\n3. **Respect Titles and Harpy Authority**\n   - Harpies, Princes, and Primogen have disproportionate say.\n\n4. **Consider Faction Perspectives**\n   - The same deed might raise Status with one faction and lower it with another.\n\n5. **Use Status to Drive Story**\n   - Recommendations should often come with potential hooks:\n     - “This raises whispers that you might be the Prince’s favorite.”\n     - “Now some elders see you as presumptuous.”\n\n6. **Defer Final Authority to the Storyteller**\n   - Provide suggestions, not immutable law.\n   - Clearly indicate when something is a recommendation.\n\n7. **Store and Recall Historical Shifts**\n   - The Agent should treat Status changes as part of a timeline, not isolated edits.\n"
+    }
+  ]
+}

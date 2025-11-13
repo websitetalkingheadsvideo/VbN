@@ -1,6 +1,32 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.12 (Current)
+## Version 0.10.13 (Current)
+**Date:** November 2025
+
+### Agent Rules Index Consolidation
+- 📚 **Unified Agent Directory** – Added `agents/AGENTS_INDEX.json` cataloging operative automation agents with canonical file pointers and purpose blurbs.
+- 🧭 **Expanded Knowledge Indices** – Authored dedicated rules indices for Boon, Story, Influence, Status, Haven, Feeding & Mortals, Chronicle Timeline, Locations, and Character agents to stabilize automated reasoning.
+- 🔗 **Cross-Agent Integration** – Ensured each index documents dependencies and interaction points so orchestration layers can stitch outputs without ad-hoc assumptions.
+- 🛠️ **Documentation Sync** – Captured session details in `docs/CHAT_REPORT_AGENT_RULES_INDEX.mdc` and updated prior migration report heading consistency.
+
+### Files Added / Updated:
+- `agents/AGENTS_INDEX.json`
+- `agents/Boon_Agent_Rules_Index.json`
+- `agents/Story_Agent_Rules_Index.json`
+- `agents/Chronicle_Timeline_Agent_Rules_Index.json`
+- `agents/Feeding_Mortals_Agent_Rules_Index.json`
+- `agents/Haven_Agent_Rules_Index.json`
+- `agents/Influence_Agent_Rules_Index.json`
+- `agents/Laws_of_the_Night/Locations_Agent_Rules_Index.json`
+- `agents/Status_Agent_Rules_Index.json`
+- `agents/Character_Agent_Rules_Index.json`
+- `docs/CHAT_REPORT_AGENT_RULES_INDEX.mdc`
+- `docs/CHAT_REPORT_LAWS_AGENT_MIGRATION.mdc`
+- `VERSION.md`
+
+---
+
+## Version 0.10.12
 **Date:** November 2025
 
 ### Laws Agent Directory Migration

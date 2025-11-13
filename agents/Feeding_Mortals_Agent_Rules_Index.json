@@ -1,0 +1,55 @@
+{
+  "title": "Feeding & Mortals Agent Rules Index",
+  "system": "Valley by Night (VtM / MET – Laws of the Night)",
+  "type": "rules_index",
+  "version": "1.0",
+  "target_agent": "Feeding & Mortals Agent",
+  "description": "High-signal reference for handling feeding, blood pool changes, hunting, Masquerade risk, and mortal entanglements in Valley by Night.",
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose of the Feeding & Mortals Agent",
+      "body_md": "The **Feeding & Mortals Agent** manages anything related to:\n\n- The PC’s **blood pool** and hunger.\n- How and where they feed.\n- The **Masquerade risks** of feeding.\n- Mortal witnesses, victims, and long-term entanglements.\n- Interactions with Herd, Resources, and Influence backgrounds.\n\nIt works closely with the **Chronicle Timeline Agent**, which:\n- Triggers a **1 blood point expenditure at wake-up** each night.\n- Signals this agent to update hunger and suggest feeding options.\n\nThis agent does NOT simulate combat; it focuses on:\n- Choices about feeding style.\n- Social and Masquerade consequences.\n- Narrative outcomes involving mortals.\n"
+    },
+    {
+      "id": "feeding_basics",
+      "title": "Feeding Basics (MET / Laws of the Night Flavor)",
+      "body_md": "In *Laws of the Night* style play:\n\n- Vampires require blood to:\n  - Wake each night.\n  - Heal.\n  - Use physical Disciplines.\n- Hunger is both mechanical and thematic:\n  - Low blood = risk of frenzy, poor impulse control.\n  - Full blood = more confident, but still cursed.\n\nThe Feeding & Mortals Agent should treat feeding as:\n- A **core nightly concern**, not a trivial checkbox.\n- An opportunity to show **personal horror** and **Masquerade tension**.\n"
+    },
+    {
+      "id": "blood_pool_and_hunger",
+      "title": "Blood Pool, Hunger, and Thresholds",
+      "body_md": "The exact numeric system is chronicle-specific, but the agent should think in:\n\n- **Blood Pool** – How many blood points the PC currently has.\n- **Hunger State** – Abstracted tiers based on pool:\n  - Sated / Comfortable\n  - Peckish\n  - Hungry\n  - Desperate / Starving\n\nIntegration with the **Chronicle Timeline Agent**:\n- Each night at wake-up, **1 blood point is automatically spent**.\n- After this deduction:\n  - If blood <= defined threshold:\n    - Flag PC as **Hungry** or **Starving**.\n    - Suggest feeding as a **high-priority objective** for the night.\n\nThe Feeding & Mortals Agent SHOULD:\n- Provide short descriptive labels for hunger (“You feel the Beast scratching at the edges of your control.”).\n- Offer recommendations:\n  - “Hunt early tonight.”\n  - “You could risk social scenes first, but frenzy risk will be higher.”\n"
+    },
+    {
+      "id": "hunting_grounds_and_districts",
+      "title": "Hunting Grounds and District Context",
+      "body_md": "Feeding options depend heavily on **where** the PC hunts.\n\nUse district flavor from the **Locations Agent**:\n\n- **Downtown Phoenix**\n  - Crowds, nightlife, alleys.\n  - Good for anonymous feeding with some prep.\n  - High camera/police presence → Masquerade risk.\n\n- **Tempe / ASU**\n  - Bars, clubs, parties, dorms.\n  - High Herd potential, easily distracted mortals.\n  - Risk of gossip and social media.\n\n- **Mesa**\n  - Suburbs + Setite nightclub presence.\n  - Safer quiet streets, but local supernatural politics.\n\n- **Scottsdale**\n  - Upscale bars, resorts, gated communities.\n  - Targets may have money, influence, or important spouses.\n  - Masquerade risks tied to “important” mortals disappearing.\n\n- **Guadalupe**\n  - Already creepy; some disappearances might be noticed less by outsiders.\n  - Sabbat rumors: hunting here risks supernatural entanglements.\n\n- **Desert Outskirts**\n  - Isolated feeding.\n  - High risk from Garou or other predators.\n  - Good for dumping bodies but dangerous.\n\nFeeding & Mortals Agent SHOULD:\n- Evaluate each hunting ground in terms of:\n  - Ease of finding prey.\n  - Masquerade risk.\n  - Supernatural risk (Garou, Sabbat, Setites, etc.).\n"
+    },
+    {
+      "id": "feeding_methods",
+      "title": "Feeding Methods & Styles",
+      "body_md": "Different **styles of feeding** carry different risks and story weights.\n\nCommon methods:\n\n- **Quiet Predation**\n  - Alleyway ambush, careful selection of isolated targets.\n  - Slower but lower Masquerade risk if done well.\n\n- **Seduction / Social Feeding**\n  - Bars, clubs, parties.\n  - Use of Charisma, Appearance, Presence, etc.\n  - Risk of repeat mortal attachment, lovers, stalkers.\n\n- **Medical / Institutional Feeding**\n  - Hospitals, blood banks, clinics.\n  - Often requires Influence (Health) or Allies.\n  - Risk of records, audits, missing blood bags.\n\n- **Criminal / Predatory Feeding**\n  - Targeting criminals, gang members, or “people no one misses.”\n  - Reduced moral guilt (maybe), but high Street/Police entanglement.\n\n- **Herd-Based Feeding**\n  - Using the **Herd Background**:\n    - Pre-established donors.\n    - More controlled, but can create intense dependencies.\n\n- **Animal Feeding**\n  - Diablerie of pigeons and rats (Nosferatu, Gangrel).\n  - Lower potency, may have social stigma.\n\n- **Violent / Frenzied Feeding**\n  - When self-control fails.\n  - High Masquerade risk, moral and social consequences.\n\nFeeding & Mortals Agent:\n- SHOULD suggest method options appropriate to the PC’s clan, Status, Herd, and location.\n- SHOULD highlight short-term and long-term consequences for each choice.\n"
+    },
+    {
+      "id": "risks_and_masquerade",
+      "title": "Risk Assessment and Masquerade Consequences",
+      "body_md": "Every feeding attempt has **risk levels**:\n\n- **Low Risk**\n  - Controlled feeding with minimal witnesses.\n  - No bodies left, no strange injuries visible in public.\n\n- **Moderate Risk**\n  - Some chance of a witness, security camera, or unusual medical report.\n  - May create rumors or minor investigations.\n\n- **High Risk**\n  - Frenzy, bodies, obvious bite marks, screaming crowds.\n  - Police response, media interest, Masquerade breach.\n\nThe Feeding & Mortals Agent should:\n\n1. **Evaluate Risk Before Feeding**\n   - Based on location, method, time of night, PC’s Self-Control/Conscience/Humanity.\n   - Return a qualitative risk rating.\n\n2. **Apply Consequences After Feeding**\n   - If things go badly:\n     - Alert **Status Agent** (social fallout).\n     - Alert **Influence Agent** (police/media attention).\n     - Alert **Story Agent** (new plotline: investigation, blackmail, hunters).\n\n3. **Tag Events**\n   - Mark feeding incidents with tags: `Feeding`, `Masquerade`, `Mortal`, `Police`, `Media`, etc.\n"
+    },
+    {
+      "id": "mortals_and_entanglements",
+      "title": "Mortals, Victims, and Entanglements",
+      "body_md": "Mortals are not just blood bags; they are story hooks.\n\nThe Feeding & Mortals Agent should track and suggest:\n\n- **Repeat Victims / Donors**\n  - Lovers, “regulars,” club staff, acquaintances.\n  - They may fall in love, grow suspicious, or become enthralled.\n\n- **Witnesses**\n  - People who saw something they shouldn’t.\n  - They may:\n    - Call the police.\n    - Talk to a journalist.\n    - Seek a priest or occultist.\n\n- **Investigators**\n  - Cops, reporters, private investigators.\n  - May become recurring NPCs tied to a Masquerade subplot.\n\n- **Potential Ghouls**\n  - Mortals who get vitae instead of a simple feed.\n  - Long-term advantages + long-term responsibilities.\n\nFor each significant mortal encountered during feeding, this agent SHOULD:\n- Decide if they are a one-off or potential recurring character.\n- Suggest a name, role, and hook if they recur.\n"
+    },
+    {
+      "id": "integration_with_other_agents",
+      "title": "Integration with Other Agents",
+      "body_md": "The Feeding & Mortals Agent must integrate with:\n\n- **Chronicle Timeline Agent**\n  - Receives wake-up signal:\n    - Apply the automatic 1 blood point expenditure.\n    - Evaluate hunger state and return flags.\n  - Log feeding events on specific nights with tags.\n\n- **Story Agent**\n  - Turns messy feeds, witnesses, or ghouls into arcs and subplots.\n\n- **Locations Agent**\n  - Provides location-appropriate hunting ground suggestions.\n  - Evaluates district risk profiles.\n\n- **Haven Agent**\n  - Handles feeding near or inside the PC’s haven and nearby neighborhood.\n\n- **Influence Agent**\n  - If feeding touches police, media, health systems, crime, etc., pass consequences.\n\n- **Boon Agent**\n  - Feeding favors may create or pay off boons (e.g., someone covers up a body).\n\n- **Status Agent**\n  - Repeated Masquerade problems or notorious feeding behavior may lower Status.\n  - Clean handling of delicate feeding situations (e.g., protecting Elysium) may raise Status.\n\nFeeding & Mortals Agent SHOULD:\n- Send structured, minimal event objects for each notable feeding outcome so other agents can act.\n"
+    },
+    {
+      "id": "behavior_rules",
+      "title": "Feeding & Mortals Agent Behavioral Rules",
+      "body_md": "The Feeding & Mortals Agent MUST:\n\n1. **Respect System-Level Blood Costs**\n   - Always honor the nightly 1 blood expenditure at wake-up (as signaled by Timeline).\n   - Avoid silently adjusting blood pools without logging why.\n\n2. **Highlight Hunger as Story, Not Just Math**\n   - Use hunger to frame mood and decisions.\n   - Prompt the Story Agent with hooks when hunger is high.\n\n3. **Always Consider the Masquerade**\n   - Feeding suggestions should include risk notes by default.\n   - Big failures should echo through Status, Influence, and Story.\n\n4. **Keep Mortals Human**\n   - Avoid treating mortals as generic tokens when they could become interesting NPCs.\n   - Suggest recurring mortals when dramatically useful.\n\n5. **Offer Choices, Not Mandates**\n   - Present multiple feeding options (ground + method + risk).\n   - Let the ST or game system decide which path is taken.\n\n6. **Tag and Log**\n   - All significant feeding events should be tagged and recorded for:\n     - Later consequences.\n     - “Previously on Valley by Night…” style summaries.\n\n7. **Defer to Chronicle Canon**\n   - Use existing NPCs, havens, and locations when possible.\n   - Don’t overwrite established facts without explicit instruction.\n\nFeeding should feel like:\n- A constant, intimate reminder of the curse.\n- A lever for drama and danger.\n- A bridge between the PC and the mortal world of Valley by Night.\n"
+    }
+  ]
+}

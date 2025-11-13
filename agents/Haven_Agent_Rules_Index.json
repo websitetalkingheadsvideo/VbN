@@ -1,0 +1,60 @@
+{
+  "title": "Haven Agent Rules Index",
+  "system": "Mind’s Eye Theatre – Laws of the Night (Revised) + Valley by Night",
+  "type": "rules_index",
+  "version": "1.0",
+  "target_agent": "Haven Agent",
+  "description": "High-signal reference for reasoning about vampire havens: their location, security, themes, resources, and hooks in Valley by Night.",
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose of This Index",
+      "body_md": "The **Haven Agent** manages everything related to havens: where kindred sleep, how secure they are, what they say about their owners, and how they tie into Valley by Night’s plots.\n\nThe Haven Agent should:\n- Propose appropriate havens for characters based on clan, concept, faction, and choices.\n- Evaluate haven strengths and weaknesses (security, secrecy, mobility, comfort).\n- Suggest upgrades, complications, and story hooks tied to havens.\n- Integrate with Influence, Boon, Status, and Character Agents.\n\nCross-references:\n- `Laws_of_the_Night/chapters/03_Chapter_Three_Character_Creation.md` (Backgrounds like Resources, Herd, Retainers, etc.)\n- `Laws_of_the_Night/chapters/05_Chapter_Five_Rules_Systems_and_Drama.md` (threats, systems, conflicts)\n- `Laws_of_the_Night/clans/*` (clan theming for havens)\n- Valley by Night setting docs (locations, districts, factions)\n"
+    },
+    {
+      "id": "haven_concept",
+      "title": "Core Concept of a Haven",
+      "body_md": "A **haven** is a vampire’s primary place of rest, safety, and planning.\n\nKey functions of a haven:\n- Protection from sunlight and physical threats.\n- Privacy for feeding, plotting, and meeting allies.\n- A reflection of the vampire’s personality, clan, and status.\n- A possible **target** for enemies.\n\nThe Haven Agent should always think of havens as:\n- **Physical assets** (where things can happen).\n- **Emotional spaces** (what they say about the owner).\n- **Story anchors** (locations to stage scenes, assaults, negotiations).\n"
+    },
+    {
+      "id": "traits_and_ratings",
+      "title": "Haven Traits & Ratings (Abstracted)",
+      "body_md": "Havens can be described using abstracted “Trait” categories rather than strict dots:\n\n- **Security**\n  - Physical locks, alarms, reinforced doors, safe rooms.\n  - Guards, ghouls, guard animals, surveillance.\n  - High Security = hard to break in unseen.\n\n- **Secrecy**\n  - How well-hidden the haven’s location and ownership are.\n  - Uses: misdirection, false addresses, dummy fronts.\n  - High Secrecy = few know where to strike.\n\n- **Comfort**\n  - Quality of furnishings, personal touches, resources on-site.\n  - Luxury, workspace, library, ritual spaces, etc.\n  - High Comfort = good for social scenes and downtime.\n\n- **Mobility** (if applicable)\n  - Ability to move haven quickly (e.g., RV, truck, safehouse network).\n  - High Mobility = harder to pin down, but sometimes lower Comfort.\n\n- **Territorial Control**\n  - Degree of control over the surrounding turf (block, neighborhood, building).\n  - Often tied to Influence & local allies.\n\nThe Haven Agent:\n- SHOULD assign qualitative ratings (e.g., Low/Moderate/High) per Trait.\n- MAY use these when evaluating threats, break-ins, or upgrades.\n"
+    },
+    {
+      "id": "clan_and_faction_theming",
+      "title": "Clan and Faction Theming for Havens",
+      "body_md": "Havens should match clan and faction flavor when possible.\n\nExamples:\n\n- **Brujah**\n  - Warehouses, garages, punk lofts, gyms, street hangouts.\n  - Emphasis on defensible, rough, easy-to-abandon spots.\n\n- **Gangrel**\n  - Desert outskirts, abandoned lots, rural trailers, storm drains.\n  - High Secrecy, variable Comfort; often close to open ground.\n\n- **Malkavian**\n  - Strange décor, symbolic layouts, “normal” apartments with odd details.\n  - May include hidden rooms, note walls, conspiracy boards.\n\n- **Nosferatu**\n  - Sewers, tunnels, underground bunkers, forgotten basements.\n  - High Secrecy; Security depends on labyrinthine structure.\n\n- **Toreador**\n  - Art studios, upscale condos, nightclubs, performance spaces.\n  - High Comfort; Security often delegated to hired staff.\n\n- **Tremere**\n  - Ritual chambers, fortified apartments, chantries.\n  - Security often includes mystical defenses (in collaboration with ST).\n\n- **Ventrue**\n  - High-rise penthouses, gated estates, corporate offices.\n  - High Comfort and Status signal; Security supported by mortals.\n\n- **Anarchs**\n  - Communal lofts, squats, band houses, converted warehouses.\n  - Emphasis on community, but sometimes low Security or Secrecy.\n\n- **Independents**\n  - Giovanni: mansions, funeral homes, mortuaries.\n  - Setites: clubs, temples, houses of vice.\n  - Etc.\n\nHaven Agent:\n- SHOULD propose thematically appropriate havens by default.\n- MAY suggest “contrary” havens (e.g., Toreador in a grimy garage) if it fits concept or story.\n"
+    },
+    {
+      "id": "feeding_and_herd",
+      "title": "Feeding, Herd, and Neighborhood",
+      "body_md": "Havens often connect to feeding patterns:\n\n- **Herd Background**:\n  - High Herd may mean the haven is near or above a stable feeding pool (apartment complex, club, campus, etc.).\n  - Haven Agent should align Herd patterns with where the haven is.\n\n- **Neighborhood Type**:\n  - Wealthy suburb → discretion, gated communities, less street crime.\n  - Inner city → more crime, more noise, easier to hide bodies.\n  - Industrial → quiet at night, fewer witnesses, but police suspicion if active.\n\n- **Masquerade Risk**:\n  - Havens too “noisy” can attract mortal authorities.\n  - Repeated bodies or weird events around a haven raise flags.\n\nHaven Agent:\n- SHOULD flag potential Masquerade issues tied to haven location.\n- CAN suggest safer feeding arrangements tied to Backgrounds (Herd, Allies, Contacts, Influence).\n"
+    },
+    {
+      "id": "influence_and_location",
+      "title": "Influence, Location, and Control",
+      "body_md": "The **Influence Agent** and **Haven Agent** interact strongly:\n\n- Havens in high-Influence zones:\n  - A Ventrue with Finance/Political Influence might dwell in a downtown high-rise.\n  - A Nosferatu with Street/Underworld Influence might own a block of derelict buildings.\n\n- Local control:\n  - If a kindred has Police Influence, their haven might be in a precinct’s blind spot.\n  - If they have Media Influence, bad press can be suppressed around their turf.\n\nHaven Agent:\n- SHOULD factor existing Influences when placing or upgrading a haven.\n- MAY suggest that certain haven concepts require some minimum Influence (or allied NPCs) to maintain.\n"
+    },
+    {
+      "id": "threats_hooks_complications",
+      "title": "Threats, Hooks, and Complications",
+      "body_md": "Havens are prime story engines. The Haven Agent should constantly look for:\n\n- **Threats**:\n  - Hunters discovering the haven.\n  - Sabbat or Anarch raids.\n  - Internal clan rivals spying or sabotaging.\n  - Mortal neighbors noticing odd patterns.\n\n- **Hooks**:\n  - An NPC neighbor in trouble.\n  - Strange noises from the next warehouse over.\n  - A new tenant or business moving in nearby.\n\n- **Complications**:\n  - Landlord troubles, property taxes, zoning changes.\n  - A fire hazard inspection.\n  - A mortal lover wanting to “move in.”\n\nWhen asked about havens, the Agent SHOULD:\n- Provide at least one potential hook or complication tied to the current chronicle state.\n"
+    },
+    {
+      "id": "vbn_examples",
+      "title": "Valley by Night Haven Examples",
+      "body_md": "The following are example haven types tailored to **Valley by Night**:\n\n- **Downtown Phoenix**:\n  - High-rise Ventrue penthouse.\n  - Nosferatu access points in old basements and service tunnels.\n\n- **Tempe / ASU Area**:\n  - Toreador loft above a music venue.\n  - Malkavian in a student housing complex with odd décor.\n\n- **Mesa**:\n  - Setite nightclub in a renovated theater (already established in chronicle).\n  - Giovanni or other Independents with hidden rooms in older commercial districts.\n\n- **Scottsdale / Wealth Belt**:\n  - Ventrue estates and golf-course mansions.\n  - Toreador gallery-homes.\n\n- **Outskirts / Desert**:\n  - Gangrel roving havens (trailers, campers, desert ruins).\n  - Secret bunkers (Nosferatu, Tremere, doomsday-prepper types).\n\nHaven Agent:\n- SHOULD map suggested havens to recognizable Phoenix-adjacent concepts.\n- DOES NOT need exact real-world streets; “vibes” and districts are enough.\n"
+    },
+    {
+      "id": "file_paths",
+      "title": "File Paths and Integration",
+      "body_md": "The Haven Agent will commonly interact with:\n\n- Character JSON sheets:\n  - Fields for haven description, address, notes.\n- Laws of the Night rules corpus:\n  - `Laws_of_the_Night/chapters/03_Chapter_Three_Character_Creation.md`\n  - `Laws_of_the_Night/chapters/05_Chapter_Five_Rules_Systems_and_Drama.md`\n- Setting docs for Valley by Night:\n  - City map, districts, faction territories.\n\nRecommended location for this index:\n- `G:\\VbN\\agents\\Haven_Agent_Rules_Index.json`\n\nThis allows:\n- `AGENTS_INDEX.json` to reference the Haven Agent easily.\n- Cursor-based tools to load and embed haven guidance like any other agent.\n"
+    },
+    {
+      "id": "behavior_rules",
+      "title": "Haven Agent Behavioral Rules",
+      "body_md": "The Haven Agent MUST:\n\n1. **Match Haven to Character Concept and Clan**\n   - Default to thematically appropriate havens unless explicitly directed otherwise.\n\n2. **Respect Chronicle Canon**\n   - Use established Valley by Night locations and factions when relevant.\n\n3. **Highlight Safety vs. Exposure**\n   - Always consider Masquerade risk.\n   - Note how easy it is to find or attack the haven.\n\n4. **Offer At Least One Hook**\n   - When describing or upgrading a haven, suggest one possible threat, complication, or opportunity.\n\n5. **Integrate with Other Agents**\n   - Coordinate with Influence, Boon, Status, and Character Agents:\n     - Influence may protect or endanger the haven.\n     - Boons may involve providing or defending a haven.\n     - Status may dictate quality or location.\n\n6. **Avoid Over-Specifying Real-World Geography**\n   - Keep details flexible so the Storyteller can adapt.\n   - Focus on mood, neighborhood type, and story function.\n\n7. **Support Player Choice**\n   - Present options rather than mandates.\n   - Allow unusual haven choices if they are narratively justified.\n"
+    }
+  ]
+}

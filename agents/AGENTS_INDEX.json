@@ -1,0 +1,58 @@
+{
+  "agents": [
+    {
+      "id": "character_agent",
+      "title": "Character Agent",
+      "file": "Character_Agent_Rules_Index.json",
+      "purpose": "Handles character creation, validation, and lore-consistent reasoning."
+    },
+    {
+      "id": "influence_agent",
+      "title": "Influence Agent",
+      "file": "Influence_Agent_Rules_Index.json",
+      "purpose": "Interprets and manages mortal influence systems, downtime actions, and hooks."
+    },
+    {
+      "id": "boon_agent",
+      "title": "Boon Agent",
+      "file": "Boon_Agent_Rules_Index.json",
+      "purpose": "Tracks prestation, debts, and political leverage between kindred."
+    },
+    {
+      "id": "status_agent",
+      "title": "Status Agent",
+      "file": "Status_Agent_Rules_Index.json",
+      "purpose": "Handles social standing, titles, reputation, and political consequences."
+    },
+    {
+      "id": "haven_agent",
+      "title": "Haven Agent",
+      "file": "Haven_Agent_Rules_Index.json",
+      "purpose": "Suggests, evaluates, and hooks havens for characters, tying them into Valley by Night’s locations and politics."
+    },
+    {
+      "id": "locations_agent",
+      "title": "Locations Agent",
+      "file": "Laws_of_the_Night/Locations_Agent_Rules_Index.json",
+      "purpose": "Manages districts, supernatural zones, and faction territories; provides hooks and risk assessments."
+    },
+    {
+      "id": "story_agent",
+      "title": "Story Agent",
+      "file": "Story_Agent_Rules_Index.json",
+      "purpose": "Generates and organizes plot hooks, arcs, scenes, and consequences tied to Valley by Night."
+    },
+    {
+      "id": "chronicle_timeline_agent",
+      "title": "Chronicle Timeline Agent",
+      "file": "Chronicle_Timeline_Agent_Rules_Index.json",
+      "purpose": "Maintains the nightly timeline, triggers wake-up blood burn, schedules plot beats, tracks events."
+    },
+    {
+      "id": "feeding_mortals_agent",
+      "title": "Feeding & Mortals Agent",
+      "file": "Feeding_Mortals_Agent_Rules_Index.json",
+      "purpose": "Manages blood pool changes, nightly hunger, feeding methods, Masquerade risk, mortal witnesses, and long-term entanglements."
+    }
+  ]
+}

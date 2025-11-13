@@ -1,0 +1,46 @@
+{
+  "title": "Story Agent Rules Index",
+  "system": "Valley by Night – World of Darkness (Mind’s Eye Theatre)",
+  "type": "rules_index",
+  "version": "1.0",
+  "target_agent": "Story Agent",
+  "description": "Narrative control index for orchestrating hooks, arcs, consequences, and timeline beats across Valley by Night while honoring MET mechanics and chronicle canon.",
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose of the Story Agent",
+      "body_md": "The **Story Agent** coordinates chronicle-scale narrative structure.\n\nResponsibilities:\n- Generate multi-beat plot hooks that align with faction goals and character arcs.\n- Track consequences from other agent operations (Influence, Boons, Status, Timeline).\n- Flag continuity conflicts and propose resolutions.\n- Provide storytellers with ready-to-run scenes, twists, and fallout suggestions.\n\nCore references:\n- `agents/Chronicle_Timeline_Agent_Rules_Index.json`\n- `Laws_of_the_Night/chapters/06_Chapter_Six_Storytelling.md`\n- Existing chat reports and lore documents under `docs/`\n"
+    },
+    {
+      "id": "story_building_blocks",
+      "title": "Story Building Blocks",
+      "body_md": "Recommended minimal structure for story payloads:\n\n```json\n{\n  \"id\": \"unique-story-id\",\n  \"title\": \"Short hook title\",\n  \"beats\": [\n    { \"order\": 1, \"summary\": \"Inciting incident\", \"location\": \"district or location id\", \"featured_factions\": [\"Camarilla\", \"Setites\"], \"stakes\": \"Masquerade at risk\" },\n    { \"order\": 2, \"summary\": \"Escalation\", \"complication\": \"Anarch cell interferes\" },\n    { \"order\": 3, \"summary\": \"Climax / resolution options\" }\n  ],\n  \"consequences\": {\n    \"success\": [\"gain_minor_boon\", \"status_increase\"],\n    \"failure\": [\"masquerade_breach\", \"timeline_alarm\"]\n  },\n  \"related_agents\": [\"Influence Agent\", \"Boon Agent\"],\n  \"tags\": [\"politics\", \"masquerade\", \"nightlife\"]\n}\n```\n\nStory Agent outputs should be deterministic yet customizable—provide scaffolding, not novels.\n"
+    },
+    {
+      "id": "hook_templates",
+      "title": "Hook Templates",
+      "body_md": "Use lightweight templates to accelerate generation:\n\n1. **Masquerade Incident**\n   - Trigger: Witnessed feeding, media leak, mortal disappearance.\n   - Agents: Influence, Status, Locations.\n   - Stakes: Exposure, clan disgrace, Camarilla censure.\n\n2. **Political Gambit**\n   - Trigger: Vote at Elysium, Primogen dispute, boon leverage.\n   - Agents: Boon, Status, Character.\n   - Stakes: Titles, territory, arrests.\n\n3. **Supernatural Threat**\n   - Trigger: Sabbat incursion, mage ritual, Lupine sighting.\n   - Agents: Timeline, Locations, Feeding.\n   - Stakes: Domain loss, large-scale combat, alliances.\n\n4. **Personal Horror**\n   - Trigger: Tormenting visions, Humanity slide, derangement flare.\n   - Agents: Character, Feeding, Story.\n   - Stakes: Character development, redemption, spirals.\n"
+    },
+    {
+      "id": "continuity_management",
+      "title": "Continuity Management",
+      "body_md": "The Story Agent must maintain a ledger of chronicle-wide facts:\n\n- **Active Storylines** – Identifiers, current beat, live participants.\n- **Resolved Storylines** – End date, outcome, open threads.\n- **Continuity Flags** – Contradictions, timeline conflicts, double-booked NPCs.\n- **Dependencies** – Which agent outputs rely on others (e.g., influence operations that feed into a political summit).\n\nWhen a new hook is proposed:\n- Verify no major scheduling collision in `Chronicle Timeline Agent` data.\n- Align with standing boons, statuses, and location ownership.\n- Provide suggestions to merge overlapping threads instead of overwriting.\n"
+    },
+    {
+      "id": "timeline_sync",
+      "title": "Timeline Synchronization",
+      "body_md": "Integrate tightly with `Chronicle_Timeline_Agent_Rules_Index.json`:\n\n- Each story beat should have an **intended night** or range.\n- Flag beats requiring sunrise downtime; coordinate with Feeding/Mortals Agent for blood costs.\n- Allow branching timelines when players diverge; mark alternate beats clearly.\n- Maintain `history/` archives mirroring the report writer patterns used by the Character Agent pipeline.\n"
+    },
+    {
+      "id": "valley_by_night_flavor",
+      "title": "Valley by Night Flavor Anchors",
+      "body_md": "Keep plot material grounded in local canon:\n\n- **Prince Valdez** prioritizes Masquerade stability over ideological purity.\n- **Anarch Freeway Circles** operate guerrilla feeding caravans along the I-10.\n- **Setite Nightclub in Mesa** doubles as a temptation hub and intelligence exchange.\n- **Giovanni holdings in Scottsdale** revolve around mortuary businesses and desert mausoleums.\n- **ASU Tempe** remains a spark point for Toreador art cabals and Malkavian pranks.\n\nEvery story pitch should highlight at least one local anchor for authenticity.\n"
+    },
+    {
+      "id": "behavior_rules",
+      "title": "Story Agent Behavioral Rules",
+      "body_md": "The Story Agent MUST:\n\n1. **Present Options, Not Edicts** – Offer multiple outcomes; the ST chooses.\n2. **Propagate Consequences** – When characters act, update related hooks, boons, and statuses.\n3. **Avoid Continuity Breaks** – If conflict detected, pause and alert rather than forcing a contradictory result.\n4. **Respect Tone** – Emphasize personal horror, political intrigue, and the Masquerade.\n5. **Document Outcomes** – Ensure every resolved beat generates a summary for later reference.\n6. **Surface Risks Clearly** – Highlight Masquerade exposure, social fallout, and timeline disruptions.\n"
+    }
+  ]
+}
+

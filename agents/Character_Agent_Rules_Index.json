@@ -1,0 +1,90 @@
+{
+  "title": "Character Agent Rules Index",
+  "system": "Mind’s Eye Theatre – Laws of the Night (Revised)",
+  "type": "rules_index",
+  "version": "1.0",
+  "target_agent": "Character Agent",
+  "description": "Compact, high-signal reference for automated character-generation and rules reasoning based on Laws of the Night (Revised).",
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose of This Index",
+      "body_md": "This document provides a compact, high-signal reference for the **Character Agent**.\n\nIt is intended for:\n- Creating or updating characters\n- Validating character sheets for rules consistency\n- Interpreting Traits, Abilities, Backgrounds, Clans, and Disciplines\n- Applying MET rules logic during Valley by Night operations\n\nPrimary cross-references:\n- `Laws_of_the_Night/chapters/`\n- `Laws_of_the_Night/clans/`\n- `Laws_of_the_Night/disciplines/`\n- `Laws_of_the_Night/TOC.md`\n- `Laws_of_the_Night/metadata.json`\n"
+    },
+    {
+      "id": "character_anatomy",
+      "title": "Character Anatomy Overview",
+      "body_md": "Every MET character is composed of the following major components:\n\n- Attributes (Trait adjectives)\n- Abilities\n- Backgrounds\n- Virtues\n- Humanity\n- Willpower\n- Clan (with weakness and core Disciplines)\n- Disciplines\n- Optional Merits and Flaws\n- Descriptive data (concept, appearance, notes, history)\n\nPrimary source:\n- `Laws_of_the_Night/chapters/03_Chapter_Three_Character_Creation.md`\n"
+    },
+    {
+      "id": "attributes",
+      "title": "Attributes (Traits)",
+      "body_md": "MET uses **Trait adjectives**, not numeric ratings.\n\nAttributes are grouped into three categories:\n\n- **Physical Traits**  \n  Examples: Quick, Tough, Agile, Strong, Resilient, Graceful  \n  Used for combat, movement, physical challenges.\n\n- **Social Traits**  \n  Examples: Charming, Commanding, Respectable, Intimidating, Witty  \n  Used for persuasion, intimidation, social conflict and politics.\n\n- **Mental Traits**  \n  Examples: Observant, Insightful, Clever, Methodical, Studious  \n  Used for investigation, planning, perception, and knowledge.\n\nTraits are typically noted as adjective × count, for example:\n- *Quick × 3, Tough × 2*\n- *Charming × 2, Respectable × 1*\n- *Observant × 3, Insightful × 2*\n\nThe Character Agent MUST:\n- Prefer adjectives over numbers (no raw “Strength 3” style)\n- Suggest Traits that match the character’s **concept** and **clan**\n"
+    },
+    {
+      "id": "abilities",
+      "title": "Abilities",
+      "body_md": "**Abilities** represent learned skills, training, and expertise.\n\nCommon Abilities include (but are not limited to):\n- Academics\n- Alertness\n- Athletics\n- Brawl\n- Computer\n- Dodge\n- Drive\n- Empathy\n- Firearms\n- Intimidation\n- Investigation\n- Leadership\n- Performance\n- Stealth\n- Streetwise\n- Subterfuge\n- Survival\n\nUses:\n- Provide **retests** in relevant challenges\n- Justify narrative competence and knowledge\n- Differentiate characters with similar Attributes\n\nCharacter Agent guidelines:\n- Infer likely Abilities from concept (e.g., **Detective** → Investigation, Streetwise, Alertness).\n- Avoid overloading characters with every Ability; pick a focused spread that matches the concept.\n"
+    },
+    {
+      "id": "backgrounds",
+      "title": "Backgrounds",
+      "body_md": "**Backgrounds** represent external resources, social standing, and influence.\n\nImportant Backgrounds for Valley by Night and automated reasoning:\n- **Allies** – Helpful mortals or kindred who assist the character.\n- **Contacts** – Information sources, rumor networks, street-level intel.\n- **Fame** – Public notoriety; increases risk of Masquerade issues.\n- **Herd** – Personal feeding pool of mortals.\n- **Influence** – Control over mortal institutions and systems.\n- **Mentor** – A more powerful figure offering guidance or training.\n- **Resources** – Wealth and financial access.\n- **Retainers** – Loyal servants or ghouls.\n- **Status** – Standing within the Camarilla or other sect.\n\nCharacter Agent should:\n- Ensure Backgrounds fit the social context and clan politics.\n- Use Backgrounds to justify plot hooks, allies, and mortal ties.\n"
+    },
+    {
+      "id": "virtues_humanity_willpower",
+      "title": "Virtues, Humanity, and Willpower",
+      "body_md": "**Virtues**:\n- Conscience/Conviction\n- Self-Control/Instinct\n- Courage\n\nThese influence:\n- Frenzy checks\n- Rötschreck (fear frenzy)\n- Moral stability and degeneration\n\n**Humanity**:\n- Tracks how “human” (vs. monstrous) a vampire remains.\n- High Humanity → empathy, more normal behavior.\n- Low Humanity → bestial, predatory, detached.\n\n**Willpower**:\n- Represents mental resolve and inner strength.\n- Used to:\n  - Resist mental powers\n  - Resist frenzy\n  - Fuel certain powers or actions\n\nCharacter Agent guidelines:\n- Default to **standard Humanity morality** unless a special path is explicitly defined.\n- Assign Virtues and Willpower consistent with the character’s concept and history.\n"
+    },
+    {
+      "id": "clan_system",
+      "title": "Clan System Logic",
+      "body_md": "A **Clan** in MET defines:\n- Inherent personality tendencies and cultural expectations\n- Three core **Disciplines**\n- A **Clan weakness**\n- Usual sect affiliations and political tendencies\n\nCanonical clans live in:\n- `Laws_of_the_Night/clans/`\n\nThe Character Agent MUST:\n- Ensure every vampire has exactly one primary clan (unless a special case is explicitly described).\n- Respect clan core Disciplines and weakness.\n- Use clanfolders for rules context and flavor hooks.\n"
+    },
+    {
+      "id": "clan_weaknesses",
+      "title": "Examples of Clan Weaknesses (High-Level)",
+      "body_md": "High-level reference of common clan weaknesses (exact mechanical details are in the rulebook):\n\n- **Brujah** – Prone to frenzy; short-tempered, volatile.\n- **Gangrel** – Gain permanent bestial features when they frenzy.\n- **Malkavian** – All suffer at least one derangement.\n- **Nosferatu** – Hideously deformed; cannot pass as normal humans.\n- **Toreador** – Entranced by beauty or art; may become fixated.\n- **Tremere** – Bound into the Clan’s blood hierarchy (Pyramid).\n- **Ventrue** – Can only feed on a very specific type of mortal.\n\nIndependent clans and bloodlines also have unique weaknesses.\n\nCharacter Agent:\n- MUST align any generated weakness with the chosen clan.\n- SHOULD NOT invent weaknesses that contradict canonical ones unless explicitly asked to create a variant or homebrew.\n"
+    },
+    {
+      "id": "disciplines_overview",
+      "title": "Disciplines Overview",
+      "body_md": "**Disciplines** are the supernatural powers of the Kindred.\n\nThe following Disciplines are available in this corpus:\n- Animalism\n- Auspex\n- Celerity\n- Chimerstry\n- Dementation\n- Dominate\n- Fortitude\n- Necromancy\n- Obfuscate\n- Obtenebration\n- Potence\n- Presence\n- Protean\n- Quietus\n- Serpentis\n- Thaumaturgy\n- Vicissitude\n- Melpomene\n\nFiles:\n- `Laws_of_the_Night/disciplines/<Discipline>.md`\n\nEach Discipline is associated with:\n- A theme (subtle, mental, physical, blood magic, etc.)\n- Clan access (some clans use it as a core Discipline)\n- A ladder of powers (Basic / Intermediate / Advanced in full rules)\n\nCharacter Agent:\n- MUST only assign Disciplines that are clan-appropriate or justified by Backgrounds/plot.\n- SHOULD treat clan core Disciplines as the most common initial picks at character creation.\n"
+    },
+    {
+      "id": "disciplines_clan_links",
+      "title": "Discipline ↔ Clan Crosslinks",
+      "body_md": "Clan files list **Core Disciplines**, and Discipline files list **Common Clans**.\n\nClan → Disciplines (examples):\n\n- Brujah → Celerity, Potence, Presence\n- Gangrel → Animalism, Fortitude, Protean\n- Malkavian → Auspex, Dementation, Obfuscate\n- Nosferatu → Animalism, Obfuscate, Potence\n- Toreador → Auspex, Celerity, Presence\n- Tremere → Auspex, Dominate, Thaumaturgy\n- Ventrue → Dominate, Fortitude, Presence\n- Assamite → Celerity, Obfuscate, Quietus\n- Followers of Set → Obfuscate, Presence, Serpentis\n- Giovanni → Dominate, Necromancy, Potence\n- Lasombra → Dominate, Obtenebration, Potence\n- Ravnos → Animalism, Chimerstry, Fortitude\n- Tzimisce → Animalism, Auspex, Vicissitude\n- Daughters of Cacophony → Auspex, Presence, Melpomene\n- Salubri → Auspex, Fortitude\n- Samedi → Fortitude, Obfuscate, Necromancy\n\nCharacter Agent:\n- SHOULD use these relationships when inferring likely Discipline spreads.\n- MAY infer clan from unusual Discipline combinations but must be conservative when guessing.\n"
+    },
+    {
+      "id": "met_challenge_system",
+      "title": "Core MET Challenge System",
+      "body_md": "MET uses **Rock–Paper–Scissors (RPS)** for resolution.\n\nKey concepts:\n\n- **Simple Test**:  \n  One-off RPS throw to determine success or failure.\n\n- **Challenge** (Opposed Test):  \n  Both parties throw RPS; winner succeeds. Traits, Abilities, or Disciplines may provide retests.\n\n- **Static Test**:  \n  Character tests against a difficulty by bidding Traits (e.g., “I risk 2 Quick Traits”). RPS vs. ST or set difficulty.\n\n- **Extended Test**:  \n  Multiple tests in sequence until enough successes are accrued or a failure ends the attempt.\n\n- **Retests**:\n  - Provided by Abilities, Disciplines, Willpower, etc.\n  - Usually limited to one retest of each type per test.\n\nRetest priority (common convention):\n1. Discipline retest\n2. Ability retest\n3. Willpower retest (last resort)\n\nThe Character Agent:\n- Does NOT need to simulate individual RPS throws.\n- SHOULD understand that higher Traits, relevant Abilities, and fitting Disciplines increase odds via retests.\n"
+    },
+    {
+      "id": "frenzy_rotschreck",
+      "title": "Frenzy, Rötschreck, and Derangements",
+      "body_md": "**Frenzy**:\n- Triggered by hunger, humiliation, physical harm, or provocation.\n- Represents the Beast taking control.\n- Resisted with Self-Control/Instinct.\n\n**Rötschreck (Fear Frenzy)**:\n- Triggered by fire, sunlight, or intense fear stimuli.\n- Resisted with Courage.\n\n**Derangements**:\n- Mental conditions that shape behavior and perception.\n- Malkavians inherently suffer at least one.\n- Others may acquire them via trauma, low Humanity, or story events.\n\nCharacter Agent:\n- SHOULD factor clan weaknesses into Frenzy likelihood (e.g., Brujah).\n- SHOULD track derangements as part of personality and roleplay cues, not just mechanics.\n"
+    },
+    {
+      "id": "status_prestation_influence",
+      "title": "Status, Boons, and Influence (Social Systems)",
+      "body_md": "**Status**:\n- Measures standing within the sect (especially Camarilla).\n- Influences how NPCs treat the character in Elysium and politics.\n- Often derived from Titles and deeds.\n\n**Boons (Prestation)**:\n- Debts of favor between kindred.\n- Typical categories: Trivial, Minor, Major, Blood, Life.\n- Tracked as: *Owed by → Owed to → Terms → Fulfilled?*\n\n**Influence (Background)**:\n- Represents control over mortal institutions, such as:\n  - Bureaucracy, Police, Finance, Health, Media, Crime, University, etc.\n- Allows characters to:\n  - Call in favors\n  - Move information\n  - Alter mortal behavior in the setting\n\nCharacter Agent:\n- SHOULD align Status and Boons with the political state of Valley by Night.\n- SHOULD treat Influence as a narrative permission system: high Influence reduces friction for certain actions.\n"
+    },
+    {
+      "id": "character_creation_steps",
+      "title": "Character Creation – Step-by-Step (Agent View)",
+      "body_md": "Standard recommended order for generating or validating a character:\n\n1. **Concept**  \n   - Short phrase like “Disillusioned Detective,” “Anarch Skater Brujah,” “Ancient Toreador Socialite.”\n\n2. **Clan**  \n   - Select from canonical clans; apply core Disciplines and weakness.\n\n3. **Attributes (Traits)**  \n   - Assign Physical, Social, Mental Traits using adjectives × count.\n   - Emphasize Traits appropriate to concept and clan.\n\n4. **Abilities**  \n   - Assign key Abilities that support the concept.\n   - Avoid pointless Abilities that don’t match the character’s story.\n\n5. **Backgrounds**  \n   - Add Allies, Contacts, Resources, Influence, etc., to reflect external footprint.\n\n6. **Virtues, Humanity, Willpower**  \n   - Ensure coherent moral and mental profile.\n\n7. **Disciplines**  \n   - Select powers consistent with clan and story.\n   - Avoid assigning Disciplines that contradict clan access without explicit justification.\n\n8. **Clan Weakness**  \n   - Apply the appropriate weakness and represent it clearly.\n\n9. **Merits and Flaws** (if used)  \n   - Provide flavor and mechanical hooks.\n\n10. **Description / Roleplay Notes**  \n    - Physical description, mannerisms, speech style, etc.\n\nCharacter Agent:\n- SHOULD follow this order when fabricating missing data.\n- MUST NOT contradict existing sheet data unless explicitly asked to retcon or correct it.\n"
+    },
+    {
+      "id": "paths_and_files",
+      "title": "Paths and File Layout (For Cursor Integration)",
+      "body_md": "The Laws of the Night rules corpus is expected to live at:\n\n```text\nG:\\VbN\\agents\\Laws_of_the_Night\\\n```\n\nWith the following structure:\n\n```text\nLaws_of_the_Night/\n  metadata.json\n  TOC.md\n\n  chapters/\n    00_Preface.md\n    01_Chapter_One_Introduction.md\n    02_Chapter_Two_The_Clans.md\n    03_Chapter_Three_Character_Creation.md\n    04_Chapter_Four_Disciplines.md\n    05_Chapter_Five_Rules_Systems_and_Drama.md\n    06_Chapter_Six_Storytelling.md\n    07_Chapter_Seven_Allies_and_Antagonists.md\n\n  clans/\n    Brujah.md\n    Gangrel.md\n    Malkavian.md\n    Nosferatu.md\n    Toreador.md\n    Tremere.md\n    Ventrue.md\n    Assamite.md\n    Followers_of_Set.md\n    Giovanni.md\n    Lasombra.md\n    Ravnos.md\n    Tzimisce.md\n    Daughters_of_Cacophony.md\n    Salubri.md\n    Samedi.md\n\n  disciplines/\n    Animalism.md\n    Auspex.md\n    Celerity.md\n    Chimerstry.md\n    Dementation.md\n    Dominate.md\n    Fortitude.md\n    Necromancy.md\n    Obfuscate.md\n    Obtenebration.md\n    Potence.md\n    Presence.md\n    Protean.md\n    Quietus.md\n    Serpentis.md\n    Thaumaturgy.md\n    Vicissitude.md\n    Melpomene.md\n```\n\nThe Character Agent should treat:\n- `metadata.json` as the canonical index.\n- `TOC.md` as a human + agent navigational map.\n"
+    },
+    {
+      "id": "behavior_rules",
+      "title": "Character Agent Behavioral Rules",
+      "body_md": "When using this index and associated files, the Character Agent MUST:\n\n1. **Respect Clan Weaknesses**  \n   - Never ignore or overwrite them without explicit instruction.\n\n2. **Honor Clan Core Disciplines**  \n   - Default Disciplines must align with clan templates.\n\n3. **Use Trait Adjectives, Not Pure Numbers**  \n   - Represent Attributes as adjectives × count.\n\n4. **Validate Discipline Legality**  \n   - When adding or modifying Disciplines, confirm that they are accessible to the clan or justified by story elements.\n\n5. **Infer Sensibly from Concept**  \n   - Always try to match Abilities, Traits, and Backgrounds to the character’s stated concept.\n\n6. **Distinguish Canon from Homebrew**  \n   - Treat anything outside this corpus as homebrew that should be clearly labeled.\n\n7. **Avoid Retcon Without Permission**  \n   - Do not overwrite key identity details (Clan, Sect, Chronicle-defining traits) unless explicitly asked.\n\nThese rules ensure consistency between Valley by Night data and canonical MET mechanics.\n"
+    }
+  ]
+}
