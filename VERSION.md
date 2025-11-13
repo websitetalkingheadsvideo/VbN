@@ -1,6 +1,23 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.13 (Current)
+## Version 0.10.14 (Current)
+**Date:** January 2025
+
+### Character View Missing Fields Fix
+- 🔧 **Fixed Missing Fields** – Added biography, appearance, and notes fields to the detailed character sheet view in admin panel.
+- 📍 **Correct Positioning** – Positioned these read-only fields between "Status & Resources" and "Custom Data" sections as requested.
+- 🎨 **Consistent Styling** – All three fields use the existing `.text-content` styling class to match the rest of the page design.
+- 🔄 **API Update** – Updated `view_character_api.php` to fetch the appearance field from the database.
+
+### Files Modified:
+- `admin/view_character_api.php` - Added appearance field to SELECT query
+- `js/admin_panel.js` - Added Biography, Appearance, and Notes sections in correct position
+- `docs/CHAT_REPORT_CHARACTER_VIEW_FIELDS.mdc` - Session documentation
+- `VERSION.md`
+
+---
+
+## Version 0.10.13
 **Date:** November 2025
 
 ### Agent Rules Index Consolidation

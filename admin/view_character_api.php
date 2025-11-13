@@ -25,7 +25,7 @@ if ($character_id <= 0) {
 // Get character with explicit columns using helper function
 $character = db_fetch_one($conn,
     "SELECT id, user_id, character_name, player_name, chronicle, nature, demeanor, concept,
-            clan, generation, sire, pc, biography, character_image, equipment, notes,
+            clan, generation, sire, pc, biography, appearance, character_image, equipment, notes,
             total_xp, spent_xp, custom_data, status AS current_state, camarilla_status,
             created_at, updated_at
      FROM characters WHERE id = ?",

@@ -1023,6 +1023,27 @@ function renderCharacterView(mode) {
         contentHtml += '</div>';
     }
     
+    // Biography
+    if (char.biography) {
+        contentHtml += '<h3>Biography</h3>';
+        const bioEscaped = char.biography.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        contentHtml += '<div class="text-content">' + bioEscaped.replace(/\n/g, '<br>') + '</div>';
+    }
+    
+    // Appearance
+    if (char.appearance) {
+        contentHtml += '<h3>Appearance</h3>';
+        const appEscaped = char.appearance.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        contentHtml += '<div class="text-content">' + appEscaped.replace(/\n/g, '<br>') + '</div>';
+    }
+    
+    // Notes
+    if (char.notes) {
+        contentHtml += '<h3>Notes</h3>';
+        const notesEscaped = char.notes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+        contentHtml += '<div class="text-content">' + notesEscaped.replace(/\n/g, '<br>') + '</div>';
+    }
+    
     // Custom Data
     contentHtml += '<h3>Custom Data</h3>';
     if (char.custom_data) {
@@ -1087,25 +1108,11 @@ function renderCharacterView(mode) {
         contentHtml += '<p class="empty-state">No relationships recorded.</p>';
     }
     
-    // Biography
-    if (char.biography) {
-        contentHtml += '<h3>Biography</h3>';
-        const bioEscaped = char.biography.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-        contentHtml += '<div class="text-content">' + bioEscaped.replace(/\n/g, '<br>') + '</div>';
-    }
-    
     // Equipment
     if (char.equipment) {
         contentHtml += '<h3>Equipment</h3>';
         const equipEscaped = char.equipment.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
         contentHtml += '<div class="text-content">' + equipEscaped.replace(/\n/g, '<br>') + '</div>';
-    }
-    
-    // Notes
-    if (char.notes) {
-        contentHtml += '<h3>Notes</h3>';
-        const notesEscaped = char.notes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-        contentHtml += '<div class="text-content">' + notesEscaped.replace(/\n/g, '<br>') + '</div>';
     }
     
     // Metadata
