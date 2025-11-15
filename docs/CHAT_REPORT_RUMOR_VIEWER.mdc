@@ -1,0 +1,119 @@
+# Chat Report: Rumor Debug / Viewer Implementation
+
+**Date:** January 15, 2025  
+**Session Focus:** Admin Panel - Rumor Debug / Viewer Feature
+
+## Overview
+
+Implemented a comprehensive Rumor Debug / Viewer section in the admin panel to allow browsing and inspecting all rumor JSON files as the RumorEngine sees them. This is a read-only debugging tool for inspecting rumor data structure and content.
+
+## Features Implemented
+
+### 1. Rumor Viewer Page (`admin/rumor_viewer.php`)
+- **Complete Implementation** – New PHP page with full rumor browsing functionality
+- **Header/Footer Integration** – Uses standard admin panel header and footer includes
+- **Navigation Link** – Added "📰 Rumors" button to admin panel navigation
+
+### 2. Filter Controls
+- **Source File Filter** – Dropdown to select "All Rumors (merged)" or individual rumor files
+- **Category Filter** – Dropdown to filter by category type
+- **Rarity Filter** – Dropdown to filter by rarity level
+- **Text Search** – Search box for filtering by text content in text, ghost_text, and gm_notes fields
+- **Per Page Control** – Dropdown to set items per page (20, 50, 100)
+- **Responsive Width** – Category and Rarity filters set to 50% width (12.5% of container)
+
+### 3. Rumor Table
+- **Column Structure** – ID, Category, Rarity, Targets, Sources, Text Preview
+- **Sortable Columns** – Click headers to sort ascending/descending with visual indicators
+- **Colored Badges** – Rarity and category displayed with color-coded badges
+  - Rarity: common (gray), uncommon (green), rare (gold), very rare (orange), legendary (purple)
+  - Category: Media (blue), Street (orange), Elysium (brown), Politics (red), Society (purple), Crime (crimson), Supernatural (purple)
+- **Text Truncation** – Long text values truncated with ellipsis and full text in tooltip
+- **Consistent Styling** – Uses same `.character-table` styling as admin panel character table
+
+### 4. Action Buttons
+- **View Details (👁️)** – Opens modal with full rumor information
+- **Edit Details (✏️)** – Opens same modal (placeholder for future edit functionality)
+- **Delete (🗑️)** – Placeholder alert (read-only viewer maintained)
+- **Removed Expand Button** – Inline expand functionality removed, all details in modal
+
+### 5. View/Edit Modal
+- **Bootstrap Modal** – Matches styling from admin panel character view modal
+- **Complete Information Display** – Shows ID, Category, Rarity, Text, Ghost Text, GM Notes, Targets, Source Types, Delivery Contexts, Plot IDs, Source File, Prerequisites, Weight Modifiers
+- **Badge Rendering** – Category and rarity displayed with colored badges in modal
+- **Formatted Display** – JSON fields (prerequisites, weight_modifiers) shown as formatted code blocks
+- **Accessibility** – Proper ARIA attributes and focus management
+- **Readable Text** – Light text color for readability on dark background
+
+### 6. PC Rumor History Lookup
+- **Optional Section** – Separate section below main table
+- **PC ID Input** – Text input for entering PC ID
+- **History Display** – Shows rumor_id, times_shown, last_shown_night from `data/state/rumor_history_<PC_ID>.json`
+- **Error Handling** – Friendly message if no history file exists for PC ID
+
+### 7. Client-Side Functionality
+- **JavaScript Filtering** – Real-time filtering as user types/changes filters
+- **Sorting Logic** – Client-side sorting of table rows
+- **Pagination** – Dynamic pagination based on per-page setting
+- **State Persistence** – Per-page setting saved to localStorage
+- **Badge Rendering** – JavaScript functions matching PHP badge rendering for modal
+
+## Technical Details
+
+### PHP Functions
+- `loadAllRumors()` – Loads and merges all JSON files from `data/rumors/*.json`
+- `loadRumorFile($filename)` – Loads rumors from specific file
+- `loadRumorHistory($pcId)` – Loads PC-specific rumor history
+- `getRumorFiles()` – Returns list of available rumor files
+- `render_rarity_badge($rarity)` – Generates HTML for rarity badges with colors
+- `render_category_badge($category)` – Generates HTML for category badges with colors
+- `truncate_text($text, $maxLength)` – Truncates text with ellipsis
+
+### JavaScript Functions
+- `applyFilters(resetPage)` – Main filtering function combining all filter types
+- `updatePagination(visibleRows)` – Manages pagination and page button generation
+- `sortRumorTable(column, direction)` – Client-side table sorting
+- `initializeRumorSorting()` – Sets up click handlers for sortable headers
+- `renderRarityBadge(rarity)` – JavaScript version of PHP rarity badge renderer
+- `renderCategoryBadge(category)` – JavaScript version of PHP category badge renderer
+- Modal population logic for View and Edit buttons
+
+### CSS Styling
+- Reused `.character-table-wrapper` and `.character-table` classes from admin panel
+- Custom column width rules using `nth-child` selectors
+- Badge styling for rarity and category colors
+- Filter control responsive widths
+- Modal styling matching admin panel character view modal
+
+## Files Created/Modified
+
+### New Files
+- `admin/rumor_viewer.php` – Complete rumor viewer implementation (~1400 lines)
+
+### Modified Files
+- `admin/admin_panel.php` – Added navigation link to Rumor Viewer
+- `ToDo.MD` – Added PHP 8.4.11 compatibility task
+- `VERSION.md` – Updated to version 0.10.16
+- `admin/rumor_viewer.php` – Version constant updated
+
+## Version Information
+
+**Version Increment:** 0.10.15 → 0.10.16 (Patch)  
+**Reason:** New admin tool feature (fully functional Rumor Debug / Viewer)
+
+## Known Issues / Future Work
+
+- View Character button error mentioned by user (to be addressed in next chat)
+- Edit functionality is placeholder only (modal opens but no edit capability yet)
+- Delete functionality is placeholder alert only (maintains read-only viewer)
+- PHP 8.4.11 compatibility check added to ToDo list
+
+## Testing Notes
+
+- All filters work correctly and combine with AND logic
+- Sorting works on all sortable columns
+- Pagination correctly shows/hides rows based on page
+- Modal displays all rumor fields correctly
+- Badges render with correct colors
+- PC history lookup works when file exists
+- Error handling for missing/malformed JSON files works correctly

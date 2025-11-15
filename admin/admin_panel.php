@@ -127,6 +127,9 @@ function render_clan_badge(string $clan): string {
         <div class="col-12 col-sm-6 col-md-4 col-lg">
             <a href="agents.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Agents</a>
         </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <a href="rumor_viewer.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📰 Rumors</a>
+        </div>
     </nav>
     
     <!-- Character Statistics -->

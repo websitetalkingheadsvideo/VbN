@@ -26,6 +26,9 @@
 
 ## 🔧 Technical Issues
 
+### PHP Compatibility
+- **Update project for PHP 8.4.11 compatibility** - Host has been updated to PHP 8.4.11; ensure all code is compatible with PHP 8.x features and check for any deprecated functions or syntax issues
+
 ### Character Creation System
 - **Complete 8-tab character creation form** - Currently only Basic Info and partial Traits are implemented
 - **Fix character loading/editing functionality** - Allow users to modify existing characters

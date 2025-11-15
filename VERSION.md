@@ -1,6 +1,37 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.15 (Current)
+## Version 0.10.16 (Current)
+**Date:** January 15, 2025
+
+### Rumor Debug / Viewer - Admin Panel Feature
+- 📰 **New Admin Tool** – Created comprehensive Rumor Debug / Viewer section in admin panel (`admin/rumor_viewer.php`)
+- 🔍 **Full Rumor Inspection** – Browse and inspect all rumor JSON files as RumorEngine sees them
+- 🎨 **Consistent Styling** – Matches existing admin panel design with character-table styling
+- 🔎 **Advanced Filtering** – Filter by source file, category, rarity, and text search
+- 📊 **Sortable Table** – Click column headers to sort rumors by ID, category, rarity, targets, sources, or text
+- 📄 **Pagination** – Configurable per-page display (20, 50, 100 items)
+- 👁️ **View Modal** – Click "View Details" to see full rumor information in modal (same style as character view)
+- ✏️ **Edit Button** – Edit button opens same modal for future editing functionality
+- 🗑️ **Delete Placeholder** – Delete button with placeholder alert (read-only viewer maintained)
+- 🏷️ **Colored Badges** – Visual badges for rarity (common=gray, uncommon=green, rare=gold, etc.) and category types
+- 📝 **PC History Lookup** – Optional section to view rumor history for specific PC IDs
+- 🎯 **Responsive Design** – Filter controls adapt to screen size, Category and Rarity filters at 50% width
+
+### Technical Implementation:
+- PHP functions for loading rumors from `data/rumors/*.json` files
+- JavaScript for client-side filtering, sorting, and pagination
+- Bootstrap 5.3.2 modal integration matching admin panel character view
+- Graceful error handling for malformed JSON files
+- Read-only viewer (no editing/saving functionality yet)
+
+### Files Modified:
+- `admin/rumor_viewer.php` - New file, complete Rumor Debug / Viewer implementation
+- `admin/admin_panel.php` - Added navigation link to Rumor Viewer
+- `ToDo.MD` - Added PHP 8.4.11 compatibility task
+- `VERSION.md` - Version history update
+
+---
+## Version 0.10.15
 **Date:** November 14, 2025
 
 ### Changes:
