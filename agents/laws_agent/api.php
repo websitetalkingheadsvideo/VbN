@@ -9,6 +9,7 @@ header('Content-Type: application/json');
 
 require_once __DIR__ . '/../../includes/connect.php';
 require_once __DIR__ . '/../../includes/anthropic_helper.php';
+require_once __DIR__ . '/markdown_loader.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -366,6 +367,45 @@ function seed_traditions(mysqli $conn, string $title = 'VTM - Traditions (Refere
 
 function ask_laws_agent(mysqli $conn, string $question, ?string $category = null, ?string $system = null): array
 {
+    // Try file-based Laws of the Night search first
+    $fileResults = [];
+    try {
+        $loader = new LawsOfTheNightLoader();
+        $loadResult = $loader->loadIndex();
+        
+        if ($loadResult['success'] && $loadResult['files_loaded'] > 0) {
+            // Map category filter if provided
+            $fileCategory = null;
+            if ($category === 'Core') {
+                // For Laws of the Night, we can search by content type
+                // Let the search handle it without category filter initially
+            }
+            
+            // Search file-based index
+            $fileResults = $loader->search($question, $fileCategory, 10);
+            
+            // Convert file results to unified format
+            $fileResults = array_map(static function ($entry) use ($loader) {
+                return [
+                    'source_type' => 'file',
+                    'book_title' => 'Laws of the Night Revised',
+                    'page_number' => $entry['chapter'] ?? 0,
+                    'category' => ucfirst($entry['category']),
+                    'system_type' => 'MET-VTM',
+                    'page_text' => $entry['content'],
+                    'relevance' => $entry['relevance'] ?? 0,
+                    'file_path' => $entry['relative_path'],
+                    'title' => $entry['title'],
+                    'section' => $entry['section'] ?? null,
+                ];
+            }, $fileResults);
+        }
+    } catch (Throwable $e) {
+        // Silently fall back to database if file system fails
+        error_log('Laws of the Night file loader error: ' . $e->getMessage());
+    }
+
+    // Database search (existing functionality)
     if (question_indicates_traditions($question)) {
         $searchResults = search_rulebooks_traditions($conn, $category, $system, 20);
         if ($searchResults === []) {
@@ -470,6 +510,36 @@ function ask_laws_agent(mysqli $conn, string $question, ?string $category = null
         $searchResults = search_rulebooks($conn, $question, $category, $system, 10);
     }
 
+    // Add source_type to database results
+    $searchResults = array_map(static function ($row) {
+        $row['source_type'] = 'database';
+        return $row;
+    }, $searchResults);
+
+    // Combine file and database results, prioritizing file results
+    $allResults = array_merge($fileResults, $searchResults);
+    
+    // Sort by relevance if available
+    if (!empty($allResults)) {
+        usort($allResults, static function ($a, $b) {
+            $relevanceA = (float) ($a['relevance'] ?? 0);
+            $relevanceB = (float) ($b['relevance'] ?? 0);
+            // Prioritize file results slightly
+            if (($a['source_type'] ?? '') === 'file' && ($b['source_type'] ?? '') !== 'file') {
+                $relevanceA += 50;
+            }
+            if (($b['source_type'] ?? '') === 'file' && ($a['source_type'] ?? '') !== 'file') {
+                $relevanceB += 50;
+            }
+            return $relevanceB <=> $relevanceA;
+        });
+        
+        // Limit total results
+        $allResults = array_slice($allResults, 0, 15);
+    }
+
+    $searchResults = $allResults;
+
     if ($searchResults === []) {
         return [
             'success' => true,
@@ -523,14 +593,26 @@ PROMPT;
 
     $sources = array_map(
         static function ($row): array {
-            return [
+            $source = [
                 'book' => $row['book_title'],
                 'page' => (int) $row['page_number'],
                 'category' => $row['category'],
                 'system' => $row['system_type'],
                 'excerpt' => extract_excerpt((string) $row['page_text'], 300),
-                'relevance' => (float) $row['relevance'],
+                'relevance' => (float) ($row['relevance'] ?? 0),
             ];
+            
+            // Add file-specific metadata if available
+            if (($row['source_type'] ?? '') === 'file') {
+                $source['source_type'] = 'file';
+                $source['file_path'] = $row['file_path'] ?? null;
+                $source['title'] = $row['title'] ?? null;
+                $source['section'] = $row['section'] ?? null;
+            } else {
+                $source['source_type'] = 'database';
+            }
+            
+            return $source;
         },
         $searchResults
     );
@@ -646,6 +728,78 @@ try {
                 'database' => 'connected',
                 'authenticated' => true,
             ]);
+            break;
+
+        case 'debug_stats':
+            try {
+                $loader = new LawsOfTheNightLoader();
+                $loadResult = $loader->loadIndex();
+                $stats = $loader->getStats();
+                
+                echo json_encode([
+                    'success' => true,
+                    'index_status' => $loadResult,
+                    'stats' => $stats,
+                    'base_path' => $loader->getBasePath(),
+                ]);
+            } catch (Throwable $e) {
+                echo json_encode([
+                    'success' => false,
+                    'error' => $e->getMessage(),
+                ]);
+            }
+            break;
+
+        case 'test_search':
+            $query = $_GET['query'] ?? $_POST['query'] ?? '';
+            if (empty($query)) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'error' => 'Query parameter is required',
+                ]);
+                exit;
+            }
+
+            try {
+                $loader = new LawsOfTheNightLoader();
+                $loadResult = $loader->loadIndex();
+                
+                if (!$loadResult['success']) {
+                    echo json_encode([
+                        'success' => false,
+                        'error' => 'Failed to load index: ' . implode(', ', $loadResult['errors']),
+                    ]);
+                    break;
+                }
+
+                $category = $_GET['category'] ?? $_POST['category'] ?? null;
+                $results = $loader->search($query, $category, 10);
+                
+                // Format results for display
+                $formatted = array_map(static function ($entry) use ($loader) {
+                    return [
+                        'title' => $entry['title'],
+                        'category' => $entry['category'],
+                        'section' => $entry['section'],
+                        'file_path' => $entry['relative_path'],
+                        'relevance' => $entry['relevance'],
+                        'excerpt' => $loader->getExcerpt($entry['content'], 200),
+                    ];
+                }, $results);
+
+                echo json_encode([
+                    'success' => true,
+                    'query' => $query,
+                    'results' => $formatted,
+                    'count' => count($results),
+                ]);
+            } catch (Throwable $e) {
+                echo json_encode([
+                    'success' => false,
+                    'error' => $e->getMessage(),
+                ]);
+            }
             break;
 
         default:

@@ -1,6 +1,35 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.16 (Current)
+## Version 0.10.17 (Current)
+**Date:** January 15, 2025
+
+### Laws Agent - Laws of the Night Integration
+- 🔍 **File-Based Search System** – Integrated `agents/Laws_of_the_Night/` folder system into Laws Agent
+- 📚 **Markdown Loader** – Created `markdown_loader.php` to index all markdown files (chapters, clans, disciplines)
+- 🔄 **Hybrid Search** – File-based search runs first, database as fallback, results merged and prioritized
+- 📍 **Source Attribution** – All results show source type (file vs database) with file paths
+- 🛠️ **Admin/Debug Tools** – Added `debug_stats` and `test_search` API endpoints for monitoring
+- 📖 **Documentation** – Complete README with architecture, usage, and adding new content instructions
+- 🎯 **Path Display Fix** – Removed full server path prefix, shows only relative paths in sources
+
+### Technical Implementation:
+- Recursive directory scanning for all `.md` files in Laws_of_the_Night/
+- YAML frontmatter extraction (title, chapter, section, tags)
+- Relevance scoring: title (100pts) > section (50pts) > content (2pts/word) > tags (15pts)
+- Category-based filtering (chapters, clans, disciplines)
+- Graceful error handling with database fallback
+- Backward compatible with existing database search
+
+### Files Created:
+- `agents/laws_agent/markdown_loader.php` - Core loader class
+- `agents/laws_agent/README.md` - Comprehensive documentation
+
+### Files Modified:
+- `agents/laws_agent/api.php` - Integrated file-based search
+- `agents/laws_agent/index.php` - Enhanced source display
+
+---
+## Version 0.10.16
 **Date:** January 15, 2025
 
 ### Rumor Debug / Viewer - Admin Panel Feature
@@ -39,7 +68,7 @@
 
 ---
 
-## Version 0.10.14 (Current)
+## Version 0.10.17 (Current)
 **Date:** January 2025
 
 ### Character View Missing Fields Fix
@@ -600,7 +629,7 @@
 
 ---
 
-## Version 0.9.17 (Current)
+## Version 0.10.17 (Current)
 **Date:** November 2025
 
 ### Character Agent Automation & Reporting:
@@ -1315,7 +1344,7 @@
 ---
 
 
-## Version 0.9.3 (Current)
+## Version 0.10.17 (Current)
 **Date:** January 28, 2025
 
 ### Location JSON Import System & Delete Function Fixes:
@@ -1975,7 +2004,7 @@
 ---
 
 
-## Version 0.9.3 (Current)
+## Version 0.10.17 (Current)
 **Date:** January 4, 2025
 
 ### Questionnaire System Enhancements:

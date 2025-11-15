@@ -419,7 +419,14 @@ function askQuestion(predefinedQuestion = null) {
                     answer += '<span class="sources-title">Sources: </span>';
                     const sourceLinks = data.sources.map((source, index) => {
                         const sourceData = JSON.stringify(source).replace(/"/g, '&quot;');
-                        return `<span class="source-link" onclick="viewSource(${index}, ${sourceData})" title="Page ${source.page} • ${source.category} • ${source.system}">${escapeHtml(source.book)}</span>`;
+                        let sourceLabel = escapeHtml(source.book);
+                        if (source.source_type === 'file' && source.file_path) {
+                            sourceLabel += ' <span style="color: #666; font-size: 0.9em;">(' + escapeHtml(source.file_path) + ')</span>';
+                        }
+                        const title = source.source_type === 'file' 
+                            ? `${source.file_path || source.title || 'File'} • ${source.category} • ${source.system}`
+                            : `Page ${source.page} • ${source.category} • ${source.system}`;
+                        return `<span class="source-link" onclick="viewSource(${index}, ${sourceData})" title="${title}">${sourceLabel}</span>`;
                     });
                     answer += sourceLinks.join(', ');
                     answer += '</div>';
