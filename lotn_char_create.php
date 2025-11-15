@@ -21,6 +21,22 @@ if (isAuthBypassEnabled() && !isset($_SESSION['user_id'])) {
 
 // Database connection
 include 'includes/connect.php';
+
+// Load archetypes from database for nature/demeanor dropdowns
+$archetypes = [];
+if ($conn) {
+    $archetypes_query = "SELECT name FROM archetypes ORDER BY name ASC";
+    $archetypes_result = @mysqli_query($conn, $archetypes_query);
+    if ($archetypes_result) {
+        while ($row = mysqli_fetch_assoc($archetypes_result)) {
+            $archetypes[] = $row['name'];
+        }
+        mysqli_free_result($archetypes_result);
+    }
+    // If query failed or table doesn't exist, fall back to empty array
+    // This prevents 500 errors if archetypes table hasn't been created yet
+}
+
 $extra_css = [
   'css/style.css',
   'css/character_image.css',
@@ -362,34 +378,9 @@ include __DIR__ . '/includes/header.php';
                         <label for="nature">Nature *</label>
                         <select id="nature" name="nature" required>
                             <option value="">Select Nature...</option>
-                            <option value="Architect">Architect</option>
-                            <option value="Autist">Autist</option>
-                            <option value="Bon Vivant">Bon Vivant</option>
-                            <option value="Bravo">Bravo</option>
-                            <option value="Caregiver">Caregiver</option>
-                            <option value="Capitalist">Capitalist</option>
-                            <option value="Competitor">Competitor</option>
-                            <option value="Conformist">Conformist</option>
-                            <option value="Conniver">Conniver</option>
-                            <option value="Curmudgeon">Curmudgeon</option>
-                            <option value="Deviant">Deviant</option>
-                            <option value="Director">Director</option>
-                            <option value="Fanatic">Fanatic</option>
-                            <option value="Gallant">Gallant</option>
-                            <option value="Judge">Judge</option>
-                            <option value="Loner">Loner</option>
-                            <option value="Martyr">Martyr</option>
-                            <option value="Masochist">Masochist</option>
-                            <option value="Monster">Monster</option>
-                            <option value="Pedagogue">Pedagogue</option>
-                            <option value="Penitent">Penitent</option>
-                            <option value="Perfectionist">Perfectionist</option>
-                            <option value="Rebel">Rebel</option>
-                            <option value="Rogue">Rogue</option>
-                            <option value="Survivor">Survivor</option>
-                            <option value="Thrill-Seeker">Thrill-Seeker</option>
-                            <option value="Traditionalist">Traditionalist</option>
-                            <option value="Visionary">Visionary</option>
+                            <?php foreach ($archetypes as $archetype): ?>
+                                <option value="<?php echo htmlspecialchars($archetype); ?>"><?php echo htmlspecialchars($archetype); ?></option>
+                            <?php endforeach; ?>
                         </select>
                         <div class="helper-text">True personality</div>
                     </div>
@@ -398,34 +389,9 @@ include __DIR__ . '/includes/header.php';
                         <label for="demeanor">Demeanor *</label>
                         <select id="demeanor" name="demeanor" required>
                             <option value="">Select Demeanor...</option>
-                            <option value="Architect">Architect</option>
-                            <option value="Autist">Autist</option>
-                            <option value="Bon Vivant">Bon Vivant</option>
-                            <option value="Bravo">Bravo</option>
-                            <option value="Caregiver">Caregiver</option>
-                            <option value="Capitalist">Capitalist</option>
-                            <option value="Competitor">Competitor</option>
-                            <option value="Conformist">Conformist</option>
-                            <option value="Conniver">Conniver</option>
-                            <option value="Curmudgeon">Curmudgeon</option>
-                            <option value="Deviant">Deviant</option>
-                            <option value="Director">Director</option>
-                            <option value="Fanatic">Fanatic</option>
-                            <option value="Gallant">Gallant</option>
-                            <option value="Judge">Judge</option>
-                            <option value="Loner">Loner</option>
-                            <option value="Martyr">Martyr</option>
-                            <option value="Masochist">Masochist</option>
-                            <option value="Monster">Monster</option>
-                            <option value="Pedagogue">Pedagogue</option>
-                            <option value="Penitent">Penitent</option>
-                            <option value="Perfectionist">Perfectionist</option>
-                            <option value="Rebel">Rebel</option>
-                            <option value="Rogue">Rogue</option>
-                            <option value="Survivor">Survivor</option>
-                            <option value="Thrill-Seeker">Thrill-Seeker</option>
-                            <option value="Traditionalist">Traditionalist</option>
-                            <option value="Visionary">Visionary</option>
+                            <?php foreach ($archetypes as $archetype): ?>
+                                <option value="<?php echo htmlspecialchars($archetype); ?>"><?php echo htmlspecialchars($archetype); ?></option>
+                            <?php endforeach; ?>
                         </select>
                         <div class="helper-text">Public personality</div>
                     </div>
@@ -2606,23 +2572,8 @@ include __DIR__ . '/includes/header.php';
                 }
             })();
 
-            // If editing an existing character, fetch its image filename and display
-            (async function ensurePreviewFromServer(){
-                try {
-                    const p = new URLSearchParams(location.search);
-                    const id = p.get('id');
-                    if (!id) return;
-                    const resp = await fetch('load_character.php?id=' + encodeURIComponent(id));
-                    if (!resp.ok) return;
-                    const data = await resp.json();
-                    const filename = data && data.character && data.character.character_image ? data.character.character_image : '';
-                    if (filename) {
-                        const hidden = document.getElementById('imagePath');
-                        if (hidden) hidden.value = filename;
-                        showPreview(filename);
-                    }
-                } catch (_) {}
-            })();
+            // Note: Character image is loaded by the main app via DataManager.loadCharacter()
+            // No need for duplicate fetch here - the main app will populate imagePath when character loads
         });
     </script>
     

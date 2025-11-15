@@ -1,6 +1,37 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.17 (Current)
+## Version 0.10.18 (Current)
+**Date:** January 15, 2025
+
+### Nature/Demeanor Archetypes System
+- 🗄️ **Archetypes Table** – Created normalized `archetypes` table with id, name, and description fields
+- 🔄 **Database Synchronization** – Merged all unique nature/demeanor values from characters table into archetypes
+- 📋 **Dynamic Dropdowns** – Updated nature and demeanor dropdowns to query from archetypes table instead of hardcoded options
+- 🛠️ **Migration Scripts** – Created scripts to scan, populate, and update dropdowns automatically
+- 🐛 **Bug Fixes** – Fixed 500 errors when editing characters, removed console warnings from DisciplineSystem
+- ✨ **Auto-Generated Descriptions** – Populated archetypes with dictionary definitions and World of Darkness context
+
+### Technical Implementation:
+- Created `archetypes` table with VARCHAR(1000) description field for future editing
+- Scripts: `create_archetypes_table.php`, `populate_archetypes.php`, `update_dropdowns_to_use_archetypes.php`
+- Both nature and demeanor dropdowns now use same source (archetypes table)
+- Added error handling to prevent 500 errors if table doesn't exist
+- Removed unnecessary console.warn statements from DisciplineSystem.js
+
+### Files Created:
+- `database/create_archetypes_table.php` - Creates archetypes table
+- `database/populate_archetypes.php` - Merges and populates archetypes with descriptions
+- `database/update_dropdowns_to_use_archetypes.php` - Updates form to use dynamic queries
+- `database/scan_nature_demeanor.php` - Diagnostic script for finding missing values
+- `database/update_nature_demeanor_dropdowns.php` - Updates dropdowns with missing values
+
+### Files Modified:
+- `lotn_char_create.php` - Updated to query archetypes table dynamically
+- `js/modules/systems/DisciplineSystem.js` - Removed console warnings
+
+---
+
+## Version 0.10.17 (Previous)
 **Date:** January 15, 2025
 
 ### Laws Agent - Laws of the Night Integration

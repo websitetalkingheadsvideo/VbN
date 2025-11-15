@@ -76,10 +76,7 @@ class DisciplineSystem {
         try {
             // Try to load from API via DataManager
             if (this.dataManager && typeof this.dataManager.fetchDisciplineData === 'function') {
-                console.log('DisciplineSystem: Loading discipline data from API');
                 const response = await this.dataManager.fetchDisciplineData();
-                
-                console.log('DisciplineSystem: API response received:', response);
                 
                 if (response && response.success && response.data && response.data.disciplinePowers) {
                     // Transform API response to our expected format
@@ -124,17 +121,6 @@ class DisciplineSystem {
                                 this.disciplineCategories['BloodSorcery'].push(disciplineName);
                             }
                         }
-                    });
-                    
-                    console.log('DisciplineSystem: Successfully loaded discipline data from API', Object.keys(this.disciplineData).length, 'disciplines');
-                    console.log('DisciplineSystem: BloodSorcery category now includes:', this.disciplineCategories['BloodSorcery']);
-                    
-                    // Debug: Log Thaumaturgy paths to verify they're loaded
-                    const thaumaturgyPaths = Object.keys(this.disciplineData).filter(name => name.startsWith('Path of'));
-                    console.log('DisciplineSystem: Thaumaturgy paths loaded:', thaumaturgyPaths);
-                    thaumaturgyPaths.forEach(pathName => {
-                        const pathData = this.disciplineData[pathName];
-                        console.log(`DisciplineSystem: ${pathName} has ${Object.keys(pathData.powers).length} powers:`, Object.keys(pathData.powers));
                     });
                     
                     return;
@@ -306,6 +292,16 @@ class DisciplineSystem {
                     "4": { "name": "Hymn to Discord", "description": "Split your voice into counterpoint that disorients foes or bolsters allies mid-conflict.", "cost": "1 Willpower" },
                     "5": { "name": "Voice of the Siren", "description": "Resonate with a target's soul, compelling obedience or despair with a single, perfect note.", "cost": "1 Willpower" }
                 }
+            },
+            "Serpentis": {
+                "description": "The Discipline of Serpentis allows Followers of Set to transform and control through serpentine powers.",
+                "powers": {
+                    "1": { "name": "The Eyes of the Serpent", "description": "The vampire can hypnotize others with their gaze, causing them to become entranced and more susceptible to suggestion.", "cost": "1 Willpower" },
+                    "2": { "name": "The Tongue of the Asp", "description": "The vampire can extend their tongue into a venomous serpent's tongue, capable of injecting a paralyzing or deadly venom.", "cost": "1 Willpower" },
+                    "3": { "name": "The Skin of the Adder", "description": "The vampire's skin becomes scaly and tough like a snake's, providing protection and allowing them to blend with their environment.", "cost": "1 Willpower" },
+                    "4": { "name": "The Form of the Cobra", "description": "The vampire can transform into a large cobra, gaining the abilities and form of a serpent while maintaining their intelligence.", "cost": "1 Willpower" },
+                    "5": { "name": "The Heart of Darkness", "description": "The vampire can transform their heart into a black, venomous organ that can be used to create powerful blood magic effects or curse others.", "cost": "1 Willpower" }
+                }
             }
         };
         
@@ -459,8 +455,6 @@ class DisciplineSystem {
         const button = event.target;
         const disciplineName = button.dataset.discipline;
         const powerLevel = button.dataset.powerLevel;
-        
-        console.log('DisciplineSystem: Power click - discipline:', disciplineName, 'level:', powerLevel);
         
         if (!disciplineName || !powerLevel) return;
         
@@ -838,10 +832,6 @@ class DisciplineSystem {
      * Show discipline popover
      */
     showPopover(disciplineName, button) {
-        console.log('DisciplineSystem: showPopover called for:', disciplineName);
-        console.log('DisciplineSystem: disciplineData available:', !!this.disciplineData);
-        console.log('DisciplineSystem: discipline data for', disciplineName, ':', this.disciplineData?.[disciplineName]);
-        
         if (!this.disciplineData || !this.disciplineData[disciplineName]) {
             console.error(`DisciplineSystem: Discipline data not found for ${disciplineName}`);
             return;
@@ -1045,8 +1035,7 @@ class DisciplineSystem {
      */
     getPowerInfo(disciplineName, level) {
         if (!this.disciplineData || !this.disciplineData[disciplineName]) {
-            console.warn(`DisciplineSystem: getPowerInfo - discipline '${disciplineName}' not found in disciplineData`);
-            console.warn(`DisciplineSystem: Available disciplines:`, Object.keys(this.disciplineData || {}));
+            // Discipline data not loaded yet - return fallback (will update when data loads)
             return { name: 'Unknown Power', description: 'Power not found', cost: 'Unknown' };
         }
         
@@ -1056,8 +1045,7 @@ class DisciplineSystem {
         const power = discipline.powers[levelKey];
         
         if (!power) {
-            console.warn(`DisciplineSystem: getPowerInfo - power level ${level} (key: ${levelKey}) not found for ${disciplineName}`);
-            console.warn(`DisciplineSystem: Available power levels for ${disciplineName}:`, Object.keys(discipline.powers || {}));
+            // Power level not found - return fallback
             return { name: 'Unknown Power', description: 'Power not found', cost: 'Unknown' };
         }
         
@@ -1068,14 +1056,12 @@ class DisciplineSystem {
      * Update character preview
      */
     updateCharacterPreview() {
-        console.log('DisciplineSystem: Character preview updated');
     }
     
     /**
      * Update XP display
      */
     updateXPDisplay() {
-        console.log('DisciplineSystem: XP display updated');
     }
     
     /**
