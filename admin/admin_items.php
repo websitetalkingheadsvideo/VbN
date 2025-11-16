@@ -149,7 +149,7 @@ while ($char = $characters_result->fetch_assoc()) {
 
     <!-- Items Table -->
     <div class="items-table-wrapper table-responsive">
-        <table class="items-table" id="itemsTable">
+        <table class="items-table table table-dark table-hover align-middle" id="itemsTable">
             <thead>
                 <tr>
                     <th data-sort="id">ID <span class="sort-icon">⇅</span></th>

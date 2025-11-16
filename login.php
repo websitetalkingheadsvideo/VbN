@@ -70,7 +70,7 @@ if (file_exists($loginDisableFile)) {
             <?php else: ?>
                 <?php
                 if (isset($_SESSION['error'])) {
-                    echo '<div class="login-error" role="alert" aria-live="polite">⚠️ ' . htmlspecialchars($_SESSION['error']) . '</div>';
+                    echo '<div class="login-error alert alert-danger" role="alert" aria-live="polite">⚠️ ' . htmlspecialchars($_SESSION['error']) . '</div>';
                     unset($_SESSION['error']);
                 }
                 ?>

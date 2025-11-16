@@ -79,7 +79,7 @@ include __DIR__ . '/../includes/header.php';
             <button class="filter-btn btn btn-outline-danger" data-filter="sireless">Sireless</button>
         </div>
         <div class="search-box">
-            <input type="text" id="relationshipSearch" placeholder="🔍 Search by name or sire..." />
+            <input type="text" id="relationshipSearch" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="🔍 Search by name or sire..." />
         </div>
         <div class="action-buttons">
             <button class="action-btn add-btn" onclick="openAddRelationshipModal()">+ Add Relationship</button>
@@ -89,7 +89,7 @@ include __DIR__ . '/../includes/header.php';
 
     <!-- Relationship Table -->
     <div class="relationship-table-wrapper">
-        <table class="relationship-table" id="relationshipTable">
+        <table class="relationship-table table table-dark table-hover align-middle" id="relationshipTable">
             <thead>
                 <tr>
                     <th data-sort="character_name">Vampire <span class="sort-icon">⇅</span></th>

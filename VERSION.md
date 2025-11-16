@@ -1,7 +1,18 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.20 (Current)
+## Version 0.10.21 (Current)
 **Date:** November 16, 2025
+
+### Tables and alerts standardization; list_characters Bootstrap integration
+- Standardized remaining admin tables to Bootstrap table classes (dark/hover/align-middle)
+- Normalized error alerts to `alert alert-danger` where applicable
+- Converted `data/list_characters.php` to use site header/footer; replaced inline styles with Bootstrap cards/table/alerts
+- Preserved existing data/behavior; minimal structural changes
+
+### Files Modified (highlights)
+- `admin/admin_items.php`, `admin/admin_locations.php`, `admin/admin_npc_briefing.php`, `admin/admin_sire_childe.php`, `admin/admin_sire_childe_enhanced.php` (tables)
+- `admin/npc_tracker_submit.php`, `admin/npc_tracker_submit_updated.php`, `login.php` (alerts)
+- `data/list_characters.php` (migrated to Bootstrap, header/footer included)
 
 ### Bootstrap forms standardization (selects, textareas, radios, checkboxes)
 - Standardized selects to `.form-select` (dark theme where appropriate)

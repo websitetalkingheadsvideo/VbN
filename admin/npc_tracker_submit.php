@@ -310,7 +310,7 @@ define('LOTN_VERSION', '0.2.0');
         <?php endif; ?>
 
         <?php if ($error): ?>
-            <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
+            <div class="alert alert-danger"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
 
         <div class="guidelines">

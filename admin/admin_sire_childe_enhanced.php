@@ -106,13 +106,13 @@ include __DIR__ . '/../includes/header.php';
             <button class="filter-btn btn btn-outline-danger" data-filter="conflicts">Conflicts</button>
         </div>
         <div class="search-box">
-            <input type="text" id="relationshipSearch" placeholder="🔍 Search by name, sire, or biography..." />
+            <input type="text" id="relationshipSearch" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="🔍 Search by name, sire, or biography..." />
         </div>
     </div>
 
     <!-- Enhanced Relationship Table -->
     <div class="relationship-table-wrapper">
-        <table class="relationship-table" id="relationshipTable">
+        <table class="relationship-table table table-dark table-hover align-middle" id="relationshipTable">
             <thead>
                 <tr>
                     <th data-sort="character_name">Vampire <span class="sort-icon">⇅</span></th>

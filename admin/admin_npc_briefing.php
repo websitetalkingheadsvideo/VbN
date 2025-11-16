@@ -103,7 +103,7 @@ include __DIR__ . '/../includes/header.php';
 
     <!-- Character Table -->
     <div class="character-table-wrapper">
-        <table class="character-table" id="characterTable">
+        <table class="character-table table table-dark table-hover align-middle" id="characterTable">
             <thead>
                 <tr>
                     <th data-sort="id">ID <span class="sort-icon">⇅</span></th>
