@@ -215,46 +215,46 @@ include __DIR__ . '/../includes/header.php';
                 
                 <div class="form-group mb-3">
                     <label class="form-label">Security Level</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="security_level" value="1"> 1 - Minimal</label>
-                        <label><input type="radio" name="security_level" value="2"> 2 - Basic</label>
-                        <label><input type="radio" name="security_level" value="3" checked> 3 - Moderate</label>
-                        <label><input type="radio" name="security_level" value="4"> 4 - High</label>
-                        <label><input type="radio" name="security_level" value="5"> 5 - Maximum</label>
+                    <div class="radio-group form-check">
+                        <label class="form-check-label form-check-inline"><input type="radio" name="security_level" class="form-check-input" value="1"> 1 - Minimal</label>
+                        <label class="form-check-label form-check-inline"><input type="radio" name="security_level" class="form-check-input" value="2"> 2 - Basic</label>
+                        <label class="form-check-label form-check-inline"><input type="radio" name="security_level" class="form-check-input" value="3" checked> 3 - Moderate</label>
+                        <label class="form-check-label form-check-inline"><input type="radio" name="security_level" class="form-check-input" value="4"> 4 - High</label>
+                        <label class="form-check-label form-check-inline"><input type="radio" name="security_level" class="form-check-input" value="5"> 5 - Maximum</label>
                     </div>
                 </div>
 
-                <div class="checkbox-grid">
+                <div class="checkbox-grid form-check">
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_locks" value="1">
+                        <input type="checkbox" name="security_locks" class="form-check-input" value="1">
                         <span>Locks & Deadbolts</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_alarms" value="1">
+                        <input type="checkbox" name="security_alarms" class="form-check-input" value="1">
                         <span>Alarm Systems</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_guards" value="1">
+                        <input type="checkbox" name="security_guards" class="form-check-input" value="1">
                         <span>Guards/Security Personnel</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_hidden_entrance" value="1">
+                        <input type="checkbox" name="security_hidden_entrance" class="form-check-input" value="1">
                         <span>Hidden Entrances</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_sunlight_protected" value="1">
+                        <input type="checkbox" name="security_sunlight_protected" class="form-check-input" value="1">
                         <span>Sunlight Protection</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_warding_rituals" value="1">
+                        <input type="checkbox" name="security_warding_rituals" class="form-check-input" value="1">
                         <span>Warding Rituals</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_cameras" value="1">
+                        <input type="checkbox" name="security_cameras" class="form-check-input" value="1">
                         <span>Security Cameras</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="security_reinforced" value="1">
+                        <input type="checkbox" name="security_reinforced" class="form-check-input" value="1">
                         <span>Reinforced Structure</span>
                     </label>
                 </div>
@@ -270,37 +270,37 @@ include __DIR__ . '/../includes/header.php';
             <section class="form-section">
                 <h2><i class="fas fa-tools"></i> Utility Features</h2>
                 
-                <div class="checkbox-grid">
+                <div class="checkbox-grid form-check">
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_blood_storage" value="1">
+                        <input type="checkbox" name="utility_blood_storage" class="form-check-input" value="1">
                         <span>Blood Storage/Refrigeration</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_computers" value="1">
+                        <input type="checkbox" name="utility_computers" class="form-check-input" value="1">
                         <span>Computer Systems</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_library" value="1">
+                        <input type="checkbox" name="utility_library" class="form-check-input" value="1">
                         <span>Library/Archives</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_medical" value="1">
+                        <input type="checkbox" name="utility_medical" class="form-check-input" value="1">
                         <span>Medical Facilities</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_workshop" value="1">
+                        <input type="checkbox" name="utility_workshop" class="form-check-input" value="1">
                         <span>Workshop/Crafting Area</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_hidden_caches" value="1">
+                        <input type="checkbox" name="utility_hidden_caches" class="form-check-input" value="1">
                         <span>Hidden Item Caches</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_armory" value="1">
+                        <input type="checkbox" name="utility_armory" class="form-check-input" value="1">
                         <span>Armory/Weapons Storage</span>
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="utility_communications" value="1">
+                        <input type="checkbox" name="utility_communications" class="form-check-input" value="1">
                         <span>Communications Equipment</span>
                     </label>
                 </div>
@@ -349,7 +349,7 @@ include __DIR__ . '/../includes/header.php';
                 
                 <div class="form-group mb-3">
                     <label class="toggle-label">
-                        <input type="checkbox" id="has_supernatural" name="has_supernatural" value="1">
+                        <input type="checkbox" id="has_supernatural" name="has_supernatural" class="form-check-input" value="1">
                         <span>This location has supernatural properties</span>
                     </label>
                 </div>

@@ -118,14 +118,14 @@ function displayExtractedData(data) {
         let inputHtml = '';
         
         if (type === 'textarea') {
-            inputHtml = `<textarea class="field-input" data-field="${fieldKey}" rows="3">${value}</textarea>`;
+            inputHtml = `<textarea class="field-input form-control" data-field="${fieldKey}" rows="3">${value}</textarea>`;
         } else if (type === 'number') {
             inputHtml = `<input type="number" class="field-input" data-field="${fieldKey}" value="${value}">`;
         } else if (type === 'select') {
             inputHtml = `<input type="text" class="field-input" data-field="${fieldKey}" value="${value}">`;
         } else if (type === 'checkbox') {
             const checked = value == 1 ? 'checked' : '';
-            inputHtml = `<input type="checkbox" class="field-input" data-field="${fieldKey}" ${checked}>`;
+            inputHtml = `<input type="checkbox" class="field-input form-check-input" data-field="${fieldKey}" ${checked}>`;
         } else {
             inputHtml = `<input type="text" class="field-input" data-field="${fieldKey}" value="${value}">`;
         }

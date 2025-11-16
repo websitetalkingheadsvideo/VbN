@@ -342,7 +342,7 @@ require_once __DIR__ . '/../../includes/header.php';
 
         <div class="input-container">
             <div class="filters-row">
-                <select id="categoryFilter" class="filter-select">
+                <select id="categoryFilter" class="filter-select form-select form-select-sm bg-dark text-light border-danger">
                     <option value="">All Categories</option>
                     <option value="Core">Core Rules</option>
                     <option value="Faction">Faction Guides</option>
@@ -351,7 +351,7 @@ require_once __DIR__ . '/../../includes/header.php';
                     <option value="Journal">Journals</option>
                 </select>
                 
-                <select id="systemFilter" class="filter-select">
+                <select id="systemFilter" class="filter-select form-select form-select-sm bg-dark text-light border-danger">
                     <option value="">All Systems</option>
                     <option value="MET-VTM">MET-VTM</option>
                     <option value="MET">MET</option>

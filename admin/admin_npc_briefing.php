@@ -68,7 +68,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="filter-controls">
         <div class="clan-filter">
             <label for="clanFilter">Filter by Clan:</label>
-            <select id="clanFilter">
+            <select id="clanFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Clans</option>
                 <option value="Assamite">Assamite</option>
                 <option value="Brujah">Brujah</option>
@@ -89,11 +89,11 @@ include __DIR__ . '/../includes/header.php';
             </select>
         </div>
         <div class="search-box">
-            <input type="text" id="characterSearch" placeholder="🔍 Search by name..." />
+            <input type="text" id="characterSearch" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="🔍 Search by name..." />
         </div>
         <div class="page-size-control">
             <label for="pageSize">Per page:</label>
-            <select id="pageSize">
+            <select id="pageSize" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="20" selected>20</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
@@ -202,13 +202,13 @@ include __DIR__ . '/../includes/header.php';
             <p style="color: #b8a090; font-size: 0.9em; margin-bottom: 10px;">
                 AI-formatted briefing with nature/demeanor, traits, and key information for playing this character.
             </p>
-            <textarea id="editAgentNotes" rows="10" style="width: 100%; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical;"></textarea>
+            <textarea id="editAgentNotes" class="form-control bg-dark text-light border-danger" rows="10" style="width: 100%; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical;"></textarea>
             
             <h3 style="margin-top: 30px;">ACTING NOTES (Post-Session)</h3>
             <p style="color: #b8a090; font-size: 0.9em; margin-bottom: 10px;">
                 Your notes after playing this character in a session.
             </p>
-            <textarea id="editActingNotes" rows="10" style="width: 100%; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical;"></textarea>
+            <textarea id="editActingNotes" class="form-control bg-dark text-light border-danger" rows="10" style="width: 100%; padding: 10px; background: rgba(26, 15, 15, 0.6); border: 2px solid rgba(139, 0, 0, 0.4); border-radius: 5px; color: #f5e6d3; font-family: var(--font-body), 'Source Serif Pro', serif; resize: vertical;"></textarea>
         </div>
         
         <div class="modal-actions">

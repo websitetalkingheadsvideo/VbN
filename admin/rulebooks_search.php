@@ -222,21 +222,21 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="filters">
                 <div class="filter-group">
                     <label>Category</label>
-                    <select id="categoryFilter">
+                    <select id="categoryFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                         <option value="">All Categories</option>
                     </select>
                 </div>
                 
                 <div class="filter-group">
                     <label>System</label>
-                    <select id="systemFilter">
+                    <select id="systemFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                         <option value="">All Systems</option>
                     </select>
                 </div>
                 
                 <div class="filter-group">
                     <label>Results</label>
-                    <select id="limitFilter">
+                    <select id="limitFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                         <option value="25">25</option>
                         <option value="50" selected>50</option>
                         <option value="100">100</option>
@@ -258,14 +258,14 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="filters">
                 <div class="filter-group">
                     <label>Category</label>
-                    <select id="booksCategory" onchange="loadBooks()">
+                    <select id="booksCategory" class="form-select form-select-sm bg-dark text-light border-danger" onchange="loadBooks()">
                         <option value="">All Categories</option>
                     </select>
                 </div>
                 
                 <div class="filter-group">
                     <label>System</label>
-                    <select id="booksSystem" onchange="loadBooks()">
+                    <select id="booksSystem" class="form-select form-select-sm bg-dark text-light border-danger" onchange="loadBooks()">
                         <option value="">All Systems</option>
                     </select>
                 </div>

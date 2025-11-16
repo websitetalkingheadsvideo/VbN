@@ -182,13 +182,13 @@ include __DIR__ . '/includes/header.php';
         <div class="character-preview">
             <div class="preview-header">
                 <h4>Character Preview</h4>
-                <div class="sheet-mode-toggle">
-                    <label class="toggle-label">
-                        <input type="radio" name="sheetMode" value="full" checked>
+                <div class="sheet-mode-toggle form-check">
+                    <label class="toggle-label form-check-label">
+                        <input type="radio" name="sheetMode" class="form-check-input" value="full" checked>
                         <span class="toggle-text">Full</span>
                     </label>
-                    <label class="toggle-label">
-                        <input type="radio" name="sheetMode" value="compact">
+                    <label class="toggle-label form-check-label">
+                        <input type="radio" name="sheetMode" class="form-check-input" value="compact">
                         <span class="toggle-text">Compact</span>
                     </label>
                 </div>
@@ -293,9 +293,9 @@ include __DIR__ . '/includes/header.php';
                                 <p class="card-subtitle">Essential character details and background</p>
                             </div>
                             <div class="form-group" style="margin: 0; min-width: 200px;">
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="pc" name="pc" checked>
-                                    <label for="pc" style="margin: 0;">Player Character (PC)</label>
+                                <div class="checkbox-group form-check">
+                                    <input type="checkbox" id="pc" name="pc" class="form-check-input" checked>
+                                    <label for="pc" class="form-check-label" style="margin: 0;">Player Character (PC)</label>
                                 </div>
                                 <div class="helper-text">Uncheck if this is an NPC</div>
                             </div>
@@ -308,25 +308,25 @@ include __DIR__ . '/includes/header.php';
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="characterName">Character Name *</label>
-                                <input type="text" id="characterName" name="characterName" required>
+                                <input type="text" id="characterName" name="characterName" class="form-control" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="playerName">Player Name *</label>
-                                <input type="text" id="playerName" name="playerName" required>
+                                <input type="text" id="playerName" name="playerName" class="form-control" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="chronicle">Chronicle</label>
-                            <input type="text" id="chronicle" name="chronicle" value="Valley by Night">
+                            <input type="text" id="chronicle" name="chronicle" class="form-control" value="Valley by Night">
                             <div class="helper-text">Name of the campaign/game</div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="currentState">Character Status</label>
-                                <select id="currentState" name="currentState">
+                                <select id="currentState" name="currentState" class="form-select">
                                     <option value="active" selected>Active</option>
                                     <option value="inactive">Inactive</option>
                                     <option value="archived">Archived</option>
@@ -336,7 +336,7 @@ include __DIR__ . '/includes/header.php';
 
                             <div class="form-group">
                                 <label for="camarillaStatus">Sect Alignment</label>
-                                <select id="camarillaStatus" name="camarillaStatus">
+                                <select id="camarillaStatus" name="camarillaStatus" class="form-select">
                                     <option value="Unknown" selected>Unknown</option>
                                     <option value="Camarilla">Camarilla</option>
                                     <option value="Anarch">Anarch</option>
@@ -376,7 +376,7 @@ include __DIR__ . '/includes/header.php';
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nature">Nature *</label>
-                        <select id="nature" name="nature" required>
+                        <select id="nature" name="nature" class="form-select" required>
                             <option value="">Select Nature...</option>
                             <?php foreach ($archetypes as $archetype): ?>
                                 <option value="<?php echo htmlspecialchars($archetype); ?>"><?php echo htmlspecialchars($archetype); ?></option>
@@ -387,7 +387,7 @@ include __DIR__ . '/includes/header.php';
                     
                     <div class="form-group">
                         <label for="demeanor">Demeanor *</label>
-                        <select id="demeanor" name="demeanor" required>
+                        <select id="demeanor" name="demeanor" class="form-select" required>
                             <option value="">Select Demeanor...</option>
                             <?php foreach ($archetypes as $archetype): ?>
                                 <option value="<?php echo htmlspecialchars($archetype); ?>"><?php echo htmlspecialchars($archetype); ?></option>
@@ -399,7 +399,7 @@ include __DIR__ . '/includes/header.php';
                 
                 <div class="form-group">
                     <label for="concept">Concept *</label>
-                    <input type="text" id="concept" name="concept" required>
+                    <input type="text" id="concept" name="concept" class="form-control" required>
                     <div class="helper-text">Brief description of character concept (e.g., "Street Gang Leader", "Tortured Artist")</div>
                 </div>
                 
@@ -411,7 +411,7 @@ include __DIR__ . '/includes/header.php';
                                 <span>?</span>
                             </button>
                         </div>
-                        <select id="clan" name="clan" required>
+                        <select id="clan" name="clan" class="form-select" required>
                             <option value="">Select Clan...</option>
                             <option value="Assamite">⚔️ Assamite</option>
                             <option value="Brujah">✊ Brujah</option>
@@ -434,7 +434,7 @@ include __DIR__ . '/includes/header.php';
                     
                     <div class="form-group">
                         <label for="generation">Generation *</label>
-                        <select id="generation" name="generation" required>
+                        <select id="generation" name="generation" class="form-select" required>
                             <option value="">Select Generation...</option>
                             <option value="13" selected>13th Generation</option>
                             <option value="12">12th Generation</option>
@@ -450,7 +450,7 @@ include __DIR__ . '/includes/header.php';
                 
                 <div class="form-group">
                     <label for="sire">Sire</label>
-                    <input type="text" id="sire" name="sire">
+                    <input type="text" id="sire" name="sire" class="form-control">
                     <div class="helper-text">Name of vampire who embraced this character</div>
                 </div>
                 
@@ -530,7 +530,7 @@ include __DIR__ . '/includes/header.php';
                             <div class="dist-controls">
                                 <div class="dist-control">
                                     <label>Physical:</label>
-                                    <select id="physicalPoints" class="point-select">
+                                    <select id="physicalPoints" class="point-select form-select form-select-sm">
                                         <option value="7">7 points</option>
                                         <option value="5">5 points</option>
                                         <option value="3">3 points</option>
@@ -538,7 +538,7 @@ include __DIR__ . '/includes/header.php';
                                 </div>
                                 <div class="dist-control">
                                     <label>Social:</label>
-                                    <select id="socialPoints" class="point-select">
+                                    <select id="socialPoints" class="point-select form-select form-select-sm">
                                         <option value="5">5 points</option>
                                         <option value="7">7 points</option>
                                         <option value="3">3 points</option>
@@ -546,7 +546,7 @@ include __DIR__ . '/includes/header.php';
                                 </div>
                                 <div class="dist-control">
                                     <label>Mental:</label>
-                                    <select id="mentalPoints" class="point-select">
+                                    <select id="mentalPoints" class="point-select form-select form-select-sm">
                                         <option value="3">3 points</option>
                                         <option value="7">7 points</option>
                                         <option value="5">5 points</option>
@@ -1558,7 +1558,7 @@ include __DIR__ . '/includes/header.php';
                     <div class="filter-controls merits-flaws-filters">
                         <div class="filter-group">
                             <label>Filter by Category:</label>
-                            <select id="categoryFilter" data-action="filter-merits-flaws">
+                            <select id="categoryFilter" class="form-select form-select-sm bg-dark text-light border-danger" data-action="filter-merits-flaws">
                                 <option value="all">All Categories</option>
                                 <option value="Physical">💪 Physical</option>
                                 <option value="Mental">🧠 Mental</option>
@@ -1568,7 +1568,7 @@ include __DIR__ . '/includes/header.php';
                         </div>
                         <div class="filter-group">
                             <label>Show:</label>
-                            <select id="typeFilter" data-action="filter-merits-flaws">
+                            <select id="typeFilter" class="form-select form-select-sm bg-dark text-light border-danger" data-action="filter-merits-flaws">
                                 <option value="both">Merits & Flaws</option>
                                 <option value="merits">Merits Only</option>
                                 <option value="flaws">Flaws Only</option>
@@ -1576,7 +1576,7 @@ include __DIR__ . '/includes/header.php';
                         </div>
                         <div class="filter-group">
                             <label>Sort by:</label>
-                            <select id="sortFilter" data-action="filter-merits-flaws">
+                            <select id="sortFilter" class="form-select form-select-sm bg-dark text-light border-danger" data-action="filter-merits-flaws">
                                 <option value="cost">Cost (Low to High)</option>
                                 <option value="cost-desc">Cost (High to Low)</option>
                                 <option value="name">Name (A-Z)</option>
@@ -1586,7 +1586,7 @@ include __DIR__ . '/includes/header.php';
                         </div>
                         <div class="filter-group">
                             <label>Search:</label>
-                            <input type="text" id="searchFilter" placeholder="Search merits and flaws...">
+                            <input type="text" id="searchFilter" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="Search merits and flaws...">
                         </div>
                         <div class="filter-group">
                             <button type="button" class="reset-filters-btn" data-action="reset-merits-flaws" title="Reset all filters">

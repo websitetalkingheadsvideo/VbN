@@ -1,6 +1,23 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.19 (Current)
+## Version 0.10.20 (Current)
+**Date:** November 16, 2025
+
+### Bootstrap forms standardization (selects, textareas, radios, checkboxes)
+- Standardized selects to `.form-select` (dark theme where appropriate)
+- Standardized textareas to `.form-control` (kept existing helper classes/styles)
+- Radios/checkboxes: added `.form-check-input` and `.form-check-label`; wrapped groups in `.form-check` where layout allows
+- Kept structure minimal to preserve existing spacing and JS behavior
+
+### Files Modified (highlights)
+- `lotn_char_create.php`: form selects, textareas; wizard radios/PC checkbox; filters themed
+- `admin/*`: search inputs/selects and textareas themed; location create radios/checkbox grids standardized
+- `agents/laws_agent/index.php`: filter selects themed
+- `js/*`: template-generated selects/textarea/checkbox use Bootstrap classes
+
+---
+
+## Version 0.10.19 (Previous)
 **Date:** November 16, 2025
 
 ### Bootstrap alignment and UI standardization

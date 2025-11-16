@@ -109,7 +109,7 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         <div class="type-filter">
             <label for="typeFilter">Type:</label>
-            <select id="typeFilter">
+            <select id="typeFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Types</option>
                 <?php foreach ($item_types as $type): ?>
                     <option value="<?php echo htmlspecialchars($type); ?>"><?php echo htmlspecialchars($type); ?></option>
@@ -118,7 +118,7 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         <div class="rarity-filter">
             <label for="rarityFilter">Rarity:</label>
-            <select id="rarityFilter">
+            <select id="rarityFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Rarities</option>
                 <option value="common">Common</option>
                 <option value="uncommon">Uncommon</option>
@@ -128,11 +128,11 @@ while ($char = $characters_result->fetch_assoc()) {
             </select>
         </div>
         <div class="search-box">
-            <input type="text" id="itemSearch" placeholder="🔍 Search by name..." />
+            <input type="text" id="itemSearch" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="🔍 Search by name..." />
         </div>
         <div class="page-size-control">
             <label for="pageSize">Per page:</label>
-            <select id="pageSize">
+            <select id="pageSize" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="20" selected>20</option>
                 <option value="50">50</option>
                 <option value="100">100</option>

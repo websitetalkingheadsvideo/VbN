@@ -275,13 +275,13 @@ function displayBriefing(data) {
             <p style="color: #b8a090; font-size: 0.9em; margin-bottom: 10px;">
                 AI-formatted briefing with nature/demeanor, traits, and key information for playing this character.
             </p>
-            <textarea id="agentNotesField">${char.agentNotes || ''}</textarea>
+            <textarea id="agentNotesField" class="form-control bg-dark text-light border-danger">${char.agentNotes || ''}</textarea>
             
             <h3>ACTING NOTES (Post-Session)</h3>
             <p style="color: #b8a090; font-size: 0.9em; margin-bottom: 10px;">
                 Your notes after playing this character in a session.
             </p>
-            <textarea id="actingNotesField">${char.actingNotes || ''}</textarea>
+            <textarea id="actingNotesField" class="form-control bg-dark text-light border-danger">${char.actingNotes || ''}</textarea>
         `;
     }
     

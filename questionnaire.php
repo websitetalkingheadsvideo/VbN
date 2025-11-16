@@ -147,11 +147,11 @@ include __DIR__ . '/includes/header.php';
                     <?php endif; ?>
                     <p class="question-text"><?php echo htmlspecialchars($q['question'] ?? ''); ?></p>
 
-                    <fieldset class="answer-group">
+                    <fieldset class="answer-group form-check">
                         <legend class="visually-hidden">Answer options</legend>
                         <?php for ($i = 1; $i <= 4; $i++): $key = 'answer' . $i; if (!empty($q[$key])): ?>
-                            <label class="answer-option">
-                                <input type="radio" name="question_<?php echo $qNum; ?>" value="<?php echo $i; ?>">
+                            <label class="answer-option form-check-label">
+                                <input type="radio" name="question_<?php echo $qNum; ?>" class="form-check-input" value="<?php echo $i; ?>">
                                 <span class="answer-text"><?php echo htmlspecialchars($q[$key]); ?></span>
                             </label>
                         <?php endif; endfor; ?>

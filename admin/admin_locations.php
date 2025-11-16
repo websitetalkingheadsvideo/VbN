@@ -122,7 +122,7 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         <div class="type-filter">
             <label for="typeFilter">Type:</label>
-            <select id="typeFilter">
+            <select id="typeFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Types</option>
                 <?php foreach ($location_types as $type): ?>
                     <option value="<?php echo htmlspecialchars($type); ?>"><?php echo htmlspecialchars($type); ?></option>
@@ -131,7 +131,7 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         <div class="status-filter">
             <label for="statusFilter">Status:</label>
-            <select id="statusFilter">
+            <select id="statusFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Status</option>
                 <?php foreach ($location_statuses as $status): ?>
                     <option value="<?php echo htmlspecialchars($status); ?>"><?php echo htmlspecialchars($status); ?></option>
@@ -140,7 +140,7 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         <div class="owner-filter">
             <label for="ownerFilter">Owner:</label>
-            <select id="ownerFilter">
+            <select id="ownerFilter" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="all">All Owners</option>
                 <?php foreach ($location_owners as $owner): ?>
                     <option value="<?php echo htmlspecialchars($owner); ?>"><?php echo htmlspecialchars($owner); ?></option>
@@ -148,11 +148,11 @@ while ($char = $characters_result->fetch_assoc()) {
             </select>
         </div>
         <div class="search-box">
-            <input type="text" id="locationSearch" placeholder="🔍 Search by name..." />
+            <input type="text" id="locationSearch" class="form-control form-control-sm bg-dark text-light border-danger" placeholder="🔍 Search by name..." />
         </div>
         <div class="page-size-control">
             <label for="pageSize">Per page:</label>
-            <select id="pageSize">
+            <select id="pageSize" class="form-select form-select-sm bg-dark text-light border-danger">
                 <option value="20" selected>20</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
