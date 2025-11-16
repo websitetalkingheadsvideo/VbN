@@ -1,0 +1,148 @@
+/* ========================================
+   NPC Tracker — Site-Brand Styling (Bootstrap 5.3.2 present)
+   Moves inline styles out of npc_tracker.php and matches gothic theme
+   ======================================== */
+
+.tracker-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.tracker-header h1 {
+    color: var(--text-light);
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    margin: 0;
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Cards use Bootstrap-themed .card overrides */
+.stat-card {
+    text-align: center;
+    padding: 15px;
+}
+
+.stat-card .number {
+    font-size: 2em;
+    color: var(--blood-red);
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(139, 0, 0, 0.4);
+}
+
+.stat-card .label {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.status-section h2 {
+    color: var(--text-light);
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.35);
+}
+
+.npc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: rgba(26, 15, 15, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.npc-table th {
+    background: rgba(139, 0, 0, 0.25);
+    color: var(--text-light);
+    padding: 12px;
+    text-align: left;
+    border: 1px solid rgba(139, 0, 0, 0.35);
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+}
+
+.npc-table td {
+    padding: 10px 12px;
+    border: 1px solid rgba(139, 0, 0, 0.25);
+    color: var(--text-mid);
+}
+
+.npc-table tr:hover {
+    background: rgba(139, 0, 0, 0.15);
+}
+
+.npc-name {
+    font-weight: bold;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.npc-details {
+    display: none;
+    padding: 15px;
+    background: rgba(26, 15, 15, 0.8);
+    margin: 10px 0;
+    border-left: 3px solid var(--blood-red);
+}
+
+.npc-details.active {
+    display: block;
+}
+
+.detail-section {
+    margin-bottom: 15px;
+}
+
+.detail-section h4 {
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+}
+
+.detail-section p {
+    color: var(--text-mid);
+    white-space: pre-wrap;
+}
+
+.action-links {
+    display: flex;
+    gap: 10px;
+}
+
+.action-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid rgba(139, 0, 0, 0.35);
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.action-links a:hover {
+    background: var(--blood-red);
+    color: #ffffff;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-mid);
+    font-style: italic;
+}
+
+.introduced-link {
+    color: #c9a96e; /* matches site accents used in stats/headers */
+    text-decoration: none;
+}
+
+.introduced-link:hover {
+    text-decoration: underline;
+}
+
+

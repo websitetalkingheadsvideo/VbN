@@ -173,7 +173,7 @@ $morality = db_fetch_one($conn,
 );
 
 $merits_flaws = db_fetch_all($conn,
-    "SELECT id, name, type, category, point_value, description, xp_bonus 
+    "SELECT id, name, type, category, point_value, description
      FROM character_merits_flaws WHERE character_id = ?",
     "i",
     [$character_id]

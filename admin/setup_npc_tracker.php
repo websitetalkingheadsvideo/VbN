@@ -106,7 +106,7 @@ define('LOTN_VERSION', '0.2.0');
         <div class="status-box">
             <h3>⚙️ Step 1: Create Database Table</h3>
             <p>Click below to create the necessary database table (only needs to be done once):</p>
-            <a href="../database/create_npc_tracker_table.php" class="setup-button">
+            <a href="../database/create_npc_tracker_table.php" class="setup-button btn btn-primary">
                 🔧 Run Database Setup
             </a>
         </div>
@@ -116,17 +116,17 @@ define('LOTN_VERSION', '0.2.0');
             <p>Once the database is set up, you can access the tracker pages:</p>
             
             <div class="button-group">
-                <a href="npc_tracker.php" class="setup-button secondary-button">
+                <a href="npc_tracker.php" class="setup-button secondary-button btn btn-secondary">
                     👁️ View NPCs
                 </a>
-                <a href="npc_tracker_submit.php" class="setup-button secondary-button">
+                <a href="npc_tracker_submit.php" class="setup-button secondary-button btn btn-secondary">
                     ➕ Add New NPC
                 </a>
             </div>
         </div>
 
         <div class="button-group">
-            <a href="admin_panel.php" class="setup-button secondary-button">
+            <a href="admin_panel.php" class="setup-button secondary-button btn btn-secondary">
                 ← Back to Admin Panel
             </a>
         </div>

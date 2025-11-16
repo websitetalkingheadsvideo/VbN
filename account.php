@@ -46,7 +46,7 @@ include __DIR__ . '/includes/header.php';
 
   <div class="row g-4">
     <div class="col-md-6">
-      <div class="gothic-panel">
+      <div class="gothic-panel card">
         <h2 class="h5 text-light mb-3">Update Email</h2>
         <form action="update_account.php" method="POST" class="needs-validation" novalidate>
           <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
@@ -74,7 +74,7 @@ include __DIR__ . '/includes/header.php';
     </div>
 
     <div class="col-md-6">
-      <div class="gothic-panel">
+      <div class="gothic-panel card">
         <h2 class="h5 text-light mb-3">Change Password</h2>
         <form action="update_account.php" method="POST" class="needs-validation" novalidate>
           <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">

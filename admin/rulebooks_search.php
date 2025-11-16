@@ -243,7 +243,7 @@ require_once __DIR__ . '/../includes/header.php';
                     </select>
                 </div>
                 
-                <button class="search-button" onclick="performSearch()">Search</button>
+                <button class="search-button btn btn-primary" onclick="performSearch()">Search</button>
             </div>
         </div>
 

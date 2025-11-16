@@ -1,6 +1,31 @@
 # LOTN Character Creator - Version History
 
-## Version 0.10.18 (Current)
+## Version 0.10.19 (Current)
+**Date:** November 16, 2025
+
+### Bootstrap alignment and UI standardization
+- Adopt Bootstrap utilities where visually identical; preserve branding
+- Includes/header/footer: inventory/mapping; no-op diffs
+- Shared layout: mapping; deferred risky swaps
+- Buttons: standardized site-wide to `btn` variants (primary/secondary/outline/danger) with theme in `css/bootstrap-overrides.css`
+- Cards: applied `.card` to dashboard, account, character panels; themed to gothic style
+- Admin: converted modals and actions in items, locations, sire/childe (basic/enhanced), NPC briefing, boon ledger
+- Wizards: standardized prev/next to `btn btn-secondary`
+- Visibility: mapped `mobile-only` to `d-block d-md-none`; standardized `tablet-only` to md-only range (768–991.98); added `.d-md-only`
+
+### Files Modified (highlights)
+- `includes/header.php`, `includes/footer.php` (read/verify only)
+- `css/bootstrap-overrides.css` (button/card themes, d-md-only)
+- `css/global.css` (visibility breakpoints)
+- `index.php`, `account.php` (cards)
+- `login.php` (submit button to `btn btn-primary`)
+- `admin/*` (panel buttons, modals, actions standardized)
+- `agents/laws_agent/index.php` (send button)
+- `lotn_char_create.php` (wizard buttons, mobile save visibility)
+
+---
+
+## Version 0.10.18 (Previous)
 **Date:** January 15, 2025
 
 ### Nature/Demeanor Archetypes System

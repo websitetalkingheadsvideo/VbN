@@ -89,7 +89,7 @@ if (file_exists($loginDisableFile)) {
                     <div class="invalid-feedback">Password is required.</div>
                 </div>
                 
-                    <button type="submit" class="login-btn">Enter the Chronicle</button>
+                    <button type="submit" class="login-btn btn btn-primary">Enter the Chronicle</button>
                 </form>
                 
                 <div class="login-links">

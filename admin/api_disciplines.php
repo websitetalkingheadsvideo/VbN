@@ -88,27 +88,37 @@ function getAllDisciplineData($conn) {
     
     // Get clan-discipline access mapping (optional - table may not exist)
     $clanDisciplineAccess = [];
-    $clan_query = "SELECT c.name as clan_name, d.name as discipline_name
-                   FROM clans c
-                   JOIN clan_disciplines cd ON c.id = cd.clan_id
-                   JOIN disciplines d ON cd.discipline_id = d.id
-                   ORDER BY c.name, d.name";
     
-    $clan_result = mysqli_query($conn, $clan_query);
-    if ($clan_result) {
-        // Table exists, load the mapping
-        while ($row = mysqli_fetch_assoc($clan_result)) {
-            $clanName = $row['clan_name'];
-            $disciplineName = $row['discipline_name'];
-            
-            if (!isset($clanDisciplineAccess[$clanName])) {
-                $clanDisciplineAccess[$clanName] = [];
+    // Check if table exists first, then query (handles PHP 8+ exception behavior)
+    $table_check = mysqli_query($conn, "SHOW TABLES LIKE 'clan_disciplines'");
+    $table_exists = $table_check && mysqli_num_rows($table_check) > 0;
+    
+    if ($table_exists) {
+        $clan_query = "SELECT c.name as clan_name, d.name as discipline_name
+                       FROM clans c
+                       JOIN clan_disciplines cd ON c.id = cd.clan_id
+                       JOIN disciplines d ON cd.discipline_id = d.id
+                       ORDER BY c.name, d.name";
+        
+        // Suppress errors and check result
+        $clan_result = @mysqli_query($conn, $clan_query);
+        if ($clan_result) {
+            while ($row = mysqli_fetch_assoc($clan_result)) {
+                $clanName = $row['clan_name'];
+                $disciplineName = $row['discipline_name'];
+                
+                if (!isset($clanDisciplineAccess[$clanName])) {
+                    $clanDisciplineAccess[$clanName] = [];
+                }
+                
+                $clanDisciplineAccess[$clanName][] = $disciplineName;
             }
-            
-            $clanDisciplineAccess[$clanName][] = $disciplineName;
+            mysqli_free_result($clan_result);
+        } else {
+            // Query failed but table exists - log and continue
+            error_log("clan_disciplines query failed: " . mysqli_error($conn));
         }
     } else {
-        // Table doesn't exist - use empty array (will fall back to hardcoded data in DisciplineSystem)
         error_log("clan_disciplines table does not exist, skipping clan-discipline mapping");
     }
     

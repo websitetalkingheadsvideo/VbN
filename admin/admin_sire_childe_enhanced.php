@@ -25,13 +25,13 @@ include __DIR__ . '/../includes/header.php';
     
     <!-- Admin Navigation -->
     <nav class="admin-nav" aria-label="Admin Navigation">
-        <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
-        <a href="admin_sire_childe.php" class="nav-btn">🧛 Basic Sire/Childe</a>
-        <a href="admin_sire_childe_enhanced.php" class="nav-btn active">🔍 Enhanced Analysis</a>
-        <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
-        <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
-        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
+        <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Characters</a>
+        <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">🧛 Basic Sire/Childe</a>
+        <a href="admin_sire_childe_enhanced.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">🔍 Enhanced Analysis</a>
+        <a href="admin_equipment.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">⚔️ Equipment</a>
+        <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📍 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📝 Questionnaire</a>
+        <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📋 NPC Briefing</a>
     </nav>
     
     <!-- Analysis Controls -->
@@ -99,11 +99,11 @@ include __DIR__ . '/../includes/header.php';
     <!-- Filter Controls -->
     <div class="filter-controls">
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Characters</button>
-            <button class="filter-btn" data-filter="needs-analysis">Needs Analysis</button>
-            <button class="filter-btn" data-filter="suggestions">Suggestions</button>
-            <button class="filter-btn" data-filter="verified">Verified</button>
-            <button class="filter-btn" data-filter="conflicts">Conflicts</button>
+            <button class="filter-btn btn btn-outline-danger active" data-filter="all">All Characters</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="needs-analysis">Needs Analysis</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="suggestions">Suggestions</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="verified">Verified</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="conflicts">Conflicts</button>
         </div>
         <div class="search-box">
             <input type="text" id="relationshipSearch" placeholder="🔍 Search by name, sire, or biography..." />
@@ -311,9 +311,9 @@ include __DIR__ . '/../includes/header.php';
             </div>
             
             <div class="modal-actions">
-                <button type="button" class="modal-btn cancel-btn" onclick="closeRelationshipModal()">Cancel</button>
-                <button type="button" class="modal-btn analyze-btn" onclick="reanalyzeCharacter()">Re-analyze</button>
-                <button type="submit" class="modal-btn confirm-btn">Save Relationship</button>
+                <button type="button" class="modal-btn cancel-btn btn btn-secondary" onclick="closeRelationshipModal()">Cancel</button>
+                <button type="button" class="modal-btn analyze-btn btn btn-outline-primary" onclick="reanalyzeCharacter()">Re-analyze</button>
+                <button type="submit" class="modal-btn confirm-btn btn btn-primary">Save Relationship</button>
             </div>
         </form>
     </div>
@@ -809,7 +809,7 @@ function showAnalysisResults(results) {
                 `).join('')}
             </div>
             <div class="modal-actions">
-                <button class="modal-btn confirm-btn" onclick="closeAnalysisModal()">Close</button>
+                <button class="modal-btn confirm-btn btn btn-secondary" onclick="closeAnalysisModal()">Close</button>
             </div>
         </div>
     `;

@@ -368,7 +368,7 @@ require_once __DIR__ . '/../../includes/header.php';
                     placeholder="Ask about rules, disciplines, clans, lore..."
                     onkeypress="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); askQuestion(); }"
                 >
-                <button class="send-button" id="sendButton" onclick="askQuestion()">
+                <button class="send-button btn btn-primary" id="sendButton" onclick="askQuestion()">
                     Ask
                 </button>
             </div>

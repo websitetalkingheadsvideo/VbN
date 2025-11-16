@@ -488,7 +488,7 @@ include __DIR__ . '/includes/header.php';
                 <div class="button-group">
                     <button type="button" disabled>← Previous</button>
                     <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
-                    <button type="button" class="nav-btn" data-action="next">Next →</button>
+                    <button type="button" class="nav-btn btn btn-secondary" data-action="next">Next →</button>
                 </div>
                 </div>
             </div>
@@ -754,9 +754,9 @@ include __DIR__ . '/includes/header.php';
                 </div>
                 
                 <div class="button-group">
-                    <button type="button" class="nav-btn" data-action="previous">← Previous</button>
+                    <button type="button" class="nav-btn btn btn-secondary" data-action="previous">← Previous</button>
                     <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
-                    <button type="button" class="nav-btn" data-action="next">Next →</button>
+                    <button type="button" class="nav-btn btn btn-secondary" data-action="next">Next →</button>
                 </div>
                 </div>
             </div>
@@ -917,9 +917,9 @@ include __DIR__ . '/includes/header.php';
                 </div>
                 
                 <div class="button-group">
-                    <button type="button" class="nav-btn" data-action="previous">← Previous</button>
+                    <button type="button" class="nav-btn btn btn-secondary" data-action="previous">← Previous</button>
                     <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
-                    <button type="button" class="nav-btn" data-action="next">Next →</button>
+                    <button type="button" class="nav-btn btn btn-secondary" data-action="next">Next →</button>
                 </div>
                 </div>
             </div>
@@ -1523,9 +1523,9 @@ include __DIR__ . '/includes/header.php';
                     </div>
                 
                     <div class="button-group">
-                        <button type="button" class="nav-btn" data-action="previous">← Previous</button>
+                        <button type="button" class="nav-btn btn btn-secondary" data-action="previous">← Previous</button>
                         <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
-                        <button type="button" class="nav-btn" data-action="next">Next →</button>
+                        <button type="button" class="nav-btn btn btn-secondary" data-action="next">Next →</button>
                     </div>
                 </div>
             </div>
@@ -1619,9 +1619,9 @@ include __DIR__ . '/includes/header.php';
                     </div>
                     
                     <div class="button-group">
-                        <button type="button" class="nav-btn" data-action="previous">← Previous</button>
+                        <button type="button" class="nav-btn btn btn-secondary" data-action="previous">← Previous</button>
                         <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
-                        <button type="button" class="nav-btn" data-action="next">Next →</button>
+                        <button type="button" class="nav-btn btn btn-secondary" data-action="next">Next →</button>
                     </div>
                 </div>
             </div>
@@ -1721,7 +1721,7 @@ include __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Mobile Save Button Container -->
-    <div class="mobile-save-container mobile-only">
+    <div class="mobile-save-container mobile-only d-block d-md-none">
         <div class="button-group">
             <button type="button" class="save-btn" data-action="save">💾 Save Character</button>
             <button type="button" class="exit-inline" title="Exit without saving">Exit</button>
@@ -1847,7 +1847,7 @@ include __DIR__ . '/includes/header.php';
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="modal-btn" data-action="close-discipline-guide">Close</button>
+                <button type="button" class="modal-btn btn btn-secondary" data-action="close-discipline-guide">Close</button>
             </div>
         </div>
     </div>
@@ -1939,7 +1939,7 @@ include __DIR__ . '/includes/header.php';
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="modal-btn" onclick="closeMeritFlawDescription()">Close</button>
+                <button type="button" class="modal-btn btn btn-secondary" onclick="closeMeritFlawDescription()">Close</button>
             </div>
         </div>
     </div>

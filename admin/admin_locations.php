@@ -69,12 +69,12 @@ while ($char = $characters_result->fetch_assoc()) {
     
     <!-- Admin Navigation -->
     <nav class="admin-nav" aria-label="Admin Navigation">
-        <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
-        <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
-        <a href="admin_items.php" class="nav-btn">⚔️ Items</a>
-        <a href="admin_locations.php" class="nav-btn active">🏠 Locations</a>
-        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
+        <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Characters</a>
+        <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">🧛 Sire/Childe</a>
+        <a href="admin_items.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">⚔️ Items</a>
+        <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">🏠 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📝 Questionnaire</a>
+        <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📋 NPC Briefing</a>
     </nav>
     
     <!-- Locations Statistics -->
@@ -112,13 +112,13 @@ while ($char = $characters_result->fetch_assoc()) {
     <!-- Filter Controls -->
     <div class="filter-controls">
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Locations</button>
-            <button class="filter-btn" data-filter="havens">Havens</button>
-            <button class="filter-btn" data-filter="elysiums">Elysiums</button>
-            <button class="filter-btn" data-filter="domains">Domains</button>
-            <button class="filter-btn" data-filter="hunting-grounds">Hunting Grounds</button>
-            <button class="filter-btn" data-filter="nightclubs">Nightclubs</button>
-            <button class="filter-btn" data-filter="businesses">Businesses</button>
+            <button class="filter-btn btn btn-outline-danger active" data-filter="all">All Locations</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="havens">Havens</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="elysiums">Elysiums</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="domains">Domains</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="hunting-grounds">Hunting Grounds</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="nightclubs">Nightclubs</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="businesses">Businesses</button>
         </div>
         <div class="type-filter">
             <label for="typeFilter">Type:</label>
@@ -162,7 +162,7 @@ while ($char = $characters_result->fetch_assoc()) {
 
     <!-- Add Location Button -->
     <div style="margin-bottom: 20px;">
-        <button class="modal-btn confirm-btn" onclick="openAddLocationModal()">
+        <button class="modal-btn confirm-btn btn btn-primary" onclick="openAddLocationModal()">
             <i class="fas fa-plus"></i> Add New Location
         </button>
     </div>
@@ -305,8 +305,8 @@ while ($char = $characters_result->fetch_assoc()) {
             </div>
             
             <div class="modal-actions">
-                <button type="button" class="modal-btn cancel-btn" onclick="closeLocationModal()">Cancel</button>
-                <button type="submit" class="modal-btn confirm-btn">Save Location</button>
+                <button type="button" class="modal-btn cancel-btn btn btn-secondary" onclick="closeLocationModal()">Cancel</button>
+                <button type="submit" class="modal-btn confirm-btn btn btn-primary">Save Location</button>
             </div>
         </form>
     </div>
@@ -322,7 +322,7 @@ while ($char = $characters_result->fetch_assoc()) {
             Loading...
         </div>
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeViewModal()">Close</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeViewModal()">Close</button>
         </div>
     </div>
 </div>
@@ -361,8 +361,8 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeAssignModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" onclick="assignCharactersToLocation()">Assign Characters</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeAssignModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-primary" onclick="assignCharactersToLocation()">Assign Characters</button>
         </div>
     </div>
 </div>
@@ -377,8 +377,8 @@ while ($char = $characters_result->fetch_assoc()) {
             ⚠️ <strong>This location has character assignments</strong> - remove assignments first!
         </p>
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeDeleteModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="confirmDeleteBtn" onclick="confirmDeleteLocation()">Delete</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-danger" id="confirmDeleteBtn" onclick="confirmDeleteLocation()">Delete</button>
         </div>
     </div>
 </div>

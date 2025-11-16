@@ -66,15 +66,15 @@ include 'includes/header.php';
                 $stats_result = mysqli_query($conn, $stats_query);
                 $stats = mysqli_fetch_assoc($stats_result);
                 ?>
-                <div class="stat-card col-md-4 col-sm-6">
+                <div class="stat-card card col-md-4 col-sm-6">
                     <div class="stat-number"><?php echo $stats['total'] ?? 0; ?></div>
                     <div class="stat-label">Total Characters</div>
                 </div>
-                <div class="stat-card col-md-4 col-sm-6">
+                <div class="stat-card card col-md-4 col-sm-6">
                     <div class="stat-number"><?php echo $stats['pcs'] ?? 0; ?></div>
                     <div class="stat-label">Player Characters</div>
                 </div>
-                <div class="stat-card col-md-4 col-sm-6">
+                <div class="stat-card card col-md-4 col-sm-6">
                     <div class="stat-number"><?php echo $stats['npcs'] ?? 0; ?></div>
                     <div class="stat-label">NPCs</div>
                 </div>
@@ -83,48 +83,48 @@ include 'includes/header.php';
             <!-- Admin Actions -->
             <nav aria-label="Admin Actions">
             <div class="action-grid row g-4 mb-5">
-                <div class="action-card col-md-4 col-sm-6">
+                <div class="action-card card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">🧪</div>
                     <h3>Clan Discovery Quiz</h3>
                     <p>Test the character creation questionnaire</p>
-                    <a href="questionnaire.php" class="gothic-button">Take Quiz</a>
+                    <a href="questionnaire.php" class="gothic-button btn btn-primary">Take Quiz</a>
                 </div>
-                <div class="action-card col-md-4 col-sm-6">
+                <div class="action-card card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">🤖</div>
                     <h3>Agents Dashboard</h3>
                     <p>Monitor automation helpers and review agent activity</p>
-                    <a href="admin/agents.php" class="gothic-button">Open Agents</a>
+                    <a href="admin/agents.php" class="gothic-button btn btn-primary">Open Agents</a>
                 </div>
-                <div class="action-card col-md-4 col-sm-6">
+                <div class="action-card card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">📜</div>
                     <h3>Character List</h3>
                     <p>View, edit, and delete characters</p>
-                    <a href="admin/admin_panel.php" class="gothic-button">View Characters</a>
+                    <a href="admin/admin_panel.php" class="gothic-button btn btn-primary">View Characters</a>
                 </div>
-                <div class="action-card col-md-4 col-sm-6">
+                <div class="action-card card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">✨</div>
                     <h3>Create Character</h3>
                     <p>Bring a new kindred into the world</p>
-                    <a href="lotn_char_create.php" class="gothic-button">Create New</a>
+                    <a href="lotn_char_create.php" class="gothic-button btn btn-primary">Create New</a>
                 </div>
 
-                <div class="action-card col-md-4 col-sm-6">
+                <div class="action-card card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">📍</div>
                     <h3>Locations Database</h3>
                     <p>Manage game locations and character assignments</p>
-                    <a href="admin/admin_locations.php" class="gothic-button">Manage Locations</a>
+                    <a href="admin/admin_locations.php" class="gothic-button btn btn-primary">Manage Locations</a>
                 </div>
 
-                <div class="action-card col-md-4 col-sm-6">
+                <div class="action-card card col-md-4 col-sm-6">
                     <div class="card-icon" aria-hidden="true">🧰</div>
                     <h3>Items Database</h3>
                     <p>Manage equipment and artifacts</p>
-                    <a href="admin/admin_items.php" class="gothic-button">Manage Items</a>
+                    <a href="admin/admin_items.php" class="gothic-button btn btn-primary">Manage Items</a>
                 </div>
 
                 
 
-                <div class="action-card disabled col-md-4 col-sm-6">
+                <div class="action-card card disabled col-md-4 col-sm-6">
                     <div class="card-icon">📖</div>
                     <h3>AI Plots Manager</h3>
                     <p>Coming soon: Weave storylines with AI</p>
@@ -146,7 +146,7 @@ include 'includes/header.php';
             
             <!-- Chronicle Summary -->
             <div class="chronicle-summary">
-                <div class="gothic-panel">
+                <div class="gothic-panel card">
                     <h2 class="chronicle-title">The Chronicle Begins</h2>
                     <p class="chronicle-text"><?php echo htmlspecialchars($chronicle_summary); ?></p>
                 </div>
@@ -188,7 +188,7 @@ include 'includes/header.php';
                 if (mysqli_num_rows($char_result) > 0):
                     while ($character = mysqli_fetch_assoc($char_result)):
                 ?>
-                    <div class="character-card">
+                    <div class="character-card card">
                         <div class="character-header d-flex justify-content-between align-items-center gap-2 flex-wrap">
                             <h4 class="character-name d-flex align-items-center gap-2">
                                 <?php echo htmlspecialchars($character['character_name']); ?>
@@ -204,7 +204,7 @@ include 'includes/header.php';
                             </p>
                         </div>
                         <div class="character-actions">
-                            <a href="character_sheet.php?id=<?php echo $character['id']; ?>" class="gothic-button-small">
+                            <a href="character_sheet.php?id=<?php echo $character['id']; ?>" class="gothic-button-small btn btn-secondary">
                                 View/Edit
                             </a>
                         </div>

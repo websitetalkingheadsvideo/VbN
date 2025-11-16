@@ -186,7 +186,7 @@ include __DIR__ . '/../includes/header.php';
         </div>
         
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeBriefingModal()">Close</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeBriefingModal()">Close</button>
         </div>
     </div>
 </div>
@@ -212,8 +212,8 @@ include __DIR__ . '/../includes/header.php';
         </div>
         
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeEditNotesModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="saveEditNotesBtn" onclick="saveNotesFromEdit()">Save Notes</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeEditNotesModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-primary" id="saveEditNotesBtn" onclick="saveNotesFromEdit()">Save Notes</button>
         </div>
     </div>
 </div>

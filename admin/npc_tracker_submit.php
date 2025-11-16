@@ -302,7 +302,7 @@ define('LOTN_VERSION', '0.2.0');
     <div class="form-container">
         <div class="form-header">
             <h1><?php echo $edit_mode ? '✏️ Edit NPC' : '➕ Add New NPC'; ?></h1>
-            <a href="npc_tracker.php" class="back-button">← Back to Tracker</a>
+            <a href="npc_tracker.php" class="back-button btn btn-secondary">← Back to Tracker</a>
         </div>
 
         <?php if ($success): ?>

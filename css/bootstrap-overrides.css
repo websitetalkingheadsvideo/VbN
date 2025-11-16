@@ -74,3 +74,161 @@ h1, h2, h3, h4, h5, h6 {
    However, existing styles take precedence and visual design remains unchanged.
 */
 
+/* ========================================
+   BUTTON THEMING (Scoped to Bootstrap classes)
+   Matches existing gothic button styling without changing visuals
+   ======================================== */
+
+.btn-primary {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    border: 2px solid #b30000;
+    color: #f5e6d3;
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #b30000 0%, #8B0000 100%);
+    border-color: #b30000;
+    color: #f5e6d3;
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary: neutral gothic gray */
+.btn-secondary {
+    background: linear-gradient(135deg, #666666 0%, #4a4a4a 100%);
+    border: 2px solid #777777;
+    color: #f5e6d3;
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: linear-gradient(135deg, #777777 0%, #5a5a5a 100%);
+    border-color: #8a8a8a;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* Outline primary: red border/text, fills on hover */
+.btn-outline-primary {
+    background: transparent;
+    color: var(--blood-red);
+    border: 2px solid var(--blood-red);
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 100%);
+    color: #f5e6d3;
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+.btn-outline-primary:active {
+    transform: translateY(0);
+}
+
+/* Danger: matches admin styles (#cc0000 family) */
+.btn-danger {
+    background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+    border: 2px solid #990000;
+    color: #f5e6d3;
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background: linear-gradient(135deg, #e00000 0%, #b30000 100%);
+    border-color: #b30000;
+    color: #ffffff;
+    box-shadow: 0 5px 20px rgba(179, 0, 0, 0.45);
+}
+
+.btn-danger:active {
+    transform: translateY(0);
+}
+
+/* Success: aligns with login success green (#228B22 family) */
+.btn-success {
+    background: linear-gradient(135deg, #228B22 0%, #146b14 100%);
+    border: 2px solid #1e7a1e;
+    color: #eaf6ea;
+    border-radius: 5px;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background: linear-gradient(135deg, #2aa52a 0%, #1e7a1e 100%);
+    border-color: #1e7a1e;
+    color: #ffffff;
+    box-shadow: 0 5px 18px rgba(30, 122, 30, 0.35);
+}
+
+.btn-success:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   CARD THEMING (Bootstrap .card)
+   Matches gothic panels/action/character/stat cards
+   ======================================== */
+
+.d-md-only {
+    display: none;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .d-md-only {
+        display: block !important;
+    }
+}
+
+.card {
+    background: linear-gradient(135deg, #2a1515 0%, #1a0f0f 100%);
+    border: 2px solid #8B0000;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+    color: #d4c4b0;
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(139, 0, 0, 0.35);
+    background: transparent;
+    color: #f5e6d3;
+    font-family: var(--font-title), 'Libre Baskerville', serif;
+    font-weight: 600;
+}
+
+.card-body {
+    color: #d4c4b0;
+}
+
+.card-footer {
+    border-top: 1px solid rgba(139, 0, 0, 0.35);
+    background: transparent;
+    color: #b8a090;
+}
+

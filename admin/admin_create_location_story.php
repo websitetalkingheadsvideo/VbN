@@ -296,7 +296,7 @@ include __DIR__ . '/../includes/header.php';
                     <i class="fas fa-lightbulb"></i> Load example narrative
                 </a>
 
-                <button id="parse-button" class="parse-button">
+                <button id="parse-button" class="parse-button btn btn-primary">
                     <i class="fas fa-wand-magic-sparkles"></i>
                     <i class="fas fa-spinner spinner"></i>
                     <span class="button-text">Parse Story with AI</span>

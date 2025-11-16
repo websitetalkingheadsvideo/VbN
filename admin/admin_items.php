@@ -61,12 +61,12 @@ while ($char = $characters_result->fetch_assoc()) {
     
     <!-- Admin Navigation -->
     <nav class="admin-nav" aria-label="Admin Navigation">
-        <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
-        <a href="admin_sire_childe.php" class="nav-btn">🧛 Sire/Childe</a>
-        <a href="admin_items.php" class="nav-btn active">⚔️ Items</a>
-        <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
-        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
+        <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Characters</a>
+        <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">🧛 Sire/Childe</a>
+        <a href="admin_items.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">⚔️ Items</a>
+        <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📍 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📝 Questionnaire</a>
+        <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📋 NPC Briefing</a>
     </nav>
     
     <!-- Items Statistics -->
@@ -100,12 +100,12 @@ while ($char = $characters_result->fetch_assoc()) {
     <!-- Filter Controls -->
     <div class="filter-controls">
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Items</button>
-            <button class="filter-btn" data-filter="weapons">Weapons</button>
-            <button class="filter-btn" data-filter="armor">Armor</button>
-            <button class="filter-btn" data-filter="tools">Tools</button>
-            <button class="filter-btn" data-filter="consumables">Consumables</button>
-            <button class="filter-btn" data-filter="artifacts">Artifacts</button>
+            <button class="filter-btn btn btn-outline-danger active" data-filter="all">All Items</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="weapons">Weapons</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="armor">Armor</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="tools">Tools</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="consumables">Consumables</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="artifacts">Artifacts</button>
         </div>
         <div class="type-filter">
             <label for="typeFilter">Type:</label>
@@ -142,7 +142,7 @@ while ($char = $characters_result->fetch_assoc()) {
 
     <!-- Add Item Button -->
     <div style="margin-bottom: 20px;">
-        <button class="modal-btn confirm-btn" onclick="openAddItemModal()">
+        <button class="modal-btn confirm-btn btn btn-primary" onclick="openAddItemModal()">
             <i class="fas fa-plus"></i> Add New Item
         </button>
     </div>
@@ -268,8 +268,8 @@ while ($char = $characters_result->fetch_assoc()) {
             </div>
             
             <div class="modal-actions">
-                <button type="button" class="modal-btn cancel-btn" onclick="closeItemModal()">Cancel</button>
-                <button type="submit" class="modal-btn confirm-btn">Save Item</button>
+                <button type="button" class="modal-btn cancel-btn btn btn-secondary" onclick="closeItemModal()">Cancel</button>
+                <button type="submit" class="modal-btn confirm-btn btn btn-primary">Save Item</button>
             </div>
         </form>
     </nav>
@@ -285,7 +285,7 @@ while ($char = $characters_result->fetch_assoc()) {
             Loading...
         </div>
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeViewModal()">Close</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeViewModal()">Close</button>
         </div>
     </div>
 </div>
@@ -319,8 +319,8 @@ while ($char = $characters_result->fetch_assoc()) {
         </div>
         
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeAssignModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" onclick="assignItemsToCharacters()">Assign Items</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeAssignModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-primary" onclick="assignItemsToCharacters()">Assign Items</button>
         </div>
     </div>
 </div>
@@ -335,8 +335,8 @@ while ($char = $characters_result->fetch_assoc()) {
             ⚠️ <strong>This item is assigned to characters</strong> - remove assignments first!
         </p>
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeDeleteModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="confirmDeleteBtn">Delete</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-danger" id="confirmDeleteBtn">Delete</button>
         </div>
     </div>
 </div>

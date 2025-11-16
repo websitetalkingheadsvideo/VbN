@@ -210,8 +210,8 @@ function render_status_badge($status) {
             </div>
             
             <div class="modal-actions">
-                <button type="button" class="modal-btn cancel-btn" onclick="closeBoonModal()">Cancel</button>
-                <button type="submit" class="modal-btn confirm-btn">Save Boon</button>
+                <button type="button" class="modal-btn cancel-btn btn btn-secondary" onclick="closeBoonModal()">Cancel</button>
+                <button type="submit" class="modal-btn confirm-btn btn btn-primary">Save Boon</button>
             </div>
         </form>
     </div>
@@ -224,8 +224,8 @@ function render_status_badge($status) {
         <p class="modal-message">Delete boon:</p>
         <p class="modal-character-name" id="deleteBoonInfo"></p>
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeDeleteBoonModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="confirmDeleteBoonBtn">Delete</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeDeleteBoonModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-danger" id="confirmDeleteBoonBtn">Delete</button>
         </div>
     </div>
 </div>

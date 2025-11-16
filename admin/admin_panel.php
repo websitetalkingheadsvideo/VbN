@@ -399,14 +399,18 @@ function render_clan_badge(string $clan): string {
             ⚠️ <strong>Finalized character</strong> - all data will be lost!
         </p>
         <div class="modal-actions">
-            <button class="modal-btn cancel-btn" onclick="closeDeleteModal()">Cancel</button>
-            <button class="modal-btn confirm-btn" id="confirmDeleteBtn">Delete</button>
+            <button class="modal-btn cancel-btn btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+            <button class="modal-btn confirm-btn btn btn-danger" id="confirmDeleteBtn">Delete</button>
         </div>
     </div>
 </div>
 
 <style>
-.admin-panel-container { max-width: 1600px; margin: 0 auto; }
+.admin-panel-container { 
+    max-width: 1600px; 
+    margin: 0 auto; 
+    background: transparent; 
+}
 .panel-title { font-family: var(--font-brand), 'IM Fell English', serif; }
 .panel-subtitle { font-family: var(--font-body), 'Source Serif Pro', serif; }
 

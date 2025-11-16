@@ -25,13 +25,13 @@ include __DIR__ . '/../includes/header.php';
     
     <!-- Admin Navigation -->
     <nav class="admin-nav" aria-label="Admin Navigation">
-        <a href="admin_panel.php" class="nav-btn">👥 Characters</a>
-        <a href="admin_sire_childe.php" class="nav-btn active">🧛 Sire/Childe</a>
-        <a href="admin_sire_childe_enhanced.php" class="nav-btn">🔍 Enhanced Analysis</a>
-        <a href="admin_equipment.php" class="nav-btn">⚔️ Equipment</a>
-        <a href="admin_locations.php" class="nav-btn">📍 Locations</a>
-        <a href="questionnaire_admin.php" class="nav-btn">📝 Questionnaire</a>
-        <a href="admin_npc_briefing.php" class="nav-btn">📋 NPC Briefing</a>
+        <a href="admin_panel.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">👥 Characters</a>
+        <a href="admin_sire_childe.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center active">🧛 Sire/Childe</a>
+        <a href="admin_sire_childe_enhanced.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">🔍 Enhanced Analysis</a>
+        <a href="admin_equipment.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">⚔️ Equipment</a>
+        <a href="admin_locations.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📍 Locations</a>
+        <a href="questionnaire_admin.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📝 Questionnaire</a>
+        <a href="admin_npc_briefing.php" class="nav-btn btn btn-outline-danger btn-sm w-100 text-center">📋 NPC Briefing</a>
     </nav>
     
     <!-- Relationship Statistics -->
@@ -73,10 +73,10 @@ include __DIR__ . '/../includes/header.php';
     <!-- Filter Controls -->
     <div class="filter-controls">
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All Relationships</button>
-            <button class="filter-btn" data-filter="sires">Sires Only</button>
-            <button class="filter-btn" data-filter="childer">Childer Only</button>
-            <button class="filter-btn" data-filter="sireless">Sireless</button>
+            <button class="filter-btn btn btn-outline-danger active" data-filter="all">All Relationships</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="sires">Sires Only</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="childer">Childer Only</button>
+            <button class="filter-btn btn btn-outline-danger" data-filter="sireless">Sireless</button>
         </div>
         <div class="search-box">
             <input type="text" id="relationshipSearch" placeholder="🔍 Search by name or sire..." />
@@ -229,8 +229,8 @@ include __DIR__ . '/../includes/header.php';
             </div>
             
             <div class="modal-actions">
-                <button type="button" class="modal-btn cancel-btn" onclick="closeRelationshipModal()">Cancel</button>
-                <button type="submit" class="modal-btn confirm-btn">Save Relationship</button>
+                <button type="button" class="modal-btn cancel-btn btn btn-secondary" onclick="closeRelationshipModal()">Cancel</button>
+                <button type="submit" class="modal-btn confirm-btn btn btn-primary">Save Relationship</button>
             </div>
         </form>
     </div>
